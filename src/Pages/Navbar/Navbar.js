@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <Link to='/' className=" btn btn-ghost normal-case text-xl">CRAFTIFY</Link>
+      <div className="flex justify-between bg-zinc-800 border-b-2 border-zinc-600 py-1">
+        <div className="pl-3">
+          <Link to="/" className=" btn btn-ghost normal-case text-xl">
+            CRAFTIFY
+          </Link>
         </div>
-        <div className="navbar-center">
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-        </div>
-        <div className="navbar-end">
+          <input
+            type="text"
+            placeholder="Search"
+            className="pl-3 rounded-full bg-zinc-700 hover:bg-zinc-500 text-white w-[45%]"
+          />
+        <div className="pr-3">
           <button className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
