@@ -47,7 +47,7 @@ const PostBox = () => {
   };
 
   return (
-    <div className="justify-center flex items-center gap-4 p-4 bg-zinc-700">
+    <div className="justify-center flex items-center gap-4 p-4 bg-zinc-700 container mx-auto mt-3 rounded-md">
       <div className="">
         {/* image source is hardcode now */}
         <img
