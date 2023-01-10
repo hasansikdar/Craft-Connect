@@ -7,6 +7,7 @@ const PostBox = () => {
     event.preventDefault();
     const field = event.target;
     const postText = field.postText.value;
+    console.log(postText);
     // ================ in future upload photos to imgbb server code in the below just set your ""imagekey""
     // const imageKey = "";
     // const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
@@ -19,9 +20,10 @@ const PostBox = () => {
     //   .then((res) => res.json())
     //   .then((data) => {
     //     const img = data?.data?.url;
-    //     
+    //
     //   });
     //   }
+    field.reset();
   };
 
   useEffect(() => {
@@ -56,18 +58,18 @@ const PostBox = () => {
       </div>
       <div className="">
         <label
-          htmlFor="my-modal-3"
+          htmlFor="postModal"
           className="text-lg text-white font-semibold cursor-pointer bg-zinc-800 px-3 py-3 rounded-full transition-all duration-200  outline-none hover:bg-zinc-900"
         >
           What's on your mind, [userName]?
         </label>
       </div>
       {/* Put this part before </body> tag */}
-      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <input type="checkbox" id="postModal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
           <label
-            htmlFor="my-modal-3"
+            htmlFor="postModal"
             className="absolute right-4 top-4 cursor-pointer"
           >
             ✕
@@ -89,16 +91,16 @@ const PostBox = () => {
             <form onSubmit={formSubmit}>
               <textarea
                 className="text-gray-500 w-full h-[200px] py-2 resize-none pr-4 text-white placeholder-gray-500 transition-all duration-200 outline-none"
-                placeholder="Whats's on your mind"
                 name="postText"
                 required
+                placeholder="Whats's on your mind"
               ></textarea>
               {selectedFile ? (
                 <img className="mb-3" src={preview} alt="post images" />
               ) : (
                 <div className="flex items-center justify-center w-full mb-3">
                   <label
-                    for="dropzone-file"
+                    htmlFor="dropzone-file"
                     className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:border-gray-600"
                   >
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -111,9 +113,9 @@ const PostBox = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                         ></path>
                       </svg>
@@ -137,7 +139,7 @@ const PostBox = () => {
               <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
                 <button
                   type="submit"
-                  className="text-gray-500 w-full bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                  className="text-gray-500 text-center w-full bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
                 >
                   Post
                 </button>
