@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TbMessageCircle } from "react-icons/tb";
+import { IoMdNotifications } from "react-icons/io";
+import profile from '../../assets/fearAllah.jpg'
 
 const Navbar = () => {
     return (
@@ -9,47 +12,21 @@ const Navbar = () => {
             CRAFTIFY
           </Link>
         </div>
-          <input
-            type="text"
-            placeholder="Search"
-            className="pl-3 rounded-full bg-zinc-700 hover:bg-zinc-500 text-white w-[45%]"
-          />
-        <div className="pr-3">
-          <button className="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+        <input
+          type="text"
+          placeholder="Search"
+          className="pl-3 rounded-full bg-zinc-700 hover:bg-zinc-600 text-white w-[45%]"
+        />
+        <div className="pr-3 flex gap-2 items-center">
+          <button className="btn btn-ghost btn-circle bg-zinc-700 hover:bg-zinc-600">
+            <TbMessageCircle className="text-2xl text-white"></TbMessageCircle>
           </button>
-          <button className="btn btn-ghost btn-circle">
-            <div className="indicator">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                />
-              </svg>
-              <span className="badge badge-xs badge-primary indicator-item"></span>
-            </div>
+          <button className="btn btn-ghost btn-circle bg-zinc-700 hover:bg-zinc-600">
+            <IoMdNotifications className="text-2xl text-white"></IoMdNotifications>
           </button>
+          <div>
+            <img className="w-11 rounded-full" src={profile} alt="" />
+          </div>
         </div>
       </div>
     );
