@@ -12,29 +12,29 @@ const Navbar = () => {
 
     return (
       <div>
-        <div className="flex justify-between bg-zinc-800 border-b-2 border-zinc-600 py-1">
+        <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
           <div className="pl-3">
-            <Link to="/" className=" btn btn-ghost normal-case text-xl">
+            <Link to="/" className="normal-case text-xl cursor-pointer">
               CRAFTIFY
             </Link>
           </div>
           <input
             type="text"
             placeholder="Search"
-            className="pl-3 rounded-full bg-zinc-700 hover:bg-zinc-600 text-white w-[45%]"
+            className="mx-2 md:mx-0 pl-3 py-1 rounded-full bg-zinc-700 hover:bg-zinc-600 text-white w-[45%]"
           />
           <div className="pr-3 flex gap-2 items-center">
-            <div
+            <button
               onClick={() => setMessageModal(!messageModal)}
-              className="btn btn-ghost btn-circle bg-zinc-700 hover:bg-zinc-600"
+              className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
-              <TbMessageCircle className="text-2xl text-white"></TbMessageCircle>
-            </div>
+              <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
+            </button>
             <button
               onClick={() => setNotification(!notification)}
-              className="btn btn-ghost btn-circle bg-zinc-700 hover:bg-zinc-600"
+              className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
-              <IoMdNotifications className="text-2xl text-white"></IoMdNotifications>
+              <IoMdNotifications className="text-xl md:text-2xl text-white"></IoMdNotifications>
             </button>
             <div onClick={() => setProfile(!profile)}>
               <img className="w-11 rounded-full" src={profileImage} alt="" />
@@ -44,7 +44,7 @@ const Navbar = () => {
 
         {/*-----------------------------------------Messanger Modal Start----------------------------------------------*/}
         {messageModal && (
-          <div className="w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+          <div className="w-[80%] md:w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
               <div className="flex justify-between">
                 <h3 className="text-lg font-bold">Messanger Modal testing</h3>
@@ -66,7 +66,7 @@ const Navbar = () => {
 
         {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
         {notification && (
-          <div className="w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+          <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
               <div className="flex justify-between">
                 <h3 className="text-lg font-bold">
@@ -90,7 +90,7 @@ const Navbar = () => {
 
         {/*#########################################Profile Modal Start####################################################*/}
         {profile && (
-          <div className="w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+          <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
               <div className="flex justify-between">
                 <h3 className="text-lg font-bold">Testing Profile Modal</h3>
