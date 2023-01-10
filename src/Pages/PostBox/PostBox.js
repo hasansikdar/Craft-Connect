@@ -1,12 +1,153 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
 const PostBox = () => {
-    return (
-        <>
-         {/* Post box testing     */}
-         <h2 className='text-5xl underline bg-red-500'>Post Box</h2>
-        </>
-    );
+  const [selectedFile, setSelectedFile] = useState();
+  const [preview, setPreview] = useState();
+  const formSubmit = (event) => {
+    event.preventDefault();
+    const field = event.target;
+    const postText = field.postText.value;
+    // ================ in future upload photos to imgbb server code in the below just set your ""imagekey""
+    // const imageKey = "";
+    // const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+    // const formData = new FormData();
+    // formData.append("image", selectedFile);
+    // fetch(url, {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     const img = data?.data?.url;
+    //     
+    //   });
+    //   }
+  };
+
+  useEffect(() => {
+    if (!selectedFile) {
+      setPreview(undefined);
+      return;
+    }
+    const objectUrl = URL.createObjectURL(selectedFile);
+    setPreview(objectUrl);
+
+    // free memory when ever this component is unmounted
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [selectedFile]);
+
+  const onSelectFile = (e) => {
+    if (!e.target.files || e.target.files.length === 0) {
+      setSelectedFile(undefined);
+      return;
+    }
+    setSelectedFile(e.target.files[0]);
+  };
+
+  return (
+    <div className="justify-center flex items-center gap-4 p-4 bg-zinc-700">
+      <div className="">
+        {/* image source is hardcode now */}
+        <img
+          src="https://avatars.githubusercontent.com/u/94055231?v=4"
+          className="h-12 w-12 rounded-full"
+          alt=""
+        />
+      </div>
+      <div className="">
+        <label
+          htmlFor="my-modal-3"
+          className="text-lg text-white font-semibold cursor-pointer bg-zinc-800 px-3 py-3 rounded-full transition-all duration-200  outline-none hover:bg-zinc-900"
+        >
+          What's on your mind, [userName]?
+        </label>
+      </div>
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative">
+          <label
+            htmlFor="my-modal-3"
+            className="absolute right-4 top-4 cursor-pointer"
+          >
+            ✕
+          </label>
+          <div>
+            <div className="flex items-center gap-3 border-b pb-3">
+              {/* image source is hardcode now */}
+              <img
+                src="https://avatars.githubusercontent.com/u/94055231?v=4"
+                className="h-12 w-12 rounded-full"
+                alt=""
+              />
+              <div className="">
+                <p className="text-xl font-medium text-gray-900 text-white">
+                  Maruf Rahman
+                </p>
+              </div>
+            </div>
+            <form onSubmit={formSubmit}>
+              <textarea
+                className="text-gray-500 w-full h-[200px] py-2 resize-none pr-4 text-white placeholder-gray-500 transition-all duration-200 outline-none"
+                placeholder="Whats's on your mind"
+                name="postText"
+                required
+              ></textarea>
+              {selectedFile ? (
+                <img className="mb-3" src={preview} alt="post images" />
+              ) : (
+                <div className="flex items-center justify-center w-full mb-3">
+                  <label
+                    for="dropzone-file"
+                    className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:border-gray-600"
+                  >
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg
+                        aria-hidden="true"
+                        className="w-10 h-10 mb-3 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                        ></path>
+                      </svg>
+                      <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                        <span className="font-semibold">Click to upload</span>{" "}
+                        or drag and drop
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        PNG, JPG or GIF
+                      </p>
+                    </div>
+                    <input
+                      id="dropzone-file"
+                      type="file"
+                      onChange={onSelectFile}
+                      className="hidden"
+                    />
+                  </label>
+                </div>
+              )}
+              <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
+                <button
+                  type="submit"
+                  className="text-gray-500 w-full bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                >
+                  Post
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default PostBox;
