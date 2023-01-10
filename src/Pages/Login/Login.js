@@ -5,8 +5,10 @@ const Login = () => {
     <section className="bg-gray-100">
       <div className="flex flex-wrap-reverse lg:justify-between mx-auto items-center w-[980px] py-5 ">
         <div>
-          <h2 className="text-red-800 text">CRAFT-CONNECT</h2>
-          <p>
+          <h2 className="text-4xl text-[#1877f2] font-bold mb-8">
+            CRAFT-CONNECT
+          </h2>
+          <p className="w-[500px] text-2xl leading-[32px]">
             CRAFT-CONNECT helps you connect and share with the people in your
             life.
           </p>
