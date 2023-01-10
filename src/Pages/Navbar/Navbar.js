@@ -7,6 +7,7 @@ import profile from '../../assets/fearAllah.jpg'
 const Navbar = () => {
 
     const [messageModal, setMessageModal] = useState(false); 
+    const [notification, setNotification] = useState(false); 
 
     return (
       <div>
@@ -28,7 +29,10 @@ const Navbar = () => {
             >
               <TbMessageCircle className="text-2xl text-white"></TbMessageCircle>
             </div>
-            <button className="btn btn-ghost btn-circle bg-zinc-700 hover:bg-zinc-600">
+            <button
+              onClick={() => setNotification(!notification)}
+              className="btn btn-ghost btn-circle bg-zinc-700 hover:bg-zinc-600"
+            >
               <IoMdNotifications className="text-2xl text-white"></IoMdNotifications>
             </button>
             <div>
@@ -43,7 +47,7 @@ const Navbar = () => {
             <div className="px-3 py-3">
               <div className="flex justify-between">
                 <h3 className="text-lg font-bold">
-                  Congratulations random Internet user!
+                  Messanger Modal testing
                 </h3>
                 <div
                   onClick={() => setMessageModal(false)}
@@ -60,6 +64,30 @@ const Navbar = () => {
           </div>
         )}
         {/*-----------------------------------------Messanger Modal End----------------------------------------------*/}
+
+        {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
+        {notification && (
+          <div className="w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+            <div className="px-3 py-3">
+              <div className="flex justify-between">
+                <h3 className="text-lg font-bold">
+                  Notifications Modal testing
+                </h3>
+                <div
+                  onClick={() => setNotification(false)}
+                  className="btn btn-ghost"
+                >
+                  ✕
+                </div>
+              </div>
+              <p className="py-4">
+                You've been selected for a chance to get one year of
+                subscription to use Wikipedia for free!
+              </p>
+            </div>
+          </div>
+        )}
+        {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal end^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
       </div>
     );
 };
