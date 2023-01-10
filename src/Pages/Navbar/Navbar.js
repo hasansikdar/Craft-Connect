@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
-import profile from '../../assets/fearAllah.jpg'
+import profileImage from '../../assets/fearAllah.jpg'
 
 const Navbar = () => {
 
     const [messageModal, setMessageModal] = useState(false); 
     const [notification, setNotification] = useState(false); 
+    const [profile, setProfile] = useState(false); 
 
     return (
       <div>
@@ -35,8 +36,8 @@ const Navbar = () => {
             >
               <IoMdNotifications className="text-2xl text-white"></IoMdNotifications>
             </button>
-            <div>
-              <img className="w-11 rounded-full" src={profile} alt="" />
+            <div onClick={() => setProfile(!profile)}>
+              <img className="w-11 rounded-full" src={profileImage} alt="" />
             </div>
           </div>
         </div>
@@ -46,9 +47,7 @@ const Navbar = () => {
           <div className="w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
               <div className="flex justify-between">
-                <h3 className="text-lg font-bold">
-                  Messanger Modal testing
-                </h3>
+                <h3 className="text-lg font-bold">Messanger Modal testing</h3>
                 <div
                   onClick={() => setMessageModal(false)}
                   className="btn btn-ghost"
@@ -88,6 +87,28 @@ const Navbar = () => {
           </div>
         )}
         {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal end^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
+
+        {/*#########################################Profile Modal Start####################################################*/}
+        {profile && (
+          <div className="w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+            <div className="px-3 py-3">
+              <div className="flex justify-between">
+                <h3 className="text-lg font-bold">Testing Profile Modal</h3>
+                <div
+                  onClick={() => setProfile(false)}
+                  className="btn btn-ghost"
+                >
+                  ✕
+                </div>
+              </div>
+              <p className="py-4">
+                You've been selected for a chance to get one year of
+                subscription to use Wikipedia for free!
+              </p>
+            </div>
+          </div>
+        )}
+        {/*#########################################Profile Modal End####################################################*/}
       </div>
     );
 };
