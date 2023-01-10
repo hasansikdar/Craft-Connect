@@ -4,7 +4,7 @@ import ProfileDetails from '../ProfileDetails/ProfileDetails';
 
 const RightBar = () => {
     return (
-        <div>
+        <div className='w-80 float-right bg-slate-100'>
             <ProfileDetails></ProfileDetails>
             <FriendsList></FriendsList>
             <FriendsList></FriendsList>
