@@ -36,7 +36,7 @@ const PostCard = () => {
                             <img className='w-5 h-5 mr-2' src={likeicon} alt="" />
                             <div className="">
                                 <label tabIndex={0} className="m-1 cursor-pointer">Like</label>
-                                <div tabIndex={0} className="dropdown-content -ml-10 bg-white text-black menu p-2 shadow bg-base-100 rounded-box w-52">
+                                <div tabIndex={0} className="dropdown-content -ml-10 bg-white text-black menu p-2 shadow rounded-box w-52">
                                     <div className='grid grid-cols-6'>
                                         <img src={likegificon} alt="" />
                                         <img src="https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif" alt="" />

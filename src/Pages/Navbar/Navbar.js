@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/*-----------------------------------------Messanger Modal Start----------------------------------------------*/}
+        {/*-----------------------------------------Messanger Modal Start---------------------------------------------- */}
         {messageModal && (
           <div className="w-[80%] md:w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
