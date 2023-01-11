@@ -4,8 +4,8 @@ import RegisterModal from "./RegisterModal/RegisterModal";
 const Login = () => {
   return (
     <section className="bg-gray-100">
-      <div className="flex flex-wrap-reverse lg:justify-between mx-auto items-center w-[980px] pt-20 pb-72 ">
-        <div>
+      <div className="flex flex-col lg:flex-row gap-20 lg:justify-between justify-center mx-auto items-center lg:w-[980px] pt-20 pb-72 ">
+        <div className="text-center">
           <h2 className="text-4xl text-[#1877f2] font-bold mb-8">
             CRAFT-CONNECT
           </h2>

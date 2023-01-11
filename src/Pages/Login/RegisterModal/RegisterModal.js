@@ -16,7 +16,7 @@ const RegisterModal = () => {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">Register</h3>
+          <h3 className="text-2xl font-bold">Register</h3>
           <span>It's quick and easy</span>
           <form className="grid grid-cols-1 gap-3 mt-10">
             <div className="flex gap-2">
@@ -58,15 +58,15 @@ const RegisterModal = () => {
             ></DatePicker>
 
             <div className="flex gap-10">
-              <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
+              <span className="flex gap-2 border w-2/5 justify-center rounded shadow">
                 <p>Male</p>
                 <input type="radio" name="male" id="male" />
               </span>
-              <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
+              <span className="flex gap-2 border w-2/5 justify-center rounded shadow">
                 <p>Female</p>
                 <input type="radio" name="female" id="female" />
               </span>
-              <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
+              <span className="flex gap-2 border w-2/5 justify-center rounded shadow">
                 <p>Other</p>
                 <input type="radio" name="other" id="other" />
               </span>
