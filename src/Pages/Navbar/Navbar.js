@@ -34,7 +34,7 @@ const Navbar = () => {
               onClick={() => setNotification(!notification)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
-              <IoMdNotifications className="text-xl md:text-2xl text-white"></IoMdNotifications>
+              <IoMdNotifications className="text-xl md:text-2xl text-white"> </IoMdNotifications>
             </button>
             <div onClick={() => setProfile(!profile)}>
               <img className="w-11 rounded-full" src={profileImage} alt="" />
