@@ -22,3 +22,6 @@ input {
   border:none;
   outline:none;
 }
+img {
+  cursor:pointer;
+}

@@ -4,26 +4,31 @@ import PostUserInfo from './PostUserInfo/PostUserInfo';
 import likeicon from '../../assets/icons/like.png';
 import likegificon from '../../assets/icons/smiley.gif';
 import { FaCommentAlt, FaLaughWink, FaLaugh, FaAngleDown, FaShare } from "react-icons/fa";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const PostCard = () => {
     return (
         <div>
-            <div className=" card bg-base-100 shadow-xl border border-white">
+            <div className=" card w-[500px] bg-base-100 shadow-xl border border-white">
                 <div className="card-body">
                     <div>
                         <PostUserInfo></PostUserInfo>
                     </div>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                 </div>
-                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <PhotoProvider>
+                    <PhotoView src="https://placeimg.com/400/225/arch">
+                        <figure><img className='w-full' src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                    </PhotoView>
+                </PhotoProvider>
                 <div className='p-4'>
                     <div className='flex justify-between'>
                         <span className='flex'>
                             <img className='w-5 h-5 mr-2' src={likeicon} alt="" />
-                            <a href='#'>Muhammad Hasan</a>
+                            <a className='hover:underline' href='#'>Muhammad Hasan</a>
                         </span>
                         <span>
-                            <a href="">19 Comment</a>
+                            <a className='hover:underline' href="">1 Comment</a>
                         </span>
                     </div>
                     <div className='flex justify-between cursor-pointer mt-3 border-y py-4 border-white'>
