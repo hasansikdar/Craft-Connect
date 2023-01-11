@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const RegisterModal = () => {
+  const [selectedDate, setSelectedDate] = useState(null);
+
   return (
     <>
       <input type="checkbox" id="register-modal" className="modal-toggle" />
@@ -15,18 +19,58 @@ const RegisterModal = () => {
           <h3 className="text-lg font-bold">Register</h3>
           <span>It's quick and easy</span>
           <form className="grid grid-cols-1 gap-3 mt-10">
-            <input
-              name="name"
-              type="text"
-              placeholder="Your Name"
-              className="input w-full input-bordered bg-gray-100"
-            />
+            <div className="flex gap-2">
+              <input
+                name="firstName"
+                type="text"
+                placeholder="First Name"
+                className="input w-full input-bordered bg-gray-100"
+              />
+              <input
+                name="lastName"
+                type="text"
+                placeholder="Last Name"
+                className="input w-full input-bordered bg-gray-100"
+              />
+            </div>
             <input
               name="email"
               type="email"
               placeholder="Email Address"
               className="input w-full input-bordered bg-gray-100"
             />
+            <input
+              name="password"
+              type="password"
+              placeholder="New Password"
+              className="input w-full input-bordered bg-gray-100"
+            />
+            <DatePicker
+              className="input w-full input-bordered bg-gray-100"
+              placeholderText="dd / mm / yy"
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              dateFormat="dd/MM/yyyy"
+              maxDate={new Date()}
+              isClearable
+              showYearDropdown
+              scrollableYearDropdown
+            ></DatePicker>
+
+            <div className="flex gap-10">
+              <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
+                <p>Male</p>
+                <input type="checkbox" name="male" id="male" />
+              </span>
+              <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
+                <p>Female</p>
+                <input type="checkbox" name="female" id="female" />
+              </span>
+              <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
+                <p>Other</p>
+                <input type="checkbox" name="other" id="other" />
+              </span>
+            </div>
             <span className="flex justify-center">
               <input
                 className="bg-[#00a400] hover:bg-[#057205] border-0 px-8 text-xl h-[36px] font-bold text-white rounded my-2 min-w-[194px] text-center w-2/5"
