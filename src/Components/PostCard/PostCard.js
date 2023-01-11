@@ -9,7 +9,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 const PostCard = () => {
     return (
         <div>
-            <div className=" card w-[500px] bg-base-100 shadow-xl border border-white">
+            <div className=" card md:w-[500px] bg-base-100 shadow-xl border border-white">
                 <div className="card-body">
                     <div>
                         <PostUserInfo></PostUserInfo>
