@@ -1,9 +1,10 @@
 import React from "react";
+import RegisterModal from "./RegisterModal/RegisterModal";
 
 const Login = () => {
   return (
     <section className="bg-gray-100">
-      <div className="flex flex-wrap-reverse lg:justify-between mx-auto items-center w-[980px] py-5 ">
+      <div className="flex flex-wrap-reverse lg:justify-between mx-auto items-center w-[980px] pt-20 pb-72 ">
         <div>
           <h2 className="text-4xl text-[#1877f2] font-bold mb-8">
             CRAFT-CONNECT
@@ -44,13 +45,17 @@ const Login = () => {
 
             <hr />
             <div className="flex justify-center items-center">
-              <button className="px-4 bg-[#42b72a] text-white text-[17px] rounded leading-[48px] font-bold">
+              <label
+                htmlFor="register-modal"
+                className="btn px-4 bg-[#42b72a] hover:bg-[#1e8609] text-white text-[17px] rounded leading-[48px] font-bold border-0"
+              >
                 Create New Account
-              </button>
+              </label>
             </div>
           </form>
         </div>
       </div>
+      <RegisterModal></RegisterModal>
     </section>
   );
 };
