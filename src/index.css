@@ -7,6 +7,27 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f122; 
+  border-radius: 999999px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f1f1f14a; 
+  border-radius: 9999999px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f1f1f15d; 
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   font-family:'Ubuntu',sans-serif;
