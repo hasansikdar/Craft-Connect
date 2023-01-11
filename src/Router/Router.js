@@ -4,7 +4,7 @@ import PostBox from "../Pages/PostBox/PostBox";
 import Stories from "../Pages/Stories/Stories";
 
 export const Routes = createBrowserRouter([
-  { path: "/", element: <PostBox /> },
+  { path: "/stories", element: <PostBox /> },
   { path: "/login", element: <Login></Login> },
   {
     path: "/",
