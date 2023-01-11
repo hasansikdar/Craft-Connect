@@ -1,9 +1,11 @@
 import React from 'react';
+import Top from '../Top/Top';
+
 
 const LeftSideBar = () => {
     return (
-        <div>
-            <h1>Hi guys</h1>
+        <div className='w-[300px] p-3 bg-gray-300 text-black'>
+            <Top></Top>
         </div>
     );
 };

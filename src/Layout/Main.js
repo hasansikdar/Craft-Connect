@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Navbar from '../Pages/Navbar/Navbar';
+import LeftSideBar from '../Shared/LeftSideMenubar/LeftSideBar/LeftSideBar';
 import RightBar from '../Shared/Right-Side-Bar/RightBar/RightBar';
 
 const Main = () => {
@@ -10,7 +11,7 @@ const Main = () => {
             <div className='lg:flex'>
                 {/* left site bar */}
                 <div className='xl:mr-auto lg:w-[300px]'>
-                    
+                    <LeftSideBar></LeftSideBar>
                 </div>
                 <div className='lg:w-[600px] xl:mx-auto'>
                     <Outlet></Outlet>
