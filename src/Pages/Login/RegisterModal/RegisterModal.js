@@ -60,15 +60,15 @@ const RegisterModal = () => {
             <div className="flex gap-10">
               <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
                 <p>Male</p>
-                <input type="checkbox" name="male" id="male" />
+                <input type="radio" name="male" id="male" />
               </span>
               <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
                 <p>Female</p>
-                <input type="checkbox" name="female" id="female" />
+                <input type="radio" name="female" id="female" />
               </span>
               <span className="flex gap-2 border w-2/5 justify-center rounded shadow-lg">
                 <p>Other</p>
-                <input type="checkbox" name="other" id="other" />
+                <input type="radio" name="other" id="other" />
               </span>
             </div>
             <span className="flex justify-center">
