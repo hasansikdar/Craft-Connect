@@ -5,7 +5,7 @@ import ProfileDetails from '../ProfileDetails/ProfileDetails';
 
 const RightBar = () => {
     return (
-        <div className='w-80 float-right bg-slate-100 h-full hidden lg:block'>
+        <div className='lg:w-80 ml-auto bg-slate-100 h-full hidden xl:block'>
             <Advertisement></Advertisement>
             <ProfileDetails></ProfileDetails>
             <FriendsList></FriendsList>
