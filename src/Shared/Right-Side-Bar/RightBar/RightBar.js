@@ -6,9 +6,9 @@ import ProfileDetails from '../ProfileDetails/ProfileDetails';
 const RightBar = () => {
     return (
         <div className='w-80 float-right bg-slate-100 h-full'>
+            <Advertisement></Advertisement>
             <ProfileDetails></ProfileDetails>
             <FriendsList></FriendsList>
-            <Advertisement></Advertisement>
         </div>
     );
 };
