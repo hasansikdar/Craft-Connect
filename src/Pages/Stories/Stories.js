@@ -8,6 +8,7 @@ const Stories = () => {
   useEffect(() => {
     setWidth(storyWidth.current.scrollWidth - storyWidth.current.offsetWidth);
   }, []);
+  
   return (
     <>
       <motion.div className="mx-auto container  bg-zinc-700 rounded-md mt-5 p-5 overflow-hidden text-white">

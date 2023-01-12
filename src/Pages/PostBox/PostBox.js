@@ -60,7 +60,7 @@ const PostBox = () => {
       <div className="">
         <label
           htmlFor="postModal"
-          className="text-lg text-ellipsis overflow-hidden font-semibold cursor-pointer bg-zinc-800 px-3 py-3 rounded-full transition-all duration-200  outline-none hover:bg-zinc-900"
+          className="text-lg font-semibold text-center block cursor-pointer bg-zinc-800 px-3 py-3 rounded-full transition-all duration-200  outline-none hover:bg-zinc-900"
         >
           What's on your mind, [userName]?
         </label>
