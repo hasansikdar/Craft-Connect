@@ -1,14 +1,15 @@
 import React from 'react';
-import RightBar from '../../Shared/Right-Side-Bar/RightBar/RightBar';
-import PostBox from '../PostBox/PostBox';
+import PostCard from '../../Components/PostCard/PostCard';
+import Posts from '../Posts/Posts';
 import Stories from '../Stories/Stories';
 
 const Home = () => {
     return (
         <div>
-            <div className=''>
-                <RightBar></RightBar>
+            <div className='mx-3'>
+                
                 <Stories />
+                <Posts></Posts>
             </div> 
     </div>
     );

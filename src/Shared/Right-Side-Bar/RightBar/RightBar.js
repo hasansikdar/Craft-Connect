@@ -1,12 +1,15 @@
 import React from 'react';
+import Advertisement from '../Advertisement/Advertisement';
+import Follow from '../Follow/Follow';
 import FriendsList from '../FriendsList/FriendsList';
 import ProfileDetails from '../ProfileDetails/ProfileDetails';
 
 const RightBar = () => {
     return (
-        <div className='w-80 float-right bg-slate-100'>
+        <div className='lg:w-80 ml-auto h-full hidden xl:block'>
+            <Advertisement></Advertisement>
             <ProfileDetails></ProfileDetails>
-            <FriendsList></FriendsList>
+            <Follow></Follow>
             <FriendsList></FriendsList>
         </div>
     );
