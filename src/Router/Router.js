@@ -7,15 +7,15 @@ import Stories from "../Pages/Stories/Stories";
 
 export const Routes = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Main></Main>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
-      { path: '/home', element: <Home></Home> },
-      { path: "/login", element: <Login></Login> },
-    ]
+      { path: "/home", element: <Home></Home> },
+    ],
   },
+  { path: "/login", element: <Login></Login> },
 ]);
