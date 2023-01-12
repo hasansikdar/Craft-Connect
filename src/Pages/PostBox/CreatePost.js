@@ -94,7 +94,7 @@ const CreatePost = ({ postModal }) => {
             <div className="divider"></div>
             <form onSubmit={formSubmit}>
               <textarea
-                className="bg-transparent text-xl w-full h-[250px]  resize-none pr-4 text-white placeholder-text-100 transition-all duration-200 outline-none"
+                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 text-white placeholder-text-100 transition-all duration-200 outline-none"
                 name="postText"
                 placeholder="Whats's on your mind"
                 value={postDisabled}
