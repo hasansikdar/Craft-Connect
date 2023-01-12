@@ -50,3 +50,6 @@ input:focus {
 img {
   cursor:pointer;
 }
+.home::-webkit-scrollbar {
+  display: none;
+}

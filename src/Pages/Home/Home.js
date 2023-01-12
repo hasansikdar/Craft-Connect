@@ -6,7 +6,7 @@ import Stories from '../Stories/Stories';
 const Home = () => {
     return (
         <div>
-            <div className='mx-3'>
+            <div className='mx-3 home overflow-scroll h-screen'>
                 
                 <Stories />
                 <Posts></Posts>

@@ -6,7 +6,7 @@ import ProfileDetails from '../ProfileDetails/ProfileDetails';
 
 const RightBar = () => {
     return (
-        <div className='lg:w-80 ml-auto h-full hidden xl:block'>
+        <div className='lg:w-80 ml-auto mt-4 overflow-scroll h-screen hidden xl:block'>
             <Advertisement></Advertisement>
             <ProfileDetails></ProfileDetails>
             <Follow></Follow>
