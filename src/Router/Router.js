@@ -2,8 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Main from "../Layout/Main";
-import PostBox from "../Pages/PostBox/PostBox";
-import Stories from "../Pages/Stories/Stories";
+
 
 export const Routes = createBrowserRouter([
   {
