@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaHome, FaUserFriends, FaTv, FaNewspaper, FaUsers, FaArrowCircleDown, FaArrowAltCircleUp, FaGamepad } from "react-icons/fa";
-import { FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard } from "react-icons/fc";
+import { FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
 import { MdAddShoppingCart } from "react-icons/md";
 import { IoIosStats } from "react-icons/io";
 
@@ -21,7 +21,7 @@ const Top = () => {
             </div>
             <hr className='mb-4'/>
             <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FaUserFriends className='h-8 w-8'></FaUserFriends></p>
+                <p><FaUserFriends className='h-8 w-8 text-green-300'></FaUserFriends></p>
                 <h1 className='text-lg font-semibold'>Friends</h1>
             </div>
             <div className='flex justify-start items-center gap-4 mb-4'>
@@ -29,11 +29,11 @@ const Top = () => {
                 <h1 className='text-lg font-semibold'>Watch</h1>
             </div>
             <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FaNewspaper className='h-8 w-8'></FaNewspaper></p>
+                <p><FcNews className='h-8 w-8'></FcNews></p>
                 <h1 className='text-lg font-semibold'>Most Recent</h1>
             </div>
             <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FaUsers className='h-8 w-8'></FaUsers></p>
+                <p><FcConferenceCall className='h-8 w-8'></FcConferenceCall></p>
                 <h1 className='text-lg font-semibold'>Groups</h1>
             </div>
             <div className='flex justify-start items-center gap-4 mb-4'>
