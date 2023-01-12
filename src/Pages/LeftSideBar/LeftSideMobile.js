@@ -10,7 +10,7 @@ const LeftSideMobile = () => {
           <AiFillHome className="text-3xl text-cyan-500 mt-10" />
           <AiFillShop className="text-3xl text-cyan-500 my-6" />
           <BsFillCollectionPlayFill className="text-3xl text-cyan-500 my-6" />
-          <HiUserGroup className="text-3xl text-cyan-500" />
+          <HiUserGroup className="text-3xl text-cyan-500"  />
         </div>
       </div>
     );
