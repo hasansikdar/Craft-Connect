@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
+import { BiSearchAlt2 } from "react-icons/bi";
 import profileImage from '../../assets/fearAllah.jpg'
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
     const [messageModal, setMessageModal] = useState(false); 
     const [notification, setNotification] = useState(false); 
     const [profile, setProfile] = useState(false); 
+    const [search, setSearch] = useState(false);
 
     return (
       <div>
@@ -18,12 +20,31 @@ const Navbar = () => {
               CRAFTIFY
             </Link>
           </div>
-          <input
-            type="text"
-            placeholder="Search"
-            className="mx-2 md:mx-0 pl-3 py-1 rounded-full bg-zinc-700 hover:bg-zinc-600 text-white w-[45%]"
-          />
-          <div className="pr-3 flex gap-2 items-center">
+          <div>
+            <div onClick={() => setSearch(!search)} className="flex md:hidden justify-center items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
+              <i>
+                <BiSearchAlt2></BiSearchAlt2>
+              </i>
+              {search && (
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="py-1 text-white  bg-zinc-700 hover:bg-zinc-600 w-[100px]"
+                />
+              )}
+            </div>
+            <div className="hidden md:flex justify-center items-center  border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
+              <i className="">
+                <BiSearchAlt2></BiSearchAlt2>
+              </i>
+              <input
+                type="text"
+                placeholder="Search"
+                className="mx-2 md:mx-0 pl-3 py-1 text-white w-full bg-zinc-700 hover:bg-zinc-600"
+              />
+            </div>
+          </div>
+          <div className="pr-3 flex gap-2 items-center justify-end">
             <button
               onClick={() => setMessageModal(!messageModal)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
@@ -34,10 +55,16 @@ const Navbar = () => {
               onClick={() => setNotification(!notification)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
-              <IoMdNotifications className="text-xl md:text-2xl text-white"> </IoMdNotifications>
+              <IoMdNotifications className="text-xl md:text-2xl text-white">
+                {" "}
+              </IoMdNotifications>
             </button>
-            <div onClick={() => setProfile(!profile)}>
-              <img className="w-11 rounded-full" src={profileImage} alt="" />
+            <div className="w-[17%]" onClick={() => setProfile(!profile)}>
+              <img
+                className="md:w-[60px] rounded-full"
+                src={profileImage}
+                alt=""
+              />
             </div>
           </div>
         </div>
