@@ -34,7 +34,7 @@ const Navbar = () => {
               onClick={() => setNotification(!notification)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
-              <IoMdNotifications className="text-xl md:text-2xl text-white"></IoMdNotifications>
+              <IoMdNotifications className="text-xl md:text-2xl text-white"> </IoMdNotifications>
             </button>
             <div onClick={() => setProfile(!profile)}>
               <img className="w-11 rounded-full" src={profileImage} alt="" />
@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/*-----------------------------------------Messanger Modal Start----------------------------------------------*/}
+        {/*-----------------------------------------Messanger Modal Start---------------------------------------------- */}
         {messageModal && (
           <div className="w-[80%] md:w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
