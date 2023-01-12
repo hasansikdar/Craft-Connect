@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaHome, FaUserFriends, FaTv, FaNewspaper, FaUsers, FaArrowCircleDown, FaArrowAltCircleUp, FaGamepad } from "react-icons/fa";
-import { FcHome } from "react-icons/fc";
+import { FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard } from "react-icons/fc";
 import { MdAddShoppingCart } from "react-icons/md";
 import { IoIosStats } from "react-icons/io";
 
@@ -19,13 +19,13 @@ const Top = () => {
                 <p><FaHome className='h-8 w-8'></FaHome></p>
                 <h1 className='text-lg font-semibold'>Home</h1>
             </div>
-            <hr className='mb-4 text-black'/>
+            <hr className='mb-4'/>
             <div className='flex justify-start items-center gap-4 mb-4'>
                 <p><FaUserFriends className='h-8 w-8'></FaUserFriends></p>
                 <h1 className='text-lg font-semibold'>Friends</h1>
             </div>
             <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FaTv className='h-8 w-8'></FaTv></p>
+                <p><FcClapperboard className='h-8 w-8'></FcClapperboard></p>
                 <h1 className='text-lg font-semibold'>Watch</h1>
             </div>
             <div className='flex justify-start items-center gap-4 mb-4'>
@@ -43,31 +43,32 @@ const Top = () => {
             <div>
                 {!isOpen &&
                     <button onClick={isOpenButton} className='flex justify-start items-center gap-4 mb-4'>
-                        <p><FaArrowCircleDown className='h-8 w-8'></FaArrowCircleDown></p>
+                        <p><FcExpand className='h-8 w-8'></FcExpand></p>
                         <h1 className='text-lg font-semibold'>See More</h1>
                     </button>}
                 {isOpen &&
                     <>
                         <div className='flex justify-start items-center gap-4 mb-4'>
-                            <p><FaGamepad className='h-8 w-8'></FaGamepad></p>
+                            <p><FcSteam className='h-8 w-8'></FcSteam></p>
                             <h1 className='text-lg font-semibold'>Gaming</h1>
                         </div>
                         <div className='flex justify-start items-center gap-4 mb-4'>
-                            <p><MdAddShoppingCart className='h-8 w-8'></MdAddShoppingCart></p>
+                            <p><FcAdvertising className='h-8 w-8'></FcAdvertising></p>
                             <h1 className='text-lg font-semibold'>Ad Center</h1>
                         </div>
                         <div className='flex justify-start items-center gap-4 mb-4'>
-                            <p><IoIosStats className='h-8 w-8'></IoIosStats></p>
+                            <p><FcBarChart className='h-8 w-8'></FcBarChart></p>
                             <h1 className='text-lg font-semibold'>Ads Manager</h1>
                         </div>
                     </>
                 }
                 {isOpen &&
                     <button onClick={isOpenButton} className='flex justify-start items-center gap-4 mb-4'>
-                        <p><FaArrowAltCircleUp className='h-8 w-8'></FaArrowAltCircleUp></p>
+                        <p><FcCollapse className='h-8 w-8'></FcCollapse></p>
                         <h1 className='text-lg font-semibold'>See Less</h1>
                     </button>}
             </div>
+            <hr className='mb-4'/>
         </div>
     );
 };
