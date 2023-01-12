@@ -19,7 +19,7 @@ const Top = () => {
                 <p><FaHome className='h-8 w-8'></FaHome></p>
                 <h1 className='text-lg font-semibold'>Home</h1>
             </div>
-            <hr className='mb-4 text-black'/>
+            <hr className='mb-4'/>
             <div className='flex justify-start items-center gap-4 mb-4'>
                 <p><FaUserFriends className='h-8 w-8'></FaUserFriends></p>
                 <h1 className='text-lg font-semibold'>Friends</h1>
@@ -68,6 +68,7 @@ const Top = () => {
                         <h1 className='text-lg font-semibold'>See Less</h1>
                     </button>}
             </div>
+            <hr className='mb-4'/>
         </div>
     );
 };
