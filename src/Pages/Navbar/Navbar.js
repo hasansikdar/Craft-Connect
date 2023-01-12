@@ -21,8 +21,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div>
-            <div onClick={() => setSearch(!search)} className="flex md:hidden justify-center items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
-              <i>
+            <div
+              onClick={() => setSearch(!search)}
+              className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700"
+            >
+              <i className="">
                 <BiSearchAlt2></BiSearchAlt2>
               </i>
               {search && (
@@ -59,9 +62,9 @@ const Navbar = () => {
                 {" "}
               </IoMdNotifications>
             </button>
-            <div className="w-[17%]" onClick={() => setProfile(!profile)}>
+            <div className="" onClick={() => setProfile(!profile)}>
               <img
-                className="md:w-[60px] rounded-full"
+                className="w-[30px] md:w-[60px] rounded-full"
                 src={profileImage}
                 alt=""
               />
