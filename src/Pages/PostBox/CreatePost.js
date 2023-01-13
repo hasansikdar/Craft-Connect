@@ -1,42 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Authcontext } from "../../Context/UserContext";
 
 const CreatePost = ({ postModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
+  const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
-  console.log("preview", preview);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
-    
   };
   const handleCrossReset = () => {
     setSelectedFile(undefined);
     setPostDisabled("");
     setCloseUploadPhotoBox(false);
   };
+  console.log(user);
   const formSubmit = (event) => {
     event.preventDefault();
     const field = event.target;
     const postText = field.postText.value;
-    console.log(postText);
-    // ================ in future upload photos to imgbb server code in the below just set your ""imagekey""
-    // const imageKey = "";
-    // const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
-    // const formData = new FormData();
-    // formData.append("image", selectedFile);
-    // fetch(url, {
-    //   method: "POST",
-    //   body: formData,
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     const img = data?.data?.url;
-    //
-    //   });
-    //   }
-    field.reset();
-    setSelectedFile(undefined);
+    let currentData = new Date();
+    const dd = String(currentData.getDate()).padStart(2, "0");
+    const mm = String(currentData.getMonth() + 1).padStart(2, "0");
+    const yyyy = currentData.getFullYear();
+    currentData = mm + "/" + dd + "/" + yyyy;
+
+    const imageKey = "024d2a09e27feff54122f51afddbdfaf";
+    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+    const formData = new FormData();
+    formData.append("image", selectedFile[0]);
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const img = data?.data?.url;
+        const userName = user?.displayName;
+        const userEmail = user?.email;
+        const userPhoto = user?.photoURL;
+        const usersData = {
+          userName,
+          userEmail,
+          userPhoto,
+          currentData,
+          postText,
+          img,
+        };
+        fetch("https://craft-connect-server.vercel.app/usersPost", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(usersData),
+        });
+        field.reset();
+        setSelectedFile(undefined);
+      });
   };
   useEffect(() => {
     if (!selectedFile) {
@@ -49,7 +70,6 @@ const CreatePost = ({ postModal }) => {
       return selectedFIles.push(URL.createObjectURL(file));
     });
 
-   
     setPreview(selectedFIles);
     // free memory when ever this component is unmounted
     return () => URL.revokeObjectURL(selectedFIles);
@@ -61,13 +81,12 @@ const CreatePost = ({ postModal }) => {
       return;
     }
     setSelectedFile(e.target.files);
-
   };
   return (
     <>
       <input type="checkbox" id={postModal} className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <div className="modal-box relative bg-white dark:bg-black">
           <label
             htmlFor={postModal}
             onClick={handleCrossReset}
@@ -76,8 +95,8 @@ const CreatePost = ({ postModal }) => {
             ✕
           </label>
           <div>
-            <div className="text-center text-2xl font-semibold">
-              <h1>Create Post</h1>
+            <div className="text-center text-black dark:text-white text-2xl font-semibold">
+              <h1 className="text-black dark:text-white">Create Post</h1>
             </div>
             <div className="divider"></div>
             <div className="flex items-center gap-3">
@@ -88,13 +107,15 @@ const CreatePost = ({ postModal }) => {
                 alt=""
               />
               <div className="">
-                <p className="text-xl font-medium text-white">Maruf Rahman</p>
+                <p className="text-xl font-medium dark:text-white text-black">
+                  Maruf Rahman
+                </p>
               </div>
             </div>
             <div className="divider"></div>
             <form onSubmit={formSubmit}>
               <textarea
-                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 text-white placeholder-text-100 transition-all duration-200 outline-none"
+                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
                 name="postText"
                 placeholder="Whats's on your mind"
                 value={postDisabled}
@@ -108,10 +129,10 @@ const CreatePost = ({ postModal }) => {
                         <span
                           className="indicator-item select-none badge badge-secondary cursor-pointer"
                           onClick={() => {
-                            console.log(`${url}`)
+                            console.log(`${url}`);
                             const index = preview.includes(`${url}`);
                             if (index > -1) {
-                              preview.splice(index, 1); 
+                              preview.splice(index, 1);
                             }
                           }}
                         >
@@ -145,7 +166,7 @@ const CreatePost = ({ postModal }) => {
                           </label>
                           <svg
                             aria-hidden="true"
-                            className="w-10 h-10 mb-3 text-gray-400"
+                            className="w-10 h-10 mb-3 text-gray-600"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
