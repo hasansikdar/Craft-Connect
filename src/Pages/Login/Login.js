@@ -4,13 +4,14 @@ import Image from "./handicraft1.jpg";
 import { useForm } from "react-hook-form";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {user, signin} = useContext(Authcontext); 
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-
+  const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
   const { handleSubmit, formState: { errors }, register } = useForm();
 
@@ -29,7 +30,6 @@ const Login = () => {
 
     })
   }
-
 
 
   return (
