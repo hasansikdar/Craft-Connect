@@ -8,7 +8,6 @@ const CreatePost = ({ postModal }) => {
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
-    
   };
   const handleCrossReset = () => {
     setSelectedFile(undefined);
@@ -49,7 +48,6 @@ const CreatePost = ({ postModal }) => {
       return selectedFIles.push(URL.createObjectURL(file));
     });
 
-   
     setPreview(selectedFIles);
     // free memory when ever this component is unmounted
     return () => URL.revokeObjectURL(selectedFIles);
@@ -61,13 +59,12 @@ const CreatePost = ({ postModal }) => {
       return;
     }
     setSelectedFile(e.target.files);
-
   };
   return (
     <>
       <input type="checkbox" id={postModal} className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <div className="modal-box relative bg-white dark:bg-black">
           <label
             htmlFor={postModal}
             onClick={handleCrossReset}
@@ -76,10 +73,10 @@ const CreatePost = ({ postModal }) => {
             ✕
           </label>
           <div>
-            <div className="text-center text-2xl font-semibold">
+            <div className="text-center text-2xl font-semibold text-black dark:text-white">
               <h1>Create Post</h1>
             </div>
-            <div className="divider"></div>
+            <div className="divider text-black"></div>
             <div className="flex items-center gap-3">
               {/* image source is hardcode now */}
               <img
@@ -88,13 +85,15 @@ const CreatePost = ({ postModal }) => {
                 alt=""
               />
               <div className="">
-                <p className="text-xl font-medium text-white">Maruf Rahman</p>
+                <p className="text-xl font-medium text-black dark:text-white">
+                  Maruf Rahman
+                </p>
               </div>
             </div>
             <div className="divider"></div>
             <form onSubmit={formSubmit}>
               <textarea
-                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 text-white placeholder-text-100 transition-all duration-200 outline-none"
+                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
                 name="postText"
                 placeholder="Whats's on your mind"
                 value={postDisabled}
@@ -108,10 +107,10 @@ const CreatePost = ({ postModal }) => {
                         <span
                           className="indicator-item select-none badge badge-secondary cursor-pointer"
                           onClick={() => {
-                            console.log(`${url}`)
+                            console.log(`${url}`);
                             const index = preview.includes(`${url}`);
                             if (index > -1) {
-                              preview.splice(index, 1); 
+                              preview.splice(index, 1);
                             }
                           }}
                         >

@@ -7,7 +7,7 @@ const Follow = () => {
     <div className="p-2 py-5 rounded-lg bg-white  dark:bg-gray-700 dark:text-white shadow-xl w-11/12 m-auto my-5 text-gray-500">
       <h1 className="text-black ml-4 mb-2">Follow Now</h1>
       <ul className="">
-        <li className="flex items-center justify-between py-3 px-4 hover:bg-gray-100 hover:dark:text-white duration-300 rounded-lg">
+        <li className="flex items-center justify-between py-3 px-4 cursor-pointer duration-300 rounded-lg">
           <div className="flex items-center">
             <img
               src="https://placeimg.com/192/192/people"
@@ -25,7 +25,7 @@ const Follow = () => {
             </button>
           </div>
         </li>
-        <li className="flex items-center justify-between py-3 px-4 hover:bg-gray-100 duration-300 rounded-lg">
+        <li className="flex items-center justify-between py-3 px-4 cursor-pointer duration-300 rounded-lg">
           <div className="flex items-center">
             <img
               src="https://placeimg.com/192/192/people"
@@ -43,7 +43,7 @@ const Follow = () => {
             </button>
           </div>
         </li>
-        <li className="flex items-center justify-between py-3 px-4 hover:bg-gray-100 duration-300 rounded-lg">
+        <li className="flex items-center justify-between py-3 px-4 cursor-pointer duration-300 rounded-lg">
           <div className="flex items-center">
             <img
               src="https://placeimg.com/192/192/people"
