@@ -13,10 +13,10 @@ const Main = () => {
                 <div className='xl:mr-auto lg:w-[300px]'>
                     <LeftSideBar></LeftSideBar>
                 </div>
-                <div className='lg:w-[600px] xl:mx-auto'>
+                <div className='lg:w-[600px] xl:mx-auto mt-5'>
                     <Outlet></Outlet>
                 </div>
-                <div className='lg:ml-auto bg-white'>
+                <div className='lg:ml-auto mt-5 rounded-lg bg-white'>
                     <RightBar></RightBar>
                 </div>
             </div>
