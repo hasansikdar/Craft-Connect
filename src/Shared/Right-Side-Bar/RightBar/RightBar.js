@@ -1,8 +1,8 @@
-import React from 'react';
-import Advertisement from '../Advertisement/Advertisement';
-import Follow from '../Follow/Follow';
-import FriendsList from '../FriendsList/FriendsList';
-import ProfileDetails from '../ProfileDetails/ProfileDetails';
+import React from "react";
+import Advertisement from "../Advertisement/Advertisement";
+import Follow from "../Follow/Follow";
+import FriendsList from "../FriendsList/FriendsList";
+import ProfileDetails from "../ProfileDetails/ProfileDetails";
 
 const RightBar = () => {
     return (
