@@ -14,15 +14,15 @@ const Bottom = () => {
                 </div>
                 <div className='flex justify-start items-center gap-4 mb-4'>
                     <img src={jinnahPagePic2} alt='' className='w-12 h-12 rounded-full'/>
-                    <h1 className='text-lg font-medium'>Congratulations your page is here!</h1>
+                    <h1 className='text-lg font-medium'>Sugar Hit Handmade</h1>
                 </div>
                 <div className='flex justify-start items-center gap-4 mb-4'>
                     <img src={jinnahPagePic3} alt='' className='w-12 h-12 rounded-full'/>
-                    <h1 className='text-lg font-medium'>Congratulations your page is here!</h1>
+                    <h1 className='text-lg font-medium'>The Craft Jar</h1>
                 </div>
                 <div className='flex justify-start items-center gap-4 mb-4'>
                     <img src={jinnahPagePic4} alt='' className='w-12 h-12 rounded-full'/>
-                    <h1 className='text-lg font-medium'>Congratulations your page is here!</h1>
+                    <h1 className='text-lg font-medium'>Craft Kraft</h1>
                 </div>
             </div>
         </div>

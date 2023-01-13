@@ -8,8 +8,7 @@ import PrivateRouter from "../PrivateRouter/PrivateRouter";
 export const Routes = createBrowserRouter([
   {
     path: '/',
-    // element: <PrivateRouter><Main></Main></PrivateRouter>,
-    element: <Main></Main>,
+    element: <PrivateRouter><Main></Main></PrivateRouter>,
     children: [
       {
         path: '/',
