@@ -17,7 +17,7 @@ const Login = () => {
           <h2 className="text-4xl text-[#1877f2] font-bold mb-8">
             CRAFT-CONNECT
           </h2>
-          <p className="w-[500px] text-2xl leading-[32px]">
+          <p className="lg:w-[500px] text-2xl leading-[32px]">
             CRAFT-CONNECT helps you connect and share with the people in your
             life.
           </p>
@@ -52,10 +52,10 @@ const Login = () => {
             </div>
 
             <hr />
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center ">
               <label
                 htmlFor="register-modal"
-                className="btn px-4 bg-[#42b72a] hover:bg-[#1e8609] text-white text-[17px] rounded leading-[48px] font-bold border-0"
+                className=" cursor-pointer btn px-4 bg-[#42b72a] hover:bg-[#1e8609] text-white text-[17px] rounded leading-[48px] font-bold border-0"
               >
                 Create New Account
               </label>
