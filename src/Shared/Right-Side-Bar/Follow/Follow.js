@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
+import page1 from "../../../assets/rightbar/page1.jpg"
+import page2 from "../../../assets/rightbar/page2.jpg"
+import page3 from "../../../assets/rightbar/page3.jpg"
 
 const Follow = () => {
     return (
@@ -9,7 +12,7 @@ const Follow = () => {
             <ul className=''>
                 <li className='flex items-center justify-between py-3 px-4 hover:bg-zinc-600 duration-300 rounded-lg'> 
                     <div className="flex items-center">
-                        <img src="https://placeimg.com/192/192/people" className='rounded-full w-8' alt='frnd'/>
+                        <img src={page1} className='rounded-full w-8' alt='frnd'/>
                         <p className='ml-2 text-white'>1st Page</p>
                     </div> 
                         
@@ -19,7 +22,7 @@ const Follow = () => {
                 </li>
                 <li className='flex items-center justify-between py-3 px-4 hover:bg-zinc-600 duration-300 rounded-lg'> 
                     <div className="flex items-center">
-                        <img src="https://placeimg.com/192/192/people" className='rounded-full w-8' alt='frnd'/>
+                        <img src={page2} className='rounded-full w-8' alt='frnd'/>
                         <p className='ml-2 text-white'>2nd Page</p>
                     </div> 
                         
@@ -29,7 +32,7 @@ const Follow = () => {
                 </li>
                 <li className='flex items-center justify-between py-3 px-4 hover:bg-zinc-600 duration-300 rounded-lg'> 
                     <div className="flex items-center">
-                        <img src="https://placeimg.com/192/192/people" className='rounded-full w-8' alt='frnd'/>
+                        <img src={page3} className='rounded-full w-8' alt='frnd'/>
                         <p className='ml-2 text-white'>3rd Page</p>
                     </div> 
                         
