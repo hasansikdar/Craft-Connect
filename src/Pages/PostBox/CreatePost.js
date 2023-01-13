@@ -1,42 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Authcontext } from "../../Context/UserContext";
 
 const CreatePost = ({ postModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
+  const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
-  console.log("preview", preview);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
-    
   };
   const handleCrossReset = () => {
     setSelectedFile(undefined);
     setPostDisabled("");
     setCloseUploadPhotoBox(false);
   };
+  console.log(user);
   const formSubmit = (event) => {
     event.preventDefault();
     const field = event.target;
     const postText = field.postText.value;
-    console.log(postText);
-    // ================ in future upload photos to imgbb server code in the below just set your ""imagekey""
-    // const imageKey = "";
-    // const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
-    // const formData = new FormData();
-    // formData.append("image", selectedFile);
-    // fetch(url, {
-    //   method: "POST",
-    //   body: formData,
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     const img = data?.data?.url;
-    //
-    //   });
-    //   }
-    field.reset();
-    setSelectedFile(undefined);
+    let currentData = new Date();
+    const dd = String(currentData.getDate()).padStart(2, "0");
+    const mm = String(currentData.getMonth() + 1).padStart(2, "0");
+    const yyyy = currentData.getFullYear();
+    currentData = mm + "/" + dd + "/" + yyyy;
+
+    const imageKey = "024d2a09e27feff54122f51afddbdfaf";
+    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+    const formData = new FormData();
+    formData.append("image", selectedFile[0]);
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const img = data?.data?.url;
+        const userName = user?.displayName;
+        const userEmail = user?.email;
+        const userPhoto = user?.photoURL;
+        const usersData = { userName, userEmail, userPhoto, currentData, postText, img };
+        fetch("http://localhost:5000/usersPost", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(usersData),
+        });
+        field.reset();
+        setSelectedFile(undefined);
+      });
   };
   useEffect(() => {
     if (!selectedFile) {
@@ -49,7 +63,6 @@ const CreatePost = ({ postModal }) => {
       return selectedFIles.push(URL.createObjectURL(file));
     });
 
-   
     setPreview(selectedFIles);
     // free memory when ever this component is unmounted
     return () => URL.revokeObjectURL(selectedFIles);
@@ -61,7 +74,6 @@ const CreatePost = ({ postModal }) => {
       return;
     }
     setSelectedFile(e.target.files);
-
   };
   return (
     <>
@@ -108,10 +120,10 @@ const CreatePost = ({ postModal }) => {
                         <span
                           className="indicator-item select-none badge badge-secondary cursor-pointer"
                           onClick={() => {
-                            console.log(`${url}`)
+                            console.log(`${url}`);
                             const index = preview.includes(`${url}`);
                             if (index > -1) {
-                              preview.splice(index, 1); 
+                              preview.splice(index, 1);
                             }
                           }}
                         >
