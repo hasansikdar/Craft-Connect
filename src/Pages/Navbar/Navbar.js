@@ -4,6 +4,13 @@ import { TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
 import profileImage from '../../assets/fearAllah.jpg'
+import maruf from '../../assets/maruf.png';
+import hasan from '../../assets/hasan.png';
+import { BsThreeDots } from "react-icons/bs";
+import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
+import {FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
+import { HiOutlineChevronRight } from "react-icons/hi";
+import { AiFillSetting } from "react-icons/ai";
 
 const Navbar = () => {
 
@@ -64,7 +71,7 @@ const Navbar = () => {
             </button>
             <div className="" onClick={() => setProfile(!profile)}>
               <img
-                className="w-[30px] md:w-[60px] rounded-full"
+                className="w-[30px] md:w-[50px] rounded-full"
                 src={profileImage}
                 alt=""
               />
@@ -77,7 +84,7 @@ const Navbar = () => {
           <div className="w-[80%] md:w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
               <div className="flex justify-between">
-                <h3 className="text-lg font-bold">Messanger Modal testing</h3>
+                <h3 className="text-2xl font-bold">Chats</h3>
                 <div
                   onClick={() => setMessageModal(false)}
                   className="btn btn-ghost"
@@ -85,10 +92,69 @@ const Navbar = () => {
                   ✕
                 </div>
               </div>
-              <p className="py-4">
-                You've been selected for a chance to get one year of
-                subscription to use Wikipedia for free!
-              </p>
+              <div className="hidden md:flex justify-center items-center  border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
+                <i className="">
+                  <BiSearchAlt2></BiSearchAlt2>
+                </i>
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="mx-2 md:mx-0 pl-3 py-1 text-white w-full bg-zinc-700 hover:bg-zinc-600"
+                />
+              </div>
+              <div className="py-4">
+                <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                  <img
+                    className="w-16 rounded-full mr-2 "
+                    src={profileImage}
+                    alt=""
+                  />
+                  <div>
+                    <p className="text-xl">Rahat Kabir Ifty</p>
+                    <p className="font-bold">
+                      Muhammad Hasan sent you a message.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                  <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                  <div>
+                    <p className="text-xl">Muhammad Hasan</p>
+                    <p className="font-bold">Rahat sent you a message.</p>
+                  </div>
+                </div>
+                <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                  <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
+                  <div>
+                    <p className="text-xl">Maruf Khan</p>
+                    <p className="font-bold">
+                      Muhammad Ali sent you a message.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                  <img
+                    className="w-16 rounded-full mr-2 "
+                    src={profileImage}
+                    alt=""
+                  />
+                  <div>
+                    <p className="text-xl">Rahat Kabir Ifty</p>
+                    <p className="font-bold">
+                      Farhan Anjum sent you a message.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                  <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                  <div>
+                    <p className="text-xl">Muhammad Hasan</p>
+                    <p className="font-bold">
+                      Abdul Al Mamun sent you a Photo.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -99,9 +165,7 @@ const Navbar = () => {
           <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
               <div className="flex justify-between">
-                <h3 className="text-lg font-bold">
-                  Notifications Modal testing
-                </h3>
+                <h3 className="text-2xl font-bold">Notifications</h3>
                 <div
                   onClick={() => setNotification(false)}
                   className="btn btn-ghost"
@@ -109,10 +173,53 @@ const Navbar = () => {
                   ✕
                 </div>
               </div>
-              <p className="py-4">
-                You've been selected for a chance to get one year of
-                subscription to use Wikipedia for free!
-              </p>
+              <p>All Notifications</p>
+              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                <div>
+                  <p className="">
+                    <span className="font-bold">Muhammad Hasan</span> posted two
+                    new videos about how to manage a group project.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                <img
+                  className="w-16 rounded-full mr-2 "
+                  src={profileImage}
+                  alt=""
+                />
+                <div>
+                  <p className="">
+                    <span className="font-bold">Maruf Khan</span> tagged you in
+                    a post including "Alhamdulliah after lots of sacrifice and
+                    Hard work i got a ....."
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
+                <div>
+                  <p className="">
+                    <span className="font-bold">Mohammad Ali Jinnah</span>{" "}
+                    posted posted in
+                    <span className="font-bold">
+                      {" "}
+                      SCIC: Job Hunting Battlefield (Batch 6)
+                    </span>{" "}
+                    .
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+                <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                <div>
+                  <p className="">
+                    <span className="font-bold">Muhammad Hasan</span> commented
+                    in your post .
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -122,8 +229,15 @@ const Navbar = () => {
         {profile && (
           <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
             <div className="px-3 py-3">
-              <div className="flex justify-between">
-                <h3 className="text-lg font-bold">Testing Profile Modal</h3>
+              <div className="flex justify-between mb-2">
+                <div className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md ">
+                  <img
+                    className="w-[50px] rounded-full mr-3"
+                    src={profileImage}
+                    alt=""
+                  />
+                  <h3 className="text-xl">Rahat Kabir Ifty</h3>
+                </div>
                 <div
                   onClick={() => setProfile(false)}
                   className="btn btn-ghost"
@@ -131,10 +245,54 @@ const Navbar = () => {
                   ✕
                 </div>
               </div>
-              <p className="py-4">
-                You've been selected for a chance to get one year of
-                subscription to use Wikipedia for free!
-              </p>
+              <div className=" border-t border-zinc-600"></div>
+              <div className="py-4">
+                <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+                  <div className="flex items-center">
+                    <AiFillSetting className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                    <p className="font-bold">Setting & Privacy</p>
+                  </div>
+                  <div>
+                    <FcNext className="text-2xl mr-2" />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+                  <div className="flex items-center">
+                    <FcQuestions className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                    <p className="font-bold">Help & Support</p>
+                  </div>
+                  <div>
+                    <FcNext className="text-2xl mr-2" />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+                  <div className="flex items-center">
+                    <FaMoon className="text-4xl bg-zinc-600 p-1 rounded-full mr-2 text-yellow-500" />
+                    <p className="font-bold">Display & Accessibility</p>
+                  </div>
+                  <div>
+                    <FcNext className="text-2xl mr-2" />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+                  <div className="flex items-center">
+                    <FaExclamation className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                    <p className="font-bold">Give feedback</p>
+                  </div>
+                  <div>
+                    <FcNext className="text-2xl mr-2" />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+                  <div className="flex items-center">
+                    <FcExport className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                    <p className="font-bold">Logout</p>
+                  </div>
+                  <div>
+                    <FcNext className="text-2xl mr-2" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}

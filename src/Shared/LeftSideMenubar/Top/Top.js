@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import { FaHome, FaUserFriends, FaTv, FaNewspaper, FaUsers, FaArrowCircleDown, FaArrowAltCircleUp, FaGamepad } from "react-icons/fa";
-import { FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
-import { MdAddShoppingCart } from "react-icons/md";
-import { IoIosStats } from "react-icons/io";
+import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
+import {FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
+import { HiOutlineChevronRight } from "react-icons/hi";
 
 const Top = () => {
 
