@@ -2,25 +2,71 @@ import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router";
 import { Authcontext } from "../../../Context/UserContext";
 
 const RegisterModal = () => {
-  const {user, createaccount} = useContext(Authcontext);
+  const { updateuserdata, createaccount } = useContext(Authcontext);
+  const [loading, setLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState(null);
   const { register, handleSubmit, formState: { errors } } = useForm();
-
+  const navigate = useNavigate();
 
   const handleCreateAccount = data => {
-    
+    setLoading(true);
+    const fullName = data?.firstName + " " + data?.lastName;
     createaccount(data?.email, data?.password)
-    .then(res => {
-      console.log(res.user);
-    })
-    .catch(error => {
-      console.log(error)
-    })
+      .then(res => {
+        updateuserdata({ displayName: fullName })
+          .then(res => {
+            saveUserDataInDb(fullName, data);
+          })
+          .catch(error => {
+            console.log(error)
+            toast.error(error.message);
+            setLoading(false);
+          })
+      })
+      .catch(error => {
+        toast.error(error.message);
+        setLoading(false);
+        console.log(error)
+      })
+
   }
 
+  const saveUserDataInDb = (fullname, info) => {
+    const { password, email, gender } = info;
+    const userinfo = {
+      fullname,
+      email,
+      password,
+      gender,
+      birthdate: selectedDate
+    }
+
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(userinfo)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.acknowledged) {
+          toast.success('User Created Success')
+          setLoading(false);
+          navigate('/');
+        }
+      })
+      .catch(error => {
+        console.log(error)
+        toast.error(error.message);
+        setLoading(false);
+      })
+  }
 
   return (
     <div>
@@ -100,8 +146,8 @@ const RegisterModal = () => {
                 Others
               </option>
             </select>
-            <button
-              className="bg-[#00a400] hover:bg-[#057205] mx-auto border-0 px-8 text-xl h-[36px] font-bold text-white rounded my-2 min-w-[194px] text-center w-2/5">Register</button>
+            <button disabled={loading}
+              className={`bg-[#00a400] ${loading && 'cursor-not-allowed'} hover:bg-[#057205] mx-auto border-0 px-8 text-xl h-[36px] font-bold text-white rounded my-2 min-w-[194px] text-center w-2/5`}>{loading ? <p>Loading...</p> : "Register"}</button>
           </form>
         </div>
       </div>

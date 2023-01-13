@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'react-photo-view/dist/react-photo-view.css';
 import UserContext from './Context/UserContext';
+import { Toaster } from 'react-hot-toast';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <UserContext>
       <App />
     </UserContext>
+    <Toaster></Toaster>
   </React.StrictMode>
 );
 
