@@ -61,7 +61,7 @@ const CreatePost = ({ postModal }) => {
               field.reset();
               setPostDisabled("");
               setSelectedFile(undefined);
-              toast.success("Login Success");
+              toast.success("Successfully add post");
             }
           });
       });
