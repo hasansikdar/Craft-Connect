@@ -1,16 +1,20 @@
 import React from 'react';
-import { AiFillHome, AiFillShop } from "react-icons/ai";
-import { BsFillCollectionPlayFill } from "react-icons/bs";
-import { HiUserGroup } from "react-icons/hi";
+import {FaUserFriends} from "react-icons/fa";
+import { FcHome, FcAdvertising, FcBarChart,FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
 
 const LeftSideMobile = () => {
     return (
       <div>
-        <div className='mx-2 fixed'>
-          <AiFillHome className="text-3xl text-cyan-500 mt-10" />
-          <AiFillShop className="text-3xl text-cyan-500 my-6" />
-          <BsFillCollectionPlayFill className="text-3xl text-cyan-500 my-6" />
-          <HiUserGroup className="text-3xl text-cyan-500"  />
+        <div className="mx-2 fixed">
+          <FcHome className="text-3xl text-cyan-500" />
+          <FaUserFriends className="text-3xl text-cyan-500 my-6" />
+          <FcClapperboard className="text-3xl text-cyan-500 my-6" />
+          <FcNews className="text-3xl text-cyan-500 my-6" />
+          <FcConferenceCall className="text-3xl text-cyan-500 my-6" />
+          <FcHome className="text-3xl text-cyan-500 my-6" />
+          <FcSteam className="text-3xl text-cyan-500 my-6" />
+          <FcAdvertising className="text-3xl text-cyan-500 my-6" />
+          <FcBarChart className="text-3xl text-cyan-500 my-6" />
         </div>
       </div>
     );
