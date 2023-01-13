@@ -32,7 +32,7 @@ const UserContext = ({children}) => {
 
 
 
-    const authinfo = {user,updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
+    const authinfo = {user, updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
 
 
 

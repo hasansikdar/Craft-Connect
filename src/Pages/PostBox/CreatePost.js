@@ -4,7 +4,7 @@ import { Authcontext } from "../../Context/UserContext";
 const CreatePost = ({ postModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
-  const {user} = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const handlePostTextChange = (event) => {
@@ -20,11 +20,11 @@ const CreatePost = ({ postModal }) => {
     event.preventDefault();
     const field = event.target;
     const postText = field.postText.value;
-    let today = new Date();
-    const dd = String(today.getDate()).padStart(2, "0");
-    const mm = String(today.getMonth() + 1).padStart(2, "0");
-    const yyyy = today.getFullYear();
-    today = mm + "/" + dd + "/" + yyyy;
+    let currentData = new Date();
+    const dd = String(currentData.getDate()).padStart(2, "0");
+    const mm = String(currentData.getMonth() + 1).padStart(2, "0");
+    const yyyy = currentData.getFullYear();
+    currentData = mm + "/" + dd + "/" + yyyy;
 
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
@@ -37,14 +37,17 @@ const CreatePost = ({ postModal }) => {
       .then((res) => res.json())
       .then((data) => {
         const img = data?.data?.url;
-        const usersData = {postText, img};
-        fetch('http://localhost:5000/usersPost', {
-          method: 'POST',
+        const userName = user?.displayName;
+        const userEmail = user?.email;
+        const userPhoto = user?.photoURL;
+        const usersData = { userName, userEmail, userPhoto, currentData, postText, img };
+        fetch("http://localhost:5000/usersPost", {
+          method: "POST",
           headers: {
-            "content-type": "application/json"
+            "content-type": "application/json",
           },
-          body: JSON.stringify(usersData)
-        })
+          body: JSON.stringify(usersData),
+        });
         field.reset();
         setSelectedFile(undefined);
       });
