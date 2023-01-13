@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
-import profileImage from '../../assets/fearAllah.jpg'
 import maruf from '../../assets/maruf.png';
 import hasan from '../../assets/hasan.png';
 import { BsThreeDots } from "react-icons/bs";
@@ -88,7 +87,7 @@ const Navbar = () => {
           <div className="" onClick={() => setProfile(!profile)}>
             <img
               className="w-[30px] md:w-[50px] rounded-full"
-              src={profileImage}
+              src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
               alt=""
             />
           </div>
@@ -122,11 +121,11 @@ const Navbar = () => {
               <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
-                  src={profileImage}
+                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                   alt=""
                 />
                 <div>
-                  <p className="text-xl">Rahat Kabir Ifty</p>
+                  <p className="text-xl">{user?.displayName}</p>
                   <p className="font-bold">
                     Muhammad Hasan sent you a message.
                   </p>
@@ -151,11 +150,11 @@ const Navbar = () => {
               <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
-                  src={profileImage}
+                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                   alt=""
                 />
                 <div>
-                  <p className="text-xl">Rahat Kabir Ifty</p>
+                  <p className="text-xl">{user?.displayName}</p>
                   <p className="font-bold">
                     Farhan Anjum sent you a message.
                   </p>
@@ -202,7 +201,7 @@ const Navbar = () => {
             <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
               <img
                 className="w-16 rounded-full mr-2 "
-                src={profileImage}
+                src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                 alt=""
               />
               <div>
@@ -249,10 +248,10 @@ const Navbar = () => {
               <div className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md ">
                 <img
                   className="w-[50px] rounded-full mr-3"
-                  src={profileImage}
+                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                   alt=""
                 />
-                <h3 className="text-xl">Rahat Kabir Ifty</h3>
+                <h3 className="text-xl">{user?.displayName}</h3>
               </div>
               <div
                 onClick={() => setProfile(false)}
