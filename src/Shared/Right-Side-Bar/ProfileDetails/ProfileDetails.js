@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import { HiSpeakerphone } from "react-icons/hi";
 import { FaEdit } from "react-icons/fa";
 
@@ -23,7 +23,7 @@ const ProfileDetails = () => {
             </div>
             </div>
         </div>
-    );
+  );
 };
 
 export default ProfileDetails;

@@ -1,13 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
-import profileImage from '../../assets/fearAllah.jpg'
 import maruf from '../../assets/maruf.png';
 import hasan from '../../assets/hasan.png';
-import { FaExclamation, FaMoon } from "react-icons/fa";
-import { FcNext, FcQuestions, FcExport} from "react-icons/fc";
+import { BsThreeDots } from "react-icons/bs";
+import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
+import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
+
 import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from '../../Context/UserContext';
 import { toast } from 'react-hot-toast';
@@ -33,9 +34,26 @@ const Navbar = () => {
   }
 
 
+
+
+  // Dark and light theme by Mamun
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+
   return (
-    <div>
-      <div className="flex justify-between items-center bg-zinc-800  py-1">
+    <div className="dark:bg-black">
+      <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
           <Link to="/" className="normal-case text-xl cursor-pointer">
             CRAFTIFY
@@ -69,6 +87,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="pr-3 flex gap-2 items-center justify-end">
+          <input
+            onClick={handleThemeSwitch}
+            type="checkbox"
+            className="toggle"
+          />
           <button
             onClick={() => setMessageModal(!messageModal)}
             className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
@@ -86,7 +109,7 @@ const Navbar = () => {
           <div className="" onClick={() => setProfile(!profile)}>
             <img
               className="w-[30px] md:w-[50px] rounded-full"
-              src={profileImage}
+              src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
               alt=""
             />
           </div>
@@ -120,11 +143,11 @@ const Navbar = () => {
               <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
-                  src={profileImage}
+                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                   alt=""
                 />
                 <div>
-                  <p className="text-xl">Rahat Kabir Ifty</p>
+                  <p className="text-xl">{user?.displayName}</p>
                   <p className="font-bold">
                     Muhammad Hasan sent you a message.
                   </p>
@@ -149,11 +172,11 @@ const Navbar = () => {
               <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
-                  src={profileImage}
+                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                   alt=""
                 />
                 <div>
-                  <p className="text-xl">Rahat Kabir Ifty</p>
+                  <p className="text-xl">{user?.displayName}</p>
                   <p className="font-bold">
                     Farhan Anjum sent you a message.
                   </p>
@@ -200,7 +223,7 @@ const Navbar = () => {
             <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
               <img
                 className="w-16 rounded-full mr-2 "
-                src={profileImage}
+                src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                 alt=""
               />
               <div>
@@ -247,10 +270,10 @@ const Navbar = () => {
               <div className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md ">
                 <img
                   className="w-[50px] rounded-full mr-3"
-                  src={profileImage}
+                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
                   alt=""
                 />
-                <h3 className="text-xl">Rahat Kabir Ifty</h3>
+                <h3 className="text-xl">{user?.displayName}</h3>
               </div>
               <div
                 onClick={() => setProfile(false)}

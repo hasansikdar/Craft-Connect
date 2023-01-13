@@ -8,9 +8,9 @@ import { Authcontext } from "../../../Context/UserContext";
 
 const RegisterModal = () => {
   const { updateuserdata, createaccount } = useContext(Authcontext);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, reset, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
 
   const handleCreateAccount = data => {
