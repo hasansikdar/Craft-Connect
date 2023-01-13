@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
-import {FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
+import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
 import { HiOutlineChevronRight } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 
 const Top = () => {
 
@@ -18,7 +19,17 @@ const Top = () => {
                 <p><FaHome className='h-8 w-8'></FaHome></p>
                 <h1 className='text-lg font-semibold'>Home</h1>
             </div>
-            <hr className='mb-4'/>
+
+
+            <Link to='/home'>
+                <button className='flex justify-start items-center gap-4 mb-4'>
+                    <p><FaHome className='h-8 w-8'></FaHome></p>
+                    <h1 className='text-lg font-semibold'>Home</h1>
+                </button>
+            </Link>
+
+
+            <hr className='mb-4' />
             <div className='flex justify-start items-center gap-4 mb-4'>
                 <p><FaUserFriends className='h-8 w-8 text-green-300'></FaUserFriends></p>
                 <h1 className='text-lg font-semibold'>Friends</h1>
@@ -67,7 +78,7 @@ const Top = () => {
                         <h1 className='text-lg font-semibold'>See Less</h1>
                     </button>}
             </div>
-            <hr className='mb-4'/>
+            <hr className='mb-4' />
         </div>
     );
 };
