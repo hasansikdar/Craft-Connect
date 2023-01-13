@@ -1,7 +1,6 @@
-import React from 'react';
-import Bottom from '../Bottom/Bottom';
-import Top from '../Top/Top';
-
+import React from "react";
+import Bottom from "../Bottom/Bottom";
+import Top from "../Top/Top";
 
 const LeftSideBar = () => {
     return (

@@ -58,18 +58,33 @@ const RegisterModal = () => {
             ></DatePicker>
 
             <div className="flex gap-10">
-              <span className="flex gap-2 border w-2/5 justify-center rounded shadow">
+              <label className="flex gap-2 border w-2/5 justify-center rounded shadow cursor-pointer">
                 <p>Male</p>
-                <input type="radio" name="male" id="male" />
-              </span>
-              <span className="flex gap-2 border w-2/5 justify-center rounded shadow">
+                <input
+                  type="radio"
+                  className="cursor-pointer"
+                  name="gender"
+                  id="male"
+                />
+              </label>
+              <label className="flex gap-2 border w-2/5 justify-center rounded shadow cursor-pointer">
                 <p>Female</p>
-                <input type="radio" name="female" id="female" />
-              </span>
-              <span className="flex gap-2 border w-2/5 justify-center rounded shadow">
+                <input
+                  type="radio"
+                  className="cursor-pointer"
+                  name="gender"
+                  id="female"
+                />
+              </label>
+              <label className="flex gap-2 border w-2/5 justify-center rounded shadow cursor-pointer">
                 <p>Other</p>
-                <input type="radio" name="other" id="other" />
-              </span>
+                <input
+                  type="radio"
+                  className="cursor-pointer"
+                  name="gender"
+                  id="other"
+                />
+              </label>
             </div>
             <span className="flex justify-center">
               <input

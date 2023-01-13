@@ -1,9 +1,17 @@
 import React from "react";
 import RegisterModal from "./RegisterModal/RegisterModal";
+import Image from "./handicraft1.jpg";
 
 const Login = () => {
   return (
-    <section className="bg-gray-100">
+    <section
+      style={{
+        backgroundImage: `linear-gradient(-40deg, 
+      rgba(150, 150, 250, 0.40), 
+      black) ,url(${Image})`,
+        backgroundSize: "cover",
+      }}
+    >
       <div className="flex flex-col lg:flex-row gap-20 lg:justify-between justify-center mx-auto items-center w-full md:w-[980px] pt-20 pb-72 ">
         <div className="text-center">
           <h2 className="text-4xl text-[#1877f2] font-bold mb-8">
@@ -15,7 +23,7 @@ const Login = () => {
           </p>
         </div>
         <div>
-          <form className="space-y-6 ng-untouched ng-pristine ng-valid bg-white p-5 rounded-lg">
+          <form className="space-y-6 ng-untouched ng-pristine ng-valid bg-white px-5 py-10 rounded-lg">
             <div className="space-y-1 text-sm">
               <input
                 type="email"
@@ -23,7 +31,7 @@ const Login = () => {
                 id="email"
                 placeholder="Enter your mail"
                 required
-                className="md:w-[364px] px-4 py-3 rounded-md border "
+                className="md:w-[364px] px-4 py-3 rounded-md border bg-gray-100"
               />
             </div>
             <div className="space-y-1 text-sm">
@@ -33,7 +41,7 @@ const Login = () => {
                 id="password"
                 placeholder="Enter your password"
                 required
-                className="w-full  px-4 py-3 rounded-md border "
+                className="w-full  px-4 py-3 rounded-md border bg-gray-100"
               />
             </div>
             <button className="block w-full px-4 leading-[48px] text-center font-bold text-[20px] text-white rounded bg-[#1877f2]">
