@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Authcontext } from "../../Context/UserContext";
-
+import { toast } from "react-hot-toast";
 const CreatePost = ({ postModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
@@ -40,16 +40,30 @@ const CreatePost = ({ postModal }) => {
         const userName = user?.displayName;
         const userEmail = user?.email;
         const userPhoto = user?.photoURL;
-        const usersData = { userName, userEmail, userPhoto, currentData, postText, img };
+        const usersData = {
+          userName,
+          userEmail,
+          userPhoto,
+          currentData,
+          postText,
+          img,
+        };
         fetch("http://localhost:5000/usersPost", {
           method: "POST",
           headers: {
             "content-type": "application/json",
           },
           body: JSON.stringify(usersData),
-        });
-        field.reset();
-        setSelectedFile(undefined);
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if(data.acknowledged){
+              field.reset();
+              setPostDisabled("");
+              setSelectedFile(undefined);
+              toast.success("Login Success");
+            }
+          });
       });
   };
   useEffect(() => {
