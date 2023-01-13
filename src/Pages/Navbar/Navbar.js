@@ -6,10 +6,8 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import profileImage from '../../assets/fearAllah.jpg'
 import maruf from '../../assets/maruf.png';
 import hasan from '../../assets/hasan.png';
-import { BsThreeDots } from "react-icons/bs";
-import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
-import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
-import { HiOutlineChevronRight } from "react-icons/hi";
+import { FaExclamation, FaMoon } from "react-icons/fa";
+import { FcNext, FcQuestions, FcExport} from "react-icons/fc";
 import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from '../../Context/UserContext';
 import { toast } from 'react-hot-toast';
@@ -37,7 +35,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
+      <div className="flex justify-between items-center bg-zinc-800  py-1">
         <div className="pl-3">
           <Link to="/" className="normal-case text-xl cursor-pointer">
             CRAFTIFY
