@@ -16,7 +16,7 @@ const Main = () => {
         <div className="lg:w-[600px] xl:mx-auto">
           <Outlet></Outlet>
         </div>
-        <div className="lg:ml-auto bg-white">
+        <div className="lg:ml-auto bg-white mt-5 rounded-lg">
           <RightBar></RightBar>
         </div>
       </div>

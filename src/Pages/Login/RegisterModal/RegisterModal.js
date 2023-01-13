@@ -86,13 +86,13 @@ const RegisterModal = () => {
                 />
               </label>
             </div>
-            <span className="flex justify-center">
+            <label className="flex justify-center">
               <input
                 className="bg-[#00a400] hover:bg-[#057205] border-0 px-8 text-xl h-[36px] font-bold text-white rounded my-2 min-w-[194px] text-center w-2/5"
                 type="submit"
                 value="Register"
               />
-            </span>
+            </label>
           </form>
         </div>
       </div>
