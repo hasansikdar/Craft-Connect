@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
@@ -8,7 +8,7 @@ import hasan from '../../assets/hasan.png';
 import { BsThreeDots } from "react-icons/bs";
 import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
 import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
-import { HiOutlineChevronRight } from "react-icons/hi";
+
 import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from '../../Context/UserContext';
 import { toast } from 'react-hot-toast';
@@ -34,8 +34,25 @@ const Navbar = () => {
   }
 
 
+
+
+  // Dark and light theme by Mamun
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+
   return (
-    <div>
+    <div className="dark:bg-black">
       <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
           <Link to="/" className="normal-case text-xl cursor-pointer">
@@ -70,6 +87,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="pr-3 flex gap-2 items-center justify-end">
+          <input
+            onClick={handleThemeSwitch}
+            type="checkbox"
+            className="toggle"
+          />
           <button
             onClick={() => setMessageModal(!messageModal)}
             className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
