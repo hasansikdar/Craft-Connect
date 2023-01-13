@@ -1,17 +1,31 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
-import maruf from '../../assets/maruf.png';
-import hasan from '../../assets/hasan.png';
+import maruf from "../../assets/maruf.png";
+import hasan from "../../assets/hasan.png";
 import { BsThreeDots } from "react-icons/bs";
 import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
-import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
+import {
+  FcNext,
+  FcSettings,
+  FcQuestions,
+  FcExport,
+  FcHome,
+  FcAdvertising,
+  FcBarChart,
+  FcCollapse,
+  FcExpand,
+  FcSteam,
+  FcClapperboard,
+  FcConferenceCall,
+  FcNews,
+} from "react-icons/fc";
 
 import { AiFillSetting } from "react-icons/ai";
-import { Authcontext } from '../../Context/UserContext';
-import { toast } from 'react-hot-toast';
+import { Authcontext } from "../../Context/UserContext";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logout } = useContext(Authcontext);
@@ -22,19 +36,16 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    const agree = window.confirm('Are you sure Logout ?');
+    const agree = window.confirm("Are you sure Logout ?");
     if (agree) {
       logout()
-        .then(res => {
+        .then((res) => {
           toast.success("Logt out");
-          navigate('/login');
+          navigate("/login");
         })
-        .catch(error => console.log(error))
+        .catch((error) => console.log(error));
     }
-  }
-
-
-
+  };
 
   // Dark and light theme by Mamun
   const [theme, setTheme] = useState("light");
@@ -49,7 +60,6 @@ const Navbar = () => {
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-
 
   return (
     <div className="dark:bg-black">
@@ -109,7 +119,11 @@ const Navbar = () => {
           <div className="" onClick={() => setProfile(!profile)}>
             <img
               className="w-[30px] md:w-[50px] rounded-full"
-              src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
+              src={`${
+                user?.photoURL
+                  ? user?.photoURL
+                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+              }`}
               alt=""
             />
           </div>
@@ -143,7 +157,11 @@ const Navbar = () => {
               <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
-                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
+                  src={`${
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                  }`}
                   alt=""
                 />
                 <div>
@@ -164,31 +182,29 @@ const Navbar = () => {
                 <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
                 <div>
                   <p className="text-xl">Maruf Khan</p>
-                  <p className="font-bold">
-                    Muhammad Ali sent you a message.
-                  </p>
+                  <p className="font-bold">Muhammad Ali sent you a message.</p>
                 </div>
               </div>
               <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
-                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
+                  src={`${
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                  }`}
                   alt=""
                 />
                 <div>
                   <p className="text-xl">{user?.displayName}</p>
-                  <p className="font-bold">
-                    Farhan Anjum sent you a message.
-                  </p>
+                  <p className="font-bold">Farhan Anjum sent you a message.</p>
                 </div>
               </div>
               <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
                 <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
                 <div>
                   <p className="text-xl">Muhammad Hasan</p>
-                  <p className="font-bold">
-                    Abdul Al Mamun sent you a Photo.
-                  </p>
+                  <p className="font-bold">Abdul Al Mamun sent you a Photo.</p>
                 </div>
               </div>
             </div>
@@ -223,14 +239,18 @@ const Navbar = () => {
             <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
               <img
                 className="w-16 rounded-full mr-2 "
-                src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
+                src={`${
+                  user?.photoURL
+                    ? user?.photoURL
+                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                }`}
                 alt=""
               />
               <div>
                 <p className="">
-                  <span className="font-bold">Maruf Khan</span> tagged you in
-                  a post including "Alhamdulliah after lots of sacrifice and
-                  Hard work i got a ....."
+                  <span className="font-bold">Maruf Khan</span> tagged you in a
+                  post including "Alhamdulliah after lots of sacrifice and Hard
+                  work i got a ....."
                 </p>
               </div>
             </div>
@@ -238,8 +258,8 @@ const Navbar = () => {
               <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
               <div>
                 <p className="">
-                  <span className="font-bold">Mohammad Ali Jinnah</span>{" "}
-                  posted posted in
+                  <span className="font-bold">Mohammad Ali Jinnah</span> posted
+                  posted in
                   <span className="font-bold">
                     {" "}
                     SCIC: Job Hunting Battlefield (Batch 6)
@@ -252,8 +272,8 @@ const Navbar = () => {
               <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
               <div>
                 <p className="">
-                  <span className="font-bold">Muhammad Hasan</span> commented
-                  in your post .
+                  <span className="font-bold">Muhammad Hasan</span> commented in
+                  your post .
                 </p>
               </div>
             </div>
@@ -270,15 +290,16 @@ const Navbar = () => {
               <div className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md ">
                 <img
                   className="w-[50px] rounded-full mr-3"
-                  src={`${user?.photoURL ? user?.photoURL : 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png'}`}
+                  src={`${
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                  }`}
                   alt=""
                 />
                 <h3 className="text-xl">{user?.displayName}</h3>
               </div>
-              <div
-                onClick={() => setProfile(false)}
-                className="btn btn-ghost"
-              >
+              <div onClick={() => setProfile(false)} className="btn btn-ghost">
                 ✕
               </div>
             </div>
@@ -320,7 +341,10 @@ const Navbar = () => {
                   <FcNext className="text-2xl mr-2" />
                 </div>
               </div>
-              <div onClick={handleLogout} className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+              <div
+                onClick={handleLogout}
+                className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer"
+              >
                 <div className="flex items-center">
                   <FcExport className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
                   <p className="font-bold">Logout</p>
