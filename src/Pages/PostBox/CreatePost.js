@@ -40,8 +40,15 @@ const CreatePost = ({ postModal }) => {
         const userName = user?.displayName;
         const userEmail = user?.email;
         const userPhoto = user?.photoURL;
-        const usersData = { userName, userEmail, userPhoto, currentData, postText, img };
-        fetch("http://localhost:5000/usersPost", {
+        const usersData = {
+          userName,
+          userEmail,
+          userPhoto,
+          currentData,
+          postText,
+          img,
+        };
+        fetch("https://craft-connect-server.vercel.app/usersPost", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -88,8 +95,8 @@ const CreatePost = ({ postModal }) => {
             ✕
           </label>
           <div>
-            <div className="text-center text-2xl font-semibold text-black dark:text-white">
-              <h1>Create Post</h1>
+            <div className="text-center text-black dark:text-white text-2xl font-semibold">
+              <h1 className="text-black dark:text-white">Create Post</h1>
             </div>
             <div className="divider text-black"></div>
             <div className="flex items-center gap-3">
@@ -100,7 +107,7 @@ const CreatePost = ({ postModal }) => {
                 alt=""
               />
               <div className="">
-                <p className="text-xl font-medium text-black dark:text-white">
+                <p className="text-xl font-medium dark:text-white text-black">
                   Maruf Rahman
                 </p>
               </div>
@@ -159,7 +166,7 @@ const CreatePost = ({ postModal }) => {
                           </label>
                           <svg
                             aria-hidden="true"
-                            className="w-10 h-10 mb-3 text-gray-400"
+                            className="w-10 h-10 mb-3 text-gray-600"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
