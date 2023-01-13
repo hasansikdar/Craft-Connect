@@ -43,7 +43,7 @@ const CreatePost = ({ postModal }) => {
           headers: {
             "content-type": "application/json"
           },
-          body: JSON.stringify(usersData);
+          body: JSON.stringify(usersData)
         })
         field.reset();
         setSelectedFile(undefined);
