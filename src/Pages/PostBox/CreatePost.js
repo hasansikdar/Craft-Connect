@@ -114,7 +114,7 @@ const CreatePost = ({ postModal }) => {
                 alt=""
               />
               <div className="">
-                <p className="text-xl font-medium text-white">Maruf Rahman</p>
+                <p className="text-xl font-medium text-white">{user.displayName}</p>
               </div>
             </div>
             <div className="divider"></div>
