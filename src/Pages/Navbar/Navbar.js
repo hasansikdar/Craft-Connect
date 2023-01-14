@@ -7,6 +7,7 @@ import maruf from "../../assets/maruf.png";
 import hasan from "../../assets/hasan.png";
 import { BsThreeDots } from "react-icons/bs";
 import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
+import { IoMdSunny } from "react-icons/io";
 import {
   FcNext,
   FcSettings,
@@ -48,16 +49,26 @@ const Navbar = () => {
   };
 
   // Dark and light theme by Mamun
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : ""
+  );
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [theme]);
 
   const handleThemeSwitch = () => {
+    if (localStorage.theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.add("light");
+    }
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
@@ -97,11 +108,29 @@ const Navbar = () => {
           </div>
         </div>
         <div className="pr-3 flex gap-2 items-center justify-end">
-          <input
+          {/* <input
             onClick={handleThemeSwitch}
             type="checkbox"
             className="toggle"
-          />
+          /> */}
+          <button onClick={handleThemeSwitch} className="text-[20px]">
+            {theme === "light" ? (
+              <IoMdSunny className="text-white"></IoMdSunny>
+            ) : (
+              <FaMoon className="text-white"></FaMoon>
+            )}
+          </button>
+
+          {/* <>
+            {localStorage.getItem(
+              "theme" === "light" ? (
+                <IoIosSunny></IoIosSunny>
+              ) : (
+                <FaMoon></FaMoon>
+              )
+            )}
+          </> */}
+
           <button
             onClick={() => setMessageModal(!messageModal)}
             className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"

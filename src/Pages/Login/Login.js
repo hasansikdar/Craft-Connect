@@ -7,30 +7,31 @@ import { toast } from "react-hot-toast";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const {user, signin} = useContext(Authcontext); 
+  const { user, signin } = useContext(Authcontext);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
-  const { handleSubmit, formState: { errors }, register } = useForm();
+  const {
+    handleSubmit,
+    formState: { errors },
+    register,
+  } = useForm();
 
-
-  const handleLogin = data => {
+  const handleLogin = (data) => {
     setLoading(true);
     signin(data?.email, data?.password)
-    .then(res => {
-      toast.success('Login Success')
-      setLoading(false);
-      navigate('/');
-    })
-    .catch(error => {
-      toast.error(error.message);
-      setLoading(false);
-
-    })
-  }
-
+      .then((res) => {
+        toast.success("Login Success");
+        setLoading(false);
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        setLoading(false);
+      });
+  };
 
   return (
     <section
@@ -56,7 +57,7 @@ const Login = () => {
             <form onClick={handleSubmit(handleLogin)} action="">
               <div className="space-y-1 text-sm">
                 <input
-                  {...register('email', { required: 'Email Required' })}
+                  {...register("email", { required: "Email Required" })}
                   type="email"
                   name="email"
                   id="email"
@@ -64,11 +65,15 @@ const Login = () => {
                   placeholder="Enter your mail"
                   className="md:w-[364px] px-4 my-2 py-3 rounded-md border bg-gray-100"
                 />
-                {errors?.email && <span className="text-sm text-red-500">{errors?.email?.message}</span> }
+                {errors?.email && (
+                  <span className="text-sm text-red-500">
+                    {errors?.email?.message}
+                  </span>
+                )}
               </div>
               <div className="space-y-1 my-2 text-sm">
                 <input
-                {...register('password', {required: true})}
+                  {...register("password", { required: true })}
                   type="password"
                   name="password"
                   id="password"
@@ -78,7 +83,7 @@ const Login = () => {
                 />
               </div>
               <button className="block mt-5 w-full px-4 leading-[48px] text-center font-bold text-[20px] text-white rounded bg-[#1877f2]">
-              {loading ? <p>Loading...</p> : "Sign in"}
+                {loading ? <p>Loading...</p> : "Sign in"}
               </button>
               <div className="flex justify-center text-xs text-[#1877f2]">
                 <a href="/" className="pt-4">Forgot Password?</a>
