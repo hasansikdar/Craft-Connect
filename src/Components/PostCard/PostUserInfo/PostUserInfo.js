@@ -20,21 +20,21 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
         </div>
         <div className='ml-auto'>
           <div className="dropdown dropdown-bottom dropdown-end">
-            <label tabIndex={0} className="btn  btn-sm">...</label>
-            <div tabIndex={0} className="dropdown-content  menu px-3 bg-[black] shadow bg-base-100 rounded-box w-52 py-5">
-              <div className='flex items-center pl-3 p-2 rounded hover:bg-[#343434] cursor-pointer'>
+            <label tabIndex={0} className="btn  btn-sm bg-gray-100 dark:bg-black text-black dark:text-white hover:text-white">...</label>
+            <div tabIndex={0} className="dropdown-content  menu px-3 dark:bg-[black]  shadow bg-gray-100 rounded-box w-52 py-5">
+              <div className='flex items-center pl-3 p-2 dark:hover:bg-[#343434] rounded hover:text-white hover:bg-[#343434] cursor-pointer'>
                 <FaThumbtack className='mr-3'></FaThumbtack>
                 Unpin
               </div>
-              <div className='flex items-center pl-3 p-2 rounded hover:bg-[#343434] cursor-pointer'>
+              <div className='flex items-center pl-3 p-2 dark:hover:bg-[#343434] hover:text-white rounded hover:bg-[#343434] cursor-pointer'>
                 <FaRegSave className='mr-3'></FaRegSave>
                 Unsave
               </div>
-              <div className='flex items-center pl-3 p-2 rounded hover:bg-[#343434] cursor-pointer'>
+              <div className='flex items-center pl-3 p-2 dark:hover:bg-[#343434] hover:text-white rounded hover:bg-[#343434] cursor-pointer'>
                 <FaEdit className='mr-3'></FaEdit>
                 Edit post
               </div>
-              <div className='flex items-center pl-3 p-2 rounded hover:bg-[#343434] cursor-pointer'>
+              <div className='flex items-center pl-3 p-2 dark:hover:bg-[#343434] hover:text-white rounded hover:bg-[#343434] cursor-pointer'>
                 <FaCommentAlt className='mr-3'></FaCommentAlt>
                 Who can comment On your post
               </div>
@@ -42,40 +42,6 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
           </div>
           <button onClick={() => handleDeletePost(_id)} className='btn btn-sm ml-2'>x</button>
         </div>
-      </div>
-      <div className="ml-auto">
-        <div className="dropdown dropdown-bottom dropdown-end">
-          <label
-            tabIndex={0}
-            className="btn  btn-sm bg-gray-100 dark:bg-black text-black dark:text-white hover:text-white"
-          >
-            ...
-          </label>
-          <div
-            tabIndex={0}
-            className="dropdown-content  menu px-3 dark:bg-[black] shadow bg-gray-100 rounded-box w-52 py-5"
-          >
-            <div className="flex items-center pl-3 p-2 rounded dark:hover:bg-[#343434] cursor-pointer">
-              <FaThumbtack className="mr-3"></FaThumbtack>
-              Unpin
-            </div>
-            <div className="flex items-center pl-3 p-2 rounded dark:hover:bg-[#343434] cursor-pointer">
-              <FaRegSave className="mr-3"></FaRegSave>
-              Unsave
-            </div>
-            <div className="flex items-center pl-3 p-2 rounded dark:hover:bg-[#343434] cursor-pointer">
-              <FaEdit className="mr-3"></FaEdit>
-              Edit post
-            </div>
-            <div className="flex items-center pl-3 p-2 rounded dark:hover:bg-[#343434] cursor-pointer">
-              <FaCommentAlt className="mr-3"></FaCommentAlt>
-              Who can comment On your post
-            </div>
-          </div>
-        </div>
-        <button className="btn  btn-sm bg-gray-100 dark:bg-black text-black dark:text-white hover:text-white ml-2">
-          x
-        </button>
       </div>
     </>
   );
