@@ -50,7 +50,7 @@ const CreatePost = ({ postModal }) => {
           postText,
           img,
         };
-        fetch("https://craft-connect-server.vercel.app/usersPost", {
+        fetch("http://localhost:5000/usersPost", {
           method: "POST",
           headers: {
             "content-type": "application/json",
