@@ -1,21 +1,25 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {
+  Fragment,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
-const CreatePost = ({ postModal }) => {
+import { Dialog, Transition } from "@headlessui/react";
+import Form from "./Form";
+const CreatePost = ({ open, setOpen }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
+  const cancelButtonRef = useRef(null);
   const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
-  };
-  const handleCrossReset = () => {
-    setSelectedFile(undefined);
-    setPostDisabled("");
-    setCloseUploadPhotoBox(false);
   };
   const formSubmit = (event) => {
     event.preventDefault();
@@ -92,170 +96,93 @@ const CreatePost = ({ postModal }) => {
   };
   return (
     <>
-      <input type="checkbox" id={postModal} className="modal-toggle" />
-      <div className="modal">
-        <div className="modal-box  bg-white dark:bg-black">
-          <label
-            htmlFor={postModal}
-            onClick={handleCrossReset}
-            className="absolute right-4 top-4 cursor-pointer"
+      <Transition.Root show={open} as={Fragment}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          initialFocus={cancelButtonRef}
+          onClose={() => setOpen(false)}
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-100"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
-            ✕
-          </label>
-          <div>
-            <div className="text-center text-black dark:text-white text-2xl font-semibold">
-              <h1 className="text-black dark:text-white">Create Post</h1>
-            </div>
-            <div className="divider text-black"></div>
-            <div className="flex items-center gap-3">
-              {/* image source is hardcode now */}
-              <img
-                src="https://avatars.githubusercontent.com/u/94055231?v=4"
-                className="h-12 w-12 rounded-full"
-                alt=""
-              />
-              <div className="">
-                <p className="text-xl font-medium dark:text-white text-black">
-                  Maruf Rahman
-                </p>
-              </div>
-            </div>
-            <div className="divider"></div>
-            <form onSubmit={formSubmit}>
-            <div className="overflow-y-scroll min-h-[250px]">
-            <textarea
-                className="bg-transparent overflow-hidden h-[120px] text-xl w-full  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
-                name="postText"
-                placeholder="Whats's on your mind"
-                value={postDisabled}
-                onChange={handlePostTextChange}
-              ></textarea>
-              {selectedFile ? (
-                <div className="flex flex-wrap gap-4 mb-4">
-                  {preview?.map((url) => {
-                    return (
-                      <div className="indicator">
-                        <span
-                          className="indicator-item select-none badge badge-secondary cursor-pointer"
-                          onClick={() => {
-                            console.log(`${url}`);
-                            const index = preview.includes(`${url}`);
-                            if (index > -1) {
-                              preview.splice(index, 1);
-                            }
-                          }}
-                        >
-                          ✕
-                        </span>
+            <div className="fixed inset-0 backdrop-blur-[6px] backdrop-brightness-75" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-100"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-100"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-zinc-700 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <div className="bg-white dark:bg-zinc-700 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h1 className="py-4 text-center text-xl font-bold">
+                      Create Post
+                    </h1>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 cursor-pointer absolute right-[25px] top-[20px]"
+                      onClick={() => {
+                        setOpen(false);
+                      }}
+                      ref={cancelButtonRef}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        {/* image source is hardcode now */}
                         <img
-                          src={url}
-                          className="w-52 rounded-md object-cover"
-                          alt="post"
+                          src="https://avatars.githubusercontent.com/u/94055231?v=4"
+                          className="h-12 w-12 rounded-full"
+                          alt=""
                         />
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <>
-                  {closeUploadPhotoBox ? (
-                    <div className="flex items-center justify-center w-full mb-3 relative">
-                      <label
-                        htmlFor="dropzone-file"
-                        className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:border-gray-600"
-                      >
-                        <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                          <label
-                            onClick={() => {
-                              setCloseUploadPhotoBox(false);
-                            }}
-                            className="absolute right-4 top-4 cursor-pointer"
-                          >
-                            ✕
-                          </label>
-                          <svg
-                            aria-hidden="true"
-                            className="w-10 h-10 mb-3 text-gray-600"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                            ></path>
-                          </svg>
-                          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                            <span className="font-semibold">
-                              Click to upload
-                            </span>{" "}
-                            or drag and drop
-                          </p>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">
-                            PNG, JPG or GIF
+                        <div className="">
+                          <p className="text-xl font-medium dark:text-white text-black">
+                            {user.displayName}
                           </p>
                         </div>
-                        <input
-                          id="dropzone-file"
-                          type="file"
-                          onChange={onSelectFile}
-                          className="hidden"
-                          multiple
-                        />
-                      </label>
+                      </div>
                     </div>
-                  ) : (
-                    <></>
-                  )}
-                </>
-              )}
+                    <div className="divider"></div>
+                    <Form
+                      setOpen={setOpen}
+                      closeUploadPhotoBox={closeUploadPhotoBox}
+                      postDisabled={postDisabled}
+                      selectedFile={selectedFile}
+                      onSelectFile={onSelectFile}
+                      formSubmit={formSubmit}
+                      setCloseUploadPhotoBox={setCloseUploadPhotoBox}
+                      preview={preview}
+                      handlePostTextChange={handlePostTextChange}
+                    />
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
             </div>
-              <div className="mb-2 py-2 px-3 rounded-md flex border items-center justify-between">
-                <button
-                  onClick={() => {
-                    setCloseUploadPhotoBox(true);
-                  }}
-                  className="text-black dark:text-white text-lg font-semibold"
-                >
-                  Add To Your Post{" "}
-                </button>
-                <div className="flex items-center ml-2 cursor-pointer">
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png"
-                    className="w-12 h-12"
-                    alt=""
-                    onClick={() => {
-                      setCloseUploadPhotoBox(true);
-                    }}
-                  />
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/1251/1251333.png"
-                    className="w-12 h-12 mx-2"
-                    alt=""
-                  />
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/742/742751.png"
-                    className="w-12 h-12"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
-                <button
-                  type="submit"
-                  disabled={!postDisabled && !selectedFile}
-                  className="disabled:cursor-not-allowed disabled:bg-gray-100 text-gray-500 text-center w-full bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
-                >
-                  Post
-                </button>
-              </div>
-            </form>
           </div>
-        </div>
-      </div>
+        </Dialog>
+      </Transition.Root>
     </>
   );
 };

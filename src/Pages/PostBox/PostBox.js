@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Authcontext } from "../../Context/UserContext";
 import CreatePost from "./CreatePost";
-
 const PostBox = () => {
+  const [open, setOpen] = useState(false);
   const {user} = useContext(Authcontext);
   return (
     <>
@@ -14,14 +14,14 @@ const PostBox = () => {
             alt=""
           />
           <label
-            htmlFor="postModal"
+             onClick={() => setOpen(true)}
             className="text-lg text-[#696969]  text-left block w-full cursor-pointer dark:bg-zinc-800 border px-3 py-3 max-[380px]:rounded-[30px] rounded-full pl-4 sm:rounded-full transition-all duration-200  outline-none dark:hover:bg-zinc-900"
           >
             What's on your mind, {user?.displayName}
           </label>
 
       </div>
-      <CreatePost postModal={"postModal"} />
+      <CreatePost postModal={"postModal"}  open={open} setOpen={setOpen}/>
     </>
   );
 };
