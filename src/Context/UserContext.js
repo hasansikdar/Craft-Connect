@@ -34,7 +34,7 @@ const UserContext = ({children}) => {
     const {data:users = [],refetchInterval} = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await  fetch('http://localhost:5000/users');
+            const res = await  fetch('https://craft-connect-server.vercel.app/users');
             const data = await res.json();
             refetchInterval()
             return data;
