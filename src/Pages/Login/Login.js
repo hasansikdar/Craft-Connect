@@ -86,7 +86,7 @@ const Login = () => {
                 {loading ? <p>Loading...</p> : "Sign in"}
               </button>
               <div className="flex justify-center text-xs text-[#1877f2]">
-                <a href="/">Forgot Password?</a>
+                <a href="/" className="pt-4">Forgot Password?</a>
               </div>
             </form>
             <hr />

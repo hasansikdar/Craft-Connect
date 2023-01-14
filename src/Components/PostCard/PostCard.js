@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 import PostUserInfo from "./PostUserInfo/PostUserInfo";
 import likeicon from "../../assets/icons/like.png";
@@ -11,23 +11,26 @@ import {
   FaShare,
 } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import { Link } from "react-router-dom";
+import { Authcontext } from "../../Context/UserContext";
 
-const PostCard = () => {
+const PostCard = ({ post, user }) => {
+
   return (
     <div>
-      <div className=" card md:w-[600px] dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
+      <div className=" card md:w-[600px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
         <div className="card-body">
           <div>
-            <PostUserInfo></PostUserInfo>
+            <PostUserInfo post={post}></PostUserInfo>
           </div>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p>{post?.postText.length > 100 ? <>{post?.postText.slice(0, 100)} <Link className="font-bold" to='/'>See More..</Link></> : post?.postText}</p>
         </div>
         <PhotoProvider>
-          <PhotoView src="https://placeimg.com/400/225/arch">
+          <PhotoView src={post?.img}>
             <figure>
               <img
                 className="w-full"
-                src="https://placeimg.com/400/225/arch"
+                src={post?.img}
                 alt="Shoes"
               />
             </figure>
@@ -119,7 +122,7 @@ const PostCard = () => {
           <div className="flex p-2 items-center border-b py-0 pb-3 border-white">
             <img
               className="w-8 mr-4 h-8 rounded-full"
-              src="https://scontent.fdac5-1.fna.fbcdn.net/v/t39.30808-6/318630834_1301786737319944_3904799583444523390_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFjKxLtWVgY0EcruBuIVQC4QW8Nr8xSuHNBbw2vzFK4c37HruuJsS6Hhy1MU_2h_0URlH6e25P0qxtME-zNc4ri&_nc_ohc=rFDSVULP1gUAX_u9RLZ&_nc_ht=scontent.fdac5-1.fna&oh=00_AfDy1lh9uuleGSlpxGDclERHtSRQs_X1OnjiP8Z5PvOaWQ&oe=63C2B9A3"
+              src={user?.photoURL}
               alt=""
             />
             <div className="w-full input input-borderd flex items-center bg-gray-100 dark:bg-black border-white rounded-2xl input-sm">
@@ -179,7 +182,7 @@ const PostCard = () => {
               <div className="flex p-3">
                 <img
                   className="w-7 mr-4 h-7 rounded-full"
-                  src="https://scontent.fdac5-1.fna.fbcdn.net/v/t39.30808-6/318630834_1301786737319944_3904799583444523390_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFjKxLtWVgY0EcruBuIVQC4QW8Nr8xSuHNBbw2vzFK4c37HruuJsS6Hhy1MU_2h_0URlH6e25P0qxtME-zNc4ri&_nc_ohc=rFDSVULP1gUAX_u9RLZ&_nc_ht=scontent.fdac5-1.fna&oh=00_AfDy1lh9uuleGSlpxGDclERHtSRQs_X1OnjiP8Z5PvOaWQ&oe=63C2B9A3"
+                  src={''}
                   alt=""
                 />
                 <div>
