@@ -7,9 +7,9 @@ const Advertisement = () => {
   return (
     <div>
       <ul className="menu p-2 py-5 flex rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 text-gray-500 dark:bg-gray-700">
-        <h1 className="text-black dark:text-white ml-4 mb-2">Sponsored</h1>
-        <li className="hover:bg-zinc-600 duration-300 rounded-lg text-black text-sm">
-          <Link to='/sellerpro'>
+        <h1 className="text-white ml-4 mb-2">Sponsored</h1>
+        <li className="hover:bg-zinc-600 duration-300 rounded-lg">
+          <Link to="/sellerpro">
             <div className="w-40">
               <img src={ad1} className="rounded" alt="frnd" />
             </div>
