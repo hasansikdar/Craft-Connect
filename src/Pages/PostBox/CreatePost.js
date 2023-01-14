@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
 
 const CreatePost = ({ postModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
-  const { user } = useContext(Authcontext);
+  const { user, refetchInterval } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
+  const navigate = useNavigate();
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
   };
@@ -15,7 +18,6 @@ const CreatePost = ({ postModal }) => {
     setPostDisabled("");
     setCloseUploadPhotoBox(false);
   };
-  console.log(user);
   const formSubmit = (event) => {
     event.preventDefault();
     const field = event.target;
@@ -48,13 +50,21 @@ const CreatePost = ({ postModal }) => {
           postText,
           img,
         };
-        fetch("https://craft-connect-server.vercel.app/usersPost", {
+        fetch("http://localhost:5000/usersPost", {
           method: "POST",
           headers: {
             "content-type": "application/json",
           },
           body: JSON.stringify(usersData),
-        });
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.acknowledged) {
+              toast.success('Post Add Success');
+              refetchInterval();
+              navigate('/');
+            }
+          })
         field.reset();
         setSelectedFile(undefined);
       });

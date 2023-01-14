@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.Config';
 import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth'
+import { useQuery } from '@tanstack/react-query';
 
 export const Authcontext = createContext();
 const auth = getAuth(app)
@@ -30,9 +31,20 @@ const UserContext = ({children}) => {
         return signInWithPopup(auth, googleProvider)
     }
 
+    const {data:users = [],refetchInterval} = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await  fetch('http://localhost:5000/users');
+            const data = await res.json();
+            refetchInterval()
+            return data;
+        }
+    })
 
 
-    const authinfo = {user, updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
+
+
+    const authinfo = {user, refetchInterval, updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
 
 
 
