@@ -6,7 +6,7 @@ import { Authcontext } from "../../Context/UserContext";
 const CreatePost = ({ postModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
-  const { user, refetchInterval } = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const CreatePost = ({ postModal }) => {
           postText,
           img,
         };
-        fetch("https://craft-connect-server.vercel.app/usersPost", {
+        fetch("http://localhost:5000/usersPost", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -61,7 +61,6 @@ const CreatePost = ({ postModal }) => {
           .then(data => {
             if (data.acknowledged) {
               toast.success('Post Add Success');
-              refetchInterval();
               navigate('/');
             }
           })

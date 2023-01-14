@@ -12,16 +12,18 @@ import {
 } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
-import { Authcontext } from "../../Context/UserContext";
 
-const PostCard = ({ post, user }) => {
+import { Authcontext } from "../../Context/UserContext";
+  
+
+const PostCard = ({ post, handleDeletePost, user }) => {
 
   return (
     <div>
       <div className=" card md:w-[600px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
         <div className="card-body">
           <div>
-            <PostUserInfo post={post}></PostUserInfo>
+            <PostUserInfo handleDeletePost={handleDeletePost} post={post}></PostUserInfo>
           </div>
           <p>{post?.postText.length > 100 ? <>{post?.postText.slice(0, 100)} <Link className="font-bold" to='/'>See More..</Link></> : post?.postText}</p>
         </div>

@@ -20,7 +20,7 @@ const Follow = () => {
 
           <div className="text-center">
             <button className="dark:text-white text-black btn btn-sm border-0 bg-inherit hover:bg-zinc-500 hover:text-white rounded">
-              <Link>
+              <Link to="/pages">
                 <FaPlus></FaPlus>
               </Link>
             </button>
@@ -36,7 +36,7 @@ const Follow = () => {
 
           <div className="text-center">
             <button className="dark:text-white text-black btn btn-sm border-0 bg-inherit hover:bg-zinc-500 hover:text-white rounded">
-              <Link>
+              <Link to="/pages">
                 <FaPlus></FaPlus>
               </Link>
             </button>
@@ -52,7 +52,7 @@ const Follow = () => {
 
           <div className="text-center">
             <button className="dark:text-white text-black btn btn-sm border-0 bg-inherit hover:bg-zinc-500 hover:text-white rounded">
-              <Link>
+              <Link to="/pages">
                 <FaPlus></FaPlus>
               </Link>
             </button>

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaThumbtack, FaRegSave, FaCommentAlt, FaEdit, } from "react-icons/fa";
-const PostUserInfo = ({ post }) => {
+import { Authcontext } from '../../../Context/UserContext';
+
+const PostUserInfo = ({ post, handleDeletePost }) => {
+  const { _id } = post;
   return (
     <div className='flex'>
       <img className='w-10 h-10 rounded-full' src={post?.userPhoto} alt="" />
