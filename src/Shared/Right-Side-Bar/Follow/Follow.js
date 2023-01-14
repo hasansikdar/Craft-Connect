@@ -13,7 +13,9 @@ const Follow = () => {
         <li className="flex items-center justify-between py-3 px-4 hover:bg-zinc-600 duration-300 rounded-lg">
           <div className="flex items-center">
             <img src={page1} className="rounded-full w-8" alt="frnd" />
-            <p className="ml-2 dark:text-white text-black">1st Page</p>
+            <p className="ml-2 dark:text-white text-black hover:text-white">
+              1st Page
+            </p>
           </div>
 
           <div className="text-center">
@@ -27,7 +29,9 @@ const Follow = () => {
         <li className="flex items-center justify-between py-3 px-4 hover:bg-zinc-600 duration-300 rounded-lg">
           <div className="flex items-center">
             <img src={page2} className="rounded-full w-8" alt="frnd" />
-            <p className="ml-2 dark:text-white text-black">2nd Page</p>
+            <p className="ml-2 dark:text-white text-black hover:text-white">
+              2nd Page
+            </p>
           </div>
 
           <div className="text-center">
@@ -41,7 +45,9 @@ const Follow = () => {
         <li className="flex items-center justify-between py-3 px-4 hover:bg-zinc-600 duration-300 rounded-lg">
           <div className="flex items-center">
             <img src={page3} className="rounded-full w-8" alt="frnd" />
-            <p className="ml-2 dark:text-white text-black">3rd Page</p>
+            <p className="ml-2 dark:text-white text-black hover:text-white">
+              3rd Page
+            </p>
           </div>
 
           <div className="text-center">

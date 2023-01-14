@@ -16,7 +16,9 @@ const FriendsList = () => {
             <div className="w-8">
               <img src={pro1} className="rounded-full w-8 h-8" alt="frnd" />
             </div>
-            <p className="dark:text-white text-black">Muhammad Hasan</p>
+            <p className="dark:text-white text-black hover:text-white">
+              Muhammad Hasan
+            </p>
           </Link>
         </li>
         <li className="hover:bg-zinc-600 duration-300 rounded-lg">
@@ -24,7 +26,9 @@ const FriendsList = () => {
             <div className="w-8">
               <img src={pro2} className="rounded-full w-8 h-8" alt="frnd" />
             </div>
-            <p className="dark:text-white text-black">Maruf Rahman</p>
+            <p className="dark:text-white text-black hover:text-white">
+              Maruf Rahman
+            </p>
           </Link>
         </li>
         <li className="hover:bg-zinc-600 duration-300 rounded-lg">
@@ -32,7 +36,9 @@ const FriendsList = () => {
             <div className="w-8">
               <img src={pro3} className="rounded-full w-8 h-8" alt="frnd" />
             </div>
-            <p className="dark:text-white text-black">Rahat Kabir Ifty</p>
+            <p className="dark:text-white text-black hover:text-white">
+              Rahat Kabir Ifty
+            </p>
           </Link>
         </li>
         <li className="hover:bg-zinc-600 duration-300 rounded-lg">
@@ -40,7 +46,9 @@ const FriendsList = () => {
             <div className="w-8">
               <img src={pro4} className="rounded-full w-8 h-8" alt="frnd" />
             </div>
-            <p className="dark:text-white text-black">Md. Abdullah Al Mamun</p>
+            <p className="dark:text-white text-black hover:text-white">
+              Md. Abdullah Al Mamun
+            </p>
           </Link>
         </li>
         <li className="hover:bg-zinc-600 duration-300 rounded-lg">
@@ -48,7 +56,9 @@ const FriendsList = () => {
             <div className="w-8">
               <img src={pro5} className="rounded-full w-8 h-8" alt="frnd" />
             </div>
-            <p className="dark:text-white text-black">Mohammed Ali Jinnah</p>
+            <p className="dark:text-white text-black hover:text-white">
+              Mohammed Ali Jinnah
+            </p>
           </Link>
         </li>
       </ul>
