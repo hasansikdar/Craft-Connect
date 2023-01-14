@@ -8,48 +8,48 @@ const Posts = () => {
   const { user } = useContext(Authcontext);
   const [loading, setLoading] = useState(false);
 
-
-
-
-
-
   const { data: posts = [], refetch } = useQuery({
-    queryKey: ['posts'],
+    queryKey: ["posts"],
     queryFn: async () => {
-      const res = await fetch('https://craft-connect-server.vercel.app/usersPost');
+      const res = await fetch(
+        "https://craft-connect-server.vercel.app/usersPost"
+      );
       const data = res.json();
       return data;
-    }
-  })
+    },
+  });
 
+  refetch();
 
   // delete post
-  const handleDeletePost = id => {
-    setLoading(true)
+  const handleDeletePost = (id) => {
+    setLoading(true);
     fetch(`https://craft-connect-server.vercel.app/usersPost/${id}`, {
-      method: 'DELETE'
+      method: "DELETE",
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.acknowledged) {
-          toast.success('Post Deleted')
+          toast.success("Post Deleted");
           setLoading(false);
           refetch();
         }
       })
-      .catch(error => {
+      .catch((error) => {
         toast.error(error.message);
-        console.log(error.message)
-      })
-  }
-
-
+        console.log(error.message);
+      });
+  };
 
   return (
     <div className="justify-center py-10">
-      {
-        posts.map(post => <PostCard handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
-      }
+      {posts.map((post) => (
+        <PostCard
+          handleDeletePost={handleDeletePost}
+          user={user}
+          post={post}
+        ></PostCard>
+      ))}
     </div>
   );
 };

@@ -94,7 +94,7 @@ const CreatePost = ({ postModal }) => {
     <>
       <input type="checkbox" id={postModal} className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative bg-white dark:bg-black">
+        <div className="modal-box  bg-white dark:bg-black">
           <label
             htmlFor={postModal}
             onClick={handleCrossReset}
@@ -115,13 +115,16 @@ const CreatePost = ({ postModal }) => {
                 alt=""
               />
               <div className="">
-                <p className="text-xl font-medium dark:text-white text-black">Maruf Rahman</p>
+                <p className="text-xl font-medium dark:text-white text-black">
+                  Maruf Rahman
+                </p>
               </div>
             </div>
             <div className="divider"></div>
             <form onSubmit={formSubmit}>
-              <textarea
-                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
+            <div className="overflow-y-scroll min-h-[250px]">
+            <textarea
+                className="bg-transparent overflow-hidden h-[120px] text-xl w-full  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
                 name="postText"
                 placeholder="Whats's on your mind"
                 value={postDisabled}
@@ -205,40 +208,41 @@ const CreatePost = ({ postModal }) => {
                       </label>
                     </div>
                   ) : (
-                    <div className="mb-2 py-2 px-3 rounded-md flex border items-center justify-between">
-                      <button
-                        onClick={() => {
-                          setCloseUploadPhotoBox(true);
-                        }}
-                        className="text-lg font-semibold"
-                      >
-                        Add To Your Post{" "}
-                      </button>
-                      <div className="flex items-center ml-2 cursor-pointer">
-                        <img
-                          src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png"
-                          className="w-12 h-12"
-                          alt=""
-                          onClick={() => {
-                            setCloseUploadPhotoBox(true);
-                          }}
-                        />
-                        <img
-                          src="https://cdn-icons-png.flaticon.com/512/1251/1251333.png"
-                          className="w-12 h-12 mx-2"
-                          alt=""
-                        />
-                        <img
-                          src="https://cdn-icons-png.flaticon.com/512/742/742751.png"
-                          className="w-12 h-12"
-                          alt=""
-                        />
-                      </div>
-                    </div>
+                    <></>
                   )}
                 </>
               )}
-
+            </div>
+              <div className="mb-2 py-2 px-3 rounded-md flex border items-center justify-between">
+                <button
+                  onClick={() => {
+                    setCloseUploadPhotoBox(true);
+                  }}
+                  className="text-black dark:text-white text-lg font-semibold"
+                >
+                  Add To Your Post{" "}
+                </button>
+                <div className="flex items-center ml-2 cursor-pointer">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png"
+                    className="w-12 h-12"
+                    alt=""
+                    onClick={() => {
+                      setCloseUploadPhotoBox(true);
+                    }}
+                  />
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/1251/1251333.png"
+                    className="w-12 h-12 mx-2"
+                    alt=""
+                  />
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/742/742751.png"
+                    className="w-12 h-12"
+                    alt=""
+                  />
+                </div>
+              </div>
               <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
                 <button
                   type="submit"

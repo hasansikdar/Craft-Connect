@@ -3,6 +3,7 @@ import PostBox from "../PostBox/PostBox";
 import stories from "./stories.json";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import './stories.css'
 
 const Stories = () => {
   return (
@@ -16,13 +17,14 @@ const Stories = () => {
               items: 4,
             },
           }}
-          keyBoardControl={true}
+          slidesToSlide={2}
+         
         >
           {stories.map((story, index) => {
             return (
               <React.Fragment key={index}>
                 <div
-                  className="bg-img w-[130px] h-[200px] dark:bg-zinc-800 bg-white rounded-md transition bg-center bg-cover"
+                  className="select-none bg-img w-[130px] h-[200px] dark:bg-zinc-800 bg-white rounded-md transition bg-center bg-cover"
                   style={{
                     background: `linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.2)) , url(${story.userStory})`,
                     backgroundPosition: "center",
