@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { Authcontext } from "../../Context/UserContext";
 const CreatePost = ({ postModal }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
   const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
+  const navigate = useNavigate();
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
   };
@@ -15,7 +17,6 @@ const CreatePost = ({ postModal }) => {
     setPostDisabled("");
     setCloseUploadPhotoBox(false);
   };
-  console.log(user);
   const formSubmit = (event) => {
     event.preventDefault();
     const field = event.target;
@@ -48,7 +49,7 @@ const CreatePost = ({ postModal }) => {
           postText,
           img,
         };
-        fetch("http://localhost:5000/usersPost", {
+        fetch("https://craft-connect-server.vercel.app/usersPost", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -57,11 +58,11 @@ const CreatePost = ({ postModal }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if(data.acknowledged){
+            if (data.acknowledged) {
+              toast.success("Post Add Success");
+              navigate("/");
               field.reset();
-              setPostDisabled("");
               setSelectedFile(undefined);
-              toast.success("Successfully add post");
             }
           });
       });
@@ -93,7 +94,7 @@ const CreatePost = ({ postModal }) => {
     <>
       <input type="checkbox" id={postModal} className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative">
+        <div className="modal-box relative bg-white dark:bg-black">
           <label
             htmlFor={postModal}
             onClick={handleCrossReset}
@@ -102,10 +103,10 @@ const CreatePost = ({ postModal }) => {
             ✕
           </label>
           <div>
-            <div className="text-center text-2xl font-semibold">
-              <h1>Create Post</h1>
+            <div className="text-center text-black dark:text-white text-2xl font-semibold">
+              <h1 className="text-black dark:text-white">Create Post</h1>
             </div>
-            <div className="divider"></div>
+            <div className="divider text-black"></div>
             <div className="flex items-center gap-3">
               {/* image source is hardcode now */}
               <img
@@ -114,13 +115,13 @@ const CreatePost = ({ postModal }) => {
                 alt=""
               />
               <div className="">
-                <p className="text-xl font-medium text-white">{user.displayName}</p>
+                <p className="text-xl font-medium dark:text-white text-black">Maruf Rahman</p>
               </div>
             </div>
             <div className="divider"></div>
             <form onSubmit={formSubmit}>
               <textarea
-                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 text-white placeholder-text-100 transition-all duration-200 outline-none"
+                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
                 name="postText"
                 placeholder="Whats's on your mind"
                 value={postDisabled}
@@ -171,7 +172,7 @@ const CreatePost = ({ postModal }) => {
                           </label>
                           <svg
                             aria-hidden="true"
-                            className="w-10 h-10 mb-3 text-gray-400"
+                            className="w-10 h-10 mb-3 text-gray-600"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -242,7 +243,7 @@ const CreatePost = ({ postModal }) => {
                 <button
                   type="submit"
                   disabled={!postDisabled && !selectedFile}
-                  className="disabled:cursor-not-allowed disabled:bg-gray-100 hover:disabled:bg-gray-300 text-gray-500 text-center w-full bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                  className="disabled:cursor-not-allowed disabled:bg-gray-100 text-gray-500 text-center w-full bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
                 >
                   Post
                 </button>

@@ -1,7 +1,6 @@
 import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import { Routes } from "./Router/Router";
-import { useEffect, useState } from "react";
 
 function App() {
   return (
