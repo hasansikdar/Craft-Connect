@@ -76,7 +76,7 @@ const Navbar = () => {
     <div className="dark:bg-black">
       <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
-          <Link to="/" className="normal-case text-xl cursor-pointer">
+          <Link to="/" className="normal-case text-xl cursor-pointer font-bold">
             CRAFTIFY
           </Link>
         </div>

@@ -100,7 +100,7 @@ const CreatePost = ({ postModal }) => {
           <label
             htmlFor={postModal}
             onClick={handleCrossReset}
-            className="absolute right-4 top-4 cursor-pointer"
+            className="absolute right-4 top-4 cursor-pointer text-black dark:text-white font-extrabold "
           >
             ✕
           </label>
@@ -125,7 +125,7 @@ const CreatePost = ({ postModal }) => {
             <div className="divider"></div>
             <form onSubmit={formSubmit}>
               <textarea
-                className="bg-transparent text-xl w-full h-[190px]  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
+                className="bg-gray-100 dark:bg-gray-800 p-2 rounded text-xl w-full h-[190px]  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
                 name="postText"
                 placeholder="Whats's on your mind"
                 value={postDisabled}
@@ -247,7 +247,7 @@ const CreatePost = ({ postModal }) => {
                 <button
                   type="submit"
                   disabled={!postDisabled && !selectedFile}
-                  className="disabled:cursor-not-allowed disabled:bg-gray-100 hover:disabled:bg-gray-300 text-gray-500 text-center w-full bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                  className="disabled:cursor-not-allowed disabled:bg-gray-100 hover:disabled:bg-gray-300 text-white text-center w-full bg-[#1877f2] hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-lg font-semibold px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#1877f2] dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-[#0b58bc] dark:focus:ring-gray-600"
                 >
                   Post
                 </button>
