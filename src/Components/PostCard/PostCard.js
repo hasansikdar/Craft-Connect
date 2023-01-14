@@ -56,7 +56,10 @@ const PostCard = ({ post, handleDeletePost, user }) => {
             <button className="flex btn dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
               <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
               <div className="">
-                <label tabIndex={0} className="m-1 cursor-pointer">
+                <label
+                  tabIndex={0}
+                  className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
+                >
                   Like
                 </label>
                 <div
@@ -89,11 +92,11 @@ const PostCard = ({ post, handleDeletePost, user }) => {
                 </div>
               </div>
             </button>
-            <button className="flex btn btn-outline btn-sm">
+            <button className="flex btn btn-outline shadow-lg btn-sm dark:text-white text-black dark:hover:text-black">
               <FaCommentAlt className="mr-2"></FaCommentAlt>
               Comment
             </button>
-            <button className="flex btn btn-outline btn-sm">
+            <button className="flex btn btn-outline shadow-lg btn-sm dark:text-white text-black dark:hover:text-black">
               <FaShare className="mr-2"></FaShare>
               Share
             </button>
