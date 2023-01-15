@@ -8,23 +8,23 @@ const Stories = () => {
   useEffect(() => {
     setWidth(storyWidth.current.scrollWidth - storyWidth.current.offsetWidth);
   }, []);
-  
+
   return (
     <>
-      <motion.div className="mx-auto container  bg-zinc-700 rounded-md p-5 overflow-hidden text-white">
+      <motion.div className="mx-auto container bg-white dark:bg-zinc-700 rounded-md p-5 overflow-hidden dark:text-white text-black">
         <h1 className="text-2xl font-bold py-4 pb-3 text-center">Stories</h1>
         <motion.div
           drag="x"
           ref={storyWidth}
           dragConstraints={{ right: 0, left: -width }}
           whileTap={{ cursor: "grabbing" }}
-          className="stories flex gap-3 cursor-grab"
+          className="stories flex gap-3 cursor-grab text-white"
         >
           {stories.map((story, index) => {
             return (
               <React.Fragment key={index}>
                 <motion.div
-                  className="bg-img min-w-[180px] h-[300px] bg-zinc-800 rounded-md transition bg-center bg-cover"
+                  className="bg-img min-w-[180px] h-[300px] dark:bg-zinc-800 bg-white rounded-md transition bg-center bg-cover"
                   style={{
                     background: `linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.2)) , url(${story.userStory})`,
                     backgroundPosition: "center",
