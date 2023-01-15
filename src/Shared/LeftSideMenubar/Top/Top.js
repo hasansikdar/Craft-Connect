@@ -21,35 +21,45 @@ const Top = () => {
             </div>
 
 
-            {/* <Link to='/home'>
+            <Link to='/home'>
                 <button className='flex justify-start items-center gap-4 mb-4'>
                     <p><FaHome className='h-8 w-8'></FaHome></p>
                     <h1 className='text-lg font-medium'>Home</h1>
                 </button>
-            </Link> */}
+            </Link>
 
 
             <hr className='mb-4' />
-            <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FaUserFriends className='h-8 w-8 text-green-300'></FaUserFriends></p>
-                <h1 className='text-lg font-medium'>Friends</h1>
-            </div>
-            <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FcClapperboard className='h-8 w-8'></FcClapperboard></p>
-                <h1 className='text-lg font-medium'>Watch</h1>
-            </div>
-            <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FcNews className='h-8 w-8'></FcNews></p>
-                <h1 className='text-lg font-medium'>Most Recent</h1>
-            </div>
-            <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FcConferenceCall className='h-8 w-8'></FcConferenceCall></p>
-                <h1 className='text-lg font-medium'>Groups</h1>
-            </div>
-            <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FcHome className='h-8 w-8'></FcHome></p>
-                <h1 className='text-lg font-medium'>Marketplace</h1>
-            </div>
+            <Link>
+                <button className='flex justify-start items-center gap-4 mb-4'>
+                    <p><FaUserFriends className='h-8 w-8 text-green-300'></FaUserFriends></p>
+                    <h1 className='text-lg font-medium'>Friends</h1>
+                </button>
+            </Link>
+            <Link>
+                <button className='flex justify-start items-center gap-4 mb-4'>
+                    <p><FcClapperboard className='h-8 w-8'></FcClapperboard></p>
+                    <h1 className='text-lg font-medium'>Watch</h1>
+                </button>
+            </Link>
+            <Link>
+                <button className='flex justify-start items-center gap-4 mb-4'>
+                    <p><FcNews className='h-8 w-8'></FcNews></p>
+                    <h1 className='text-lg font-medium'>Most Recent</h1>
+                </button>
+            </Link>
+            <Link>
+                <button className='flex justify-start items-center gap-4 mb-4'>
+                    <p><FcConferenceCall className='h-8 w-8'></FcConferenceCall></p>
+                    <h1 className='text-lg font-medium'>Groups</h1>
+                </button>
+            </Link>
+            <Link>
+                <button className='flex justify-start items-center gap-4 mb-4'>
+                    <p><FcHome className='h-8 w-8'></FcHome></p>
+                    <h1 className='text-lg font-medium'>Marketplace</h1>
+                </button>
+            </Link>
             <div>
                 {!isOpen &&
                     <button onClick={isOpenButton} className='flex justify-start items-center gap-4 mb-4'>
@@ -58,18 +68,24 @@ const Top = () => {
                     </button>}
                 {isOpen &&
                     <>
-                        <div className='flex justify-start items-center gap-4 mb-4'>
-                            <p><FcSteam className='h-8 w-8'></FcSteam></p>
-                            <h1 className='text-lg font-medium'>Gaming</h1>
-                        </div>
-                        <div className='flex justify-start items-center gap-4 mb-4'>
-                            <p><FcAdvertising className='h-8 w-8'></FcAdvertising></p>
-                            <h1 className='text-lg font-medium'>Ad Center</h1>
-                        </div>
-                        <div className='flex justify-start items-center gap-4 mb-4'>
-                            <p><FcBarChart className='h-8 w-8'></FcBarChart></p>
-                            <h1 className='text-lg font-medium'>Ads Manager</h1>
-                        </div>
+                        <Link>
+                            <button className='flex justify-start items-center gap-4 mb-4'>
+                                <p><FcSteam className='h-8 w-8'></FcSteam></p>
+                                <h1 className='text-lg font-medium'>Gaming</h1>
+                            </button>
+                        </Link>
+                        <Link>
+                            <button className='flex justify-start items-center gap-4 mb-4'>
+                                <p><FcAdvertising className='h-8 w-8'></FcAdvertising></p>
+                                <h1 className='text-lg font-medium'>Ad Center</h1>
+                            </button>
+                        </Link>
+                        <Link>
+                            <button className='flex justify-start items-center gap-4 mb-4'>
+                                <p><FcBarChart className='h-8 w-8'></FcBarChart></p>
+                                <h1 className='text-lg font-medium'>Ads Manager</h1>
+                            </button>
+                        </Link>
                     </>
                 }
                 {isOpen &&
