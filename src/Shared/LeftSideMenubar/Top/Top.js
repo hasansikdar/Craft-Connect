@@ -15,20 +15,17 @@ const Top = () => {
 
     return (
         <div>
-            <div className='flex justify-start items-center gap-4 mb-4'>
+            {/* <div className='flex justify-start items-center gap-4 mb-4'>
                 <p><FaHome className='h-8 w-8'></FaHome></p>
                 <h1 className='text-lg font-medium'>Home</h1>
-            </div>
+            </div> */}
 
-
-            <Link to='/home'>
+            <Link to='/'>
                 <button className='flex justify-start items-center gap-4 mb-4'>
                     <p><FaHome className='h-8 w-8'></FaHome></p>
                     <h1 className='text-lg font-medium'>Home</h1>
                 </button>
             </Link>
-
-
             <hr className='mb-4' />
             <Link>
                 <button className='flex justify-start items-center gap-4 mb-4'>
