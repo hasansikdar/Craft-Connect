@@ -5,23 +5,12 @@ import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
 import maruf from "../../assets/maruf.png";
 import hasan from "../../assets/hasan.png";
-import { BsThreeDots } from "react-icons/bs";
-import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
+import { FaExclamation, FaMoon,} from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import {
   FcNext,
-  FcSettings,
   FcQuestions,
   FcExport,
-  FcHome,
-  FcAdvertising,
-  FcBarChart,
-  FcCollapse,
-  FcExpand,
-  FcSteam,
-  FcClapperboard,
-  FcConferenceCall,
-  FcNews,
 } from "react-icons/fc";
 
 import { AiFillSetting } from "react-icons/ai";
@@ -110,7 +99,7 @@ const Navbar = () => {
         </div>
 
         <div className="pr-3 flex gap-2 items-center justify-end">
-        <GoogleMeeting></GoogleMeeting>
+          <GoogleMeeting></GoogleMeeting>
           {/* <input
             onClick={handleThemeSwitch}
             type="checkbox"
@@ -123,7 +112,7 @@ const Navbar = () => {
               <FaMoon className="text-white"></FaMoon>
             )}
           </button>
-            
+
           {/* <>
             {localStorage.getItem(
               "theme" === "light" ? (
@@ -164,7 +153,7 @@ const Navbar = () => {
 
       {/*-----------------------------------------Messanger Modal Start---------------------------------------------- */}
       {messageModal && (
-        <div className="w-[80%] md:w-[30%] rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+        <div className="w-[80%] md:w-[30%] h-[70%] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
           <div className="px-3 py-3">
             <div className="flex justify-between">
               <h3 className="text-2xl font-bold">Chats</h3>
@@ -247,7 +236,7 @@ const Navbar = () => {
 
       {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
       {notification && (
-        <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+        <div className="w-[80%] md:w-[30%] h-[70%] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
           <div className="px-3 py-3">
             <div className="flex justify-between">
               <h3 className="text-2xl font-bold">Notifications</h3>
@@ -265,6 +254,24 @@ const Navbar = () => {
                 <p className="">
                   <span className="font-bold">Muhammad Hasan</span> posted two
                   new videos about how to manage a group project.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+              <img
+                className="w-16 rounded-full mr-2 "
+                src={`${
+                  user?.photoURL
+                    ? user?.photoURL
+                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                }`}
+                alt=""
+              />
+              <div>
+                <p className="">
+                  <span className="font-bold">Maruf Khan</span> tagged you in a
+                  post including "Alhamdulliah after lots of sacrifice and Hard
+                  work i got a ....."
                 </p>
               </div>
             </div>
@@ -316,10 +323,13 @@ const Navbar = () => {
 
       {/*#########################################Profile Modal Start####################################################*/}
       {profile && (
-        <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+        <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5  ">
           <div className="px-3 py-3">
             <div className="flex justify-between mb-2">
-              <div className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md ">
+              <Link
+                to="/profile"
+                className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md "
+              >
                 <img
                   className="w-[50px] rounded-full mr-3"
                   src={`${
@@ -330,7 +340,7 @@ const Navbar = () => {
                   alt=""
                 />
                 <h3 className="text-xl">{user?.displayName}</h3>
-              </div>
+              </Link>
               <div onClick={() => setProfile(false)} className="btn btn-ghost">
                 ✕
               </div>
