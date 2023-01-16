@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
-import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews } from "react-icons/fc";
+import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews, FcBookmark } from "react-icons/fc";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 
@@ -27,7 +27,11 @@ const Top = () => {
                 </button>
             </Link>
             <hr className='mb-4' />
-            <Link>
+            <button className='flex justify-start items-center gap-4 mb-4'>
+                <p><FcNews className='h-8 w-8'></FcNews></p>
+                <h1 className='text-lg font-medium'>Most Recent</h1>
+            </button>
+            <Link to='/feature/friends'>
                 <button className='flex justify-start items-center gap-4 mb-4'>
                     <p><FaUserFriends className='h-8 w-8 text-green-300'></FaUserFriends></p>
                     <h1 className='text-lg font-medium'>Friends</h1>
@@ -39,12 +43,12 @@ const Top = () => {
                     <h1 className='text-lg font-medium'>Watch</h1>
                 </button>
             </Link>
-            <Link>
-                <button className='flex justify-start items-center gap-4 mb-4'>
-                    <p><FcNews className='h-8 w-8'></FcNews></p>
-                    <h1 className='text-lg font-medium'>Most Recent</h1>
-                </button>
-            </Link>
+
+            <button className='flex justify-start items-center gap-4 mb-4'>
+                <p><FcNews className='h-8 w-8'></FcNews></p>
+                <h1 className='text-lg font-medium'>Most Recent</h1>
+            </button>
+
             <Link>
                 <button className='flex justify-start items-center gap-4 mb-4'>
                     <p><FcConferenceCall className='h-8 w-8'></FcConferenceCall></p>
@@ -67,8 +71,8 @@ const Top = () => {
                     <>
                         <Link>
                             <button className='flex justify-start items-center gap-4 mb-4'>
-                                <p><FcSteam className='h-8 w-8'></FcSteam></p>
-                                <h1 className='text-lg font-medium'>Gaming</h1>
+                                <p><FcBookmark className='h-8 w-8'></FcBookmark></p>
+                                <h1 className='text-lg font-medium'>Bookmarked</h1>
                             </button>
                         </Link>
                         <Link>

@@ -8,6 +8,8 @@ import Profile from "../Pages/Profile/Profile";
 import SellerPro from "../Pages/SellerPro/SellerPro";
 import FollowPages from "../Pages/FollowPages/FollowPages";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
+import FeatureLayout from "../Layout/FeatureLayout";
+import Friends from "../Pages/Friends/Friends";
 
 
 export const Routes = createBrowserRouter([
@@ -26,9 +28,19 @@ export const Routes = createBrowserRouter([
       { path: '/pages', element: <FollowPages></FollowPages> },
     ]
   },
+  {
+    path: '/feature',
+    element: <PrivateRouter><FeatureLayout></FeatureLayout></PrivateRouter>,
+    children: [
+      {
+        path: '/feature/friends',
+        element: <Friends></Friends>
+      }
+    ]
+  },
   { path: "/login", element: <Login></Login> },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>
-  },
+  }
 ]);
