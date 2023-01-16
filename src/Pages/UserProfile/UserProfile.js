@@ -14,14 +14,14 @@ const UserProfile = () => {
               src={coverImg}
               alt=""
             />
-            <div className="absolute left-[280px] top-[320px]">
+            <div className="absolute left-[280px] top-[390px]">
               <div>
                 <img className="w-[12%] rounded-full" src={profile} alt="" />
               </div>
-              <div className="">
-                <h1 className="text-3xl">Rahat Kabir Ifty</h1>
-                <p>700 friends</p>
-              </div>
+            </div>
+            <div className="absolute left-[31%] top-[69%]">
+              <h1 className="text-3xl">Rahat Kabir Ifty</h1>
+              <p>700 friends</p>
             </div>
           </div>
         </div>
