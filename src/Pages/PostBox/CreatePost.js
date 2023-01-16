@@ -129,7 +129,7 @@ const CreatePost = ({ open, setOpen }) => {
               >
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-zinc-700 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                   <div className="bg-white dark:bg-zinc-700 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <h1 className="py-4 text-center text-xl font-bold">
+                    <h1 className="py-4 text-center text-xl font-bold text-black dark:text-white">
                       Create Post
                     </h1>
                     <svg
@@ -150,8 +150,8 @@ const CreatePost = ({ open, setOpen }) => {
                         d="M6 18L18 6M6 6l12 12"
                       />
                     </svg>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-3">
+                    <div className="flex justify-between items-center bg-gray-100 dark:bg-gray-600 p-2 rounded">
+                      <div className="flex items-center gap-3 ">
                         {/* image source is hardcode now */}
                         <img
                           src="https://avatars.githubusercontent.com/u/94055231?v=4"

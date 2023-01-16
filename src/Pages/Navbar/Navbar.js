@@ -110,7 +110,7 @@ const Navbar = () => {
         </div>
 
         <div className="pr-3 flex gap-2 items-center justify-end">
-        <GoogleMeeting></GoogleMeeting>
+          <GoogleMeeting></GoogleMeeting>
           {/* <input
             onClick={handleThemeSwitch}
             type="checkbox"
@@ -123,7 +123,7 @@ const Navbar = () => {
               <FaMoon className="text-white"></FaMoon>
             )}
           </button>
-            
+
           {/* <>
             {localStorage.getItem(
               "theme" === "light" ? (

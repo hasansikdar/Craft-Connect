@@ -8,27 +8,32 @@ import Profile from "../Pages/Profile/Profile";
 import SellerPro from "../Pages/SellerPro/SellerPro";
 import FollowPages from "../Pages/FollowPages/FollowPages";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
-
+import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 
 export const Routes = createBrowserRouter([
   {
-    path: '/',
-    element: <PrivateRouter><Main></Main></PrivateRouter>,
+    path: "/",
+    element: (
+      <PrivateRouter>
+        <Main></Main>
+      </PrivateRouter>
+    ),
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
-      { path: '/home', element: <Home></Home> },
-      { path: '/profile', element: <Profile></Profile> },
-      { path: '/editprofile', element: <EditProfile></EditProfile> },
-      { path: '/sellerpro', element: <SellerPro></SellerPro> },
-      { path: '/pages', element: <FollowPages></FollowPages> },
-    ]
+      { path: "/home", element: <Home></Home> },
+      { path: "/profile", element: <Profile></Profile> },
+      { path: "/editprofile", element: <EditProfile></EditProfile> },
+      { path: "/sellerpro", element: <SellerPro></SellerPro> },
+      { path: "/pages", element: <FollowPages></FollowPages> },
+    ],
   },
+  { path: "friends", element: <Friends></Friends> },
   { path: "/login", element: <Login></Login> },
   {
     path: "*",
-    element: <ErrorPage></ErrorPage>
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
