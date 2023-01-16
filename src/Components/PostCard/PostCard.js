@@ -14,9 +14,11 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
 
 import { Authcontext } from "../../Context/UserContext";
+import Reactions from "../../Shared/Reactions/Reactions";
   
 
 const PostCard = ({ post, handleDeletePost, user }) => {
+
 
   return (
     <div>
@@ -68,10 +70,7 @@ const PostCard = ({ post, handleDeletePost, user }) => {
                 >
                   <div className="grid grid-cols-6">
                     <img src={likegificon} alt="" />
-                    <img
-                      src="https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif"
-                      alt=""
-                    />
+                    <Reactions></Reactions>
                     <img
                       src="https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif"
                       alt=""
