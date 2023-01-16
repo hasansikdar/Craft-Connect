@@ -42,9 +42,10 @@ const UserContext = ({children}) => {
     })
 
 
+
   
 
-    const authinfo = {user, refetch, updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
+    const authinfo = {user, users, refetch, updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
 
 
 
