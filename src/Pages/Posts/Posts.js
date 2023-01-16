@@ -21,7 +21,8 @@ const Posts = () => {
       return data;
     }
   })
-
+  
+  refetch()
 
   // delete post
   const handleDeletePost = id => {

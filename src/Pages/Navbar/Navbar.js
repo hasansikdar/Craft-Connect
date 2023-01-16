@@ -27,6 +27,7 @@ import {
 import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
+import GoogleMeeting from "../../Components/GoogleMeeting/GoogleMeeting";
 
 const Navbar = () => {
   const { user, logout } = useContext(Authcontext);
@@ -107,7 +108,9 @@ const Navbar = () => {
             />
           </div>
         </div>
+
         <div className="pr-3 flex gap-2 items-center justify-end">
+        <GoogleMeeting></GoogleMeeting>
           {/* <input
             onClick={handleThemeSwitch}
             type="checkbox"
@@ -120,7 +123,7 @@ const Navbar = () => {
               <FaMoon className="text-white"></FaMoon>
             )}
           </button>
-
+            
           {/* <>
             {localStorage.getItem(
               "theme" === "light" ? (
