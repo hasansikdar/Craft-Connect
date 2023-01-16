@@ -13,6 +13,10 @@ import Friends from "../Pages/Friends/Friends";
 import Watch from "../Pages/Watch/Watch";
 import Groups from "../Pages/Groups/Groups";
 import MarketPlace from "../Pages/MarketPlace/MarketPlace";
+import BookMarked from "../Pages/BookMarked/BookMarked";
+import AdCenter from "../Pages/AdCenter/AdCenter";
+import AdsManager from "../Pages/AdsManager/AdsManager";
+import Pages from "../Pages/Fb_Pages/Pages";
 
 
 export const Routes = createBrowserRouter([
@@ -53,19 +57,19 @@ export const Routes = createBrowserRouter([
       },
       {
         path: '/feature/bookmarked',
-        element: <></>
+        element: <BookMarked></BookMarked>
       },
       {
         path: '/feature/adcenter',
-        element: <></>
+        element: <AdCenter></AdCenter>
       },
       {
         path: '/feature/adsmanager',
-        element: <></>
+        element: <AdsManager></AdsManager>
       },
       {
         path: '/feature/pages',
-        element: <></>
+        element: <Pages></Pages>
       },
     ]
   },

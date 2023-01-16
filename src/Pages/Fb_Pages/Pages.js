@@ -1,11 +1,11 @@
 import React from 'react';
 
-const BookMarked = () => {
+const Pages = () => {
     return (
         <div className='h-screen flex items-center justify-center'>
-            <h1>This is a Bookmarked page. Thanks</h1>
+            <h1>This is a Facebook Pages. Thanks</h1>
         </div>
     );
 };
 
-export default BookMarked;
+export default Pages;

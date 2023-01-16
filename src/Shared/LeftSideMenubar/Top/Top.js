@@ -69,25 +69,25 @@ const Top = () => {
                     </button>}
                 {isOpen &&
                     <>
-                        <Link>
+                        <Link to='/feature/bookmarked'>
                             <button className='flex justify-start items-center gap-4 mb-4'>
                                 <p><FcBookmark className='h-8 w-8'></FcBookmark></p>
                                 <h1 className='text-lg font-medium'>Bookmarked</h1>
                             </button>
                         </Link>
-                        <Link>
+                        <Link to='/feature/adcenter'>
                             <button className='flex justify-start items-center gap-4 mb-4'>
                                 <p><FcAdvertising className='h-8 w-8'></FcAdvertising></p>
                                 <h1 className='text-lg font-medium'>Ad Center</h1>
                             </button>
                         </Link>
-                        <Link>
+                        <Link to='/feature/adsmanager'>
                             <button className='flex justify-start items-center gap-4 mb-4'>
                                 <p><FcBarChart className='h-8 w-8'></FcBarChart></p>
                                 <h1 className='text-lg font-medium'>Ads Manager</h1>
                             </button>
                         </Link>
-                        <Link>
+                        <Link to='/feature/pages'>
                             <button className='flex justify-start items-center gap-4 mb-4'>
                                 <p><FcGrid className='h-8 w-8'></FcGrid></p>
                                 <h1 className='text-lg font-medium'>Pages</h1>
