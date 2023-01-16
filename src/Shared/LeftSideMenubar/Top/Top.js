@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaExclamation, FaMoon, FaHome, FaUserFriends } from "react-icons/fa";
-import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews, FcBookmark } from "react-icons/fc";
+import { FcNext, FcSettings, FcQuestions, FcExport, FcHome, FcAdvertising, FcBarChart, FcCollapse, FcExpand, FcSteam, FcClapperboard, FcConferenceCall, FcNews, FcBookmark, FcGrid } from "react-icons/fc";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 
@@ -37,25 +37,25 @@ const Top = () => {
                     <h1 className='text-lg font-medium'>Friends</h1>
                 </button>
             </Link>
-            <Link>
+            <Link to='/feature/watch'>
                 <button className='flex justify-start items-center gap-4 mb-4'>
                     <p><FcClapperboard className='h-8 w-8'></FcClapperboard></p>
                     <h1 className='text-lg font-medium'>Watch</h1>
                 </button>
             </Link>
 
-            <button className='flex justify-start items-center gap-4 mb-4'>
+            {/* <button className='flex justify-start items-center gap-4 mb-4'>
                 <p><FcNews className='h-8 w-8'></FcNews></p>
                 <h1 className='text-lg font-medium'>Most Recent</h1>
-            </button>
+            </button> */}
 
-            <Link>
+            <Link to='/feature/groups'>
                 <button className='flex justify-start items-center gap-4 mb-4'>
                     <p><FcConferenceCall className='h-8 w-8'></FcConferenceCall></p>
                     <h1 className='text-lg font-medium'>Groups</h1>
                 </button>
             </Link>
-            <Link>
+            <Link to='/feature/marketplace'>
                 <button className='flex justify-start items-center gap-4 mb-4'>
                     <p><FcHome className='h-8 w-8'></FcHome></p>
                     <h1 className='text-lg font-medium'>Marketplace</h1>
@@ -85,6 +85,12 @@ const Top = () => {
                             <button className='flex justify-start items-center gap-4 mb-4'>
                                 <p><FcBarChart className='h-8 w-8'></FcBarChart></p>
                                 <h1 className='text-lg font-medium'>Ads Manager</h1>
+                            </button>
+                        </Link>
+                        <Link>
+                            <button className='flex justify-start items-center gap-4 mb-4'>
+                                <p><FcGrid className='h-8 w-8'></FcGrid></p>
+                                <h1 className='text-lg font-medium'>Pages</h1>
                             </button>
                         </Link>
                     </>

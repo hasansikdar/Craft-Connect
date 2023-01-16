@@ -10,6 +10,9 @@ import FollowPages from "../Pages/FollowPages/FollowPages";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 import FeatureLayout from "../Layout/FeatureLayout";
 import Friends from "../Pages/Friends/Friends";
+import Watch from "../Pages/Watch/Watch";
+import Groups from "../Pages/Groups/Groups";
+import MarketPlace from "../Pages/MarketPlace/MarketPlace";
 
 
 export const Routes = createBrowserRouter([
@@ -35,7 +38,35 @@ export const Routes = createBrowserRouter([
       {
         path: '/feature/friends',
         element: <Friends></Friends>
-      }
+      },
+      {
+        path: '/feature/watch',
+        element: <Watch></Watch>
+      },
+      {
+        path: '/feature/groups',
+        element: <Groups></Groups>
+      },
+      {
+        path: '/feature/marketplace',
+        element: <MarketPlace></MarketPlace>
+      },
+      {
+        path: '/feature/bookmarked',
+        element: <></>
+      },
+      {
+        path: '/feature/adcenter',
+        element: <></>
+      },
+      {
+        path: '/feature/adsmanager',
+        element: <></>
+      },
+      {
+        path: '/feature/pages',
+        element: <></>
+      },
     ]
   },
   { path: "/login", element: <Login></Login> },
