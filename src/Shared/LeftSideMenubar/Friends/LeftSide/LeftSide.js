@@ -11,7 +11,7 @@ import { CgUserList } from "react-icons/cg";
 
 const LeftSide = () => {
   return (
-    <div className="p-5 dark:bg-gray-800 bg-white">
+    <div className="p-5 dark:bg-gray-800 bg-white h-screen">
       <div className="flex justify-between items-center text-black dark:text-white">
         <h2 className="text-xl font-bold">Friends</h2>
         <button className="text-xl">
