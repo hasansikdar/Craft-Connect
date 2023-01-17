@@ -22,8 +22,6 @@ const Posts = () => {
     }
   })
   
-  refetch()
-
   // delete post
   const handleDeletePost = id => {
     setLoading(true)
@@ -44,12 +42,26 @@ const Posts = () => {
       })
   }
 
-
+  const handelReaction = (id, imageLink) => {
+    fetch(`https://craft-connect-server.vercel.app/usersPost${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type':'application/json'
+      },
+      body: JSON.stringify({imageLink})
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.acknowledged){
+          refetch();
+        }
+    })
+  }
 
   return (
     <div className="justify-center py-10">
       {
-        posts.map(post => <PostCard handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
+        posts.map(post => <PostCard handelReaction={handelReaction} handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
       }
     </div>
   );
