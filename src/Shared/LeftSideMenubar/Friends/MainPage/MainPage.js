@@ -13,7 +13,7 @@ const MainPage = () => {
           See All
         </button>
       </div>
-      <div className="grid grid-cols-5 gap-10">
+      <div className="grid grid-cols-5 gap-10 mt-5">
         <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
@@ -30,7 +30,7 @@ const MainPage = () => {
         <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
       </div>
-      <hr className="mt-10 w-[1100px]" />
+      <hr className="mt-10 w-[1100px] text-2xl" />
 
       <div>
         <div className="flex items-center justify-between mt-10">
@@ -41,7 +41,21 @@ const MainPage = () => {
             See All
           </button>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 grid grid-cols-5 gap-10">
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
         </div>
       </div>

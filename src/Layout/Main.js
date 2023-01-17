@@ -10,13 +10,13 @@ const Main = () => {
       <Navbar></Navbar>
       <div className="lg:flex">
         {/* left site bar */}
-        <div className="xl:mr-auto lg:w-[300px]">
+        <div className="xl:mr-auto lg:w-[300px] mt-[60px]">
           <LeftSideBar></LeftSideBar>
         </div>
-        <div className="lg:w-[600px] xl:mx-auto">
+        <div className="lg:w-[600px] xl:mx-auto mt-[60px]">
           <Outlet></Outlet>
         </div>
-        <div className="lg:ml-auto bg-zinc-800 rounded-lr-lg">
+        <div className="lg:ml-auto bg-zinc-800 rounded-lr-lg mt-[60px]">
           <RightBar></RightBar>
         </div>
       </div>
