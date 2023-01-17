@@ -7,6 +7,7 @@ import EditProfile from "../Pages/EditProfile/EditProfile";
 import SellerPro from "../Pages/SellerPro/SellerPro";
 import FollowPages from "../Pages/FollowPages/FollowPages";
 import UserProfile from "../Pages/UserProfile/UserProfile";
+import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 
 
 export const Routes = createBrowserRouter([
@@ -26,4 +27,8 @@ export const Routes = createBrowserRouter([
   },
   { path: '/profile', element: <UserProfile></UserProfile> },
   { path: "/login", element: <Login></Login> },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>
+  },
 ]);
