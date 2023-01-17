@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Reactions = () => {
+const Reactions = ({react, handelReaction, id}) => {
     return (
         <div>
-            <img
-                src="https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif"
+            <img name="emoji" onClick={e => handelReaction(id, e.target.src)}
+                src={react?.emojilink}
                 alt=""
             />
         </div>
