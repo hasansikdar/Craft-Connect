@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainPageCard = () => {
+const AddFriendCard = () => {
   return (
     <div className="w-[219px] h-[370px] rounded-md bg-white text-black dark:bg-gray-900 dark:text-gray-100">
       <img
@@ -16,14 +16,14 @@ const MainPageCard = () => {
           <p className="dark:text-gray-100">Curabitur luctus erat</p>
         </div>
         <button className="w-[185px] h-[36px] bg-[#2374E1] rounded text-white">
-          Confirm
+          Add Friend
         </button>
         <button className="w-[185px] h-[36px] bg-gray-600 rounded text-white">
-          Delete
+          Remove
         </button>
       </div>
     </div>
   );
 };
 
-export default MainPageCard;
+export default AddFriendCard;

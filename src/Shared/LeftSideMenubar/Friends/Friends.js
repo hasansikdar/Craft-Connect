@@ -6,9 +6,11 @@ import MainPage from "./MainPage/MainPage";
 const Friends = () => {
   return (
     <section className="bg-white dark:bg-black">
-      <Navbar></Navbar>
+      <div className="">
+        <Navbar></Navbar>
+      </div>
       <div className="grid grid-cols-12">
-        <div className="col-span-3 hidden lg:block">
+        <div className="col-span-3 hidden lg:block ">
           <LeftSide></LeftSide>
         </div>
         <div className="col-span-9">
