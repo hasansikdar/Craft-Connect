@@ -3,10 +3,10 @@ import React from "react";
 // import PostUserInfo from "./PostUserInfo/PostUserInfo";
 // import likeicon from "../../assets/icons/like.png";
 // import likegificon from "../../assets/icons/smiley.gif";
-import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
-import PostUserInfo from "./PostUserInfo/PostUserInfo";
-import likeicon from "../../assets/icons/like.png";
-import likegificon from "../../assets/icons/smiley.gif";
+// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
+// import PostUserInfo from "./PostUserInfo/PostUserInfo";
+import likeicon from '../../../assets/icons/like.png';
+import likegificon from "../../../assets/icons/smiley.gif";
 import {
   FaCommentAlt,
   FaLaughWink,
@@ -16,6 +16,8 @@ import {
 } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
+import PostUserInfo from "../../../Components/PostCard/PostUserInfo/PostUserInfo";
+import PostAuthorityModal from "../../../Components/PostCard/PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 
 const GroupCard = ({ post, handleDeletePost, user }) => {
 

@@ -6,6 +6,7 @@ import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import EditProfile from "../Pages/EditProfile/EditProfile";
 import SellerPro from "../Pages/SellerPro/SellerPro";
 import FollowPages from "../Pages/FollowPages/FollowPages";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 import FeatureLayout from "../Layout/FeatureLayout";
@@ -36,6 +37,7 @@ export const Routes = createBrowserRouter([
       { path: '/editprofile', element: <EditProfile></EditProfile> },
       { path: '/sellerpro', element: <SellerPro></SellerPro> },
       { path: '/pages', element: <FollowPages></FollowPages> },
+      { path: '/products/:id', element: <ProductDetails></ProductDetails> },
     ]
   },
   {

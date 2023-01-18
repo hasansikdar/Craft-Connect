@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { HiSpeakerphone } from "react-icons/hi";
 import { FaEdit } from "react-icons/fa";
+import { Authcontext } from "../../../Context/UserContext";
 
 const ProfileDetails = () => {
+  const { user } = useContext(Authcontext);
   return (
     <div>
       <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 text-gray-500 dark:bg-gray-700 ">
@@ -16,7 +18,7 @@ const ProfileDetails = () => {
           />
           <Link to="/profile">
             <h1 className="dark:text-white text-gray-700 font-bold text-xl hidden lg:block">
-              Farhan Chowdhury
+              {user?.displayName}
             </h1>
           </Link>
           <p className="dark:text-gray-300 text-gray-700">
