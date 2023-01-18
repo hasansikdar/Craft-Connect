@@ -14,23 +14,25 @@ const Advertisement = () => {
               <img src={ad1} className="rounded" alt="frnd" />
             </div>
             <div>
-              <h1 className="text-white text-sm font-bold mb-2">
+              <h1 className="text-black dark:text-white text-sm font-bold mb-2">
                 Hand Made Craft
               </h1>
-              <p className="text-xs text-gray-300">Buy your favorite Crafts</p>
+              <p className="text-xs text-gray-600 dark:text-gray-300">
+                Buy your favorite Crafts
+              </p>
             </div>
           </Link>
         </li>
-        <li className="hover:bg-zinc-600 duration-300 rounded-lg">
+        <li className="hover:bg-zinc-100 dark:hover:bg-zinc-600 duration-300 rounded-lg">
           <Link>
             <div className="w-40">
               <img src={ad2} className="rounded" alt="frnd" />
             </div>
             <div>
-              <h1 className="text-white text-sm font-bold mb-2">
+              <h1 className="text-black dark:text-white text-sm font-bold mb-2">
                 Dian Handicraft
               </h1>
-              <p className="text-xs text-gray-300">
+              <p className="text-xs text-gray-600 dark:text-gray-300">
                 Best products made by hand
               </p>
             </div>

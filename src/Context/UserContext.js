@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.Config';
 import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth'
 import { useQuery } from '@tanstack/react-query';
-import { toast } from 'react-hot-toast';
+
 
 export const Authcontext = createContext();
 const auth = getAuth(app)
@@ -42,9 +42,10 @@ const UserContext = ({children}) => {
     })
 
 
+
   
 
-    const authinfo = {user, refetch, updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
+    const authinfo = {user, users, refetch, updateuserdata, createaccount, logout, signin,loading, signinwithgoogle}
 
 
 

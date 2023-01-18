@@ -1,7 +1,12 @@
-import React, { useContext } from "react";
-import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
-import PostUserInfo from "./PostUserInfo/PostUserInfo";
-import likeicon from "../../assets/icons/like.png";
+import React from "react";
+// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
+// import PostUserInfo from "./PostUserInfo/PostUserInfo";
+// import likeicon from "../../assets/icons/like.png";
+// import likegificon from "../../assets/icons/smiley.gif";
+// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
+// import PostUserInfo from "./PostUserInfo/PostUserInfo";
+import likeicon from '../../../assets/icons/like.png';
+import likegificon from "../../../assets/icons/smiley.gif";
 import {
   FaCommentAlt,
   FaLaughWink,
@@ -11,20 +16,10 @@ import {
 } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
+import PostUserInfo from "../../../Components/PostCard/PostUserInfo/PostUserInfo";
+import PostAuthorityModal from "../../../Components/PostCard/PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 
-import { Authcontext } from "../../Context/UserContext";
-import Reactions from "../../Shared/Reactions/Reactions";
-
-
-const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
-  const reactions = [
-    { emojilink: 'https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif' },
-    { emojilink: 'https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif' },
-    { emojilink: 'https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif' },
-    { emojilink: 'https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif' },
-    { emojilink: 'https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif' },
-    { emojilink: 'https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif' }
-  ]
+const GroupCard = ({ post, handleDeletePost, user }) => {
 
   return (
     <div>
@@ -61,29 +56,41 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
             </span>
           </div>
           <div className="flex justify-between cursor-pointer mt-3 border-y py-4 border-white">
-            <button className="flex btn bg-white hover:bg-white dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
-              {
-                post?.emojiLink.length  ?
-                  <img className="w-8 h-7 bg-black rounded-full flex items-center justify-center" src={post?.emojiLink} alt="" /> :
-                  <>
-                    <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
-                    <label
-                      className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
-                      tabIndex={0}
-                    >
-                      Like
-                    </label>
-                  </>
-              }
+            <button className="flex btn dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
+              <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
               <div className="">
+                <label
+                  tabIndex={0}
+                  className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
+                >
+                  Like
+                </label>
                 <div
                   tabIndex={0}
                   className="dropdown-content -ml-10 bg-white text-black menu p-2 shadow rounded-box w-52"
                 >
                   <div className="grid grid-cols-6">
-                    {
-                      reactions.map(react => <Reactions handelReaction={handelReaction} id={post?._id} react={react}></Reactions>)
-                    }
+                    <img src={likegificon} alt="" />
+                    <img
+                      src="https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif"
+                      alt=""
+                    />
+                    <img
+                      src="https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif"
+                      alt=""
+                    />
+                    <img
+                      src="https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif"
+                      alt=""
+                    />
+                    <img
+                      src="https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif"
+                      alt=""
+                    />
+                    <img
+                      src="https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -142,6 +149,11 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
                     className="dropdown-content menu bg-white text-black p-2 shadow dark:bg-base-100 rounded-box w-52"
                   >
                     <div className="grid grid-cols-5 justify-between gap-2">
+                      <img
+                        className="cursor-pointer"
+                        src={likegificon}
+                        alt=""
+                      />
                       <img
                         className="cursor-pointer"
                         src="https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif"
@@ -205,4 +217,4 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
   );
 };
 
-export default PostCard;
+export default GroupCard;
