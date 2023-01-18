@@ -13,6 +13,7 @@ import Form from "./Form";
 const CreatePost = ({ open, setOpen }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
+  const [uniqueId, setUniqueId] = useState('');
   const cancelButtonRef = useRef(null);
   const { user, refetch } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
@@ -42,6 +43,7 @@ const CreatePost = ({ open, setOpen }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        makeid(12)
         const img = data?.data?.url;
         const userName = user?.displayName;
         const userEmail = user?.email;
@@ -53,6 +55,7 @@ const CreatePost = ({ open, setOpen }) => {
           currentData,
           postText,
           img,
+          uniqueId
         };
         fetch("https://craft-connect-server.vercel.app/usersPost", {
           method: "POST",
@@ -90,12 +93,23 @@ const CreatePost = ({ open, setOpen }) => {
   }, [selectedFile]);
 
   const onSelectFile = (e) => {
-    if (!e.target.files || e.target.files.length === 0) {
+    if (!e.target.files || e.target.files?.length === 0) {
       setSelectedFile(undefined);
       return;
     }
     setSelectedFile(e.target.files);
   };
+  function makeid(length) {
+    let result           = '';
+    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return setUniqueId(result);
+}
+
+
   return (
     <>
       <Transition.Root show={open} as={Fragment}>
@@ -151,7 +165,7 @@ const CreatePost = ({ open, setOpen }) => {
                         d="M6 18L18 6M6 6l12 12"
                       />
                     </svg>
-                    <div className="flex justify-between items-center bg-gray-100 dark:bg-gray-600 p-2 rounded">
+                    <div className="flex justify-between items-center bg-gray-100 dark:bg-zinc-700 p-2 rounded">
                       <div className="flex items-center gap-3 ">
                         {/* image source is hardcode now */}
                         <img

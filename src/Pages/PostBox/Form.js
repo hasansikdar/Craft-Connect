@@ -14,11 +14,11 @@ const Form = ({
   return (
     <>
       <form onSubmit={formSubmit}>
-        <div className=" overflow-y-scroll max-h-[250px] bg-gray-100 dark:bg-gray-600 p-2 rounded mb-2">
+        <div className=" overflow-y-scroll max-h-[250px] bg-gray-100 dark:bg-zinc-700 p-2 rounded mb-2">
           <textarea
             className="bg-transparent text-xl w-full  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
             name="postText"
-            rows={12}
+            rows={5}
             placeholder="Whats's on your mind"
             value={postDisabled}
             onChange={handlePostTextChange}

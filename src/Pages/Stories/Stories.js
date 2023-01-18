@@ -34,7 +34,7 @@ const Stories = () => {
                   <div className="flex flex-col justify-between h-full rounded-md p-4">
                     <img
                       src={story.avatar}
-                      className="h-12 w-12 rounded-full"
+                      className="h-12 w-12 rounded-full object-cover"
                       alt=""
                     />
                     <p className="text-white">{story.userName}</p>
