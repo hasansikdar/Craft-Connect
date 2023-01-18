@@ -105,9 +105,6 @@ const Form = ({
         </div>
         <div className="mb-2 py-2 px-3 rounded-md flex border items-center justify-between">
           <button
-            onClick={() => {
-              setCloseUploadPhotoBox(true);
-            }}
             className="text-black dark:text-white text-lg font-semibold"
           >
             Add To Your Post{" "}

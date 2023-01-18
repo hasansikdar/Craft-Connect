@@ -10,18 +10,35 @@ import { useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
 import { Dialog, Transition } from "@headlessui/react";
 import Form from "./Form";
+import { useQuery } from "@tanstack/react-query";
 const CreatePost = ({ open, setOpen }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
-  const [uniqueId, setUniqueId] = useState('');
+  const [uniqueId, setUniqueId] = useState("");
+  const [uploadImg, setUploadImg] = useState("");
   const cancelButtonRef = useRef(null);
-  const { user, refetch } = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
   };
+  const handleClose = () => {
+    setSelectedFile(undefined);
+    setPostDisabled("");
+    setCloseUploadPhotoBox(false)
+  };
+  // refetch are not working i try this method its work and i remove refetch this page from useContext Hook
+  const { data: posts = [], refetch } = useQuery({
+    queryKey: ["posts"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/usersPost");
+      const data = res.json();
+      return data;
+    },
+  });
+
   const formSubmit = (event) => {
     event.preventDefault();
     const field = event.target;
@@ -31,51 +48,58 @@ const CreatePost = ({ open, setOpen }) => {
     const mm = String(currentData.getMonth() + 1).padStart(2, "0");
     const yyyy = currentData.getFullYear();
     currentData = mm + "/" + dd + "/" + yyyy;
-    console.log(currentData.getTime())
+    console.log(currentData);
 
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
     const formData = new FormData();
-    formData.append("image", selectedFile[0]);
-    fetch(url, {
+    if (selectedFile) {
+      formData.append("image", selectedFile[0]);
+      fetch(url, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const img = data?.data?.url;
+          setUploadImg(img);
+        });
+    }
+
+    makeid(12);
+    const userName = user?.displayName;
+    const userEmail = user?.email;
+    const userPhoto = user?.photoURL;
+    const usersData = {
+      userName,
+      userEmail,
+      userPhoto,
+      currentData,
+      postText,
+      img: uploadImg,
+      uniqueId,
+    };
+    console.log(usersData);
+    fetch("http://localhost:5000/usersPost", {
       method: "POST",
-      body: formData,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(usersData),
     })
       .then((res) => res.json())
       .then((data) => {
-        makeid(12)
-        const img = data?.data?.url;
-        const userName = user?.displayName;
-        const userEmail = user?.email;
-        const userPhoto = user?.photoURL;
-        const usersData = {
-          userName,
-          userEmail,
-          userPhoto,
-          currentData,
-          postText,
-          img,
-          uniqueId
-        };
-        fetch("https://craft-connect-server.vercel.app/usersPost", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(usersData),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.acknowledged) {
-              toast.success("Post Add Success");
-              navigate("/");
-              field.reset();
-              refetch();
-              setSelectedFile(undefined);
-            }
-          });
+        if (data.acknowledged) {
+          toast.success("Post Add Success");
+          field.reset();
+          setSelectedFile(undefined);
+          setPostDisabled("");
+          navigate("/");
+          refetch();
+        }
       });
   };
+
   useEffect(() => {
     if (!selectedFile) {
       setPreview(undefined);
@@ -100,15 +124,15 @@ const CreatePost = ({ open, setOpen }) => {
     setSelectedFile(e.target.files);
   };
   function makeid(length) {
-    let result           = '';
-    const characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = "";
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const charactersLength = characters.length;
-    for ( let i = 0; i < length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return setUniqueId(result);
-}
-
+  }
 
   return (
     <>
@@ -152,6 +176,7 @@ const CreatePost = ({ open, setOpen }) => {
                       className="w-6 h-6 cursor-pointer absolute right-[25px] top-[20px]"
                       onClick={() => {
                         setOpen(false);
+                        handleClose();
                       }}
                       ref={cancelButtonRef}
                       fill="none"
