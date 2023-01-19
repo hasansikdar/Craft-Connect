@@ -3,7 +3,7 @@ import React from 'react';
 const CreatePost = () => {
   return (
     <div>
-      this is created post
+      <h1>hello</h1>
     </div>
   );
 };
