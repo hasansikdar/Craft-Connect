@@ -59,7 +59,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-black fixed top-0 z-50 w-full">
+    <div className="dark:bg-black fixed top-0 z-[999] w-full">
       <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
           <Link to="/" className="normal-case text-xl cursor-pointer font-bold">
