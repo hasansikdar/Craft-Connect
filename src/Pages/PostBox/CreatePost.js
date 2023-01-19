@@ -19,6 +19,7 @@ const CreatePost = ({ open, setOpen }) => {
   const cancelButtonRef = useRef(null);
   const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
   const handlePostTextChange = (event) => {
@@ -39,66 +40,7 @@ const CreatePost = ({ open, setOpen }) => {
     },
   });
 
-  const formSubmit = (event) => {
-    event.preventDefault();
-    const field = event.target;
-    const postText = field?.postText?.value;
-    let currentData = new Date();
-    const dd = String(currentData.getDate()).padStart(2, "0");
-    const mm = String(currentData.getMonth() + 1).padStart(2, "0");
-    const yyyy = currentData.getFullYear();
-    currentData = mm + "/" + dd + "/" + yyyy;
-    console.log(currentData);
 
-    const imageKey = "024d2a09e27feff54122f51afddbdfaf";
-    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
-    const formData = new FormData();
-    if (selectedFile) {
-      formData.append("image", selectedFile[0]);
-      fetch(url, {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          const img = data?.data?.url;
-          setUploadImg(img);
-        });
-    }
-
-    makeid(12);
-    const userName = user?.displayName;
-    const userEmail = user?.email;
-    const userPhoto = user?.photoURL;
-    const usersData = {
-      userName,
-      userEmail,
-      userPhoto,
-      currentData,
-      postText,
-      img: uploadImg,
-      uniqueId,
-    };
-    console.log(usersData);
-    fetch("http://localhost:5000/usersPost", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(usersData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success("Post Add Success");
-          field.reset();
-          setSelectedFile(undefined);
-          setPostDisabled("");
-          navigate("/");
-          refetch();
-        }
-      });
-  };
 
   useEffect(() => {
     if (!selectedFile) {
@@ -116,14 +58,71 @@ const CreatePost = ({ open, setOpen }) => {
     return () => URL.revokeObjectURL(selectedFIles);
   }, [selectedFile]);
 
-  const onSelectFile = (e) => {
-    if (!e.target.files || e.target.files?.length === 0) {
-      setSelectedFile(undefined);
-      return;
+
+
+  const formSubmit = (event) => {
+    event.preventDefault();
+    uniqid(12);
+    const field = event.target;
+    const postText = field?.postText?.value;
+    let currentData = new Date();
+    const dd = String(currentData.getDate()).padStart(2, "0");
+    const mm = String(currentData.getMonth() + 1).padStart(2, "0");
+    const yyyy = currentData.getFullYear();
+    currentData = mm + "/" + dd + "/" + yyyy;
+
+
+    const imageKey = "024d2a09e27feff54122f51afddbdfaf";
+    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+    const formData = new FormData();
+    if (selectedFile) {
+      formData.append("image", selectedFile[0]);
+      fetch(url, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const img = data?.data?.display_url;
+
+          const userName = user?.displayName;
+          const userEmail = user?.email;
+          const userPhoto = user?.photoURL;
+
+          const usersData = {
+            userName,
+            userEmail,
+            userPhoto,
+            currentData,
+            postText,
+            img,
+            uniqueId,
+          };
+          fetch("http://localhost:5000/usersPost", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(usersData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.acknowledged) {
+                toast.success("Post Add Success");
+                field.reset();
+                setSelectedFile(undefined);
+                setPostDisabled("");
+                navigate("/");
+                refetch();
+              }
+            });
+        });
     }
-    setSelectedFile(e.target.files);
+
   };
-  function makeid(length) {
+
+
+  function uniqid(length) {
     let result = "";
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -133,6 +132,17 @@ const CreatePost = ({ open, setOpen }) => {
     }
     return setUniqueId(result);
   }
+
+
+  const onSelectFile = (e) => {
+    if (!e.target.files || e.target.files?.length === 0) {
+      setSelectedFile(undefined);
+      return;
+    }
+    setSelectedFile(e.target.files);
+  };
+
+
 
   return (
     <>
