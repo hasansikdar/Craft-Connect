@@ -22,13 +22,15 @@ const UserProfile = () => {
             <button className="bg-blue-600 px-2 py-1 rounded-lg text-white font-bold hover:bg-blue-500 absolute right-[20%] top-[49%]">
               Edit profile
             </button>
-            <div className="ml-16 absolute top-[54%]">
-              <div>
-                <img className="w-[14%] rounded-full" src={profile} alt="" />
+            <button className='btn-outline'>
+              <div className="ml-16 absolute top-[54%]">
+                <div>
+                  <img className="w-[14%] rounded-full" src={profile} alt="" />
+                </div>
               </div>
-            </div>
-            <button className=' bg-gray-700 hover:bg-gray-600 p-2 absolute top-[71%] left-[28%] rounded-full'>
-              <BsCameraFill className='text-2xl text-white'/>
+              <div className=" bg-gray-700 hover:bg-gray-600 p-2 absolute top-[71%] left-[28%] rounded-full">
+                <BsCameraFill className="text-2xl text-white" />
+              </div>
             </button>
             <div className="absolute left-[32%] top-[59%]">
               <h1 className="text-3xl">Rahat Kabir Ifty</h1>
