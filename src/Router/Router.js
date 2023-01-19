@@ -18,6 +18,7 @@ import BookMarked from "../Pages/BookMarked/BookMarked";
 import AdCenter from "../Pages/AdCenter/AdCenter";
 import AdsManager from "../Pages/AdsManager/AdsManager";
 import Pages from "../Pages/Fb_Pages/Pages";
+import CreateStories from "../Pages/Stories/CreateStories";
 
 
 export const Routes = createBrowserRouter([
@@ -38,6 +39,7 @@ export const Routes = createBrowserRouter([
       { path: '/sellerpro', element: <SellerPro></SellerPro> },
       { path: '/pages', element: <FollowPages></FollowPages> },
       { path: '/products/:id', element: <ProductDetails></ProductDetails> },
+      {path: '/stories/create', element: <CreateStories/>}
     ]
   },
   {
