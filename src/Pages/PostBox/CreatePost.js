@@ -24,7 +24,7 @@ const CreatePost = ({ open, setOpen }) => {
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
   };
-
+ 
   const handleClose = () => {
     setSelectedFile(undefined);
     setPostDisabled("");
@@ -41,8 +41,17 @@ const CreatePost = ({ open, setOpen }) => {
     },
   });
 
+  useEffect(() => {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    for (let i = 0; i < 12; i++) {
+       setUniqueId( characters.charAt(Math.floor(Math.random() * charactersLength)))
+    }
+  }, [])
   const formSubmit = (event) => {
     event.preventDefault();
+    
     const field = event.target;
     const postText = field?.postText?.value;
     let currentData = new Date();
@@ -63,7 +72,7 @@ const CreatePost = ({ open, setOpen }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          const img = data?.data?.url;
+          const img = data?.data?.display_url;
           setUploadImg(img);
         });
     }
@@ -73,7 +82,6 @@ const CreatePost = ({ open, setOpen }) => {
     const userEmail = user?.email;
     const userPhoto = user?.photoURL;
     console.log(uniqueId)
-    makeid(12);
     const usersData = {
       userName,
       userEmail,
@@ -127,16 +135,7 @@ const CreatePost = ({ open, setOpen }) => {
     }
     setSelectedFile(e.target.files);
   };
-  function makeid(length) {
-    let result = "";
-    const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return setUniqueId(result);
-  }
+  
 
   return (
     <>
