@@ -9,6 +9,7 @@ import { FcSettings } from "react-icons/fc";
 import { RiUserShared2Fill } from "react-icons/ri";
 import { CgUserList } from "react-icons/cg";
 import { BiNotification } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const LeftSide = () => {
   return (
@@ -55,21 +56,22 @@ const LeftSide = () => {
             Home
           </h2>
         </div>
+        <Link to="/friends/requests">
+          <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
+            <div className="flex items-center gap-x-4">
+              <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
+                <RiUserShared2Fill></RiUserShared2Fill>
+              </button>
+              <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
+                Friend Requests
+              </h2>
+            </div>
 
-        <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
-          <div className="flex items-center gap-x-4">
-            <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
-              <RiUserShared2Fill></RiUserShared2Fill>
+            <button className="text-xl dark:text-white text-black">
+              <FaAngleRight></FaAngleRight>
             </button>
-            <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
-              Friend Requests
-            </h2>
           </div>
-          <button className="text-xl dark:text-white text-black">
-            <FaAngleRight></FaAngleRight>
-          </button>
-        </div>
-
+        </Link>
         <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
           <div className="flex items-center gap-x-4">
             <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
