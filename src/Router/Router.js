@@ -19,6 +19,7 @@ import AdsManager from "../Pages/AdsManager/AdsManager";
 import Pages from "../Pages/Fb_Pages/Pages";
 import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
+import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 
 export const Routes = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ export const Routes = createBrowserRouter([
   },
 
   { path: "/friends/requests", element: <FriendRequest></FriendRequest> },
+  {
+    path: "/friends/suggestion",
+    element: <FriendSuggestion></FriendSuggestion>,
+  },
   { path: "/login", element: <Login></Login> },
   {
     path: "*",

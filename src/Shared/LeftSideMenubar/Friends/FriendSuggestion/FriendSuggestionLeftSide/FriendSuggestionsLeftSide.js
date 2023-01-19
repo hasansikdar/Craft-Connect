@@ -1,8 +1,9 @@
 import React from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import FriendRequestCard from "./FriendRequestCard";
-const FriendRequestBar = () => {
+import FriendSuggestionCard from "../FriendSuggestionCard/FriendSuggestionCard";
+
+const FriendSuggestionsLeftSide = () => {
   return (
     <div className="p-4">
       <div className="">
@@ -15,23 +16,17 @@ const FriendRequestBar = () => {
           </Link>
           <div className="leading-3">
             <small>Friends</small>
-            <h2 className="text-2xl font-bold">Friend Requests</h2>
+            <h2 className="text-2xl font-bold">Suggestions</h2>
           </div>
         </div>
-        <hr className="my-2" />
 
-        <div className="flex flex-col">
-          <h2 className="text-xl font-medium">100 Friend requests</h2>
-          <small className="cursor-pointer text-blue-700">
-            View sent requests
-          </small>
-        </div>
+        <h2 className=" font-medium pt-2">People You May Know</h2>
       </div>
       <div>
-        <FriendRequestCard></FriendRequestCard>
+        <FriendSuggestionCard></FriendSuggestionCard>
       </div>
     </div>
   );
 };
 
-export default FriendRequestBar;
+export default FriendSuggestionsLeftSide;

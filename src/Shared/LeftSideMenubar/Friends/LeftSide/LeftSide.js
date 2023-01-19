@@ -16,7 +16,6 @@ const LeftSide = () => {
     <div className="p-5 dark:bg-gray-800 bg-white h-screen fixed top-[60px] w-[360px]">
       <div className="flex justify-between items-center text-black dark:text-white">
         <h2 className="text-xl font-bold">Friends</h2>
-        {/* <label htmlFor="my-modal-4" className="text-xl cursor-pointer"></label> */}
 
         <div className="dropdown dropdown-end">
           <label tabIndex={0}>
@@ -72,19 +71,21 @@ const LeftSide = () => {
             </button>
           </div>
         </Link>
-        <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
-          <div className="flex items-center gap-x-4">
-            <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
-              <FaUserPlus></FaUserPlus>
+        <Link to="/friends/suggestion">
+          <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
+            <div className="flex items-center gap-x-4">
+              <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
+                <FaUserPlus></FaUserPlus>
+              </button>
+              <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
+                Suggestions
+              </h2>
+            </div>
+            <button className="text-xl dark:text-white text-black">
+              <FaAngleRight></FaAngleRight>
             </button>
-            <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
-              Suggestions
-            </h2>
           </div>
-          <button className="text-xl dark:text-white text-black">
-            <FaAngleRight></FaAngleRight>
-          </button>
-        </div>
+        </Link>
 
         <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
           <div className="flex items-center gap-x-4">

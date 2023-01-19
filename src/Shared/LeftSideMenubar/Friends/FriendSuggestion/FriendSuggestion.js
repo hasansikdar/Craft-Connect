@@ -1,22 +1,22 @@
 import React from "react";
 import Navbar from "../../../../Pages/Navbar/Navbar";
-import FriendRequestBar from "./FrieendRequestBar/FriendRequestBar";
-import LeftsideFriendrequest from "./LeftsideFriendRequest/LeftsideFriendrequest";
+import FriendSuggestionsLeftSide from "./FriendSuggestionLeftSide/FriendSuggestionsLeftSide";
+import SuggestionsProfile from "./SuggestionsProfile/SuggestionsProfile";
 
-const FriendRequest = () => {
+const FriendSuggestion = () => {
   return (
     <section>
       <Navbar></Navbar>
       <div className="grid grid-cols-12 mt-[60px] bg-white dark:bg-black text-black dark:text-white">
         <div className="col-span-3 border border-slate-600 bg-gray-50 dark:bg-black h-screen">
-          <FriendRequestBar></FriendRequestBar>
+          <FriendSuggestionsLeftSide></FriendSuggestionsLeftSide>
         </div>
         <div className="col-span-9">
-          <LeftsideFriendrequest></LeftsideFriendrequest>
+          <SuggestionsProfile></SuggestionsProfile>
         </div>
       </div>
     </section>
   );
 };
 
-export default FriendRequest;
+export default FriendSuggestion;
