@@ -1,5 +1,6 @@
 import React from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
+import FriendRequestCard from "./FriendRequestCard";
 const FriendRequestBar = () => {
   return (
     <div className="p-4">
@@ -12,7 +13,18 @@ const FriendRequestBar = () => {
           <h2 className="text-2xl font-bold">Friend Requests</h2>
         </div>
       </div>
-      <hr className="mt-2" />
+      <hr className="my-2" />
+
+      <div className="flex flex-col">
+        <h2 className="text-xl font-medium">100 Friend requests</h2>
+        <small className="cursor-pointer text-blue-700">
+          View sent requests
+        </small>
+      </div>
+
+      <div>
+        <FriendRequestCard></FriendRequestCard>
+      </div>
     </div>
   );
 };
