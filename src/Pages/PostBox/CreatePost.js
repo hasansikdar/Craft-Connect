@@ -24,11 +24,13 @@ const CreatePost = ({ open, setOpen }) => {
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
   };
+
   const handleClose = () => {
     setSelectedFile(undefined);
     setPostDisabled("");
     setCloseUploadPhotoBox(false)
   };
+
   // refetch are not working i try this method its work and i remove refetch this page from useContext Hook
   const { data: posts = [], refetch } = useQuery({
     queryKey: ["posts"],
@@ -66,10 +68,12 @@ const CreatePost = ({ open, setOpen }) => {
         });
     }
 
-    makeid(12);
+    
     const userName = user?.displayName;
     const userEmail = user?.email;
     const userPhoto = user?.photoURL;
+    console.log(uniqueId)
+    makeid(12);
     const usersData = {
       userName,
       userEmail,
@@ -79,7 +83,7 @@ const CreatePost = ({ open, setOpen }) => {
       img: uploadImg,
       uniqueId,
     };
-    console.log(usersData);
+    
     fetch("http://localhost:5000/usersPost", {
       method: "POST",
       headers: {
