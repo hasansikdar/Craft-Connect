@@ -21,8 +21,10 @@ const CreatePost = ({ open, setOpen }) => {
   const handlePostTextChange = (event) => {
     setPostDisabled(event.target.value);
   };
+  
   const formSubmit = (event) => {
     event.preventDefault();
+    const uniqId = Math.floor(1000000 + Math.random() * 9000000);
     const field = event.target;
     const postText = field?.postText?.value;
     let currentData = new Date();
@@ -53,6 +55,7 @@ const CreatePost = ({ open, setOpen }) => {
           currentData,
           postText,
           img,
+          uniqId,
         };
         fetch("https://craft-connect-server.vercel.app/usersPost", {
           method: "POST",
@@ -67,7 +70,6 @@ const CreatePost = ({ open, setOpen }) => {
               toast.success("Post Add Success");
               navigate("/");
               field.reset();
-              refetch();
               setSelectedFile(undefined);
             }
           });
