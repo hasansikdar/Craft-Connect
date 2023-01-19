@@ -10,18 +10,19 @@ const Form = ({
   setCloseUploadPhotoBox,
   handlePostTextChange,
   preview,
+  uploadImg
 }) => {
   return (
     <>
       <form onSubmit={formSubmit}>
-        <div className=" overflow-y-scroll max-h-[250px] bg-gray-100 dark:bg-gray-600 p-2 rounded mb-2">
+        <div className=" overflow-y-scroll max-h-[250px] bg-gray-100 dark:bg-zinc-700 p-2 rounded mb-2">
           <textarea
             className="bg-transparent text-xl w-full  resize-none pr-4 dark:text-white text-black placeholder-text-100 transition-all duration-200 outline-none"
             name="postText"
-            rows={12}
+            rows={5}
             placeholder="Whats's on your mind"
             value={postDisabled}
-            onChange={handlePostTextChange}
+            onChange={e => handlePostTextChange(e.target.value)}
           ></textarea>
           {selectedFile ? (
             <div className="flex flex-wrap gap-4 mb-4">
@@ -40,6 +41,7 @@ const Form = ({
                       ✕
                     </span>
                     <img
+                      accept="image/*"
                       src={url}
                       className="w-52 rounded-md object-cover"
                       alt="post"
@@ -105,9 +107,6 @@ const Form = ({
         </div>
         <div className="mb-2 py-2 px-3 rounded-md flex border items-center justify-between">
           <button
-            onClick={() => {
-              setCloseUploadPhotoBox(true);
-            }}
             className="text-black dark:text-white text-lg font-semibold"
           >
             Add To Your Post{" "}
@@ -136,7 +135,7 @@ const Form = ({
         <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
           <button
             type="submit"
-            disabled={!postDisabled && !selectedFile}
+            disabled={!postDisabled && uploadImg && !selectedFile}
             onClick={() => {
               setOpen(false);
             }}

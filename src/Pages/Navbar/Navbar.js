@@ -5,13 +5,9 @@ import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
 import maruf from "../../assets/maruf.png";
 import hasan from "../../assets/hasan.png";
-import { FaExclamation, FaMoon,} from "react-icons/fa";
+import { FaExclamation, FaMoon } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
-import {
-  FcNext,
-  FcQuestions,
-  FcExport,
-} from "react-icons/fc";
+import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
 
 import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from "../../Context/UserContext";
@@ -63,7 +59,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-black">
+    <div className="dark:bg-black fixed top-0 z-50 w-full">
       <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
           <Link to="/" className="normal-case text-xl cursor-pointer font-bold">

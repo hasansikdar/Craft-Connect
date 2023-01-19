@@ -15,6 +15,8 @@ import {
   FcClapperboard,
   FcConferenceCall,
   FcNews,
+  FcBookmark,
+  FcGrid,
 } from "react-icons/fc";
 import { HiOutlineChevronRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -42,7 +44,13 @@ const Top = () => {
         </button>
       </Link>
       <hr className="mb-4" />
-      <Link to="/friends">
+      <button className="flex justify-start items-center gap-4 mb-4">
+        <p>
+          <FcNews className="h-8 w-8"></FcNews>
+        </p>
+        <h1 className="text-lg font-medium">Most Recent</h1>
+      </button>
+      <Link to="/feature/friends">
         <button className="flex justify-start items-center gap-4 mb-4">
           <p>
             <FaUserFriends className="h-8 w-8 text-green-300"></FaUserFriends>
@@ -50,7 +58,7 @@ const Top = () => {
           <h1 className="text-lg font-medium">Friends</h1>
         </button>
       </Link>
-      <Link>
+      <Link to="/feature/watch">
         <button className="flex justify-start items-center gap-4 mb-4">
           <p>
             <FcClapperboard className="h-8 w-8"></FcClapperboard>
@@ -58,15 +66,13 @@ const Top = () => {
           <h1 className="text-lg font-medium">Watch</h1>
         </button>
       </Link>
-      <Link>
-        <button className="flex justify-start items-center gap-4 mb-4">
-          <p>
-            <FcNews className="h-8 w-8"></FcNews>
-          </p>
-          <h1 className="text-lg font-medium">Most Recent</h1>
-        </button>
-      </Link>
-      <Link>
+
+      {/* <button className='flex justify-start items-center gap-4 mb-4'>
+                <p><FcNews className='h-8 w-8'></FcNews></p>
+                <h1 className='text-lg font-medium'>Most Recent</h1>
+            </button> */}
+
+      <Link to="/feature/groups">
         <button className="flex justify-start items-center gap-4 mb-4">
           <p>
             <FcConferenceCall className="h-8 w-8"></FcConferenceCall>
@@ -74,7 +80,7 @@ const Top = () => {
           <h1 className="text-lg font-medium">Groups</h1>
         </button>
       </Link>
-      <Link>
+      <Link to="/feature/marketplace">
         <button className="flex justify-start items-center gap-4 mb-4">
           <p>
             <FcHome className="h-8 w-8"></FcHome>
@@ -96,15 +102,15 @@ const Top = () => {
         )}
         {isOpen && (
           <>
-            <Link>
+            <Link to="/feature/bookmarked">
               <button className="flex justify-start items-center gap-4 mb-4">
                 <p>
-                  <FcSteam className="h-8 w-8"></FcSteam>
+                  <FcBookmark className="h-8 w-8"></FcBookmark>
                 </p>
-                <h1 className="text-lg font-medium">Gaming</h1>
+                <h1 className="text-lg font-medium">Bookmarked</h1>
               </button>
             </Link>
-            <Link>
+            <Link to="/feature/adcenter">
               <button className="flex justify-start items-center gap-4 mb-4">
                 <p>
                   <FcAdvertising className="h-8 w-8"></FcAdvertising>
@@ -112,12 +118,20 @@ const Top = () => {
                 <h1 className="text-lg font-medium">Ad Center</h1>
               </button>
             </Link>
-            <Link>
+            <Link to="/feature/adsmanager">
               <button className="flex justify-start items-center gap-4 mb-4">
                 <p>
                   <FcBarChart className="h-8 w-8"></FcBarChart>
                 </p>
                 <h1 className="text-lg font-medium">Ads Manager</h1>
+              </button>
+            </Link>
+            <Link to="/feature/pages">
+              <button className="flex justify-start items-center gap-4 mb-4">
+                <p>
+                  <FcGrid className="h-8 w-8"></FcGrid>
+                </p>
+                <h1 className="text-lg font-medium">Pages</h1>
               </button>
             </Link>
           </>
