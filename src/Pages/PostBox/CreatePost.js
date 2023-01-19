@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
@@ -14,21 +15,20 @@ import { useQuery } from "@tanstack/react-query";
 const CreatePost = ({ open, setOpen }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
-  const [uniqueId, setUniqueId] = useState("");
   const [uploadImg, setUploadImg] = useState("");
   const cancelButtonRef = useRef(null);
   const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
-  const handlePostTextChange = (event) => {
-    setPostDisabled(event.target.value);
+  const handlePostTextChange = (data) => {
+    setPostDisabled(data);
   };
- 
+
   const handleClose = () => {
     setSelectedFile(undefined);
     setPostDisabled("");
-    setCloseUploadPhotoBox(false)
+    setCloseUploadPhotoBox(false);
   };
 
   // refetch are not working i try this method its work and i remove refetch this page from useContext Hook
@@ -41,19 +41,10 @@ const CreatePost = ({ open, setOpen }) => {
     },
   });
 
-  useEffect(() => {
-    const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    const charactersLength = characters.length;
-    for (let i = 0; i < 12; i++) {
-       setUniqueId( characters.charAt(Math.floor(Math.random() * charactersLength)))
-    }
-  }, [])
   const formSubmit = (event) => {
     event.preventDefault();
-    
+
     const field = event.target;
-    const postText = field?.postText?.value;
     let currentData = new Date();
     const dd = String(currentData.getDate()).padStart(2, "0");
     const mm = String(currentData.getMonth() + 1).padStart(2, "0");
@@ -74,42 +65,50 @@ const CreatePost = ({ open, setOpen }) => {
         .then((data) => {
           const img = data?.data?.display_url;
           setUploadImg(img);
+          if (uploadImg.length) {
+            userPosts();
+          }
         });
     }
+    const userPosts = () => {
+ 
+        const userName = user?.displayName;
+        const userEmail = user?.email;
+        const userPhoto = user?.photoURL;
+        const usersData = {
+          userName,
+          userEmail,
+          userPhoto,
+          currentData,
+          postText: postDisabled,
+          img: uploadImg,
+          uniqueId: uuidv4(),
+        };
+        fetch("http://localhost:5000/usersPost", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(usersData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              toast.success("Post Add Success");
+              field.reset();
+              setSelectedFile(undefined);
+              setPostDisabled("");
+              setUploadImg('');
+              navigate("/");
+              refetch();
+            }
+          });
+      
+    }
+      if(!uploadImg.length){
+        userPosts()
+      }
 
-    
-    const userName = user?.displayName;
-    const userEmail = user?.email;
-    const userPhoto = user?.photoURL;
-    console.log(uniqueId)
-    const usersData = {
-      userName,
-      userEmail,
-      userPhoto,
-      currentData,
-      postText,
-      img: uploadImg,
-      uniqueId,
-    };
-    
-    fetch("http://localhost:5000/usersPost", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(usersData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success("Post Add Success");
-          field.reset();
-          setSelectedFile(undefined);
-          setPostDisabled("");
-          navigate("/");
-          refetch();
-        }
-      });
   };
 
   useEffect(() => {
@@ -135,8 +134,6 @@ const CreatePost = ({ open, setOpen }) => {
     }
     setSelectedFile(e.target.files);
   };
-  
-
   return (
     <>
       <Transition.Root show={open} as={Fragment}>
@@ -219,6 +216,7 @@ const CreatePost = ({ open, setOpen }) => {
                       setCloseUploadPhotoBox={setCloseUploadPhotoBox}
                       preview={preview}
                       handlePostTextChange={handlePostTextChange}
+                      uploadImg={uploadImg}
                     />
                   </div>
                 </Dialog.Panel>
