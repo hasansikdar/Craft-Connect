@@ -15,34 +15,51 @@ import { Link } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
 import Reactions from "../../Shared/Reactions/Reactions";
 
-
 const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
   const reactions = [
-    { emojilink: 'https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif' },
-    { emojilink: 'https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif' },
-    { emojilink: 'https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif' },
-    { emojilink: 'https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif' },
-    { emojilink: 'https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif' },
-    { emojilink: 'https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif' }
-  ]
+    {
+      emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
+    },
+    { emojilink: "https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif" },
+    { emojilink: "https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif" },
+    { emojilink: "https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif" },
+    {
+      emojilink:
+        "https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif",
+    },
+    {
+      emojilink:
+        "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
+    },
+  ];
 
   return (
     <div>
       <div className=" card md:w-[600px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
         <div className="card-body">
           <div>
-            <PostUserInfo handleDeletePost={handleDeletePost} post={post}></PostUserInfo>
+            <PostUserInfo
+              handleDeletePost={handleDeletePost}
+              post={post}
+            ></PostUserInfo>
           </div>
-          <p>{post?.postText?.length > 100 ? <>{post?.postText.slice(0, 100)} <Link className="font-bold" to='/'>See More..</Link></> : post?.postText}</p>
+          <p>
+            {post?.postText.length > 100 ? (
+              <>
+                {post?.postText.slice(0, 100)}{" "}
+                <Link className="font-bold" to="/">
+                  See More..
+                </Link>
+              </>
+            ) : (
+              post?.postText
+            )}
+          </p>
         </div>
         <PhotoProvider>
           <PhotoView src={post?.img}>
             <figure>
-              <img
-                className="w-full"
-                src={post?.img}
-                alt="Shoes"
-              />
+              <img className="w-full" src={post?.img} alt="Shoes" />
             </figure>
           </PhotoView>
         </PhotoProvider>
@@ -62,28 +79,36 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
           </div>
           <div className="flex justify-between cursor-pointer mt-3 border-y py-4 border-white">
             <button className="flex btn bg-white hover:bg-white dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
-              {
-                post?.emojiLink?.length  ?
-                  <img className="w-8 h-7 bg-black rounded-full flex items-center justify-center" src={post?.emojiLink} alt="" /> :
-                  <>
-                    <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
-                    <label
-                      className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
-                      tabIndex={0}
-                    >
-                      Like
-                    </label>
-                  </>
-              }
+              {post?.emojiLink?.length ? (
+                <img
+                  className="w-8 h-7 bg-black rounded-full flex items-center justify-center"
+                  src={post?.emojiLink}
+                  alt=""
+                />
+              ) : (
+                <>
+                  <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
+                  <label
+                    className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
+                    tabIndex={0}
+                  >
+                    Like
+                  </label>
+                </>
+              )}
               <div className="">
                 <div
                   tabIndex={0}
                   className="dropdown-content -ml-10 bg-white text-black menu p-2 shadow rounded-box w-52"
                 >
                   <div className="grid grid-cols-6">
-                    {
-                      reactions.map(react => <Reactions handelReaction={handelReaction} id={post?._id} react={react}></Reactions>)
-                    }
+                    {reactions.map((react) => (
+                      <Reactions
+                        handelReaction={handelReaction}
+                        id={post?._id}
+                        react={react}
+                      ></Reactions>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -176,11 +201,7 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
           <div className="comments">
             <div>
               <div className="flex p-3">
-                <img
-                  className="w-7 mr-4 h-7 rounded-full"
-                  src={''}
-                  alt=""
-                />
+                <img className="w-7 mr-4 h-7 rounded-full" src={""} alt="" />
                 <div>
                   <a className="hover:underline" href="">
                     Muhammad Hasan
