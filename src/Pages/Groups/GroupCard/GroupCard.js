@@ -28,7 +28,7 @@ const GroupCard = ({ post, handleDeletePost, user }) => {
           <div>
             <PostUserInfo handleDeletePost={handleDeletePost} post={post}></PostUserInfo>
           </div>
-          <p>{post?.postText.length > 100 ? <>{post?.postText.slice(0, 100)} <Link className="font-bold" to='/'>See More..</Link></> : post?.postText}</p>
+          <p>{post?.postText?.length > 100 ? <>{post?.postText.slice(0, 100)} <Link className="font-bold" to='/'>See More..</Link></> : post?.postText}</p>
         </div>
         <PhotoProvider>
           <PhotoView src={post?.img}>

@@ -31,6 +31,7 @@ const UserContext = ({children}) => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
+ 
 
     const {data:users = [], refetch} = useQuery({
         queryKey: ['users'],
