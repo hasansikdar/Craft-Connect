@@ -11,6 +11,7 @@ import { BsCameraFill } from "react-icons/bs";
 import { FaPhotoVideo, FaUpload } from "react-icons/fa";
 import Cover from './Cover';
 import ProfilePicture from './ProfilePicture';
+import OptionsProfile from './OptionsProfile';
 
 
 const Profile = () => {
@@ -22,6 +23,7 @@ const Profile = () => {
         <Navbar></Navbar>
         <Cover></Cover>
         <ProfilePicture></ProfilePicture>
+        <OptionsProfile/>
       </div>
     );
 };

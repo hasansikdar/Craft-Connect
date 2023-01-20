@@ -7,7 +7,6 @@ import EditProfile from "../Pages/EditProfile/EditProfile";
 import SellerPro from "../Pages/SellerPro/SellerPro";
 import FollowPages from "../Pages/FollowPages/FollowPages";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
-import UserProfile from "../Pages/UserProfile/UserProfile";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 import FeatureLayout from "../Layout/FeatureLayout";
 import Watch from "../Pages/Watch/Watch";
