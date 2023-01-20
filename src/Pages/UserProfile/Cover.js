@@ -27,7 +27,7 @@ const Cover = () => {
                 </div>
                 {showCoverMenu && (
                   <div
-                    className="bg-white absolute right-[40px] p-[10px] w-[200px] rounded-[10px] shadow-md mt-1"
+                    className="bg-white absolute right-[40px] p-[10px] w-[200px] rounded-[10px] shadow-md mt-1 z-[999]"
                     ref={menuRef}
                   >
                     <div className="flex items-center gap-[10px] cursor-pointer text-xs font-bold text-black p-[10px] rounded-[10px] hover:bg-gray-200">
