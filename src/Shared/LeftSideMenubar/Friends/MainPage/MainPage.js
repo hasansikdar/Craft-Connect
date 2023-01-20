@@ -41,7 +41,7 @@ const MainPage = () => {
             See All
           </button>
         </div>
-        <div className="mt-5 grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-3 py-2 mx-auto px-4 gap-5 mt-5">
           <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
