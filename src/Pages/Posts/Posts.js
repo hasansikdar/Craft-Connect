@@ -71,7 +71,7 @@ const Posts = () => {
   }
 
   return (
-    <div className="justify-center py-10">
+    <div className="justify-center lg:py-10">
       {
         posts.map(post => <PostCard refetch={refetch} handelReaction={handelReaction} handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
       }

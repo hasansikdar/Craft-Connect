@@ -22,6 +22,7 @@ import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/Frien
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 import Profile from "../Pages/UserProfile/Profile";
 import CreateStories from "../Pages/Stories/CreateStories";
+import Discover from "../Pages/Groups/Discover/Discover";
 
 
 export const Routes = createBrowserRouter([
@@ -60,6 +61,10 @@ export const Routes = createBrowserRouter([
       {
         path: "/feature/groups",
         element: <Groups></Groups>,
+      },
+      {
+        path: "/feature/groups/discover",
+        element: <Discover></Discover>,
       },
       {
         path: "/feature/marketplace",
