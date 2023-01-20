@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Reactions = ({react, handelReaction, id}) => {
+const Reactions = ({react, post, handelReaction, id}) => {
     return (
         <div>
-            <img name="emoji" onClick={e => handelReaction(id, e.target.src)}
+            <img name="emoji" onClick={e => handelReaction(id, e.target.src, post?.uniqueId)}
                 src={react?.emojilink}
                 alt=""
             />

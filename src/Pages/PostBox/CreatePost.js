@@ -20,6 +20,7 @@ const CreatePost = ({ open, setOpen }) => {
   const cancelButtonRef = useRef(null);
   const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
   const handlePostTextChange = (data) => {
@@ -44,6 +45,7 @@ const CreatePost = ({ open, setOpen }) => {
 
   const formSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     const field = event.target;
     let currentData = new Date();
     const dd = String(currentData.getDate()).padStart(2, "0");
@@ -64,44 +66,57 @@ const CreatePost = ({ open, setOpen }) => {
         .then((res) => res.json())
         .then((data) => {
           const img = data?.data?.display_url;
-            setUploadImg(img)
+          setUploadImg(img);
+          if (uploadImg.length) {
+            saveUserinDb(img);
+            setLoading(false)
+          }
         });
     }
 
-    
 
-    const userName = user?.displayName;
-    const userEmail = user?.email;
-    const userPhoto = user?.photoURL;
-    const usersData = {
-      userName,
-      userEmail,
-      userPhoto,
-      currentData,
-      postText: postDisabled,
-      img: uploadImg,
-      uniqueId: uuidv4()
-    };
+    const saveUserinDb = (img) => {
+      const userName = user?.displayName;
+      const userEmail = user?.email;
+      const userPhoto = user?.photoURL;
+      const usersData = {
+        userName,
+        userEmail,
+        userPhoto,
+        currentData,
+        postText: postDisabled,
+        img: img,
+        uniqueId: uuidv4()
+      };
 
 
-    fetch("http://localhost:5000/usersPost", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(usersData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success("Post Add Success");
-          field.reset();
-          setSelectedFile(undefined);
-          setPostDisabled("");
-          navigate("/");
-          refetch();
-        }
-      });
+      fetch("http://localhost:5000/usersPost", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(usersData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            toast.success("Post Add Success");
+            field.reset();
+            setSelectedFile(undefined);
+            setPostDisabled("");
+            navigate("/");
+            refetch();
+          }
+        });
+    }
+    if (loading) {
+      return <div>Loading...</div>
+    }
+
+    if (!uploadImg.length) {
+      saveUserinDb();
+    }
+
 
 
   };

@@ -26,7 +26,7 @@ const Posts = () => {
   // delete post
   const handleDeletePost = id => {
     setLoading(true)
-    fetch(`https://craft-connect-server.vercel.app/usersPost/${id}`, {
+    fetch(`http://localhost:5000/usersPost/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
@@ -43,17 +43,28 @@ const Posts = () => {
       })
   }
 
-  const handelReaction = (id, imageLink) => {
-    fetch(`https://craft-connect-server.vercel.app/usersPost${id}`, {
-      method: 'PATCH',
+  
+
+  const handelReaction = (id, imageLink, uniqueId) => {
+    const reactionInfo = {
+      userName: user?.displayName,
+      userEmail: user?.email,
+      userPhoto: user?.displayURL,
+      imageLink,
+      uniqueId,
+    }
+
+    fetch(`http://localhost:5000/reactions`, {
+      method: 'POST',
       headers: {
         'content-type':'application/json'
       },
-      body: JSON.stringify({imageLink})
+      body: JSON.stringify(reactionInfo)
     })
     .then(res => res.json())
     .then(data => {
         if(data.acknowledged){
+          toast.success('liked')
           refetch();
         }
     })
@@ -62,7 +73,7 @@ const Posts = () => {
   return (
     <div className="justify-center py-10">
       {
-        posts.map(post => <PostCard handelReaction={handelReaction} handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
+        posts.map(post => <PostCard refetch={refetch} handelReaction={handelReaction} handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
       }
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 import PostUserInfo from "./PostUserInfo/PostUserInfo";
 import likeicon from "../../assets/icons/like.png";
@@ -14,8 +14,13 @@ import { Link } from "react-router-dom";
 
 import { Authcontext } from "../../Context/UserContext";
 import Reactions from "../../Shared/Reactions/Reactions";
+import { useQuery } from "@tanstack/react-query";
 
-const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
+const PostCard = ({refetch, post, handelReaction, handleDeletePost, user }) => {
+  const [postReactions, setReactions] = useState([]);
+
+
+
   const reactions = [
     {
       emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
@@ -32,6 +37,30 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
         "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
     },
   ];
+
+  // const { data: postreactions = [] } = useQuery({
+  //   queryKey: [post?.uniqueId],
+  //   queryFn: async () => {
+  //     const res = await fetch(`http://localhost:5000/postReactions/${post?.uniqueId}`);
+  //     const data = res.json();
+  //     refetch()
+  //     return data;
+  //   }
+  // })
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/postReactions/${post?.uniqueId}`)
+    .then(res => res.json())
+    .then(data => {
+      setReactions(data)
+    })
+
+  },[post?.uniqueId])
+
+  
+  const ownReaction = postReactions.map(reactionItem => reactionItem?.email === user?.email);
+
+
 
   return (
     <div>
@@ -56,8 +85,8 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
           <div className="flex justify-between">
             <span className="flex">
               <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
-              <a className="hover:underline" href="/">
-                Muhammad Hasan
+              <a className="hover:underline text-white" href="/">
+                {postReactions?.length}
               </a>
             </span>
             <span>
@@ -69,7 +98,7 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
           <div className="flex justify-between cursor-pointer mt-3 border-y py-4 border-white">
             <button className="flex btn bg-white hover:bg-white dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
               {
-                post?.emojiLink?.length  ?
+                post?.emojiLink?.length ?
                   <img className="w-8 h-7 bg-black rounded-full flex items-center justify-center" src={post?.emojiLink} alt="" /> :
                   <>
                     <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
@@ -77,7 +106,7 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
                       className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
                       tabIndex={0}
                     >
-                      Like
+                      {ownReaction}
                     </label>
                   </>
               }
@@ -89,6 +118,7 @@ const PostCard = ({ post, handelReaction, handleDeletePost, user }) => {
                   <div className="grid grid-cols-6">
                     {reactions.map((react) => (
                       <Reactions
+                        post={post}
                         handelReaction={handelReaction}
                         id={post?._id}
                         react={react}
