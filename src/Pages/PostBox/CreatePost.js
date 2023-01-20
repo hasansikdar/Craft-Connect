@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
@@ -15,11 +15,11 @@ import { useQuery } from "@tanstack/react-query";
 const CreatePost = ({ open, setOpen }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
-  const [uniqueId, setUniqueId] = useState("");
   const [uploadImg, setUploadImg] = useState("");
   const cancelButtonRef = useRef(null);
   const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
   const handlePostTextChange = (data) => {
@@ -29,14 +29,14 @@ const CreatePost = ({ open, setOpen }) => {
   const handleClose = () => {
     setSelectedFile(undefined);
     setPostDisabled("");
-    setCloseUploadPhotoBox(false)
+    setCloseUploadPhotoBox(false);
   };
 
   // refetch are not working i try this method its work and i remove refetch this page from useContext Hook
   const { data: posts = [], refetch } = useQuery({
     queryKey: ["posts"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/usersPost");
+      const res = await fetch("https://craft-connect-server.vercel.app/usersPost");
       const data = res.json();
       return data;
     },
@@ -64,50 +64,41 @@ const CreatePost = ({ open, setOpen }) => {
         .then((res) => res.json())
         .then((data) => {
           const img = data?.data?.display_url;
-            setUploadImg(img)
+          const userName = user?.displayName;
+          const userEmail = user?.email;
+          const userPhoto = user?.photoURL;
+          const usersData = {
+            userName,
+            userEmail,
+            userPhoto,
+            currentData,
+            postText: postDisabled,
+            img,
+            uniqueId: uuidv4(),
+          };
+          fetch("http://localhost:5000/usersPost", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(usersData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.acknowledged) {
+                toast.success("Post Add Success");
+                field.reset();
+                setSelectedFile(undefined);
+                setPostDisabled("");
+                setUploadImg('');
+                navigate("/");
+                refetch();
+              }
+            });
         });
     }
 
-    
-
-    const userName = user?.displayName;
-    const userEmail = user?.email;
-    const userPhoto = user?.photoURL;
-    const usersData = {
-      userName,
-      userEmail,
-      userPhoto,
-      currentData,
-      postText: postDisabled,
-      img: uploadImg,
-      uniqueId: uuidv4()
-    };
-
-
-    fetch("http://localhost:5000/usersPost", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(usersData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success("Post Add Success");
-          field.reset();
-          setSelectedFile(undefined);
-          setPostDisabled("");
-          navigate("/");
-          refetch();
-        }
-      });
-
-
   };
-
-
-
 
   useEffect(() => {
     if (!selectedFile) {
@@ -132,8 +123,6 @@ const CreatePost = ({ open, setOpen }) => {
     }
     setSelectedFile(e.target.files);
   };
-
-
   return (
     <>
       <Transition.Root show={open} as={Fragment}>

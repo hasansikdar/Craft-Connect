@@ -20,6 +20,7 @@ import Pages from "../Pages/Fb_Pages/Pages";
 import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
+import Profile from "../Pages/UserProfile/Profile";
 
 export const Routes = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ export const Routes = createBrowserRouter([
         element: <Pages></Pages>,
       },
     ],
+  },
+  {
+    path: "/feature/profile",
+    element: <Profile></Profile>,
   },
   {
     path: "/friends",

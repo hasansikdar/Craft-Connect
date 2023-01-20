@@ -10,7 +10,8 @@ const Form = ({
   setCloseUploadPhotoBox,
   handlePostTextChange,
   preview,
-  uploadImg
+  uploadImg,
+  imageProcess,
 }) => {
   return (
     <>
@@ -22,7 +23,7 @@ const Form = ({
             rows={5}
             placeholder="Whats's on your mind"
             value={postDisabled}
-            onChange={e => handlePostTextChange(e.target.value)}
+            onChange={(e) => handlePostTextChange(e.target.value)}
           ></textarea>
           {selectedFile ? (
             <div className="flex flex-wrap gap-4 mb-4">
@@ -106,11 +107,9 @@ const Form = ({
           )}
         </div>
         <div className="mb-2 py-2 px-3 rounded-md flex border items-center justify-between">
-          <button
-            className="text-black dark:text-white text-lg font-semibold"
-          >
+          <label className="text-black dark:text-white text-lg font-semibold">
             Add To Your Post{" "}
-          </button>
+          </label>
           <div className="flex items-center ml-2 cursor-pointer">
             <img
               src="https://cdn-icons-png.flaticon.com/512/2983/2983067.png"
@@ -135,7 +134,7 @@ const Form = ({
         <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
           <button
             type="submit"
-            disabled={!postDisabled && uploadImg && !selectedFile}
+            disabled={!postDisabled && !selectedFile}
             onClick={() => {
               setOpen(false);
             }}
