@@ -205,7 +205,7 @@ const Chat = () => {
                             <div
                                 class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
                             >
-                                <div>
+                                <div className='px-1'>
                                     <button
                                         class="flex items-center justify-center text-gray-400 hover:text-gray-600"
                                     >
@@ -225,11 +225,12 @@ const Chat = () => {
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="flex-grow ml-4">
+                                <div class="flex-grow">
                                     <div class="relative w-full">
                                         <input
                                             type="text"
-                                            class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+                                            class="flex w-10/12 border rounded-lg focus:outline-none focus:border-indigo-300 h-10 bg-gray-200 px-2"
+                                            placeholder='Type here...'
                                         />
                                         <button
                                             class="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600"
@@ -251,14 +252,13 @@ const Chat = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div class="ml-4">
+                                <div class="">
                                     <button
                                         class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
                                     >
-                                        <span>Send</span>
-                                        <span class="ml-2">
+                                        <span class="">
                                             <svg
-                                                class="w-4 h-4 transform rotate-45 -mt-px"
+                                                class="w-4 h-4 transform rotate-90 -mt-px"
                                                 fill="none"
                                                 stroke="currentColor"
                                                 viewBox="0 0 24 24"

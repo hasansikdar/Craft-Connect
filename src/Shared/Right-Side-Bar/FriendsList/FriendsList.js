@@ -22,7 +22,7 @@ const FriendsList = () => {
         </ul>
       </div>
       {chat && (
-            <div className="w-1/4 rounded-md absolute -bottom-14 right-4 z-[999] bg-gray-100">
+            <div className="w-1/4 rounded-md absolute bottom-5 right-4 z-[999] bg-gray-100 shadow-2xl">
             <div className="">
                 <div className="flex justify-between mb-2 items-center px-3 py-3 shadow-lg">
                 <div className="flex items-center text-black cursor-pointer hover:bg-zinc-200 w-4/6 p-1 rounded-md ">
