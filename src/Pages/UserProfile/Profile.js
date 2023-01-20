@@ -10,6 +10,7 @@ import LeftSideMobile from '../LeftSideBar/LeftSideMobile';
 import { BsCameraFill } from "react-icons/bs";
 import { FaPhotoVideo, FaUpload } from "react-icons/fa";
 import Cover from './Cover';
+import ProfilePicture from './ProfilePicture';
 
 
 const Profile = () => {
@@ -20,6 +21,7 @@ const Profile = () => {
       <div>
         <Navbar></Navbar>
         <Cover></Cover>
+        <ProfilePicture></ProfilePicture>
       </div>
     );
 };
