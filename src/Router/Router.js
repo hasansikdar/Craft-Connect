@@ -21,6 +21,7 @@ import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/Frien
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 import Profile from "../Pages/UserProfile/Profile";
 import CreateStories from "../Pages/Stories/CreateStories";
+import PostDetails from "../Pages/PostDetails/PostDetails";
 
 
 export const Routes = createBrowserRouter([
@@ -102,4 +103,9 @@ export const Routes = createBrowserRouter([
     path: "*",
     element: <ErrorPage></ErrorPage>,
   },
+  {
+    path: '/postDetails/:id',
+    element: <PostDetails></PostDetails>,
+    loader: ({params}) => fetch(`https://craft-connect-server.vercel.app/postDetails/${params.id}`)
+  }
 ]);
