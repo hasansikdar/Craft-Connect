@@ -50,7 +50,7 @@ const Top = () => {
         </p>
         <h1 className="text-lg font-medium">Most Recent</h1>
       </button>
-      <Link to="/feature/friends">
+      <Link to="/friends">
         <button className="flex justify-start items-center gap-4 mb-4">
           <p>
             <FaUserFriends className="h-8 w-8 text-green-300"></FaUserFriends>

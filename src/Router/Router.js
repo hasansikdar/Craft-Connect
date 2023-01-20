@@ -18,6 +18,8 @@ import AdCenter from "../Pages/AdCenter/AdCenter";
 import AdsManager from "../Pages/AdsManager/AdsManager";
 import Pages from "../Pages/Fb_Pages/Pages";
 import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
+import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
+import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 import Profile from "../Pages/UserProfile/Profile";
 import CreateStories from "../Pages/Stories/CreateStories";
 
@@ -86,8 +88,15 @@ export const Routes = createBrowserRouter([
     element: <Profile></Profile>,
   },
   {
-    path: "/feature/friends",
+    path: "/friends",
     element: <Friends></Friends>,
+    children: [],
+  },
+
+  { path: "/friends/requests", element: <FriendRequest></FriendRequest> },
+  {
+    path: "/friends/suggestion",
+    element: <FriendSuggestion></FriendSuggestion>,
   },
   { path: "/login", element: <Login></Login> },
   {

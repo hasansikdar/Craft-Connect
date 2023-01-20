@@ -76,7 +76,7 @@ const CreatePost = ({ open, setOpen }) => {
             img,
             uniqueId: uuidv4(),
           };
-          fetch("http://localhost:5000/usersPost", {
+          fetch("https://craft-connect-server.vercel.app/usersPost", {
             method: "POST",
             headers: {
               "content-type": "application/json",
