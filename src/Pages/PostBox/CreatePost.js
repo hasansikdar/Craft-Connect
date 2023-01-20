@@ -50,7 +50,6 @@ const CreatePost = ({ open, setOpen }) => {
     const mm = String(currentData.getMonth() + 1).padStart(2, "0");
     const yyyy = currentData.getFullYear();
     currentData = mm + "/" + dd + "/" + yyyy;
-    console.log(currentData);
 
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;

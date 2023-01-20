@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import PostCard from "../../Components/PostCard/PostCard";
 import { Authcontext } from "../../Context/UserContext";
+import Loading from "../../Shared/Loading/Loading";
 
 const Posts = () => {
   const { user } = useContext(Authcontext);
@@ -13,7 +14,7 @@ const Posts = () => {
 
 
 
-  const { data: posts = [], refetch } = useQuery({
+  const { data: posts = [], refetch, isLoading } = useQuery({
     queryKey: ['posts'],
     queryFn: async () => {
       const res = await fetch('https://craft-connect-server.vercel.app/usersPost');
@@ -69,6 +70,11 @@ const Posts = () => {
         }
     })
   }
+
+  if(isLoading){
+    return <Loading></Loading>
+  }
+
 
   return (
     <div className="justify-center py-10">

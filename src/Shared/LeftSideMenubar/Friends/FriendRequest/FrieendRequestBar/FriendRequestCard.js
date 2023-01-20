@@ -7,7 +7,7 @@ const FriendRequestCard = () => {
         <img
           src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
           alt=""
-          className="avatar h-20 w-20"
+          className="avatar h-10 w-10"
         />
         <div>
           <h2 className="font-bold text-base">Md Abdullah Al Mamun</h2>
