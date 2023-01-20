@@ -3,6 +3,7 @@ import LeftSideMobile from "../LeftSideBar/LeftSideMobile";
 import { BsCameraFill } from "react-icons/bs";
 import { FaPhotoVideo, FaUpload } from "react-icons/fa";
 import useClickOutside from '../../Components/helpers/clickOutside';
+import coverImg from '../../assets/cover.jpg'
 
 const Cover = () => {
 
@@ -18,6 +19,7 @@ const Cover = () => {
           </div>
           <div className="max-w-[945px] mx-auto mt-[60px]">
             <div className="relative h-[350px] w-[100%] rounded-b-lg bg-gray-600">
+                <img src={coverImg} className='h-[350px] w-full rounded-b-[10px]' alt="" />
               <div className="absolute bottom-4 right-4">
                 <div
                   onClick={() => setShowCoverMenu(!showCoverMenu)}
