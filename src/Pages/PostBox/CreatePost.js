@@ -19,6 +19,7 @@ const CreatePost = ({ open, setOpen }) => {
   const cancelButtonRef = useRef(null);
   const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
   const handlePostTextChange = (data) => {
@@ -35,7 +36,7 @@ const CreatePost = ({ open, setOpen }) => {
   const { data: posts = [], refetch } = useQuery({
     queryKey: ["posts"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/usersPost");
+      const res = await fetch("https://craft-connect-server.vercel.app/usersPost");
       const data = res.json();
       return data;
     },
@@ -43,7 +44,6 @@ const CreatePost = ({ open, setOpen }) => {
 
   const formSubmit = (event) => {
     event.preventDefault();
-
     const field = event.target;
     let currentData = new Date();
     const dd = String(currentData.getDate()).padStart(2, "0");
@@ -64,50 +64,39 @@ const CreatePost = ({ open, setOpen }) => {
         .then((res) => res.json())
         .then((data) => {
           const img = data?.data?.display_url;
-          setUploadImg(img);
-          if (uploadImg.length) {
-            userPosts();
-          }
+          const userName = user?.displayName;
+          const userEmail = user?.email;
+          const userPhoto = user?.photoURL;
+          const usersData = {
+            userName,
+            userEmail,
+            userPhoto,
+            currentData,
+            postText: postDisabled,
+            img,
+            uniqueId: uuidv4(),
+          };
+          fetch("http://localhost:5000/usersPost", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(usersData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.acknowledged) {
+                toast.success("Post Add Success");
+                field.reset();
+                setSelectedFile(undefined);
+                setPostDisabled("");
+                setUploadImg('');
+                navigate("/");
+                refetch();
+              }
+            });
         });
     }
-    const userPosts = () => {
- 
-        const userName = user?.displayName;
-        const userEmail = user?.email;
-        const userPhoto = user?.photoURL;
-        const usersData = {
-          userName,
-          userEmail,
-          userPhoto,
-          currentData,
-          postText: postDisabled,
-          img: uploadImg,
-          uniqueId: uuidv4(),
-        };
-        fetch("http://localhost:5000/usersPost", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(usersData),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.acknowledged) {
-              toast.success("Post Add Success");
-              field.reset();
-              setSelectedFile(undefined);
-              setPostDisabled("");
-              setUploadImg('');
-              navigate("/");
-              refetch();
-            }
-          });
-      
-    }
-      if(!uploadImg.length){
-        userPosts()
-      }
 
   };
 

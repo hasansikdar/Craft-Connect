@@ -5,13 +5,9 @@ import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
 import maruf from "../../assets/maruf.png";
 import hasan from "../../assets/hasan.png";
-import { FaExclamation, FaMoon,} from "react-icons/fa";
+import { FaExclamation, FaMoon } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
-import {
-  FcNext,
-  FcQuestions,
-  FcExport,
-} from "react-icons/fc";
+import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
 
 import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from "../../Context/UserContext";
@@ -63,7 +59,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-black">
+    <div className="dark:bg-black fixed top-0 z-[999] w-full">
       <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
           <Link to="/" className="normal-case text-xl cursor-pointer font-bold">
@@ -153,7 +149,7 @@ const Navbar = () => {
 
       {/*-----------------------------------------Messanger Modal Start---------------------------------------------- */}
       {messageModal && (
-        <div className="w-[80%] md:w-[30%] h-[70%] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+        <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
           <div className="px-3 py-3">
             <div className="flex justify-between">
               <h3 className="text-2xl font-bold">Chats</h3>
@@ -236,7 +232,7 @@ const Navbar = () => {
 
       {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
       {notification && (
-        <div className="w-[80%] md:w-[30%] h-[70%] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+        <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
           <div className="px-3 py-3">
             <div className="flex justify-between">
               <h3 className="text-2xl font-bold">Notifications</h3>
@@ -327,7 +323,7 @@ const Navbar = () => {
           <div className="px-3 py-3">
             <div className="flex justify-between mb-2">
               <Link
-                to="/profile"
+                to="/feature/profile"
                 className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md "
               >
                 <img
