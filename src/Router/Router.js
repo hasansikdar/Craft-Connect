@@ -21,6 +21,8 @@ import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/Frien
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 import Profile from "../Pages/UserProfile/Profile";
 import CreateStories from "../Pages/Stories/CreateStories";
+import Discover from "../Pages/Groups/Discover/Discover";
+
 import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends";
 import PostDetails from "../Pages/PostDetails/PostDetails";
 import CreateStoriesLayout from "../Pages/Stories/CreateStoriesLayout";
@@ -70,6 +72,10 @@ export const Routes = createBrowserRouter([
       {
         path: "/feature/groups",
         element: <Groups></Groups>,
+      },
+      {
+        path: "/feature/groups/discover",
+        element: <Discover></Discover>,
       },
       {
         path: "/feature/marketplace",
