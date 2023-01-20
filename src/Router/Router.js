@@ -22,7 +22,9 @@ import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/Frien
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 import Profile from "../Pages/UserProfile/Profile";
 import CreateStories from "../Pages/Stories/CreateStories";
-
+import CreateStoriesLayout from "../Pages/Stories/CreateStoriesLayout";
+import CreatePhotoStories from "../Pages/Stories/CreatePhotoStories";
+import CreateTextStories from "../Pages/Stories/CreateTextStories";
 
 export const Routes = createBrowserRouter([
   {
@@ -37,13 +39,20 @@ export const Routes = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
-      { path: '/home', element: <Home></Home> },
-      { path: '/editprofile', element: <EditProfile></EditProfile> },
-      { path: '/sellerpro', element: <SellerPro></SellerPro> },
-      { path: '/pages', element: <FollowPages></FollowPages> },
-      { path: '/products/:id', element: <ProductDetails></ProductDetails> },
-      {path: '/stories/create', element: <CreateStories/>}
-    ]
+      { path: "/home", element: <Home></Home> },
+      { path: "/editprofile", element: <EditProfile></EditProfile> },
+      { path: "/sellerpro", element: <SellerPro></SellerPro> },
+      { path: "/pages", element: <FollowPages></FollowPages> },
+      { path: "/products/:id", element: <ProductDetails></ProductDetails> },
+    ],
+  },
+  {
+    path: "/stories/create",
+    element: <CreateStoriesLayout />,
+    children: [
+      { path: "/stories/create/photo/", element: <CreatePhotoStories /> },
+      { path: "/stories/create/text/", element: <CreateTextStories /> },
+    ],
   },
   {
     path: "/feature",
