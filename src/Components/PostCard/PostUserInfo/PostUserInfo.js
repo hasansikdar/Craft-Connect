@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
-import { FaThumbtack, FaRegSave, FaCommentAlt, FaEdit, } from "react-icons/fa";
+import { FaThumbtack, FaPager, FaRegSave, FaCommentAlt, FaEdit, } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import { Authcontext } from '../../../Context/UserContext';
 
+
 const PostUserInfo = ({ post, handleDeletePost }) => {
+  const { user } = useContext(Authcontext);
   const { _id } = post;
   return (
     <>
@@ -30,17 +33,17 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
                 <FaRegSave className='mr-3'></FaRegSave>
                 Unsave
               </div>
-              <div className='flex items-center pl-3 p-2 dark:hover:bg-[#343434] hover:text-white rounded hover:bg-[#343434] cursor-pointer'>
+              <button className='flex items-center pl-3 p-2 dark:hover:bg-[#343434] hover:text-white rounded hover:bg-[#343434] cursor-pointer'>
                 <FaEdit className='mr-3'></FaEdit>
                 Edit post
-              </div>
+              </button>
               <div className='flex items-center pl-3 p-2 dark:hover:bg-[#343434] hover:text-white rounded hover:bg-[#343434] cursor-pointer'>
                 <FaCommentAlt className='mr-3'></FaCommentAlt>
                 Who can comment On your post
               </div>
             </div>
           </div>
-          <button onClick={() => handleDeletePost(_id)} className='btn btn-sm ml-2'>x</button>
+          {user?.email === post?.userEmail && <button onClick={() => handleDeletePost(_id)} className='btn btn-sm ml-2'>x</button>}
         </div>
       </div>
     </>

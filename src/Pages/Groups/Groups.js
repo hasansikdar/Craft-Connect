@@ -11,7 +11,7 @@ const Groups = () => {
         // </div>
         <div className='flex mt-5  flex-col-reverse lg:flex-row  lg:gap-10'>
             {/* <div>
-                <GroupCard></GroupCard>
+                <Posts></Posts>
             </div> */}
             <Posts></Posts>
             <div className='lg:mt-12 w-screen'>

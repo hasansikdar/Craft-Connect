@@ -12,6 +12,7 @@ import { Authcontext } from "../../Context/UserContext";
 import { Dialog, Transition } from "@headlessui/react";
 import Form from "./Form";
 import { useQuery } from "@tanstack/react-query";
+import Loading from "../../Shared/Loading/Loading";
 const CreatePost = ({ open, setOpen }) => {
   const [selectedFile, setSelectedFile] = useState();
   const [postDisabled, setPostDisabled] = useState();
@@ -44,13 +45,13 @@ const CreatePost = ({ open, setOpen }) => {
 
   const formSubmit = (event) => {
     event.preventDefault();
+    setLoading(true);
     const field = event.target;
     let currentData = new Date();
     const dd = String(currentData.getDate()).padStart(2, "0");
     const mm = String(currentData.getMonth() + 1).padStart(2, "0");
     const yyyy = currentData.getFullYear();
     currentData = mm + "/" + dd + "/" + yyyy;
-    console.log(currentData);
 
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
@@ -93,6 +94,7 @@ const CreatePost = ({ open, setOpen }) => {
                 setUploadImg('');
                 navigate("/");
                 refetch();
+                setLoading(false);
               }
             });
         });
@@ -123,6 +125,13 @@ const CreatePost = ({ open, setOpen }) => {
     }
     setSelectedFile(e.target.files);
   };
+
+  if(loading){
+    return <Loading></Loading>
+  }
+
+
+
   return (
     <>
       <Transition.Root show={open} as={Fragment}>

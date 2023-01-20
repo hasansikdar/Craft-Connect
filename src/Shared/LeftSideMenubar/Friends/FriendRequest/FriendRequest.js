@@ -7,7 +7,7 @@ const FriendRequest = () => {
   return (
     <section>
       <Navbar></Navbar>
-      <div className="grid grid-cols-12 mt-[60px] bg-white dark:bg-black text-black dark:text-white">
+      <div className="grid grid-cols-12 max-w-screen-xl mt-[60px] bg-white dark:bg-black text-black dark:text-white">
         <div className="col-span-3 border border-slate-600 bg-gray-50 dark:bg-black h-screen">
           <FriendRequestBar></FriendRequestBar>
         </div>

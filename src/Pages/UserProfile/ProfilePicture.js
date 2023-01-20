@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import profile from "../../assets/profile.jpg";
 import { BsCameraFill } from "react-icons/bs";
+import { Authcontext } from '../../Context/UserContext';
 
 const ProfilePicture = () => {
+  const {user} = useContext(Authcontext);
     return (
       <div>
          <div className="absolute left-[32%] top-[67%]" >
@@ -13,7 +15,7 @@ const ProfilePicture = () => {
           <div>
             <img
               className=" w-[150px] h-[150px]  rounded-full"
-              src={profile}
+              src={user?.photoURL}
               alt=""
             />
             <div className="absolute top-[66%] left-[79%]">

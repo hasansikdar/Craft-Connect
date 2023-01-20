@@ -1,7 +1,7 @@
 import React from "react";
 import { BsPeopleFill } from "react-icons/bs";
 
-const SuggestionsProfile = () => {
+const AllFriendProfile = () => {
   return (
     <section className="flex flex-col justify-center items-center py-64">
       <div className="text-9xl">
@@ -14,4 +14,4 @@ const SuggestionsProfile = () => {
   );
 };
 
-export default SuggestionsProfile;
+export default AllFriendProfile;

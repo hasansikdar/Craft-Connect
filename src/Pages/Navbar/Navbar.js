@@ -135,7 +135,7 @@ const Navbar = () => {
           </button>
           <div className="" onClick={() => setProfile(!profile)}>
             <img
-              className="w-[30px] md:w-[50px] rounded-full"
+              className="w-10 h-10 rounded-full"
               src={`${
                 user?.photoURL
                   ? user?.photoURL
@@ -327,7 +327,7 @@ const Navbar = () => {
                 className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md "
               >
                 <img
-                  className="w-[50px] rounded-full mr-3"
+                  className="w-10 h-10  rounded-full mr-3"
                   src={`${
                     user?.photoURL
                       ? user?.photoURL
