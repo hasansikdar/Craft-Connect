@@ -8,7 +8,7 @@ const Cover = () => {
 
     const [showCoverMenu, setShowCoverMenu] = useState(false);
     const menuRef = useRef(null);
-    useClickOutside(menuRef, () => setShowCoverMenu(!showCoverMenu))
+    useClickOutside(menuRef, () => setShowCoverMenu(false))
 
     return (
       <div>
