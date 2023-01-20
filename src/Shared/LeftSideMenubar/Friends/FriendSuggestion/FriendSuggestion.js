@@ -7,7 +7,7 @@ const FriendSuggestion = () => {
   return (
     <section>
       <Navbar></Navbar>
-      <div className="grid grid-cols-12 mt-[60px] bg-white dark:bg-black text-black dark:text-white max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-12 mt-[60px] bg-white dark:bg-black text-black dark:text-white max-w-screen-xl">
         <div className="col-span-3 dark:bg-black h-screen">
           <FriendSuggestionsLeftSide></FriendSuggestionsLeftSide>
         </div>
