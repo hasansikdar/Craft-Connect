@@ -19,6 +19,8 @@ import AdsManager from "../Pages/AdsManager/AdsManager";
 import Pages from "../Pages/Fb_Pages/Pages";
 import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import Profile from "../Pages/UserProfile/Profile";
+import CreateStories from "../Pages/Stories/CreateStories";
+
 
 export const Routes = createBrowserRouter([
   {
@@ -33,12 +35,13 @@ export const Routes = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
-      { path: "/home", element: <Home></Home> },
-      { path: "/editprofile", element: <EditProfile></EditProfile> },
-      { path: "/sellerpro", element: <SellerPro></SellerPro> },
-      { path: "/pages", element: <FollowPages></FollowPages> },
-      { path: "/products/:id", element: <ProductDetails></ProductDetails> },
-    ],
+      { path: '/home', element: <Home></Home> },
+      { path: '/editprofile', element: <EditProfile></EditProfile> },
+      { path: '/sellerpro', element: <SellerPro></SellerPro> },
+      { path: '/pages', element: <FollowPages></FollowPages> },
+      { path: '/products/:id', element: <ProductDetails></ProductDetails> },
+      {path: '/stories/create', element: <CreateStories/>}
+    ]
   },
   {
     path: "/feature",
