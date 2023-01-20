@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../Navbar/Navbar';
 import coverImg from '../../assets/cover.jpg'
 import profile from '../../assets/profile.jpg'
@@ -7,8 +7,12 @@ import img2 from '../../assets/hasan.png';
 import img3 from '../../assets/maruf.png';
 import img4 from '../../assets/fearAllah.jpg';
 import { BsCameraFill } from "react-icons/bs";
+import { Authcontext } from '../../Context/UserContext';
 
 const UserProfile = () => {
+  const {user} = useContext(Authcontext);
+
+
     return (
       <div className="">
         <Navbar></Navbar>
