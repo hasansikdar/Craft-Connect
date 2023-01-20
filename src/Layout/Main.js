@@ -6,7 +6,7 @@ import RightBar from "../Shared/Right-Side-Bar/RightBar/RightBar";
 
 const Main = () => {
   return (
-    <div className="dark:bg-black bg-white">
+    <div className="dark:bg-black bg-white overflow-hidden h-screen">
       <Navbar></Navbar>
       <div className="lg:flex">
         {/* left site bar */}
