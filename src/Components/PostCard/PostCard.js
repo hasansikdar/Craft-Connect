@@ -41,7 +41,7 @@ const PostCard = ({refetch, post, handelReaction, handleDeletePost, user }) => {
   // const { data: postreactions = [] } = useQuery({
   //   queryKey: [post?.uniqueId],
   //   queryFn: async () => {
-  //     const res = await fetch(`https://craft-connect-server.vercel.app /postReactions/${post?.uniqueId}`);
+  //     const res = await fetch(`https://craft-connect-server.vercel.app/postReactions/${post?.uniqueId}`);
   //     const data = res.json();
   //     refetch()
   //     return data;
@@ -49,7 +49,7 @@ const PostCard = ({refetch, post, handelReaction, handleDeletePost, user }) => {
   // })
 
   useEffect(() => {
-    fetch(`https://craft-connect-server.vercel.app /postReactions/${post?.uniqueId}`)
+    fetch(`https://craft-connect-server.vercel.app/postReactions/${post?.uniqueId}`)
     .then(res => res.json())
     .then(data => {
       setReactions(data)

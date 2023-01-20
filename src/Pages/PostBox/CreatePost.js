@@ -37,7 +37,7 @@ const CreatePost = ({ open, setOpen }) => {
   const { data: posts = [], refetch } = useQuery({
     queryKey: ["posts"],
     queryFn: async () => {
-      const res = await fetch("https://craft-connect-server.vercel.app /usersPost");
+      const res = await fetch("https://craft-connect-server.vercel.app/usersPost");
       const data = res.json();
       return data;
     },
@@ -90,7 +90,7 @@ const CreatePost = ({ open, setOpen }) => {
       };
 
 
-      fetch("https://craft-connect-server.vercel.app /usersPost", {
+      fetch("https://craft-connect-server.vercel.app/usersPost", {
         method: "POST",
         headers: {
           "content-type": "application/json",
