@@ -20,14 +20,13 @@ import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 import Profile from "../Pages/UserProfile/Profile";
-import CreateStories from "../Pages/Stories/CreateStories";
 import Discover from "../Pages/Groups/Discover/Discover";
-
 import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends";
 import PostDetails from "../Pages/PostDetails/PostDetails";
 import CreateStoriesLayout from "../Pages/Stories/CreateStoriesLayout";
 import CreatePhotoStories from "../Pages/Stories/CreatePhotoStories";
 import CreateTextStories from "../Pages/Stories/CreateTextStories";
+import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 
 export const Routes = createBrowserRouter([
   {
@@ -114,6 +113,7 @@ export const Routes = createBrowserRouter([
     path: "/friends/suggestion",
     element: <FriendSuggestion></FriendSuggestion>,
   },
+  { path: "/friends/friendList", element: <CustomList></CustomList> },
   { path: "/friends/list", element: <AllFriends></AllFriends> },
   { path: "/login", element: <Login></Login> },
   {
