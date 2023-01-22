@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
+import { FaPlus, FaStar } from "react-icons/fa";
 import { BsArrowLeftShort } from "react-icons/bs";
-import { BiSearchAlt2 } from "react-icons/bi";
 
 const CustomLeftSide = () => {
   return (
@@ -17,7 +16,21 @@ const CustomLeftSide = () => {
           </Link>
           <div className="leading-3">
             <small>Friends</small>
-            <h2 className="text-2xl font-bold">All Friends</h2>
+            <h2 className="text-2xl font-bold">Custom Lists</h2>
+          </div>
+        </div>
+        <div className="mt-10 flex flex-col gap-4">
+          <div className=" flex gap-x-3 items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-900">
+            <div className=" text-2xl dark:bg-gray-800 bg-gray-200 h-[60px] w-[60px] flex items-center justify-center rounded-full">
+              <FaStar className=" dark:text-white"></FaStar>
+            </div>
+            <h2 className="text-xl font-semibold">Close friends</h2>
+          </div>
+          <div className=" flex gap-x-3 items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-900">
+            <div className="text-2xl dark:bg-gray-800 bg-gray-200 h-[60px] w-[60px] flex items-center justify-center rounded-full">
+              <FaPlus className="text-blue-600"></FaPlus>
+            </div>
+            <h2 className="text-xl font-semibold">Create List</h2>
           </div>
         </div>
       </div>
