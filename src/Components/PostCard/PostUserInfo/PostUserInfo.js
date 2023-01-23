@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { Authcontext } from '../../../Context/UserContext';
 
 
-const PostUserInfo = ({post, handleDeletePost }) => {
+const PostUserInfo = ({ post, handleDeletePost }) => {
+  const { user } = useContext(Authcontext);
   const { _id } = post;
   return (
     <>
@@ -42,7 +43,7 @@ const PostUserInfo = ({post, handleDeletePost }) => {
               </div>
             </div>
           </div>
-          <button onClick={() => handleDeletePost(_id)} className='btn btn-sm ml-2'>x</button>
+          {user?.email === post?.userEmail && <button onClick={() => handleDeletePost(_id)} className='btn btn-sm ml-2'>x</button>}
         </div>
       </div>
     </>

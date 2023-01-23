@@ -9,7 +9,7 @@ const FeatureLayout = () => {
             <Navbar></Navbar>
             <div className="lg:flex">
                 {/* left site bar */}
-                <div className="xl:mr-auto lg:w-[300px]">
+                <div className="xl:mr-auto lg:w-[300px] mt-[60px]">
                     <LeftSideBar></LeftSideBar>
                 </div>
                 <div className="lg:w-[900px] xl:mx-auto">

@@ -5,7 +5,7 @@ import PostCard from "../../Components/PostCard/PostCard";
 import { Authcontext } from "../../Context/UserContext";
 import Loading from "../../Shared/Loading/Loading";
 
-const Posts = () => {
+const MyPosts = () => {
   const { user } = useContext(Authcontext);
   const [loading, setLoading] = useState(false);
 
@@ -17,13 +17,13 @@ const Posts = () => {
   const { data: posts = [], refetch, isLoading } = useQuery({
     queryKey: ['posts'],
     queryFn: async () => {
-      const res = await fetch('https://craft-connect-server.vercel.app/usersPost');
+      const res = await fetch(`https://craft-connect-server.vercel.app/myposts?email=${user?.email}`);
       const data = res.json();
       return data;
     }
   })
-
-
+  
+  
   // delete post
   const handleDeletePost = id => {
     setLoading(true)
@@ -44,7 +44,7 @@ const Posts = () => {
       })
   }
 
-
+  
 
   const handelReaction = (id, imageLink, uniqueId) => {
     const reactionInfo = {
@@ -58,28 +58,28 @@ const Posts = () => {
     fetch(`https://craft-connect-server.vercel.app/reactions`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type':'application/json'
       },
       body: JSON.stringify(reactionInfo)
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data.acknowledged) {
+    .then(res => res.json())
+    .then(data => {
+        if(data.acknowledged){
           toast.success('liked')
           refetch();
         }
-      })
+    })
   }
 
-  if (isLoading) {
+  if(isLoading){
     return <Loading></Loading>
   }
-  if (posts.length === 0) {
+  if(posts.length === 0){
     return <div><h1 className="text-center text-2xl my-10">No Post Available</h1></div>
   }
 
   return (
-    <div className="justify-center lg:py-10">
+    <div className="justify-center py-10">
       {
         posts.map(post => <PostCard refetch={refetch} handelReaction={handelReaction} handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
       }
@@ -87,4 +87,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default MyPosts;
