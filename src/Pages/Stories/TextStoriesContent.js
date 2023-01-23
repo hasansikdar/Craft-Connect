@@ -8,7 +8,10 @@ const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
     e.preventDefault();
     const userEmail = user?.email;
     const storiesContent = e.target.text_story.value;
-    const storyObj = { userEmail, storiesContent };
+    const userPhoto = user?.photoURL;
+    const userName = user?.displayName;
+    const storyObj = { userEmail, storiesContent, userPhoto, userName };
+    console.log(storyObj, user)
     fetch("http://localhost:5000/text/stories", {
       method: "POST",
       headers: {
@@ -19,6 +22,8 @@ const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
+          e.target.reset();
+          setTextStoryContent('Add Text')
           toast.success("Your story add");
         }
       });
