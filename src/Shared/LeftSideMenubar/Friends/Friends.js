@@ -24,7 +24,7 @@ const Friends = () => {
       </div>
 
       {/* For Mobile device  */}
-      <div className="max-w-lg mt-[60px] h-screen">
+      <div className="max-w-xl mt-[60px] h-screen">
         <div className="flex justify-between items-center px-4 dark:text-white text-black">
           <h2 className="font-bold text-2xl"> Friends</h2>
           <FaSearch className="text-2xl"></FaSearch>
@@ -37,7 +37,10 @@ const Friends = () => {
           >
             Suggestions
           </Link>
-          <Link className="bg-gray-200 dark:bg-gray-900 px-2 py-1 rounded-full">
+          <Link
+            to="/friends/list"
+            className="bg-gray-200 dark:bg-gray-900 px-2 py-1 rounded-full"
+          >
             Your Friends
           </Link>
         </div>
@@ -46,10 +49,13 @@ const Friends = () => {
           <h2 className="text-xl font-bold">Friend requests</h2>
           <button className="text-blue-700">See all</button>
         </div>
-        <FriendRequestCard></FriendRequestCard>
+        <div className="w-full px-2">
+          <FriendRequestCard></FriendRequestCard>
+          <FriendRequestCard></FriendRequestCard>
+          <FriendRequestCard></FriendRequestCard>
+          <FriendRequestCard></FriendRequestCard>
+        </div>
       </div>
-
-      {/* for suggestion friend in mobile device  */}
     </section>
   );
 };

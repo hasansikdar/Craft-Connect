@@ -20,7 +20,7 @@ const FriendSuggestion = () => {
       </div>
 
       {/* For Mobile device  */}
-      <div className="max-w-lg h-screen">
+      <div className="max-w-xl h-screen">
         <div className="dark:text-white text-black flex items-center gap-2 px-4">
           <Link
             to="/friends"
@@ -36,6 +36,9 @@ const FriendSuggestion = () => {
           <span className="px-4 pt-2  text-black dark:text-white font-medium ">
             People You May Know
           </span>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
           <FriendSuggestionCard></FriendSuggestionCard>
         </div>
       </div>
