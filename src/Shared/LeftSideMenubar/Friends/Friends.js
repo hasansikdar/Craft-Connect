@@ -1,5 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Navbar from "../../../Pages/Navbar/Navbar";
 import FriendRequestCard from "./FriendRequest/FrieendRequestBar/FriendRequestCard";
 import LeftSide from "./LeftSide/LeftSide";
@@ -30,12 +31,15 @@ const Friends = () => {
         </div>
 
         <div className="flex gap-5 px-4 my-4 dark:text-white text-black font-semibold">
-          <span className="bg-gray-200 dark:bg-gray-900 px-2 py-1 rounded-full">
+          <Link
+            to="/friends/suggestion"
+            className="bg-gray-200 dark:bg-gray-900 px-2 py-1 rounded-full"
+          >
             Suggestions
-          </span>
-          <span className="bg-gray-200 dark:bg-gray-900 px-2 py-1 rounded-full">
+          </Link>
+          <Link className="bg-gray-200 dark:bg-gray-900 px-2 py-1 rounded-full">
             Your Friends
-          </span>
+          </Link>
         </div>
 
         <div className="dark:text-white text-black flex justify-between px-4">
@@ -44,6 +48,8 @@ const Friends = () => {
         </div>
         <FriendRequestCard></FriendRequestCard>
       </div>
+
+      {/* for suggestion friend in mobile device  */}
     </section>
   );
 };
