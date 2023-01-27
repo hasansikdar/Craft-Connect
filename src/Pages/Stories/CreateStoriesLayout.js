@@ -6,12 +6,15 @@ import StoriesLeftSideBar from "./StoriesLeftSideBar";
 const CreateStoriesLayout = () => {
   const [showTextStories, setShowTextStories] = useState(false);
   const [textStoryContent, setTextStoryContent] = useState("Add Text");
+  const [showImageStories, setShowImageStories] = useState(true);
+  const [previewImageStories, setPreviewImageStories] = useState("");
   return (
     <div>
       <Navbar />
       <div className="lg:flex h-min-screen">
         <div className="xl:mr-auto lg:w-[300px] mt-[60px]">
           <StoriesLeftSideBar
+            setShowImageStories={setShowImageStories}
             showTextStories={showTextStories}
             setTextStoryContent={setTextStoryContent}
             setShowTextStories={setShowTextStories}
@@ -22,6 +25,7 @@ const CreateStoriesLayout = () => {
             setShowTextStories={setShowTextStories}
             showTextStories={showTextStories}
             textStoryContent={textStoryContent}
+            showImageStories={showImageStories}
           />
         </div>
       </div>
