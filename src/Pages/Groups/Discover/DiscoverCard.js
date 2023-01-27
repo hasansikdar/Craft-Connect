@@ -20,7 +20,7 @@ const DiscoverCard = () => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">Just Craftin' Around</h2>
-          <p>14k members . 10+ post per day</p>
+          <p>14k members .10+ post per day</p>
           <div className="card-actions justify-end">
             <button className="btn btn-primary btn-sm">Join Now</button>
           </div>
