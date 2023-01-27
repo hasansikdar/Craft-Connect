@@ -16,10 +16,15 @@ import { Authcontext } from "../../Context/UserContext";
 import Reactions from "../../Shared/Reactions/Reactions";
 import { useQuery } from "@tanstack/react-query";
 
-const PostCard = ({ refetch, post, handelReaction, handleDeletePost, user }) => {
+const PostCard = ({
+  refetch,
+  post,
+  handelReaction,
+  handleDeletePost,
+  user,
+}) => {
   const [postReactions, setReactions] = useState([]);
   const [editPost, setEditPost] = useState(false);
-
 
   const reactions = [
     {
@@ -49,18 +54,18 @@ const PostCard = ({ refetch, post, handelReaction, handleDeletePost, user }) => 
   // })
 
   useEffect(() => {
-    fetch(`https://craft-connect-server.vercel.app/postReactions/${post?.uniqueId}`)
-      .then(res => res.json())
-      .then(data => {
-        setReactions(data)
-      })
+    fetch(
+      `https://craft-connect-server.vercel.app/postReactions/${post?.uniqueId}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setReactions(data);
+      });
+  }, [post?.uniqueId]);
 
-  }, [post?.uniqueId])
-
-
-  const ownReaction = postReactions.map(reactionItem => reactionItem?.email === user?.email);
-
-
+  const ownReaction = postReactions.map(
+    (reactionItem) => reactionItem?.email === user?.email
+  );
 
   return (
     <div>
@@ -72,7 +77,18 @@ const PostCard = ({ refetch, post, handelReaction, handleDeletePost, user }) => 
               post={post}
             ></PostUserInfo>
           </div>
-          <p>{post?.postText?.length > 100 ? <>{post?.postText.slice(0, 100)} <Link className="font-bold" to='/'>See More..</Link></> : post?.postText}</p>
+          <p>
+            {post?.postText?.length > 100 ? (
+              <>
+                {post?.postText.slice(0, 100)}{" "}
+                <Link className="font-bold" to="/">
+                  See More..
+                </Link>
+              </>
+            ) : (
+              post?.postText
+            )}
+          </p>
         </div>
         <Link to={`/postDetails/${post?._id}`}>
           <img className="w-full" src={post?.img} alt="Shoes" />
@@ -93,19 +109,23 @@ const PostCard = ({ refetch, post, handelReaction, handleDeletePost, user }) => 
           </div>
           <div className="flex justify-between cursor-pointer mt-3 border-t py-4 border-white">
             <button className="flex btn bg-white hover:bg-white dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
-              {
-                post?.emojiLink?.length ?
-                  <img className="w-8 h-7 bg-black rounded-full flex items-center justify-center" src={post?.emojiLink} alt="" /> :
-                  <>
-                    <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
-                    <label
-                      className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
-                      tabIndex={0}
-                    >
-                      {ownReaction}
-                    </label>
-                  </>
-              }
+              {post?.emojiLink?.length ? (
+                <img
+                  className="w-8 h-7 bg-black rounded-full flex items-center justify-center"
+                  src={post?.emojiLink}
+                  alt=""
+                />
+              ) : (
+                <>
+                  <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
+                  <label
+                    className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
+                    tabIndex={0}
+                  >
+                    {ownReaction}
+                  </label>
+                </>
+              )}
               <div className="">
                 <div
                   tabIndex={0}
