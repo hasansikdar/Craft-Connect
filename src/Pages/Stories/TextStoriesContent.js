@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
+import { Authcontext } from "../../Context/UserContext";
 
 const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
+  const { user } = useContext(Authcontext);
+  const storiesForm = (e) => {
+    e.preventDefault();
+    const userEmail = user?.email;
+    const storiesContent = e.target.text_story.value;
+    const userPhoto = user?.photoURL;
+    const userName = user?.displayName;
+    const storyObj = { userEmail, storiesContent, userPhoto, userName };
+    console.log(storyObj, user)
+    fetch("http://localhost:5000/text/stories", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(storyObj),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          e.target.reset();
+          setTextStoryContent('Add Text')
+          toast.success("Your story add");
+        }
+      });
+  };
   return (
     <>
       <div className="flex flex-col justify-between">
-        <form className="flex flex-col justify-between">
+        <form className="flex flex-col justify-between" onSubmit={storiesForm}>
           <textarea
             name="text_story"
             id=""

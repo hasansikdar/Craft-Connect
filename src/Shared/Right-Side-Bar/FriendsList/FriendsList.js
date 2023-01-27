@@ -14,9 +14,9 @@ const FriendsList = () => {
           <li className="hover:bg-zinc-600 duration-300 rounded-lg">
             <div className="cursor-pointer" onClick={() => setChat(!chat)}>
               <div className="w-8">
-                <img src={pro1} className="rounded-full w-8 h-8" alt="frnd" />
+                <img src={pro1} className="rounded-full w-8 h-8" alt="friend" />
               </div>
-              <p className="dark:text-white text-black">Muhammad Hasan</p>
+              <p className="dark:text-white text-black">Muhammad Hasa</p>
             </div>
           </li>
         </ul>

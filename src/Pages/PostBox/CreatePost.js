@@ -18,11 +18,11 @@ const CreatePost = ({ open, setOpen }) => {
   const [postDisabled, setPostDisabled] = useState();
   const [uploadImg, setUploadImg] = useState("");
   const cancelButtonRef = useRef(null);
-  const { user } = useContext(Authcontext);
   const [preview, setPreview] = useState([]);
   const [loading, setLoading] = useState(false);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
+  const {user} = useContext(Authcontext);
   const handlePostTextChange = (data) => {
     setPostDisabled(data);
   };
@@ -192,7 +192,7 @@ const CreatePost = ({ open, setOpen }) => {
                       <div className="flex items-center gap-3 ">
                         {/* image source is hardcode now */}
                         <img
-                          src="https://avatars.githubusercontent.com/u/94055231?v=4"
+                         src="https://avatars.githubusercontent.com/u/94055231?v=4"
                           className="h-12 w-12 rounded-full"
                           alt=""
                         />
