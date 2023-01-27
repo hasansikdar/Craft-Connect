@@ -8,7 +8,7 @@ import { TfiCommentAlt } from "react-icons/tfi";
 const PostCards = () => {
     return (
       <div>
-        <div className="w-[530px] border p-5 rounded-md shadow-md">
+        <div className="w-[320px] ml-[44px] md:ml-0 md:w-[530px] border p-5 rounded-md shadow-md">
           <div className="flex justify-between items-center">
             <div className="flex gap-3 items-center">
               <img className="w-[50px] rounded-full" src={profileImg} alt="" />
