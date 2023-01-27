@@ -4,7 +4,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 const ProfileLeft = () => {
     return (
-      <div className="w-[251px] p-5 border hidden md:block rounded-md">
+      <div className="w-[251px] p-5 border hidden md:block rounded-md shadow-md">
         <div className="border-b">
           <p className="text-2xl font-bold">Profile Intro</p>
         </div>

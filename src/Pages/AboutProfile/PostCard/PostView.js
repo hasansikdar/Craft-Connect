@@ -20,7 +20,7 @@ const PostView = () => {
           <div>
             <PostCards />
           </div>
-          <div className="w-[251px] p-5 border hidden md:block rounded-md">
+          <div className="w-[251px] h-[290px] p-5 border hidden md:block rounded-md shadow-md">
             <div className="border-b">
               <p className="text-2xl font-bold">Latest Photos</p>
             </div>
