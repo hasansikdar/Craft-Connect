@@ -22,13 +22,21 @@ const LeftSideMobile = () => {
           <Link to="/friends">
             <FaUserFriends className="text-3xl text-cyan-500 my-6" />
           </Link>
-          <FcClapperboard className="text-3xl text-cyan-500 my-6" />
+          <Link to="/feature/watch">
+            <FcClapperboard className="text-3xl text-cyan-500 my-6" />
+          </Link>
           <FcNews className="text-3xl text-cyan-500 my-6" />
-          <FcConferenceCall className="text-3xl text-cyan-500 my-6" />
-          <FcHome className="text-3xl text-cyan-500 my-6" />
+          <Link to="/feature/groups">
+            <FcConferenceCall className="text-3xl text-cyan-500 my-6" />
+          </Link>
+          {/* <FcHome className="text-3xl text-cyan-500 my-6" /> */}
           <FcSteam className="text-3xl text-cyan-500 my-6" />
-          <FcAdvertising className="text-3xl text-cyan-500 my-6" />
-          <FcBarChart className="text-3xl text-cyan-500 my-6" />
+          <Link to="/feature/adcenter">
+            <FcAdvertising className="text-3xl text-cyan-500 my-6" />
+          </Link>
+          <Link to="/feature/adsmanager">
+            <FcBarChart className="text-3xl text-cyan-500 my-6" />
+          </Link>
         </div>
       </div>
     </div>
