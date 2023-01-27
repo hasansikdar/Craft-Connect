@@ -1,4 +1,6 @@
 import React from "react";
+import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Navbar from "../../../../Pages/Navbar/Navbar";
 import FriendRequestBar from "./FrieendRequestBar/FriendRequestBar";
 import LeftsideFriendrequest from "./LeftsideFriendRequest/LeftsideFriendrequest";
@@ -11,7 +13,7 @@ const FriendRequest = () => {
         <div className="col-span-3 border border-slate-600 bg-gray-50 dark:bg-black h-screen">
           <FriendRequestBar></FriendRequestBar>
         </div>
-        <div className="col-span-9">
+        <div className="col-span-9 hidden lg:block">
           <LeftsideFriendrequest></LeftsideFriendrequest>
         </div>
       </div>

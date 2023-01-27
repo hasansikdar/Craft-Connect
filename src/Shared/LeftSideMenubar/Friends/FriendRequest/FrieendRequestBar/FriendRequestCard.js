@@ -3,7 +3,7 @@ import React from "react";
 const FriendRequestCard = () => {
   return (
     <div className="mt-5">
-      <div className="flex gap-2 hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded">
+      <div className="flex gap-2 hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded dark:text-white text-black ">
         <img
           src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
           alt=""

@@ -31,7 +31,9 @@ const AllFriendLeftBar = () => {
           />
         </div>
 
-        <hr className="mt-2" />
+        <div className="pt-2">
+          <hr />
+        </div>
 
         <h2 className=" font-medium pt-2">100 friends</h2>
       </div>
