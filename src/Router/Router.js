@@ -28,6 +28,7 @@ import PostDetails from "../Pages/PostDetails/PostDetails";
 import CreateStoriesLayout from "../Pages/Stories/CreateStoriesLayout";
 import CreatePhotoStories from "../Pages/Stories/CreatePhotoStories";
 import CreateTextStories from "../Pages/Stories/CreateTextStories";
+import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
 
 export const Routes = createBrowserRouter([
   {
@@ -101,7 +102,7 @@ export const Routes = createBrowserRouter([
   },
   {
     path: "/feature/profile",
-    element: <Profile></Profile>,
+    element: <ProfileOfUser/>,
   },
   {
     path: "/friends",
