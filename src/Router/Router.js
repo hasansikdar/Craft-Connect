@@ -7,7 +7,6 @@ import EditProfile from "../Pages/EditProfile/EditProfile";
 import SellerPro from "../Pages/SellerPro/SellerPro";
 import FollowPages from "../Pages/FollowPages/FollowPages";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
-import UserProfile from "../Pages/UserProfile/UserProfile";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 import FeatureLayout from "../Layout/FeatureLayout";
 import Watch from "../Pages/Watch/Watch";
@@ -21,9 +20,14 @@ import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
 import Profile from "../Pages/UserProfile/Profile";
-import CreateStories from "../Pages/Stories/CreateStories";
 import Discover from "../Pages/Groups/Discover/Discover";
-
+import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends";
+import PostDetails from "../Pages/PostDetails/PostDetails";
+import CreateStoriesLayout from "../Pages/Stories/CreateStoriesLayout";
+import CreatePhotoStories from "../Pages/Stories/CreatePhotoStories";
+import CreateTextStories from "../Pages/Stories/CreateTextStories";
+import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
+import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
 
 export const Routes = createBrowserRouter([
   {
@@ -38,13 +42,20 @@ export const Routes = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
-      { path: '/home', element: <Home></Home> },
-      { path: '/editprofile', element: <EditProfile></EditProfile> },
-      { path: '/sellerpro', element: <SellerPro></SellerPro> },
-      { path: '/pages', element: <FollowPages></FollowPages> },
-      { path: '/products/:id', element: <ProductDetails></ProductDetails> },
-      {path: '/stories/create', element: <CreateStories/>}
-    ]
+      { path: "/home", element: <Home></Home> },
+      { path: "/editprofile", element: <EditProfile></EditProfile> },
+      { path: "/sellerpro", element: <SellerPro></SellerPro> },
+      { path: "/pages", element: <FollowPages></FollowPages> },
+      { path: "/products/:id", element: <ProductDetails></ProductDetails> },
+    ],
+  },
+  {
+    path: "/stories/create",
+    element: <CreateStoriesLayout />,
+    children: [
+      { path: "/stories/create/photo/", element: <CreatePhotoStories /> },
+      { path: "/stories/create/text/", element: <CreateTextStories /> },
+    ],
   },
   {
     path: "/feature",
@@ -90,7 +101,7 @@ export const Routes = createBrowserRouter([
   },
   {
     path: "/feature/profile",
-    element: <Profile></Profile>,
+    element: <ProfileOfUser/>,
   },
   {
     path: "/friends",
@@ -103,9 +114,17 @@ export const Routes = createBrowserRouter([
     path: "/friends/suggestion",
     element: <FriendSuggestion></FriendSuggestion>,
   },
+  { path: "/friends/friendList", element: <CustomList></CustomList> },
+  { path: "/friends/list", element: <AllFriends></AllFriends> },
   { path: "/login", element: <Login></Login> },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
+  },
+  {
+    path: "/postDetails/:id",
+    element: <PostDetails></PostDetails>,
+    loader: ({ params }) =>
+      fetch(`https://craft-connect-server.vercel.app/postDetails/${params.id}`),
   },
 ]);
