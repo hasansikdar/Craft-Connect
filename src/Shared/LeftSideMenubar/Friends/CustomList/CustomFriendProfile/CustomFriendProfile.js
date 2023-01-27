@@ -1,9 +1,10 @@
 import React from "react";
 import { BsPeopleFill } from "react-icons/bs";
-const LeftsideFriendrequest = () => {
+
+const CustomFriendProfile = () => {
   return (
-    <section className="flex flex-col justify-center items-center py-64 ">
-      <div className="text-9xl ">
+    <section className="flex flex-col justify-center items-center py-64">
+      <div className="text-9xl">
         <BsPeopleFill></BsPeopleFill>
       </div>
       <h2 className="font-bold">
@@ -13,4 +14,4 @@ const LeftsideFriendrequest = () => {
   );
 };
 
-export default LeftsideFriendrequest;
+export default CustomFriendProfile;

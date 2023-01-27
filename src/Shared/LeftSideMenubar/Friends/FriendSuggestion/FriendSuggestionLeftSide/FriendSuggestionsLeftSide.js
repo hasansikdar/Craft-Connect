@@ -15,12 +15,12 @@ const FriendSuggestionsLeftSide = () => {
             <BsArrowLeftShort></BsArrowLeftShort>
           </Link>
           <div className="leading-3">
-            <small>Friends</small>
+            <small className="">Friends</small>
             <h2 className="text-2xl font-bold">Suggestions</h2>
           </div>
         </div>
 
-        <h2 className=" font-medium pt-2">People You May Know</h2>
+        <h2 className="font-semibold pt-2">People You May Know</h2>
       </div>
       <div>
         <FriendSuggestionCard></FriendSuggestionCard>

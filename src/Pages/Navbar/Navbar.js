@@ -82,7 +82,7 @@ const Navbar = () => {
               />
             )}
           </div>
-          <div className="hidden md:flex justify-center items-center  border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
+          <div className="hidden md:flex justify-center items-center border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
             <i className="">
               <BiSearchAlt2></BiSearchAlt2>
             </i>
