@@ -114,19 +114,21 @@ const LeftSide = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
-          <div className="flex items-center gap-x-4">
-            <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
-              <CgUserList></CgUserList>
+        <Link to="/friends/friendList">
+          <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
+            <div className="flex items-center gap-x-4">
+              <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
+                <CgUserList></CgUserList>
+              </button>
+              <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
+                Custom Lists
+              </h2>
+            </div>
+            <button className="text-xl dark:text-white text-black">
+              <FaAngleRight></FaAngleRight>
             </button>
-            <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
-              Custom Lists
-            </h2>
           </div>
-          <button className="text-xl dark:text-white text-black">
-            <FaAngleRight></FaAngleRight>
-          </button>
-        </div>
+        </Link>
       </div>
 
       {/* notification modal for settings  */}
