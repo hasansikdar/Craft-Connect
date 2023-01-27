@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cover from '../../assets/cover.jpg';
-import profileImg from '../../assets/profile.jpg';
+import ProfileImg from './ProfileImg';
 
 
 const CoverImg = () => {
@@ -21,10 +21,7 @@ const CoverImg = () => {
             borderTopRightRadius: "5px",
           }}
         ></div>
-        <div className="absolute top-0 md:mt-[340px] md:mx-[490px]">
-          <img className="w-[132px] rounded-full" src={profileImg} alt="" />
-        </div>
-        
+        <ProfileImg/>
       </div>
     );
 };

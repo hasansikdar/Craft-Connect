@@ -1,8 +1,8 @@
 import React from 'react';
 import LeftSideMobile from '../LeftSideBar/LeftSideMobile';
 import Navbar from '../Navbar/Navbar';
-import CoverAndProfileMobile from './CoverAndProfileMobile';
 import CoverImg from './CoverImg';
+import CoverImgMobile from './CoverImgMobile';
 import ProfileInfo from './ProfileInfo';
 
 const ProfileOfUser = () => {
@@ -13,9 +13,9 @@ const ProfileOfUser = () => {
           <div>
             <LeftSideMobile />
           </div>
-          <div className="mt-[60px] w-[1084px] mx-auto">
+          <div className="mt-[60px] md:w-[1084px] md:mx-auto md:shadow-sm rounded-b-md">
             <CoverImg/>
-            <CoverAndProfileMobile/>
+            <CoverImgMobile/>
             <ProfileInfo />
           </div>
         </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import cover from "../../assets/cover.jpg";
-import profileImg from "../../assets/profile.jpg";
+import ProfileImgMobile from './ProfileImgMobile';
 
-const CoverAndProfileMobile = () => {
+const CoverImgMobile = () => {
     return (
       <div>
         <div className=" block md:hidden">
@@ -11,21 +11,20 @@ const CoverAndProfileMobile = () => {
               background: `URL(${cover})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
-              width: "900px",
-              height: "300px",
-              marginTop: "100px",
-              marginLeft: "auto",
-              marginRight: "auto",
+              width: "320px",
+              height: "132px",
+              // marginTop: "100px",
+              marginLeft: "58px",
+              marginRight: "",
               borderTopLeftRadius: "5px",
               borderTopRightRadius: "5px",
             }}
-          ></div>
-          <div className="absolute top-0 mt-[290px] ml-[290px]">
-            <img className="w-[150px] rounded-full" src={profileImg} alt="" />
+          >
           </div>
+          <ProfileImgMobile/>
         </div>
       </div>
     );
 };
 
-export default CoverAndProfileMobile;
+export default CoverImgMobile;
