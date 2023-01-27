@@ -12,9 +12,9 @@ const ProfileDetails = () => {
         <h1 className="ml-4 mt-4 dark:text-white text-black">Your Profile</h1>
         <div className="flex items-center flex-col">
           <img
-            src="https://placeimg.com/192/192/people"
+            src={user?.photoURL}
             alt="photoURL"
-            className="w-16 rounded-full mt-4 mb-2"
+            className="w-16 h-16 rounded-full mt-4 mb-2"
           />
           <Link to="/profile">
             <h1 className="dark:text-white text-gray-700 font-bold text-xl hidden lg:block">

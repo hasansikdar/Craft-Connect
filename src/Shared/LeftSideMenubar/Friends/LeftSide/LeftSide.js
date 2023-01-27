@@ -8,15 +8,43 @@ import {
 import { FcSettings } from "react-icons/fc";
 import { RiUserShared2Fill } from "react-icons/ri";
 import { CgUserList } from "react-icons/cg";
+import { BiNotification } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const LeftSide = () => {
   return (
-    <div className="p-5 dark:bg-gray-800 bg-white">
+    <div className="p-5 dark:bg-gray-800 bg-white h-screen fixed top-[60px] w-[360px]">
       <div className="flex justify-between items-center text-black dark:text-white">
         <h2 className="text-xl font-bold">Friends</h2>
-        <button className="text-xl">
-          <FcSettings></FcSettings>
-        </button>
+
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0}>
+            <FcSettings className="cursor-pointer"></FcSettings>
+          </label>
+          <div
+            tabIndex={0}
+            className="dropdown-content menu p-4 shadow-xl bg-white dark:bg-gray-900 rounded-box w-[330px] "
+          >
+            <div>
+              <h2 className="text-xl font-bold">Notification settings</h2>
+              <p className="text-[12px]">
+                You can manage how you are notified about Friends updates.
+              </p>
+            </div>
+            <hr className="mt-2" />
+            <div className="flex items-center justify-between mt-2">
+              <div className="flex items-center gap-2">
+                <BiNotification></BiNotification>
+                <p>Show notification dots</p>
+              </div>
+              <input
+                type="checkbox"
+                className="toggle toggle-md bg-blue-500"
+                checked
+              />
+            </div>
+          </div>
+        </div>
       </div>
       <div className="mt-5 flex flex-col gap-4">
         <div className="flex items-center gap-x-4 bg-gray-100 px-2 py-4 rounded dark:bg-gray-600 cursor-pointer">
@@ -27,48 +55,53 @@ const LeftSide = () => {
             Home
           </h2>
         </div>
+        <Link to="/friends/requests">
+          <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
+            <div className="flex items-center gap-x-4">
+              <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
+                <RiUserShared2Fill></RiUserShared2Fill>
+              </button>
+              <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
+                Friend Requests
+              </h2>
+            </div>
 
-        <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
-          <div className="flex items-center gap-x-4">
-            <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
-              <RiUserShared2Fill></RiUserShared2Fill>
+            <button className="text-xl dark:text-white text-black">
+              <FaAngleRight></FaAngleRight>
             </button>
-            <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
-              Friend Requests
-            </h2>
           </div>
-          <button className="text-xl dark:text-white text-black">
-            <FaAngleRight></FaAngleRight>
-          </button>
-        </div>
+        </Link>
+        <Link to="/friends/suggestion">
+          <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
+            <div className="flex items-center gap-x-4">
+              <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
+                <FaUserPlus></FaUserPlus>
+              </button>
+              <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
+                Suggestions
+              </h2>
+            </div>
+            <button className="text-xl dark:text-white text-black">
+              <FaAngleRight></FaAngleRight>
+            </button>
+          </div>
+        </Link>
 
-        <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
-          <div className="flex items-center gap-x-4">
-            <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
-              <FaUserPlus></FaUserPlus>
+        <Link to="/friends/list">
+          <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
+            <div className="flex items-center gap-x-4">
+              <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
+                <CgUserList></CgUserList>
+              </button>
+              <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
+                All Friends
+              </h2>
+            </div>
+            <button className="text-xl dark:text-white text-black">
+              <FaAngleRight></FaAngleRight>
             </button>
-            <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
-              Suggestions
-            </h2>
           </div>
-          <button className="text-xl dark:text-white text-black">
-            <FaAngleRight></FaAngleRight>
-          </button>
-        </div>
-
-        <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
-          <div className="flex items-center gap-x-4">
-            <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
-              <CgUserList></CgUserList>
-            </button>
-            <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
-              All Friends
-            </h2>
-          </div>
-          <button className="text-xl dark:text-white text-black">
-            <FaAngleRight></FaAngleRight>
-          </button>
-        </div>
+        </Link>
 
         <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
           <div className="flex items-center gap-x-4">
@@ -81,20 +114,24 @@ const LeftSide = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
-          <div className="flex items-center gap-x-4">
-            <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
-              <CgUserList></CgUserList>
+        <Link to="/friends/friendList">
+          <div className="flex justify-between items-center hover:bg-gray-100 px-2 py-4 rounded dark:hover:bg-gray-600 cursor-pointer">
+            <div className="flex items-center gap-x-4">
+              <button className="text-xl bg-gray-500 p-1 rounded-full text-white">
+                <CgUserList></CgUserList>
+              </button>
+              <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
+                Custom Lists
+              </h2>
+            </div>
+            <button className="text-xl dark:text-white text-black">
+              <FaAngleRight></FaAngleRight>
             </button>
-            <h2 className="text-xl font-medium cursor-pointer text-black dark:text-white">
-              Custom Lists
-            </h2>
           </div>
-          <button className="text-xl dark:text-white text-black">
-            <FaAngleRight></FaAngleRight>
-          </button>
-        </div>
+        </Link>
       </div>
+
+      {/* notification modal for settings  */}
     </div>
   );
 };

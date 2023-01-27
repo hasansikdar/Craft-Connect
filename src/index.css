@@ -7,6 +7,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.profileInfo::-webkit-scrollbar {
+  display: none;
+}
+.removeScroll::-webkit-scrollbar {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
