@@ -46,7 +46,7 @@ const Follow = () => {
           <div className="flex items-center cursor-pointer">
             <img src={page3} className="rounded-full w-8" alt="frnd" />
             <p className="ml-2 dark:text-white text-black hover:text-white">
-              3rd Page
+              Crafty  page
             </p>
           </div>
 
