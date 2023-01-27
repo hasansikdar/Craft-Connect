@@ -9,7 +9,7 @@ import img5 from '../../../assets/ifty/last-phot15-large.webp';
 import img6 from '../../../assets/ifty/last-phot17-large.webp';
 import img7 from '../../../assets/ifty/last-phot18-large.webp';
 import img8 from '../../../assets/ifty/photo-1503965830912-6d7b07921cd1.avif';
-import img9 from '../../../assets/ifty/photo-1633467067670-30701ff2dcbd.avif';
+import img9 from '../../../assets/ifty/327271761_1333126427522949_1565944805079070089_n.jpg';
 
 
 const PostView = () => {
@@ -38,7 +38,7 @@ const PostView = () => {
                     <img className='w-[55px]' src={img4} alt="" />
                 </div>
                 <div>
-                    <img className='w-[55px]' src={img5} alt="" />
+                    <img className='w-[55px]' src={img9} alt="" />
                 </div>
                 <div>
                     <img className='w-[55px]' src={img6} alt="" />
@@ -50,7 +50,7 @@ const PostView = () => {
                     <img className='w-[55px]' src={img8} alt="" />
                 </div>
                 <div>
-                    <img className='w-[55px]' src={img9} alt="" />
+                    <img className='w-[55px]' src={img5} alt="" />
                 </div>
             </div>
           </div>
