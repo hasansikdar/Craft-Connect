@@ -16,7 +16,7 @@ const ProfileDetails = () => {
             alt="photoURL"
             className="w-16 h-16 rounded-full mt-4 mb-2"
           />
-          <Link to="/profile">
+          <Link to="/feature/profile">
             <h1 className="dark:text-white text-gray-700 font-bold text-xl hidden lg:block">
               {user?.displayName}
             </h1>

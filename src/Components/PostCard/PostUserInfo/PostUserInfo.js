@@ -26,16 +26,16 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
               {post?.currentData}
             </a>
             {/* The button to open modal */}
-            <label htmlFor="my-modal-3" className="pt-0 ml-3">
+            {/* <label htmlFor="my-modal-3" className="pt-0 ml-3">
               <img
                 className="rounded-full w-4"
                 src="https://spng.pinpng.com/pngs/s/74-745697_facebook-notification-icon-png-earth-logo-vector-png.png"
                 alt=""
               />
-            </label>
+            </label> */}
           </div>
         </div>
-        <div className="ml-auto">
+        {/* <div className="ml-auto">
           <div className="dropdown dropdown-bottom dropdown-end">
             <label
               tabIndex={0}
@@ -73,7 +73,7 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
               x
             </button>
           )}
-        </div>
+        </div> */}
       </div>
     </>
   );
