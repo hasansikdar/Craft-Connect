@@ -17,7 +17,7 @@ const MyPosts = () => {
   const { data: posts = [], refetch, isLoading } = useQuery({
     queryKey: ['posts'],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/myposts?email=${user?.email}`);
+      const res = await fetch(`https://craft-connect-server.vercel.app/myposts?email=${user?.email}`);
       const data = res.json();
       return data;
     }

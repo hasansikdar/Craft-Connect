@@ -2,13 +2,13 @@ import React from "react";
 
 const AddFriendCard = () => {
   return (
-    <div className="w-[219px] h-[370px] rounded-md bg-white text-black dark:bg-gray-900 dark:text-gray-100">
+    <div className="w-[219px] h-[370px] rounded-md bg-white text-black dark:bg-[#2C2048] dark:text-gray-100">
       <img
         src="https://source.unsplash.com/random/300x300/?2"
         alt=""
         className="object-cover object-center w-full rounded-t-md h-52 dark:bg-gray-500"
       />
-      <div className="flex flex-col justify-between p-4 space-y-2 bg-gray-100 dark:bg-gray-800 rounded-b-md">
+      <div className="flex flex-col justify-between p-4 space-y-2 bg-gray-100 dark:bg-[#2C2048] rounded-b-md">
         <div className="">
           <h2 className="text-[16px] font-semibold tracking-wide">
             Md Abdullah Al Mamun

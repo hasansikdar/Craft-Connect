@@ -2,7 +2,7 @@ import React from "react";
 import { BsPeopleFill } from "react-icons/bs";
 const LeftsideFriendrequest = () => {
   return (
-    <section className="flex flex-col justify-center items-center py-64">
+    <section className="flex flex-col justify-center items-center py-64 ">
       <div className="text-9xl ">
         <BsPeopleFill></BsPeopleFill>
       </div>

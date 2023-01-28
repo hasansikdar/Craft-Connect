@@ -5,7 +5,7 @@ import React from "react";
 // import likegificon from "../../assets/icons/smiley.gif";
 // import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 // import PostUserInfo from "./PostUserInfo/PostUserInfo";
-import likeicon from '../../../assets/icons/like.png';
+import likeicon from "../../../assets/icons/like.png";
 import likegificon from "../../../assets/icons/smiley.gif";
 import {
   FaCommentAlt,
@@ -20,24 +20,33 @@ import PostUserInfo from "../../../Components/PostCard/PostUserInfo/PostUserInfo
 import PostAuthorityModal from "../../../Components/PostCard/PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 
 const GroupCard = ({ post, handleDeletePost, user }) => {
-
   return (
     <div>
       <div className=" card md:w-[600px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
         <div className="card-body">
           <div>
-            <PostUserInfo handleDeletePost={handleDeletePost} post={post}></PostUserInfo>
+            <PostUserInfo
+              handleDeletePost={handleDeletePost}
+              post={post}
+            ></PostUserInfo>
           </div>
-          <p>{post?.postText?.length > 100 ? <>{post?.postText.slice(0, 100)} <Link className="font-bold" to='/'>See More..</Link></> : post?.postText}</p>
+          <p>
+            {post?.postText?.length > 100 ? (
+              <>
+                {post?.postText.slice(0, 100)}{" "}
+                <Link className="font-bold" to="/">
+                  See More..
+                </Link>
+              </>
+            ) : (
+              post?.postText
+            )}
+          </p>
         </div>
         <PhotoProvider>
           <PhotoView src={post?.img}>
             <figure>
-              <img
-                className="w-full"
-                src={post?.img}
-                alt="Shoes"
-              />
+              <img className="w-full" src={post?.img} alt="Shoes" />
             </figure>
           </PhotoView>
         </PhotoProvider>
@@ -133,7 +142,7 @@ const GroupCard = ({ post, handleDeletePost, user }) => {
               src={user?.photoURL}
               alt=""
             />
-            <div className="w-full input input-borderd flex items-center bg-gray-100 dark:bg-black border-white rounded-2xl input-sm">
+            <div className="w-full input input-borderd flex items-center bg-gray-100 dark:bg-[#2C2048] border-white rounded-2xl input-sm">
               <input
                 placeholder="What's on your mind ?"
                 className="w-full bg-transparent"
@@ -188,11 +197,7 @@ const GroupCard = ({ post, handleDeletePost, user }) => {
           <div className="comments">
             <div>
               <div className="flex p-3">
-                <img
-                  className="w-7 mr-4 h-7 rounded-full"
-                  src={''}
-                  alt=""
-                />
+                <img className="w-7 mr-4 h-7 rounded-full" src={""} alt="" />
                 <div>
                   <a className="hover:underline" href="">
                     Muhammad Hasan

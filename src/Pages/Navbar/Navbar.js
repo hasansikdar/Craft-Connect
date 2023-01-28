@@ -59,7 +59,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-black fixed top-0 z-[999] w-full">
+    <div className="dark:bg-[#2C2048] fixed top-0 z-[999] w-full">
       <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
           <Link to="/" className="normal-case text-xl cursor-pointer font-bold">
@@ -82,7 +82,7 @@ const Navbar = () => {
               />
             )}
           </div>
-          <div className="hidden md:flex justify-center items-center  border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
+          <div className="hidden md:flex justify-center items-center border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
             <i className="">
               <BiSearchAlt2></BiSearchAlt2>
             </i>
