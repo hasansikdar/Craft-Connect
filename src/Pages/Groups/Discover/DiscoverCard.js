@@ -10,7 +10,7 @@ import groupimage7 from "../../../assets/jinnahGroupPic/group image7.jpg";
 const DiscoverCard = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center justify-center">
-      <div className="card card-compact w-[300px] text-black dark:text-white bg-gray-100 dark:bg-gray-900 shadow-xl">
+      <div className="card card-compact w-[300px] text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
         <figure>
           <img
             className="rounded h-[200px] w-[300px]"
@@ -26,7 +26,7 @@ const DiscoverCard = () => {
           </div>
         </div>
       </div>
-      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-gray-900 shadow-xl">
+      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
         <figure>
           <img
             className="rounded h-[200px] w-[300px]"
@@ -42,7 +42,7 @@ const DiscoverCard = () => {
           </div>
         </div>
       </div>
-      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-gray-900 shadow-xl">
+      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
         <figure>
           <img src={groupimage3} alt="Shoes" />
         </figure>
@@ -54,7 +54,7 @@ const DiscoverCard = () => {
           </div>
         </div>
       </div>
-      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-gray-900 shadow-xl">
+      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
         <figure>
           <img src={groupimage4} alt="Shoes" />
         </figure>
@@ -66,7 +66,7 @@ const DiscoverCard = () => {
           </div>
         </div>
       </div>
-      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-gray-900 shadow-xl">
+      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
         <figure>
           <img src={groupimage5} alt="Shoes" />
         </figure>
@@ -78,7 +78,7 @@ const DiscoverCard = () => {
           </div>
         </div>
       </div>
-      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-gray-900 shadow-xl">
+      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
         <figure>
           <img src={groupimage6} alt="Shoes" />
         </figure>
@@ -90,7 +90,7 @@ const DiscoverCard = () => {
           </div>
         </div>
       </div>
-      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-gray-900 shadow-xl">
+      <div className="card card-compact w-[300px]  text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
         <figure>
           <img src={groupimage7} alt="Shoes" />
         </figure>

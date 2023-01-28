@@ -142,7 +142,7 @@ const GroupCard = ({ post, handleDeletePost, user }) => {
               src={user?.photoURL}
               alt=""
             />
-            <div className="w-full input input-borderd flex items-center bg-gray-100 dark:bg-black border-white rounded-2xl input-sm">
+            <div className="w-full input input-borderd flex items-center bg-gray-100 dark:bg-[#2C2048] border-white rounded-2xl input-sm">
               <input
                 placeholder="What's on your mind ?"
                 className="w-full bg-transparent"
