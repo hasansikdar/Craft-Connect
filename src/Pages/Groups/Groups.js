@@ -15,7 +15,7 @@ const Groups = () => {
             </div> */}
       <Posts></Posts>
       <div className="lg:mt-12 w-screen">
-        <ul className="menu shadow-lg w-72 text-black dark:text-white dark:bg-gray-800 p-2 rounded-box">
+        <ul className="menu shadow-lg w-72 text-black dark:text-white dark:bg-[#2C2048] p-2 rounded-box">
           <p className="font-medium text-lg pl-3 my-1">Gropes</p>
 
           <li className="hover-bordered">

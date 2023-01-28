@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import RegisterModal from "./RegisterModal/RegisterModal";
 import Image from "./handicraft1.jpg";
+import CoverImage from "./cool.png";
 import { useForm } from "react-hook-form";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
@@ -38,22 +39,26 @@ const Login = () => {
       style={{
         backgroundImage: `linear-gradient(-40deg, 
       rgba(150, 150, 250, 0.40), 
-      black) ,url(${Image})`,
+      #FF3F4A) ,url(${Image})`,
         backgroundSize: "cover",
       }}
     >
       <div className="flex flex-col lg:flex-row gap-20 lg:justify-between justify-center mx-auto items-center w-full md:w-[980px] pt-20 pb-72 ">
         <div className="text-center">
-          <h2 className="text-4xl text-[#1877f2] font-bold mb-8">
-            CRAFT-CONNECT
-          </h2>
+          <h2 className="text-4xl text-white font-bold mb-8">CRAFT-CONNECT</h2>
           <p className="lg:w-[500px] text-2xl leading-[32px]">
             CRAFT-CONNECT helps you connect and share with the people in your
             life.
           </p>
         </div>
         <div>
-          <div className="space-y-6 ng-untouched ng-pristine ng-valid bg-white px-5 py-10 rounded-lg">
+          <div
+            style={{
+              backgroundImage: `url(${CoverImage})`,
+              backgroundSize: "cover",
+            }}
+            className="space-y-6 ng-untouched ng-pristine ng-valid bg-white px-5 py-10 rounded-lg"
+          >
             <form onClick={handleSubmit(handleLogin)} action="">
               <div className="space-y-1 text-sm">
                 <input
@@ -82,11 +87,13 @@ const Login = () => {
                   className="w-full  px-4 py-3 rounded-md border bg-gray-100"
                 />
               </div>
-              <button className="block mt-5 w-full px-4 leading-[48px] text-center font-bold text-[20px] text-white rounded bg-[#1877f2]">
+              <button className="block mt-5 w-full px-4 leading-[48px] text-center font-bold text-[20px] text-white rounded bg-[#FF3F4A]">
                 {loading ? <p>Loading...</p> : "Sign in"}
               </button>
-              <div className="flex justify-center text-xs text-[#1877f2]">
-                <a href="/" className="pt-4">Forgot Password?</a>
+              <div className="flex justify-center text-xs text-[#FFF]">
+                <a href="/" className="pt-4">
+                  Forgot Password?
+                </a>
               </div>
             </form>
             <hr />
