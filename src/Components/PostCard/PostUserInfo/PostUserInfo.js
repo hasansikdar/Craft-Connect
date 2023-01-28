@@ -17,9 +17,9 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
       <div className="flex">
         <img className="w-10 h-10 rounded-full" src={post?.userPhoto} alt="" />
         <div className="ml-4">
-          <a className="hover:underline" href="#">
+          <Link className="hover:underline" to="/feature/profile">
             {post?.userName}
-          </a>
+          </Link>
           <br></br>
           <div className="flex items-center">
             <a className="hover:underline" href="#">

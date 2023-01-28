@@ -10,11 +10,11 @@ const ProfileOfUser = () => {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="dark:bg-[#2C2048]">
         <div>
           <LeftSideMobile />
         </div>
-        <div className="pb-20">
+        <div className="pb-20 ">
           <div className="mt-[60px] md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
             <CoverImg />
             <CoverImgMobile />
