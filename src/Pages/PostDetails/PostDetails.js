@@ -78,10 +78,14 @@ const PostDetails = () => {
   return (
     <div className="">
       <Navbar></Navbar>
-      <div className="h-[600px]">
+      <div className="h-auto">
         <div className="my-10 flex w-11/12 mx-auto pt-10">
-          <div className="w-[70%]">
-            <img className="w-full h-[500px]" src={postdetails?.img} alt="" />
+          <div className="w-[70%] ">
+            <img
+              className="w-full h-[500px] rounded"
+              src={postdetails?.img}
+              alt=""
+            />
           </div>
           <div className="ml-5 p-2 pl-4 rounded border-l border-white w-[25%]">
             <PostUserInfo post={postdetails}></PostUserInfo>

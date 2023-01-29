@@ -17,25 +17,25 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
       <div className="flex">
         <img className="w-10 h-10 rounded-full" src={post?.userPhoto} alt="" />
         <div className="ml-4">
-          <a className="hover:underline" href="#">
+          <Link className="hover:underline" to="/feature/profile">
             {post?.userName}
-          </a>
+          </Link>
           <br></br>
           <div className="flex items-center">
             <a className="hover:underline" href="#">
               {post?.currentData}
             </a>
             {/* The button to open modal */}
-            <label htmlFor="my-modal-3" className="pt-0 ml-3">
+            {/* <label htmlFor="my-modal-3" className="pt-0 ml-3">
               <img
                 className="rounded-full w-4"
                 src="https://spng.pinpng.com/pngs/s/74-745697_facebook-notification-icon-png-earth-logo-vector-png.png"
                 alt=""
               />
-            </label>
+            </label> */}
           </div>
         </div>
-        <div className="ml-auto">
+        {/* <div className="ml-auto">
           <div className="dropdown dropdown-bottom dropdown-end">
             <label
               tabIndex={0}
@@ -73,7 +73,7 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
               x
             </button>
           )}
-        </div>
+        </div> */}
       </div>
     </>
   );
