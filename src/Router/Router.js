@@ -49,13 +49,13 @@ export const Routes = createBrowserRouter([
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
     ],
   },
-  {
-    path: "/advertisement/create",
-    element: <CreateStoriesLayout />,
-    children: [
-      { path: "/advertisement/create/photo/", element: <CreatePhotoStories /> },
-    ],
-  },
+  // {
+  //   path: "/advertisement/create",
+  //   element: <CreateStoriesLayout />,
+  //   children: [
+  //     { path: "/advertisement/create/photo/", element: <CreatePhotoStories /> },
+  //   ],
+  // },
   {
     path: "/feature",
     element: (
