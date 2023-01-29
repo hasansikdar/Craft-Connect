@@ -50,11 +50,10 @@ export const Routes = createBrowserRouter([
     ],
   },
   {
-    path: "/stories/create",
+    path: "/advertisement/create",
     element: <CreateStoriesLayout />,
     children: [
-      { path: "/stories/create/photo/", element: <CreatePhotoStories /> },
-      { path: "/stories/create/text/", element: <CreateTextStories /> },
+      { path: "/advertisement/create/photo/", element: <CreatePhotoStories /> },
     ],
   },
   {
