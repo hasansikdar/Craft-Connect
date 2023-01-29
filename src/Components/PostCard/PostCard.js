@@ -186,8 +186,8 @@ const PostCard = ({
       {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
-          <div className="w-[320px] ml-[44px] md:ml-0 md:w-[590px] border p-5 rounded-md shadow-md">
-            <div className="flex justify-between items-center">
+          <div className="w-[320px] ml-[44px] md:ml-0 md:w-[590px] max-h-[560px] border p-5 rounded-md shadow-md">
+            <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
                   className="w-[50px] h-[50px] rounded-full"
@@ -199,13 +199,6 @@ const PostCard = ({
                   <p className="text-sm">19 hours ago</p>
                 </div>
               </div>
-
-              {/* <div>
-                <PostUserInfo
-                  handleDeletePost={handleDeletePost}
-                  post={post}
-                ></PostUserInfo>
-              </div> */}
               <div>
                 <p className="text-4xl cursor-pointer">
                   <BsThreeDots />
@@ -213,7 +206,7 @@ const PostCard = ({
               </div>
             </div>
             <div className="pb-7">
-              <p className="py-4">
+              <p className="py-4 text-black dark:text-white">
                 {post?.postText?.length > 100 ? (
                   <>
                     {post?.postText.slice(0, 100)}{" "}
@@ -227,14 +220,14 @@ const PostCard = ({
               </p>
               <Link to={`/postDetails/${post?._id}`}>
                 <img
-                  className="w-full rounded-md mt-[5px]"
+                  className="w-full rounded-md mt-[5px] max-h-[300px]"
                   src={post?.img}
                   alt=""
                 />
               </Link>
             </div>
-            <div className="border-t">
-              <div className="flex justify-between items-center pt-3 mx-3">
+            <div className="border-t border-black dark:border-white">
+              <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
                 <div className="flex gap-8">
                   <div className="flex items-center gap-1">
                     <button className="text-[34px]">
