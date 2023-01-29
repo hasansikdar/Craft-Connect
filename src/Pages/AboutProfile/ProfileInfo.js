@@ -44,10 +44,10 @@ const ProfileInfo = () => {
             className="bg-white absolute top-0 ml-[800px] mt-[410px] p-[10px] w-[200px] rounded-[10px] shadow-md z-[999]"
             ref={menuRef}
           >
-            <div>
+            <div className="cursor-pointer">
               <p className="text-black">Update Profile Picture</p>
             </div>
-            <div>
+            <div className="cursor-pointer">
               <p className="text-black">Upload Cover photo</p>
             </div>
           </div>

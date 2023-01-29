@@ -7,7 +7,7 @@ import page3 from "../../../assets/rightbar/page3.jpg";
 
 const Follow = () => {
   return (
-    <div className="p-2 py-5 rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 dark:text-gray-500 text-black dark:bg-gray-700">
+    <div className="p-2 py-5 rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 dark:text-gray-500 text-black dark:bg-[#261b40]">
       <h1 className="dark:text-white text-black ml-4 mb-2">Follow Now</h1>
       <ul className="">
         <li className="flex items-center justify-between py-3 px-4 hover:bg-zinc-600 duration-300 rounded-lg cursor-pointer">

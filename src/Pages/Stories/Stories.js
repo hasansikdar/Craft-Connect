@@ -48,7 +48,7 @@ const Stories = () => {
             return (
               <React.Fragment key={index}>
                 <div
-                  className="select-none bg-img w-[130px] h-[200px] dark:bg-zinc-800 bg-white rounded-md transition bg-center bg-cover"
+                  className="select-none bg-img w-[130px] h-[200px] dark:bg-[#261b40] bg-white rounded-md transition bg-center bg-cover"
                   style={{
                     background: `linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.2)) , url(${story.userStory})`,
                     backgroundPosition: "center",
