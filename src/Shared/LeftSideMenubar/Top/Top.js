@@ -55,7 +55,7 @@ const Top = () => {
           <p>
             <FaUserFriends className="h-8 w-8 text-green-300"></FaUserFriends>
           </p>
-          <h1 className="text-lg font-medium">Friends</h1>
+          <h1 className="font-medium">Friends</h1>
         </button>
       </Link>
       <Link to="/feature/watch">

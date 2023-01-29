@@ -15,6 +15,9 @@ import { Link } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
 import Reactions from "../../Shared/Reactions/Reactions";
 import { useQuery } from "@tanstack/react-query";
+import { TfiCommentAlt } from "react-icons/tfi";
+import { BiLike, BiShareAlt } from "react-icons/bi";
+import { BsThreeDots } from "react-icons/bs";
 
 const PostCard = ({
   refetch,
@@ -69,7 +72,7 @@ const PostCard = ({
 
   return (
     <div>
-      <div className=" card md:w-[590px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
+      {/* <div className=" card md:w-[590px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
         <div className="card-body">
           <div>
             <PostUserInfo
@@ -178,7 +181,77 @@ const PostCard = ({
           </div>
         </div>
       </div>
-      <PostAuthorityModal></PostAuthorityModal>
+      <PostAuthorityModal></PostAuthorityModal> */}
+
+      {/* Latest Design Post card  */}
+      <div>
+        <div className="my-3">
+          <div className="w-[320px] ml-[44px] md:ml-0 md:w-[590px] max-h-[560px] border p-5 rounded-md shadow-md">
+            <div className="flex justify-between items-center text-black dark:text-white">
+              <div className="flex gap-3 items-center">
+                <img
+                  className="w-[50px] h-[50px] rounded-full"
+                  src={post?.userPhoto}
+                  alt=""
+                />
+                <div>
+                  <p>{post?.userName}</p>
+                  <p className="text-sm">19 hours ago</p>
+                </div>
+              </div>
+              <div>
+                <p className="text-4xl cursor-pointer">
+                  <BsThreeDots />
+                </p>
+              </div>
+            </div>
+            <div className="pb-7">
+              <p className="py-4 text-black dark:text-white">
+                {post?.postText?.length > 100 ? (
+                  <>
+                    {post?.postText.slice(0, 100)}{" "}
+                    <Link className="font-bold" to="/">
+                      See More...
+                    </Link>
+                  </>
+                ) : (
+                  post?.postText
+                )}
+              </p>
+              <Link to={`/postDetails/${post?._id}`}>
+                <img
+                  className="w-full rounded-md mt-[5px] max-h-[300px]"
+                  src={post?.img}
+                  alt=""
+                />
+              </Link>
+            </div>
+            <div className="border-t border-black dark:border-white">
+              <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
+                <div className="flex gap-8">
+                  <div className="flex items-center gap-1">
+                    <button className="text-[34px]">
+                      <BiLike />
+                    </button>
+                    <p>17</p>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <button className="text-[27px]">
+                      <TfiCommentAlt />
+                    </button>
+                    <p>07</p>
+                  </div>
+                </div>
+                <div>
+                  <button className="text-3xl">
+                    <BiShareAlt />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

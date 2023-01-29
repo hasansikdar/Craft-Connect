@@ -5,13 +5,9 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import { Authcontext } from "../../../Context/UserContext";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { auth, db, storage } from "../../../firebase/firebase.Config";
-import { doc, setDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const RegisterModal = () => {
-  const [err, setErr] = useState(false);
+  const { updateuserdata, createaccount } = useContext(Authcontext);
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const { register, reset, handleSubmit, formState: { errors } } = useForm();
@@ -20,50 +16,25 @@ const RegisterModal = () => {
   const handleCreateAccount = async (data) => {
     setLoading(true);
     const fullName = data?.firstName + " " + data?.lastName;
-    const email = data?.email;
-    const password = data?.password;
-
-
-    try {
-      //Create user
-      const res = await createUserWithEmailAndPassword(auth, email, password);
-
-      //Create a unique image name
-      const date = new Date().getTime();
-      const storageRef = ref(storage, `${fullName + date}`);
-
-      await uploadBytesResumable(storageRef).then(() => {
-        getDownloadURL(storageRef).then(async (photoURL) => {
-          try {
-            //Update profile
-            await updateProfile(res.user, {
-              displayName: fullName,
-              photoURL,
-            });
+    createaccount(data?.email, data?.password)
+      .then(res => {
+        updateuserdata({ displayName: fullName })
+          .then(res => {
             saveUserDataInDb(fullName, data);
-            //create user on firestore
-            await setDoc(doc(db, "users", res.user.uid), {
-              uid: res.user.uid,
-              displayName: fullName,
-              email,
-              photoURL,
-            });
-
-            //create empty user chats on firestore
-            await setDoc(doc(db, "userChats", res.user.uid), {});
-            navigate("/");
-          } catch (err) {
-            console.log(err);
-            setErr(true);
+          })
+          
+          .catch(error => {
+            console.log(error)
+            toast.error(error.message);
             setLoading(false);
-          }
-        });
-      });
-    } catch (err) {
-      setErr(true);
-      setLoading(false);
-    }
-      console.log(data)
+          })
+      })
+      .catch(error => {
+        toast.error(error.message);
+        setLoading(false);
+        console.log(error)
+      })
+
   }
 
   const saveUserDataInDb = (fullname, info) => {
@@ -90,7 +61,6 @@ const RegisterModal = () => {
           setLoading(false);
           navigate('/');
         }
-        console.log(data)
       })
       .catch(error => {
         console.log(error)
@@ -116,7 +86,7 @@ const RegisterModal = () => {
             <div className="flex gap-2">
               <div>
                 <input
-                  {...register('firstName', { required: 'First name is required' })}
+                  {...register('firstName', { required: 'First name is rquired' })}
                   name="firstName"
                   type="text"
                   placeholder="First Name"
@@ -126,7 +96,7 @@ const RegisterModal = () => {
               </div>
               <div>
                 <input
-                  {...register('lastName', { required: 'Last name is required' })}
+                  {...register('lastName', { required: 'Last name is rquired' })}
                   name="lastName"
                   type="text"
                   placeholder="Last Name"
@@ -179,7 +149,6 @@ const RegisterModal = () => {
             </select>
             <button disabled={loading}
               className={`bg-[#00a400] ${loading && 'cursor-not-allowed'} hover:bg-[#057205] mx-auto border-0 px-8 text-xl h-[36px] font-bold text-white rounded my-2 min-w-[194px] text-center w-2/5`}>{loading ? <p>Loading...</p> : "Register"}</button>
-            {err && <span>Something went wrong</span>}
           </form>
         </div>
       </div>
