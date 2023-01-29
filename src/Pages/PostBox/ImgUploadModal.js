@@ -1,10 +1,9 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 
-const ImgUploadModal = ({ open, setOpen }) => {
-  const [selectedFile, setSelectedFile] = useState();
-  const [preview, setPreview] = useState([]);
+const ImgUploadModal = ({ open, setOpen, setSelectedFile, selectedFile, preview, setPreview }) => {
+  
+  
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(true);
   const cancelButtonRef = useRef(null);
 
@@ -91,7 +90,7 @@ const ImgUploadModal = ({ open, setOpen }) => {
                         d="M6 18L18 6M6 6l12 12"
                       />
                     </svg>
-                    <form>
+                    <>
                       <div className="">
                         <>
                           {selectedFile ? (
@@ -171,17 +170,16 @@ const ImgUploadModal = ({ open, setOpen }) => {
                       </div>
                       <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
                         <button
-                          type="submit"
                           disabled={!selectedFile}
                           onClick={() => {
                             setOpen(false);
                           }}
                           className="disabled:cursor-not-allowed text-center w-full bg-[#FF3F4A] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-[#FF3F4A] text-sm font-medium px-5 py-2.5 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white"
                         >
-                          Post
+                          Upload Image
                         </button>
                       </div>
-                    </form>
+                    </>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
