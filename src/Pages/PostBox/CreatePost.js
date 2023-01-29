@@ -204,7 +204,7 @@ const CreatePost = ({ open, setOpen }) => {
                       </div>
                     </div>
                     <div className="divider"></div>
-                    <Form
+                    {/* <Form
                       setOpen={setOpen}
                       closeUploadPhotoBox={closeUploadPhotoBox}
                       postDisabled={postDisabled}
@@ -215,7 +215,7 @@ const CreatePost = ({ open, setOpen }) => {
                       preview={preview}
                       handlePostTextChange={handlePostTextChange}
                       uploadImg={uploadImg}
-                    />
+                    /> */}
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
