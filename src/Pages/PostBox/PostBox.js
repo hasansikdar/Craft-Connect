@@ -20,7 +20,7 @@ const PostBox = () => {
           alt=""
         />
         <textarea
-          className="w-full bg-transparent  min-h-[160px] outline-none text-gray-900 dark:caret-[#FF3F4A] resize-none pr-4 dark:text-gray-200"
+          className="w-full bg-transparent  min-h-[100px] outline-none text-gray-900 dark:caret-[#FF3F4A] resize-none pr-4 dark:text-gray-200"
           placeholder="Share What are you thinking"
         ></textarea>
       </div>
