@@ -190,7 +190,7 @@ const PostCard = ({
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
-                  className="w-[50px] h-[50px] rounded-full"
+                  className="w-[50px] h-[50px] object-cover rounded-full"
                   src={post?.userPhoto}
                   alt=""
                 />
