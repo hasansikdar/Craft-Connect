@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import pro1 from "../../../assets/rightbar/pro1.jpg";
-import Chat from "../Chat/Chat";
+import Messaging from "../Messaging/Messaging";
 
 const FriendsList = () => {
   const [chat, setChat] = useState(false);
@@ -39,7 +38,7 @@ const FriendsList = () => {
               </div>
             </div>
             <div>
-              <Chat></Chat>
+              <Messaging></Messaging>
             </div>
           </div>
         </div>

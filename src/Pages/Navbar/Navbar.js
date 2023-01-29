@@ -5,6 +5,7 @@ import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
 import maruf from "../../assets/maruf.png";
 import hasan from "../../assets/hasan.png";
+import logo from "../../assets/logo.png"
 import { FaExclamation, FaMoon } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
@@ -62,8 +63,9 @@ const Navbar = () => {
     <div className="dark:bg-[#2C2048] fixed top-0 z-[999] w-full">
       <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
         <div className="pl-3">
-          <Link to="/" className="normal-case text-xl cursor-pointer font-bold">
-            Craft-Connect
+          <Link to="/" class="text-2xl text-gray-900 font-semibold flex items-center active" href="/">
+              <img src={logo} className="w-7 d-block m-auto" alt="" />
+              <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
           </Link>
         </div>
         <div>
@@ -124,6 +126,9 @@ const Navbar = () => {
             className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
           >
             <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
+          </button>
+          <button className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600">
+            <Link to="/chats"><TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle></Link>
           </button>
           <button
             onClick={() => setNotification(!notification)}
