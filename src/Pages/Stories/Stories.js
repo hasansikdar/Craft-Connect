@@ -15,7 +15,7 @@ const Stories = () => {
   };
   return (
     <>
-      <div className="mx-auto container shadow-lg bg-white dark:bg-zinc-700 rounded-md p-5 overflow-hidden dark:text-white text-black">
+      {/* <div className="mx-auto container shadow-lg bg-white dark:bg-zinc-700 rounded-md p-5 overflow-hidden dark:text-white text-black">
         <h1 className="text-2xl font-bold py-4 pb-3 text-center">Stories</h1>
         <Carousel
           responsive={{
@@ -68,7 +68,7 @@ const Stories = () => {
             );
           })}
         </Carousel>
-      </div>
+      </div> */}
       <PostBox />
     </>
   );
