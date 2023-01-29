@@ -10,7 +10,7 @@ const ProfileImg = () => {
       <div className="absolute top-0 md:mt-[340px] md:mx-[490px]">
         <img
           className="w-[132px] h-[132px] rounded-full"
-          src={user?.photoURL}
+          src={profileImg}
           alt=""
         />
       </div>

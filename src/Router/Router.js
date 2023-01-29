@@ -19,7 +19,6 @@ import Pages from "../Pages/Fb_Pages/Pages";
 import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
-import Profile from "../Pages/UserProfile/Profile";
 import Discover from "../Pages/Groups/Discover/Discover";
 import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends";
 import PostDetails from "../Pages/PostDetails/PostDetails";
