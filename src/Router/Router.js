@@ -25,9 +25,9 @@ import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends"
 import PostDetails from "../Pages/PostDetails/PostDetails";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
-import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
 import AdvertisementLayout from "../Pages/Adevertisement/AdvertisementLayout";
 import CreateAdvertisement from "../Pages/Adevertisement/CreateAdvertisement";
+import Chatting from "../Shared/Chatting/Chatting";
 
 export const Routes = createBrowserRouter([
   {
@@ -116,7 +116,7 @@ export const Routes = createBrowserRouter([
   { path: "/friends/friendList", element: <CustomList></CustomList> },
   { path: "/friends/list", element: <AllFriends></AllFriends> },
   { path: "/login", element: <Login></Login> },
-  { path: "/chats", element: <Sidebar></Sidebar> },
+  { path: "/chats", element: <Chatting></Chatting> },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,

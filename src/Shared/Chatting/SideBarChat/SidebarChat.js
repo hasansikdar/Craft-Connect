@@ -3,7 +3,7 @@ import Chats from "../Chats/Chats"
 import ChatBar from "../ChatBar/ChatBar";
 import SearchChat from "../SearchChat/SearchChat";
 
-const Sidebar = () => {
+const SideBar = () => {
   return (
     <div className="sidebar">
       <ChatBar></ChatBar>
@@ -13,4 +13,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
