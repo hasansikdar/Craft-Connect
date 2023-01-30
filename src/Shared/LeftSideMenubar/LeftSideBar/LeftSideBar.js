@@ -115,11 +115,10 @@ import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { GiFamilyHouse } from "react-icons/gi";
 import { IoBarChartOutline } from "react-icons/io5";
-import { BsNewspaper, BsJournalBookmark } from "react-icons/bs";
-import { RiSettings4Line } from "react-icons/ri";
+import { BsNewspaper, BsBookmark } from "react-icons/bs";
 import { RiAdvertisementLine } from "react-icons/ri";
-import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
-import { FiMessageSquare, FiFolder, FiShoppingCart, FiHome, FiUsers } from "react-icons/fi";
+import { FaRegFlag } from "react-icons/fa";
+import { FiHome, FiUsers } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const LeftSideBar = () => {
@@ -127,18 +126,18 @@ const LeftSideBar = () => {
     { name: "Home", link: "/", icon: FiHome },
     { name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/", icon: FiUsers },
+    { name: "Pages", link: "/", icon: FaRegFlag },
     { name: "Marketplace", link: "/", icon: GiFamilyHouse},
-    { name: "Bookmarked", link: "/", icon: BsJournalBookmark },
+    { name: "Bookmarked", link: "/", icon: BsBookmark },
     { name: "Ad Center", link: "/", icon: RiAdvertisementLine },
     { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
-    { name: "Pages", link: "/", icon: RiSettings4Line },
   ];
   const [open, setOpen] = useState(true);
   return (
     <section className="flex gap-6">
       <div
-        className={`bg-[#FAFBFD] min-h-screen ${open ? "w-72" : "w-[76px]"
-          } duration-500 text-black px-4 z-9999 fixed shadow-lg`}
+        className={`bg-[#FAFBFD] min-h-screen ${open ? "w-72" : "w-[70px]"
+          } duration-500 text-black px-4 z-9999 fixed shadow-2xl`}
       >
         <div className="py-3 flex justify-end">
           <HiMenuAlt3
@@ -156,7 +155,7 @@ const LeftSideBar = () => {
                 } group flex items-center text-base  gap-3.5 font-medium p-2 hover:text-[#FF3F4A] 
                  rounded-md`}
             >
-              <div>{React.createElement(menu?.icon, { size: "30" })}</div>
+              <div>{React.createElement(menu?.icon, { size: "25" })}</div>
               <h2
                 style={{
                   transitionDelay: `${i + 3}00ms`,
@@ -177,7 +176,7 @@ const LeftSideBar = () => {
           ))}
         </div>
       </div>
-      <div className="m-3 text-xl text-gray-900 font-semibold ml-20">
+      <div className="m-3 text-xl text-gray-900 font-semibold ml-24">
         REACT TAILWIND
       </div>
     </section>
