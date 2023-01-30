@@ -1,12 +1,46 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Authcontext } from "../../Context/UserContext";
-import TextStoriesContent from "./TextStoriesContent";
+import AdvertiseContent from "./AdvertiseContent";
 
-const AdvertisementLeftSideBar = ({ showAdvertiseText, setShowAdvertiseText, setShowAdvertiseContent }) => {
+const AdvertisementLeftSideBar = ({
+  showAdvertiseText,
+  setShowAdvertiseText,
+  setShowAdvertiseContent,
+  setPreview,
+  preview,
+  selectedFile,
+  setSelectedFile,
+}) => {
   const { user } = useContext(Authcontext);
+<<<<<<< HEAD
+  useEffect(() => {
+    if (!selectedFile) {
+      setPreview(undefined);
+      return;
+    }
+    const selectedFIles = [];
+    const targetFilesObject = [...selectedFile];
+    targetFilesObject.map((file) => {
+      return selectedFIles.push(URL.createObjectURL(file));
+    });
 
+    setPreview(selectedFIles);
+    // free memory when ever this component is unmounted
+    return () => URL.revokeObjectURL(selectedFIles);
+  }, [selectedFile]);
+
+  const onSelectFile = (e) => {
+    if (!e.target.files || e.target.files?.length === 0) {
+      setSelectedFile(undefined);
+      return;
+    }
+    setSelectedFile(e.target.files);
+  };
+=======
+
+>>>>>>> 863dfc331d0097f5f2c65c095d07bec122e3cb3f
   return (
-  <div className="h-screen w-[300px] bg-gray-50 dark:bg-[#261b40] p-5 pt-[80px]">
+    <div className="h-screen w-[300px] bg-gray-50 dark:bg-[#261b40] p-5 pt-[80px]">
       <h1 className="text-2xl font-bold">Create Advertisement</h1>
       <div className="users-avatar pt-5  flex gap-3 items-center">
         <img
@@ -18,7 +52,13 @@ const AdvertisementLeftSideBar = ({ showAdvertiseText, setShowAdvertiseText, set
       </div>
       <div>
         {showAdvertiseText ? (
-          <TextStoriesContent setShowAdvertiseText={setShowAdvertiseText} setShowAdvertiseContent={setShowAdvertiseContent} />
+          <AdvertiseContent
+            setShowAdvertiseText={setShowAdvertiseText}
+            setShowAdvertiseContent={setShowAdvertiseContent}
+            setPreview={setPreview}
+            preview={preview}
+            onSelectFile={onSelectFile}
+          />
         ) : (
           <></>
         )}

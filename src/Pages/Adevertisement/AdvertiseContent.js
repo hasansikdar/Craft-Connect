@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { Authcontext } from "../../Context/UserContext";
 
-const TextStoriesContent = ({
+const AdvertiseContent = ({
   setShowAdvertiseText,
   setShowAdvertiseContent,
+  onSelectFile
 }) => {
   const { user } = useContext(Authcontext);
   const storiesForm = (e) => {
@@ -31,6 +32,7 @@ const TextStoriesContent = ({
         }
       });
   };
+  
   return (
     <>
       <div className="flex flex-col justify-between content-between h-[78vh]">
@@ -44,9 +46,13 @@ const TextStoriesContent = ({
             required
           ></textarea>
           <div className="">
-            <button className="text-[#FF3F4A] text-center w-full bg-[#cc323b] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-[#cc323b] rounded-lg border border-[#cc323b] text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white dark:hover:bg-gray-600 [#cc323b]:ring-gray-600 mt-5">
+            <input type="file" id="file" className="hidden" onChange={onSelectFile} />
+            <label
+              htmlFor="file"
+              className="text-[#FF3F4A] block text-center w-full bg-[#cc323b] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-[#cc323b] rounded-lg border border-[#cc323b] text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white dark:hover:bg-gray-600 [#cc323b]:ring-gray-600 mt-5"
+            >
               Add Photos
-            </button>
+            </label>
             <button
               type="submit"
               className="disabled:cursor-not-allowed disabled:bg-gray-100 text-[#FF3F4A] text-center w-full bg-[#cc323b] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-[#cc323b] rounded-lg border border-[#cc323b] text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white dark:hover:bg-gray-600 [#cc323b]:ring-gray-600 mt-5"
@@ -66,4 +72,4 @@ const TextStoriesContent = ({
   );
 };
 
-export default TextStoriesContent;
+export default AdvertiseContent;
