@@ -11,6 +11,7 @@ import DynamicPostCard from "./DynamicPostCard";
 const PostCards = () => {
 
   const { user } = useContext(Authcontext);
+  console.log(user);
 
   const url = `http://localhost:5000/myposts?email=${user?.email}`;
 

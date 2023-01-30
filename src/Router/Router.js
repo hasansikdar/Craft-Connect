@@ -28,7 +28,7 @@ import CreateTextStories from "../Pages/Stories/CreateTextStories";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
 import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
-import ProfileById from "../Pages/AboutProfile/ProfileById";
+import UserById from "../Pages/AboutProfile/UserProfileById/UserById";
 
 export const Routes = createBrowserRouter([
   {
@@ -130,6 +130,6 @@ export const Routes = createBrowserRouter([
   },
   {
     path: '/profile/:id',
-    element: <ProfileById/>
+    element: <UserById/>
   }
 ]);
