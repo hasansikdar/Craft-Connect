@@ -113,23 +113,25 @@
 
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { BsNewspaper } from "react-icons/bs";
+import { GiFamilyHouse } from "react-icons/gi";
+import { IoBarChartOutline } from "react-icons/io5";
+import { BsNewspaper, BsJournalBookmark } from "react-icons/bs";
 import { RiSettings4Line } from "react-icons/ri";
-import { TbReportAnalytics } from "react-icons/tb";
+import { RiAdvertisementLine } from "react-icons/ri";
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
-import { FiMessageSquare, FiFolder, FiShoppingCart, FiHome } from "react-icons/fi";
+import { FiMessageSquare, FiFolder, FiShoppingCart, FiHome, FiUsers } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const LeftSideBar = () => {
   const menus = [
     { name: "Home", link: "/", icon: FiHome },
     { name: "Most Recent", link: "/", icon: BsNewspaper },
-    { name: "messages", link: "/", icon: FiMessageSquare },
-    { name: "analytics", link: "/", icon: TbReportAnalytics},
-    { name: "File Manager", link: "/", icon: FiFolder },
-    { name: "Cart", link: "/", icon: FiShoppingCart },
-    { name: "Saved", link: "/", icon: AiOutlineHeart },
-    { name: "Setting", link: "/", icon: RiSettings4Line },
+    { name: "Friends", link: "/", icon: FiUsers },
+    { name: "Marketplace", link: "/", icon: GiFamilyHouse},
+    { name: "Bookmarked", link: "/", icon: BsJournalBookmark },
+    { name: "Ad Center", link: "/", icon: RiAdvertisementLine },
+    { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
+    { name: "Pages", link: "/", icon: RiSettings4Line },
   ];
   const [open, setOpen] = useState(true);
   return (
