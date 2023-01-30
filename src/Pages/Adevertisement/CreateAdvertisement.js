@@ -6,6 +6,8 @@ const CreateAdvertisement = ({
   showAdvertiseText,
   showAdvertiseContent,
   showImageStories,
+  setPreview,
+  preview,
 }) => {
   const toggleTextStoriesContent = () => {
     setShowAdvertiseText(true);
@@ -13,7 +15,11 @@ const CreateAdvertisement = ({
   return (
     <>
       {showAdvertiseText ? (
-        <AdvertisementPreview showAdvertiseContent={showAdvertiseContent} />
+        <AdvertisementPreview
+          showAdvertiseContent={showAdvertiseContent}
+          setPreview={setPreview}
+          preview={preview}
+        />
       ) : (
         <>
           {showImageStories ? (
