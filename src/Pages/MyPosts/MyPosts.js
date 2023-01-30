@@ -17,7 +17,7 @@ const MyPosts = () => {
   const { data: posts = [], refetch, isLoading } = useQuery({
     queryKey: ['posts'],
     queryFn: async () => {
-      const res = await fetch(`https://craft-connect-server.vercel.app/myposts?email=${user?.email}`);
+      const res = await fetch(`https://craft-connect-server-blond.vercel.app/myposts?email=${user?.email}`);
       const data = res.json();
       return data;
     }
@@ -27,7 +27,7 @@ const MyPosts = () => {
   // delete post
   const handleDeletePost = id => {
     setLoading(true)
-    fetch(`https://craft-connect-server.vercel.app/usersPost/${id}`, {
+    fetch(`https://craft-connect-server-blond.vercel.app/usersPost/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
@@ -55,7 +55,7 @@ const MyPosts = () => {
       uniqueId,
     }
 
-    fetch(`https://craft-connect-server.vercel.app/reactions`, {
+    fetch(`https://craft-connect-server-blond.vercel.app/reactions`, {
       method: 'POST',
       headers: {
         'content-type':'application/json'

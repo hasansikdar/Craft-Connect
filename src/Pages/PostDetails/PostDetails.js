@@ -24,7 +24,7 @@ const PostDetails = () => {
     queryKey: [postdetails?.uniqueId],
     queryFn: async () => {
       const res = await fetch(
-        `https://craft-connect-server.vercel.app/comments/${postdetails?.uniqueId}`
+        `https://craft-connect-server-blond.vercel.app/comments/${postdetails?.uniqueId}`
       );
       const data = res.json();
       return data;
@@ -33,7 +33,7 @@ const PostDetails = () => {
 
   const handleEditComment = (_id) => {
     fetch(
-      `https://craft-connect-server.vercel.app/editComment/${_id}?email=${user?.email}`,
+      `https://craft-connect-server-blond.vercel.app/editComment/${_id}?email=${user?.email}`,
       {
         method: "PATCH",
         headers: {
@@ -58,7 +58,7 @@ const PostDetails = () => {
 
   const handleDelteComment = (_id) => {
     fetch(
-      `https://craft-connect-server.vercel.app/deleteComment/${_id}?email=${user?.email}`,
+      `https://craft-connect-server-blond.vercel.app/deleteComment/${_id}?email=${user?.email}`,
       {
         method: "DELETE",
       }

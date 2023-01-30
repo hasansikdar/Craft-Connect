@@ -49,7 +49,7 @@ const PostCard = ({
   // const { data: postreactions = [] } = useQuery({
   //   queryKey: [post?.uniqueId],
   //   queryFn: async () => {
-  //     const res = await fetch(`https://craft-connect-server.vercel.app/postReactions/${post?.uniqueId}`);
+  //     const res = await fetch(`https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`);
   //     const data = res.json();
   //     refetch()
   //     return data;
@@ -58,7 +58,7 @@ const PostCard = ({
 
   useEffect(() => {
     fetch(
-      `https://craft-connect-server.vercel.app/postReactions/${post?.uniqueId}`
+      `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
     )
       .then((res) => res.json())
       .then((data) => {

@@ -138,7 +138,7 @@ const LeftSideBar = () => {
     <section className="flex gap-6">
       <div
         className={`bg-[#FAFBFD] min-h-screen ${open ? "w-72" : "w-[76px]"
-          } duration-500 text-black px-4 z-9999 fixed shadow-lg`}
+          } duration-500 text-black px-4 z-9999 fixed shadow-2xl`}
       >
         <div className="py-3 flex justify-end">
           <HiMenuAlt3
@@ -156,7 +156,7 @@ const LeftSideBar = () => {
                 } group flex items-center text-base  gap-3.5 font-medium p-2 hover:text-[#FF3F4A] 
                  rounded-md`}
             >
-              <div>{React.createElement(menu?.icon, { size: "30" })}</div>
+              <div>{React.createElement(menu?.icon, { size: "25" })}</div>
               <h2
                 style={{
                   transitionDelay: `${i + 3}00ms`,
