@@ -11,10 +11,10 @@ const CreateStories = ({
   const toggleTextStoriesContent = () => {
     setShowTextStories(true);
   };
-  const navigate = useNavigate('')
+  const navigate = useNavigate("");
   const imagePreview = () => {
-    navigate('/stories/create/text/')
-  }
+    navigate("/stories/create/text/");
+  };
   return (
     <>
       {showTextStories ? (

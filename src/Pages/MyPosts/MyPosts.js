@@ -9,42 +9,38 @@ const MyPosts = () => {
   const { user } = useContext(Authcontext);
   const [loading, setLoading] = useState(false);
 
-
-
-
-
-
-  const { data: posts = [], refetch, isLoading } = useQuery({
-    queryKey: ['posts'],
+  const {
+    data: posts = [],
+    refetch,
+    isLoading,
+  } = useQuery({
+    queryKey: ["posts"],
     queryFn: async () => {
       const res = await fetch(`https://craft-connect-server-blond.vercel.app/myposts?email=${user?.email}`);
       const data = res.json();
       return data;
-    }
-  })
-  
-  
+    },
+  });
+
   // delete post
   const handleDeletePost = id => {
     setLoading(true)
     fetch(`https://craft-connect-server-blond.vercel.app/usersPost/${id}`, {
       method: 'DELETE'
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.acknowledged) {
-          toast.success('Post Deleted')
+          toast.success("Post Deleted");
           setLoading(false);
           refetch();
         }
       })
-      .catch(error => {
+      .catch((error) => {
         toast.error(error.message);
-        console.log(error.message)
-      })
-  }
-
-  
+        console.log(error.message);
+      });
+  };
 
   const handelReaction = (id, imageLink, uniqueId) => {
     const reactionInfo = {
@@ -53,36 +49,46 @@ const MyPosts = () => {
       userPhoto: user?.displayURL,
       imageLink,
       uniqueId,
-    }
+    };
 
     fetch(`https://craft-connect-server-blond.vercel.app/reactions`, {
       method: 'POST',
       headers: {
-        'content-type':'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(reactionInfo)
+      body: JSON.stringify(reactionInfo),
     })
-    .then(res => res.json())
-    .then(data => {
-        if(data.acknowledged){
-          toast.success('liked')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("liked");
           refetch();
         }
-    })
-  }
+      });
+  };
 
-  if(isLoading){
-    return <Loading></Loading>
+  if (isLoading) {
+    return <Loading></Loading>;
   }
-  if(posts.length === 0){
-    return <div><h1 className="text-center text-2xl my-10">No Post Available</h1></div>
+  if (posts.length === 0) {
+    return (
+      <div>
+        <h1 className="text-center text-2xl my-10">No Post Available</h1>
+      </div>
+    );
   }
 
   return (
     <div className="justify-center py-10">
-      {
-        posts.map(post => <PostCard refetch={refetch} handelReaction={handelReaction} handleDeletePost={handleDeletePost} user={user} post={post}></PostCard>)
-      }
+      {posts.map((post) => (
+        <PostCard
+          refetch={refetch}
+          handelReaction={handelReaction}
+          handleDeletePost={handleDeletePost}
+          user={user}
+          post={post}
+        ></PostCard>
+      ))}
     </div>
   );
 };

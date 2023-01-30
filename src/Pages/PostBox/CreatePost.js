@@ -22,7 +22,7 @@ const CreatePost = ({ open, setOpen }) => {
   const [loading, setLoading] = useState(false);
   const [closeUploadPhotoBox, setCloseUploadPhotoBox] = useState(false);
   const navigate = useNavigate();
-  const {user} = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
   const handlePostTextChange = (data) => {
     setPostDisabled(data);
   };
@@ -54,7 +54,7 @@ const CreatePost = ({ open, setOpen }) => {
     const mm = String(currentData.getMonth() + 1).padStart(2, "0");
     const yyyy = currentData.getFullYear();
     currentData = mm + "/" + dd + "/" + yyyy;
-
+    const likes = [];
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
     const formData = new FormData();
@@ -78,6 +78,7 @@ const CreatePost = ({ open, setOpen }) => {
             postText: postDisabled,
             img,
             uniqueId: uuidv4(),
+            likes,
           };
           fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
             method: "POST",
@@ -191,7 +192,7 @@ const CreatePost = ({ open, setOpen }) => {
                       <div className="flex items-center gap-3 ">
                         {/* image source is hardcode now */}
                         <img
-                         src="https://avatars.githubusercontent.com/u/94055231?v=4"
+                          src="https://avatars.githubusercontent.com/u/94055231?v=4"
                           className="h-12 w-12 rounded-full"
                           alt=""
                         />

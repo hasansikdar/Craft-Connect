@@ -101,7 +101,7 @@ export const Routes = createBrowserRouter([
   },
   {
     path: "/feature/profile",
-    element: <ProfileOfUser/>,
+    element: <ProfileOfUser />,
   },
   {
     path: "/friends",
