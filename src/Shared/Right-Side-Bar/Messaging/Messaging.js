@@ -3,39 +3,39 @@ import React from 'react';
 const Messaging = () => {
     return (
         <div>
-            <div class="flex h-96 antialiased text-gray-800">
-                <div class="flex flex-row h-full w-full overflow-x-hidden">
+            <div className="flex h-96 antialiased text-gray-800">
+                <div className="flex flex-row h-full w-full overflow-x-hidden">
 
-                    <div class="flex flex-col flex-auto h-full">
+                    <div className="flex flex-col flex-auto h-full">
                         <div
-                            class="flex flex-col flex-auto flex-shrink-0 h-full p-2"
+                            className="flex flex-col flex-auto flex-shrink-0 h-full p-2"
                         >
-                            <div class="flex flex-col h-full overflow-x-auto mb-4">
-                                <div class="flex flex-col h-full">
-                                    <div class="grid grid-cols-12 gap-y-2">
-                                        <div class="col-start-1 col-end-10 p-1 rounded-lg">
-                                            <div class="flex flex-row items-center">
+                            <div className="flex flex-col h-full overflow-x-auto mb-4">
+                                <div className="flex flex-col h-full">
+                                    <div className="grid grid-cols-12 gap-y-2">
+                                        <div className="col-start-1 col-end-10 p-1 rounded-lg">
+                                            <div className="flex flex-row items-center">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     A
                                                 </div>
                                                 <div
-                                                    class="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                                                    className="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
                                                 >
                                                     <div>Hey How are you today?</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-start-1 col-end-10 p-1 rounded-lg">
-                                            <div class="flex flex-row items-center">
+                                        <div className="col-start-1 col-end-10 p-1 rounded-lg">
+                                            <div className="flex flex-row items-center">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     A
                                                 </div>
                                                 <div
-                                                    class="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                                                    className="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
                                                 >
                                                     <div>
                                                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -45,29 +45,29 @@ const Messaging = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-start-4 col-end-13 p-1 rounded-lg">
-                                            <div class="flex items-center justify-start flex-row-reverse">
+                                        <div className="col-start-4 col-end-13 p-1 rounded-lg">
+                                            <div className="flex items-center justify-start flex-row-reverse">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     B
                                                 </div>
                                                 <div
-                                                    class="relative mr-2 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
+                                                    className="relative mr-2 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                                 >
                                                     <div>I'm ok what about you?</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-start-4 col-end-13 p-1 rounded-lg">
-                                            <div class="flex items-center justify-start flex-row-reverse">
+                                        <div className="col-start-4 col-end-13 p-1 rounded-lg">
+                                            <div className="flex items-center justify-start flex-row-reverse">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     B
                                                 </div>
                                                 <div
-                                                    class="relative mr-2 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
+                                                    className="relative mr-2 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                                 >
                                                     <div>
                                                         Lorem ipsum dolor sit, amet consectetur adipisicing. ?
@@ -75,50 +75,50 @@ const Messaging = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-start-1 col-end-10 p-1 rounded-lg">
-                                            <div class="flex flex-row items-center">
+                                        <div className="col-start-1 col-end-10 p-1 rounded-lg">
+                                            <div className="flex flex-row items-center">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     A
                                                 </div>
                                                 <div
-                                                    class="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                                                    className="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
                                                 >
                                                     <div>Lorem ipsum dolor sit amet !</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-start-4 col-end-13 p-1 rounded-lg">
-                                            <div class="flex items-center justify-start flex-row-reverse">
+                                        <div className="col-start-4 col-end-13 p-1 rounded-lg">
+                                            <div className="flex items-center justify-start flex-row-reverse">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     B
                                                 </div>
                                                 <div
-                                                    class="relative mr-2 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
+                                                    className="relative mr-2 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                                 >
                                                     <div>
                                                         Lorem ipsum dolor sit, amet consectetur adipisicing. ?
                                                     </div>
                                                     <div
-                                                        class="absolute text-xs bottom-0 right-0 -mb-5 mr-2 text-gray-500"
+                                                        className="absolute text-xs bottom-0 right-0 -mb-5 mr-2 text-gray-500"
                                                     >
                                                         Seen
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-start-1 col-end-10 p-1 rounded-lg">
-                                            <div class="flex flex-row items-center">
+                                        <div className="col-start-1 col-end-10 p-1 rounded-lg">
+                                            <div className="flex flex-row items-center">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     A
                                                 </div>
                                                 <div
-                                                    class="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                                                    className="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
                                                 >
                                                     <div>
                                                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -127,22 +127,22 @@ const Messaging = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-start-1 col-end-10 p-1 rounded-lg">
-                                            <div class="flex flex-row items-center">
+                                        <div className="col-start-1 col-end-10 p-1 rounded-lg">
+                                            <div className="flex flex-row items-center">
                                                 <div
-                                                    class="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
+                                                    className="flex items-center justify-center h-8 w-8 rounded-full bg-indigo-500 flex-shrink-0"
                                                 >
                                                     A
                                                 </div>
                                                 <div
-                                                    class="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                                                    className="relative ml-2 text-sm bg-white py-2 px-4 shadow rounded-xl"
                                                 >
-                                                    <div class="flex flex-row items-center">
+                                                    <div className="flex flex-row items-center">
                                                         <button
-                                                            class="flex items-center justify-center bg-indigo-600 hover:bg-indigo-800 rounded-full h-8 w-10"
+                                                            className="flex items-center justify-center bg-indigo-600 hover:bg-indigo-800 rounded-full h-8 w-10"
                                                         >
                                                             <svg
-                                                                class="w-6 h-6 text-white"
+                                                                className="w-6 h-6 text-white"
                                                                 fill="none"
                                                                 stroke="currentColor"
                                                                 viewBox="0 0 24 24"
@@ -162,38 +162,38 @@ const Messaging = () => {
                                                                 ></path>
                                                             </svg>
                                                         </button>
-                                                        <div class="flex flex-row items-center space-x-px ml-4">
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-12 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-6 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-5 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-3 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-10 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-1 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-1 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-8 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-2 w-1 bg-gray-500 rounded-lg"></div>
-                                                            <div class="h-4 w-1 bg-gray-500 rounded-lg"></div>
+                                                        <div className="flex flex-row items-center space-x-px ml-4">
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-4 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-8 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-8 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-10 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-10 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-12 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-10 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-6 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-5 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-4 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-3 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-10 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-10 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-8 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-8 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-1 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-1 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-8 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-8 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-2 w-1 bg-gray-500 rounded-lg"></div>
+                                                            <div className="h-4 w-1 bg-gray-500 rounded-lg"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -203,14 +203,14 @@ const Messaging = () => {
                                 </div>
                             </div>
                             <div
-                                class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
+                                className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
                             >
                                 <div className='px-1'>
                                     <button
-                                        class="flex items-center justify-center text-gray-400 hover:text-gray-600"
+                                        className="flex items-center justify-center text-gray-400 hover:text-gray-600"
                                     >
                                         <svg
-                                            class="w-5 h-5"
+                                            className="w-5 h-5"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -225,18 +225,18 @@ const Messaging = () => {
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="flex-grow">
-                                    <div class="relative w-full">
+                                <div className="flex-grow">
+                                    <div className="relative w-full">
                                         <input
                                             type="text"
-                                            class="flex w-10/12 border rounded-lg focus:outline-none focus:border-indigo-300 h-10 bg-gray-200 px-2"
+                                            className="flex w-10/12 border rounded-lg focus:outline-none focus:border-indigo-300 h-10 bg-gray-200 px-2"
                                             placeholder='Type here...'
                                         />
                                         <button
-                                            class="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600"
+                                            className="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600"
                                         >
                                             <svg
-                                                class="w-6 h-6"
+                                                className="w-6 h-6"
                                                 fill="none"
                                                 stroke="currentColor"
                                                 viewBox="0 0 24 24"
@@ -252,13 +252,13 @@ const Messaging = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div className="">
                                     <button
-                                        class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
+                                        className="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
                                     >
-                                        <span class="">
+                                        <span className="">
                                             <svg
-                                                class="w-4 h-4 transform rotate-90 -mt-px"
+                                                className="w-4 h-4 transform rotate-90 -mt-px"
                                                 fill="none"
                                                 stroke="currentColor"
                                                 viewBox="0 0 24 24"
