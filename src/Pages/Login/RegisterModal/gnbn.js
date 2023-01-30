@@ -47,7 +47,7 @@ const RegisterModal = () => {
       birthdate: selectedDate
     }
 
-    fetch('https://craft-connect-server.vercel.app/users', {
+    fetch('https://craft-connect-server-blond.vercel.app/users', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

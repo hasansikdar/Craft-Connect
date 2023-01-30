@@ -24,7 +24,7 @@ const UserContext = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const updateuserdata = (updateinfo) => {
-    return updateProfile(auth.currentUser, updateinfo);
+    return updateProfile(auth.user, updateinfo);
   };
   const signin = (email, password) => {
     setLoading(true);
@@ -42,7 +42,7 @@ const UserContext = ({ children }) => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("https://craft-connect-server.vercel.app/users");
+      const res = await fetch("https://craft-connect-server-blond.vercel.app/users");
       const data = await res.json();
       return data;
     },
@@ -61,8 +61,8 @@ const UserContext = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
       setLoading(false);
     });
     return () => {

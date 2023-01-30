@@ -7,22 +7,22 @@ import { db } from "../../../firebase/firebase.Config";
 const Chats = () => {
   const [chats, setChats] = useState([]);
 
-  const { currentUser } = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
   const { dispatch } = useContext(ChatContext);
 
   useEffect(() => {
     const getChats = () => {
-      const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
+      const unsubscribe = onSnapshot(doc(db, "userChats", user.uid), (doc) => {
         setChats(doc.data());
       });
 
       return () => {
-        unsub();
+        unsubscribe();
       };
     };
 
-    currentUser.uid && getChats();
-  }, [currentUser.uid]);
+    user.uid && getChats();
+  }, [user.uid]);
 
   const handleSelect = (u) => {
     dispatch({ type: "CHANGE_USER", payload: u });

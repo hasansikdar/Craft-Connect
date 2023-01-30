@@ -6,7 +6,7 @@ import GroupCard from "./GroupCard/GroupCard";
 
 const Groups = () => {
   return (
-    // <div className='h-screen flex items-center justify-center'>
+    // <div className="'h-screen flex items-center justify-center'>
     //     <h1>This is a Groups page. Thanks</h1>
     // </div>
     <div className="flex mt-5  flex-col-reverse lg:flex-row  lg:gap-10">

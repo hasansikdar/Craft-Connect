@@ -17,7 +17,7 @@ const ChatInput = () => {
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
 
-  const { currentUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
   const handleSend = async () => {
@@ -36,7 +36,7 @@ const ChatInput = () => {
               messages: arrayUnion({
                 id: uuid(),
                 text,
-                senderId: currentUser.uid,
+                senderId: user.uid,
                 date: Timestamp.now(),
                 img: downloadURL,
               }),
@@ -49,13 +49,13 @@ const ChatInput = () => {
         messages: arrayUnion({
           id: uuid(),
           text,
-          senderId: currentUser.uid,
+          senderId: user.uid,
           date: Timestamp.now(),
         }),
       });
     }
 
-    await updateDoc(doc(db, "userChats", currentUser.uid), {
+    await updateDoc(doc(db, "userChats", user.uid), {
       [data.chatId + ".lastMessage"]: {
         text,
       },

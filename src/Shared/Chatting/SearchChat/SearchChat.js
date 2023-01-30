@@ -14,10 +14,10 @@ import { db } from "../../../firebase/firebase.Config";
 import { Authcontext } from '../../../Context/UserContext'
 const SearchChat = () => {
   const [username, setUsername] = useState("");
-  const [user, setUser] = useState(null);
+  const [user1, setUser1] = useState(null);
   const [err, setErr] = useState(false);
 
-  const { currentUser } = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
 
   const handleSearch = async () => {
     const q = query(
@@ -28,7 +28,7 @@ const SearchChat = () => {
     try {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        setUser(doc.data());
+        setUser1(doc.data());
       });
     } catch (err) {
       setErr(true);
@@ -42,9 +42,9 @@ const SearchChat = () => {
   const handleSelect = async () => {
     //check whether the group(chats in firestore) exists, if not create
     const combinedId =
-      currentUser.uid > user.uid
-        ? currentUser.uid + user.uid
-        : user.uid + currentUser.uid;
+    user.uid > user1.uid
+        ? user.uid + user1.uid
+        : user1.uid + user.uid;
     try {
       const res = await getDoc(doc(db, "chats", combinedId));
 
@@ -53,7 +53,16 @@ const SearchChat = () => {
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
         //create user chats
-        await updateDoc(doc(db, "userChats", currentUser.uid), {
+        await updateDoc(doc(db, "userChats", user.uid), {
+          [combinedId + ".userInfo"]: {
+            uid: user1.uid,
+            displayName: user1.displayName,
+            photoURL: user1.photoURL,
+          },
+          [combinedId + ".date"]: serverTimestamp(),
+        });
+
+        await updateDoc(doc(db, "userChats", user1.uid), {
           [combinedId + ".userInfo"]: {
             uid: user.uid,
             displayName: user.displayName,
@@ -61,19 +70,10 @@ const SearchChat = () => {
           },
           [combinedId + ".date"]: serverTimestamp(),
         });
-
-        await updateDoc(doc(db, "userChats", user.uid), {
-          [combinedId + ".userInfo"]: {
-            uid: currentUser.uid,
-            displayName: currentUser.displayName,
-            photoURL: currentUser.photoURL,
-          },
-          [combinedId + ".date"]: serverTimestamp(),
-        });
       }
     } catch (err) {}
 
-    setUser(null);
+    setUser1(null);
     setUsername("")
   };
   return (
@@ -88,11 +88,11 @@ const SearchChat = () => {
         />
       </div>
       {err && <span>User not found!</span>}
-      {user && (
+      {user1 && (
         <div className="userChat" onClick={handleSelect}>
-          <img src={user.photoURL} alt="" />
+          <img src={user1.photoURL} alt="" />
           <div className="userChatInfo">
-            <span>{user.displayName}</span>
+            <span>{user1.displayName}</span>
           </div>
         </div>
       )}
