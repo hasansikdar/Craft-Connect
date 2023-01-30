@@ -1,5 +1,4 @@
-import React from "react";
-
+import React from 'react';
 const FriendSuggestionCard = () => {
   return (
     <div className="lg:mt-5">

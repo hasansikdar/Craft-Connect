@@ -23,12 +23,11 @@ import Profile from "../Pages/UserProfile/Profile";
 import Discover from "../Pages/Groups/Discover/Discover";
 import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends";
 import PostDetails from "../Pages/PostDetails/PostDetails";
-import CreateStoriesLayout from "../Pages/Stories/CreateStoriesLayout";
-import CreatePhotoStories from "../Pages/Stories/CreatePhotoStories";
-import CreateTextStories from "../Pages/Stories/CreateTextStories";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
 import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
+import AdvertisementLayout from "../Pages/Adevertisement/AdvertisementLayout";
+import CreateAdvertisement from "../Pages/Adevertisement/CreateAdvertisement";
 
 export const Routes = createBrowserRouter([
   {
@@ -50,13 +49,13 @@ export const Routes = createBrowserRouter([
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
     ],
   },
-  // {
-  //   path: "/advertisement/create",
-  //   element: <CreateStoriesLayout />,
-  //   children: [
-  //     { path: "/advertisement/create/photo/", element: <CreatePhotoStories /> },
-  //   ],
-  // },
+  {
+    path: "/advertisement/create",
+    element: <AdvertisementLayout />,
+    children: [
+      { path: "/advertisement/create/photo/", element: <CreateAdvertisement /> },
+    ],
+  },
   {
     path: "/feature",
     element: (
