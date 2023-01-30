@@ -95,7 +95,7 @@ const Navbar = () => {
         </div>
 
         <div className="pr-3 flex gap-2 items-center justify-end">
-          <GoogleMeeting></GoogleMeeting>
+          
           {/* <input
             onClick={handleThemeSwitch}
             type="checkbox"
