@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import profileImg from "../../../assets/profile.jpg";
 import craftify from "../../../assets/jinnahPagePic/jinnahPagePic3.jpg";
 import { BsThreeDots } from "react-icons/bs";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { TfiCommentAlt } from "react-icons/tfi";
+import { Authcontext } from "../../../Context/UserContext";
+import { useQuery } from "@tanstack/react-query";
 
 const PostCards = () => {
+
+  const { user } = useContext(Authcontext);
+
+  const url = `http://localhost:5000/myposts?email=${user?.email}`;
+
+  const { data: myPost = [] } = useQuery({
+    queryKey: ["products", user?.email],
+    queryFn: async () => {
+      const res = await fetch(url);
+      const data = res.json();
+      return data;
+    },
+  });
+  console.log(myPost);
+
   return (
     <div>
       <div className="w-[320px] ml-[44px] md:ml-0 md:w-[530px] border p-5 rounded-md shadow-md">
