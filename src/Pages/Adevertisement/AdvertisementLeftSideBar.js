@@ -2,12 +2,12 @@ import React, { useContext, useState } from "react";
 import { Authcontext } from "../../Context/UserContext";
 import TextStoriesContent from "./TextStoriesContent";
 
-const StoriesLeftSideBar = ({ showTextStories, setShowTextStories, setTextStoryContent }) => {
+const AdvertisementLeftSideBar = ({ showAdvertiseText, setShowAdvertiseText, setShowAdvertiseContent }) => {
   const { user } = useContext(Authcontext);
   
   return (
-    <div className="h-full w-[300px] bg-zinc-700 p-5">
-      <h1 className="text-2xl font-bold">Yours Stories</h1>
+  <div className="h-screen w-[300px] bg-gray-50 dark:bg-[#261b40] p-5 pt-[80px]">
+      <h1 className="text-2xl font-bold">Create Advertisement</h1>
       <div className="users-avatar pt-5  flex gap-3 items-center">
         <img
           className="w-[60px] h-[60px] rounded-full"
@@ -17,8 +17,8 @@ const StoriesLeftSideBar = ({ showTextStories, setShowTextStories, setTextStoryC
         <h1 className="text-xl capitalize">{user.displayName}</h1>
       </div>
       <div>
-        {showTextStories ? (
-          <TextStoriesContent setShowTextStories={setShowTextStories} setTextStoryContent={setTextStoryContent} />
+        {showAdvertiseText ? (
+          <TextStoriesContent setShowAdvertiseText={setShowAdvertiseText} setShowAdvertiseContent={setShowAdvertiseContent} />
         ) : (
           <></>
         )}
@@ -27,4 +27,4 @@ const StoriesLeftSideBar = ({ showTextStories, setShowTextStories, setTextStoryC
   );
 };
 
-export default StoriesLeftSideBar;
+export default AdvertisementLeftSideBar;

@@ -196,7 +196,7 @@ const PostCard = ({
                 />
                 <div>
                   <p>{post?.userName}</p>
-                  <p className="text-sm">19 hours ago</p>
+                  <p className="text-sm">{post?.currentDate}</p>
                 </div>
               </div>
               <div>
