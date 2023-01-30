@@ -11,7 +11,7 @@ const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
     const userPhoto = user?.photoURL;
     const userName = user?.displayName;
     const storyObj = { userEmail, storiesContent, userPhoto, userName };
-    console.log(storyObj, user)
+    console.log(storyObj, user);
     fetch("http://localhost:5000/text/stories", {
       method: "POST",
       headers: {
@@ -23,7 +23,7 @@ const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
       .then((data) => {
         if (data.acknowledged) {
           e.target.reset();
-          setTextStoryContent('Add Text')
+          setTextStoryContent("Add Text");
           toast.success("Your story add");
         }
       });

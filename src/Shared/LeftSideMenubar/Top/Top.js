@@ -30,9 +30,9 @@ const Top = () => {
 
   return (
     <div>
-      {/* <div className='flex justify-start items-center gap-4 mb-4'>
-                <p><FaHome className='h-8 w-8'></FaHome></p>
-                <h1 className='text-lg font-medium'>Home</h1>
+      {/* <div className="'flex justify-start items-center gap-4 mb-4'>
+                <p><FaHome className="'h-8 w-8'></FaHome></p>
+                <h1 className="'text-lg font-medium'>Home</h1>
             </div> */}
 
       <Link to="/">
@@ -67,9 +67,9 @@ const Top = () => {
         </button>
       </Link>
 
-      {/* <button className='flex justify-start items-center gap-4 mb-4'>
-                <p><FcNews className='h-8 w-8'></FcNews></p>
-                <h1 className='text-lg font-medium'>Most Recent</h1>
+      {/* <button className="'flex justify-start items-center gap-4 mb-4'>
+                <p><FcNews className="'h-8 w-8'></FcNews></p>
+                <h1 className="'text-lg font-medium'>Most Recent</h1>
             </button> */}
 
       <Link to="/feature/groups">

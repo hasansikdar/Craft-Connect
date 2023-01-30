@@ -19,7 +19,7 @@
 //           </div>
 //           <div className="max-w-[945px] mx-auto mt-[60px]">
 //             <div className="relative h-[350px] w-[100%] rounded-b-lg bg-gray-600">
-//                 <img src={coverImg} className='h-[350px] w-full rounded-b-[10px]' alt="" />
+//                 <img src={coverImg} className="'h-[350px] w-full rounded-b-[10px]' alt="" />
 //               <div className="absolute bottom-4 right-4">
 //                 <div
 //                   onClick={() => setShowCoverMenu(!showCoverMenu)}

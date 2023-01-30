@@ -16,7 +16,9 @@ const FriendsList = () => {
               <div className="w-8">
                 <img src={pro1} className="rounded-full w-8 h-8" alt="friend" />
               </div>
-              <p className="dark:text-white text-black">Muhammad Hasan vaiiii</p>
+              <p className="dark:text-white text-black">
+                Muhammad Hasan vaiiii
+              </p>
             </div>
           </li>
         </ul>

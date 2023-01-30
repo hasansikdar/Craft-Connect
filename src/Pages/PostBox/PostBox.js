@@ -9,7 +9,7 @@ const PostBox = () => {
       <div className="justify-center outline-1 flex items-center text-white gap-4 p-4 bg-gray-50 dark:bg-[#261b40] shadow-lg container mx-auto mt-3 rounded-md ">
         {/* image source is hardcode now */}
         <img
-         src="https://avatars.githubusercontent.com/u/94055231?v=4"
+          src="https://avatars.githubusercontent.com/u/94055231?v=4"
           className="h-[48px] w-[48px] object-cover rounded-full"
           alt=""
         />
