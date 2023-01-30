@@ -9,11 +9,6 @@ const Posts = () => {
   const { user } = useContext(Authcontext);
   const [loading, setLoading] = useState(false);
 
-
-
-
-
-
   const { data: posts = [], refetch, isLoading } = useQuery({
     queryKey: ['posts'],
     queryFn: async () => {

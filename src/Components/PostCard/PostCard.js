@@ -29,8 +29,10 @@ const PostCard = ({
   const [postReactions, setReactions] = useState([]);
   const [editPost, setEditPost] = useState(false);
 
+  // console.log(user);
+
   
-console.log(post._id);
+// console.log(post._id);
   // const reactions = [
   //   {
   //     emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
@@ -75,7 +77,7 @@ console.log(post._id);
                   alt=""
                 />
                 <div>
-                  <Link to={`profile/${post._id}`}>
+                  <Link to={`/user/${post.userEmail}`}>
                     <p>{post?.userName}</p>
                   </Link>
                   <p className="text-sm">19 hours ago</p>

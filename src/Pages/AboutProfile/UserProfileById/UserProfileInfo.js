@@ -4,7 +4,10 @@ import { BsThreeDots } from "react-icons/bs";
 import { Authcontext } from "../../../Context/UserContext";
 import useClickOutside from "../../../Components/helpers/clickOutside";
 
-const UserProfileInfo = () => {
+const UserProfileInfo = ({userDetails}) => {
+
+  console.log(userDetails);
+
   const [showCoverMenu, setShowCoverMenu] = useState(false);
   const menuRef = useRef(null);
   useClickOutside(menuRef, () => setShowCoverMenu(false));
@@ -25,7 +28,7 @@ const UserProfileInfo = () => {
         </div>
         <div>
           <Link className="text-3xl hover:text-orange-600 duration-300">
-            {user?.displayName}
+            {userDetails.fullname}
           </Link>
           <p className="text-center">Dhaka, Bangladesh</p>
         </div>

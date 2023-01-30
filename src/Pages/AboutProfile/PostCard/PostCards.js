@@ -11,7 +11,7 @@ import DynamicPostCard from "./DynamicPostCard";
 const PostCards = () => {
 
   const { user } = useContext(Authcontext);
-  console.log(user);
+  // console.log(user);
 
   const url = `http://localhost:5000/myposts?email=${user?.email}`;
 
@@ -23,7 +23,7 @@ const PostCards = () => {
       return data;
     },
   });
-  console.log(myPosts);
+  // console.log(myPosts);
 
   return (
     <div>
