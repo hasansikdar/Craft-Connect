@@ -28,6 +28,7 @@ import CreateTextStories from "../Pages/Stories/CreateTextStories";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
 import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
+import ProfileById from "../Pages/AboutProfile/ProfileById";
 
 export const Routes = createBrowserRouter([
   {
@@ -127,4 +128,8 @@ export const Routes = createBrowserRouter([
     loader: ({ params }) =>
       fetch(`https://craft-connect-server.vercel.app/postDetails/${params.id}`),
   },
+  {
+    path: '/profile/:id',
+    element: <ProfileById/>
+  }
 ]);
