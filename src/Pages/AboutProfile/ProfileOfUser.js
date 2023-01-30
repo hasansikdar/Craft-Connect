@@ -10,7 +10,7 @@ const ProfileOfUser = () => {
   return (
     <div>
       <Navbar />
-      <div className="dark:bg-[#2C2048] mt-[50px] md:mt-[-42px] ">
+      <div className="dark:bg-[#2C2048] mt-[65px] md:mt-[-42px] ">
         <div>
           <LeftSideMobile />
         </div>

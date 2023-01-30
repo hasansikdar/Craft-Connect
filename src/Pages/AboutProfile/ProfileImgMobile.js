@@ -13,7 +13,7 @@ const ProfileImgMobile = () => {
 
   return (
     <div>
-      <div className="block md:hidden absolute top-[19%] left-[20%]">
+      <div className="block md:hidden absolute top-[20%] left-[20%]">
         <div className="">
           <img
             className="w-[70px] h-[70px] rounded-full"
@@ -22,7 +22,7 @@ const ProfileImgMobile = () => {
           />
         </div>
       </div>
-      <div className="ml-[58px] mt-12">
+      <div className="ml-[58px] mt-10">
         <p className="text-2xl">Rahat Kabir Ifty</p>
         <p>Dhaka, Bangladesh</p>
       </div>
