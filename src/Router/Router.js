@@ -27,6 +27,7 @@ import CreatePhotoStories from "../Pages/Stories/CreatePhotoStories";
 import CreateTextStories from "../Pages/Stories/CreateTextStories";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
+import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
 
 export const Routes = createBrowserRouter([
   {
@@ -48,14 +49,13 @@ export const Routes = createBrowserRouter([
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
     ],
   },
-  {
-    path: "/stories/create",
-    element: <CreateStoriesLayout />,
-    children: [
-      { path: "/stories/create/photo/", element: <CreatePhotoStories /> },
-      { path: "/stories/create/text/", element: <CreateTextStories /> },
-    ],
-  },
+  // {
+  //   path: "/advertisement/create",
+  //   element: <CreateStoriesLayout />,
+  //   children: [
+  //     { path: "/advertisement/create/photo/", element: <CreatePhotoStories /> },
+  //   ],
+  // },
   {
     path: "/feature",
     element: (
@@ -116,6 +116,7 @@ export const Routes = createBrowserRouter([
   { path: "/friends/friendList", element: <CustomList></CustomList> },
   { path: "/friends/list", element: <AllFriends></AllFriends> },
   { path: "/login", element: <Login></Login> },
+  { path: "/chats", element: <Sidebar></Sidebar> },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
