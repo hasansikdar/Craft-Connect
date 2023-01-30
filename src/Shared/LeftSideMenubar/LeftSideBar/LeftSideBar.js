@@ -132,7 +132,7 @@ const LeftSideBar = () => {
     { name: "Ad Center", link: "/", icon: RiAdvertisementLine },
     { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
   ];
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <section className="flex gap-6">
       <div
