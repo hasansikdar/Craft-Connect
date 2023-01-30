@@ -9,7 +9,7 @@ import { Authcontext } from "../../Context/UserContext";
 
 const Stories = () => {
   const navigate = useNavigate();
-  const {user} = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
   const CreateStories = () => {
     navigate("/stories/create");
   };

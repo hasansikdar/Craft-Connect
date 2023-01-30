@@ -15,10 +15,7 @@
 // import Posts from '../Posts/Posts';
 // import MyPosts from '../MyPosts/MyPosts';
 
-
 // const Profile = () => {
-
-    
 
 //     return (
 //       <div>
@@ -26,7 +23,7 @@
 //         <Cover></Cover>
 //         <ProfilePicture></ProfilePicture>
 //         <OptionsProfile/>
-//         <div className='flex items-center justify-center'>
+//         <div className="'flex items-center justify-center'>
 //            <MyPosts></MyPosts>
 //         </div>
 //       </div>

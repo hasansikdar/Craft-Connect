@@ -2,9 +2,13 @@ import React, { useContext, useState } from "react";
 import { Authcontext } from "../../Context/UserContext";
 import TextStoriesContent from "./TextStoriesContent";
 
-const StoriesLeftSideBar = ({ showTextStories, setShowTextStories, setTextStoryContent }) => {
+const StoriesLeftSideBar = ({
+  showTextStories,
+  setShowTextStories,
+  setTextStoryContent,
+}) => {
   const { user } = useContext(Authcontext);
-  
+
   return (
     <div className="h-full w-[300px] bg-zinc-700 p-5">
       <h1 className="text-2xl font-bold">Yours Stories</h1>
@@ -18,7 +22,10 @@ const StoriesLeftSideBar = ({ showTextStories, setShowTextStories, setTextStoryC
       </div>
       <div>
         {showTextStories ? (
-          <TextStoriesContent setShowTextStories={setShowTextStories} setTextStoryContent={setTextStoryContent} />
+          <TextStoriesContent
+            setShowTextStories={setShowTextStories}
+            setTextStoryContent={setTextStoryContent}
+          />
         ) : (
           <></>
         )}

@@ -24,7 +24,7 @@ const CommentBox = ({ uniqueId, refetch }) => {
       currentData,
     };
 
-    fetch("https://craft-connect-server.vercel.app/comment", {
+    fetch("https://craft-connect-server-blond.vercel.app/comment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

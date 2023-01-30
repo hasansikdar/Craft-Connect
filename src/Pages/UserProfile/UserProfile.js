@@ -12,7 +12,6 @@
 // const UserProfile = () => {
 //   const {user} = useContext(Authcontext);
 
-
 //     return (
 //       <div className="">
 //         <Navbar></Navbar>
@@ -26,7 +25,7 @@
 //             <button className="bg-blue-600 px-2 py-1 rounded-lg text-white font-bold hover:bg-blue-500 absolute right-[20%] top-[49%]">
 //               Edit profile
 //             </button>
-//             <button className='btn-outline'>
+//             <button className="'btn-outline'>
 //               <div className="ml-16 absolute top-[54%]">
 //                 <div>
 //                   <img className="w-[14%] rounded-full" src={profile} alt="" />

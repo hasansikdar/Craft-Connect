@@ -101,7 +101,7 @@ export const Routes = createBrowserRouter([
   },
   {
     path: "/feature/profile",
-    element: <ProfileOfUser/>,
+    element: <ProfileOfUser />,
   },
   {
     path: "/friends",
@@ -126,6 +126,8 @@ export const Routes = createBrowserRouter([
     path: "/postDetails/:id",
     element: <PostDetails></PostDetails>,
     loader: ({ params }) =>
-      fetch(`https://craft-connect-server.vercel.app/postDetails/${params.id}`),
+      fetch(
+        `https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`
+      ),
   },
 ]);
