@@ -12,7 +12,6 @@ const AdvertisementLeftSideBar = ({
   setSelectedFile,
 }) => {
   const { user } = useContext(Authcontext);
-<<<<<<< HEAD
   useEffect(() => {
     if (!selectedFile) {
       setPreview(undefined);
@@ -36,9 +35,6 @@ const AdvertisementLeftSideBar = ({
     }
     setSelectedFile(e.target.files);
   };
-=======
-
->>>>>>> 863dfc331d0097f5f2c65c095d07bec122e3cb3f
   return (
     <div className="h-screen w-[300px] bg-gray-50 dark:bg-[#261b40] p-5 pt-[80px]">
       <h1 className="text-2xl font-bold">Create Advertisement</h1>
