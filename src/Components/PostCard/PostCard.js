@@ -131,6 +131,10 @@ const PostCard = ({
                   alt=""
                 />
                 <div>
+                  <Link to={`/user/${post.userEmail}`}>
+                    <p>{post?.userName}</p>
+                  </Link>
+                  <p className="text-sm">19 hours ago</p>
                   <p>{post?.userName}</p>
                   <p className="text-sm">{post?.currentDate}</p>
                 </div>

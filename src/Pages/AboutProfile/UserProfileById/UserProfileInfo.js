@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, {   useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsThreeDots } from "react-icons/bs";
-import useClickOutside from "../../Components/helpers/clickOutside";
-import { useContext } from "react";
-import { Authcontext } from "../../Context/UserContext";
+import { Authcontext } from "../../../Context/UserContext";
+import useClickOutside from "../../../Components/helpers/clickOutside";
 
-const ProfileInfo = () => {
+const UserProfileInfo = ({userDetails}) => {
+
+  console.log(userDetails);
+
   const [showCoverMenu, setShowCoverMenu] = useState(false);
   const menuRef = useRef(null);
   useClickOutside(menuRef, () => setShowCoverMenu(false));
@@ -26,7 +28,7 @@ const ProfileInfo = () => {
         </div>
         <div>
           <Link className="text-3xl hover:text-orange-600 duration-300">
-            {user?.displayName}
+            {userDetails.fullname}
           </Link>
           <p className="text-center">Dhaka, Bangladesh</p>
         </div>
@@ -59,4 +61,4 @@ const ProfileInfo = () => {
   );
 };
 
-export default ProfileInfo;
+export default UserProfileInfo;
