@@ -90,7 +90,7 @@ const PostBox = () => {
   return (
     <form
       onSubmit={formSubmit}
-      className="text-white  bg-gray-50 dark:bg-[#261b40] shadow-lg mx-auto mt-3 rounded-md"
+      className="text-white bg-gray-50 dark:bg-[#261b40] shadow-lg mx-auto mt-3 rounded-md"
     >
       <div className="outline-1 flex gap-4  p-8">
         <img
