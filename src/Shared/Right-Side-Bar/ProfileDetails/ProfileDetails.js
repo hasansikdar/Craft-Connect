@@ -33,7 +33,7 @@ const ProfileDetails = () => {
               </Link>
             </li>
             <li className="hover:bg-zinc-600 hover:text-white dark:text-white text-gray-700 duration-200 rounded-lg">
-              <Link to="/sellerpro" className="justify-between">
+              <Link to="/advertisement/create" className="justify-between">
                 Create Advertisement <HiSpeakerphone></HiSpeakerphone>
               </Link>
             </li>

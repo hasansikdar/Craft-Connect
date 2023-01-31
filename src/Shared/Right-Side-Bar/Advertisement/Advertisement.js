@@ -1,44 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ad1 from "../../../assets/rightbar/ad (1).jpg";
-import ad2 from "../../../assets/rightbar/ad (2).jpg";
+import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+import stories from "../../../Pages/Adevertisement/stories.json";
 
 const Advertisement = () => {
   return (
     <div>
-      <ul className="menu p-2 py-5 flex rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 text-gray-500 dark:bg-[#261b40]">
-        <h1 className="text-white ml-4 mb-2">Sponsored</h1>
-        <li className="hover:bg-[#fa525c] duration-300 rounded-lg">
-          <Link to="/products/:id">
-            <div className="w-40">
-              <img src={ad1} className="rounded" alt="frnd" />
-            </div>
-            <div>
-              <h1 className=" text-white text-sm font-bold mb-2">
-                Hand Made Craft
-              </h1>
-              <p className="text-xs text-gray-100 dark:text-gray-300">
-                Buy your favorite Crafts
-              </p>
-            </div>
-          </Link>
-        </li>
-        <li className="hover:bg-zinc-100 dark:hover:bg-zinc-600 duration-300 rounded-lg">
-          <Link>
-            <div className="w-40">
-              <img src={ad2} className="rounded" alt="frnd" />
-            </div>
-            <div>
-              <h1 className="text-black dark:text-white text-sm font-bold mb-2">
-                Dian Handicraft
-              </h1>
-              <p className="text-xs text-gray-600 dark:text-gray-300">
-                Best products made by hand
-              </p>
-            </div>
-          </Link>
-        </li>
-      </ul>
+      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl  m-auto my-5 text-gray-500 dark:bg-[#261b40]">
+
+        <Carousel
+          showArrows={false}
+          showIndicators={false}
+          infiniteLoop={true}
+          autoPlay={true}
+          showThumbs={false}
+        >
+          {stories.map((story, index) => {
+            return (
+              <React.Fragment key={index}>
+                <div
+                  className="select-none bg-img h-[300px] dark:bg-[#261b40] bg-white rounded-md transition bg-center bg-cover"
+                  style={{
+                    background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) , url(${story.userStory})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                  }}
+                >
+                  <div className="flex justify-end flex-col items-start h-full rounded-md p-4">
+                    <p className="text-white text-bold text-xl">{story.userName}</p>
+                    <p className="text-white text-left text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing  </p>
+                  </div>
+                </div>
+              </React.Fragment>
+            );
+          })}
+        </Carousel>
+      </div>
     </div>
   );
 };

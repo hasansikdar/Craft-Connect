@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { AuthContext } from "../../../Context/UserContext";
+import { Authcontext } from "../../../Context/UserContext";
 import { ChatContext } from "../../../Context/ChatContext";
 
 const Message = ({ message }) => {
-  const { currentUser } = useContext(AuthContext);
+  const { user } = useContext(Authcontext);
   const { data } = useContext(ChatContext);
 
   const ref = useRef();
@@ -15,13 +15,13 @@ const Message = ({ message }) => {
   return (
     <div
       ref={ref}
-      className={`message ${message.senderId === currentUser.uid && "owner"}`}
+      className={`message ${message.senderId === user.uid && "owner"}`}
     >
       <div className="messageInfo">
         <img
           src={
-            message.senderId === currentUser.uid
-              ? currentUser.photoURL
+            message.senderId === user.uid
+              ? user.photoURL
               : data.user.photoURL
           }
           alt=""

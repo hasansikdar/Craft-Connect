@@ -12,12 +12,19 @@ import {
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
 
-import { Authcontext } from "../../Context/UserContext";
+import UserContext, { Authcontext } from "../../Context/UserContext";
 import Reactions from "../../Shared/Reactions/Reactions";
 import { useQuery } from "@tanstack/react-query";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
+
+// const likes =[
+//   {userId : 'jwqjiaj', postId:'kjksjfs'},
+//   {userId : 'jwqjiaj', postId:'kjksjfs'},
+//   {userId : 'jwqjiaj', postId:'kjksjfs'},
+//   {userId : 'jwqjiaj', postId:'kjksjfs'},
+// ]
 
 const PostCard = ({
   refetch,
@@ -28,6 +35,8 @@ const PostCard = ({
 }) => {
   const [postReactions, setReactions] = useState([]);
   const [editPost, setEditPost] = useState(false);
+  const [love, setLove] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   // console.log(user);
 
@@ -49,10 +58,39 @@ const PostCard = ({
   //       "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
   //   },
   // ];
+  // const { user: currentUser } = useContext(Authcontext);
+  // const reactions = [
+  //   {
+  //     emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
+  //   },
+  //   { emojilink: "https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif" },
+  //   { emojilink: "https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif" },
+  //   { emojilink: "https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif" },
+  //   {
+  //     emojilink:
+  //       "https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif",
+  //   },
+  //   {
+  //     emojilink:
+  //       "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
+  //   },
+  // ];
+
+  // console.log(post);
+
+  // const { data: postreactions = [] } = useQuery({
+  //   queryKey: [post?.uniqueId],
+  //   queryFn: async () => {
+  //     const res = await fetch(`https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`);
+  //     const data = res.json();
+  //     refetch()
+  //     return data;
+  //   }
+  // })
 
   useEffect(() => {
     fetch(
-      `https://craft-connect-server.vercel.app/postReactions/${post?.uniqueId}`
+      `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -63,9 +101,145 @@ const PostCard = ({
   const ownReaction = postReactions.map(
     (reactionItem) => reactionItem?.email === user?.email
   );
+  // console.log(user?.email);
+  const likePost = () => {
+    const postId = post?._id;
+    console.log(postId);
+    const likeInfo = { userId: user?.email, postID: post?._id };
 
+    fetch(`http://localhost:5000/users/${postId}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(likeInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data?.modifiedCount > 0) {
+          setLiked(true);
+        }
+      });
+  };
+
+  if (love === true) {
+    likePost();
+  }
   return (
     <div>
+      {/* <div className=" card md:w-[590px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
+        <div className="card-body">
+          <div>
+            <PostUserInfo
+              handleDeletePost={handleDeletePost}
+              post={post}
+            ></PostUserInfo>
+          </div>
+          <p>
+            {post?.postText?.length > 100 ? (
+              <>
+                {post?.postText.slice(0, 100)}{" "}
+                <Link className="font-bold" to="/">
+                  See More..
+                </Link>
+              </>
+            ) : (
+              post?.postText
+            )}
+          </p>
+        </div>
+        <Link to={`/postDetails/${post?._id}`}>
+          <img className="w-full" src={post?.img} alt="Shoes" />
+        </Link>
+        <div className="p-4">
+          <div className="flex justify-between">
+            <span className="flex">
+              <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
+              <a className="hover:underline text-white" href="/">
+                {postReactions?.length}
+              </a>
+            </span>
+            <span>
+              <a className="hover:underline" href="/">
+                1 Comment
+              </a>
+            </span>
+          </div>
+          <div className="flex justify-between cursor-pointer mt-3 border-t py-4 border-white">
+            <button className="flex btn bg-white hover:bg-white dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
+              {post?.emojiLink?.length ? (
+                <img
+                  className="w-8 h-7 bg-black rounded-full flex items-center justify-center"
+                  src={post?.emojiLink}
+                  alt=""
+                />
+              ) : (
+                <>
+                  <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
+                  <label
+                    className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
+                    tabIndex={0}
+                  >
+                    {ownReaction}
+                  </label>
+                </>
+              )}
+              <div className=">
+                <div
+                  tabIndex={0}
+                  className="dropdown-content -ml-10 bg-white text-black menu p-2 shadow rounded-box w-52"
+                >
+                  <div className="grid grid-cols-6">
+                    {reactions.map((react) => (
+                      <Reactions
+                        post={post}
+                        handelReaction={handelReaction}
+                        id={post?._id}
+                        react={react}
+                      ></Reactions>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button className="flex btn btn-outline shadow-lg btn-sm dark:text-white text-black dark:hover:text-black">
+              <FaCommentAlt className="mr-2"></FaCommentAlt>
+              Comment
+            </button>
+            <button className="flex btn btn-outline shadow-lg btn-sm dark:text-white text-black dark:hover:text-black">
+              <FaShare className="mr-2"></FaShare>
+              Share
+            </button>
+          </div>
+        </div>
+        <div className="mb-2 mx-2">
+          <div className="flex justify-end hidden">
+            <div className="dropdown dropdown-bottom  dropdown-end">
+              <label
+                tabIndex={0}
+                className="m-1 cursor-pointer  flex items-center ml-auto"
+              >
+                Most Recenter <FaAngleDown className="ml-1"></FaAngleDown>
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a>Item 1</a>
+                </li>
+                <li>
+                  <a>Item 2</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <PostAuthorityModal></PostAuthorityModal> */}
+
+      {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
           <div className="w-[320px] ml-[44px] md:ml-0 md:w-[590px] max-h-[560px] border p-5 rounded-md shadow-md">
@@ -81,6 +255,8 @@ const PostCard = ({
                     <p>{post?.userName}</p>
                   </Link>
                   <p className="text-sm">19 hours ago</p>
+                  <p>{post?.userName}</p>
+                  <p className="text-sm">{post?.currentDate}</p>
                 </div>
               </div>
               <div>
@@ -114,10 +290,16 @@ const PostCard = ({
               <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
                 <div className="flex gap-8">
                   <div className="flex items-center gap-1">
-                    <button className="text-[34px]">
+                    <button
+                      onClick={() => setLove(true)}
+                      disabled={love === true}
+                      className={
+                        liked ? "text-[34px] text-blue-600" : "text-[34px]"
+                      }
+                    >
                       <BiLike />
                     </button>
-                    <p>17</p>
+                    <p className="text-3xl">{post?.likes?.length}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <button className="text-[27px]">
