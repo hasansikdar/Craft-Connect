@@ -25,29 +25,29 @@ const RegisterModal = () => {
   } = useForm();
   const navigate = useNavigate();
 
-  
+
 
   const handleCreateAccount = async (data) => {
     setLoading(true);
     const fullName = data?.firstName + " " + data?.lastName;
     const email = data?.email;
     const password = data?.password;
-    
+
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
-  const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
-  const formData = new FormData();
-  if (selectedFile) {
-    formData.append("image", selectedFile[0]);
-    fetch(url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const img = data?.data?.display_url;
-        console.log("imgBB", img, 'state', userProfile);
-        setUserProfile(img);
-      });
+    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+    const formData = new FormData();
+    if (selectedFile) {
+      formData.append("image", selectedFile[0]);
+      fetch(url, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const img = data?.data?.display_url;
+          console.log("imgBB", img, 'state', userProfile, 'data', data);
+          setUserProfile(img);
+        });
     }
     try {
       //Create user
@@ -65,7 +65,7 @@ const RegisterModal = () => {
               displayName: fullName,
               photoURL: userProfile
             });
-            saveUserDataInDb(fullName, data);
+            saveUserDataInDb(fullName, data, userProfile);
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
@@ -91,7 +91,7 @@ const RegisterModal = () => {
     console.log(data)
   }
 
-  const saveUserDataInDb = (fullname, info) => {
+  const saveUserDataInDb = (fullname, info, userProfile) => {
     const { password, email, gender } = info;
     const userinfo = {
       fullname,
