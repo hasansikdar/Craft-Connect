@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
@@ -12,6 +12,9 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const RegisterModal = () => {
   const [err, setErr] = useState(false);
+  const [selectedFile, setSelectedFile] = useState();
+  const [userAvatar, setUsersAvatar] = useState();
+  const [preview, setPreview] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const {
@@ -27,7 +30,21 @@ const RegisterModal = () => {
     const fullName = data?.firstName + " " + data?.lastName;
     const email = data?.email;
     const password = data?.password;
-
+    const imageKey = "024d2a09e27feff54122f51afddbdfaf";
+    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+    const formData = new FormData();
+    if (selectedFile) {
+      formData.append("image", selectedFile[0]);
+      fetch(url, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const img = data?.data?.display_url;
+          console.log("imgBB", img, 'state', userAvatar);
+          setUsersAvatar(img);
+        });
 
     try {
       //Create user
@@ -38,12 +55,12 @@ const RegisterModal = () => {
       const storageRef = ref(storage, `${fullName + date}`);
 
       await uploadBytesResumable(storageRef).then(() => {
-        getDownloadURL(storageRef).then(async (photoURL) => {
+        getDownloadURL(storageRef).then(async (userAvatar) => {
           try {
             //Update profile
             await updateProfile(res.user, {
               displayName: fullName,
-              photoURL,
+              photoURL: userAvatar
             });
             saveUserDataInDb(fullName, data);
             //create user on firestore
@@ -68,7 +85,7 @@ const RegisterModal = () => {
       setErr(true);
       setLoading(false);
     }
-      console.log(data)
+    console.log(data)
   }
 
   const saveUserDataInDb = (fullname, info) => {
@@ -79,6 +96,7 @@ const RegisterModal = () => {
       password,
       gender,
       birthdate: selectedDate,
+      userProfile: userAvatar,
     };
 
     fetch('https://craft-connect-server-blond.vercel.app/users', {
@@ -104,6 +122,30 @@ const RegisterModal = () => {
       });
   };
 
+  useEffect(() => {
+    if (!selectedFile) {
+      setPreview(undefined);
+      return;
+    }
+    const selectedFIles = [];
+    const targetFilesObject = [...selectedFile];
+    targetFilesObject.map((file) => {
+      return selectedFIles.push(URL.createObjectURL(file));
+    });
+
+    setPreview(selectedFIles);
+    // free memory when ever this component is unmounted
+    return () => URL.revokeObjectURL(selectedFIles);
+  }, [selectedFile]);
+
+  const onSelectFile = (e) => {
+    if (!e.target.files || e.target.files?.length === 0) {
+      setSelectedFile(undefined);
+      return;
+    }
+    setSelectedFile(e.target.files);
+  };
+
   return (
     <div>
       <input type="checkbox" id="register-modal" className="modal-toggle" />
@@ -119,8 +161,13 @@ const RegisterModal = () => {
           <span>It's quick and easy</span>
           <form
             onSubmit={handleSubmit(handleCreateAccount)}
-            className="grid grid-cols-1 gap-3 mt-10"
+            className="grid grid-cols-1 gap-3 mt-3"
           >
+            <div className="flex justify-center flex-col items-center gap-3">
+              <img src={preview ? preview : 'https://smartdest.eu/wp-content/uploads/2020/04/dummy450x450.jpg'} className="w-[115px] h-[115px] rounded-full object-cover" alt="" />
+              <input type="file" onChange={onSelectFile} className='hidden' id='uploadPhoto' />
+              <label htmlFor="uploadPhoto" className="mb-3 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded-full">Upload Photo</label>
+            </div>
             <div className="flex gap-2">
               <div>
                 <input
