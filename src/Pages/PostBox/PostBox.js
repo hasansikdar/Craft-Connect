@@ -11,9 +11,10 @@ const PostBox = () => {
   const [open, setOpen] = useState(false);
   const [preview, setPreview] = useState([]);
   const [openPreviewPost, setOpenPreviewPost] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [postText, setPostText] = useState();
   const [selectedFile, setSelectedFile] = useState();
-  const [imgLink, setImgLink] = useState(null);
+  const [imgLink, setImgLink] = useState('');
   const { user } = useContext(Authcontext);
 
   const handlePostText = (e) => {
@@ -29,6 +30,7 @@ const PostBox = () => {
       return data;
     },
   });
+
 
   const formSubmit = (event) => {
     event.preventDefault();
@@ -55,40 +57,53 @@ const PostBox = () => {
           console.log("imgBB", img, imgLink);
           setImgLink(img);
         });
-    } else {
-      const userName = user?.displayName;
-      const userEmail = user?.email;
-      const userPhoto = user?.photoURL;
-      const usersData = {
-        userName,
-        userEmail,
-        userPhoto,
-        currentDate: currentData,
-        postText: postText,
-        img: imgLink,
-        likes,
-      };
-      console.log(usersData);
-      fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(usersData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            toast.success("Post Add Success");
-            field.reset();
-            setSelectedFile(undefined);
-            setPostText("");
-            setImgLink(null);
-            refetch();
-          }
-        });
     }
+
+    const userName = user?.displayName;
+    const userEmail = user?.email;
+    const userPhoto = user?.photoURL;
+    const usersData = {
+      userName,
+      userEmail,
+      userPhoto,
+      currentDate: currentData,
+      postText: postText,
+      img: imgLink,
+      likes,
+    };
+    console.log(usersData);
+    if (imgLink) {
+      setLoading(true);
+      uploadPostInDB(usersData, field)
+      setLoading(false);
+    }
+    else{
+      setLoading(true);
+      uploadPostInDB(usersData, field)
+      setLoading(false);
+    }
+
   };
+  const uploadPostInDB = (usersData, field) => {
+    fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(usersData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Post Add Success");
+          field.reset();
+          setSelectedFile(undefined);
+          setPostText("");
+          setImgLink(null);
+          refetch();
+        }
+      });
+  }
   return (
     <form
       onSubmit={formSubmit}
@@ -96,11 +111,10 @@ const PostBox = () => {
     >
       <div className="outline-1 flex gap-4  p-8">
         <img
-          src={`${
-            user?.photoURL
+          src={`${user?.photoURL
               ? user?.photoURL
               : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-          }`}
+            }`}
           className="h-[38px] w-[38px] object-cover rounded-full"
           alt=""
         />
@@ -139,7 +153,7 @@ const PostBox = () => {
             disabled={!postText}
             className="disabled:cursor-not-allowed bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded"
           >
-            Post Status
+            {loading ? 'Posting Status' : 'Post Status'}
           </button>
         </div>
       </div>

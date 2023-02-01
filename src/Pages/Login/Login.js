@@ -37,13 +37,12 @@ const Login = () => {
   return (
     <section
       style={{
-        backgroundImage: `linear-gradient(-40deg, 
-      rgba(150, 150, 250, 0.40), 
-      #FF3F4A) ,url(${Image})`,
+        backgroundImage: `linear-gradient(84deg, rgba(255,63,74,0.3981967787114846) 0%, rgba(51,13,15,0.5746673669467788) 100%) ,url(${Image})`,
         backgroundSize: "cover",
       }}
+      className='h-screen'
     >
-      <div className="flex flex-col lg:flex-row gap-20 lg:justify-between justify-center mx-auto items-center w-full md:w-[980px] pt-20 pb-72 ">
+      <div className="flex flex-col h-screen lg:flex-row gap-20 lg:justify-between justify-center mx-auto items-center w-full md:w-[980px] pt-20 pb-72 ">
         <div className="text-center">
           <h2 className="text-4xl text-white font-bold mb-8">CRAFT-CONNECT</h2>
           <p className="lg:w-[500px] text-2xl leading-[32px]">
