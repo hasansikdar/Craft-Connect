@@ -13,7 +13,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 const RegisterModal = () => {
   const [err, setErr] = useState(false);
   const [selectedFile, setSelectedFile] = useState();
-  const [userAvatar, setUsersAvatar] = useState();
+  const [userProfile, setUserProfile] = useState()
   const [preview, setPreview] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -25,27 +25,30 @@ const RegisterModal = () => {
   } = useForm();
   const navigate = useNavigate();
 
+  
+
   const handleCreateAccount = async (data) => {
     setLoading(true);
     const fullName = data?.firstName + " " + data?.lastName;
     const email = data?.email;
     const password = data?.password;
+    
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
-    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
-    const formData = new FormData();
-    if (selectedFile) {
-      formData.append("image", selectedFile[0]);
-      fetch(url, {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          const img = data?.data?.display_url;
-          console.log("imgBB", img, 'state', userAvatar);
-          setUsersAvatar(img);
-        });
-
+  const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+  const formData = new FormData();
+  if (selectedFile) {
+    formData.append("image", selectedFile[0]);
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const img = data?.data?.display_url;
+        console.log("imgBB", img, 'state', userProfile);
+        setUserProfile(img);
+      });
+    }
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -55,12 +58,12 @@ const RegisterModal = () => {
       const storageRef = ref(storage, `${fullName + date}`);
 
       await uploadBytesResumable(storageRef).then(() => {
-        getDownloadURL(storageRef).then(async (userAvatar) => {
+        getDownloadURL(storageRef).then(async (userProfile) => {
           try {
             //Update profile
             await updateProfile(res.user, {
               displayName: fullName,
-              photoURL: userAvatar
+              photoURL: userProfile
             });
             saveUserDataInDb(fullName, data);
             //create user on firestore
@@ -68,7 +71,7 @@ const RegisterModal = () => {
               uid: res.user.uid,
               displayName: fullName,
               email,
-              photoURL,
+              photoURL: userProfile
             });
 
             //create empty user chats on firestore
@@ -96,7 +99,7 @@ const RegisterModal = () => {
       password,
       gender,
       birthdate: selectedDate,
-      userProfile: userAvatar,
+      userProfile
     };
 
     fetch('https://craft-connect-server-blond.vercel.app/users', {
