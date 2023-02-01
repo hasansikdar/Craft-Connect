@@ -13,7 +13,7 @@ const PostBox = () => {
   const [openPreviewPost, setOpenPreviewPost] = useState(false);
   const [postText, setPostText] = useState();
   const [selectedFile, setSelectedFile] = useState();
-  const [imgLink, setImgLink] = useState(null);
+  const [usersPost, setusersPost] = useState()
   const { user } = useContext(Authcontext);
 
   const handlePostText = (e) => {
@@ -38,8 +38,11 @@ const PostBox = () => {
     const mm = String(currentData.getMonth() + 1).padStart(2, "0");
     const yyyy = currentData.getFullYear();
     currentData = mm + "/" + dd + "/" + yyyy;
-
     const likes = [];
+    const userName = user?.displayName;
+    const userEmail = user?.email;
+    const userPhoto = user?.photoURL;
+
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
     const formData = new FormData();
@@ -52,44 +55,64 @@ const PostBox = () => {
         .then((res) => res.json())
         .then((data) => {
           const img = data?.data?.display_url;
-          console.log("imgBB", img, imgLink);
-          setImgLink(img);
-        });
-    } 
+          const usersData = {
+            userName,
+            userEmail,
+            userPhoto,
+            currentDate: currentData,
+            postText: postText,
+            img,
+            likes,
+          };
+          setusersPost({ userName, userEmail, userPhoto, currentData, postText, img: null, likes })
+          console.log("imgBB", img, data);
 
-      const userName = user?.displayName;
-      const userEmail = user?.email;
-      const userPhoto = user?.photoURL;
-      const usersData = {
-        userName,
-        userEmail,
-        userPhoto,
-        currentDate: currentData,
-        postText: postText,
-        img: imgLink,
-        likes,
-      };
-      console.log(usersData);
-      fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(usersData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            toast.success("Post Add Success");
-            field.reset();
-            setSelectedFile(undefined);
-            setPostText("");
-            setImgLink(null);
-            refetch();
-          }
+          fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(usersData),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.acknowledged) {
+                toast.success("Post Add Success");
+                field.reset();
+                setSelectedFile(undefined);
+                setPostText("");
+                setusersPost({})
+                refetch();
+              }
+            });
         });
-    
+    } else {
+      withOutImg(usersPost, field)
+    }
+
+
   };
+  const withOutImg = (usersPost, field) => {
+    fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(usersPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Post Add Success");
+          field.reset();
+          setSelectedFile(undefined);
+          setPostText("");
+          setusersPost({})
+          refetch();
+        }
+      });
+
+  }
   return (
     <form
       onSubmit={formSubmit}
@@ -97,11 +120,10 @@ const PostBox = () => {
     >
       <div className="outline-1 flex gap-4  p-8">
         <img
-          src={`${
-            user?.photoURL
-              ? user?.photoURL
-              : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-          }`}
+          src={`${user?.photoURL
+            ? user?.photoURL
+            : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+            }`}
           className="h-[38px] w-[38px] object-cover rounded-full"
           alt=""
         />
@@ -137,7 +159,7 @@ const PostBox = () => {
           </button>
           <button
             type="submit"
-            disabled={!postText}
+            disabled={!postText && !selectedFile}
             className="disabled:cursor-not-allowed bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded"
           >
             Post Status
