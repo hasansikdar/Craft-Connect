@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
@@ -12,6 +12,9 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const RegisterModal = () => {
   const [err, setErr] = useState(false);
+  const [selectedFile, setSelectedFile] = useState();
+  const [userProfile, setUserProfile] = useState()
+  const [preview, setPreview] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const {
@@ -22,13 +25,30 @@ const RegisterModal = () => {
   } = useForm();
   const navigate = useNavigate();
 
+
+
   const handleCreateAccount = async (data) => {
     setLoading(true);
     const fullName = data?.firstName + " " + data?.lastName;
     const email = data?.email;
     const password = data?.password;
 
-
+    const imageKey = "024d2a09e27feff54122f51afddbdfaf";
+    const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+    const formData = new FormData();
+    if (selectedFile) {
+      formData.append("image", selectedFile[0]);
+      fetch(url, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const img = data?.data?.display_url;
+          console.log("imgBB", img, 'state', userProfile, 'data', data);
+          setUserProfile(img);
+        });
+    }
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -38,20 +58,20 @@ const RegisterModal = () => {
       const storageRef = ref(storage, `${fullName + date}`);
 
       await uploadBytesResumable(storageRef).then(() => {
-        getDownloadURL(storageRef).then(async (photoURL) => {
+        getDownloadURL(storageRef).then(async (userProfile) => {
           try {
             //Update profile
             await updateProfile(res.user, {
               displayName: fullName,
-              photoURL,
+              photoURL: userProfile
             });
-            saveUserDataInDb(fullName, data);
+            saveUserDataInDb(fullName, data, userProfile);
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName: fullName,
               email,
-              photoURL,
+              photoURL: userProfile
             });
 
             //create empty user chats on firestore
@@ -68,10 +88,10 @@ const RegisterModal = () => {
       setErr(true);
       setLoading(false);
     }
-      console.log(data)
+    console.log(data)
   }
 
-  const saveUserDataInDb = (fullname, info) => {
+  const saveUserDataInDb = (fullname, info, userProfile) => {
     const { password, email, gender } = info;
     const userinfo = {
       fullname,
@@ -79,6 +99,7 @@ const RegisterModal = () => {
       password,
       gender,
       birthdate: selectedDate,
+      userProfile
     };
 
     fetch('https://craft-connect-server-blond.vercel.app/users', {
@@ -104,6 +125,30 @@ const RegisterModal = () => {
       });
   };
 
+  useEffect(() => {
+    if (!selectedFile) {
+      setPreview(undefined);
+      return;
+    }
+    const selectedFIles = [];
+    const targetFilesObject = [...selectedFile];
+    targetFilesObject.map((file) => {
+      return selectedFIles.push(URL.createObjectURL(file));
+    });
+
+    setPreview(selectedFIles);
+    // free memory when ever this component is unmounted
+    return () => URL.revokeObjectURL(selectedFIles);
+  }, [selectedFile]);
+
+  const onSelectFile = (e) => {
+    if (!e.target.files || e.target.files?.length === 0) {
+      setSelectedFile(undefined);
+      return;
+    }
+    setSelectedFile(e.target.files);
+  };
+
   return (
     <div>
       <input type="checkbox" id="register-modal" className="modal-toggle" />
@@ -119,8 +164,13 @@ const RegisterModal = () => {
           <span>It's quick and easy</span>
           <form
             onSubmit={handleSubmit(handleCreateAccount)}
-            className="grid grid-cols-1 gap-3 mt-10"
+            className="grid grid-cols-1 gap-3 mt-3"
           >
+            <div className="flex justify-center flex-col items-center gap-3">
+              <img src={preview ? preview : 'https://uchealth-wp-uploads.s3.amazonaws.com/wp-content/uploads/sites/5/2022/12/01181857/blankprovider-e1669918775597.jpg'} className="w-[115px] h-[115px] rounded-full object-cover" alt="" />
+              <input type="file" onChange={onSelectFile} className='hidden' id='uploadPhoto' />
+              <label htmlFor="uploadPhoto" className="mb-3 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded-full">Upload Photo</label>
+            </div>
             <div className="flex gap-2">
               <div>
                 <input

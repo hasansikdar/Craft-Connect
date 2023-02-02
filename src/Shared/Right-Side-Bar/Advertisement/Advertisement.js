@@ -11,6 +11,8 @@ const Advertisement = () => {
         <Carousel
           showArrows={false}
           showIndicators={false}
+          stopOnHover={true}
+          showStatus={false} 
           infiniteLoop={true}
           autoPlay={true}
           showThumbs={false}
