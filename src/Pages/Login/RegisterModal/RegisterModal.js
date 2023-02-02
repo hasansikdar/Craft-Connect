@@ -11,12 +11,14 @@ import { doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const RegisterModal = () => {
+  const {createaccount, updateUserProfile } = useContext(Authcontext);
   const [err, setErr] = useState(false);
   const [selectedFile, setSelectedFile] = useState();
   const [userProfile, setUserProfile] = useState()
   const [preview, setPreview] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
+
   const {
     register,
     reset,
@@ -27,126 +29,172 @@ const RegisterModal = () => {
 
 
 
-  const handleCreateAccount = async (data) => {
+  const handleCreateAccount = async (data, event) => {
+
+     event.preventDefault();
+
     setLoading(true);
     const fullName = data?.firstName + " " + data?.lastName;
     const email = data?.email;
     const password = data?.password;
+    const userImgs = event.target.userImg?.files[0];
+    // console.log(fullName);
+
+
 
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
     const formData = new FormData();
-    if (selectedFile) {
-      formData.append("image", selectedFile[0]);
+    // if (selectedFile) {
+      formData.append("image", userImgs);
       fetch(url, {
         method: "POST",
         body: formData,
       })
         .then((res) => res.json())
         .then((data) => {
-          const img = data?.data?.display_url;
-          console.log("imgBB", img, 'state', userProfile, 'data', data);
-          setUserProfile(img);
-        });
-    }
-    try {
-      //Create user
-      const res = await createUserWithEmailAndPassword(auth, email, password);
+          // const img = data?.data?.display_url;
+          // updateuserdata(fullName, img);
+          // setUserProfile(img);
+          console.log(data.data.display_url);
+          createaccount(email, password).then((result) => {
+            const user = result.user;
+            console.log(user);
+            updateUserProfile(fullName, data?.data?.display_url)
+            // console.log(fullName, data.data.display_url);
+            .then((result) => {
+              console.log(result);
+              navigate("/");
 
-      //Create a unique image name
-      const date = new Date().getTime();
-      const storageRef = ref(storage, `${fullName + date}`);
+              const userInfo = {
+                displayName: fullName,
+                email,
+                password,
+                photoURL: data?.data?.display_url,
+              };
+              console.log(userInfo);
 
-      await uploadBytesResumable(storageRef).then(() => {
-        getDownloadURL(storageRef).then(async (userProfile) => {
-          try {
-            //Update profile
-            await updateProfile(res.user, {
-              displayName: fullName,
-              photoURL: userProfile
+              fetch("https://craft-connect-server-blond.vercel.app/users", {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(userInfo),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.acknowledged) {
+                    toast.success("User Created Success");
+                    setLoading(false);
+                  }
+                });
             });
-            saveUserDataInDb(fullName, data, userProfile);
-            //create user on firestore
-            await setDoc(doc(db, "users", res.user.uid), {
-              uid: res.user.uid,
-              displayName: fullName,
-              email,
-              photoURL: userProfile
-            });
-
-            //create empty user chats on firestore
-            await setDoc(doc(db, "userChats", res.user.uid), {});
-            navigate("/");
-          } catch (err) {
-            console.log(err);
-            setErr(true);
-            setLoading(false);
-          }
-        });
-      });
-    } catch (err) {
-      setErr(true);
-      setLoading(false);
-    }
-    console.log(data)
-  }
-
-  const saveUserDataInDb = (fullname, info, userProfile) => {
-    const { password, email, gender } = info;
-    const userinfo = {
-      fullname,
-      email,
-      password,
-      gender,
-      birthdate: selectedDate,
-      userProfile
-    };
-
-    fetch('https://craft-connect-server-blond.vercel.app/users', {
-      method: 'POST',
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userinfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success("User Created Success");
+          });
+        })
+        .catch((error) => {
+          // console.log(error);
+          toast.error(error.message);
           setLoading(false);
-          navigate("/");
-        }
-        console.log(data)
-      })
-      .catch((error) => {
-        console.log(error);
-        toast.error(error.message);
-        setLoading(false);
-      });
-  };
+        });
+    // }
+  //   try {
+  //     //Create user
+  //     const res = await createUserWithEmailAndPassword(auth, email, password);
 
-  useEffect(() => {
-    if (!selectedFile) {
-      setPreview(undefined);
-      return;
-    }
-    const selectedFIles = [];
-    const targetFilesObject = [...selectedFile];
-    targetFilesObject.map((file) => {
-      return selectedFIles.push(URL.createObjectURL(file));
-    });
+  //     //Create a unique image name
+  //     const date = new Date().getTime();
+  //     const storageRef = ref(storage, `${fullName + date}`);
 
-    setPreview(selectedFIles);
-    // free memory when ever this component is unmounted
-    return () => URL.revokeObjectURL(selectedFIles);
-  }, [selectedFile]);
+  //     await uploadBytesResumable(storageRef).then(() => {
+  //       getDownloadURL(storageRef).then(async (userProfile) => {
+  //         try {
+  //           //Update profile
+  //           await updateProfile(res.user, {
+  //             displayName: fullName,
+  //             photoURL: userProfile
+  //           });
+  //           saveUserDataInDb(fullName, data, userProfile);
+  //           //create user on firestore
+  //           await setDoc(doc(db, "users", res.user.uid), {
+  //             uid: res.user.uid,
+  //             displayName: fullName,
+  //             email,
+  //             photoURL: userProfile
+  //           });
 
-  const onSelectFile = (e) => {
-    if (!e.target.files || e.target.files?.length === 0) {
-      setSelectedFile(undefined);
-      return;
-    }
-    setSelectedFile(e.target.files);
+  //           //create empty user chats on firestore
+  //           await setDoc(doc(db, "userChats", res.user.uid), {});
+  //           navigate("/");
+  //         } catch (err) {
+  //           console.log(err);
+  //           setErr(true);
+  //           setLoading(false);
+  //         }
+  //       });
+  //     });
+  //   } catch (err) {
+  //     setErr(true);
+  //     setLoading(false);
+  //   }
+  //   console.log(data)
+  // }
+
+  // const saveUserDataInDb = (fullname, info, userProfile) => {
+  //   const { password, email, gender } = info;
+  //   const userinfo = {
+  //     fullname,
+  //     email,
+  //     password,
+  //     gender,
+  //     birthdate: selectedDate,
+  //     userProfile
+  //   };
+
+  //   fetch('https://craft-connect-server-blond.vercel.app/users', {
+  //     method: 'POST',
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(userinfo),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.acknowledged) {
+  //         toast.success("User Created Success");
+  //         setLoading(false);
+  //         navigate("/");
+  //       }
+  //       console.log(data)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       toast.error(error.message);
+  //       setLoading(false);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   if (!selectedFile) {
+  //     setPreview(undefined);
+  //     return;
+  //   }
+  //   const selectedFIles = [];
+  //   const targetFilesObject = [...selectedFile];
+  //   targetFilesObject.map((file) => {
+  //     return selectedFIles.push(URL.createObjectURL(file));
+  //   });
+
+  //   setPreview(selectedFIles);
+  //   // free memory when ever this component is unmounted
+  //   return () => URL.revokeObjectURL(selectedFIles);
+  // }, [selectedFile]);
+
+  // const onSelectFile = (e) => {
+  //   if (!e.target.files || e.target.files?.length === 0) {
+  //     setSelectedFile(undefined);
+  //     return;
+  //   }
+  //   setSelectedFile(e.target.files);
   };
 
   return (
@@ -168,7 +216,7 @@ const RegisterModal = () => {
           >
             <div className="flex justify-center flex-col items-center gap-3">
               <img src={preview ? preview : 'https://uchealth-wp-uploads.s3.amazonaws.com/wp-content/uploads/sites/5/2022/12/01181857/blankprovider-e1669918775597.jpg'} className="w-[115px] h-[115px] rounded-full object-cover" alt="" />
-              <input type="file" onChange={onSelectFile} className='hidden' id='uploadPhoto' />
+              <input name="userImg" type="file"  className='hidden' id='uploadPhoto' />
               <label htmlFor="uploadPhoto" className="mb-3 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded-full">Upload Photo</label>
             </div>
             <div className="flex gap-2">

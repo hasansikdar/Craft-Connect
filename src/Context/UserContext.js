@@ -23,8 +23,12 @@ const UserContext = ({ children }) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  const updateuserdata = (updateinfo) => {
-    return updateProfile(auth.user, updateinfo);
+  const updateUserProfile = (name, photo) => {
+    console.log(name, photo);
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
   };
   const signin = (email, password) => {
     setLoading(true);
@@ -52,7 +56,7 @@ const UserContext = ({ children }) => {
     user,
     users,
     refetch,
-    updateuserdata,
+    updateUserProfile,
     createaccount,
     logout,
     signin,
@@ -61,8 +65,8 @@ const UserContext = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
       setLoading(false);
     });
     return () => {
