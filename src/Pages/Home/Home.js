@@ -1,22 +1,19 @@
 import React from "react";
-import PostCard from "../../Components/PostCard/PostCard";
-import LeftSideMobile from "../LeftSideBar/LeftSideMobile";
 import Posts from "../Posts/Posts";
+import RightBar from "../../Shared/Right-Side-Bar/RightBar/RightBar";
+import ProfileDetails from "../../Shared/LeftSideMenubar/ProfileDetails/ProfileDetails";
 import Stories from "../Adevertisement/Stories";
 
 const Home = () => {
   return (
-    <div className="home overflow-scroll h-screen mt-5 pb-10">
-      <div className="flex">
-        <div className="w-[12%] md:w-0 md:border-r-[0px] md:hidden">
-          <LeftSideMobile></LeftSideMobile>
+    <div className="home mt-5 w-full">
+      <div class="grid grid-cols-4 gap-8">
+        <div class=""><ProfileDetails></ProfileDetails></div>
+        <div class="home col-span-2 overflow-scroll h-screen">
+          <Stories></Stories>
+          <Posts></Posts>
         </div>
-        <div className="w-[88%] md:w-full">
-          <div className="mx-2">
-            <Stories />
-            <Posts></Posts>
-          </div>
-        </div>
+        <div class=""><RightBar></RightBar></div>
       </div>
     </div>
   );

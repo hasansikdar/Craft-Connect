@@ -37,7 +37,10 @@ const PostCard = ({
   const [editPost, setEditPost] = useState(false);
   const [love, setLove] = useState(false);
   const [liked, setLiked] = useState(false);
+  // const [likeLength, setLikeLength] = useState(post?.likes);
+  const [allLike, setAllLike] = useState([]);
 
+  const likeLength = post?.likes;
   // const { user: currentUser } = useContext(Authcontext);
   // const reactions = [
   //   {
@@ -81,18 +84,29 @@ const PostCard = ({
   const ownReaction = postReactions.map(
     (reactionItem) => reactionItem?.email === user?.email
   );
-  // console.log(user?.email);
-  const likePost = () => {
-    const postId = post?._id;
-    console.log(postId);
-    const likeInfo = { userId: user?.email, postID: post?._id };
 
-    fetch(`http://localhost:5000/users/${postId}`, {
+  // for like post
+
+  // console.log(likeLength[0]);
+  const likedUser = (id) => {
+    const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
+    console.log(hello[0]);
+    if (!hello[0]) {
+      return handleLike();
+    }
+  };
+
+  const handleLike = () => {
+    setLove(true);
+    const likeInfo = { userId: user, postId: post?._id };
+    allLike.push(...likeLength, likeInfo);
+
+    fetch(`http://localhost:5000/users/${post?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(likeInfo),
+      body: JSON.stringify(allLike),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -103,126 +117,12 @@ const PostCard = ({
       });
   };
 
-  if (love === true) {
-    likePost();
-  }
   return (
     <div>
-      {/* <div className=" card md:w-[590px] my-3 dark:bg-base-100 bg-white text-black dark:text-white shadow-xl border border-white">
-        <div className="card-body">
-          <div>
-            <PostUserInfo
-              handleDeletePost={handleDeletePost}
-              post={post}
-            ></PostUserInfo>
-          </div>
-          <p>
-            {post?.postText?.length > 100 ? (
-              <>
-                {post?.postText.slice(0, 100)}{" "}
-                <Link className="font-bold" to="/">
-                  See More..
-                </Link>
-              </>
-            ) : (
-              post?.postText
-            )}
-          </p>
-        </div>
-        <Link to={`/postDetails/${post?._id}`}>
-          <img className="w-full" src={post?.img} alt="Shoes" />
-        </Link>
-        <div className="p-4">
-          <div className="flex justify-between">
-            <span className="flex">
-              <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
-              <a className="hover:underline text-white" href="/">
-                {postReactions?.length}
-              </a>
-            </span>
-            <span>
-              <a className="hover:underline" href="/">
-                1 Comment
-              </a>
-            </span>
-          </div>
-          <div className="flex justify-between cursor-pointer mt-3 border-t py-4 border-white">
-            <button className="flex btn bg-white hover:bg-white dropdown dropdown-top dropdown-hover  btn-outline btn-sm btn-info">
-              {post?.emojiLink?.length ? (
-                <img
-                  className="w-8 h-7 bg-black rounded-full flex items-center justify-center"
-                  src={post?.emojiLink}
-                  alt=""
-                />
-              ) : (
-                <>
-                  <img className="w-5 h-5 mr-2" src={likeicon} alt="" />
-                  <label
-                    className="m-1 cursor-pointer dark:text-white text-black shadow-lg"
-                    tabIndex={0}
-                  >
-                    {ownReaction}
-                  </label>
-                </>
-              )}
-              <div className=">
-                <div
-                  tabIndex={0}
-                  className="dropdown-content -ml-10 bg-white text-black menu p-2 shadow rounded-box w-52"
-                >
-                  <div className="grid grid-cols-6">
-                    {reactions.map((react) => (
-                      <Reactions
-                        post={post}
-                        handelReaction={handelReaction}
-                        id={post?._id}
-                        react={react}
-                      ></Reactions>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </button>
-            <button className="flex btn btn-outline shadow-lg btn-sm dark:text-white text-black dark:hover:text-black">
-              <FaCommentAlt className="mr-2"></FaCommentAlt>
-              Comment
-            </button>
-            <button className="flex btn btn-outline shadow-lg btn-sm dark:text-white text-black dark:hover:text-black">
-              <FaShare className="mr-2"></FaShare>
-              Share
-            </button>
-          </div>
-        </div>
-        <div className="mb-2 mx-2">
-          <div className="flex justify-end hidden">
-            <div className="dropdown dropdown-bottom  dropdown-end">
-              <label
-                tabIndex={0}
-                className="m-1 cursor-pointer  flex items-center ml-auto"
-              >
-                Most Recenter <FaAngleDown className="ml-1"></FaAngleDown>
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <PostAuthorityModal></PostAuthorityModal> */}
-
       {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
-          <div className="w-[320px] ml-[44px] md:ml-0 md:w-[590px] max-h-[560px] border p-5 rounded-md shadow-md">
+          <div className="w-full  max-h-[560px] border p-5 rounded-md shadow-md">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
@@ -231,7 +131,9 @@ const PostCard = ({
                   alt=""
                 />
                 <div>
-                  <p>{post?.userName}</p>
+                  <Link to={`/user/${post.userEmail}`}>
+                    <p>{post?.userName}</p>
+                  </Link>
                   <p className="text-sm">{post?.currentDate}</p>
                 </div>
               </div>
@@ -267,7 +169,7 @@ const PostCard = ({
                 <div className="flex gap-8">
                   <div className="flex items-center gap-1">
                     <button
-                      onClick={() => setLove(true)}
+                      onClick={() => likedUser(user?.uid)}
                       disabled={love === true}
                       className={
                         liked ? "text-[34px] text-blue-600" : "text-[34px]"
@@ -275,6 +177,7 @@ const PostCard = ({
                     >
                       <BiLike />
                     </button>
+
                     <p className="text-3xl">{post?.likes?.length}</p>
                   </div>
                   <div className="flex items-center gap-1">

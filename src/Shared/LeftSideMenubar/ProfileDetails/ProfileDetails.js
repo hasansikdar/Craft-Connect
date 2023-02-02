@@ -7,8 +7,8 @@ import { Authcontext } from "../../../Context/UserContext";
 const ProfileDetails = () => {
   const { user } = useContext(Authcontext);
   return (
-    <div className="mt-0">
-      <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 text-gray-500 dark:bg-[#261b40] ">
+    <div className="">
+      <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-[300px] text-gray-500 dark:bg-[#261b40] ">
         <h1 className="ml-4 mt-4 dark:text-white text-black">Your Profile</h1>
         <div className="flex items-center flex-col">
           <img
@@ -27,12 +27,12 @@ const ProfileDetails = () => {
         </div>
         <div>
           <ul className="menu">
-            <li className="hover:bg-zinc-600 hover:text-white dark:text-white text-gray-700 duration-200 rounded-lg">
+            <li className="hover:bg-[#FF3F4A] hover:text-white dark:text-white text-gray-700 duration-200 rounded-md">
               <Link to="/editprofile" className="justify-between">
-                Edit Profile <FaEdit></FaEdit>
+                <p>Edit Profile</p> <FaEdit></FaEdit>
               </Link>
             </li>
-            <li className="hover:bg-zinc-600 hover:text-white dark:text-white text-gray-700 duration-200 rounded-lg">
+            <li className="hover:bg-[#FF3F4A] hover:text-white dark:text-white text-gray-700 duration-200 rounded-md">
               <Link to="/advertisement/create" className="justify-between">
                 Create Advertisement <HiSpeakerphone></HiSpeakerphone>
               </Link>

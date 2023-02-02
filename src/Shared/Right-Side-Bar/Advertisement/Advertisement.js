@@ -6,8 +6,7 @@ import stories from "../../../Pages/Adevertisement/stories.json";
 const Advertisement = () => {
   return (
     <div>
-      <div className=" w-11/12 p-2 py-5 rounded-lg border-zinc-600 shadow-xl  m-auto my-5 text-gray-500 dark:bg-[#261b40]">
-        <h1 className="text-white ml-4 mb-2">Sponsored</h1>
+      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40] m-auto">
 
         <Carousel
           showArrows={false}
@@ -20,7 +19,7 @@ const Advertisement = () => {
             return (
               <React.Fragment key={index}>
                 <div
-                  className="select-none bg-img h-[285px] dark:bg-[#261b40] bg-white rounded-md transition bg-center bg-cover"
+                  className="select-none bg-img h-[300px] dark:bg-[#261b40] bg-white rounded-md transition bg-center bg-cover"
                   style={{
                     background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) , url(${story.userStory})`,
                     backgroundPosition: "center",
@@ -28,8 +27,8 @@ const Advertisement = () => {
                   }}
                 >
                   <div className="flex justify-end flex-col items-start h-full rounded-md p-4">
-                    <p className="text-white text-bold">{story.userName}</p>
-                    <p className="text-white text-left text-base">Lorem ipsum dolor sit, amet consectetur adipisicing  </p>
+                    <p className="text-white text-bold text-xl">{story.userName}</p>
+                    <p className="text-white text-left text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing  </p>
                   </div>
                 </div>
               </React.Fragment>

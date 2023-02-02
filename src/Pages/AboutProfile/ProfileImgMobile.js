@@ -17,12 +17,12 @@ const ProfileImgMobile = () => {
         <div className="">
           <img
             className="w-[70px] h-[70px] rounded-full"
-            src={user?.photoURL}
+            src={profileImg}
             alt=""
           />
         </div>
       </div>
-      <div className="ml-[58px] mt-12">
+      <div className="ml-[58px] mt-10">
         <p className="text-2xl">Rahat Kabir Ifty</p>
         <p>Dhaka, Bangladesh</p>
       </div>

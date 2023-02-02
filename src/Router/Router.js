@@ -19,12 +19,13 @@ import Pages from "../Pages/Fb_Pages/Pages";
 import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
-import Profile from "../Pages/UserProfile/Profile";
 import Discover from "../Pages/Groups/Discover/Discover";
 import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends";
 import PostDetails from "../Pages/PostDetails/PostDetails";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
+import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
+import UserById from "../Pages/AboutProfile/UserProfileById/UserById";
 import AdvertisementLayout from "../Pages/Adevertisement/AdvertisementLayout";
 import CreateAdvertisement from "../Pages/Adevertisement/CreateAdvertisement";
 import Chatting from "../Shared/Chatting/Chatting";
@@ -127,4 +128,9 @@ export const Routes = createBrowserRouter([
     loader: ({ params }) =>
       fetch(`https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`),
   },
+  {
+    path: '/user/:email',
+    element: <UserById/>,
+    loader:({params}) => fetch(`http://localhost:5000/user/${params?.email}`)
+  }
 ]);
