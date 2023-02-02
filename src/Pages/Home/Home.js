@@ -2,6 +2,7 @@ import React from "react";
 import Posts from "../Posts/Posts";
 import RightBar from "../../Shared/Right-Side-Bar/RightBar/RightBar";
 import ProfileDetails from "../../Shared/LeftSideMenubar/ProfileDetails/ProfileDetails";
+import Stories from "../Adevertisement/Stories";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
         <div className="w-[88%] md:w-full">
           <div className="mx-2">
             <div className="flex">
+              <Stories></Stories>
               <Posts></Posts>
             </div>
           </div>
