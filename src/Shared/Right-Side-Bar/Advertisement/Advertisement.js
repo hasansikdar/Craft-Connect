@@ -6,7 +6,7 @@ import stories from "../../../Pages/Adevertisement/stories.json";
 const Advertisement = () => {
   return (
     <div>
-      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40]">
+      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40] m-auto">
 
         <Carousel
           showArrows={false}

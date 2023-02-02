@@ -2,6 +2,7 @@
 // import { Outlet } from "react-router";
 // import Navbar from "../Pages/Navbar/Navbar";
 // import LeftSideBar from "../Shared/LeftSideMenubar/LeftSideBar/LeftSideBar";
+// import ProfileDetails from "../Shared/LeftSideMenubar/ProfileDetails/ProfileDetails";
 // import RightBar from "../Shared/Right-Side-Bar/RightBar/RightBar";
 
 // const Main = () => {
@@ -10,13 +11,16 @@
 //       <Navbar></Navbar>
 //       <div className="lg:flex">
 //         {/* left site bar */}
-//         <div className="xl:mr-auto lg:w-[300px] mt-[58px]">
+//         <div>
 //           <LeftSideBar></LeftSideBar>
+//         </div>
+//         <div>
+//           <ProfileDetails></ProfileDetails>
 //         </div>
 //         <div className="lg:w-[600px] xl:mx-auto mt-[60px]">
 //           <Outlet></Outlet>
 //         </div>
-//         <div className="lg:ml-auto bg-zinc-800 rounded-lr-lg mt-[60px]">
+//         <div className="lg:ml-auto rounded-lr-lg">
 //           <RightBar></RightBar>
 //         </div>
 //       </div>
@@ -34,17 +38,20 @@ import LeftSideBar from '../Shared/LeftSideMenubar/LeftSideBar/LeftSideBar'
 
 const Main = () => {
   return (
-    <div className="dark:bg-[#2C2048] bg-white">
+    <div className="dark:bg-[#2C2048] bg-white overflow-hidden h-screen">
       <Navbar></Navbar>
-     
-      <div className='lg:flex gap-8'>
-        <div>
+
+      <div className='lg:flex w-full'>
+        <div className='w-[130px]'>
           <LeftSideBar></LeftSideBar>
         </div>
-        <div className=" mx-auto mt-[60px]">
+
+        <div className="w-full mt-[60px] m-auto">
           <Outlet></Outlet>
         </div>
+
       </div>
+      
     </div>
   );
 };

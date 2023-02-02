@@ -7,7 +7,7 @@ import { Authcontext } from "../../../Context/UserContext";
 const ProfileDetails = () => {
   const { user } = useContext(Authcontext);
   return (
-    <div className="mt-10">
+    <div className="">
       <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-[300px] text-gray-500 dark:bg-[#261b40] ">
         <h1 className="ml-4 mt-4 dark:text-white text-black">Your Profile</h1>
         <div className="flex items-center flex-col">

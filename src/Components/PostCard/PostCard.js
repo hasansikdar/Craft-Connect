@@ -122,7 +122,7 @@ const PostCard = ({
       {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
-          <div className="w-[320px] ml-[44px] md:ml-0 md:w-[590px] max-h-[560px] border p-5 rounded-md shadow-md">
+          <div className="w-full  max-h-[560px] border p-5 rounded-md shadow-md">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
