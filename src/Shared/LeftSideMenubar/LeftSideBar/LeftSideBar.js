@@ -3,21 +3,6 @@
 
 
 
-// export default LeftSideBar;
-
-
-// import React from 'react';
-
-// const LeftSideBar = () => {
-//   return (
-//     <div>
-
-//     </div>
-//   );
-// };
-
-// export default LeftSideBar;
-
 
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
