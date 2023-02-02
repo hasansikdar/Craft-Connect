@@ -1,6 +1,4 @@
 import React from "react";
-import PostCard from "../../Components/PostCard/PostCard";
-import LeftSideMobile from "../LeftSideBar/LeftSideMobile";
 import Posts from "../Posts/Posts";
 import Stories from "../Adevertisement/Stories";
 
