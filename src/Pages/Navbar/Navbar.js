@@ -60,11 +60,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-[#2C2048] fixed top-0 z-[999] w-full">
-      <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
+    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-999 h-[72px] ">
+      <div className="flex justify-between items-center bg-zinc-800 py-2">
         <div className="pl-3">
           <Link to="/" class="text-2xl text-gray-900 font-semibold flex items-center active" href="/">
-              <img src={logo} className="w-7 d-block m-auto" alt="" />
+              <img src={logo} className="w-14 d-block m-auto" alt="" />
               <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
           </Link>
         </div>
