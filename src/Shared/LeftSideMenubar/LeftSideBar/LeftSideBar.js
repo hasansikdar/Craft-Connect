@@ -2,8 +2,6 @@
 //         <div className="sidebar min-h-screen w-[3.35rem] overflow-hidden border-r hover:w-56 hover:bg-white hover:shadow-lg">
 
 
-
-
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { GiFamilyHouse } from "react-icons/gi";
@@ -39,13 +37,9 @@ const LeftSideBar = () => {
             <img src={logo} className="w-14 d-block m-auto" alt="" />
           </Link>
         </div>
-
         <div className="bg-zinc-800 h-[72px] p-0 lg:hidden">
           <img src={logo} onClick={() => setOpen(!open)} className="w-14 d-block m-auto" alt="" />
         </div>
-
-
-
         <div className="py-3 lg:flex px-4 justify-end  hidden">
           {open ?
             <RxCross1
@@ -89,52 +83,9 @@ const LeftSideBar = () => {
             </Link>
           ))}
         </div>
+    
 
-
-
-
-
-
-        {/* {open && <div className="py-3 dark:bg-[#563f8e] flex px-4 justify-end  md:hidden">
-          { open && 
-          <RxCross1
-            size={26}
-            className="cursor-pointer"
-            onClick={() => setOpen(!open)}
-          />}
-        </div>}
-
-
-        { open && <div className="mt-2 flex flex-col dark:bg-[#563f8e] duration-700 px-4 gap-4 relative  md:hidden">
-          {menus?.map((menu, i) => (
-            <Link
-              to={menu?.link}
-              key={i}
-              className={` ${menu?.margin && "mt-5"
-                } group flex items-center text-base   gap-3.5 font-medium p-2 hover:text-[#FF3F4A] 
-                 rounded-md`}
-            >
-              <div>{React.createElement(menu?.icon, { size: "25" })}</div>
-              <h2
-                style={{
-                  transitionDelay: `${i + 3}00ms`,
-                }}
-                className={`whitespace-pre text-black dark:text-white duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
-                  }`}
-              >
-                {menu?.name}
-              </h2>
-              <h2
-                className={`${open && "hidden"
-                  } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-              >
-                {menu?.name}
-              </h2>
-            </Link>
-          ))}
-        </div>} */}
-
-
+                     {/* code for mobile */}
 
         {open &&
           <div className="dark:bg-[#563f8e] h-screen bg-[#FAFBFD]">
@@ -146,8 +97,6 @@ const LeftSideBar = () => {
                   onClick={() => setOpen(!open)}
                 />}
             </div>
-
-
             <div className="mt-2 flex flex-col duration-1000 px-4 gap-4 relative  md:hidden">
               {menus?.map((menu, i) => (
                 <Link
@@ -178,9 +127,6 @@ const LeftSideBar = () => {
             </div>
           </div>
         }
-
-
-
 
       </div>
     </section>
