@@ -1,13 +1,4 @@
 
-
-
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const LeftSideBar = () => {
-//   return (
-//     <div className='flex '>
-//       <div className="min-h-screen bg-gray-100 z-9999 fixed">
 //         <div className="sidebar min-h-screen w-[3.35rem] overflow-hidden border-r hover:w-56 hover:bg-white hover:shadow-lg">
 //           <div className="flex h-screen flex-col justify-between pt-2 pb-6">
 //             <div>
@@ -125,7 +116,7 @@ const LeftSideBar = () => {
     <section className="flex gap-6 ">
       <div
         className={`lg:bg-[#FAFBFD] dark:lg:bg-[#563f8e] dark:text-white min-h-screen ${open ? "w-72" : "w-[70px]"
-          } duration-500 text-black  z-9999 fixed lg:shadow-2xl`}
+          } duration-500 text-black  z-9999 fixed lg:shadow-xl`}
       >
         <div className="bg-zinc-800 h-[72px] p-0 hidden lg:block">
           <Link to='/'>
