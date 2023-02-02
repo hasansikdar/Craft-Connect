@@ -119,7 +119,9 @@ import { BsNewspaper, BsBookmark } from "react-icons/bs";
 import { RiAdvertisementLine } from "react-icons/ri";
 import { FaRegFlag } from "react-icons/fa";
 import { FiHome, FiUsers } from "react-icons/fi";
+import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import logo from '../../../assets/logo.png';
 
 const LeftSideBar = () => {
   const menus = [
@@ -127,26 +129,46 @@ const LeftSideBar = () => {
     { name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/", icon: FiUsers },
     { name: "Pages", link: "/", icon: FaRegFlag },
-    { name: "Marketplace", link: "/", icon: GiFamilyHouse},
+    { name: "Marketplace", link: "/", icon: GiFamilyHouse },
     { name: "Bookmarked", link: "/", icon: BsBookmark },
     { name: "Ad Center", link: "/", icon: RiAdvertisementLine },
     { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
   ];
   const [open, setOpen] = useState(false);
   return (
-    <section className="flex gap-6">
+    <section className="flex gap-6 ">
       <div
-        className={`bg-[#FAFBFD] min-h-screen ${open ? "w-72" : "w-[70px]"
-          } duration-500 text-black px-4 z-9999 fixed shadow-2xl`}
+        className={`lg:bg-[#FAFBFD] dark:lg:bg-[#563f8e] dark:text-white min-h-screen ${open ? "w-72" : "w-[70px]"
+          } duration-500 text-black  z-9999 fixed lg:shadow-2xl`}
       >
-        <div className="py-3 flex justify-end">
-          <HiMenuAlt3
-            size={26}
-            className="cursor-pointer"
-            onClick={() => setOpen(!open)}
-          />
+        <div className="bg-zinc-800 h-[72px] p-0 hidden lg:block">
+          <Link to='/'>
+            <img src={logo} className="w-14 d-block m-auto" alt="" />
+          </Link>
         </div>
-        <div className="mt-4 flex flex-col gap-4 relative">
+
+        <div className="bg-zinc-800 h-[72px] p-0 lg:hidden">
+          <img src={logo} onClick={() => setOpen(!open)} className="w-14 d-block m-auto" alt="" />
+        </div>
+
+
+
+        <div className="py-3 lg:flex px-4 justify-end  hidden">
+          {open ?
+            <RxCross1
+              size={26}
+              className="cursor-pointer"
+              onClick={() => setOpen(!open)}
+            /> :
+            <HiMenuAlt3
+              size={26}
+              className="cursor-pointer"
+              onClick={() => setOpen(!open)}
+            />}
+        </div>
+
+
+        <div className="mt-2 lg:flex flex-col px-4 gap-4 relative  hidden">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}
@@ -159,9 +181,8 @@ const LeftSideBar = () => {
               <h2
                 style={{
                   transitionDelay: `${i + 3}00ms`,
-                  
                 }}
-                className={`whitespace-pre text-black duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
+                className={`whitespace-pre text-black dark:text-white duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
                   }`}
               >
                 {menu?.name}
@@ -175,9 +196,99 @@ const LeftSideBar = () => {
             </Link>
           ))}
         </div>
-      </div>
-      <div className="m-3 text-xl text-gray-900 font-semibold ml-24">
-        REACT TAILWIND
+
+
+
+
+
+
+        {/* {open && <div className="py-3 dark:bg-[#563f8e] flex px-4 justify-end  md:hidden">
+          { open && 
+          <RxCross1
+            size={26}
+            className="cursor-pointer"
+            onClick={() => setOpen(!open)}
+          />}
+        </div>}
+
+
+        { open && <div className="mt-2 flex flex-col dark:bg-[#563f8e] duration-700 px-4 gap-4 relative  md:hidden">
+          {menus?.map((menu, i) => (
+            <Link
+              to={menu?.link}
+              key={i}
+              className={` ${menu?.margin && "mt-5"
+                } group flex items-center text-base   gap-3.5 font-medium p-2 hover:text-[#FF3F4A] 
+                 rounded-md`}
+            >
+              <div>{React.createElement(menu?.icon, { size: "25" })}</div>
+              <h2
+                style={{
+                  transitionDelay: `${i + 3}00ms`,
+                }}
+                className={`whitespace-pre text-black dark:text-white duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
+                  }`}
+              >
+                {menu?.name}
+              </h2>
+              <h2
+                className={`${open && "hidden"
+                  } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+              >
+                {menu?.name}
+              </h2>
+            </Link>
+          ))}
+        </div>} */}
+
+
+
+        {open &&
+          <div className="dark:bg-[#563f8e] h-screen bg-[#FAFBFD]">
+            <div className="py-3 flex px-4 justify-end  md:hidden">
+              {open &&
+                <RxCross1
+                  size={26}
+                  className="cursor-pointer"
+                  onClick={() => setOpen(!open)}
+                />}
+            </div>
+
+
+            <div className="mt-2 flex flex-col duration-1000 px-4 gap-4 relative  md:hidden">
+              {menus?.map((menu, i) => (
+                <Link
+                  to={menu?.link}
+                  key={i}
+                  className={` ${menu?.margin && "mt-5"
+                    } group flex items-center text-base   gap-3.5 font-medium p-2 hover:text-[#FF3F4A] 
+                 rounded-md`}
+                >
+                  <div>{React.createElement(menu?.icon, { size: "25" })}</div>
+                  <h2
+                    style={{
+                      transitionDelay: `${i + 3}00ms`,
+                    }}
+                    className={`whitespace-pre text-black dark:text-white duration-500 ${!open && "opacity-0 translate-x-28 overflow-hidden"
+                      }`}
+                  >
+                    {menu?.name}
+                  </h2>
+                  <h2
+                    className={`${open && "hidden"
+                      } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+                  >
+                    {menu?.name}
+                  </h2>
+                </Link>
+              ))}
+            </div>
+          </div>
+        }
+
+
+
+
       </div>
     </section>
   );
