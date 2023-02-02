@@ -37,27 +37,10 @@ const PostCard = ({
   const [editPost, setEditPost] = useState(false);
   const [love, setLove] = useState(false);
   const [liked, setLiked] = useState(false);
+  // const [likeLength, setLikeLength] = useState(post?.likes);
+  const [allLike, setAllLike] = useState([]);
 
-  // console.log(user);
-
-  
-// console.log(post._id);
-  // const reactions = [
-  //   {
-  //     emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
-  //   },
-  //   { emojilink: "https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif" },
-  //   { emojilink: "https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif" },
-  //   { emojilink: "https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif" },
-  //   {
-  //     emojilink:
-  //       "https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif",
-  //   },
-  //   {
-  //     emojilink:
-  //       "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
-  //   },
-  // ];
+  const likeLength = post?.likes;
   // const { user: currentUser } = useContext(Authcontext);
   // const reactions = [
   //   {
@@ -101,18 +84,29 @@ const PostCard = ({
   const ownReaction = postReactions.map(
     (reactionItem) => reactionItem?.email === user?.email
   );
-  // console.log(user?.email);
-  const likePost = () => {
-    const postId = post?._id;
-    console.log(postId);
-    const likeInfo = { userId: user?.email, postID: post?._id };
 
-    fetch(`http://localhost:5000/users/${postId}`, {
+  // for like post
+
+  // console.log(likeLength[0]);
+  const likedUser = (id) => {
+    const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
+    console.log(hello[0]);
+    if (!hello[0]) {
+      return handleLike();
+    }
+  };
+
+  const handleLike = () => {
+    setLove(true);
+    const likeInfo = { userId: user, postId: post?._id };
+    allLike.push(...likeLength, likeInfo);
+
+    fetch(`http://localhost:5000/users/${post?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(likeInfo),
+      body: JSON.stringify(allLike),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -123,12 +117,8 @@ const PostCard = ({
       });
   };
 
-  if (love === true) {
-    likePost();
-  }
   return (
     <div>
-
       {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
@@ -144,8 +134,6 @@ const PostCard = ({
                   <Link to={`/user/${post.userEmail}`}>
                     <p>{post?.userName}</p>
                   </Link>
-                  <p className="text-sm">19 hours ago</p>
-                  <p>{post?.userName}</p>
                   <p className="text-sm">{post?.currentDate}</p>
                 </div>
               </div>
@@ -181,7 +169,7 @@ const PostCard = ({
                 <div className="flex gap-8">
                   <div className="flex items-center gap-1">
                     <button
-                      onClick={() => setLove(true)}
+                      onClick={() => likedUser(user?.uid)}
                       disabled={love === true}
                       className={
                         liked ? "text-[34px] text-blue-600" : "text-[34px]"
@@ -189,6 +177,7 @@ const PostCard = ({
                     >
                       <BiLike />
                     </button>
+
                     <p className="text-3xl">{post?.likes?.length}</p>
                   </div>
                   <div className="flex items-center gap-1">

@@ -121,6 +121,7 @@ import { RiAdvertisementLine } from "react-icons/ri";
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
 import { FiMessageSquare, FiFolder, FiShoppingCart, FiHome, FiUsers } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import ProfileDetails from "../ProfileDetails/ProfileDetails";
 
 const LeftSideBar = () => {
   const menus = [
@@ -177,8 +178,8 @@ const LeftSideBar = () => {
           ))}
         </div>
       </div>
-      <div className="m-3 text-xl text-gray-900 font-semibold ml-20">
-        REACT TAILWIND
+      <div className="m-3 text-gray-900 ml-28 hidden lg:block xl:block">
+          <ProfileDetails></ProfileDetails>
       </div>
     </section>
   );

@@ -4,6 +4,8 @@ import { BsThreeDots } from "react-icons/bs";
 import useClickOutside from "../../Components/helpers/clickOutside";
 import { useContext } from "react";
 import { Authcontext } from "../../Context/UserContext";
+import { useEffect } from "react";
+import UpdateCoverImg from "./UpdateProfileImage/UpdateCoverImg";
 
 const ProfileInfo = () => {
   const [showCoverMenu, setShowCoverMenu] = useState(false);
@@ -11,6 +13,8 @@ const ProfileInfo = () => {
   useClickOutside(menuRef, () => setShowCoverMenu(false));
 
   const { user } = useContext(Authcontext);
+
+  const [open, setOpen] = useState(false);
 
   return (
     <div>
@@ -47,14 +51,18 @@ const ProfileInfo = () => {
           className="bg-white absolute top-0 ml-[800px] mt-[410px] p-[10px] w-[200px] rounded-[10px] shadow-md z-[999]"
           ref={menuRef}
         >
-          <div className="cursor-pointer">
-            <p className="text-black">Update Profile Picture</p>
+          <div onClick={() => setOpen(true)} className="cursor-pointer p-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md">
+            <p className="">Update Profile Picture</p>
           </div>
-          <div className="cursor-pointer">
-            <p className="text-black">Upload Cover photo</p>
+          <div className="cursor-pointer p-2 mt-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md">
+            <p className="">Upload Cover photo</p>
           </div>
         </div>
       )}
+      <UpdateCoverImg
+      open={open}
+      setOpen={setOpen}
+      ></UpdateCoverImg>
     </div>
   );
 };

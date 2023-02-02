@@ -39,6 +39,7 @@ const PostBox = () => {
     const yyyy = currentData.getFullYear();
     currentData = mm + "/" + dd + "/" + yyyy;
 
+    const likes = [];
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
     const formData = new FormData();
@@ -65,6 +66,7 @@ const PostBox = () => {
         currentDate: currentData,
         postText: postText,
         img: imgLink,
+        likes,
       };
       console.log(usersData);
       fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
@@ -90,7 +92,7 @@ const PostBox = () => {
   return (
     <form
       onSubmit={formSubmit}
-      className="text-white  bg-gray-50 dark:bg-[#261b40] shadow-lg mx-auto mt-3 rounded-md"
+      className="text-white bg-gray-50 dark:bg-[#261b40] shadow-lg mx-auto mt-3 rounded-md"
     >
       <div className="outline-1 flex gap-4  p-8">
         <img
