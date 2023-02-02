@@ -17,7 +17,7 @@ const ProfileImgMobile = () => {
         <div className="">
           <img
             className="w-[70px] h-[70px] rounded-full"
-            src={profileImg}
+            src={user?.photoURL}
             alt=""
           />
         </div>
