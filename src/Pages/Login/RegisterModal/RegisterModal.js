@@ -167,7 +167,7 @@ const RegisterModal = () => {
             className="grid grid-cols-1 gap-3 mt-3"
           >
             <div className="flex justify-center flex-col items-center gap-3">
-              <img src={preview ? preview : 'https://smartdest.eu/wp-content/uploads/2020/04/dummy450x450.jpg'} className="w-[115px] h-[115px] rounded-full object-cover" alt="" />
+              <img src={preview ? preview : 'https://uchealth-wp-uploads.s3.amazonaws.com/wp-content/uploads/sites/5/2022/12/01181857/blankprovider-e1669918775597.jpg'} className="w-[115px] h-[115px] rounded-full object-cover" alt="" />
               <input type="file" onChange={onSelectFile} className='hidden' id='uploadPhoto' />
               <label htmlFor="uploadPhoto" className="mb-3 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded-full">Upload Photo</label>
             </div>
