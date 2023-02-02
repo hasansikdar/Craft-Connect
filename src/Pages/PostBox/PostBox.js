@@ -87,13 +87,7 @@ const PostBox = () => {
             });
         });
     } else {
-      withOutImg(usersPost, field)
-    }
-
-
-  };
-  const withOutImg = (usersPost, field) => {
-    fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
+      fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -111,8 +105,11 @@ const PostBox = () => {
           refetch();
         }
       });
+    }
 
-  }
+
+  };
+ 
   return (
     <form
       onSubmit={formSubmit}
