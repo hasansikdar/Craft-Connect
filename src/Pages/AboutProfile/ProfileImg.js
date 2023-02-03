@@ -7,10 +7,10 @@ const ProfileImg = () => {
   const { user } = useContext(Authcontext);
   return (
     <div className="hidden md:block">
-      <div className="absolute top-0 md:mt-[340px] md:mx-[490px]">
+      <div className="absolute top-0 md:mt-[310px] md:mx-[490px]">
         <img
           className="w-[132px] h-[132px] rounded-full"
-          src={user?.photoURL}
+          src={profileImg}
           alt=""
         />
       </div>

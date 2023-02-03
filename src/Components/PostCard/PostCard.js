@@ -116,7 +116,7 @@ const PostCard = ({
       {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
-          <div className="w-[320px] ml-[44px] md:ml-0 md:w-[590px] max-h-[560px] border p-5 rounded-md shadow-md">
+          <div className="w-full  max-h-[560px] border p-5 rounded-md shadow-md">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
@@ -125,8 +125,10 @@ const PostCard = ({
                   alt=""
                 />
                 <div>
-                  <p>{post?.userName}</p>
-                  <p className="text-sm">19 hours ago</p>
+                  <Link to={`/user/${post.userEmail}`}>
+                    <p>{post?.userName}</p>
+                  </Link>
+                  <p className="text-sm">{post?.currentDate}</p>
                 </div>
               </div>
               <div>

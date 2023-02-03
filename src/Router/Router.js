@@ -19,16 +19,16 @@ import Pages from "../Pages/Fb_Pages/Pages";
 import Friends from "../Shared/LeftSideMenubar/Friends/Friends";
 import FriendRequest from "../Shared/LeftSideMenubar/Friends/FriendRequest/FriendRequest";
 import FriendSuggestion from "../Shared/LeftSideMenubar/Friends/FriendSuggestion/FriendSuggestion";
-import Profile from "../Pages/UserProfile/Profile";
 import Discover from "../Pages/Groups/Discover/Discover";
 import AllFriends from "../Shared/LeftSideMenubar/Friends/AllFriends/AllFriends";
 import PostDetails from "../Pages/PostDetails/PostDetails";
-import CreateStoriesLayout from "../Pages/Stories/CreateStoriesLayout";
-import CreatePhotoStories from "../Pages/Stories/CreatePhotoStories";
-import CreateTextStories from "../Pages/Stories/CreateTextStories";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
 import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
+import UserById from "../Pages/AboutProfile/UserProfileById/UserById";
+import AdvertisementLayout from "../Pages/Adevertisement/AdvertisementLayout";
+import CreateAdvertisement from "../Pages/Adevertisement/CreateAdvertisement";
+import Chatting from "../Shared/Chatting/Chatting";
 
 export const Routes = createBrowserRouter([
   {
@@ -50,13 +50,13 @@ export const Routes = createBrowserRouter([
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
     ],
   },
-  // {
-  //   path: "/advertisement/create",
-  //   element: <CreateStoriesLayout />,
-  //   children: [
-  //     { path: "/advertisement/create/photo/", element: <CreatePhotoStories /> },
-  //   ],
-  // },
+  {
+    path: "/advertisement/create",
+    element: <AdvertisementLayout />,
+    children: [
+      { path: "/advertisement/create/photo/", element: <CreateAdvertisement /> },
+    ],
+  },
   {
     path: "/feature",
     element: (
@@ -117,7 +117,7 @@ export const Routes = createBrowserRouter([
   { path: "/friends/friendList", element: <CustomList></CustomList> },
   { path: "/friends/list", element: <AllFriends></AllFriends> },
   { path: "/login", element: <Login></Login> },
-  { path: "/chats", element: <Sidebar></Sidebar> },
+  { path: "/chats", element: <Chatting></Chatting> },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
@@ -128,4 +128,9 @@ export const Routes = createBrowserRouter([
     loader: ({ params }) =>
       fetch(`https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`),
   },
+  {
+    path: '/user/:email',
+    element: <UserById/>,
+    loader:({params}) => fetch(`http://localhost:5000/user/${params?.email}`)
+  }
 ]);

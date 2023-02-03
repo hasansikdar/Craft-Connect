@@ -5,12 +5,12 @@ import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
 import maruf from "../../assets/maruf.png";
 import hasan from "../../assets/hasan.png";
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.png";
 import { FaExclamation, FaMoon } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
-
-import { AiFillSetting } from "react-icons/ai";
+import profileImg from "../../assets/profile.jpg";
+import { AiFillSetting, AiOutlineDown } from "react-icons/ai";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import GoogleMeeting from "../../Components/GoogleMeeting/GoogleMeeting";
@@ -60,58 +60,64 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-[#2C2048] fixed top-0 z-[999] w-full">
-      <div className="flex justify-between items-center bg-zinc-800 border-b-2 border-zinc-600 py-1">
+    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-999 h-[72px] ">
+      <div className="flex justify-between items-center bg-zinc-800 py-2">
         <div className="pl-3">
           <Link to="/" class="text-2xl text-gray-900 font-semibold flex items-center active" href="/">
-              <img src={logo} className="w-7 d-block m-auto" alt="" />
+              <img src={logo} className="w-14 d-block m-auto" alt="" />
               <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
           </Link>
         </div>
-        <div>
-          <div
-            onClick={() => setSearch(!search)}
-            className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700"
-          >
-            <i className="">
-              <BiSearchAlt2></BiSearchAlt2>
-            </i>
-            {search && (
+
+        <div className="flex  gap-16 mr-5 items-center ">
+          <div>
+            {/* Search field for Mobile Device */}
+
+            <div
+              onClick={() => setSearch(!search)}
+              className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700"
+            >
+              <i className="">
+                <BiSearchAlt2></BiSearchAlt2>
+              </i>
+              {search && (
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="py-1 text-white  bg-zinc-700 hover:bg-zinc-600 w-[100px]"
+                />
+              )}
+            </div>
+
+            {/* Search field for Desktop Device */}
+
+            <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
               <input
                 type="text"
                 placeholder="Search"
-                className="py-1 text-white  bg-zinc-700 hover:bg-zinc-600 w-[100px]"
+                className="mx-2 md:mx-0 pl-4 pr-44 py-4 text-white w-full rounded-md bg-zinc-700"
               />
-            )}
+              <i className="pr-4">
+                <BiSearchAlt2></BiSearchAlt2>
+              </i>
+            </div>
           </div>
-          <div className="hidden md:flex justify-center items-center border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
-            <i className="">
-              <BiSearchAlt2></BiSearchAlt2>
-            </i>
-            <input
-              type="text"
-              placeholder="Search"
-              className="mx-2 md:mx-0 pl-3 py-1 text-white w-full bg-zinc-700 hover:bg-zinc-600"
-            />
-          </div>
-        </div>
 
-        <div className="pr-3 flex gap-2 items-center justify-end">
-          <GoogleMeeting></GoogleMeeting>
-          {/* <input
+          <div className="pr-3 flex gap-2 items-center justify-end">
+            {/* <input
             onClick={handleThemeSwitch}
             type="checkbox"
             className="toggle"
           /> */}
-          <button onClick={handleThemeSwitch} className="text-[20px]">
-            {theme === "light" ? (
-              <IoMdSunny className="text-white"></IoMdSunny>
-            ) : (
-              <FaMoon className="text-white"></FaMoon>
-            )}
-          </button>
+            <button onClick={handleThemeSwitch} className="text-[20px]">
+              {theme === "light" ? (
+                <IoMdSunny className="text-white"></IoMdSunny>
+              ) : (
+                <FaMoon className="text-white"></FaMoon>
+              )}
+            </button>
 
-          {/* <>
+            {/* <>
             {localStorage.getItem(
               "theme" === "light" ? (
                 <IoIosSunny></IoIosSunny>
@@ -121,33 +127,48 @@ const Navbar = () => {
             )}
           </> */}
 
-          <button
-            onClick={() => setMessageModal(!messageModal)}
-            className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
+            <button
+              onClick={() => setMessageModal(!messageModal)}
+              className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
+            >
+              <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
+            </button>
+
+            <button className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600">
+              <Link to="/chats">
+                <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
+              </Link>
+            </button>
+
+            <button
+              onClick={() => setNotification(!notification)}
+              className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
+            >
+              <IoMdNotifications className="text-xl md:text-2xl text-white">
+                {" "}
+              </IoMdNotifications>
+            </button>
+          </div>
+          <div
+            className=" flex items-center gap-2 cursor-pointer"
+            onClick={() => setProfile(!profile)}
           >
-            <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
-          </button>
-          <button className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600">
-            <Link to="/chats"><TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle></Link>
-          </button>
-          <button
-            onClick={() => setNotification(!notification)}
-            className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
-          >
-            <IoMdNotifications className="text-xl md:text-2xl text-white">
-              {" "}
-            </IoMdNotifications>
-          </button>
-          <div className="" onClick={() => setProfile(!profile)}>
             <img
               className="w-10 h-10 rounded-full"
-              src={`${
-                user?.photoURL
-                  ? user?.photoURL
-                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-              }`}
+              // src={`${
+              //   user?.photoURL
+              //     ? user?.photoURL
+              //     : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+              // }`}
+              src={profileImg}
               alt=""
             />
+            <p className="flex items-center gap-2">
+              <span>{user?.displayName}</span>{" "}
+              <span className="mt-1">
+                <AiOutlineDown />
+              </span>
+            </p>
           </div>
         </div>
       </div>

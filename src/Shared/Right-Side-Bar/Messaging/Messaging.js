@@ -1,6 +1,6 @@
 import React from "react";
 
-const Chat = () => {
+const Messaging = () => {
   return (
     <div>
       <div class="flex h-96 antialiased text-gray-800">
@@ -238,4 +238,4 @@ const Chat = () => {
   );
 };
 
-export default Chat;
+export default Messaging;
