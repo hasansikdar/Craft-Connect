@@ -3,38 +3,38 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-const UpdateCoverImg = ({open, setOpen, myProfile}) => {
-  // console.log(myProfile._id);
+const UpdateProfileImage = ({myProfile, openModal, setOpenModal}) => {
+    console.log(myProfile);
 
     const cancelButtonRef = useRef(null);
 
     const handleUpdateCoverImg = (event) =>{
       event.preventDefault();
-      const coverImg = event.target.updateCover.files[0];
+      const proImage = event.target.updateProfileImg.files[0];
       // console.log(coverImg);
 
       const imageKey = "024d2a09e27feff54122f51afddbdfaf";
       const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
       const formData = new FormData();
       // if (selectedFile) {
-      formData.append("image", coverImg);
+      formData.append("image", proImage);
       fetch(url, {
         method: "POST",
         body: formData,
       })
       .then(res => res.json())
       .then(data =>{
-        const coverImage = data?.data?.display_url;
-        const cbrImg = {coverImage}
+        const profileImage = data?.data?.display_url;
+        const profileImg = {profileImage}
         // console.log(data?.data?.display_url);
-        setOpen(false);
+        setOpenModal(false);
 
-          fetch(`http://localhost:5000/users/${myProfile?._id}`, {
+          fetch(`http://localhost:5000/profileImg/${myProfile?._id}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
             },
-            body: JSON.stringify(cbrImg),
+            body: JSON.stringify(profileImg),
           })
             .then((res) => res.json())
             .then((data) => {
@@ -45,20 +45,17 @@ const UpdateCoverImg = ({open, setOpen, myProfile}) => {
             });
 
       })
-
-
-
     }
 
 
     return (
       <>
-        <Transition.Root show={open} as={Fragment}>
+        <Transition.Root show={openModal} as={Fragment}>
           <Dialog
             as="div"
             className="relative z-100000"
             initialFocus={cancelButtonRef}
-            onClose={() => setOpen(false)}
+            onClose={() => setOpenModal(false)}
           >
             <Transition.Child
               as={Fragment}
@@ -92,7 +89,7 @@ const UpdateCoverImg = ({open, setOpen, myProfile}) => {
                         xmlns="http://www.w3.org/2000/svg"
                         className="w-6 h-6 cursor-pointer absolute right-[25px] top-[20px]"
                         onClick={() => {
-                          setOpen(false);
+                          setOpenModal(false);
                         }}
                         fill="none"
                         viewBox="0 0 24 24"
@@ -107,54 +104,10 @@ const UpdateCoverImg = ({open, setOpen, myProfile}) => {
                       </svg>
                       <>
                         <form onSubmit={handleUpdateCoverImg} className="">
-                          {/* <form
-                                onSubmit={handleUpdateCoverImg}
-                                className="flex items-center justify-center w-full mb-3 relative"
-                              >
-                                <label
-                                  htmlFor="dropzone-file"
-                                  className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:border-gray-600"
-                                >
-                                  <>
-                                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                      <svg
-                                        aria-hidden="true"
-                                        className="w-10 h-10 mb-3 text-gray-600"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth="2"
-                                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                                        ></path>
-                                      </svg>
-                                      <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                                        <span className="font-semibold">
-                                          Click to upload
-                                        </span>{" "}
-                                        or drag and drop
-                                      </p>
-                                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                                        PNG, JPG or GIF
-                                      </p>
-                                    </div>
-                                    <input
-                                      id="dropzone-file"
-                                      type="file"
-                                      name="P"
-                                      className="hidden"
-                                      multiple
-                                    />
-                                  </>
-                                </label>
-                              </form> */}
+                         
                           <input
                             type="file"
-                            name="updateCover"
+                            name="updateProfileImg"
                             className="file-input file-input-bordered w-full max-w-xs"
                           />
                           <div className="flex items-center space-x-2 rounded-b dark:border-gray-600 mt-2">
@@ -178,4 +131,4 @@ const UpdateCoverImg = ({open, setOpen, myProfile}) => {
     );
 };
 
-export default UpdateCoverImg;
+export default UpdateProfileImage;

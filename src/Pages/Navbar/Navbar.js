@@ -160,7 +160,7 @@ const Navbar = () => {
               //     ? user?.photoURL
               //     : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
               // }`}
-              src={profileImg}
+              src={user?.photoURL}
               alt=""
             />
             <p className="flex items-center gap-2 font-semibold text-[#fd454f]">
