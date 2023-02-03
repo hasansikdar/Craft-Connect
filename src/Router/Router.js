@@ -29,6 +29,7 @@ import CreateTextStories from "../Pages/Stories/CreateTextStories";
 import CustomList from "../Shared/LeftSideMenubar/Friends/CustomList/CustomList";
 import ProfileOfUser from "../Pages/AboutProfile/ProfileOfUser";
 import Sidebar from "../Shared/Chatting/SideBarChat/SidebarChat";
+import DiscoverPage from "../Pages/Fb_Pages/DiscoverPage/DiscoverPage";
 
 export const Routes = createBrowserRouter([
   {
@@ -48,6 +49,8 @@ export const Routes = createBrowserRouter([
       { path: "/sellerpro", element: <SellerPro></SellerPro> },
       { path: "/pages", element: <FollowPages></FollowPages> },
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
+      {path: "/feature/pages" , element:<Pages></Pages>},
+      {path: "/feature/pages/discover" , element:<DiscoverPage></DiscoverPage>},
     ],
   },
   // {
