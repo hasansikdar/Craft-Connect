@@ -11,7 +11,6 @@ const AdvertisementLayout = () => {
   const [preview, setPreview] = useState([]);
   return (
     <div>
-      <Navbar />
       <div className="lg:flex">
         <div className="xl:mr-auto lg:w-[300px] lg:none ">
           <AdvertisementLeftSideBar
