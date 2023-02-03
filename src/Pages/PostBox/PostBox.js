@@ -64,7 +64,6 @@ const PostBox = () => {
             img,
             likes,
           };
-          setusersPost({ userName, userEmail, userPhoto, currentData, postText, img: null, likes })
           console.log("imgBB", img, data);
 
           fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
@@ -81,35 +80,43 @@ const PostBox = () => {
                 field.reset();
                 setSelectedFile(undefined);
                 setPostText("");
-                setusersPost({})
                 refetch();
               }
             });
         });
     } else {
+      const usersData = {
+        userName,
+        userEmail,
+        userPhoto,
+        currentDate: currentData,
+        postText: postText,
+        img: null,
+        likes,
+      };
       fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(usersPost),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success("Post Add Success");
-          field.reset();
-          setSelectedFile(undefined);
-          setPostText("");
-          setusersPost({})
-          refetch();
-        }
-      });
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(usersData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            toast.success("Post Add Success");
+            field.reset();
+            setSelectedFile(undefined);
+            setPostText("");
+            setusersPost();
+            refetch();
+          }
+        });
     }
 
 
   };
- 
+
   return (
     <form
       onSubmit={formSubmit}

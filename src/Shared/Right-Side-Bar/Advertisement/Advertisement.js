@@ -1,9 +1,20 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import stories from "../../../Pages/Adevertisement/stories.json";
 
 const Advertisement = () => {
+  const { data: advertising = [], refetch } = useQuery({
+    queryKey: ["advertising"],
+    queryFn: async () => {
+      const res = await fetch(
+        "http://localhost:5000/advertising-post/"
+      );
+      const data = res.json();
+      return data;
+    },
+  });
   return (
     <div>
       <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40] m-auto">
@@ -17,20 +28,20 @@ const Advertisement = () => {
           autoPlay={true}
           showThumbs={false}
         >
-          {stories.map((story, index) => {
+          {advertising.map((advertise, index) => {
             return (
               <React.Fragment key={index}>
                 <div
                   className="select-none bg-img h-[300px] dark:bg-[#261b40] bg-white rounded-md transition bg-center bg-cover"
                   style={{
-                    background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) , url(${story.userStory})`,
+                    background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) , url(${advertise.advertiseBg})`,
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                   }}
                 >
                   <div className="flex justify-end flex-col items-start h-full rounded-md p-4">
-                    <p className="text-white text-bold text-xl">{story.userName}</p>
-                    <p className="text-white text-left text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing  </p>
+                    <p className="text-white text-bold text-xl">{advertise.userName}</p>
+                    <p className="text-white text-left text-sm">{advertise.advertiseContent.slice(0,50)}...  </p>
                   </div>
                 </div>
               </React.Fragment>
