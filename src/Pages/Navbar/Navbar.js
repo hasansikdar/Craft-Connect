@@ -167,8 +167,8 @@ const Navbar = () => {
               src={profileImg}
               alt=""
             />
-            <p className="flex items-center gap-2">
-              <span>{user?.displayName}</span>{" "}
+            <p className="flex items-center gap-2 font-semibold text-[#fd454f]">
+              <span>{user?.displayName}</span>
               <span className="mt-1">
                 <AiOutlineDown />
               </span>
@@ -369,9 +369,16 @@ const Navbar = () => {
                   }`}
                   alt=""
                 />
-                <h3 className="text-xl">{user?.displayName}</h3>
+                <h3 className="text-xl font-bold text-[#FF3F4A] hover:text-white">
+                  {user?.displayName}
+                </h3>
               </Link>
-              <div onClick={() => setProfile(false)}>✕</div>
+              <div
+                className="btn btn-sm text-white hover:bg-[#99030a] bg-[#FF3F4A]"
+                onClick={() => setProfile(false)}
+              >
+                ✕
+              </div>
             </div>
             <div className=" border-t border-zinc-600"></div>
             <div className="py-4">

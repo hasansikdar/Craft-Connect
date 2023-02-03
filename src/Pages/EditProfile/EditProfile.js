@@ -46,7 +46,7 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="py-5 ">
+    <div className="py-5">
       <h1 className="text-3xl text-center mt-5 text-[#FF3F4A] font-semibold">
         Edit Profile
       </h1>
