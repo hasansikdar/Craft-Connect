@@ -1,10 +1,10 @@
 import React from 'react';
+import { BsStars } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import CreatePage from './CreatePage';
-import PageCard from './PageCard/PageCard';
-import { BsStars } from "react-icons/bs";
+import CreatePage from '../CreatePage';
+import PageCard from '../PageCard/PageCard';
 
-const Pages = () => {
+const DiscoverPage = () => {
     return (
         <div className='flex gap-8 items-start'>
             <div className='flex flex-col mt-10 gap-6'>
@@ -21,7 +21,7 @@ const Pages = () => {
                     <div className='w-14 bg-[#a6adbe] h-full rounded-l-lg flex justify-center items-center text-white'>
                         <BsStars className='text-2xl'></BsStars>
                     </div>
-                    <h1 className='pl-8 text-gray-400'>Here you'll see the recent updates of Pages!</h1>
+                    <h1 className='pl-8 text-gray-400'>Here you'll see all Pages!</h1>
                 </div>
                 <PageCard></PageCard>
             </div>
@@ -29,4 +29,4 @@ const Pages = () => {
     );
 };
 
-export default Pages;
+export default DiscoverPage;
