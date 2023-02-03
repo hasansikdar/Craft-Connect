@@ -60,7 +60,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-999 h-[72px] ">
+    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
       <div className="flex justify-between items-center bg-zinc-800 py-2">
         <div className="pl-3">
           <Link
@@ -179,29 +179,29 @@ const Navbar = () => {
 
       {/*-----------------------------------------Messanger Modal Start---------------------------------------------- */}
       {messageModal && (
-        <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+        <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5">
           <div className="px-3 py-3">
             <div className="flex justify-between">
-              <h3 className="text-2xl font-bold">Chats</h3>
+              <h3 className="text-2xl font-bold text-[#FF3F4A]">Chats</h3>
               <div
                 onClick={() => setMessageModal(false)}
-                className="btn btn-ghost"
+                className="btn btn-sm text-white hover:bg-[#99030a] bg-[#FF3F4A]"
               >
                 ✕
               </div>
             </div>
-            <div className="hidden md:flex justify-center items-center  border border-zinc-600 rounded-full px-3 bg-zinc-700 hover:bg-zinc-600">
+            <div className="hidden md:flex justify-center items-center mt-2  border border-zinc-600 rounded-full px-3 bg-white dark:bg-[#FF3F4A] hover:bg-[#FF3F4A]">
               <i className="">
                 <BiSearchAlt2></BiSearchAlt2>
               </i>
               <input
                 type="text"
                 placeholder="Search"
-                className="mx-2 md:mx-0 pl-3 py-1 text-white w-full bg-zinc-700 hover:bg-zinc-600"
+                className="mx-2 md:mx-0 pl-3 py-1 text-white w-full bg-white dark:bg-[#FF3F4A] hover:bg-[#FF3F4A]"
               />
             </div>
             <div className="py-4">
-              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+              <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
                   src={`${
@@ -218,21 +218,21 @@ const Navbar = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+              <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
                 <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
                 <div>
                   <p className="text-xl">Muhammad Hasan</p>
                   <p className="font-bold">Rahat sent you a message.</p>
                 </div>
               </div>
-              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+              <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
                 <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
                 <div>
                   <p className="text-xl">Maruf Khan</p>
                   <p className="font-bold">Muhammad Ali sent you a message.</p>
                 </div>
               </div>
-              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+              <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
                 <img
                   className="w-16 rounded-full mr-2 "
                   src={`${
@@ -247,7 +247,7 @@ const Navbar = () => {
                   <p className="font-bold">Farhan Anjum sent you a message.</p>
                 </div>
               </div>
-              <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+              <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
                 <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
                 <div>
                   <p className="text-xl">Muhammad Hasan</p>
@@ -262,19 +262,23 @@ const Navbar = () => {
 
       {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
       {notification && (
-        <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5">
+        <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5">
           <div className="px-3 py-3">
             <div className="flex justify-between">
-              <h3 className="text-2xl font-bold">Notifications</h3>
+              <h3 className="text-2xl font-bold text-[#FF3F4A]">
+                Notifications
+              </h3>
               <div
                 onClick={() => setNotification(false)}
-                className="btn btn-ghost"
+                className="btn btn-sm text-white hover:bg-[#99030a] bg-[#FF3F4A]"
               >
                 ✕
               </div>
             </div>
-            <p>All Notifications</p>
-            <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+            <p className="text-gray-600 dark:text-gray-400">
+              All Notifications
+            </p>
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
               <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
               <div>
                 <p className="">
@@ -283,7 +287,7 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
               <img
                 className="w-16 rounded-full mr-2 "
                 src={`${
@@ -301,7 +305,7 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
               <img
                 className="w-16 rounded-full mr-2 "
                 src={`${
@@ -319,7 +323,7 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
               <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
               <div>
                 <p className="">
@@ -333,7 +337,7 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-center hover:bg-zinc-600 p-2 rounded-md cursor-pointer">
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
               <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
               <div>
                 <p className="">
@@ -349,12 +353,12 @@ const Navbar = () => {
 
       {/*#########################################Profile Modal Start####################################################*/}
       {profile && (
-        <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999px] bg-zinc-800 mt-5  ">
+        <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5 ">
           <div className="px-3 py-3">
-            <div className="flex justify-between mb-2">
+            <div className="flex justify-between items-center mb-2 ">
               <Link
                 to="/feature/profile"
-                className="flex items-center cursor-pointer hover:bg-zinc-600 w-full p-2 rounded-md "
+                className="flex items-center cursor-pointer hover:bg-[#b4373e] dark:text-white text-black hover:text-white w-full p-2 rounded-md "
               >
                 <img
                   className="w-10 h-10  rounded-full mr-3"
@@ -367,42 +371,40 @@ const Navbar = () => {
                 />
                 <h3 className="text-xl">{user?.displayName}</h3>
               </Link>
-              <div onClick={() => setProfile(false)} className="btn btn-ghost">
-                ✕
-              </div>
+              <div onClick={() => setProfile(false)}>✕</div>
             </div>
             <div className=" border-t border-zinc-600"></div>
             <div className="py-4">
-              <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+              <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                 <div className="flex items-center">
-                  <AiFillSetting className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                  <AiFillSetting className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
                   <p className="font-bold">Setting & Privacy</p>
                 </div>
                 <div>
                   <FcNext className="text-2xl mr-2" />
                 </div>
               </div>
-              <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+              <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                 <div className="flex items-center">
-                  <FcQuestions className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                  <FcQuestions className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
                   <p className="font-bold">Help & Support</p>
                 </div>
                 <div>
                   <FcNext className="text-2xl mr-2" />
                 </div>
               </div>
-              <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+              <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                 <div className="flex items-center">
-                  <FaMoon className="text-4xl bg-zinc-600 p-1 rounded-full mr-2 text-yellow-500" />
+                  <FaMoon className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
                   <p className="font-bold">Display & Accessibility</p>
                 </div>
                 <div>
                   <FcNext className="text-2xl mr-2" />
                 </div>
               </div>
-              <div className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer">
+              <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                 <div className="flex items-center">
-                  <FaExclamation className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                  <FaExclamation className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
                   <p className="font-bold">Give feedback</p>
                 </div>
                 <div>
@@ -411,10 +413,10 @@ const Navbar = () => {
               </div>
               <div
                 onClick={handleLogout}
-                className="flex justify-between items-center py-2 hover:bg-zinc-600 rounded-md cursor-pointer"
+                className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer"
               >
                 <div className="flex items-center">
-                  <FcExport className="text-4xl bg-zinc-600 p-1 rounded-full mr-2" />
+                  <FcExport className="text-4xl text-white bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
                   <p className="font-bold">Logout</p>
                 </div>
                 <div>
