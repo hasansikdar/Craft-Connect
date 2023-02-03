@@ -36,7 +36,7 @@ const AdvertisementLeftSideBar = ({
     setSelectedFile(e.target.files);
   };
   return (
-    <div className="h-screen w-[300px] bg-gray-50 dark:bg-[#261b40] p-5 pt-[80px]">
+    <div className="h-screen w-[300px] bg-gray-50 dark:bg-[#261b40] p-5 pt-[80px] overflow-y-auto overflwo-x-hidden">
       <h1 className="text-2xl font-bold">Create Advertisement</h1>
       <div className="users-avatar pt-5  flex gap-3 items-center">
         <img

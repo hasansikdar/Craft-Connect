@@ -13,7 +13,7 @@ const AdvertisementLayout = () => {
     <div>
       <Navbar />
       <div className="lg:flex">
-        <div className="xl:mr-auto lg:w-[300px] lg:none">
+        <div className="xl:mr-auto lg:w-[300px] lg:none ">
           <AdvertisementLeftSideBar
             selectedFile={selectedFile}
             setSelectedFile={setSelectedFile}
