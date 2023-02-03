@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const LeftSide = () => {
   return (
-    <div className="p-5 dark:bg-[#2C2048] bg-white h-screen fixed top-[60px] w-[360px]">
+    <div className="p-5 dark:bg-[#2C2048] bg-white h-screen fixed z-[1000] top-[60px] w-[360px]">
       <div className="flex justify-between items-center text-black dark:text-white">
         <h2 className="text-xl font-bold">Friends</h2>
 

@@ -16,14 +16,13 @@ const Advertisement = () => {
     },
   });
   return (
-    <div>
-      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40] m-auto">
-
+    <div className="">
+      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40] m-auto ">
         <Carousel
           showArrows={false}
           showIndicators={false}
           stopOnHover={true}
-          showStatus={false} 
+          showStatus={false}
           infiniteLoop={true}
           autoPlay={true}
           showThumbs={false}
