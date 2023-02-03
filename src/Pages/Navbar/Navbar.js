@@ -63,9 +63,13 @@ const Navbar = () => {
     <div className="dark:bg-[#2C2048] fixed w-full top-0 z-999 h-[72px] ">
       <div className="flex justify-between items-center bg-zinc-800 py-2">
         <div className="pl-3">
-          <Link to="/" class="text-2xl text-gray-900 font-semibold flex items-center active" href="/">
-              <img src={logo} className="w-14 d-block m-auto" alt="" />
-              <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
+          <Link
+            to="/"
+            class="text-2xl text-gray-900 font-semibold flex items-center active"
+            href="/"
+          >
+            <img src={logo} className="w-14 d-block m-auto" alt="" />
+            <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
           </Link>
         </div>
 
@@ -345,7 +349,7 @@ const Navbar = () => {
 
       {/*#########################################Profile Modal Start####################################################*/}
       {profile && (
-        <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] bg-zinc-800 mt-5  ">
+        <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999px] bg-zinc-800 mt-5  ">
           <div className="px-3 py-3">
             <div className="flex justify-between mb-2">
               <Link

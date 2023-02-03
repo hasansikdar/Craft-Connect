@@ -9,7 +9,6 @@ import { useQuery } from "@tanstack/react-query";
 import DynamicPostCard from "./DynamicPostCard";
 
 const PostCards = () => {
-
   const { user } = useContext(Authcontext);
   // console.log(user);
 
@@ -27,12 +26,9 @@ const PostCards = () => {
 
   return (
     <div>
-      {
-        myPosts.map((myPost) =><DynamicPostCard
-        key={myPost._id}
-        myPost={myPost}
-        ></DynamicPostCard>)
-      }
+      {myPosts.map((myPost) => (
+        <DynamicPostCard key={myPost._id} myPost={myPost}></DynamicPostCard>
+      ))}
     </div>
   );
 };

@@ -6,13 +6,12 @@ import stories from "../../../Pages/Adevertisement/stories.json";
 const Advertisement = () => {
   return (
     <div>
-      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40] m-auto">
-
+      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 dark:bg-[#261b40] m-auto z-0">
         <Carousel
           showArrows={false}
           showIndicators={false}
           stopOnHover={true}
-          showStatus={false} 
+          showStatus={false}
           infiniteLoop={true}
           autoPlay={true}
           showThumbs={false}
@@ -29,8 +28,12 @@ const Advertisement = () => {
                   }}
                 >
                   <div className="flex justify-end flex-col items-start h-full rounded-md p-4">
-                    <p className="text-white text-bold text-xl">{story.userName}</p>
-                    <p className="text-white text-left text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing  </p>
+                    <p className="text-white text-bold text-xl">
+                      {story.userName}
+                    </p>
+                    <p className="text-white text-left text-sm">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing{" "}
+                    </p>
                   </div>
                 </div>
               </React.Fragment>

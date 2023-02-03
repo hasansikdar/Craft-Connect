@@ -174,12 +174,12 @@ const PostCard = ({
 
                     <p className="text-3xl">{post?.likes?.length}</p>
                   </div>
-                  <div className="flex items-center gap-1">
+                  {/* <div className="flex items-center gap-1">
                     <button className="text-[27px]">
                       <TfiCommentAlt />
                     </button>
                     <p>07</p>
-                  </div>
+                  </div> */}
                 </div>
                 <div>
                   <button className="text-3xl">
