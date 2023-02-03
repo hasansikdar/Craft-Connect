@@ -51,7 +51,7 @@ const EditProfile = () => {
         Edit Profile
       </h1>
 
-      <div className="profileInfo p-3 mt-10 rounded text-center border border-white shadow h-[400px] overflow-scroll bg-gray-100 mx-2 text-black dark:text-white">
+      <div className="profileInfo p-3 mt-10 rounded text-center border border-white shadow h-[400px] overflow-scroll bg-gray-100 dark:bg-[#23124b] mx-2 text-black dark:text-white">
         <div className="text-right">
           <button
             onClick={() => setEdit(true)}
@@ -105,7 +105,7 @@ const EditProfile = () => {
                 {user?.displayName}
               </h1>
             )}
-            <div className="othersProfileInfo mb-10 mt-4 bg-white mx-[40%] rounded py-2">
+            <div className="othersProfileInfo mb-10 mt-4 bg-white dark:bg-[#341a70] lg:mx-[40%] rounded py-2">
               <h3>
                 Email: <span className="text-blue-500">{user?.email}</span>
               </h3>
