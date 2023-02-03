@@ -29,6 +29,7 @@ import UserById from "../Pages/AboutProfile/UserProfileById/UserById";
 import AdvertisementLayout from "../Pages/Adevertisement/AdvertisementLayout";
 import CreateAdvertisement from "../Pages/Adevertisement/CreateAdvertisement";
 import Chatting from "../Shared/Chatting/Chatting";
+import DiscoverPage from "../Pages/Fb_Pages/DiscoverPage/DiscoverPage";
 
 export const Routes = createBrowserRouter([
   {
@@ -49,6 +50,8 @@ export const Routes = createBrowserRouter([
       { path: "/pages", element: <FollowPages></FollowPages> },
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
       { path: "/advertisement/create", element: <AdvertisementLayout /> },
+      {path: "/feature/pages" , element:<Pages></Pages>},
+      {path: "/feature/pages/discover" , element:<DiscoverPage></DiscoverPage>},
       {
         path: "/feature/watch",
         element: <Watch></Watch>,
