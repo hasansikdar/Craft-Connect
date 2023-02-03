@@ -48,7 +48,7 @@ export const Routes = createBrowserRouter([
       { path: "/sellerpro", element: <SellerPro></SellerPro> },
       { path: "/pages", element: <FollowPages></FollowPages> },
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
-      { path: "/advertisement/create/photo/", element: <CreateAdvertisement /> },
+      { path: "/advertisement/create", element: <CreateAdvertisement /> },
       {
         path: "/feature/watch",
         element: <Watch></Watch>,
