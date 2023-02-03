@@ -9,7 +9,7 @@ import groupimage7 from "../../../assets/jinnahGroupPic/group image7.jpg";
 
 const DiscoverPageCard = () => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center justify-center">
             <div className="card card-compact w-[300px] text-black dark:text-white bg-gray-100 dark:bg-[#2C2048] shadow-xl">
                 <figure>
                     <img
