@@ -49,11 +49,8 @@ const UserProfileInfo = ({userDetails}) => {
           className="bg-white absolute top-0 ml-[800px] mt-[410px] p-[10px] w-[200px] rounded-[10px] shadow-md z-[999]"
           ref={menuRef}
         >
-          <div className="cursor-pointer">
-            <p className="text-black">Update Profile Picture</p>
-          </div>
-          <div className="cursor-pointer">
-            <p className="text-black">Upload Cover photo</p>
+          <div className="cursor-pointer p-2 mt-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md text-center">
+            <p className="text-black">Report this user</p>
           </div>
         </div>
       )}
