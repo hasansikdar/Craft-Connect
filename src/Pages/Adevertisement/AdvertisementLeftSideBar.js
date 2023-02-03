@@ -41,7 +41,7 @@ const AdvertisementLeftSideBar = ({
       <div className="users-avatar pt-5  flex gap-3 items-center">
         <img
           className="w-[60px] h-[60px] rounded-full"
-          src="https://avatars.githubusercontent.com/u/94055231?v=4"
+          src={user?.photoURL}
           alt=""
         />
         <h1 className="text-xl capitalize">{user.displayName}</h1>
