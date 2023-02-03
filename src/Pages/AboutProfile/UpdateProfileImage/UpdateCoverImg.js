@@ -3,9 +3,52 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
-const UpdateCoverImg = ({open, setOpen}) => {
+const UpdateCoverImg = ({open, setOpen, myProfile}) => {
+  // console.log(myProfile._id);
 
     const cancelButtonRef = useRef(null);
+
+    const handleUpdateCoverImg = (event) =>{
+      event.preventDefault();
+      const coverImg = event.target.updateCover.files[0];
+      // console.log(coverImg);
+
+      const imageKey = "024d2a09e27feff54122f51afddbdfaf";
+      const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
+      const formData = new FormData();
+      // if (selectedFile) {
+      formData.append("image", coverImg);
+      fetch(url, {
+        method: "POST",
+        body: formData,
+      })
+      .then(res => res.json())
+      .then(data =>{
+        const coverImage = data?.data?.display_url;
+        const cbrImg = {coverImage}
+        // console.log(data?.data?.display_url);
+        setOpen(false);
+
+          fetch(`http://localhost:5000/users/${myProfile?._id}`, {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(cbrImg),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.modifiedCount > 0) {
+                // alert("user updated");
+                console.log(data);
+              }
+            });
+
+      })
+
+
+
+    }
 
 
     return (
@@ -63,63 +106,66 @@ const UpdateCoverImg = ({open, setOpen}) => {
                         />
                       </svg>
                       <>
-                        <div className="">
-                          <>  
-                              <>
-                                  <div className="flex items-center justify-center w-full mb-3 relative">
-                                    <label
-                                      htmlFor="dropzone-file"
-                                      className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:border-gray-600"
-                                    >
-                                      <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <svg
-                                          aria-hidden="true"
-                                          className="w-10 h-10 mb-3 text-gray-600"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                                          ></path>
-                                        </svg>
-                                        <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                                          <span className="font-semibold">
-                                            Click to upload
-                                          </span>{" "}
-                                          or drag and drop
-                                        </p>
-                                        <p className="text-xs text-gray-500 dark:text-gray-400">
-                                          PNG, JPG or GIF
-                                        </p>
-                                      </div>
-                                      <input
-                                        id="dropzone-file"
-                                        type="file"
-                                        className="hidden"
-                                        multiple
-                                      />
-                                    </label>
-                                  </div>
-                                
-                                  <></>
-                              </>
-                          </>
-                        </div>
-                        <div className="flex items-center space-x-2 rounded-b dark:border-gray-600">
-                          <button
-                            onClick={() => {
-                              setOpen(false);
-                            }}
-                            className="disabled:cursor-not-allowed text-center w-full bg-[#FF3F4A] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-[#FF3F4A] text-sm font-medium px-5 py-2.5 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white"
-                          >
-                            Upload Image
-                          </button>
-                        </div>
+                        <form onSubmit={handleUpdateCoverImg} className="">
+                          {/* <form
+                                onSubmit={handleUpdateCoverImg}
+                                className="flex items-center justify-center w-full mb-3 relative"
+                              >
+                                <label
+                                  htmlFor="dropzone-file"
+                                  className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:border-gray-600"
+                                >
+                                  <>
+                                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                      <svg
+                                        aria-hidden="true"
+                                        className="w-10 h-10 mb-3 text-gray-600"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth="2"
+                                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                                        ></path>
+                                      </svg>
+                                      <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                                        <span className="font-semibold">
+                                          Click to upload
+                                        </span>{" "}
+                                        or drag and drop
+                                      </p>
+                                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                                        PNG, JPG or GIF
+                                      </p>
+                                    </div>
+                                    <input
+                                      id="dropzone-file"
+                                      type="file"
+                                      name="P"
+                                      className="hidden"
+                                      multiple
+                                    />
+                                  </>
+                                </label>
+                              </form> */}
+                          <input
+                            type="file"
+                            name="updateCover"
+                            className="file-input file-input-bordered w-full max-w-xs"
+                          />
+                          <div className="flex items-center space-x-2 rounded-b dark:border-gray-600 mt-2">
+                            <button
+                              type="submit"
+                              className="disabled:cursor-not-allowed text-center w-full bg-[#FF3F4A] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-[#FF3F4A] text-sm font-medium px-5 py-2.5 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white"
+                            >
+                              Upload Image
+                            </button>
+                          </div>
+                        </form>
                       </>
                     </div>
                   </Dialog.Panel>
