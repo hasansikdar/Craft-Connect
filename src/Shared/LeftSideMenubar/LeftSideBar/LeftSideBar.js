@@ -19,7 +19,7 @@ const LeftSideBar = () => {
     { name: "Home", link: "/", icon: FiHome },
     { name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/", icon: FiUsers },
-    { name: "Pages", link: "/", icon: FaRegFlag },
+    { name: "Pages", link: "/feature/pages", icon: FaRegFlag },
     { name: "Marketplace", link: "/", icon: GiFamilyHouse },
     { name: "Bookmarked", link: "/", icon: BsBookmark },
     { name: "Ad Center", link: "/", icon: RiAdvertisementLine },
