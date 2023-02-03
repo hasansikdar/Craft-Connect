@@ -12,7 +12,7 @@ const PostCards = () => {
   const { user } = useContext(Authcontext);
   // console.log(user);
 
-  const url = `http://localhost:5000/myposts?email=${user?.email}`;
+  const url = `https://craft-connect-server-blond.vercel.app/myposts?email=${user?.email}`;
 
   const { data: myPosts = [] } = useQuery({
     queryKey: ["products", user?.email],

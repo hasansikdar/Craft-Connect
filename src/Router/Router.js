@@ -108,7 +108,7 @@ export const Routes = createBrowserRouter([
       {
         path: '/user/:email',
         element: <UserById/>,
-        loader:({params}) => fetch(`http://localhost:5000/user/${params?.email}`)
+        loader:({params}) => fetch(`https://craft-connect-server-blond.vercel.app/user/${params?.email}`)
       }
     ],
   },

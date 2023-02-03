@@ -9,7 +9,7 @@ const Advertisement = () => {
     queryKey: ["advertising"],
     queryFn: async () => {
       const res = await fetch(
-        "http://localhost:5000/advertising-post/"
+        "https://craft-connect-server-blond.vercel.app/advertising-post/"
       );
       const data = res.json();
       return data;

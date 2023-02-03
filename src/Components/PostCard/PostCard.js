@@ -95,7 +95,7 @@ const PostCard = ({
     const likeInfo = { userId: user, postId: post?._id };
     allLike.push(...likeLength, likeInfo);
 
-    fetch(`http://localhost:5000/users/${post?._id}`, {
+    fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

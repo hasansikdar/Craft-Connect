@@ -13,7 +13,7 @@ const AdvertiseContent = ({
     queryKey: ["advertising"],
     queryFn: async () => {
       const res = await fetch(
-        "http://localhost:5000/advertising-post/"
+        "https://craft-connect-server-blond.vercel.app/advertising-post/"
       );
       const data = res.json();
       return data;
@@ -41,7 +41,7 @@ const AdvertiseContent = ({
         const advertisephoto = data?.data?.display_url;
         const advertiseObj = { userEmail, advertiseContent, userPhoto, userName, advertiseBg: advertisephoto };
         console.log(advertiseObj)
-        fetch('http://localhost:5000/advertising-post/', {
+        fetch('https://craft-connect-server-blond.vercel.app/advertising-post/', {
           method: 'POST',
           headers: {
             "content-type": "application/json",

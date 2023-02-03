@@ -12,7 +12,7 @@ const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
     const userName = user?.displayName;
     const storyObj = { userEmail, storiesContent, userPhoto, userName };
     console.log(storyObj, user);
-    fetch("http://localhost:5000/text/stories", {
+    fetch("https://craft-connect-server-blond.vercel.app/text/stories", {
       method: "POST",
       headers: {
         "content-type": "application/json",
