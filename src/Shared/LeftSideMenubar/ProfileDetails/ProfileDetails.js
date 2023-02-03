@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { HiSpeakerphone } from "react-icons/hi";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaWifi } from "react-icons/fa";
 import { Authcontext } from "../../../Context/UserContext";
 
 const ProfileDetails = () => {
@@ -38,6 +38,12 @@ const ProfileDetails = () => {
               </Link>
             </div>
           </ul>
+        </div>
+        <div className="divider m-0"></div> 
+        <div>
+            <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-5 py-2">
+              <FaWifi></FaWifi> Followed by 487 people
+            </Link>
         </div>
       </div>
     </div>
