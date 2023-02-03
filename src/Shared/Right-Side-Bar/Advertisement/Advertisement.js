@@ -41,7 +41,7 @@ const Advertisement = () => {
                 >
                   <div className="flex justify-end flex-col items-start h-full rounded-md p-4">
                     <p className="text-white text-bold text-xl">{advertise.userName}</p>
-                    <p className="text-white text-left text-sm">{advertise.advertiseContent.slice(0,10)}...  </p>
+                    <p className="text-white text-left text-sm">{advertise.advertiseContent.slice(0,50)}...  </p>
                   </div>
                 </div>
               </React.Fragment>
