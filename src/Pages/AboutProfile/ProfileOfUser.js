@@ -8,9 +8,8 @@ import ProfileInfo from "./ProfileInfo";
 
 const ProfileOfUser = () => {
   return (
-    <div>
-      <Navbar />
-      <div className="dark:bg-[#2C2048]">
+    <div className="">
+      <div className="dark:bg-[#2C2048] overflow-y-auto h-screen">
         <div className="pb-20 ">
           <div className="mt-[60px] md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
             <CoverImg />

@@ -27,16 +27,16 @@ const ProfileDetails = () => {
         </div>
         <div>
           <ul className="menu">
-            <li className="hover:bg-[#FF3F4A] hover:text-white dark:text-white text-gray-700 duration-200 rounded-md">
-              <Link to="/editprofile" className="justify-between">
+            <div className="hover:bg-[#FF3F4A] hover:text-white dark:text-white text-gray-700 duration-200 rounded-md px-5 py-2">
+              <Link to="/editprofile" className="justify-between flex">
                 <p>Edit Profile</p> <FaEdit></FaEdit>
               </Link>
-            </li>
-            <li className="hover:bg-[#FF3F4A] hover:text-white dark:text-white text-gray-700 duration-200 rounded-md">
-              <Link to="/advertisement/create" className="justify-between">
+            </div>
+            <div className="hover:bg-[#FF3F4A] hover:text-white dark:text-white text-gray-700 duration-200 rounded-md px-5 py-2">
+              <Link to="/advertisement/create" className="justify-between flex">
                 Create Advertisement <HiSpeakerphone></HiSpeakerphone>
               </Link>
-            </li>
+            </div>
           </ul>
         </div>
       </div>

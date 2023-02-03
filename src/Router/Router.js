@@ -48,23 +48,7 @@ export const Routes = createBrowserRouter([
       { path: "/sellerpro", element: <SellerPro></SellerPro> },
       { path: "/pages", element: <FollowPages></FollowPages> },
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
-    ],
-  },
-  {
-    path: "/advertisement/create",
-    element: <AdvertisementLayout />,
-    children: [
       { path: "/advertisement/create/photo/", element: <CreateAdvertisement /> },
-    ],
-  },
-  {
-    path: "/feature",
-    element: (
-      <PrivateRouter>
-        <FeatureLayout></FeatureLayout>
-      </PrivateRouter>
-    ),
-    children: [
       {
         path: "/feature/watch",
         element: <Watch></Watch>,
@@ -97,40 +81,40 @@ export const Routes = createBrowserRouter([
         path: "/feature/pages",
         element: <Pages></Pages>,
       },
+      {
+        path: "/feature/profile",
+        element: <ProfileOfUser />,
+      },
+      {
+        path: "/friends",
+        element: <Friends></Friends>,
+        children: [],
+      },
+    
+      { path: "/friends/requests", element: <FriendRequest></FriendRequest> },
+      {
+        path: "/friends/suggestion",
+        element: <FriendSuggestion></FriendSuggestion>,
+      },
+      { path: "/friends/friendList", element: <CustomList></CustomList> },
+      { path: "/friends/list", element: <AllFriends></AllFriends> },
+      { path: "/chats", element: <Chatting></Chatting> },
+      {
+        path: "/postDetails/:id",
+        element: <PostDetails></PostDetails>,
+        loader: ({ params }) =>
+          fetch(`https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`),
+      },
+      {
+        path: '/user/:email',
+        element: <UserById/>,
+        loader:({params}) => fetch(`http://localhost:5000/user/${params?.email}`)
+      }
     ],
   },
-  {
-    path: "/feature/profile",
-    element: <ProfileOfUser />,
-  },
-  {
-    path: "/friends",
-    element: <Friends></Friends>,
-    children: [],
-  },
-
-  { path: "/friends/requests", element: <FriendRequest></FriendRequest> },
-  {
-    path: "/friends/suggestion",
-    element: <FriendSuggestion></FriendSuggestion>,
-  },
-  { path: "/friends/friendList", element: <CustomList></CustomList> },
-  { path: "/friends/list", element: <AllFriends></AllFriends> },
   { path: "/login", element: <Login></Login> },
-  { path: "/chats", element: <Chatting></Chatting> },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
   },
-  {
-    path: "/postDetails/:id",
-    element: <PostDetails></PostDetails>,
-    loader: ({ params }) =>
-      fetch(`https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`),
-  },
-  {
-    path: '/user/:email',
-    element: <UserById/>,
-    loader:({params}) => fetch(`http://localhost:5000/user/${params?.email}`)
-  }
 ]);

@@ -131,10 +131,6 @@ const Navbar = () => {
               onClick={() => setMessageModal(!messageModal)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
-              <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
-            </button>
-
-            <button className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600">
               <Link to="/chats">
                 <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
               </Link>

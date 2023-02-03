@@ -42,7 +42,7 @@ const Main = () => {
       <Navbar></Navbar>
 
       <div className='lg:flex w-full'>
-        <div className='w-[130px]'>
+        <div className='w-[100px]'>
           <LeftSideBar></LeftSideBar>
         </div>
 
