@@ -3,6 +3,8 @@ import { BsStars } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import CreatePage from '../CreatePage';
 import PageCard from '../PageCard/PageCard';
+import DiscoverPageCard from './DiscoverPageCard';
+
 
 const DiscoverPage = () => {
     return (
@@ -21,9 +23,9 @@ const DiscoverPage = () => {
                     <div className='w-14 bg-[#a6adbe] h-full rounded-l-lg flex justify-center items-center text-white'>
                         <BsStars className='text-2xl'></BsStars>
                     </div>
-                    <h1 className='pl-8 text-gray-400'>Here you'll see all Pages!</h1>
+                    <h1 className='pl-8 text-gray-400'>Here you'll see all the suggested Pages!</h1>
                 </div>
-                <PageCard></PageCard>
+                <DiscoverPageCard></DiscoverPageCard>
             </div>
         </div>
     );
