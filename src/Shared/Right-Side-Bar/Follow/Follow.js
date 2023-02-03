@@ -13,9 +13,7 @@ const Follow = () => {
         <li className="flex items-center justify-between py-3 px-4 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white duration-300 rounded-lg cursor-pointer">
           <div className="flex items-center cursor-pointer">
             <img src={page1} className="rounded-full w-8" alt="frnd" />
-            <p className="ml-2">
-              1st Page
-            </p>
+            <p className="ml-2">1st Page</p>
           </div>
 
           <div className="text-center">
@@ -29,9 +27,7 @@ const Follow = () => {
         <li className="flex items-center justify-between py-3 px-4 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white duration-300 rounded-lg cursor-pointer">
           <div className="flex items-center cursor-pointer">
             <img src={page2} className="rounded-full w-8" alt="frnd" />
-            <p className="ml-2">
-              2nd Page
-            </p>
+            <p className="ml-2">2nd Page</p>
           </div>
 
           <div className="text-center">
@@ -45,9 +41,7 @@ const Follow = () => {
         <li className="flex items-center justify-between py-3 px-4 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white duration-300 rounded-lg cursor-pointer">
           <div className="flex items-center cursor-pointer">
             <img src={page3} className="rounded-full w-8" alt="frnd" />
-            <p className="ml-2">
-              Crafty page
-            </p>
+            <p className="ml-2">Crafty page</p>
           </div>
 
           <div className="text-center">

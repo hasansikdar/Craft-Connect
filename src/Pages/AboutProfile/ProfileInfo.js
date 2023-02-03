@@ -51,7 +51,10 @@ const ProfileInfo = () => {
           className="bg-white absolute top-0 ml-[800px] mt-[410px] p-[10px] w-[200px] rounded-[10px] shadow-md z-[999]"
           ref={menuRef}
         >
-          <div onClick={() => setOpen(true)} className="cursor-pointer p-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md">
+          <div
+            onClick={() => setOpen(true)}
+            className="cursor-pointer p-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md"
+          >
             <p className="">Update Profile Picture</p>
           </div>
           <div className="cursor-pointer p-2 mt-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md">
@@ -59,10 +62,7 @@ const ProfileInfo = () => {
           </div>
         </div>
       )}
-      <UpdateCoverImg
-      open={open}
-      setOpen={setOpen}
-      ></UpdateCoverImg>
+      <UpdateCoverImg open={open} setOpen={setOpen}></UpdateCoverImg>
     </div>
   );
 };

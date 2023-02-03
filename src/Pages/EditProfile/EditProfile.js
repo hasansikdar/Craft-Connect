@@ -47,11 +47,16 @@ const EditProfile = () => {
 
   return (
     <div className="py-5">
-      <h1 className="text-3xl text-center mt-5">Edit Profile</h1>
+      <h1 className="text-3xl text-center mt-5 text-[#FF3F4A] font-semibold">
+        Edit Profile
+      </h1>
 
-      <div className="profileInfo p-3 mt-10 rounded text-center border border-white shadow h-[400px] overflow-scroll">
+      <div className="profileInfo p-3 mt-10 rounded text-center border border-white shadow h-[400px] overflow-scroll bg-gray-100 dark:bg-[#23124b] mx-2 text-black dark:text-white">
         <div className="text-right">
-          <button onClick={() => setEdit(true)} className="btn btn-sm">
+          <button
+            onClick={() => setEdit(true)}
+            className="btn btn-sm bg-[#FF3F4A] hover:bg-[#cb1f28] dark:text-white text-black hover:text-white"
+          >
             Edit
           </button>
         </div>
@@ -96,9 +101,11 @@ const EditProfile = () => {
                 </button>
               </div>
             ) : (
-              <h1 className="text-2xl">{user?.displayName}</h1>
+              <h1 className="text-2xl text-[#FF3F4A] font-bold">
+                {user?.displayName}
+              </h1>
             )}
-            <div className="othersProfileInfo mb-10 mt-4">
+            <div className="othersProfileInfo mb-10 mt-4 bg-white dark:bg-[#341a70] lg:mx-[40%] rounded py-2">
               <h3>
                 Email: <span className="text-blue-500">{user?.email}</span>
               </h3>
