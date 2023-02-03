@@ -12,7 +12,7 @@ const ProfileOfUser = () => {
       <Navbar />
       <div className="dark:bg-[#2C2048]">
         <div className="pb-20 ">
-          <div className="mt-[60px] md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
+          <div className="mt-[-28px] md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
             <CoverImg />
             <CoverImgMobile />
             <ProfileInfo />
