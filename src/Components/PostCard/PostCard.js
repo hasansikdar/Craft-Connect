@@ -11,20 +11,13 @@ import {
 } from "react-icons/fa";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
-
+import { FcLike } from "react-icons/fc";
 import UserContext, { Authcontext } from "../../Context/UserContext";
 import Reactions from "../../Shared/Reactions/Reactions";
 import { useQuery } from "@tanstack/react-query";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
-
-// const likes =[
-//   {userId : 'jwqjiaj', postId:'kjksjfs'},
-//   {userId : 'jwqjiaj', postId:'kjksjfs'},
-//   {userId : 'jwqjiaj', postId:'kjksjfs'},
-//   {userId : 'jwqjiaj', postId:'kjksjfs'},
-// ]
 
 const PostCard = ({
   refetch,
@@ -87,12 +80,13 @@ const PostCard = ({
 
   // for like post
 
-  // console.log(likeLength[0]);
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
-    console.log(hello[0]);
+    // console.log(hello[0]);
     if (!hello[0]) {
       return handleLike();
+    } else {
+      return setLove(true);
     }
   };
 
@@ -168,7 +162,7 @@ const PostCard = ({
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => likedUser(user?.uid)}
-                      disabled={love === true}
+                      disabled={liked === true}
                       className={
                         liked ? "text-[34px] text-blue-600" : "text-[34px]"
                       }
