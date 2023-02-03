@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { Authcontext } from "../../Context/UserContext";
 import { useEffect } from "react";
 import UpdateCoverImg from "./UpdateProfileImage/UpdateCoverImg";
+import UpdateProfileImage from "./UpdateProfileImage/UpdateProfileImage";
 
 const ProfileInfo = ({myProfile}) => {
   const [showCoverMenu, setShowCoverMenu] = useState(false);
@@ -15,6 +16,7 @@ const ProfileInfo = ({myProfile}) => {
   // const { user } = useContext(Authcontext);
 
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div>
@@ -51,7 +53,10 @@ const ProfileInfo = ({myProfile}) => {
           className="bg-white absolute top-0 ml-[800px] mt-[410px] p-[10px] w-[200px] rounded-[10px] shadow-md z-[999]"
           ref={menuRef}
         >
-          <div className="cursor-pointer p-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md text-center">
+          <div
+            onClick={() => setOpenModal(true)}
+            className="cursor-pointer p-2 hover:bg-[#cc323b] text-black  hover:text-white duration-300 rounded-md text-center"
+          >
             <p className="">Update Profile Picture</p>
           </div>
           <div
@@ -62,7 +67,12 @@ const ProfileInfo = ({myProfile}) => {
           </div>
         </div>
       )}
-      <UpdateCoverImg myProfile={myProfile} open={open} setOpen={setOpen}></UpdateCoverImg>
+      <UpdateCoverImg
+        myProfile={myProfile}
+        open={open}
+        setOpen={setOpen}
+      ></UpdateCoverImg>
+      <UpdateProfileImage myProfile={myProfile} openModal={openModal} setOpenModal={setOpenModal}></UpdateProfileImage>
     </div>
   );
 };
