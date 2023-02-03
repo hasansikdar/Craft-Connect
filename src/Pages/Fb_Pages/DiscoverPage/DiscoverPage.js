@@ -9,8 +9,8 @@ const DiscoverPage = () => {
         <div className='flex gap-8 items-start'>
             <div className='flex flex-col mt-10 gap-6'>
                 <div className='flex flex-col bg-[#d9e4fc]  text-black p-5 w-60 rounded-sm'>
-                    <Link to='/feature/pages'><button className='py-2 w-full px-5 mt-1 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  rounded-lg'>Your feeds </button></Link>
-                    <Link to='/feature/pages/discover'><button className='w-full py-2 px-5 mt-1 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  rounded-lg'>Discover Pages </button></Link>
+                    <Link to='/feature/pages'><button className='py-2 w-full px-5 mt-1 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  rounded-lg'>Your feeds</button></Link>
+                    <Link to='/feature/pages/discover'><button className='w-full py-2 px-5 mt-1 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  rounded-lg'>Discover Pages</button></Link>
                 </div>
                 <div>
                     <CreatePage></CreatePage>
