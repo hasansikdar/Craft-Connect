@@ -25,11 +25,11 @@ const PostCards = () => {
   // console.log(myPosts);
 
   return (
-    <div>
+    <>
       {myPosts.map((myPost) => (
         <DynamicPostCard key={myPost._id} myPost={myPost}></DynamicPostCard>
       ))}
-    </div>
+    </>
   );
 };
 

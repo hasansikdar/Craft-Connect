@@ -14,12 +14,12 @@ import img9 from "../../../assets/ifty/327271761_1333126427522949_15659448050790
 const PostView = () => {
   return (
     <div className=" ">
-      <div className="flex gap-4 justify-center">
+      <div className="grid grid-cols-12 gap-5 justify-center ">
         <ProfileLeft />
-        <div>
+        <div className="col-start-[5] col-end-[11] justify-center">
           <PostCards />
         </div>
-        <div className="w-[251px] h-[290px] p-5 border hidden md:block rounded-md shadow-md">
+        {/* <div className="w-full h-[290px] p-5 border hidden md:block rounded-md shadow-md">
           <div className="border-b">
             <p className="text-2xl font-bold">Latest Photos</p>
           </div>
@@ -52,7 +52,7 @@ const PostView = () => {
               <img className="w-[55px]" src={img5} alt="" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

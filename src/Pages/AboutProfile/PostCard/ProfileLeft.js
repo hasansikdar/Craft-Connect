@@ -4,8 +4,8 @@ import { AiFillGithub } from "react-icons/ai";
 
 const ProfileLeft = () => {
   return (
-    <div className="w-[251px] p-5 border hidden md:block rounded-md shadow-md">
-      <div className="border-b">
+    <div className="w-full col-start-[1] col-end-[5] p-5 border border-slate-500/80 hidden md:block rounded-md shadow-md h-fit">
+      <div className="border-b border-slate-500/80 pb-2 ">
         <p className="text-2xl font-bold">Profile Intro</p>
       </div>
       <div className="pt-5">
@@ -23,7 +23,7 @@ const ProfileLeft = () => {
         </p>
       </div>
       <div className="pt-5">
-        <p className="font-bold">Other Social Networks:</p>
+        <p className="text-base mb-2">Other Social Networks:</p>
         <button className="flex items-center justify-center py-3 w-full rounded-md gap-2 bg-blue-500 mb-2">
           <BsFacebook className="text-white text-xl" />
           <p className="font-bold text-white">Facebook</p>
