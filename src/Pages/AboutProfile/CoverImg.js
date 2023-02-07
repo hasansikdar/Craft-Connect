@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import cover from "../../assets/cover.jpg";
 import ProfileImg from "./ProfileImg";
 
-const CoverImg = ({myProfile}) => {
+const CoverImg = ({ myProfile }) => {
 
 
 

@@ -67,7 +67,12 @@ const ProfileInfo = ({myProfile}) => {
           </div>
         </div>
       )}
-      <UpdateCoverImg open={open} setOpen={setOpen}></UpdateCoverImg>
+      <UpdateCoverImg
+        myProfile={myProfile}
+        open={open}
+        setOpen={setOpen}
+      ></UpdateCoverImg>
+      <UpdateProfileImage myProfile={myProfile} openModal={openModal} setOpenModal={setOpenModal}></UpdateProfileImage>
     </>
   );
 };
