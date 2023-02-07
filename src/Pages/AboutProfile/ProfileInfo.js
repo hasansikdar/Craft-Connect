@@ -19,8 +19,8 @@ const ProfileInfo = ({myProfile}) => {
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <div>
-      <div className="hidden md:flex justify-evenly  items-center mt-[15px]  pb-2 w-[900px] md:w-[1084px] mx-auto ">
+    <>
+      <div className="hidden md:flex justify-evenly  items-center mt-[7%]  pb-2 w-full  mx-auto ">
         <div>
           <Link>Timeline</Link>
         </div>
@@ -67,13 +67,8 @@ const ProfileInfo = ({myProfile}) => {
           </div>
         </div>
       )}
-      <UpdateCoverImg
-        myProfile={myProfile}
-        open={open}
-        setOpen={setOpen}
-      ></UpdateCoverImg>
-      <UpdateProfileImage myProfile={myProfile} openModal={openModal} setOpenModal={setOpenModal}></UpdateProfileImage>
-    </div>
+      <UpdateCoverImg open={open} setOpen={setOpen}></UpdateCoverImg>
+    </>
   );
 };
 

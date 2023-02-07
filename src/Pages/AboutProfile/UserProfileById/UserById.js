@@ -14,13 +14,9 @@ const UserById = () => {
 
     return (
       <div>
-        <Navbar/>
         <div className="dark:bg-[#2C2048] mt-[65px] md:mt-[-42px] ">
-          <div>
-            <LeftSideBar/>
-          </div>
           <div className="pb-20">
-            <div className="md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
+            <div className="md:w-[1084px] md:mx-auto md:shadow-md ">
               <UserCoverPhoto/>
               <UserCoverMobile/>
               <UserProfileInfo userDetails={userDetails}/>
