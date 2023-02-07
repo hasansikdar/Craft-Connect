@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import cover from "../../assets/cover.jpg";
 import ProfileImg from "./ProfileImg";
 
-const CoverImg = ({myProfile}) => {
+const CoverImg = ({ myProfile }) => {
 
 
 
@@ -11,7 +11,7 @@ const CoverImg = ({myProfile}) => {
     <div className="w-[1084px] mx-auto hidden md:block">
       <div
         style={{
-          background: `URL(${myProfile?.coverPhoto})`,
+          background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) ,url(${cover})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           // backgroundRepeat:"no-repeat",

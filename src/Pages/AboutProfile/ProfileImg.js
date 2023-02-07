@@ -7,9 +7,9 @@ const ProfileImg = ({myProfile}) => {
   // const { user } = useContext(Authcontext);
   return (
     <div className="hidden md:block">
-      <div className="md:mx-[490px]">
+      <div className="flex justify-center w-full relative">
         <img
-          className="w-[132px] h-[132px] rounded-full"
+          className="w-[130px] h-[130px] rounded-full object-cover absolute translate-y-[-50%] shadow-lg"
           src={myProfile?.photoURL?.profileImage}
           alt=""
         />
