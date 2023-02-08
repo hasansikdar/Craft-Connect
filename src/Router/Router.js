@@ -50,8 +50,11 @@ export const Routes = createBrowserRouter([
       { path: "/pages", element: <FollowPages></FollowPages> },
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
       { path: "/advertisement/create", element: <AdvertisementLayout /> },
-      {path: "/feature/pages" , element:<Pages></Pages>},
-      {path: "/feature/pages/discover" , element:<DiscoverPage></DiscoverPage>},
+      { path: "/feature/pages", element: <Pages></Pages> },
+      {
+        path: "/feature/pages/discover",
+        element: <DiscoverPage></DiscoverPage>,
+      },
       {
         path: "/feature/watch",
         element: <Watch></Watch>,
@@ -93,7 +96,7 @@ export const Routes = createBrowserRouter([
         element: <Friends></Friends>,
         children: [],
       },
-    
+
       { path: "/friends/requests", element: <FriendRequest></FriendRequest> },
       {
         path: "/friends/suggestion",
@@ -106,13 +109,18 @@ export const Routes = createBrowserRouter([
         path: "/postDetails/:id",
         element: <PostDetails></PostDetails>,
         loader: ({ params }) =>
-          fetch(`https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`),
+          fetch(
+            `https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`
+          ),
       },
       {
-        path: '/user/:email',
-        element: <UserById/>,
-        loader:({params}) => fetch(`https://craft-connect-server-blond.vercel.app/user/${params?.email}`)
-      }
+        path: "/user/:email",
+        element: <UserById />,
+        loader: ({ params }) =>
+          fetch(
+            `https://craft-connect-server-blond.vercel.app/user/${params?.email}`
+          ),
+      },
     ],
   },
   { path: "/login", element: <Login></Login> },
