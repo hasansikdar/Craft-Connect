@@ -10,21 +10,20 @@ import PostView from "./PostCard/PostView";
 import ProfileInfo from "./ProfileInfo";
 
 const ProfileOfUser = () => {
-
-  const {user} = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
   // console.log(user);
 
   const url = `https://craft-connect-server-blond.vercel.app/users?email=${user?.email}`;
-   const { data: users = [] } = useQuery({
-     queryKey: ["users", user?.email],
-     queryFn: async () => {
-       const res = await fetch(url);
-       const data = res.json();
-       return data;
-     },
-   });
+  const { data: users = [] } = useQuery({
+    queryKey: ["users", user?.email],
+    queryFn: async () => {
+      const res = await fetch(url);
+      const data = res.json();
+      return data;
+    },
+  });
 
-   console.log(users);
+  console.log(users);
 
   return (
     <>

@@ -18,6 +18,7 @@ import React, { useContext, useEffect, useState } from "react";
 // import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
+import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 
 const PostCard = ({
@@ -146,10 +147,20 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <a>Bookmarked</a>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                        href="/"
+                      >
+                        Bookmark
+                      </a>
                     </li>
                     <li>
-                      <a>Item 2</a>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                        href="/"
+                      >
+                        Save
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -192,12 +203,14 @@ const PostCard = ({
 
                     <p className="text-3xl">{post?.likes?.length}</p>
                   </div>
-                  {/* <div className="flex items-center gap-1">
-                    <button className="text-[27px]">
-                      <TfiCommentAlt />
-                    </button>
-                    <p>07</p>
-                  </div> */}
+                  <div className="flex items-center gap-1">
+                    <Link to={`/postDetails/${post?._id}`}>
+                      <button className="text-[27px]">
+                        <TfiCommentAlt />
+                      </button>
+                    </Link>
+                    {/* <p>07</p> */}
+                  </div>
                 </div>
                 <div>
                   <button className="text-3xl">

@@ -73,7 +73,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex  gap-16 mr-5 items-center ">
+        <div>
           <div>
             {/* Search field for Mobile Device */}
 
@@ -106,7 +106,8 @@ const Navbar = () => {
               </i>
             </div>
           </div>
-
+        </div>
+        <div className="flex  gap-16 mr-5 items-center ">
           <div className="pr-3 flex gap-2 items-center justify-end">
             {/* <input
             onClick={handleThemeSwitch}
@@ -121,16 +122,6 @@ const Navbar = () => {
               )}
             </button>
 
-            {/* <>
-            {localStorage.getItem(
-              "theme" === "light" ? (
-                <IoIosSunny></IoIosSunny>
-              ) : (
-                <FaMoon></FaMoon>
-              )
-            )}
-          </> */}
-
             <button
               onClick={() => setMessageModal(!messageModal)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
@@ -139,25 +130,31 @@ const Navbar = () => {
                 <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
               </Link>
             </button>
+            <button onClick={() => setNotification(!notification)}>
+              <IoMdNotifications className="text-xl md:text-2xl text-white"></IoMdNotifications>
+            </button>
 
-            <div className="dropdown dropdown-hover">
-            <label tabIndex={0} className="m-1">
-            <IoMdNotifications className="text-xl md:text-2xl text-white">
-                {" "}
-              </IoMdNotifications>
-            </label>
-            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li><a>Item 2</a></li>
-            </ul>
-          </div>
+            {/* <div className="dropdown dropdown-hover">
+              <label tabIndex={0} className="m-1">
+                <IoMdNotifications className="text-xl md:text-2xl text-white"></IoMdNotifications>
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a>Item 1</a>
+                </li>
+                <li>
+                  <a>Item 2</a>
+                </li>
+              </ul>
+            </div> */}
 
-            <button
+            {/* <button
               onClick={() => setNotification(!notification)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
-            >
-              
-            </button>
+            ></button> */}
           </div>
           <div
             className=" flex items-center gap-2 cursor-pointer"
@@ -173,12 +170,12 @@ const Navbar = () => {
               src={user?.photoURL}
               alt=""
             />
-            <p className="flex items-center gap-2 font-semibold text-[#fd454f]">
+            {/* <p className="flex items-center gap-2 font-semibold text-[#fd454f]">
               <span>{user?.displayName}</span>
               <span className="mt-1">
                 <AiOutlineDown />
               </span>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
