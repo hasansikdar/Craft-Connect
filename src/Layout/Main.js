@@ -38,7 +38,7 @@ import LeftSideBar from '../Shared/LeftSideMenubar/LeftSideBar/LeftSideBar'
 
 const Main = () => {
   return (
-    <div className="dark:bg-[#2C2048] bg-white overflow-hidden h-screen">
+    <div className="dark:bg-[#2C2048] bg-gray-50 overflow-hidden h-screen">
       <Navbar></Navbar>
 
       <div className='lg:flex w-full'>

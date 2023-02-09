@@ -77,7 +77,6 @@ const PostDetails = () => {
 
   return (
     <div className="">
-      <Navbar></Navbar>
       <div className="h-screen text-black dark:text-white">
         <div className="my-10 flex w-11/12 mx-auto pt-10">
           <div className="w-[70%] ">

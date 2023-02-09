@@ -115,8 +115,8 @@ const PostCard = ({
     <div>
       {/* Latest Design Post card  */}
       <div>
-        <div className="my-3">
-          <div className="w-full border p-5 rounded-md shadow-md">
+        <div className="my-4 bg-white dark:bg-[#261b40]">
+          <div className="w-full border border-[#FF3F4A] p-5 rounded-md shadow-md">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
@@ -137,7 +137,7 @@ const PostCard = ({
                 </p>
               </div>
             </div>
-            <div className="pb-7">
+            <div className="pb-5">
               <p className="py-4 text-black dark:text-white">
                 {post?.postText?.length > 100 ? (
                   <>
@@ -152,7 +152,7 @@ const PostCard = ({
               </p>
               <Link to={`/postDetails/${post?._id}`}>
                 <img
-                  className="w-full rounded-md mt-[5px]"
+                  className="w-11/12 m-auto rounded-md mt-[5px]"
                   src={post?.img}
                   alt=""
                 />
@@ -166,13 +166,13 @@ const PostCard = ({
                       onClick={() => likedUser(user?.uid)}
                       disabled={liked === true}
                       className={
-                        liked ? "text-[34px] text-blue-600" : "text-[34px]"
+                        liked ? "text-[25px] text-blue-600" : "text-[25px]"
                       }
                     >
                       <BiLike />
                     </button>
 
-                    <p className="text-3xl">{post?.likes?.length}</p>
+                    <p className="text-[25px]">{post?.likes?.length}</p>
                   </div>
                   {/* <div className="flex items-center gap-1">
                     <button className="text-[27px]">
@@ -182,7 +182,7 @@ const PostCard = ({
                   </div> */}
                 </div>
                 <div>
-                  <button className="text-3xl">
+                  <button className="text-[25px]">
                     <BiShareAlt />
                   </button>
                 </div>

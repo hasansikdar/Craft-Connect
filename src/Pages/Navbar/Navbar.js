@@ -159,12 +159,12 @@ const Navbar = () => {
               
             </button>
           </div>
-          <div
-            className=" flex items-center gap-2 cursor-pointer"
+          <button
+            className=" flex items-center gap-2 mr-10"
             onClick={() => setProfile(!profile)}
           >
             <img
-              className="w-10 h-10 rounded-full"
+              className="w-10 h-10 object-cover rounded-full"
               // src={`${
               //   user?.photoURL
               //     ? user?.photoURL
@@ -173,13 +173,7 @@ const Navbar = () => {
               src={user?.photoURL}
               alt=""
             />
-            <p className="flex items-center gap-2 font-semibold text-[#fd454f]">
-              <span>{user?.displayName}</span>
-              <span className="mt-1">
-                <AiOutlineDown />
-              </span>
-            </p>
-          </div>
+          </button>
         </div>
       </div>
 
@@ -367,7 +361,7 @@ const Navbar = () => {
                 className="flex items-center cursor-pointer hover:bg-[#b4373e] dark:text-white text-black hover:text-white w-full p-2 rounded-md "
               >
                 <img
-                  className="w-10 h-10  rounded-full mr-3"
+                  className="w-10 h-10 object-cover rounded-full mr-3"
                   src={`${
                     user?.photoURL
                       ? user?.photoURL

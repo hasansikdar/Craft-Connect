@@ -7,11 +7,11 @@ import Stories from "../Adevertisement/Stories";
 const Home = () => {
   return (
     <div className="home mt-5 w-full">
-      <div class="grid grid-cols-4 gap-8">
-        <div class="">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="hidden lg:block">
           <ProfileDetails></ProfileDetails>
         </div>
-        <div class="home col-span-2 overflow-scroll h-screen">
+        <div class="home w-11/12 m-auto col-span-2 overflow-scroll h-screen">
           <Stories></Stories>
           <Posts></Posts>
         </div>
