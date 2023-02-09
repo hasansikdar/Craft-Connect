@@ -18,7 +18,7 @@ import logo from '../../../assets/logo.png';
 const LeftSideBar = () => {
   const menus = [
     { name: "Home", link: "/", icon: AiFillHome },
-    { name: "Most Recent", link: "/", icon: BsFileImageFill },
+    { name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/", icon: FiUsers },
     { name: "Pages", link: "/feature/pages", icon: BsFiles },
     { name: "Marketplace", link: "/", icon: SiHomebridge },
@@ -56,7 +56,7 @@ const LeftSideBar = () => {
         </div>
 
 
-        <div className="mt-10 lg:flex flex-col px-4 gap-4 relative  hidden">
+        <div className="mt-2 lg:flex flex-col px-4 gap-4 relative  hidden">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}
