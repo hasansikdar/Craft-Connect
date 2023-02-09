@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 const AdCenter = () => {
