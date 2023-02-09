@@ -23,7 +23,7 @@ const LeftSideBar = () => {
     { name: "Pages", link: "/feature/pages", icon: BsFiles },
     { name: "Marketplace", link: "/", icon: SiHomebridge },
     { name: "Bookmarked", link: "/", icon: BsBookmark },
-    { name: "Ad Center", link: "/", icon: RiAdvertisementLine },
+    { name: "Ad Center", link: "/feature/adcenter", icon: RiAdvertisementLine },
     { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
   ];
   const [open, setOpen] = useState(false);
