@@ -7,7 +7,7 @@ const AdCenterDetail = () => {
     console.log(add, userName);
     return (
         <div className='h-screen flex justify-center items-center'>
-                     
+            
         </div>
     );
 };
