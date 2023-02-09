@@ -17,7 +17,7 @@ import logo from '../../../assets/logo.png';
 
 const LeftSideBar = () => {
   const menus = [
-    { name: "Home", link: "/", icon: AiFillHome},
+    { name: "Home", link: "/", icon: AiFillHome },
     { name: "Most Recent", link: "/", icon: BsFileImageFill },
     { name: "Friends", link: "/", icon: FiUsers },
     { name: "Pages", link: "/feature/pages", icon: BsFiles },
