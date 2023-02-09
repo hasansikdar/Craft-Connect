@@ -72,7 +72,6 @@ const Navbar = () => {
     },
     
   });
-  // console.log(allusers);
 
   
 
