@@ -56,7 +56,7 @@ const LeftSideBar = () => {
         </div>
 
 
-        <div className="mt-10 lg:flex flex-col px-4 gap-4 relative  hidden">
+        <div className="mt-2 lg:flex flex-col px-4 gap-4 relative  hidden">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}
