@@ -30,7 +30,7 @@ const AdCenter = () => {
                     <img className="object-cover w-full h-[350px] rounded-md" src={advertise.advertiseBg} alt="" />
                   </Link>
                   <div className="flex py-4 items-center gap-3 ">
-                    <img src={advertise.userPhoto} className='w-[50px] h-[50px] rounded-full' alt="" />
+                    <img src={advertise.userPhoto} className='w-[50px] h-[50px] rounded-full ' alt="" /> 
                     <div className="flex flex-col">
                       <span className="font-semibold tracking-widest uppercase rounded-full text-gray-300"> {advertise.userName} </span>
                       <span className="text-xs font-base text-gray-300"> {advertise.userEmail} </span>
