@@ -48,7 +48,7 @@ const ProfileLeft = () => {
       </div>
    </div>
    <div className="w-full h-full py-5 hidden md:block rounded-md mt-5">
-          <div className="">
+          <div>
             <p className="text-2xl font-bold">Latest Photos</p>
           </div>
           <div className="pr-2 mt-2 grid grid-cols-3 gap-3 grid-rows-auto overflow-y-auto h-[300px]">

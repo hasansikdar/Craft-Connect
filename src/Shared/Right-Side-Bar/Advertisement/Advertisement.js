@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Link } from "react-router-dom";
 import stories from "../../../Pages/Adevertisement/stories.json";
 
 const Advertisement = () => {
@@ -40,7 +41,7 @@ const Advertisement = () => {
                 >
                   <div className="flex justify-end flex-col items-start h-full rounded-md p-4">
                     <p className="text-white text-bold text-xl">{advertise.userName}</p>
-                    <p className="text-white text-left text-sm">{advertise.advertiseContent.slice(0,50)}...  </p>
+                    <p className="text-white text-left text-sm ">{advertise.advertiseContent.slice(0,50)} <Link to={advertise._id}>See More</Link>  </p>
                   </div>
                 </div>
               </React.Fragment>
