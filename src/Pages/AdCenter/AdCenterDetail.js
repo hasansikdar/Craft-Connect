@@ -15,12 +15,14 @@ const AdCenterDetail = () => {
                         <p className='text-xs text-gray-300'>{userEmail}</p>
                     </div>
                 </div>
-                <div>
-                    <img src={advertiseBg} className='rounded-md shadow-md mt-2 w-full h-[500px]' alt="" />
+               <div className='flex flex-col items-center'>
+               <div>
+                    <img src={advertiseBg} className='rounded-md shadow-md mt-2 w-[50rem] h-[500px]' alt="" />
                 </div>
-                <div>
+                <div className='w-[50rem] h-[500px]'>
                     <p className='mt-5 test-base'>{advertiseContent}</p>
                 </div>
+               </div>
             </div>
         </section>
     );

@@ -29,9 +29,12 @@ const AdCenter = () => {
                   <Link to={advertise._id} className="block aspect-w-4 aspect-h-3">
                     <img className="object-cover w-full h-[350px] rounded-md" src={advertise.advertiseBg} alt="" />
                   </Link>
-                  <div className="flex py-4 items-center gap-3">
-                    <img src={advertise.userPhoto} className='w-[40px] h-[50px] rounded-md' alt="" />
-                    <span className="text-xs font-semibold tracking-widest uppercase rounded-full text-gray-300"> {advertise.userName} </span>
+                  <div className="flex py-4 items-center gap-3 ">
+                    <img src={advertise.userPhoto} className='w-[50px] h-[50px] rounded-full' alt="" />
+                    <div className="flex flex-col">
+                      <span className="font-semibold tracking-widest uppercase rounded-full text-gray-300"> {advertise.userName} </span>
+                      <span className="text-xs font-base text-gray-300"> {advertise.userEmail} </span>
+                    </div>
                   </div>
                   <Link to={advertise._id} title={advertise.advertiseContent} className="text-gray-100 mt-2 block h-[30px] pb-5 mb-8"> {advertise.advertiseContent.slice(0, 100)}...</Link>
                   <Link to={advertise._id} className="px-4 relative w-full block bottom-0 left-0 py-3 text-xs text-center font-semibold tracking-widest uppercase rounded-lg text-rose-500 bg-rose-100 my-3">Read More </Link>
