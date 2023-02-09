@@ -41,7 +41,7 @@ const Advertisement = () => {
                 >
                   <div className="flex justify-end flex-col items-start h-full rounded-md p-4">
                     <p className="text-white text-bold text-xl">{advertise.userName}</p>
-                    <p className="text-white text-left text-sm ">{advertise.advertiseContent.slice(0,50)} <Link to={advertise._id}>See More</Link>  </p>
+                    <p className="text-white text-left text-sm">{advertise.advertiseContent.slice(0, 50)} <Link className=" hover:underline" to={`/feature/adcenter/${advertise._id}`}>See More</Link>  </p>
                   </div>
                 </div>
               </React.Fragment>
