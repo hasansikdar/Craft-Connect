@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Outlet } from 'react-router-dom';
 import DashboardNav from './DashboardNav';
+import DashboardSidebar from './DashboardSidebar';
 const Dashboard = () => {
     return (
         <>
@@ -10,7 +11,7 @@ const Dashboard = () => {
             </Helmet>
             <div>
                 <DashboardNav/>
-                <DashboardSideBar />
+                <DashboardSidebar />
                 <div
                     id="main-content"
                     class="h-full bg-gray-50 relative overflow-y-auto lg:ml-64"
