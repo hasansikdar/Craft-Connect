@@ -14,7 +14,7 @@ const Dashboard = () => {
                 <DashboardSidebar />
                 <div
                     id="main-content"
-                    class="h-full bg-gray-50 relative overflow-y-auto lg:ml-64"
+                    class="h-screen dark:bg-[#2C2048]  relative overflow-y-auto lg:ml-64"
                 >
                     <main>
                         <div class="pt-6 px-4">
