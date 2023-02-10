@@ -83,8 +83,8 @@ const Navbar = () => {
               class="text-2xl text-gray-900 font-semibold flex items-center active"
               href="/"
             >
-              <img src={logo} className="w-14 d-block m-auto" alt="" />
-              <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
+              {/* <img src={logo} className="w-14 d-block m-auto" alt="" /> */}
+              <p class="text-lg text-white ml-1.5 lg:ml-[80px] hidden lg:block">Craft Connect</p>
             </Link>
           </div>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
 
               <div
                 onClick={() => setSearch(!search)}
-                className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700"
+                className="flex md:hidden justify-center  items-center   border border-zinc-600 rounded-full px-3 bg-zinc-700 py-[4px] my-[4px] ml-[60px]"
               >
                 <i className="">
                   <BiSearchAlt2></BiSearchAlt2>
