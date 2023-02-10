@@ -78,15 +78,53 @@ const PostDetails = () => {
   return (
     <div className="">
       <div className="h-screen text-black dark:text-white">
-        <div className="my-10 flex w-11/12 mx-auto pt-10">
-          <div className="w-[70%] ">
-            <img
-              className="w-full h-[500px] rounded border border-black"
-              src={postdetails?.img}
-              alt=""
-            />
+        {postdetails?.img ? (
+          <div className="my-10 flex w-11/12 mx-auto pt-10">
+            <div className="w-[70%] ">
+              <img
+                className="w-full h-[500px] rounded border border-black"
+                src={postdetails?.img}
+                alt=""
+              />
+            </div>
+            <div className="ml-5 p-2 pl-4 rounded border-l border-black dark:border-white w-[25%]">
+              <PostUserInfo post={postdetails}></PostUserInfo>
+              <div className="">
+                <p className="my-5">{postdetails?.postText}</p>
+              </div>
+              <div className="mt-10">
+                <CommentBox
+                  refetch={refetch}
+                  uniqueId={postdetails?.uniqueId}
+                ></CommentBox>
+              </div>
+              <div className="h-[300px] overflow-scroll removeScroll">
+                {comments.length > 0 ? (
+                  <div>
+                    {isLoading ? (
+                      <Loading></Loading>
+                    ) : (
+                      comments.map((comment) => (
+                        <Comment
+                          setUpdateComment={setUpdateComment}
+                          handleDelteComment={handleDelteComment}
+                          setEditComment={setEditComment}
+                          editComment={editComment}
+                          handleEditComment={handleEditComment}
+                          refetch={refetch}
+                          comment={comment}
+                        ></Comment>
+                      ))
+                    )}
+                  </div>
+                ) : (
+                  <h1 className="text-xl">No Comments</h1>
+                )}
+              </div>
+            </div>
           </div>
-          <div className="ml-5 p-2 pl-4 rounded border-l border-black dark:border-white w-[25%]">
+        ) : (
+          <div className="ml-5 p-2 pl-4 mx-auto rounded lg:w-[25%]">
             <PostUserInfo post={postdetails}></PostUserInfo>
             <div className="">
               <p className="my-5">{postdetails?.postText}</p>
@@ -121,7 +159,7 @@ const PostDetails = () => {
               )}
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

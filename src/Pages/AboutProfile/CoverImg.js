@@ -12,7 +12,7 @@ const CoverImg = ({ myProfile }) => {
       <div
       className="rounded-md"
         style={{
-          background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) ,url(${cover})`,
+          background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) ,url(${myProfile?.coverPhoto}`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           // backgroundRepeat:"no-repeat",

@@ -9,11 +9,9 @@ import logo from "../../assets/logo.png";
 import { FaExclamation, FaMoon } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
-import profileImg from "../../assets/profile.jpg";
-import { AiFillSetting, AiOutlineDown } from "react-icons/ai";
+import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
-import GoogleMeeting from "../../Components/GoogleMeeting/GoogleMeeting";
 import NavSearchField from "./NavSearchField";
 import { useQuery } from "@tanstack/react-query";
 
@@ -65,7 +63,7 @@ const Navbar = () => {
     queryKey: ["allusers"],
     queryFn: async () => {
       const res = await fetch(
-        "http://localhost:5000/allusers"
+        "https://craft-connect-server-blond.vercel.app/allusers"
       );
       const data = await res.json();
       return data;
@@ -114,11 +112,6 @@ const Navbar = () => {
             </div>
 
             <div className="pr-3 flex gap-2 items-center justify-end">
-              {/* <input
-            onClick={handleThemeSwitch}
-            type="checkbox"
-            className="toggle"
-          /> */}
               <button onClick={handleThemeSwitch} className="text-[20px]">
                 {theme === "light" ? (
                   <IoMdSunny className="text-white"></IoMdSunny>
@@ -126,16 +119,6 @@ const Navbar = () => {
                   <FaMoon className="text-white"></FaMoon>
                 )}
               </button>
-
-              {/* <>
-            {localStorage.getItem(
-              "theme" === "light" ? (
-                <IoIosSunny></IoIosSunny>
-              ) : (
-                <FaMoon></FaMoon>
-              )
-            )}
-          </> */}
 
               <button
                 onClick={() => setMessageModal(!messageModal)}
@@ -158,12 +141,10 @@ const Navbar = () => {
             </ul>
           </div>
 
-            <button
+            {/* <button
               onClick={() => setNotification(!notification)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
-            >
-              
-            </button>
+            ></button> */}
           </div>
           <button
             className=" flex items-center gap-2 mr-10"
