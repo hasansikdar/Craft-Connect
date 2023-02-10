@@ -158,12 +158,10 @@ const Navbar = () => {
             </ul>
           </div>
 
-            <button
+            {/* <button
               onClick={() => setNotification(!notification)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
-            >
-              
-            </button>
+            ></button> */}
           </div>
           <button
             className=" flex items-center gap-2 mr-10"

@@ -1,23 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
-import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
-import PostUserInfo from "./PostUserInfo/PostUserInfo";
-import likeicon from "../../assets/icons/like.png";
-import {
-  FaCommentAlt,
-  FaLaughWink,
-  FaLaugh,
-  FaAngleDown,
-  FaShare,
-} from "react-icons/fa";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import { Link } from "react-router-dom";
-import { FcLike } from "react-icons/fc";
-import UserContext, { Authcontext } from "../../Context/UserContext";
-import Reactions from "../../Shared/Reactions/Reactions";
-import { useQuery } from "@tanstack/react-query";
-import { TfiCommentAlt } from "react-icons/tfi";
+// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
+// import PostUserInfo from "./PostUserInfo/PostUserInfo";
+// import likeicon from "../../assets/icons/like.png";
+// import {
+//   FaCommentAlt,
+//   FaLaughWink,
+//   FaLaugh,
+//   FaAngleDown,
+//   FaShare,
+// } from "react-icons/fa";
+// import { PhotoProvider, PhotoView } from "react-photo-view";
+// import { Link } from "react-router-dom";
+// import { FcLike } from "react-icons/fc";
+// import UserContext, { Authcontext } from "../../Context/UserContext";
+// import Reactions from "../../Shared/Reactions/Reactions";
+// import { useQuery } from "@tanstack/react-query";
+// import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
+import { TfiCommentAlt } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
 const PostCard = ({
   refetch,
@@ -74,15 +76,15 @@ const PostCard = ({
       });
   }, [post?.uniqueId]);
 
-  const ownReaction = postReactions.map(
-    (reactionItem) => reactionItem?.email === user?.email
-  );
+  // const ownReaction = postReactions.map(
+  //   (reactionItem) => reactionItem?.email === user?.email
+  // );
 
   // for like post
 
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
-    // console.log(hello[0]);
+    console.log(hello);
     if (!hello[0]) {
       return handleLike();
     } else {
@@ -93,9 +95,10 @@ const PostCard = ({
   const handleLike = () => {
     setLove(true);
     const likeInfo = { userId: user, postId: post?._id };
+    console.log(likeInfo);
     allLike.push(...likeLength, likeInfo);
 
-    fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
+    fetch(`http://localhost:5000/users/${post?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -107,6 +110,7 @@ const PostCard = ({
         console.log(data);
         if (data?.modifiedCount > 0) {
           setLiked(true);
+          refetch();
         }
       });
   };
@@ -132,9 +136,36 @@ const PostCard = ({
                 </div>
               </div>
               <div>
-                <p className="text-4xl cursor-pointer">
-                  <BsThreeDots />
-                </p>
+                {/* <label
+                  htmlFor="threeDots"
+                  className="text-4xl cursor-pointer"
+                ></label> */}
+                <div className="dropdown dropdown-bottom dropdown-end ">
+                  <label tabIndex={0} className="text-4xl cursor-pointer ">
+                    <BsThreeDots></BsThreeDots>
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
+                  >
+                    <li>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                        href="/"
+                      >
+                        Bookmark
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                        href="/"
+                      >
+                        Save
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className="pb-5">
@@ -174,12 +205,14 @@ const PostCard = ({
 
                     <p className="text-[25px]">{post?.likes?.length}</p>
                   </div>
-                  {/* <div className="flex items-center gap-1">
-                    <button className="text-[27px]">
-                      <TfiCommentAlt />
-                    </button>
-                    <p>07</p>
-                  </div> */}
+                  <div className="flex items-center gap-1">
+                    <Link to={`/postDetails/${post?._id}`}>
+                      <button className="text-[27px]">
+                        <TfiCommentAlt />
+                      </button>
+                    </Link>
+                    {/* <p>07</p> */}
+                  </div>
                 </div>
                 <div>
                   <button className="text-[25px]">

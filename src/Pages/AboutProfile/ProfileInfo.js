@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import UpdateCoverImg from "./UpdateProfileImage/UpdateCoverImg";
 import UpdateProfileImage from "./UpdateProfileImage/UpdateProfileImage";
 
-const ProfileInfo = ({myProfile}) => {
+const ProfileInfo = ({ myProfile }) => {
   const [showCoverMenu, setShowCoverMenu] = useState(false);
   const menuRef = useRef(null);
   useClickOutside(menuRef, () => setShowCoverMenu(false));
@@ -20,7 +20,7 @@ const ProfileInfo = ({myProfile}) => {
 
   return (
     <>
-      <div className="hidden md:flex justify-evenly  items-center mt-[7%]  pb-2 w-full  mx-auto ">
+      <div className="hidden md:flex justify-evenly  items-center mt-[7%]  pb-2 w-full  mx-auto text-black dark:text-white">
         <div>
           <Link>Timeline</Link>
         </div>
@@ -72,7 +72,11 @@ const ProfileInfo = ({myProfile}) => {
         open={open}
         setOpen={setOpen}
       ></UpdateCoverImg>
-      <UpdateProfileImage myProfile={myProfile} openModal={openModal} setOpenModal={setOpenModal}></UpdateProfileImage>
+      <UpdateProfileImage
+        myProfile={myProfile}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      ></UpdateProfileImage>
     </>
   );
 };
