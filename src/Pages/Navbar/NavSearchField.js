@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 
 const NavSearchField = ({ allusers }) => {
   const [filterData, setFilterData] = useState([]);
-  // console.log(filterData.length);
-  // console.log(filterData);
   const [wordEntered, setWordEntered] = useState("");
 
   const handleFilter = (event) => {
@@ -37,7 +35,7 @@ const NavSearchField = ({ allusers }) => {
       <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
         <input
           onChange={handleFilter}
-          name="search"
+          value={wordEntered}
           type="text"
           placeholder="Search"
           className="mx-2 md:mx-0 pl-4 pr-44 py-4 text-white w-full rounded-md bg-zinc-700"
@@ -46,9 +44,7 @@ const NavSearchField = ({ allusers }) => {
           {filterData.length === 0 ? (
             <BiSearchAlt2></BiSearchAlt2>
           ) : (
-            <button>
-              <RxCross2 onClick={() => clearInput()}></RxCross2>
-            </button>
+              <RxCross2 onClick={clearInput}></RxCross2>
           )}
         </i>
       </div>
