@@ -9,11 +9,13 @@ import { Link } from "react-router-dom";
 
 const NavSearchField = ({ allusers }) => {
   const [filterData, setFilterData] = useState([]);
-  console.log(filterData.length);
-  console.log(filterData);
+  // console.log(filterData.length);
+  // console.log(filterData);
+  const [wordEntered, setWordEntered] = useState("");
 
   const handleFilter = (event) => {
     const searchWord = event?.target?.value;
+    setWordEntered(searchWord);
     const newFilter = allusers?.filter((value) => {
       return value?.displayName?.toLowerCase()?.includes(searchWord.toLowerCase());
     });
@@ -24,8 +26,10 @@ const NavSearchField = ({ allusers }) => {
     else{
       setFilterData(newFilter);
     }
-
-    // console.log(searchWord);
+  };
+  const clearInput = () => {
+    setFilterData([]);
+    setWordEntered("");
   };
 
   return (
@@ -41,51 +45,46 @@ const NavSearchField = ({ allusers }) => {
         <i className="pr-4">
           {filterData.length === 0 ? (
             <BiSearchAlt2></BiSearchAlt2>
-          ) : ( <RxCross2></RxCross2>
+          ) : (
+            <button>
+              <RxCross2 onClick={() => clearInput()}></RxCross2>
+            </button>
           )}
         </i>
       </div>
 
       {filterData.length !== 0 && (
-        <>
-          <div>
-            <div as="div" className="relative z-100000">
+        <div as="div" className="relative z-[999]">
+          <div className="fixed inset-0 z-10 ">
+            <div className="flex h-[450px] justify-center  text-center overflow-hidden overflow-y-auto  mt-12 sm:p-0">
               <div>
-                <div className="fixed inset-0" />
-              </div>
-
-              <div className="fixed inset-0 z-10 ">
-                <div className="flex h-[450px] justify-center p-4 text-center overflow-hidden overflow-y-auto  mt-12 sm:p-0">
-                  <div>
-                    <div className="relative transform  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                      <div className="bg-white rounded-md px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div>
-                          {filterData.map((allUser) => {
-                            return (
-                              <div>
-                                <Link
-                                  to={`/user/${allUser.email}`}
-                                  className="flex items-center py-2 hover:bg-gray-300 rounded-md"
-                                >
-                                  <img
-                                    className="w-[20px]"
-                                    src={allUser?.PhotoURL}
-                                    alt=""
-                                  />
-                                  <p>{allUser?.displayName}</p>
-                                </Link>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
+                <div className="relative transform rounded-md  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <div className="bg-white pb-4 sm:p-6 sm:pb-4">
+                    <div>
+                      {filterData.map((allUser) => {
+                        return (
+                          <div>
+                            <Link
+                              to={`/user/${allUser.email}`}
+                              className="flex items-center py-2 hover:bg-gray-300 rounded-md"
+                            >
+                              <img
+                                className="w-[20px]"
+                                src={allUser?.PhotoURL}
+                                alt=""
+                              />
+                              <p>{allUser?.displayName}</p>
+                            </Link>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
