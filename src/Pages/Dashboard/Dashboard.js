@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Outlet } from 'react-router-dom';
-
+import DashboardNav from './DashboardNav';
 const Dashboard = () => {
     return (
         <>
@@ -9,7 +9,7 @@ const Dashboard = () => {
                 <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
             </Helmet>
             <div>
-                <DashboardNav />
+                <DashboardNav/>
                 <DashboardSideBar />
                 <div
                     id="main-content"
