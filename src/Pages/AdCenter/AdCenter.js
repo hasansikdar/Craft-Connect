@@ -22,15 +22,15 @@ const AdCenter = () => {
             <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.</p>
           </div>
 
-          <div className="grid max-w-md grid-cols-1 mx-auto mt-12 lg:max-w-full lg:mt-16 lg:grid-cols-3 gap-x-[20px] gap-y-12">
+          <div className="grid max-w-md grid-cols-1 mx-auto mt-12 lg:max-w-full lg:mt-16 lg:grid-cols-3 gap-x-[20px] gap-y-12" z>
             {addvertise.map((advertise) => {
               return <>
-                <div className="bg-[#563f8e] px-3 py-3 rounded-md relative">
+                <div className="dark:bg-[#563f8e] bg-[#FF3F4A]  px-3 py-3 rounded-md relative">
                   <Link to={advertise._id} className="block aspect-w-4 aspect-h-3">
                     <img className="object-cover w-full h-[350px] rounded-md" src={advertise.advertiseBg} alt="" />
                   </Link>
                   <div className="flex py-4 items-center gap-3 ">
-                    <img src={advertise.userPhoto} className='w-[50px] h-[50px] rounded-full ' alt="" /> 
+                    <img src={advertise.userPhoto} className='w-[50px] h-[50px] rounded-full ' alt="" />
                     <div className="flex flex-col">
                       <span className="font-semibold tracking-widest uppercase rounded-full text-gray-300"> {advertise.userName} </span>
                       <span className="text-xs font-base text-gray-300"> {advertise.userEmail} </span>
