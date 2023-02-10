@@ -61,7 +61,7 @@ const Navbar = () => {
 
   return (
     <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
-      <div className="flex justify-between items-center bg-zinc-800">
+      <div className="flex justify-between items-center backdrop-blur-lg bg-zinc-800">
         <div className="pl-3">
           <Link
             to="/"
@@ -72,11 +72,9 @@ const Navbar = () => {
             <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
           </Link>
         </div>
-
         <div>
           <div>
             {/* Search field for Mobile Device */}
-
             <div
               onClick={() => setSearch(!search)}
               className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700"
@@ -94,7 +92,6 @@ const Navbar = () => {
             </div>
 
             {/* Search field for Desktop Device */}
-
             <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
               <input
                 type="text"
