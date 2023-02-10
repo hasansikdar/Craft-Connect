@@ -76,7 +76,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
-        <div className="flex gap-96 items-center bg-zinc-800 py-2">
+        <div className="flex gap-96 items-center bg-zinc-800">
           <div className="pl-3">
             <Link
               to="/"
