@@ -4,6 +4,9 @@ import UserProfilePic from './UserProfilePic';
 
 
 const UserCoverPhoto = () => {
+
+  
+
     return (
       <div>
         <div className="w-[1084px] mx-auto hidden md:block">

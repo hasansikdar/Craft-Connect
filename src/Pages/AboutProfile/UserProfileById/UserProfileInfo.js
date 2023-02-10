@@ -27,7 +27,7 @@ const UserProfileInfo = ({ userDetails }) => {
         </div>
         <div>
           <Link className="text-3xl hover:text-orange-600 duration-300">
-            {userDetails.fullname}
+            {userDetails.displayName}
           </Link>
           <p className="text-center">Dhaka, Bangladesh</p>
         </div>
