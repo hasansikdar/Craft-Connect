@@ -12,8 +12,8 @@ const DashboardNav = () => {
                                 to="/"
                                 className="text-xl font-bold flex items-center lg:ml-2.5"
                             >
-                                <span className="self-center whitespace-nowrap">
-                                    IELTS Pathway
+                                <span className="self-center whitespace-nowrap text-black">
+                                    Craft Connect
                                 </span>
                             </Link>
                             <form
