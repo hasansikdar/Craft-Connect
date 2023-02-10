@@ -11,7 +11,7 @@ const Home = () => {
         <div class="hidden lg:block">
           <ProfileDetails></ProfileDetails>
         </div>
-        <div class="home w-11/12 m-auto col-span-2 overflow-scroll h-screen">
+        <div class="home w-11/12 m-auto col-span-2 overflow-scroll h-screen pb-20">
           <Stories></Stories>
           <Posts></Posts>
         </div>
