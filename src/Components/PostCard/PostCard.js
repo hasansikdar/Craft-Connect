@@ -119,8 +119,8 @@ const PostCard = ({
     <div>
       {/* Latest Design Post card  */}
       <div>
-        <div className="my-4 bg-white dark:bg-[#261b40]">
-          <div className="w-full border border-[#FF3F4A] p-5 rounded-md shadow-md">
+        <div className="my-3">
+          <div className="w-full border p-5 rounded-md shadow-md">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
@@ -136,10 +136,6 @@ const PostCard = ({
                 </div>
               </div>
               <div>
-                {/* <label
-                  htmlFor="threeDots"
-                  className="text-4xl cursor-pointer"
-                ></label> */}
                 <div className="dropdown dropdown-bottom dropdown-end ">
                   <label tabIndex={0} className="text-4xl cursor-pointer ">
                     <BsThreeDots></BsThreeDots>
@@ -168,7 +164,7 @@ const PostCard = ({
                 </div>
               </div>
             </div>
-            <div className="pb-5">
+            <div className="pb-7">
               <p className="py-4 text-black dark:text-white">
                 {post?.postText?.length > 100 ? (
                   <>
@@ -183,7 +179,7 @@ const PostCard = ({
               </p>
               <Link to={`/postDetails/${post?._id}`}>
                 <img
-                  className="w-11/12 m-auto rounded-md mt-[5px]"
+                  className="w-full rounded-md mt-[5px]"
                   src={post?.img}
                   alt=""
                 />
@@ -197,13 +193,13 @@ const PostCard = ({
                       onClick={() => likedUser(user?.uid)}
                       disabled={liked === true}
                       className={
-                        liked ? "text-[25px] text-blue-600" : "text-[25px]"
+                        liked ? "text-[34px] text-blue-600" : "text-[34px]"
                       }
                     >
                       <BiLike />
                     </button>
 
-                    <p className="text-[25px]">{post?.likes?.length}</p>
+                    <p className="text-3xl">{post?.likes?.length}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <Link to={`/postDetails/${post?._id}`}>
@@ -215,9 +211,41 @@ const PostCard = ({
                   </div>
                 </div>
                 <div>
-                  <button className="text-[25px]">
-                    <BiShareAlt />
-                  </button>
+                  {/* Share button and Dropdown  */}
+                  <div className="dropdown dropdown-bottom dropdown-end ">
+                    <label tabIndex={0} className="text-4xl cursor-pointer ">
+                      <BiShareAlt></BiShareAlt>
+                    </label>
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
+                    >
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share Now (Public)
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share To Your Feed
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share To Your Story
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
