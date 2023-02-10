@@ -26,7 +26,6 @@ const UpdateProfileImage = ({myProfile, openModal, setOpenModal}) => {
       .then(data =>{
         const profileImage = data?.data?.display_url;
         const profileImg = {profileImage}
-        // console.log(data?.data?.display_url);
         setOpenModal(false);
 
           fetch(`https://craft-connect-server-blond.vercel.app/profileImg/${myProfile?._id}`, {

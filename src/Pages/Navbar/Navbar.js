@@ -9,11 +9,9 @@ import logo from "../../assets/logo.png";
 import { FaExclamation, FaMoon } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
-import profileImg from "../../assets/profile.jpg";
-import { AiFillSetting, AiOutlineDown } from "react-icons/ai";
+import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
-import GoogleMeeting from "../../Components/GoogleMeeting/GoogleMeeting";
 import NavSearchField from "./NavSearchField";
 import { useQuery } from "@tanstack/react-query";
 
