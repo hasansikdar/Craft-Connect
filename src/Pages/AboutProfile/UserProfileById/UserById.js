@@ -10,6 +10,7 @@ import UserProfileInfo from './UserProfileInfo';
 const UserById = () => {
 
   const userDetails = useLoaderData();
+  console.log(userDetails);
   // console.log(userDetails);
 
     return (
