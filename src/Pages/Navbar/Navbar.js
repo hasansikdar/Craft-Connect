@@ -60,7 +60,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-999 h-[72px] ">
+    <div className="dark:bg-[#2C2048] fixed w-full top-0 lg: h-[72px] ">
       <div className="flex justify-between items-center bg-zinc-800 py-[2px] md:py-0">
         <div className="pl-3">
           <Link
@@ -68,12 +68,12 @@ const Navbar = () => {
             class="text-2xl text-gray-900 font-semibold flex items-center active"
             href="/"
           >
-            {/* <img src={logo} className="w-14 d-block m-auto" alt="" /> */}
-            <p class="text-lg text-white ml-1.5 lg:ml-[80px]">Craft Connect</p>
+            <img src={logo} className="w-14 d-block m-auto" alt="" />
+            <p class="text-lg text-white ml-1.5 lg:ml-[15px]">Craft Connect</p>
           </Link>
         </div>
 
-        <div className="flex  gap-16 mr-5 items-center ">
+        <div className="flex gap-16 mr-5 items-center ">
           <div>
             {/* Search field for Mobile Device */}
 
@@ -135,36 +135,102 @@ const Navbar = () => {
               onClick={() => setMessageModal(!messageModal)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
-              <Link to="/chats">
+              <Link >
                 <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
               </Link>
             </button>
 
-            <div className="dropdown dropdown-hover">
+            <div className="dropdown dropdown-hover dropdown-end">
             <label tabIndex={0} className="m-1">
             <IoMdNotifications className="text-xl md:text-2xl text-white">
                 {" "}
               </IoMdNotifications>
             </label>
-            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><Link>Item 1</Link></li>
-              <li><Link>Item 2</Link></li>
+            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-96">
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+              <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+              <div>
+                <p className="">
+                  <span className="font-bold">Muhammad Hasan</span> posted two
+                  new videos about how to manage a group project.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+              <img
+                className="w-16 object-cover rounded-full mr-2 "
+                src={`${
+                  user?.photoURL
+                    ? user?.photoURL
+                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                }`}
+                alt=""
+              />
+              <div>
+                <p className="">
+                  <span className="font-bold">Maruf Khan</span> tagged you in a
+                  post including "Alhamdulliah after lots of sacrifice and Hard
+                  work i got a ....."
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+              <img
+                className="w-16 rounded-full mr-2 "
+                src={`${
+                  user?.photoURL
+                    ? user?.photoURL
+                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                }`}
+                alt=""
+              />
+              <div>
+                <p className="">
+                  <span className="font-bold">Maruf Khan</span> tagged you in a
+                  post including "Alhamdulliah after lots of sacrifice and Hard
+                  work i got a ....."
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+              <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
+              <div>
+                <p className="">
+                  <span className="font-bold">Mohammad Ali Jinnah</span> posted
+                  posted in
+                  <span className="font-bold">
+                    {" "}
+                    SCIC: Job Hunting Battlefield (Batch 6)
+                  </span>{" "}
+                  .
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+              <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+              <div>
+                <p className="">
+                  <span className="font-bold">Muhammad Hasan</span> commented in
+                  your post .
+                </p>
+              </div>
+            </div>
             </ul>
           </div>
 
-            <button
+            {/* <button
               onClick={() => setNotification(!notification)}
               className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
             >
               
-            </button>
+            </button> */}
           </div>
           <button
             className=" flex items-center gap-2 mr-10"
             onClick={() => setProfile(!profile)}
           >
             <img
-              className="w-10 h-10 object-cover rounded-full"
+              className="w-10 h-10 object-cover rounded-full block"
               // src={`${
               //   user?.photoURL
               //     ? user?.photoURL
@@ -261,7 +327,7 @@ const Navbar = () => {
       {/*-----------------------------------------Messanger Modal End----------------------------------------------*/}
 
       {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
-      {notification && (
+      {/* {notification && (
         <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5">
           <div className="px-3 py-3">
             <div className="flex justify-between">
@@ -348,7 +414,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal end^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
 
       {/*#########################################Profile Modal Start####################################################*/}

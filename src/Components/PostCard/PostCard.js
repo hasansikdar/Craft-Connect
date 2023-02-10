@@ -80,9 +80,40 @@ const PostCard = ({
 
   // for like post
 
+  // const likedUser = (id) => {
+  //   const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
+  //   // console.log(hello[0]);
+  //   if (!hello[0]) {
+  //     return handleLike();
+  //   } else {
+  //     return setLove(true);
+  //   }
+  // };
+
+  // const handleLike = () => {
+  //   setLove(true);
+  //   const likeInfo = { userId: user, postId: post?._id };
+  //   allLike.push(...likeLength, likeInfo);
+
+  //   fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(allLike),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data?.modifiedCount > 0) {
+  //         setLiked(true);
+  //       }
+  //     });
+  // };
+
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
-    // console.log(hello[0]);
+    console.log(hello);
     if (!hello[0]) {
       return handleLike();
     } else {
@@ -93,6 +124,7 @@ const PostCard = ({
   const handleLike = () => {
     setLove(true);
     const likeInfo = { userId: user, postId: post?._id };
+    console.log(likeInfo);
     allLike.push(...likeLength, likeInfo);
 
     fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
@@ -107,6 +139,7 @@ const PostCard = ({
         console.log(data);
         if (data?.modifiedCount > 0) {
           setLiked(true);
+          refetch();
         }
       });
   };
