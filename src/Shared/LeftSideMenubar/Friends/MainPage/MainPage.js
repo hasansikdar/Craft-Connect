@@ -1,4 +1,7 @@
 import React from "react";
+import FriendRequestBar from "../FriendRequest/FrieendRequestBar/FriendRequestBar";
+import FriendRequestCard from "../FriendRequest/FrieendRequestBar/FriendRequestCard";
+import FriendSuggestionCard from "../FriendSuggestion/FriendSuggestionCard/FriendSuggestionCard";
 import AddFriendCard from "./AddFriendCard/AddFriendCard";
 import MainPageCard from "./MainPageCard/MainPageCard";
 
@@ -14,6 +17,13 @@ const MainPage = () => {
         </button>
       </div>
       <div className="grid grid-cols-3 py-2 mx-auto px-4 gap-5 mt-5">
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        {/* <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
@@ -27,8 +37,7 @@ const MainPage = () => {
         <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
         <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
+        <MainPageCard></MainPageCard> */}
       </div>
       <hr className="mt-10 w-[1100px] text-2xl" />
 
@@ -42,6 +51,14 @@ const MainPage = () => {
           </button>
         </div>
         <div className="grid grid-cols-3 py-2 mx-auto px-4 gap-5 mt-5">
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          {/* <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
@@ -55,8 +72,7 @@ const MainPage = () => {
           <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
           <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
+          <AddFriendCard></AddFriendCard> */}
         </div>
       </div>
     </section>

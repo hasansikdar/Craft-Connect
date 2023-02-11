@@ -358,7 +358,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center mb-2 ">
               <Link
                 to="/feature/profile"
-                className="flex items-center cursor-pointer hover:bg-[#b4373e] dark:text-white text-black hover:text-white w-full p-2 rounded-md "
+                className="flex items-center cursor-pointer dark:text-white text-black hover:text-white w-full p-2 rounded-md "
               >
                 <img
                   className="w-10 h-10  rounded-full mr-3"
@@ -369,7 +369,7 @@ const Navbar = () => {
                   }`}
                   alt=""
                 />
-                <h3 className="text-xl font-bold text-[#FF3F4A] hover:text-white">
+                <h3 className="text-xl font-bold text-[#FF3F4A]">
                   {user?.displayName}
                 </h3>
               </Link>

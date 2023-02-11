@@ -85,6 +85,7 @@ const PostCard = ({
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
     console.log(hello);
+
     if (!hello[0]) {
       return handleLike();
     } else {
@@ -97,7 +98,6 @@ const PostCard = ({
     const likeInfo = { userId: user, postId: post?._id };
     console.log(likeInfo);
     allLike.push(...likeLength, likeInfo);
-
     fetch(`http://localhost:5000/users/${post?._id}`, {
       method: "PUT",
       headers: {
@@ -136,10 +136,6 @@ const PostCard = ({
                 </div>
               </div>
               <div>
-                {/* <label
-                  htmlFor="threeDots"
-                  className="text-4xl cursor-pointer"
-                ></label> */}
                 <div className="dropdown dropdown-bottom dropdown-end ">
                   <label tabIndex={0} className="text-4xl cursor-pointer ">
                     <BsThreeDots></BsThreeDots>
@@ -148,6 +144,15 @@ const PostCard = ({
                     tabIndex={0}
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
+                    <li>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white inline-block"
+                        href="/"
+                      >
+                        Follow
+                        <span className="font-semibold"> {post?.userName}</span>
+                      </a>
+                    </li>
                     <li>
                       <a
                         className="hover:bg-[#FF3F4A] hover:text-white"
@@ -197,7 +202,9 @@ const PostCard = ({
                       onClick={() => likedUser(user?.uid)}
                       disabled={liked === true}
                       className={
-                        liked ? "text-[34px] text-blue-600" : "text-[34px]"
+                        liked === true
+                          ? "text-[34px] text-blue-600"
+                          : "text-[34px]"
                       }
                     >
                       <BiLike />
@@ -215,9 +222,41 @@ const PostCard = ({
                   </div>
                 </div>
                 <div>
-                  <button className="text-3xl">
-                    <BiShareAlt />
-                  </button>
+                  {/* Share button and Dropdown  */}
+                  <div className="dropdown dropdown-bottom dropdown-end ">
+                    <label tabIndex={0} className="text-4xl cursor-pointer ">
+                      <BiShareAlt></BiShareAlt>
+                    </label>
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
+                    >
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share Now (Public)
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share To Your Feed
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share To Your Story
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
