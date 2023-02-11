@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const DashboardNav = () => {
     return (
         <>
-            <nav className="dark:bg-[#2C2048]  border-b border-[#FF3F4A] fixed z-30 w-full">
+            <nav className="bg-[#2C2048]  border-b border-[#FF3F4A] fixed z-30 w-full">
                 <div className="px-3 py-3 lg:px-5 lg:pl-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-start">

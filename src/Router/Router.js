@@ -33,6 +33,7 @@ import DiscoverPage from "../Pages/Fb_Pages/DiscoverPage/DiscoverPage";
 import AdCenterDetail from "../Pages/AdCenter/AdCenterDetail";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import UsersTable from "../Pages/Dashboard/UsersTable";
+import AddProduct from "../Pages/Dashboard/AddProduct";
 
 export const Routes = createBrowserRouter([
   {
@@ -134,7 +135,8 @@ export const Routes = createBrowserRouter([
       </PrivateRouter>
     ,
     children: [
-      { path: '/dashboard/all-users', element: <UsersTable   /> }
+      { path: '/dashboard/all-users', element: <UsersTable /> },
+      {path: '/dashboard/add-product', element: <AddProduct/>}
     ]
   },
   {
