@@ -15,8 +15,8 @@ const FriendRequestCard = () => {
           </h2>
           <small>100 mutual friend</small>
           <div className="flex gap-2">
-            <button className="w-[100px] h-[36px] bg-[#2374E1] rounded text-white">
-              Follow
+            <button className="w-[100px] h-[36px] bg-[#FF3F4A] rounded text-white">
+              Follow Back
             </button>
             <button className="w-[100px] h-[36px] bg-gray-600 rounded text-white">
               Delete

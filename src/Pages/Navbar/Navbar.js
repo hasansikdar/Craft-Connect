@@ -61,7 +61,7 @@ const Navbar = () => {
 
   return (
     <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
-      <div className="flex justify-between items-center backdrop-blur-lg bg-zinc-800">
+      <div className="flex justify-between items-center backdrop-blur-lg bg-gradient-to-r dark:from-[#3a2e57] from-white to-[#2C2048] dark:to-[#2C2048] ">
         <div className="pl-3">
           <Link
             to="/"
@@ -69,7 +69,9 @@ const Navbar = () => {
             href="/"
           >
             <img src={logo} className="w-14 d-block m-auto" alt="" />
-            <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
+            <p class="text-lg text-[#FF3F4A] dark:text-white ml-1.5 lg:ml-2.5">
+              Craft Connect
+            </p>
           </Link>
         </div>
         <div>
@@ -77,7 +79,7 @@ const Navbar = () => {
             {/* Search field for Mobile Device */}
             <div
               onClick={() => setSearch(!search)}
-              className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700"
+              className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-white"
             >
               <i className="">
                 <BiSearchAlt2></BiSearchAlt2>
@@ -86,19 +88,19 @@ const Navbar = () => {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="py-1 text-white  bg-zinc-700 hover:bg-zinc-600 w-[100px]"
+                  className="py-1 text-white  bg-white  w-[100px]"
                 />
               )}
             </div>
 
             {/* Search field for Desktop Device */}
-            <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
+            <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-[#c5b5ed]">
               <input
                 type="text"
                 placeholder="Search"
-                className="mx-2 md:mx-0 pl-4 pr-44 py-4 text-white w-full rounded-md bg-zinc-700"
+                className="mx-2 md:mx-0 pl-4 pr-44 py-2 text-[#FF3F4A] w-full rounded-md bg-[#c5b5ed]"
               />
-              <i className="pr-4">
+              <i className="pr-4 text-2xl text-white">
                 <BiSearchAlt2></BiSearchAlt2>
               </i>
             </div>
