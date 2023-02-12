@@ -1,9 +1,19 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { Authcontext } from '../../Context/UserContext';
 
 const AddProduct = () => {
     const { user } = useContext(Authcontext)
+    const url = `http://localhost:5000/allproducts`;
+    const { data: allProduct = [], refetch } = useQuery({
+        queryKey: ["allProduct"],
+        queryFn: async () => {
+            const res = await fetch(url);
+            const data = res.json();
+            return data;
+        },
+    });
     const formSubmit = (e) => {
         e.preventDefault();
         const field = e.target;
@@ -39,7 +49,7 @@ const AddProduct = () => {
                         if (data.acknowledged) {
                             toast.success("Product Add Success");
                             field.reset();
-                            // refetch();
+                            refetch();
                         }
                     });
             });

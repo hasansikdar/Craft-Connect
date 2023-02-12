@@ -41,20 +41,28 @@ const DashboardSidebar = () => {
                                             </div>
                                         </form>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link
                                             to="/dashboard/all-users"
                                             className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
                                         >
                                             <span className="ml-3">Users</span>
                                         </Link>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <Link
                                             to="/dashboard/add-product"
                                             className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
                                         >
                                             <span className="ml-3">Add Product</span>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/dashboard/your-product"
+                                            className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
+                                        >
+                                            <span className="ml-3">Your Product</span>
                                         </Link>
                                     </li>
                                 </ul>

@@ -34,6 +34,7 @@ import AdCenterDetail from "../Pages/AdCenter/AdCenterDetail";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import UsersTable from "../Pages/Dashboard/UsersTable";
 import AddProduct from "../Pages/Dashboard/AddProduct";
+import YourProduct from "../Pages/Dashboard/YourProduct";
 
 export const Routes = createBrowserRouter([
   {
@@ -135,8 +136,9 @@ export const Routes = createBrowserRouter([
       </PrivateRouter>
     ,
     children: [
-      { path: '/dashboard/all-users', element: <UsersTable /> },
-      {path: '/dashboard/add-product', element: <AddProduct/>}
+    // { path: '/dashboard/all-users', element: <UsersTable /> },
+      {path: '/dashboard/add-product', element: <AddProduct/>},
+      {path: '/dashboard/your-product', element: <YourProduct/>}
     ]
   },
   {
