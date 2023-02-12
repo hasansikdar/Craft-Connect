@@ -16,7 +16,7 @@ const PostBox = () => {
   const [openPreviewPost, setOpenPreviewPost] = useState(false);
   const [postText, setPostText] = useState();
   const [selectedFile, setSelectedFile] = useState();
-  const [usersPost, setusersPost] = useState()
+  const [usersPost, setusersPost] = useState();
   const { user } = useContext(Authcontext);
 
   const handlePostText = (e) => {
@@ -118,8 +118,6 @@ const PostBox = () => {
           }
         });
     }
-
-
   };
 
   return (
@@ -129,10 +127,11 @@ const PostBox = () => {
     >
       <div className="outline-1 flex gap-4  p-8">
         <img
-          src={`${user?.photoURL
-            ? user?.photoURL
-            : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-            }`}
+          src={`${
+            user?.photoURL
+              ? user?.photoURL
+              : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+          }`}
           className="h-[38px] w-[38px] object-cover rounded-full"
           alt=""
         />

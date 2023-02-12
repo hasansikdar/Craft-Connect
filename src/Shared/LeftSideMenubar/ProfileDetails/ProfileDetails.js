@@ -41,29 +41,37 @@ const ProfileDetails = () => {
             </div>
           </ul>
         </div>
-        <div className="divider m-0"></div> 
+        <div className="divider m-0"></div>
         <div>
-            <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
-            Followed by <span className="flex items-center"><FaWifi className="mr-2"></FaWifi> 487 people </span>
-            </Link>
+          <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
+            Followed by{" "}
+            <span className="flex items-center">
+              <FaWifi className="mr-2"></FaWifi> 487 people{" "}
+            </span>
+          </Link>
         </div>
         <div>
-            <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
-            Friendlists <span className="flex items-center"><FaUserCheck className="mr-2"></FaUserCheck> 492 friends </span>
-            </Link>
+          <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
+            Friendlists{" "}
+            <span className="flex items-center">
+              <FaUserCheck className="mr-2"></FaUserCheck> 492 friends{" "}
+            </span>
+          </Link>
         </div>
         <div className="divider m-0"></div>
         <div className="px-2">
-          <p className="font-bold dark:text-white text-gray-700 ml-2 mb-2">Social Networks:</p>
-          <button className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-blue-500 mb-2 px-2">
+          <p className="font-bold dark:text-white text-gray-700 ml-2 mb-2">
+            Social Networks:
+          </p>
+          <button className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
             <BsFacebook className="text-white text-xl" />
             <p className="font-bold text-white">Facebook</p>
           </button>
-          <button className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-blue-500 mb-2 px-2">
+          <button className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
             <BsLinkedin className="text-white  text-xl" />
             <p className="font-bold text-white">Linkedin</p>
-        </button>
-      </div>
+          </button>
+        </div>
       </div>
     </div>
   );
