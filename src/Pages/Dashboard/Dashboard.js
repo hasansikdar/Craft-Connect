@@ -10,16 +10,14 @@ const Dashboard = () => {
                 <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
             </Helmet>
             <div>
-                <DashboardNav/>
+                <DashboardNav />
                 <DashboardSidebar />
                 <div
                     id="main-content"
-                    class="h-screen dark:bg-[#2C2048]  relative overflow-y-auto lg:ml-64"
+                    className="h-full bg-[#2C2048]  relative lg:ml-64"
                 >
-                    <main>
-                        <div class="pt-6 px-4">
-                            <Outlet/>
-                        </div>
+                    <main className="pt-6 px-4 py-8 h-screen overflow-y-auto">
+                        <Outlet />
                     </main>
                 </div>
             </div>
