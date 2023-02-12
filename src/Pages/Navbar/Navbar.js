@@ -83,8 +83,8 @@ const Navbar = () => {
               class="text-2xl text-gray-900 font-semibold flex items-center active"
               href="/"
             >
-              {/* <img src={logo} className="w-14 d-block m-auto" alt="" /> */}
-              <p class="text-lg text-white ml-1.5 lg:ml-[80px] hidden lg:block">Craft Connect</p>
+              <img src={logo} className="w-14 d-block m-auto" alt="" />
+              <p class="text-lg text-white ml-1.5 lg:ml-[15px] hidden lg:block">Craft Connect</p>
             </Link>
           </div>
 
