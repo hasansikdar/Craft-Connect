@@ -115,6 +115,10 @@ const PostCard = ({
       });
   };
 
+  const handelBookmarked = () =>{
+    console.log("bookmarked clicked");
+  }
+
   return (
     <div>
       {/* Latest Design Post card  */}
@@ -145,20 +149,20 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <a
+                      <Link onClick={handelBookmarked}
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
                         Bookmark
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
                         Save
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -197,6 +201,7 @@ const PostCard = ({
                       }
                     >
                       <BiLike />
+
                     </button>
 
                     <p className="text-3xl">{post?.likes?.length}</p>
