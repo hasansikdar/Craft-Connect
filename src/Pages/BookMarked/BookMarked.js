@@ -2,7 +2,7 @@ import React from "react";
 
 const BookMarked = () => {
   return (
-    <div className="h-screen flex flex-col justify-center mt-5 md:mt-10 ">
+    <div className="h-screen flex flex-col  items-center mt-5 md:mt-10 ">
       <h1 className="text-xl font-semibold text-black">All your bookmarked posts are here!</h1>
     </div>
   );
