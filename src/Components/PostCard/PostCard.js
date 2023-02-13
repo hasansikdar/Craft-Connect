@@ -118,7 +118,6 @@ const PostCard = ({
 
   const handelAddBookmarked = () =>{
     // console.log("bookmarked clicked");
-    // console.log(post)
     
 
     const bookMarkedPost = {
