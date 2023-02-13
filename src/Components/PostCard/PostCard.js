@@ -119,7 +119,7 @@ const PostCard = ({
   const handelAddBookmarked = () =>{
     // console.log("bookmarked clicked");
     // console.log(post)
-    // console.log( post?.currentDate, post?.img, post?.postText, post?.userEmail, post?.userName, post?.userPhoto, post?._id)
+    
 
     const bookMarkedPost = {
         bookmarkedUserEmail : user?.email,
