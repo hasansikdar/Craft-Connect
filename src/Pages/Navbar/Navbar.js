@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { TbMessageCircle } from "react-icons/tb";
+import { TbLayoutDashboard, TbMessageCircle } from "react-icons/tb";
 import { IoMdNotifications } from "react-icons/io";
 import { BiSearchAlt2 } from "react-icons/bi";
 import maruf from "../../assets/maruf.png";
@@ -63,12 +63,12 @@ const Navbar = () => {
     queryKey: ["allusers"],
     queryFn: async () => {
       const res = await fetch(
-        "http://localhost:5000/allusers"
+        "https://craft-connect-server-blond.vercel.app/allusers"
       );
       const data = await res.json();
       return data;
     },
-    
+
   });
 
   const url = `https://craft-connect-server-blond.vercel.app/users?email=${user?.email}`;
@@ -88,7 +88,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
-        <div className="flex gap-96 items-center bg-zinc-800 py-2">
+        <div className="flex gap-96 items-center bg-zinc-800">
           <div className="pl-3">
             <Link
               to="/"
@@ -96,7 +96,7 @@ const Navbar = () => {
               href="/"
             >
               <img src={logo} className="w-14 d-block m-auto" alt="" />
-              <p class="text-lg text-white ml-1.5 lg:ml-2.5">Craft Connect</p>
+              <p class="text-lg text-white ml-1.5 lg:ml-[15px] hidden lg:block">Craft Connect</p>
             </Link>
           </div>
 
@@ -106,7 +106,7 @@ const Navbar = () => {
 
               <div
                 onClick={() => setSearch(!search)}
-                className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-zinc-700"
+                className="flex md:hidden justify-center  items-center   border border-zinc-600 rounded-full px-3 bg-zinc-700 py-[4px] my-[4px] ml-[60px]"
               >
                 <i className="">
                   <BiSearchAlt2></BiSearchAlt2>
@@ -317,9 +317,82 @@ const Navbar = () => {
                       user?.photoURL
                         ? user?.photoURL
                         : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-                    }`}
-                    alt=""
-                  />
+                        }`}
+                      alt=""
+                    />
+                    <div>
+                      <p className="text-xl">{user?.displayName}</p>
+                      <p className="font-bold">
+                        Muhammad Hasan sent you a message.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
+                    <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                    <div>
+                      <p className="text-xl">Muhammad Hasan</p>
+                      <p className="font-bold">Rahat sent you a message.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
+                    <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
+                    <div>
+                      <p className="text-xl">Maruf Khan</p>
+                      <p className="font-bold">
+                        Muhammad Ali sent you a message.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+                    <img
+                      className="w-16 rounded-full mr-2 "
+                      src={`${user?.photoURL
+                        ? user?.photoURL
+                        : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
+                        }`}
+                      alt=""
+                    />
+                    <div>
+                      <p className="text-xl">{user?.displayName}</p>
+                      <p className="font-bold">
+                        Farhan Anjum sent you a message.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+                    <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                    <div>
+                      <p className="text-xl">Muhammad Hasan</p>
+                      <p className="font-bold">
+                        Abdul Al Mamun sent you a Photo.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          )}
+          {/*-----------------------------------------Messanger Modal End----------------------------------------------*/}
+
+          {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
+          {notification && (
+            <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5">
+              <div className="px-3 py-3">
+                <div className="flex justify-between">
+                  <h3 className="text-2xl font-bold text-[#FF3F4A]">
+                    Notifications
+                  </h3>
+                  <div
+                    onClick={() => setNotification(false)}
+                    className="btn btn-sm text-white hover:bg-[#99030a] bg-[#FF3F4A]"
+                  >
+                    ✕
+                  </div>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400">
+                  All Notifications
+                </p>
+                <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+                  <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
                   <div>
                     <p className="">
                       <span className="font-bold">Maruf Khan</span> tagged you
@@ -504,6 +577,15 @@ const Navbar = () => {
                   <div className="flex items-center">
                     <FcQuestions className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
                     <p className="font-bold">Help & Support</p>
+                  </div>
+                  <div>
+                    <FcNext className="text-2xl mr-2" />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
+                  <div className="flex items-center">
+                    <TbLayoutDashboard className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
+                    <Link to='/dashboard' className="font-bold">Users Dashboard</Link>
                   </div>
                   <div>
                     <FcNext className="text-2xl mr-2" />

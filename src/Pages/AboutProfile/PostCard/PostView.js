@@ -2,7 +2,6 @@ import React from "react";
 import PostCards from "./PostCards";
 import ProfileLeft from "./ProfileLeft";
 
-
 const PostView = () => {
   return (
     <div className=" ">

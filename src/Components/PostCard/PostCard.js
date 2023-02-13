@@ -1,23 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
-import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
-import PostUserInfo from "./PostUserInfo/PostUserInfo";
-import likeicon from "../../assets/icons/like.png";
-import {
-  FaCommentAlt,
-  FaLaughWink,
-  FaLaugh,
-  FaAngleDown,
-  FaShare,
-} from "react-icons/fa";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import { Link } from "react-router-dom";
-import { FcLike } from "react-icons/fc";
-import UserContext, { Authcontext } from "../../Context/UserContext";
-import Reactions from "../../Shared/Reactions/Reactions";
-import { useQuery } from "@tanstack/react-query";
-import { TfiCommentAlt } from "react-icons/tfi";
+// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
+// import PostUserInfo from "./PostUserInfo/PostUserInfo";
+// import likeicon from "../../assets/icons/like.png";
+// import {
+//   FaCommentAlt,
+//   FaLaughWink,
+//   FaLaugh,
+//   FaAngleDown,
+//   FaShare,
+// } from "react-icons/fa";
+// import { PhotoProvider, PhotoView } from "react-photo-view";
+// import { Link } from "react-router-dom";
+// import { FcLike } from "react-icons/fc";
+// import UserContext, { Authcontext } from "../../Context/UserContext";
+// import Reactions from "../../Shared/Reactions/Reactions";
+// import { useQuery } from "@tanstack/react-query";
+// import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
+import { TfiCommentAlt } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
 const PostCard = ({
   refetch,
@@ -34,36 +36,6 @@ const PostCard = ({
   const [allLike, setAllLike] = useState([]);
 
   const likeLength = post?.likes;
-  // const { user: currentUser } = useContext(Authcontext);
-  // const reactions = [
-  //   {
-  //     emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
-  //   },
-  //   { emojilink: "https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif" },
-  //   { emojilink: "https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif" },
-  //   { emojilink: "https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif" },
-  //   {
-  //     emojilink:
-  //       "https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif",
-  //   },
-  //   {
-  //     emojilink:
-  //       "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
-  //   },
-  // ];
-
-  // console.log(post);
-
-  // const { data: postreactions = [] } = useQuery({
-  //   queryKey: [post?.uniqueId],
-  //   queryFn: async () => {
-  //     const res = await fetch(`https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`);
-  //     const data = res.json();
-  //     refetch()
-  //     return data;
-  //   }
-  // })
-
   useEffect(() => {
     fetch(
       `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
@@ -74,15 +46,9 @@ const PostCard = ({
       });
   }, [post?.uniqueId]);
 
-  const ownReaction = postReactions.map(
-    (reactionItem) => reactionItem?.email === user?.email
-  );
-
-  // for like post
-
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
-    // console.log(hello[0]);
+    console.log(hello);
     if (!hello[0]) {
       return handleLike();
     } else {
@@ -93,6 +59,7 @@ const PostCard = ({
   const handleLike = () => {
     setLove(true);
     const likeInfo = { userId: user, postId: post?._id };
+    console.log(likeInfo);
     allLike.push(...likeLength, likeInfo);
 
     fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
@@ -107,6 +74,7 @@ const PostCard = ({
         console.log(data);
         if (data?.modifiedCount > 0) {
           setLiked(true);
+          refetch();
         }
       });
   };
@@ -115,7 +83,7 @@ const PostCard = ({
     <div>
       {/* Latest Design Post card  */}
       <div>
-        <div className="my-4 bg-white dark:bg-[#261b40]">
+        <div className="my-3">
           <div className="w-full border border-[#FF3F4A] p-5 rounded-md shadow-md">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
@@ -132,12 +100,35 @@ const PostCard = ({
                 </div>
               </div>
               <div>
-                <p className="text-4xl cursor-pointer">
-                  <BsThreeDots />
-                </p>
+                <div className="dropdown dropdown-bottom dropdown-end ">
+                  <label tabIndex={0} className="text-4xl cursor-pointer ">
+                    <BsThreeDots></BsThreeDots>
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
+                  >
+                    <li>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                        href="/"
+                      >
+                        Bookmark
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                        href="/"
+                      >
+                        Save
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div className="pb-5">
+            <div className="pb-7">
               <p className="py-4 text-black dark:text-white">
                 {post?.postText?.length > 100 ? (
                   <>
@@ -152,7 +143,7 @@ const PostCard = ({
               </p>
               <Link to={`/postDetails/${post?._id}`}>
                 <img
-                  className="w-11/12 m-auto rounded-md mt-[5px]"
+                  className="w-full rounded-md mt-[5px]"
                   src={post?.img}
                   alt=""
                 />
@@ -166,25 +157,59 @@ const PostCard = ({
                       onClick={() => likedUser(user?.uid)}
                       disabled={liked === true}
                       className={
-                        liked ? "text-[25px] text-blue-600" : "text-[25px]"
+                        liked ? "text-[34px] text-blue-600" : "text-[34px]"
                       }
                     >
                       <BiLike />
                     </button>
 
-                    <p className="text-[25px]">{post?.likes?.length}</p>
+                    <p className="text-3xl">{post?.likes?.length}</p>
                   </div>
-                  {/* <div className="flex items-center gap-1">
-                    <button className="text-[27px]">
-                      <TfiCommentAlt />
-                    </button>
-                    <p>07</p>
-                  </div> */}
+                  <div className="flex items-center gap-1">
+                    <Link to={`/postDetails/${post?._id}`}>
+                      <button className="text-[27px]">
+                        <TfiCommentAlt />
+                      </button>
+                    </Link>
+                    {/* <p>07</p> */}
+                  </div>
                 </div>
                 <div>
-                  <button className="text-[25px]">
-                    <BiShareAlt />
-                  </button>
+                  {/* Share button and Dropdown  */}
+                  <div className="dropdown dropdown-bottom dropdown-end ">
+                    <label tabIndex={0} className="text-4xl cursor-pointer ">
+                      <BiShareAlt></BiShareAlt>
+                    </label>
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
+                    >
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share Now (Public)
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share To Your Feed
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="hover:bg-[#FF3F4A] hover:text-white"
+                          href="/"
+                        >
+                          Share To Your Story
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

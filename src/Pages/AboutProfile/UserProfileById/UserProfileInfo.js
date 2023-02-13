@@ -1,11 +1,10 @@
-import React, {   useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { BsThreeDots } from "react-icons/bs";
 import { Authcontext } from "../../../Context/UserContext";
 import useClickOutside from "../../../Components/helpers/clickOutside";
 
-const UserProfileInfo = ({userDetails}) => {
-
+const UserProfileInfo = ({ userDetails }) => {
   console.log(userDetails);
 
   const [showCoverMenu, setShowCoverMenu] = useState(false);

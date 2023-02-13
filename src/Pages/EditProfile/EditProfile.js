@@ -75,7 +75,7 @@ const EditProfile = () => {
               <div>
                 <input
                   onChange={(e) => setUpdateName(e.target.value)}
-                  className="input input-sm mb-3"
+                  className="input input-sm mb-3 text-black"
                   defaultValue={user?.displayName}
                   type="text"
                 />
@@ -84,7 +84,7 @@ const EditProfile = () => {
                   accept="image/*"
                   onChange={(e) => setUpdateProfileImage(e.target.files[0])}
                   type="file"
-                  className="file-input file-input-sm file-input-bordered my-4 max-w-xs"
+                  className="file-input file-input-sm file-input-bordered text-black my-4 max-w-xs"
                 />
                 <br></br>
                 <button

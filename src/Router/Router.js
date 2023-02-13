@@ -31,6 +31,10 @@ import CreateAdvertisement from "../Pages/Adevertisement/CreateAdvertisement";
 import Chatting from "../Shared/Chatting/Chatting";
 import DiscoverPage from "../Pages/Fb_Pages/DiscoverPage/DiscoverPage";
 import AdCenterDetail from "../Pages/AdCenter/AdCenterDetail";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import UsersTable from "../Pages/Dashboard/UsersTable";
+import AddProduct from "../Pages/Dashboard/AddProduct";
+import YourProduct from "../Pages/Dashboard/YourProduct";
 
 export const Routes = createBrowserRouter([
   {
@@ -112,16 +116,32 @@ export const Routes = createBrowserRouter([
         path: "/postDetails/:id",
         element: <PostDetails></PostDetails>,
         loader: ({ params }) =>
-          fetch(`https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`),
+          fetch(
+            `https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`
+          ),
       },
       {
         path: '/user/:email',
         element: <UserById />,
         loader: ({ params }) => fetch(`https://craft-connect-server-blond.vercel.app/user/${params?.email}`)
-      }
+      },
+      
     ],
   },
   { path: "/login", element: <Login></Login> },
+  {
+    path: "/dashboard",
+    element:
+      <PrivateRouter>
+        <Dashboard />
+      </PrivateRouter>
+    ,
+    children: [
+    // { path: '/dashboard/all-users', element: <UsersTable /> },
+      {path: '/dashboard/add-product', element: <AddProduct/>},
+      {path: '/dashboard/your-product', element: <YourProduct/>}
+    ]
+  },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
