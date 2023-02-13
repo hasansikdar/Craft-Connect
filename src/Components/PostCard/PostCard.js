@@ -117,8 +117,6 @@ const PostCard = ({
   };
 
   const handelAddBookmarked = () =>{
-    
-
     const bookMarkedPost = {
         bookmarkedUserEmail : user?.email,
         bookmarkedUserName : user?.displayName,
@@ -130,7 +128,6 @@ const PostCard = ({
         postTime : post?.currentDate,
         postText : post?.postText,
     }
-    // console.log(bookMarkedPost);
     fetch("http://localhost:5000/user/bookmark", {
       method: "POST",
       headers: {
@@ -143,7 +140,6 @@ const PostCard = ({
         console.log(data);
         toast.success("Bookmarked Successfully!")
       });
-    
   }
 
   return (
