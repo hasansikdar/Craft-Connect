@@ -120,7 +120,7 @@ const PostCard = ({
     // console.log("bookmarked clicked");
     // console.log(post)
     // console.log( post?.currentDate, post?.img, post?.postText, post?.userEmail, post?.userName, post?.userPhoto, post?._id)
-    // console.log( post ,user?.displayName, user?.email)
+
     const bookMarkedPost = {
         bookmarkedUserEmail : user?.email,
         bookmarkedUserName : user?.displayName,
