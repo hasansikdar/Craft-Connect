@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 const FriendSuggestionCard = () => {
   return (
     <div className="lg:mt-5">
@@ -12,8 +12,8 @@ const FriendSuggestionCard = () => {
           <h2 className="font-bold text-base">Md Abdullah Al Mamun</h2>
           <small>100 mutual friend</small>
           <div className="flex gap-2">
-            <button className="w-[100px] h-[36px] bg-[#2374E1] rounded text-white">
-              Add Friend
+            <button className="w-[100px] h-[36px] bg-[#FF3F4A] rounded text-white">
+              Follow
             </button>
             <button className="w-[100px] h-[36px] bg-gray-600 rounded text-white">
               Remove

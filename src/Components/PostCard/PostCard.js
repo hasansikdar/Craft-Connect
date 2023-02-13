@@ -49,6 +49,7 @@ const PostCard = ({
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
     console.log(hello);
+
     if (!hello[0]) {
       return handleLike();
     } else {
@@ -61,8 +62,7 @@ const PostCard = ({
     const likeInfo = { userId: user, postId: post?._id };
     console.log(likeInfo);
     allLike.push(...likeLength, likeInfo);
-
-    fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
+    fetch(`http://localhost:5000/users/${post?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -108,6 +108,15 @@ const PostCard = ({
                     tabIndex={0}
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
+                    <li>
+                      <a
+                        className="hover:bg-[#FF3F4A] hover:text-white inline-block"
+                        href="/"
+                      >
+                        Follow
+                        <span className="font-semibold"> {post?.userName}</span>
+                      </a>
+                    </li>
                     <li>
                       <a
                         className="hover:bg-[#FF3F4A] hover:text-white"
@@ -157,7 +166,9 @@ const PostCard = ({
                       onClick={() => likedUser(user?.uid)}
                       disabled={liked === true}
                       className={
-                        liked ? "text-[34px] text-blue-600" : "text-[34px]"
+                        liked === true
+                          ? "text-[34px] text-blue-600"
+                          : "text-[34px]"
                       }
                     >
                       <BiLike />
