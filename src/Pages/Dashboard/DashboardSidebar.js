@@ -65,6 +65,14 @@ const DashboardSidebar = () => {
                                             <span className="ml-3">Your Product</span>
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link
+                                            to="/dashboard/added-cart"
+                                            className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
+                                        >
+                                            <span className="ml-3">Added Cart</span>
+                                        </Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

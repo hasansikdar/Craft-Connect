@@ -35,6 +35,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import UsersTable from "../Pages/Dashboard/UsersTable";
 import AddProduct from "../Pages/Dashboard/AddProduct";
 import YourProduct from "../Pages/Dashboard/YourProduct";
+import AddedCart from "../Pages/Dashboard/AddedCart";
 
 export const Routes = createBrowserRouter([
   {
@@ -139,7 +140,8 @@ export const Routes = createBrowserRouter([
     children: [
     // { path: '/dashboard/all-users', element: <UsersTable /> },
       {path: '/dashboard/add-product', element: <AddProduct/>},
-      {path: '/dashboard/your-product', element: <YourProduct/>}
+      {path: '/dashboard/your-product', element: <YourProduct/>},
+      {path: '/dashboard/added-cart', element: <AddedCart/>}
     ]
   },
   {

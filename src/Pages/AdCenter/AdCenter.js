@@ -25,7 +25,7 @@ const AdCenter = () => {
           <div className="grid max-w-md grid-cols-1 mx-auto mt-12 lg:max-w-full lg:mt-16 lg:grid-cols-3 gap-x-[20px] gap-y-12" z>
             {addvertise.map((advertise) => {
               return <>
-                <div className="dark:bg-[#563f8e] bg-[#FF3F4A]  px-3 py-3 rounded-md relative">
+                <div className="dark:bg-[#563f8e] bg-[#FF3F4A]  px-3 py-3 rounded-md relative hover:-translate-y-[30px] transition duration-300">
                   <Link to={advertise._id} className="block aspect-w-4 aspect-h-3">
                     <img className="object-cover w-full h-[350px] rounded-md" src={advertise.advertiseBg} alt="" />
                   </Link>
