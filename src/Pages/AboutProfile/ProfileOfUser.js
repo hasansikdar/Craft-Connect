@@ -13,7 +13,7 @@ const ProfileOfUser = () => {
   const { user } = useContext(Authcontext);
   // console.log(user);
 
-  const url = `https://craft-connect-server-blond.vercel.app/allusers?email=${user?.email}`;
+  const url = `http://localhost:5000/users?email=${user?.email}`;
   const { data: users = [] } = useQuery({
     queryKey: ["users", user?.email],
     queryFn: async () => {
@@ -23,7 +23,7 @@ const ProfileOfUser = () => {
     },
   });
 
-  // console.log(users);
+  //  console.log(users);
 
   return (
     <>

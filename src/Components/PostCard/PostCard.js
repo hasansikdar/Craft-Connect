@@ -36,36 +36,6 @@ const PostCard = ({
   const [allLike, setAllLike] = useState([]);
 
   const likeLength = post?.likes;
-  // const { user: currentUser } = useContext(Authcontext);
-  // const reactions = [
-  //   {
-  //     emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
-  //   },
-  //   { emojilink: "https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif" },
-  //   { emojilink: "https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif" },
-  //   { emojilink: "https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif" },
-  //   {
-  //     emojilink:
-  //       "https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif",
-  //   },
-  //   {
-  //     emojilink:
-  //       "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
-  //   },
-  // ];
-
-  // console.log(post);
-
-  // const { data: postreactions = [] } = useQuery({
-  //   queryKey: [post?.uniqueId],
-  //   queryFn: async () => {
-  //     const res = await fetch(`https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`);
-  //     const data = res.json();
-  //     refetch()
-  //     return data;
-  //   }
-  // })
-
   useEffect(() => {
     fetch(
       `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
@@ -75,12 +45,6 @@ const PostCard = ({
         setReactions(data);
       });
   }, [post?.uniqueId]);
-
-  // const ownReaction = postReactions.map(
-  //   (reactionItem) => reactionItem?.email === user?.email
-  // );
-
-  // for like post
 
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
