@@ -51,21 +51,24 @@ const addToCartProduct = () =>{
 
 
   return (
-    <div className="bg-white mx-auto  w-[300px] rounded-md mb-5 ">
-      <img
-        className=" mx-auto pt-2 px-2 rounded-md h-[40%]"
-        src={productImg}
-        alt=""
-      />
+    <div className="bg-white mx-auto h-[400px] w-[300px] rounded-md mb-5 hover:-translate-y-[30px] transition duration-300">
+        <img
+          className="mx-auto pt-2 px-2 rounded-md h-[200px] w-full object-cover"
+          src={productImg}
+          alt=""
+        />
       <div className="pl-4 pr-4 pb-4 ">
-        <h4 className="font-bold text-[#FF3F4A] text-2xl pt-2">
-          {productName}
+        <h4
+          title={productName}
+          className="font-bold text-[#FF3F4A] text-lg pt-2"
+        >
+          {productName.slice(0, 40)}...
         </h4>
         <p className="text-xs py-1 text-gray-700">Product By {userName}</p>
         <p className=" text-gray-700">
           {productDescription.slice(0, 35)}...see more
         </p>
-        <div className="pt-2 flex justify-between items-center">
+        <div className="relative bottom-0 pt-2 flex justify-between items-center">
           <p className="text-2xl font-bold text-[#FF3F4A]">
             ${productPrice} <span className="text-xs">Only</span>
           </p>
