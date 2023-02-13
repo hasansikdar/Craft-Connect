@@ -87,6 +87,8 @@ const MyPosts = () => {
           handleDeletePost={handleDeletePost}
           user={user}
           post={post}
+          //Added by Jinnah
+          keys={post?._id}
         ></PostCard>
       ))}
     </div>

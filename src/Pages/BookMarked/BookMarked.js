@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useContext } from "react";
 import { Authcontext } from "../../Context/UserContext";
+import BookMarkedCard from "./BookMarkedCard";
 
 const BookMarked = () => {
 
@@ -23,7 +24,9 @@ const BookMarked = () => {
       
       <div>
         {
-          posts.map()
+          posts.map((post) => <BookMarkedCard
+          key={post._id}
+          ></BookMarkedCard>)
         }
       </div>
     </div>
