@@ -3,10 +3,13 @@ import { set } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Authcontext } from '../../Context/UserContext';
 
-const ProductCard = ({ product, setCartProduct }) => {
+const ProductCard = ({ product }) => {
+
 
   const {user} = useContext(Authcontext);
 
+  // const 
+  
   const {
     userName,
     productName,
@@ -18,35 +21,59 @@ const ProductCard = ({ product, setCartProduct }) => {
   } = product;
   // console.log(product);
 
-  const cartProduct = {
-    sellerName: userName,
-    sellerEmail: email,
-    sellerImage: userPhotoURL,
-    buyerName: user?.displayName,
-    buyerEmail: user?.email,
-    productName,
-    productImg,
-    productPrice,
-    productDescription
-  }
-const addToCartProduct = () =>{
-  fetch("http://localhost:5000/addtocart", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(cartProduct),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.acknowledged) {
-        toast.success("Product added to cart");
-      }
-    })
-    .catch((error) => {
-      toast.error(error.message);
-    });
-}
+  // http://localhost:5000/checkCartProduct
+
+  const isProductAddedToCart = (product) => {
+    fetch(
+      `http://localhost:5000/checkCartProduct?productName=${product?.productName}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.length);
+        if (data.length) {
+
+          toast.success("Product already added in cart");
+        }
+        else{
+          addProductToCart()
+        }
+
+      });
+  };
+
+    const addProductToCart = () =>{
+
+      const cartProduct = {
+        sellerName: userName,
+        sellerEmail: email,
+        sellerImage: userPhotoURL,
+        buyerName: user?.displayName,
+        buyerEmail: user?.email,
+        productName,
+        productImg,
+        productPrice,
+        productDescription,
+      };
+
+
+      fetch("http://localhost:5000/addtocart", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(cartProduct),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            toast.success("Product added to cart");
+          }
+        })
+        .catch((error) => {
+          toast.error(error.message);
+        });
+    }
+
 
 
 
@@ -73,7 +100,7 @@ const addToCartProduct = () =>{
             ${productPrice} <span className="text-xs">Only</span>
           </p>
           <button
-            onClick={addToCartProduct}
+            onClick={() => { isProductAddedToCart(product)} }
             className="bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded"
           >
             Add to cart
