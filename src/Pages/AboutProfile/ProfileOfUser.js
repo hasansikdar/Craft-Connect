@@ -24,7 +24,7 @@ const ProfileOfUser = () => {
      },
    });
 
-   console.log(users);
+  //  console.log(users);
 
   return (
     <>
