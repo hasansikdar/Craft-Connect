@@ -1,9 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Authcontext } from '../../Context/UserContext';
+import DeleteAddedCart from './DeleteAddedCart';
 
 const AddedCart = () => {
     const { user } = useContext(Authcontext);
+    const [open, setOpen] = useState(false);
+    const [addedCartId, setAddedCartId] = useState();
     const url = `http://localhost:5000/cartproduct/${user?.email}`;
     const { data: addedCart = [], refetch } = useQuery({
         queryKey: ["addedCart"],
@@ -56,7 +59,7 @@ const AddedCart = () => {
                                         <td className="p-3 px-5">
                                             <div className='flex gap-x-2 items-center'>
                                                 <button type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Pay</button>
-                                                <button type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
+                                                <button onClick={() => { setOpen(true); setAddedCartId(addedCart._id); }} type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -68,6 +71,7 @@ const AddedCart = () => {
                     </table>
                 </div>
             </div>
+            <DeleteAddedCart open={open} refetch={refetch} addedCartId={addedCartId} setAddedCartId={setAddedCartId} setOpen={setOpen}/>
         </>
     );
 };

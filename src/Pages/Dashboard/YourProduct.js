@@ -32,6 +32,7 @@ const YourProduct = () => {
                     <table className="w-full text-md bg-white shadow-md rounded mb-4 overflow-x-auto">
                         <tbody>
                             <tr className="border-b text-gray-900">
+                                <th className="text-left p-3 px-5">Index</th>
                                 <th className="text-left p-3 px-5">Product Image</th>
                                 <th className="text-left p-3 px-5">Product Info</th>
                                 <th className="text-left p-3 px-5">Product Price</th>
@@ -42,7 +43,9 @@ const YourProduct = () => {
                                 return <>
                                     <tr key={index} className="border-b hover:bg-orange-100 text-gray-900">
                                         <td className="p-3 px-5">
-
+                                            <p className='pl-3'>{index + 1}</p>
+                                        </td>
+                                        <td className="p-3 px-5">
                                             <div>
                                                 <img className='w-12 h-12 rounded-md' src={productImg} alt="" />
                                             </div>
