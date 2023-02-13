@@ -19,8 +19,8 @@ const BookMarked = () => {
   });
 
   return (
-    <div className="h-screen flex flex-col  items-center mt-5 md:mt-10 overflow-y-auto w-full pb-32">
-      <h1 className="text-xl font-semibold text-black">All your bookmarked posts are here!</h1>
+    <div className="h-screen flex flex-col  items-center mt-5 md:mt-5 overflow-y-auto w-full pb-32">
+      <h1 className="sm:text-xl md:text-2xl pt-5 pb-3 font-semibold text-black">All your bookmarked posts are here!</h1>
       
       <div>
         {
