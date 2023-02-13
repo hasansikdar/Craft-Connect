@@ -21,11 +21,11 @@ const BookMarked = () => {
     <div className="h-screen flex flex-col  items-center mt-5 md:mt-10 ">
       <h1 className="text-xl font-semibold text-black">All your bookmarked posts are here!</h1>
       
-      {/* <div>
+      <div>
         {
-          posts.map(post => )
+          posts.map()
         }
-      </div> */}
+      </div>
     </div>
   );
 };
