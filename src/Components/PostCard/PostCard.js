@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 // import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 // import PostUserInfo from "./PostUserInfo/PostUserInfo";
 // import likeicon from "../../assets/icons/like.png";
@@ -115,14 +116,36 @@ const PostCard = ({
       });
   };
 
-  const handelBookmarked = () =>{
-    console.log("bookmarked clicked");
+  const handelAddBookmarked = () =>{
+    // console.log("bookmarked clicked");
     // console.log(post)
-    // console.log( post?.currentDate, post?.img, post?.postText, post?.uniqueId, post?.userEmail, post?.userName, post?.userPhoto, post?._id)
+    // console.log( post?.currentDate, post?.img, post?.postText, post?.userEmail, post?.userName, post?.userPhoto, post?._id)
     // console.log( post ,user?.displayName, user?.email)
-    const bookmarkedPost = {
-      
+    const bookMarkedPost = {
+        bookmarkedUserEmail : user?.email,
+        bookmarkedUserName : user?.displayName,
+        postId : post?._id,
+        postUserEmail : post?.userEmail,
+        postUserName : post?.userName,
+        postUserPhoto : post?.userPhoto,
+        PostPhoto : post?.img,
+        postTime : post?.currentDate,
+        postText : post?.postText,
     }
+    // console.log(bookMarkedPost);
+    fetch("http://localhost:5000/user/bookmark", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookMarkedPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Bookmarked Successfully!")
+      });
+    
   }
 
   return (
@@ -155,7 +178,7 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <Link onClick={handelBookmarked}
+                      <Link onClick={handelAddBookmarked}
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
