@@ -12,20 +12,21 @@ const BookMarked = () => {
     queryKey: [user?.email],
     // queryKey: ["posts" ,user?.email],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/user/bookmarkPost/:${user?.email}`);
+      const res = await fetch(`http://localhost:5000/user/bookmarkPost/${user?.email}`);
       const data = res.json();
       return data;
     },
   });
 
   return (
-    <div className="h-screen flex flex-col  items-center mt-5 md:mt-10 ">
+    <div className="h-screen flex flex-col  items-center mt-5 md:mt-10 overflow-y-auto w-full pb-36">
       <h1 className="text-xl font-semibold text-black">All your bookmarked posts are here!</h1>
       
       <div>
         {
           posts.map((post) => <BookMarkedCard
           key={post._id}
+          post={post}
           ></BookMarkedCard>)
         }
       </div>
