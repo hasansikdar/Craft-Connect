@@ -27,6 +27,7 @@ const BookMarked = () => {
           posts.map((post) => <BookMarkedCard
           key={post._id}
           post={post}
+          refetch= {refetch}
           ></BookMarkedCard>)
         }
       </div>

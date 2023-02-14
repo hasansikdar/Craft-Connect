@@ -3,11 +3,27 @@ import { Link } from 'react-router-dom';
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
+import { toast } from 'react-hot-toast';
 
-const BookMarkedCard = ({ post }) => {
-    
-    const handelRemoveBookmarked = () =>{
-        console.log("Clicked!")
+const BookMarkedCard = ({ post, refetch }) => {
+
+    const handelRemoveBookmarked = () => {
+        // console.log("Clicked!")
+        const post_id = post._id;
+        console.log(post_id);
+        fetch(`http://localhost:5000/user/bookmarkedPost/${post_id}`, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json",
+            },
+            //   body: JSON.stringify(bookMarkedPost),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                toast.success("Bookmarked Successfully Deleted!")
+                refetch()
+            });
     }
 
     return (
@@ -51,7 +67,7 @@ const BookMarkedCard = ({ post }) => {
                                             >
                                                 Save
                                             </Link>
-                                        </li> */}
+                                    </li> */}
                             </ul>
                         </div>
                     </div>
