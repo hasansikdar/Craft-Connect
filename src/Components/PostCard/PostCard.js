@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 // import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 // import PostUserInfo from "./PostUserInfo/PostUserInfo";
 // import likeicon from "../../assets/icons/like.png";
@@ -79,6 +80,32 @@ const PostCard = ({
       });
   };
 
+  const handelAddBookmarked = () =>{
+    const bookMarkedPost = {
+        bookmarkedUserEmail : user?.email,
+        bookmarkedUserName : user?.displayName,
+        postId : post?._id,
+        postUserEmail : post?.userEmail,
+        postUserName : post?.userName,
+        postUserPhoto : post?.userPhoto,
+        PostPhoto : post?.img,
+        postTime : post?.currentDate,
+        postText : post?.postText,
+    }
+    fetch("http://localhost:5000/user/bookmark", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookMarkedPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Bookmarked Successfully Done!")
+      });
+  }
+
   return (
     <div>
       {/* Latest Design Post card  */}
@@ -109,29 +136,20 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <a
-                        className="hover:bg-[#FF3F4A] hover:text-white inline-block"
-                        href="/"
-                      >
-                        Follow
-                        <span className="font-semibold"> {post?.userName}</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
+                      <Link onClick={handelAddBookmarked}
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
                         Bookmark
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
                         Save
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -172,6 +190,7 @@ const PostCard = ({
                       }
                     >
                       <BiLike />
+
                     </button>
 
                     <p className="text-3xl">{post?.likes?.length}</p>

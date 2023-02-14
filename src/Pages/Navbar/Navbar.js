@@ -434,15 +434,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
-                  <img
-                    className="w-16 rounded-full mr-2 "
-                    src={`${
-                      user?.photoURL
-                        ? user?.photoURL
-                        : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-                    }`}
-                    alt=""
-                  />
+                  <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
                   <div>
                     <p className="">
                       <span className="font-bold">Maruf Khan</span> tagged you
@@ -580,7 +572,7 @@ const Navbar = () => {
                       user?.photoURL
                         ? user?.photoURL
                         : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-                    }`}
+                      }`}
                     alt=""
                   />
                   <h3 className="text-xl font-bold text-[#FF3F4A] hover:text-white">
