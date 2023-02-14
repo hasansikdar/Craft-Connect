@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const DashboardSidebar = () => {
     return (
@@ -42,36 +42,36 @@ const DashboardSidebar = () => {
                                         </form>
                                     </li>
                                     {/* <li>
-                                        <Link
+                                        <NavLink
                                             to="/dashboard/all-users"
-                                            className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
+                                            className="dashNav text-base  font-normal rounded-lg hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
                                         >
                                             <span className="ml-3">Users</span>
-                                        </Link>
+                                        </NavLink>
                                     </li> */}
                                     <li>
-                                        <Link
+                                        <NavLink
                                             to="/dashboard/add-product"
-                                            className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
+                                            className="dashNav text-base  font-normal rounded-lg hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
                                         >
                                             <span className="ml-3">Add Product</span>
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                     <li>
-                                        <Link
+                                        <NavLink
                                             to="/dashboard/your-product"
-                                            className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
+                                            className="dashNav text-base  font-normal rounded-lg hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
                                         >
                                             <span className="ml-3">Your Product</span>
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                     <li>
-                                        <Link
+                                        <NavLink
                                             to="/dashboard/added-cart"
-                                            className="text-base  font-normal rounded-lg border border-[#FF3F4A] hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
+                                            className="dashNav text-base  font-normal rounded-lg hover:border-[#261b40] flex items-center p-2 hover:bg-[#2C2048] group"
                                         >
                                             <span className="ml-3">Added Cart</span>
-                                        </Link>
+                                        </NavLink>
                                     </li>
                                 </ul>
                             </div>
