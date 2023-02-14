@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
-import { TfiCommentAlt } from "react-icons/tfi";
 import { toast } from 'react-hot-toast';
 
 const BookMarkedCard = ({ post, refetch }) => {
 
     const handelRemoveBookmarked = () => {
-        // console.log("Clicked!")
         const post_id = post._id;
         console.log(post_id);
         fetch(`http://localhost:5000/user/bookmarkedPost/${post_id}`, {
