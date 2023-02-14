@@ -6,7 +6,7 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import maruf from "../../assets/maruf.png";
 import hasan from "../../assets/hasan.png";
 import logo from "../../assets/logo.png";
-import { FaExclamation, FaMoon } from "react-icons/fa";
+import { FaExclamation, FaMoon, FaUserTie } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
 import { AiFillSetting } from "react-icons/ai";
@@ -136,7 +136,7 @@ const Navbar = () => {
             <div>
               {/* Search field for Mobile Device */}
 
-              <div
+              {/* <div
                 onClick={() => setSearch(!search)}
                 className="flex md:hidden justify-center  items-center   border border-zinc-600 rounded-full px-3 bg-zinc-700 py-[4px] my-[4px] ml-[60px]"
               >
@@ -150,7 +150,7 @@ const Navbar = () => {
                     className="py-1 text-white  bg-zinc-700 hover:bg-zinc-600 w-[100px]"
                   />
                 )}
-              </div>
+              </div> */}
 
               <NavSearchField allusers={allusers}></NavSearchField>
             </div>
@@ -173,7 +173,7 @@ const Navbar = () => {
                 </Link>
               </button>
 
-              <div className="dropdown dropdown-hover">
+              {/* <div className="dropdown dropdown-hover">
                 <label tabIndex={0} className="m-1">
                   <IoMdNotifications className="text-xl md:text-2xl text-white">
                     {" "}
@@ -190,12 +190,12 @@ const Navbar = () => {
                     <Link>Item 2</Link>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
-              <button
+              {/* <button
                 onClick={() => setNotification(!notification)}
                 className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
-              ></button>
+              ></button> */}
             </div>
             <button
               className=" flex items-center gap-2 mr-10"
@@ -214,8 +214,8 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/*-----------------------------------------Messanger Modal Start---------------------------------------------- */}
-          {messageModal && (
+          {/* -----------------------------------------Messanger Modal Start---------------------------------------------- */}
+          {/* {messageModal && (
             <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5">
               <div className="px-3 py-3">
                 <div className="flex justify-between">
@@ -312,11 +312,11 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          )}
-          {/*-----------------------------------------Messanger Modal End----------------------------------------------*/}
+          )} */}
+          {/*-----------------------------------------Messanger Modal End---------------------------------------------- */}
 
           {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
-          {notification && (
+          {/* {notification && (
             <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5">
               <div className="px-3 py-3">
                 <div className="flex justify-between">
@@ -402,11 +402,11 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-          )}
+          )} */}
           {/*-----------------------------------------Messanger Modal End----------------------------------------------*/}
 
           {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal Start^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
-          {notification && (
+          {/* {notification && (
             <div className="w-[80%] md:w-[30%] h-[500px] overflow-auto rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5">
               <div className="px-3 py-3">
                 <div className="flex justify-between">
@@ -476,11 +476,11 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
           {/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Notification Modal end^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/}
 
           {/*#########################################Profile Modal Start####################################################*/}
-          {profile && (
+          {/* {profile && (
             <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5 ">
               <div className="px-3 py-3">
                 <div className="flex justify-between items-center mb-2 ">
@@ -561,7 +561,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
           {/*#########################################Profile Modal End####################################################*/}
         </div>
 
@@ -617,7 +617,20 @@ const Navbar = () => {
                 <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                   <div className="flex items-center">
                     <TbLayoutDashboard className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
-                    <Link to='/dashboard' className="font-bold">Users Dashboard</Link>
+                    <Link to="/dashboard" className="font-bold">
+                      Users Dashboard
+                    </Link>
+                  </div>
+                  <div>
+                    <FcNext className="text-2xl mr-2" />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
+                  <div className="flex items-center">
+                    <FaUserTie className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
+                    <Link to="/admin" className="font-bold">
+                      Admin Panel
+                    </Link>
                   </div>
                   <div>
                     <FcNext className="text-2xl mr-2" />
