@@ -9,7 +9,7 @@ import PaymentModal from './PaymentModal';
 const AddedCart = () => {
     const { user } = useContext(Authcontext);
     const [open, setOpen] = useState(false);
-    const [billingDetails, setBillingDetails] = useState({ email: '', name: '', price: 0 });
+    const [billingDetails, setBillingDetails] = useState({ email: '', name: '', price: 1 });
     const [openPaymentModal, setOpenPaymentModal] = useState(false);
     const [addedCartId, setAddedCartId] = useState();
     const url = `http://localhost:5000/cartproduct/${user?.email}`;

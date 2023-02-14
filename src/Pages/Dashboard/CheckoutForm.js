@@ -13,7 +13,6 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
     const {price, name, email} = billingDetails;
     console.log(billingDetails, price, name, email)
     const [clientSecret, setClientSecret] = useState("");
-    const [process, setProcess] = useState(false);
     const cancelButtonRef = useRef(null);
     const elements = useElements();
 
@@ -49,7 +48,6 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
             setError('');
             console.log('[PaymentMethod]', paymentMethod);
         }
-        setProcess(true);
         const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -68,10 +66,9 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
         }
         if(paymentIntent.status === "succeeded"){
             setOpenPaymentModal(false)
-            toast.success('Congrats! your paymentDone your transaction id ',paymentIntent.id);
+            toast.success(`Congrats! Your payment done. your transaction id ${paymentIntent.id}`);
             
         }
-            setProcess(false)
         console.log(paymentIntent, 'bgi')
     }
     
