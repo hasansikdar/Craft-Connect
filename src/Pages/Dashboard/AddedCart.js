@@ -1,31 +1,32 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useState } from 'react';
 import { Authcontext } from '../../Context/UserContext';
-import DeleteProductModal from './DeleteProductModal';
+import DeleteAddedCart from './DeleteAddedCart';
+import PaymentModal from './PaymentModal';
 
-const YourProduct = () => {
-    const [open, setOpen] = useState(false)
 
-    const [productId, setProductId] = useState();
 
+const AddedCart = () => {
     const { user } = useContext(Authcontext);
-    const url = `http://localhost:5000/allproducts?email=${user?.email}`;
-    const { data: allProduct = [], refetch } = useQuery({
-        queryKey: ["allProduct", user?.email],
+    const [open, setOpen] = useState(false);
+    const [billingDetails, setBillingDetails] = useState({ email: '', name: '', price: 0 });
+    const [openPaymentModal, setOpenPaymentModal] = useState(false);
+    const [addedCartId, setAddedCartId] = useState();
+    const url = `http://localhost:5000/cartproduct/${user?.email}`;
+    const { data: addedCart = [], refetch } = useQuery({
+        queryKey: ["addedCart"],
         queryFn: async () => {
             const res = await fetch(url);
             const data = res.json();
             return data;
         },
     });
-
-
     return (
         <>
             <div className="text-gray-200">
                 <div className="p-4 flex">
                     <h1 className="text-3xl">
-                        Yours Product
+                        Added Cart
                     </h1>
                 </div>
                 <div className="px-3 py-4 flex justify-center">
@@ -38,14 +39,15 @@ const YourProduct = () => {
                                 <th className="text-left p-3 px-5">Product Price</th>
                                 <th className="text-left p-3 px-5">Action</th>
                             </tr>
-                            {allProduct.map((allProduct, index) => {
-                                const { userName, userPhotoURL, productName, productPrice, email, productImg, productDescription } = allProduct;
+                            {addedCart.map((addedCart, index) => {
+                                const { buyerName, buyerEmail, productName, productPrice, email, productImg, productDescription } = addedCart;
                                 return <>
                                     <tr key={index} className="border-b hover:bg-orange-100 text-gray-900">
                                         <td className="p-3 px-5">
                                             <p className='pl-3'>{index + 1}</p>
                                         </td>
                                         <td className="p-3 px-5">
+
                                             <div>
                                                 <img className='w-12 h-12 rounded-md' src={productImg} alt="" />
                                             </div>
@@ -57,10 +59,13 @@ const YourProduct = () => {
                                             </div>
                                         </td>
                                         <td className="p-3 px-5">
-                                            <p className=''>{productPrice}৳</p>
+                                            <p>{productPrice}৳</p>
                                         </td>
                                         <td className="p-3 px-5">
-                                            <button type="button" onClick={() => { setOpen(true); setProductId(allProduct._id) }} className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
+                                            <div className='flex gap-x-2 items-center'>
+                                                <button onClick={() => { setOpenPaymentModal(true); setBillingDetails({ email: buyerEmail, name: buyerName, price: productPrice }) }} type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Pay</button>
+                                                <button onClick={() => { setOpen(true); setAddedCartId(addedCart._id); }} type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
+                                            </div>
                                         </td>
                                     </tr>
                                 </>
@@ -71,9 +76,10 @@ const YourProduct = () => {
                     </table>
                 </div>
             </div>
-            <DeleteProductModal open={open} refetch={refetch} productId={productId} setProductId={setProductId} setOpen={setOpen} />
+            <DeleteAddedCart open={open} refetch={refetch} addedCartId={addedCartId} setAddedCartId={setAddedCartId} setOpen={setOpen} />
+            <PaymentModal billingDetails={billingDetails} openPaymentModal={openPaymentModal} setOpenPaymentModal={setOpenPaymentModal} />
         </>
     );
 };
 
-export default YourProduct;
+export default AddedCart;
