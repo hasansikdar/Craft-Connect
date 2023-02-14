@@ -9,7 +9,7 @@ import PaymentModal from './PaymentModal';
 const AddedCart = () => {
     const { user } = useContext(Authcontext);
     const [open, setOpen] = useState(false);
-    const [billingDetails, setBillingDetails] = useState({ email: '', name: '', price: 0 });
+    const [billingDetails, setBillingDetails] = useState({ email: '', name: '', price: 1, _id: '' });
     const [openPaymentModal, setOpenPaymentModal] = useState(false);
     const [addedCartId, setAddedCartId] = useState();
     const url = `http://localhost:5000/cartproduct/${user?.email}`;
@@ -40,9 +40,9 @@ const AddedCart = () => {
                                 <th className="text-left p-3 px-5">Action</th>
                             </tr>
                             {addedCart.map((addedCart, index) => {
-                                const { buyerName, buyerEmail, productName, productPrice, email, productImg, productDescription } = addedCart;
+                                const {paid, buyerName, buyerEmail, productName, productPrice, email, productImg, productDescription } = addedCart;
                                 return <>
-                                    <tr key={index} className="border-b hover:bg-orange-100 text-gray-900">
+                                    <tr key={index} className="border-b hover:bg-gray-50 text-gray-900">
                                         <td className="p-3 px-5">
                                             <p className='pl-3'>{index + 1}</p>
                                         </td>
@@ -63,7 +63,12 @@ const AddedCart = () => {
                                         </td>
                                         <td className="p-3 px-5">
                                             <div className='flex gap-x-2 items-center'>
-                                                <button onClick={() => { setOpenPaymentModal(true); setBillingDetails({ email: buyerEmail, name: buyerName, price: productPrice }) }} type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Pay</button>
+                                                {paid ? 
+                                                <button type="button" className="text-sm bg-green-500 hover:bg-green-400 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Paid</button>
+                                                :
+                                                <button onClick={() => { setOpenPaymentModal(true); setBillingDetails({ email: buyerEmail, name: buyerName, price: productPrice, _id: addedCart._id }) }} type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Pay</button>
+                                                }
+                                                
                                                 <button onClick={() => { setOpen(true); setAddedCartId(addedCart._id); }} type="button" className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
                                             </div>
                                         </td>
