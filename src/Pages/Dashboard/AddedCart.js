@@ -9,9 +9,9 @@ import PaymentModal from './PaymentModal';
 const AddedCart = () => {
     const { user } = useContext(Authcontext);
     const [open, setOpen] = useState(false);
-    const [billingDetails, setBillingDetails] = useState();
+    const [billingDetails, setBillingDetails] = useState({ email: '', name: '', price: 0 });
     const [openPaymentModal, setOpenPaymentModal] = useState(false);
-    const [addedCartId, setAddedCartId] = useState({ email: '', name: '', price: 0 });
+    const [addedCartId, setAddedCartId] = useState();
     const url = `http://localhost:5000/cartproduct/${user?.email}`;
     const { data: addedCart = [], refetch } = useQuery({
         queryKey: ["addedCart"],
