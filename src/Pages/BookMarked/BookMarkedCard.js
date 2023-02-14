@@ -13,7 +13,6 @@ const BookMarkedCard = ({ post, refetch }) => {
             headers: {
                 "content-type": "application/json",
             },
-            //   body: JSON.stringify(bookMarkedPost),
         })
             .then((res) => res.json())
             .then((data) => {
