@@ -1,16 +1,33 @@
-import React, { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import {
     CardElement,
     useStripe,
     useElements,
 } from '@stripe/react-stripe-js';
 import { Dialog, Transition } from '@headlessui/react';
+import { toast } from 'react-hot-toast';
 
-const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal }) => {
+const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails }) => {
     const stripe = useStripe();
     const [error, setError] = useState('');
+    const {price, name, email} = billingDetails;
+    console.log(billingDetails, price, name, email)
+    const [clientSecret, setClientSecret] = useState("");
+    const [process, setProcess] = useState(false);
     const cancelButtonRef = useRef(null);
     const elements = useElements();
+
+    useEffect(() => {
+        // Create PaymentIntent as soon as the page loads
+        fetch("http://localhost:5000/create-payment-intent", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ price }),
+        })
+            .then((res) => res.json())
+            .then((data) => setClientSecret(data.clientSecret));
+    }, [price]);
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!stripe || !elements) {
@@ -32,7 +49,34 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal }) => {
             setError('');
             console.log('[PaymentMethod]', paymentMethod);
         }
+        setProcess(true);
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: name,
+                        email: email
+                    },
+                },
+            },
+        );
+        if(confirmError){
+            setError(confirmError.message);
+            return;
+        }
+        if(paymentIntent.status === "succeeded"){
+            setOpenPaymentModal(false)
+            toast.success('Congrats! your paymentDone your transaction id ',paymentIntent.id);
+            
+        }
+            setProcess(false)
+        console.log(paymentIntent, 'bgi')
     }
+    
+   
+
     return (
         <>
             <Transition.Root show={openPaymentModal} as={Fragment}>
@@ -85,7 +129,7 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal }) => {
                                                     <button
                                                         type="submit"
                                                         className="inline-flex disabled:cursor-not-allowed w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-900 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-                                                        disabled={!stripe}
+                                                        disabled={!stripe || !clientSecret || process}
                                                     >
                                                         Pay
                                                     </button>

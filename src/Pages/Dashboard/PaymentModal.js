@@ -5,14 +5,14 @@ import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe('pk_test_51M8mBnHqK4LgCkpJSxVwEIEiMxHcEYWeqz5bcD9dSldD6WBzOWdxDvrNrdY08h3c2fsUoYxKqE6cSaYIxFqoDmYl00PzdEd6p2');
 
-const PaymentModal = ({ openPaymentModal, setOpenPaymentModal }) => {
-    
+const PaymentModal = ({ openPaymentModal, setOpenPaymentModal, billingDetails }) => {
+
 
     return (
         <div className='my-5 py-2'>
 
             <Elements stripe={stripePromise}>
-                <CheckoutForm openPaymentModal={openPaymentModal} setOpenPaymentModal={setOpenPaymentModal} />
+                <CheckoutForm billingDetails={billingDetails} openPaymentModal={openPaymentModal} setOpenPaymentModal={setOpenPaymentModal} />
             </Elements>
 
 
