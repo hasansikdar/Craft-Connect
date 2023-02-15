@@ -32,13 +32,13 @@ const NavSearchField = ({ allusers }) => {
 
   return (
     <div>
-      <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
+      <div className=" md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
         <input
           onChange={handleFilter}
           value={wordEntered}
           type="text"
           placeholder="Search"
-          className="mx-2 md:mx-0 pl-4 pr-44 py-4 text-white w-full rounded-md bg-zinc-700"
+          className="mx-2 md:mx-0 pl-4 md:pr-44 md:py-4 text-white w-full rounded-md bg-zinc-700"
         />
         <i className="pr-4">
           {filterData.length === 0 ? (

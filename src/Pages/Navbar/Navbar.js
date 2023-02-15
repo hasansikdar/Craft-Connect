@@ -134,23 +134,6 @@ const Navbar = () => {
 
           <div className="flex  gap-16 mr-5 items-center ">
             <div>
-              {/* Search field for Mobile Device */}
-
-              {/* <div
-                onClick={() => setSearch(!search)}
-                className="flex md:hidden justify-center  items-center   border border-zinc-600 rounded-full px-3 bg-zinc-700 py-[4px] my-[4px] ml-[60px]"
-              >
-                <i className="">
-                  <BiSearchAlt2></BiSearchAlt2>
-                </i>
-                {search && (
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    className="py-1 text-white  bg-zinc-700 hover:bg-zinc-600 w-[100px]"
-                  />
-                )}
-              </div> */}
 
               <NavSearchField allusers={allusers}></NavSearchField>
             </div>
