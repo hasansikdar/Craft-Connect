@@ -47,46 +47,6 @@ const PostCard = ({
       });
   }, [post?.uniqueId]);
 
-<<<<<<< HEAD
-  // const ownReaction = postReactions.map(
-  //   (reactionItem) => reactionItem?.email === user?.email
-  // );
-
-  // for like post
-
-  // const likedUser = (id) => {
-  //   const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
-  //   // console.log(hello[0]);
-  //   if (!hello[0]) {
-  //     return handleLike();
-  //   } else {
-  //     return setLove(true);
-  //   }
-  // };
-
-  // const handleLike = () => {
-  //   setLove(true);
-  //   const likeInfo = { userId: user, postId: post?._id };
-  //   allLike.push(...likeLength, likeInfo);
-
-  //   fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(allLike),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       if (data?.modifiedCount > 0) {
-  //         setLiked(true);
-  //       }
-  //     });
-  // };
-
-=======
->>>>>>> 9a39d28dd7f1fbf9f247cf854695f8b50cc0deb7
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
     console.log(hello);

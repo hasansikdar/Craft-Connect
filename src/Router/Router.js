@@ -111,7 +111,6 @@ export const Routes = createBrowserRouter([
       },
       { path: "/friends/friendList", element: <CustomList></CustomList> },
       { path: "/friends/list", element: <AllFriends></AllFriends> },
-      { path: "/chats", element: <Chatting></Chatting> },
       {
         path: "/postDetails/:id",
         element: <PostDetails></PostDetails>,
@@ -143,6 +142,7 @@ export const Routes = createBrowserRouter([
       {path: '/dashboard/added-cart', element: <AddedCart/>}
     ]
   },
+  { path: "/chats", element: <PrivateRouter><Chatting></Chatting></PrivateRouter> },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
