@@ -78,3 +78,6 @@ img {
 .thumbs-wrapper{
   margin: 0;
 }
+.dashNav.active{
+  border: 1px solid #FF3F4A;
+}

@@ -10,8 +10,8 @@ import { toast } from 'react-hot-toast';
 const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails }) => {
     const stripe = useStripe();
     const [error, setError] = useState('');
-    const {price, name, email} = billingDetails;
-    console.log(billingDetails, price, name, email)
+    const [process, setProcess] = useState(false);
+    const { price, name, email, _id } = billingDetails;
     const [clientSecret, setClientSecret] = useState("");
     const cancelButtonRef = useRef(null);
     const elements = useElements();
@@ -60,19 +60,38 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
                 },
             },
         );
-        if(confirmError){
+        if (confirmError) {
             setError(confirmError.message);
             return;
         }
-        if(paymentIntent.status === "succeeded"){
-            setOpenPaymentModal(false)
-            toast.success(`Congrats! Your payment done. your transaction id ${paymentIntent.id}`);
-            
+        if (paymentIntent.status === "succeeded") {
+            const payment = {
+                price,
+                transactionId: paymentIntent.id,
+                email,
+                productId: _id,
+            }
+            fetch('http://localhost:5000/payments', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(payment)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        setOpenPaymentModal(false)
+                        toast.success(`Congrats! your paymentDone your transaction id ${paymentIntent.id}`);
+                    }
+                })
+
         }
+        setProcess(false)
         console.log(paymentIntent, 'bgi')
     }
-    
-   
+
+
 
     return (
         <>
@@ -122,11 +141,11 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
                                                     }}
                                                 />
                                                 <p className="text-red-500 py-3 text-base">{error}</p>
-                                                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                                <div className="py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                                     <button
                                                         type="submit"
                                                         className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-900 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-                                                        disabled={!stripe || !clientSecret}
+                                                        disabled={!stripe || !clientSecret || process}
                                                     >
                                                         Pay
                                                     </button>
