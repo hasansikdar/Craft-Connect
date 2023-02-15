@@ -38,7 +38,7 @@ const ReportedProduct = () => {
                     buyerEmail,
                     productName,
                     productImg,
-                    _id,
+                    productId,
                   } = reportedProduct;
                   return (
                     <>
@@ -74,7 +74,7 @@ const ReportedProduct = () => {
                         </td>
                         <td className="p-3 px-5">
                           <Link
-                            to={`/feature/marketplace/product/${_id}`}
+                            to={`/feature/marketplace/product/${productId}`}
                             type="button"
                             // onClick={() => {
                             //   setOpen(true);

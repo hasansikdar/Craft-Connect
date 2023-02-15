@@ -59,6 +59,7 @@ const ProductCard = ({ product }) => {
         productImg,
         productPrice,
         productDescription,
+        productId: _id,
       };
 
 
@@ -92,6 +93,7 @@ const ProductCard = ({ product }) => {
         productImg,
         productPrice,
         productDescription,
+        productId: _id,
       };
 
       fetch("http://localhost:5000/reportproduct", {
