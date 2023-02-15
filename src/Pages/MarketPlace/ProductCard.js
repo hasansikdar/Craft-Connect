@@ -3,6 +3,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { toast } from 'react-hot-toast';
 import { Authcontext } from '../../Context/UserContext';
 import useClickOutside from '../../Components/helpers/clickOutside';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
 
@@ -22,6 +23,7 @@ const ProductCard = ({ product }) => {
     productImg,
     email,
     userPhotoURL,
+    _id
   } = product;
   // console.log(product);
 
@@ -36,7 +38,7 @@ const ProductCard = ({ product }) => {
         console.log(data.length);
         if (data.length) {
 
-          toast.success("Product already added in cart");
+          toast.error("Product already added in cart");
         }
         else{
           addProductToCart()
@@ -124,12 +126,13 @@ const ProductCard = ({ product }) => {
         />
         <div className="pl-4 pr-4 pb-4 ">
           <div className="flex items-center justify-between">
-            <p
+            <Link
+              to={`/feature/marketplace/product/${_id}`}
               title={productName}
               className="font-bold text-[#FF3F4A] text-lg pt-2"
             >
               {productName.slice(0, 40)}...
-            </p>
+            </Link>
             <button onClick={() => setReportProduct(!reportProduct)}>
               <BsThreeDotsVertical className="text-2xl text-black" />
             </button>
@@ -145,9 +148,12 @@ const ProductCard = ({ product }) => {
           </div>
 
           <p className="text-xs py-1 text-gray-700">Product By {userName}</p>
-          <p className=" text-gray-700">
+          <Link
+            to={`/feature/marketplace/product/${_id}`}
+            className=" text-gray-700"
+          >
             {productDescription.slice(0, 35)}...see more
-          </p>
+          </Link>
           <div className="relative bottom-0 pt-2 flex justify-between items-center">
             <p className="text-2xl font-bold text-[#FF3F4A]">
               ${productPrice} <span className="text-xs">Only</span>

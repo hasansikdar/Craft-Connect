@@ -36,6 +36,7 @@ import UsersTable from "../Pages/Dashboard/UsersTable";
 import AddProduct from "../Pages/Dashboard/AddProduct";
 import YourProduct from "../Pages/Dashboard/YourProduct";
 import AdminPanel from "../Pages/AdminPanel/AdminPanel";
+import DetailsOfProduct from "../Pages/MarketPlace/DetailsOfProduct";
 
 export const Routes = createBrowserRouter([
   {
@@ -76,6 +77,11 @@ export const Routes = createBrowserRouter([
       {
         path: "/feature/marketplace",
         element: <MarketPlace></MarketPlace>,
+      },
+      {
+        path: "/feature/marketplace/product/:id",
+        element: <DetailsOfProduct></DetailsOfProduct>,
+        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: "/feature/bookmarked",
@@ -156,9 +162,7 @@ export const Routes = createBrowserRouter([
         <AdminPanel></AdminPanel>
       </PrivateRouter>
     ),
-    children: [
-
-    ]
+    children: [],
   },
   {
     path: "*",
