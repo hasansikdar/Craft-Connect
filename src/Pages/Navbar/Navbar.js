@@ -231,7 +231,7 @@ const Navbar = () => {
                 </Link>
                 {isAdmin && (
                   <Link
-                    to="/admin"
+                    to="/admin/all-users"
                     className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer"
                   >
                     <div className="flex items-center">

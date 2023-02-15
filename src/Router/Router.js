@@ -40,6 +40,7 @@ import DetailsOfProduct from "../Pages/MarketPlace/DetailsOfProduct";
 import AllUsers from "../Pages/AdminPanel/AllUsers";
 import ReportedPost from "../Pages/AdminPanel/ReportedPost";
 import ReportedProduct from "../Pages/AdminPanel/ReportedProduct";
+import AdminRoute from "./AdminRoute";
 
 export const Routes = createBrowserRouter([
   {
@@ -161,9 +162,9 @@ export const Routes = createBrowserRouter([
   {
     path: "/admin",
     element: (
-      <PrivateRouter>
+      <AdminRoute>
         <AdminPanel></AdminPanel>
-      </PrivateRouter>
+      </AdminRoute>
     ),
     children: [
       {
