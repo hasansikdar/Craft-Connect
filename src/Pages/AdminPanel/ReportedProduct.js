@@ -57,7 +57,7 @@ const ReportedProduct = () => {
                         </td>
                         <td className="p-3 px-5">
                           <p title={productName} className="">
-                            {productName.slice(0, 20)}...
+                            {productName?.slice(0, 20)}...
                           </p>
                         </td>
                         <td className="p-3 px-5 cursor-pointer">
