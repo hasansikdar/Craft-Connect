@@ -1,0 +1,2459 @@
+[33mcommit b5a27b3ee4ad03ecf94fbaf3f21fbbda5f6e9bb3[m[33m ([m[1;36mHEAD -> [m[1;32mabidur[m[33m)[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Mon Feb 13 01:16:26 2023 +0600
+
+    update delete func
+
+[33mcommit fec4793699eda973f9b7a696f771b8fc95ab591a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/abidur[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 6ddafe4 6944549
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sun Feb 12 19:49:25 2023 +0600
+
+    bigs12
+
+[33mcommit 6ddafe4fbe40d93b5ee50aed5b9917b9a5dcfaa1[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sun Feb 12 19:42:16 2023 +0600
+
+    create product1
+
+[33mcommit 69445491bcaba2cb3a0e569f2954c49969729889[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Feb 12 01:52:01 2023 +0600
+
+    add product complet
+
+[33mcommit 1902db426c3d6c927a79cd2cf7d26993fb03fba8[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Feb 12 01:19:36 2023 +0600
+
+    complete add product
+
+[33mcommit b8ee932c7202c41410af4f285371202b09e5fb6c[m
+Merge: 259cd8a c1581fe
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sat Feb 11 01:08:00 2023 +0600
+
+    Merge branch 'abidur' of https://github.com/farhanchy99/Craft-Connect into abidur
+
+[33mcommit c1581fe1d22346ff4f5c8dd4aa0e3b48c2aa6bb4[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sat Feb 11 01:03:25 2023 +0600
+
+    dashboard complete
+
+[33mcommit 787a0460a7fd55586c25789af7f89ee7ae036550[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 10 23:55:07 2023 +0600
+
+    update dashbaord nav
+
+[33mcommit 259cd8a0115e50a726433815b901dd3b97b01ecb[m
+Merge: 66c1f81 e639840
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 23:47:49 2023 +0600
+
+    Merge branch 'ali'
+
+[33mcommit e639840b3099337b0e4626b4606e41a15952bb7e[m
+Merge: 33726c7 9037690
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 23:47:31 2023 +0600
+
+    farhan13
+
+[33mcommit 66c1f819aef6703ab18f9ba070b80ade983e8223[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 23:46:12 2023 +0600
+
+    farhan12
+
+[33mcommit f393ae32deb8e5885adb7659f47ebd6e737db4d0[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 10 23:45:46 2023 +0600
+
+    update dashboard slider
+
+[33mcommit 0fd5bde59cf0bb8d8d8bda0257906a8239ffacfb[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 10 23:37:32 2023 +0600
+
+    dashboard nav add
+
+[33mcommit cf9ba81b7c34eb81ccfed0397460a8eae5d0cb00[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 10 23:30:45 2023 +0600
+
+    dashbaord setup
+
+[33mcommit 33726c72084b5e1eeadf454c7a1a698849cf63d2[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 22:11:29 2023 +0600
+
+    serch123
+
+[33mcommit 13d7442694bf30d0f1373fb4197e90fe666bc0b9[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 21:32:24 2023 +0600
+
+    serch12
+
+[33mcommit 9e4a72e39743e40f969630ae0f49e4a3560c4a54[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 21:23:36 2023 +0600
+
+    borderadd
+
+[33mcommit 01db3348bd961c2ca909e1b71605d22513dd3955[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 21:15:03 2023 +0600
+
+    bugs12
+
+[33mcommit 8eefa885d2e0564ec01b0e9f5742d5b461b88cbe[m
+Merge: 28d2224 7c5958e
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 21:09:15 2023 +0600
+
+    Merge branch 'ifty'
+
+[33mcommit 7c5958e9f20dcbb967ec59bfd01c62a6f5b662f5[m
+Merge: aae767d 88cc47c
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 21:08:33 2023 +0600
+
+    Merge branch 'ifty' of https://github.com/farhanchy99/Craft-Connect into ifty
+
+[33mcommit aae767da60d0e5d39a91489d926a98408d9c8d7b[m
+Merge: 6eabb34 cf2f360
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 21:04:38 2023 +0600
+
+    ifty added12
+
+[33mcommit 88cc47cbb07aa58fbb0d6aa85e6a872fbe1767b6[m[33m ([m[1;31morigin/ifty[m[33m)[m
+Merge: cf2f360 21ca569
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 10 21:03:48 2023 +0600
+
+    matha kharap
+
+[33mcommit 28d222469b88b64bb0abc746362adbcd2aa50a31[m
+Merge: 367a06d 6eabb34
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 20:43:55 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into Mamun
+
+[33mcommit 6eabb3476906326fbc120366af6a0ff4b678a724[m
+Merge: 21ca569 9617580
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 20:41:27 2023 +0600
+
+    marufadd1
+
+[33mcommit 9617580c5f6c8b191252fa8aef4493aa7cd95cea[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 10 20:39:09 2023 +0600
+
+    bg color change
+
+[33mcommit 21ca5699dac836e898b7530b72cb90bf5fa0bed0[m
+Merge: 9f155f5 dca78ef
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 18:56:20 2023 +0600
+
+    changeadded4
+
+[33mcommit dca78efa224a2eeea186b0af6df3f5b24bf9e5c3[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 18:53:53 2023 +0600
+
+    change added 3
+
+[33mcommit cf2f360c49becbf5882ebb72a2ba4f36ac2b1bc0[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 10 18:46:33 2023 +0600
+
+    added clear button
+
+[33mcommit 367a06d8e2249c7d701d65ee8c7b90c4d3f5ed66[m
+Merge: b5f1580 a6211b8
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 18:44:55 2023 +0600
+
+    addedchange2
+
+[33mcommit 63e36da6a76b69ec2161c598858a23b5d699e711[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 10 18:31:54 2023 +0600
+
+    added search
+
+[33mcommit 9f155f545941b58db1a59a066a785c3af4b6a7e3[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 18:28:24 2023 +0600
+
+    addedchange1
+
+[33mcommit 9d19b64c50d02660ecec171066274d3f13d2b0a1[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 10 17:35:09 2023 +0600
+
+    added search fuctionality
+
+[33mcommit 58e5c7e19f5ec7c7e5541f258c20f57675d9ef3a[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 10 15:47:07 2023 +0600
+
+    added search field
+
+[33mcommit 903769025367dc2151b6e3da3412031fd637ce6f[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 10 15:14:55 2023 +0600
+
+    bookmarded change
+
+[33mcommit 4fb59b239e1adbcd9a034e6b1c8bef2a97e348d9[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 10 14:59:58 2023 +0600
+
+    bookmarked page is created done
+
+[33mcommit 0daa9671a5c7c6ce5c2b04a8543ba73e20cfdd7c[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 10 14:24:47 2023 +0600
+
+    problem solve
+
+[33mcommit a6211b83fd9a52a6512fd56c2f1fc72aaf60bf7f[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Feb 10 12:08:52 2023 +0600
+
+    like option problem solve
+
+[33mcommit a8f6d2ffc5e8f1c4c9a56b2d8adab58f5add9ecc[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 10 00:50:08 2023 +0600
+
+    code pus
+
+[33mcommit b5f158050d522b5b0ec2e59ef3afb390e992a038[m
+Merge: e6cae90 337bbe2
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 00:32:15 2023 +0600
+
+    iftyadded1
+
+[33mcommit e6cae90a4df9d798b3c1ee99b8830695277810a6[m
+Merge: 919a466 e42b794
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 10 00:00:48 2023 +0600
+
+    abidadded1
+
+[33mcommit 919a466c2889edb3821420b4dca9e47bd8dc9c3d[m
+Merge: f67d8fb 5e16d28
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 9 23:55:07 2023 +0600
+
+    Merge branch 'ali'
+
+[33mcommit 337bbe242aef794c6400d8c5f2b89fedf3f5c7c9[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Thu Feb 9 23:54:49 2023 +0600
+
+    added user name
+
+[33mcommit 5e16d28c54b1a2edb6bb17626c4341d90d989539[m
+Merge: 31aa3cc 63d122a
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 9 23:51:28 2023 +0600
+
+    aliadded1
+
+[33mcommit f67d8fbbe9f06dc754f82de58c3579534a69399d[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 9 23:48:02 2023 +0600
+
+    farhandesign2
+
+[33mcommit 63d122a1cd3e9874d6ef28ae86c63766dd586d2d[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 9 22:55:39 2023 +0600
+
+    done
+
+[33mcommit 1ad82a7c0494b94458f896f03a563b927acdb0b5[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 9 22:55:18 2023 +0600
+
+    fixing bugs
+
+[33mcommit 78706b83bfbc13b8e4b44ef77dc28ab8cf421079[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 9 22:54:25 2023 +0600
+
+    find some bugs
+
+[33mcommit a75c22933530e9fe99d7689601833d9dbfd79876[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 9 22:52:38 2023 +0600
+
+    allmost done
+
+[33mcommit ea3eee93112a725cb2a961335f6acec9f96834dd[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 9 22:51:38 2023 +0600
+
+    still processing
+
+[33mcommit 0273763b6ee5a39097c8f194d1a17dc68b974cab[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 9 22:48:21 2023 +0600
+
+    processing
+
+[33mcommit e42b7946830a0e15650f4125549e6ec95009f969[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 9 22:29:20 2023 +0600
+
+    udpate advertisement
+
+[33mcommit 182ceea8187b29f40ad80d5cb28201cbdea4bb2b[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 9 22:10:00 2023 +0600
+
+    lates code update
+
+[33mcommit f26521ea3765c9c0767de1a15a07e87ba35cc365[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 9 20:31:43 2023 +0600
+
+    lates code
+
+[33mcommit e27b232a27753f4677878af47e94498e79163516[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 9 20:24:31 2023 +0600
+
+    lates update
+
+[33mcommit 31aa3ccf1fa080a3a691fd4d8a947b70b60c4b12[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 9 20:23:25 2023 +0600
+
+    designfarhan1
+
+[33mcommit 70f91f671155b247a1c25ba547f42f404e588165[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 9 20:19:46 2023 +0600
+
+    ad center push
+
+[33mcommit a0defabc0ba0efda41a246c0a0709594268bc4cb[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Thu Feb 9 08:12:24 2023 +0600
+
+    added search modal
+
+[33mcommit 800e40c57c862c8574520f219cf531ce44ec71ed[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Wed Feb 8 17:29:35 2023 +0600
+
+    design updated
+
+[33mcommit edd13dc69303f66e504f63230a2dacc0d49ca6ed[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Wed Feb 8 10:48:51 2023 +0600
+
+    three dots dropdown modal added
+
+[33mcommit 92adaedb9f7fed9ea3e17db28dcc7b72fb847d77[m
+Merge: 90aea13 4bed876
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Feb 7 19:35:58 2023 +0600
+
+    abidur added
+
+[33mcommit 4bed876dc4178c656cdc7080761662d77c472c09[m[33m ([m[1;32mmain[m[33m, [m[1;32mMaruf[m[33m)[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Feb 7 14:44:30 2023 +0600
+
+    upadte profile view
+
+[33mcommit 90aea13a716a1decb6a2a233615201a04818f9ab[m
+Merge: 947913b 03ee2c5
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Feb 7 13:44:13 2023 +0600
+
+    change2
+
+[33mcommit 947913bdff0ad4a814d2e95e50935eae44110551[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Feb 7 13:38:32 2023 +0600
+
+    change1
+
+[33mcommit 03ee2c539a5de70e34b674bd747e9789f477810a[m[33m ([m[1;31morigin/maruf[m[33m)[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Feb 7 13:37:09 2023 +0600
+
+    change
+
+[33mcommit 7af4dfee08dd3b369237cde3aa616df603a99ffa[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Feb 7 13:26:49 2023 +0600
+
+    lates code push
+
+[33mcommit e71a8a01038378170db21a9562f37dc1e46009bc[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Feb 7 13:09:14 2023 +0600
+
+    update code
+
+[33mcommit 4cb4e24d604887d04e76c006f254ad04cc3c47bc[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Feb 7 02:19:36 2023 +0600
+
+    profile update
+
+[33mcommit 60224d02efd297f4eaeab9c1139e83a3943df103[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 21:44:15 2023 +0600
+
+    bug fixx3
+
+[33mcommit db383b074016da73469b515ff0f98a79e93bb818[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 21:35:19 2023 +0600
+
+    bug fixx2
+
+[33mcommit 1c27483d74adbc4fb16d0220ea66c51051bc01ad[m
+Merge: 36f537a 9199cd3
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 21:23:14 2023 +0600
+
+    ifty fixxx
+
+[33mcommit 36f537af8735a9d2f8b8881b687610f353401e18[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 21:04:13 2023 +0600
+
+    ali fix6
+
+[33mcommit da6a2bf75c2a3b66f5a06496108e3cfc432f5cac[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 21:03:20 2023 +0600
+
+    design fix4
+
+[33mcommit 9199cd3cd041efff2686ce32484d10f6b9381867[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 3 21:02:33 2023 +0600
+
+    added profile image
+
+[33mcommit 3428c3177878bd4584184b9574acdef56b4d90ff[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 3 20:41:52 2023 +0600
+
+    added bg image
+
+[33mcommit 710f11ad4fbea20464548c3d451d5d11e3996a46[m
+Merge: fca5239 c2f3203
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 20:41:18 2023 +0600
+
+    Merge branch 'ali' of https://github.com/farhanchy99/Craft-Connect into ali
+
+[33mcommit fca5239f8f7c3b50a45f2b95dae0e692902e5133[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 20:40:18 2023 +0600
+
+    design fix 3
+
+[33mcommit c2f32034f7c4aa777b851d64ee3515f01c863584[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 3 20:39:48 2023 +0600
+
+    done
+
+[33mcommit 54b7033ae2e086c36949d5b039514e91b1dfeebb[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 3 20:38:22 2023 +0600
+
+    processing
+
+[33mcommit f73070d86361aab31c3180f1b9795cee2e643206[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 20:29:11 2023 +0600
+
+    bug fix2
+
+[33mcommit 1a02ab93168e9ba689be04692b555dca5ae075f7[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 20:24:45 2023 +0600
+
+    ali fix3
+
+[33mcommit 9a4db032447e0f5d556355279fd3212c7cd5267d[m
+Merge: 67ecf49 98775e5
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 20:17:01 2023 +0600
+
+    Merge branch 'ali'
+
+[33mcommit 98775e5d6faa4d72aac7369fdfc6da0b4157aab2[m
+Merge: b273799 c84b0bc
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 20:16:34 2023 +0600
+
+    ali fix1
+
+[33mcommit 67ecf492634382fe8d2c835c1eaf5279baeb15c9[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 20:13:02 2023 +0600
+
+    farhan fix 10
+
+[33mcommit b2737993d948aa7d98bf7abaf5bd4fb518d4b0a1[m
+Merge: 3b7a7e0 60962e8
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 19:14:18 2023 +0600
+
+    Merge branch 'Mamun'
+
+[33mcommit 60962e8ac05dff0db61797598c2409c9047aa8da[m
+Merge: 3f808e3 b6930a1
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 19:13:35 2023 +0600
+
+    mamun vai fix2
+
+[33mcommit 3b7a7e03e9555831efb7e09af7d5c1f747597bac[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 19:11:37 2023 +0600
+
+    design change farhan
+
+[33mcommit 3f808e38efab59fd1e0cee5f8837207347b63ef9[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 18:55:50 2023 +0600
+
+    maruf fix3
+
+[33mcommit cd2ad9f7d6746ff6153286aabbcaccc750bad51b[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 18:55:07 2023 +0600
+
+    maruf fix3
+
+[33mcommit 1f23ac637a6e301779b6b05b22171fe74d415744[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 18:52:38 2023 +0600
+
+    maruf fix2
+
+[33mcommit b6930a1ecaf411e97bffb875239a73d8acea1b45[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Feb 3 18:52:17 2023 +0600
+
+    design changes for dark mode
+
+[33mcommit 516c9e7952037a8416c8c5fedae9a9ce18be62ae[m
+Merge: 74e8d90 b37966a
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 18:47:13 2023 +0600
+
+    Merge branch 'maruf' of https://github.com/farhanchy99/Craft-Connect into maruf
+
+[33mcommit 74e8d90d3a3eea944ada286f2cabeb8f197f529c[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Feb 3 18:44:50 2023 +0600
+
+    farhan fixed2
+
+[33mcommit b37966aad8b98c73af7ed433e04a15dbfe03e4a3[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 3 18:31:54 2023 +0600
+
+    add slice count
+
+[33mcommit 01a24b0b8c651a71c1cfbe7aa621366bf7c9440d[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 3 18:25:54 2023 +0600
+
+    complete advertising
+
+[33mcommit e9fe030fb7eabceed0a82171b8f3186a2d4517b1[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Feb 3 18:23:04 2023 +0600
+
+    notification and message modal dark mode design updated
+
+[33mcommit ef5532215305e8008551bc91b666cfbac2a5b3ec[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Feb 3 16:23:17 2023 +0600
+
+    Profile edit page updated and right side hove effect for dark mode
+
+[33mcommit 2bb01a116453d8a29f3dbddbbbd0644e09743e7c[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Feb 3 16:12:09 2023 +0600
+
+    Profile edit page updated
+
+[33mcommit 3e71cdf3a40ecd7ddb41d0a5d362a5373623ec4a[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 3 16:11:44 2023 +0600
+
+    added update profile modal
+
+[33mcommit 536f0c829cea38a808b9beabf61b23d3460d16ec[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 3 15:25:53 2023 +0600
+
+    fixed profile problem
+
+[33mcommit 9839412867d7fe8a5415948c7cd757d0cb21e5a8[m
+Merge: a71f607 63e20a2
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Feb 3 10:47:58 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into Mamun
+
+[33mcommit a71f60786befc8bee28a1081c55926b4535b3cb1[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Feb 3 10:47:44 2023 +0600
+
+    for solve error
+
+[33mcommit c84b0bc74073f876a61d72c5817e3ad2427605d1[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 3 10:35:40 2023 +0600
+
+    page is almost done
+
+[33mcommit aa4b5dc60374d644c0582dd13e2e9da461faa697[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 3 10:35:05 2023 +0600
+
+    page is processing
+
+[33mcommit a81bba5365ed41e2a0fd7f43d6b5864c9701d56a[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 3 10:34:21 2023 +0600
+
+    page is processing
+
+[33mcommit 4018719f318f9afe29d76d0eaa78610617f28c4b[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Feb 3 10:33:47 2023 +0600
+
+    page is processing
+
+[33mcommit e0d109a4aef57b1c1fa0ae96d8aacd1c0d37ec21[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 3 01:55:32 2023 +0600
+
+    added profile img
+
+[33mcommit eca6392e367d2b5676cd80360b33bddf5a7b65c2[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 3 01:52:47 2023 +0600
+
+    added profile img in profile
+
+[33mcommit 09c933ae86b54ead4d8c82998c145fb7c5008067[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Feb 3 01:51:01 2023 +0600
+
+    added upload image with profile
+
+[33mcommit a97a5fa8c720dc339ea0ece901c258d073b55fd0[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Feb 3 00:50:51 2023 +0600
+
+    fix postbox
+
+[33mcommit 63e20a2e2ca92416f43f90d94d8910a9c5b26e84[m
+Merge: 5a4ebb5 42f8022
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 21:44:05 2023 +0600
+
+    maruf fixed
+
+[33mcommit 5a4ebb505f6cf21b398fffb6da72f8d0aa804635[m
+Merge: 50bc436 4f95051
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 21:42:43 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into maruf
+
+[33mcommit 42f80227c81b918789bca1e5bf0536f5ceef4e12[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 2 21:41:35 2023 +0600
+
+    stop on hover changes
+
+[33mcommit 50bc436a42c2189c56a20c64b8e2fab23a1c6c60[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 21:39:31 2023 +0600
+
+    fix10
+
+[33mcommit be2f83ac321dff017896e39500bab4dc43e78082[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 2 21:35:23 2023 +0600
+
+    post box changes
+
+[33mcommit 4f950511251e6f355911100a6ca10eb1bc24a219[m
+Merge: 29e38ad c5911ad
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 21:35:09 2023 +0600
+
+    ifty fix1
+
+[33mcommit a273b91f7325d85abb40e80031c3cc5b775a4f57[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Feb 2 21:33:08 2023 +0600
+
+    change ads
+
+[33mcommit c5911ad71b33578b9cf4bedbb26363845641d600[m
+Merge: f209c8a f4a2cf7
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Thu Feb 2 21:30:56 2023 +0600
+
+    added navbar
+
+[33mcommit 29e38ad7ccb01258de34e7137c1c3ebabac3ec62[m
+Merge: 13c1a73 93f3a3d
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 21:26:19 2023 +0600
+
+    conflict fix2
+
+[33mcommit 13c1a73aa0832e241215e5ae6dd45f39d3d445c3[m[33m ([m[1;31morigin/farhan[m[33m)[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 21:22:56 2023 +0600
+
+    fixed2
+
+[33mcommit 93f3a3d95be91adb2d8709bd07e1c268276597eb[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 20:11:55 2023 +0600
+
+    fixing7
+
+[33mcommit f7755336702e211da2a2700c7ea32c05d2372cb5[m
+Merge: fbd1b97 17215ee
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 19:38:58 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into ali
+
+[33mcommit fbd1b975aa3ff2081687d894310c5da04b10e3f6[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 19:37:40 2023 +0600
+
+    fixing4
+
+[33mcommit 84622bf0c258c5a312f1534f4a471eb4808def7e[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 19:35:31 2023 +0600
+
+    fixing3
+
+[33mcommit 17215eed4c5790751b9b9e67234f7ce6a53b89d5[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 19:26:51 2023 +0600
+
+    fixing1
+
+[33mcommit e6272f5b1425040fc5ce6c1d5f524c97604e0aa6[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 19:21:06 2023 +0600
+
+    err fixixg 1
+
+[33mcommit 159923d73b3623a70ec30902e304f8f4c47d5b7c[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 19:19:30 2023 +0600
+
+    err fixing
+
+[33mcommit 0f123cffeb5d81ad5b6357646122066fa18d064c[m
+Merge: 2b4e35e 9f3e14a
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 15:57:04 2023 +0600
+
+    Merge branch 'ali'
+
+[33mcommit 9f3e14a617d37b599f67c64a2694ec9a83ec986e[m
+Merge: f4a2cf7 192a512
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 15:56:38 2023 +0600
+
+    ali vai fix
+
+[33mcommit 2b4e35e6496c52699604fee64f49640571bdce3d[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Thu Feb 2 15:51:04 2023 +0600
+
+    farhan bug fix
+
+[33mcommit 192a512cd54cfdf3c26b3a7e3b4af32b891ef600[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:40:44 2023 +0600
+
+    left sidebar is done maybe
+
+[33mcommit 37f74658d19cae0df6774c086755e94a6a67341c[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:34:46 2023 +0600
+
+    sidebar is processing
+
+[33mcommit d21a021c219fe0ad319fbe64f931bf4d2861327a[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:33:52 2023 +0600
+
+    left sidebar is still processing
+
+[33mcommit 408aab818a170f3222dd7acba88f0ed502bec76f[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:33:01 2023 +0600
+
+    sidebar er kaj ses hoi nai
+
+[33mcommit 4bca352dbaf38b7251b8cd1246db23a937a59d63[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:31:24 2023 +0600
+
+    sidebar is stail processing
+
+[33mcommit 84d01f5ea59f59257b273eb440dbe776cabfca81[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:29:27 2023 +0600
+
+    left sidebar is processing
+
+[33mcommit 645787a93ad77f27ef4bd34605c00077c8867efe[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:28:33 2023 +0600
+
+    side bar is processing
+
+[33mcommit d777ab97d835089c66fc30f91c34355b05767f80[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:24:19 2023 +0600
+
+    left sidebar is processing
+
+[33mcommit 15cc5551ef6cb165f303d69ffd9ea917fe12a7e3[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:23:31 2023 +0600
+
+    left sidebar is processing
+
+[33mcommit d05475d911b6c01f2c9476b8f7423ba0147f8faa[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Thu Feb 2 10:20:36 2023 +0600
+
+    left side ar is processing
+
+[33mcommit 105aff65614d908957f8bde5eb3a37d14a6e2457[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Wed Feb 1 20:40:24 2023 +0600
+
+    complete users Post box
+
+[33mcommit c8507eb8ccba83cbbfa913a4b878cb1204d0e1d3[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Wed Feb 1 20:13:47 2023 +0600
+
+    make change to postbox
+
+[33mcommit f209c8a28e6b96c944bed5bf1d2039c50a383861[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Wed Feb 1 19:38:30 2023 +0600
+
+    fixed my profile issue
+
+[33mcommit 3c88f55ad64665abad22ff98cabee65f17d681d2[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Wed Feb 1 17:11:41 2023 +0600
+
+    complete post with photo
+
+[33mcommit 4d8a33d05b07d34b15cd5e818627f8856c4495de[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Wed Feb 1 15:47:05 2023 +0600
+
+    updated navbar
+
+[33mcommit be7fb1224cb20e7d05fd95d8f336927a7b05bb4d[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Wed Feb 1 15:24:00 2023 +0600
+
+    update and complete register page
+
+[33mcommit af0040760c7376bcd9bb20ff2cafa596cd6e3121[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Wed Feb 1 15:17:25 2023 +0600
+
+    complete user photo
+
+[33mcommit f4a2cf793a389dc018e4d2ab9eee80bedcd188bc[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 31 23:28:45 2023 +0600
+
+    bug fix
+
+[33mcommit 68b71b383be4f2581f6385d1728056b52a8c7c5d[m
+Merge: 4196350 86307f8
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 31 23:05:00 2023 +0600
+
+    err fix
+
+[33mcommit 86307f8e7402baaf25793cfc693f8215f290ae8f[m
+Merge: b4b80a0 0eef27b
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Tue Jan 31 22:56:13 2023 +0600
+
+    added dynamic user profile
+
+[33mcommit 4196350f7678f5d1963718c957e739437ee7531c[m
+Merge: ed5fda9 90dd9f7
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 31 20:10:44 2023 +0600
+
+    Merge branch 'Mamun'
+
+[33mcommit ed5fda9aa42bde7dc85200ddfd19ffb1e4c9ed75[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 31 20:09:36 2023 +0600
+
+    1st commit
+
+[33mcommit 90dd9f7eeca8d11e6c1dc30858d409781ce9e48a[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Tue Jan 31 18:15:55 2023 +0600
+
+    like done
+
+[33mcommit 0eef27b7af10061443f3da0e7b57df83067c8197[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 31 01:27:39 2023 +0600
+
+    feature added
+
+[33mcommit 2d44c1e9476b2ede4bdd21181e75c9b9655918fa[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 31 01:16:48 2023 +0600
+
+    maruf ads
+
+[33mcommit 308f2787c4e25f6eb88f6bb11236f73112bbaae9[m
+Merge: 6fdeb48 1d7acbf
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 31 01:16:06 2023 +0600
+
+    Merge branch 'maruf' of https://github.com/farhanchy99/Craft-Connect into maruf
+
+[33mcommit 1d7acbff5991cb474c0536c66304b2b0fd23c74e[m
+Merge: 0c53e6c 863dfc3
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Jan 31 01:14:37 2023 +0600
+
+    complete sponcor
+
+[33mcommit 0c53e6c62aaf8d94799d6fa018139e994aebd3e8[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Jan 31 01:01:35 2023 +0600
+
+    complete sponcor
+
+[33mcommit b4b80a090aa71236e4a07cc066f6394344dbd1fd[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 23:54:37 2023 +0600
+
+    added dynamic profile
+
+[33mcommit 6a317efca87af18377c5c7648f796ecb3da0d8dc[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 22:48:57 2023 +0600
+
+    added user profile ui
+
+[33mcommit 6fdeb487e26ce84db1406f3f830c1a94ea5ac8ab[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 20:12:47 2023 +0600
+
+    chat route
+
+[33mcommit 6c5d4a4494166435e26e01329d5632a23018f662[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Mon Jan 30 19:57:08 2023 +0600
+
+    left side bar is remove
+
+[33mcommit 038ca575cc21f5eee022117365a12d9efb306d2f[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 19:40:17 2023 +0600
+
+    added user dynamic profile
+
+[33mcommit fbad5b9a8522946323b8ad80b046b9253c7257b8[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 19:02:38 2023 +0600
+
+    added dynamic my post
+
+[33mcommit 863dfc331d0097f5f2c65c095d07bec122e3cb3f[m
+Merge: f4305b1 9e6bdae
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 18:18:40 2023 +0600
+
+    maruf fix
+
+[33mcommit 9e6bdae00b787e73afd3cb3dd7d9851a9e62a3db[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Mon Jan 30 18:15:06 2023 +0600
+
+    checkPost working
+
+[33mcommit f4305b1d09aabaf07298f377d627e21e3a6bd129[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 17:50:09 2023 +0600
+
+    pain
+
+[33mcommit 50db008dd74cacfe2dcdaed555164f21cc6f588b[m
+Merge: 1c30b57 b5874ba
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 17:48:33 2023 +0600
+
+    fixx
+
+[33mcommit b5874ba5f92cafbdd6e1297578a3b73d9f1c3bf9[m
+Merge: 2160a0e f81bc5a
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 17:44:17 2023 +0600
+
+    bug fix2
+
+[33mcommit 1c30b57400e07bdffa81fd8997c6733afc7f0848[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 17:37:30 2023 +0600
+
+    chat design
+
+[33mcommit f81bc5aa304e9ebe97e499d1c86620da28f9f4b5[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Mon Jan 30 17:35:59 2023 +0600
+
+    like option almost done
+
+[33mcommit ca34ccf3a86efaba93beff9e6f0b75c1787cc4e5[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 16:17:19 2023 +0600
+
+    added my posts
+
+[33mcommit 320dd525f0c4fd65831f2c88e2e5b76abd8825e3[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Mon Jan 30 16:11:38 2023 +0600
+
+    stail working
+
+[33mcommit 71940257a7ac374645b109a64c4b2a5f38507563[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 15:28:39 2023 +0600
+
+    solved mobile responsive provlem
+
+[33mcommit 76f56668fef913c3227a33dcb4328d4aa6b9faeb[m
+Merge: a91e0b6 2160a0e
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 15:25:57 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into ifty
+
+[33mcommit a91e0b658ce364a41121046e38a49d82e413b7ea[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 15:16:19 2023 +0600
+
+    solver profile UI problem
+
+[33mcommit 6d1cb72a75c6693bc273f3f60c7a68aa683ee8f8[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 30 15:09:53 2023 +0600
+
+    solved profile desktop ui problem
+
+[33mcommit 2160a0e9588ca6e28bef2cb88d2a18324a5b1f5e[m
+Merge: c9b16df c7b5b87
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 11:52:07 2023 +0600
+
+    layout add
+
+[33mcommit c7b5b87188b72cf1aa0ad1fc52941f01237ee879[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Mon Jan 30 11:46:26 2023 +0600
+
+    icon is changing
+
+[33mcommit 4fdee279b7833f854f2018c2566f464caccfae3f[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Mon Jan 30 11:14:21 2023 +0600
+
+    left side is change
+
+[33mcommit c9b16df7cabe2d7c508638316fb18cf307a230e4[m
+Merge: 2bb0529 378ebd1
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 01:49:32 2023 +0600
+
+    Merge branch 'maruf'
+
+[33mcommit 2bb05297acefd122096d2b24c57be66816ed7cf8[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Mon Jan 30 01:47:50 2023 +0600
+
+    logo edit
+
+[33mcommit 378ebd150f90e353110065f8af6900394cef82f0[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Mon Jan 30 01:33:02 2023 +0600
+
+    update postbox
+
+[33mcommit 028bd3eabb7c91689659582faa58dd4ef8e21cc5[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Mon Jan 30 01:28:21 2023 +0600
+
+    update and postbox
+
+[33mcommit f2570bb254f3013aaec5c095a0c67a068c5a0618[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 23:47:51 2023 +0600
+
+    Add preivew image
+
+[33mcommit 5a19944720e5dfacda247a31a62ff43cd52ba63e[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 22:18:11 2023 +0600
+
+    complete post box
+
+[33mcommit 217ef9fe7f00608c9cb0af4caabdea186b53178d[m
+Merge: 60447e9 e664b8d
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 20:35:49 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into maruf
+
+[33mcommit 60447e91e26b97adc8912b59de5af33ea58170ef[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 20:35:03 2023 +0600
+
+    update photo
+
+[33mcommit 9d5e6da0a05f36600fbfa5797f4c6b95066c5a1f[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 20:22:37 2023 +0600
+
+    update
+
+[33mcommit e7d0ef3be32eac77d21e32961f2cb64314de4ddd[m
+Merge: 520f79a 4fdca5b
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 19:29:37 2023 +0600
+
+    update and reload website top site
+
+[33mcommit a3dc772281dcd596e3c52e6df530b2f7c6ef2092[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Sun Jan 29 16:05:22 2023 +0600
+
+    fixed profile problem
+
+[33mcommit e664b8d88b64f4133f3d9ddb73234ec42ac414a8[m
+Merge: 59a62b8 cd06a45
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sun Jan 29 13:10:23 2023 +0600
+
+    Merge branch 'Mamun' of https://github.com/farhanchy99/Craft-Connect into Mamun
+
+[33mcommit 59a62b890cfcae07c87b5209841e9b73cf2ec752[m
+Merge: ed65fe7 15f13c3
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sun Jan 29 13:08:27 2023 +0600
+
+    fix
+
+[33mcommit 15f13c3dc0573371f27d2933ca90c1ad13d4cdc3[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sun Jan 29 13:03:19 2023 +0600
+
+    fav change
+
+[33mcommit cd06a453fd2ebb5bb67d7d8f071e0387840e322d[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sun Jan 29 13:01:48 2023 +0600
+
+    post card design and post details design updated
+
+[33mcommit 520f79ae46c8fe4d7b362b6499e22c6a42035b6a[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 11:47:15 2023 +0600
+
+    add to textarea
+
+[33mcommit a939a9770c43507fae69c7f2994787bdb928b45d[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 29 10:46:05 2023 +0600
+
+    add post box
+
+[33mcommit 006ab3e8f7b5dc15a2d313a7439d76ad6b4a3f27[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 28 23:44:42 2023 +0600
+
+    profile image  dynamic
+
+[33mcommit eb6e8ef44d59e7b2baf6c13314bbed501b75da3e[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 28 23:19:03 2023 +0600
+
+    post card  updated
+
+[33mcommit af408344a5b797b79cec635d0122a68b42184ce8[m
+Merge: c6523c0 4fdca5b
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sat Jan 28 21:29:03 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into farhan
+
+[33mcommit ed65fe7f7fb8fc2f5f5272cdecc6b23d751f2166[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sat Jan 28 21:27:32 2023 +0600
+
+    sitename
+
+[33mcommit 4fdca5b494a59318264fae162d030066ec32c95f[m
+Merge: baa32ff 1ce7d59
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sat Jan 28 15:42:11 2023 +0600
+
+    Merge branch 'Mamun'
+
+[33mcommit 1ce7d59b1eca47b1eff9635a2c5db090e44685fe[m
+Merge: 36cf9ab 096bfed
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sat Jan 28 15:41:52 2023 +0600
+
+    bug2fix
+
+[33mcommit baa32ffe1cb43eaad71ff9ee376f6fdd7612bd4d[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sat Jan 28 15:36:38 2023 +0600
+
+    bug fixed
+
+[33mcommit 096bfed69c5114028c55c044d381b95e6483bd0d[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 28 14:08:51 2023 +0600
+
+    dark and light theme update
+
+[33mcommit 33caf3b98ba0cfce23504acf67d5cbff6fc7e962[m
+Merge: fabe5dd 36cf9ab
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Jan 27 19:47:24 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into ali
+
+[33mcommit 36cf9ab0f53e6c15f349887bbbe8206969e09cfb[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 27 19:39:28 2023 +0600
+
+    ifty 1
+
+[33mcommit fabe5dd9bc3bbd58d585fe5757fded2a93ce929c[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Jan 27 19:37:34 2023 +0600
+
+    jinnah is change
+
+[33mcommit e4b81d4e06b78f7ce0e3455c74442c95b21a8243[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 19:35:36 2023 +0600
+
+    added
+
+[33mcommit 1f577cab289d3475a17c8af62605aa377142835d[m
+Merge: a2b3fcd 6b70af4
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 19:34:26 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into ifty
+
+[33mcommit 6b70af4411264eb2968df6df1092aaf487240cc5[m[33m ([m[1;31morigin/developer[m[33m)[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 27 19:31:47 2023 +0600
+
+    jinna vai added
+
+[33mcommit a2b3fcd0073118ac76b1a77a6bae7f08bccbb90f[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 19:26:40 2023 +0600
+
+    added cursor pointer
+
+[33mcommit 00e5e8d78544dbfa4e6b4266ed14b4a43c3e1e31[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 19:25:25 2023 +0600
+
+    updated photos
+
+[33mcommit 5f5e253b3d07dc53f4c03d407f9afb3488a065e5[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 19:22:56 2023 +0600
+
+    added photos
+
+[33mcommit e2fb0bcede2091859e5838f55e14c18b80f6d820[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 27 19:21:04 2023 +0600
+
+    maruf added
+
+[33mcommit 10a844c448314915ec75818283adda6f35e918bd[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 19:15:36 2023 +0600
+
+    added latest photos
+
+[33mcommit 56e0b9f3388f06963b06f70038d4b1bde27fd776[m
+Merge: 4ee4107 df7c03b
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 27 19:09:59 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect into maruf
+
+[33mcommit df7c03b5c3f14da7e0759d54e00307b9e8ad569b[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 27 19:02:19 2023 +0600
+
+    ifty vai added
+
+[33mcommit 00baafa5d09626ec2169885c0bdc2cb8238158e9[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 19:01:18 2023 +0600
+
+    added new file for left side profile
+
+[33mcommit 84c2849f8a2f832c35540496cbdbfb6b1684e53f[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 27 18:52:58 2023 +0600
+
+    added nothing
+
+[33mcommit f751477d9160a33df610a8865ba7e0add3ab6a5d[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 27 18:44:37 2023 +0600
+
+    Mamun vai added
+
+[33mcommit 4ee4107fa74defc134e562268b5b6ee97126e1ff[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 27 18:37:06 2023 +0600
+
+    update text story
+
+[33mcommit 90a00b0f28e6a341bc7698ea60047693af021638[m
+Merge: 5d85881 f098c5d
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 27 18:23:03 2023 +0600
+
+    Merge branch 'main' of https://github.com/farhanchy99/Craft-Connect
+
+[33mcommit 5d85881f041fd8876fa8ea6f9a6899f001d80e2f[m
+Merge: 82a0d47 7465c17
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 27 18:22:32 2023 +0600
+
+    commit in farhan vai
+
+[33mcommit 7465c17dacef085288f43c6301c5084aff55ff42[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 27 18:17:14 2023 +0600
+
+    first commit in farhan vai
+
+[33mcommit f098c5decf8c84c45ecd6262cf909373de84ab75[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 27 15:47:39 2023 +0600
+
+    new-add2
+
+[33mcommit c6523c0c4dac411a69df198c62010bb9669b6336[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 27 15:41:49 2023 +0600
+
+    farhan
+
+[33mcommit 464ba677d0ca8722f3668954aec54029ad1e5a7b[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 27 14:45:43 2023 +0600
+
+    home page left side responsive for mobile device
+
+[33mcommit 52348781e3f9841be60fec3ecca0fbdc5d8cb5a1[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 27 12:33:00 2023 +0600
+
+    home page left side responsive for mobile device
+
+[33mcommit eeb85f7ad9e40dd7d7c9f8c682373d1b35a9e12a[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 27 01:23:05 2023 +0600
+
+    all friends page responsive for mobile device
+
+[33mcommit 8760ff43a2df190d3d8777291d4a79b4a315aecf[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 27 00:25:59 2023 +0600
+
+    Friend suggestion page responsive for mobile device
+
+[33mcommit 82a0d472c5d23854c7b1ec74fc4d8fda86f4b836[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Thu Jan 26 11:39:06 2023 +0600
+
+    Starting work
+
+[33mcommit c2af3b8eb7f9376762dbd927d516cc86538cdfb1[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Tue Jan 24 01:09:44 2023 +0600
+
+    add to textcontent database
+
+[33mcommit c693297bba1afab7df78af4c0b729d15fe37ae6d[m
+Merge: 6dd1e88 46b376c
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Mon Jan 23 15:53:47 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into maruf
+
+[33mcommit abed5efaa9ff30525752b922aacc2851bec38e9b[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sun Jan 22 22:31:59 2023 +0600
+
+    friends page responsive done for mobile device
+
+[33mcommit fd2994bed5ee6b3b40eb11a0a589156be11ba913[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sun Jan 22 21:31:40 2023 +0600
+
+    Custom middle  side  add
+
+[33mcommit 0f3b881e67b41fb6a1cad63a225f29c4d5a049ad[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sun Jan 22 21:27:09 2023 +0600
+
+    Customleft side  add
+
+[33mcommit 15f34273e37cc428fca186a35687f7df14c17e46[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sun Jan 22 18:49:02 2023 +0600
+
+    Custom list add
+
+[33mcommit 8c4ffc0438978a4324335ff8f1b5e3f35de2812a[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sun Jan 22 17:12:26 2023 +0600
+
+    group right side modal design change for dark mode
+
+[33mcommit 46b376c4e28f3d17cdfa0f7788d2b0a9df6c92d2[m
+Merge: 36cef1c 1ea23e0
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 21:34:06 2023 +0600
+
+    Merge branch 'ali'
+
+[33mcommit 1ea23e083ca6276fc14939d4738a973887bd8729[m
+Merge: e94c9b5 22bf9ba
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 21:29:50 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into ali
+
+[33mcommit e94c9b51752435ed342a28a4a0f47b1e47026b7c[m
+Merge: 4e3a50e d741616
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 21:28:47 2023 +0600
+
+    Merge branch 'ali' of https://github.com/hasansikdar/Craft-Connect into ali
+
+[33mcommit 36cef1cada2c4a3479a5b3f271f8db25bf3be975[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 21:28:38 2023 +0600
+
+    ali done
+
+[33mcommit d7416162e8f5e153670f48adcbb88832c6a427e2[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Jan 20 21:17:05 2023 +0600
+
+    photo is added
+
+[33mcommit 22bf9baa0945f0545366749176acae09d3d6deb5[m
+Merge: 1b31102 4e3a50e
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 21:11:07 2023 +0600
+
+    Merge branch 'ali'
+
+[33mcommit 4e3a50ef31cefd7c403984515770122e03402fdd[m
+Merge: 3360c50 434c908
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 21:10:34 2023 +0600
+
+    conflict resolved
+
+[33mcommit 1b31102d80d263fbd909272f343c624ef4c9e2da[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 21:05:32 2023 +0600
+
+    2 member push
+
+[33mcommit 3360c50ed71cf66bf4d23a119769b46fc80652da[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Jan 20 21:03:16 2023 +0600
+
+    almost done
+
+[33mcommit 6dd1e88025e72415500c0f74a833cb5ba6523689[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 20 20:56:35 2023 +0600
+
+    add and save backend
+
+[33mcommit 434c908e5ed203bf03fc0f093619c86929995bba[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 20:54:36 2023 +0600
+
+    final push
+
+[33mcommit 91c6d19df9f7c8d196f048b49b56ba92138f78ed[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 20:27:04 2023 +0600
+
+    message problem solved
+
+[33mcommit 12de3d21ded09186c8096f0921ddbaf2884d6ed7[m
+Merge: 08b8812 c7da17d
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 20:22:42 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into farhan
+
+[33mcommit c7da17d7ce9cccf0e9492e4c51ae5b1e0ce724a0[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 20:20:09 2023 +0600
+
+    mamun final push
+
+[33mcommit 138329e99779d244966337f74da03055c118a246[m
+Merge: d061caa 4d41514
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 20:15:14 2023 +0600
+
+    Merge branch 'Abdullah'
+
+[33mcommit d061caa59c0fecf00ae9456468e1e28882baf133[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 20:09:18 2023 +0600
+
+    abdullah final push
+
+[33mcommit 08b8812ca174e1ee325298ac62a7180a86b1fbd1[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 20 19:49:41 2023 +0600
+
+    chat design polish
+
+[33mcommit 4d41514f6037f27c638428decacad855d2fd4ddf[m
+Merge: 94f8325 8e7f9fb
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 20 19:05:19 2023 +0600
+
+    All friend page added
+
+[33mcommit 94f8325db525ca086612c8d347aa0c3d358c8dc6[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 20 19:02:55 2023 +0600
+
+    All friend page add
+
+[33mcommit 8e7f9fbf51330fa7ba54e39f0faf48cecfb202ad[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 18:43:53 2023 +0600
+
+    post card changed
+
+[33mcommit 38d8edcecaad279f5323bf0cf0523e131b0a5df4[m
+Merge: 749cb92 16a7369
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 18:26:16 2023 +0600
+
+    maruf create story added static
+
+[33mcommit 16a736975563713995162cd72d317ffafb323011[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 20 18:10:39 2023 +0600
+
+    design and implement textStories
+
+[33mcommit 749cb92b3fd5b2769759f8541911b6ff380778fe[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 18:10:30 2023 +0600
+
+    rahat and mamun final push
+
+[33mcommit c7b2bb0b61784602c1fcddaa34b124e5e7433a94[m
+Merge: b30eb0d 667b0e1
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 18:09:20 2023 +0600
+
+    Merge branch 'rahat'
+
+[33mcommit b30eb0d1a753cd645548224b9306a7cd4657f7f7[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 17:57:50 2023 +0600
+
+    abdullah changed
+
+[33mcommit 667b0e10f39893548c6e92e2020e5c90b900c8c7[m
+Merge: 758971d 9c44e41
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 17:51:42 2023 +0600
+
+    rahat vai final push
+
+[33mcommit eb735e914f02fbf88ee4061cab3250ede7f7afe8[m
+Merge: 6b2d2c6 9c44e41
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 20 17:47:47 2023 +0600
+
+    final push
+
+[33mcommit 6b2d2c616a7ed950fcd914c49ca8b4372ac947d0[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 20 17:44:23 2023 +0600
+
+    before pull origin
+
+[33mcommit 9c44e417445df22570eb066777fd7a8cc188f3d0[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 17:24:28 2023 +0600
+
+    post details comment added
+
+[33mcommit 758971d65ed500b1ade7dea4e41175d71742573e[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 15:54:50 2023 +0600
+
+    added cover img
+
+[33mcommit f0cbec1713fc15890c943645cf6f98448dbddcb2[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 15:45:19 2023 +0600
+
+    added three dots button
+
+[33mcommit 29e1ad947f862fc47c81cf37e46f389a75a50d17[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 15:39:29 2023 +0600
+
+    added story and edit button
+
+[33mcommit f6a18fe85bd6f243454373551f85442e55a232fe[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 10:02:39 2023 +0600
+
+    leftsitebar styled changed
+
+[33mcommit b54afd8f1a88b42c0ed28e6eadb8f2afd4a517ba[m
+Merge: 1912067 3e762c4
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 09:51:49 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into maruf
+
+[33mcommit 1912067974935441c4d0924043e72babd2fae470[m
+Merge: 60e7937 5b10b20
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 09:51:38 2023 +0600
+
+    story added
+
+[33mcommit 3e762c4484f48cc3dc1d0500583430574278eb86[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 09:37:12 2023 +0600
+
+    polised some work
+
+[33mcommit 267466e846b781d72be0e4499835d27f0e543cc6[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 09:16:31 2023 +0600
+
+    all members code merged
+
+[33mcommit 535e00434a297b37d814f90f83fbd690d99ca6ea[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 09:09:36 2023 +0600
+
+    ali group section
+
+[33mcommit 894b5715c592e5b75f1423737def7368dfda4bb0[m
+Merge: 8e38d8f 60e7937
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 09:03:47 2023 +0600
+
+    abdullah conflict resolved
+
+[33mcommit 60e7937d3b9ecc4b75433594064f6e56a4d9243a[m
+Merge: a656d45 45a7e2a
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 08:48:24 2023 +0600
+
+    conflict maruf
+
+[33mcommit 45a7e2a4bd4b60a45e1945bba316e6cf4e18894a[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 08:38:03 2023 +0600
+
+    problem resolved
+
+[33mcommit 82506ba5cfb16b042ae64161722843d68c2b508f[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 08:35:32 2023 +0600
+
+    rahat profile page added
+
+[33mcommit 39464bf9c29321183d6981463d225866a6b2e5bc[m
+Merge: b4f9575 1d3da1a
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 08:28:30 2023 +0600
+
+    Merge branch 'rahat'
+
+[33mcommit b4f957567c166a738e1501b6d562b52079c25b6b[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 20 08:24:02 2023 +0600
+
+    check code
+
+[33mcommit 1d3da1a4d9f6cea13071e41609eedfc3e481de9d[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 06:35:30 2023 +0600
+
+    added click outside to off modal
+
+[33mcommit d77ec9f8f27fed6e5fdd63ca2e996eceada74604[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 06:34:08 2023 +0600
+
+    added profile picture
+
+[33mcommit bce2b1cd91b4b9035e4d6c87d93fdad4db5fb393[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 02:43:06 2023 +0600
+
+    added click outside to close modal
+
+[33mcommit f6346bf879184ca6dc683307995a6956c65cebf3[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 02:30:01 2023 +0600
+
+    organized code
+
+[33mcommit c1858d37be597e2d00b41aa9d11af21b0cf0195d[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 02:19:59 2023 +0600
+
+    added cover size and modal
+
+[33mcommit 3a18cf932ae657fe2298896ca00de198ce920393[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Fri Jan 20 00:05:33 2023 +0600
+
+    fixed modal problem and leftside navigation
+
+[33mcommit 5ee76414d61a61effe56c0a28d7170985f5f75e5[m
+Merge: 922e87d aadcb99
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Thu Jan 19 23:37:17 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into rahat
+
+[33mcommit 5b10b206f5aad0b1e042b53d5c25a99df74e8e18[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Jan 19 21:52:22 2023 +0600
+
+    add create stories
+
+[33mcommit 8e38d8f61ce48a4c9ccb3e52db1f308f65bee518[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Thu Jan 19 18:24:34 2023 +0600
+
+    Friend suggestion page added
+
+[33mcommit a656d45ef7ca7ef790086dba7672ac3f77d0d5aa[m
+Merge: ee8963b 645a959
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Jan 19 17:31:57 2023 +0600
+
+    upload photos
+
+[33mcommit f792b5f6c5779b0e6df26696f5ab02b2020ed27b[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Thu Jan 19 16:11:33 2023 +0600
+
+    Friend request card added in left side
+
+[33mcommit 7711e055fc838cf223aeb791c58874f593139f08[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Thu Jan 19 15:51:44 2023 +0600
+
+    Friend request page added
+
+[33mcommit f026d0db2e7c2894e075efc8e4fd235b187ae3be[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Thu Jan 19 14:00:20 2023 +0600
+
+    problem
+
+[33mcommit aadcb99b291f98094b53524d0366db40904cb96d[m
+Merge: 552bd36 3333b4d
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 13:58:39 2023 +0600
+
+    Abdullah problem solved
+
+[33mcommit 3333b4d49d6d07eed613b59a15118c31c4e76490[m
+Merge: 0f22ad0 645a959
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 13:57:40 2023 +0600
+
+    conflict resolved
+
+[33mcommit 552bd3622869d1772adbf14791565be319b4af9f[m
+Merge: 645a959 0f22ad0
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 13:56:06 2023 +0600
+
+    resolved problem
+
+[33mcommit ee8963b272d6e24e70f3568c66cab8349a61cc22[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Jan 19 13:51:40 2023 +0600
+
+    old code
+
+[33mcommit 645a9591eafa77d4d4052a332151ba9888ea8efe[m
+Merge: baee73b 9ec3068
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 13:43:01 2023 +0600
+
+    problem processing
+
+[33mcommit 0f22ad0173436a40f50e14cbcae90e152cede5f6[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Thu Jan 19 13:23:10 2023 +0600
+
+    notification modal add
+
+[33mcommit 9ec306836a17aa6deaf4556b904161c2598f3cd7[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Jan 19 12:19:01 2023 +0600
+
+    code fix
+
+[33mcommit baee73b9124ed9703f7026bdc480921e31fbd0d3[m
+Merge: c9127e7 ed21394
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 12:16:14 2023 +0600
+
+    problem processing
+
+[33mcommit ed213947dd444d12f55e09d65521f558b4338438[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Jan 19 12:14:08 2023 +0600
+
+    local changes
+
+[33mcommit c9127e758b9efc72fba6c422d034658bfe4c43c9[m
+Merge: bed0f0d 60000f1
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 12:03:08 2023 +0600
+
+    conflict problem
+
+[33mcommit 60000f17ae3b5c2a891ea37fd7484cc90b86ac76[m
+Merge: 7740a48 253eec9
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 12:02:17 2023 +0600
+
+    conflict problem
+
+[33mcommit 7740a481806098e9d06a9f2a00df33cf8d365780[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 11:41:01 2023 +0600
+
+    changed some
+
+[33mcommit 253eec9dbff68e7fba4a441c1c7cdb69e319c079[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Jan 19 11:29:36 2023 +0600
+
+    update unique id
+
+[33mcommit bed0f0dfd1efde1ba9a845806ff18073330f68b7[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Thu Jan 19 09:25:56 2023 +0600
+
+    uniquid added
+
+[33mcommit 4fba4f7e2a4d1953b7a808019a2d0fe079ab9b64[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Thu Jan 19 00:46:27 2023 +0600
+
+    upload and design create stories
+
+[33mcommit 27619b1857828f2e31420f171fe3bda064b78106[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Wed Jan 18 23:37:00 2023 +0600
+
+    Lates realtime upload git push
+
+[33mcommit 5b3d7f797a47576c051103503a65b594386bef2e[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Wed Jan 18 22:16:39 2023 +0600
+
+    add and unique id add
+
+[33mcommit f5b495bdb1a99ad506d219b4c7cb5a00414f80b9[m
+Merge: 77819ac 33c99d8
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Wed Jan 18 14:38:07 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into Abdullah
+
+[33mcommit 33c99d82c563239301d35ef3ef8612f9c08622cd[m
+Merge: 8943576 680925f
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Wed Jan 18 12:49:55 2023 +0600
+
+    Merge branch 'farhan'
+
+[33mcommit 680925fbdc323467ebe1bcd6afd4d18ea1b274a9[m
+Merge: 05b1837 6e20305
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Wed Jan 18 12:49:29 2023 +0600
+
+    conflict resolved
+
+[33mcommit 89435768f650a24d5f23e8b598529f8419fbaf70[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Wed Jan 18 12:27:10 2023 +0600
+
+    farhan work
+
+[33mcommit 6e20305afa31381210f5f304660d474a3a384998[m
+Merge: 91c26cb 4c1f1c1
+Author: Muhammad Hasan <75510932+hasansikdar@users.noreply.github.com>
+Date:   Wed Jan 18 11:04:18 2023 +0600
+
+    Merge pull request #14 from hasansikdar/ali
+    
+    Ali
+
+[33mcommit 4c1f1c1926ec2e8e63e7d5b51df976f4a6ec8738[m
+Merge: 6df440b 91c26cb
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Wed Jan 18 11:03:26 2023 +0600
+
+    merging ali
+
+[33mcommit 6df440b1aa550c1d67856b301206235d80519ee5[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Wed Jan 18 10:59:25 2023 +0600
+
+    try
+
+[33mcommit 05b18376995863af55e646206c235c67426eac4d[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Tue Jan 17 21:39:07 2023 +0600
+
+    chat app designed
+
+[33mcommit 77819ac10b3909d219c382e6ecb60f60c8713fc7[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Tue Jan 17 18:54:58 2023 +0600
+
+    navbar fixed
+
+[33mcommit 796920915cbbb747e2bdfb75ab0d754aac9a730f[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Tue Jan 17 18:48:50 2023 +0600
+
+    add friend card added
+
+[33mcommit f5cec9e2aa66d7cde6f42986cb6c11f6dad7f66a[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Tue Jan 17 17:09:17 2023 +0600
+
+    request friend card added
+
+[33mcommit 922e87d96f895581bc01035cd7dcf1a0f1d22993[m
+Merge: c7cdd98 91c26cb
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Tue Jan 17 15:17:24 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into rahat
+
+[33mcommit c7cdd98d938556868c38ccb3c720f3f876f2219a[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Tue Jan 17 15:17:11 2023 +0600
+
+    added button and
+
+[33mcommit 91c26cb997e5df21460d1beb899407d3490b04e1[m
+Merge: 8677e04 7d1388c
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Tue Jan 17 10:07:06 2023 +0600
+
+    conflicts solved
+
+[33mcommit 7d1388cb1f096d4bc505fca7f5b64c605d367166[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Tue Jan 17 08:04:22 2023 +0600
+
+    reaction system add
+
+[33mcommit 129eb7f3c9c5c7729b365e593bd4218cb57fbed2[m
+Merge: 5e3d49b 51c955d
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Tue Jan 17 06:45:32 2023 +0600
+
+    Merge branch 'rahat'
+
+[33mcommit 51c955d4929839d2ae782296a172824dfe3f640c[m
+Merge: 0a9b178 5e5b37f
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Tue Jan 17 06:44:53 2023 +0600
+
+    confict solved
+
+[33mcommit fb1de5d8ede5bca92df98144d0f45c966e22abab[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Tue Jan 17 00:18:19 2023 +0600
+
+    added profile img
+
+[33mcommit 8677e04fcd42d799d9b0816cfa77bbd2701cb2b8[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Mon Jan 16 23:48:48 2023 +0600
+
+    Friends leftside design done
+
+[33mcommit 5e3d49be076c350fa809f9f885567a5157b405c4[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Mon Jan 16 22:39:14 2023 +0600
+
+    rahat added
+
+[33mcommit 0a9b178e39ba4ca658f5d9e197bc6d06c3a56112[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 16 22:38:06 2023 +0600
+
+    adde profile
+
+[33mcommit 911dc776473e8b1e6b38896be345635db7a0a7d4[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Mon Jan 16 21:53:41 2023 +0600
+
+    Friends page created and layout created
+
+[33mcommit 43ea271399ff567c81dde57166efe9b55bacd6e5[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Mon Jan 16 21:44:43 2023 +0600
+
+    every page is creted
+
+[33mcommit d00cc6d1e723b5fe0a77464ea4906d81159195b0[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Mon Jan 16 20:03:03 2023 +0600
+
+    bookmarked is done
+
+[33mcommit 97e92535fda0cdc9bb520f320fb99073842c3482[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Mon Jan 16 17:35:42 2023 +0600
+
+    layout and router is done
+
+[33mcommit 5e5b37f5fba2fa0af6d444c8c2083c8cadf3dd16[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Mon Jan 16 15:59:07 2023 +0600
+
+    ali vai
+
+[33mcommit 475b87aa72cbbbed3c88c4c15e503d6881dd6893[m
+Author: ifty17 <iftyrahatkabir@gmail.com>
+Date:   Mon Jan 16 15:54:17 2023 +0600
+
+    working on profile
+
+[33mcommit 3d03455b2860a308209494c13b7ab4b5a19b0f1a[m
+Merge: 3007af7 e4d7559
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Mon Jan 16 15:44:46 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into ali
+
+[33mcommit e4d7559baf0c6d5609ea74cc219681fb5f582c19[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Mon Jan 16 14:37:27 2023 +0600
+
+    google meeting add
+
+[33mcommit 8ba9d932ffab37c854b173fa3ac915f3ee079126[m
+Merge: 6b3ecc5 f10b6bf
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Mon Jan 16 10:12:04 2023 +0600
+
+    resolved conflicts
+
+[33mcommit 3007af73500f7a11e3652405a274ee9c6bde165a[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Sun Jan 15 21:27:25 2023 +0600
+
+    error page is done
+
+[33mcommit 37715d4535704fc277d5089a0a383866a2791809[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Sun Jan 15 17:32:33 2023 +0600
+
+    loader and error page is added
+
+[33mcommit df8a8d427fdcd943128ef6f0b40950ec396ddd18[m
+Merge: caacd0d 6b3ecc5
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Sun Jan 15 17:19:01 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into ali
+
+[33mcommit caacd0dffbe297f726c35a1018dd64cc217ac23d[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Sun Jan 15 17:18:33 2023 +0600
+
+    button and link is done
+
+[33mcommit 6b3ecc5152095d68664c6a6c3e59b118273b1fef[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sun Jan 15 15:24:52 2023 +0600
+
+    server problem resolved
+
+[33mcommit f10b6bf54a7a9a1896931ae3a7fafcb0b4c1c2e3[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sun Jan 15 01:51:15 2023 +0600
+
+    update user postbox and set stories arrow
+
+[33mcommit 32fe34791b5296ea5cba26812cfd031c7bd47291[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sat Jan 14 23:26:32 2023 +0600
+
+    update arrow overlap problem
+
+[33mcommit b140f45ea0b127f488aae5d95d2feda8702bfa87[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 21:44:09 2023 +0600
+
+    changed some
+
+[33mcommit b064d2ca9c079dd9779769e0aced4e73774e95fb[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 21:42:34 2023 +0600
+
+    conflicts solved
+
+[33mcommit f26582b8a3d9d921b9d526514cad74ebdd53eb04[m
+Merge: 8d29c79 ec9cd43
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 21:22:42 2023 +0600
+
+    conflicts solved
+
+[33mcommit ec9cd43887aa00405b92c4418738ffac2d2a6945[m
+Merge: 43d66a2 fbc5bbe
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 21:20:21 2023 +0600
+
+    changed some
+
+[33mcommit 8d29c7933f08fa3e1136614ef7bb66d9d14d1d6d[m
+Merge: fbc5bbe 43d66a2
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 21:13:27 2023 +0600
+
+    mamun vai problem resolved
+
+[33mcommit 43d66a20f834056ba323b188b1b634edd2b9e030[m
+Merge: bd9e245 b42eaf8
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 21:04:43 2023 +0600
+
+    dark theme problem solved
+
+[33mcommit fbc5bbeba6df1e0b79608974370fe9734f9e1252[m
+Merge: f289224 168704f
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 20:47:31 2023 +0600
+
+    Merge branch 'farhan'
+
+[33mcommit f2892240d38558cd389b3750adac09416e2e1908[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 20:44:53 2023 +0600
+
+    git pull
+
+[33mcommit 168704fc10771f5b1e8cba1985c5b9b000f39edf[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Sat Jan 14 20:27:33 2023 +0600
+
+    Routes added
+
+[33mcommit 4b95ff983dd9adfead309aa7bd32343244e6a0bb[m
+Merge: 8b0d45a b1bcc9c
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sat Jan 14 19:50:59 2023 +0600
+
+    add arrow icons on stories
+
+[33mcommit b42eaf8af5abc42aa9cc77b38d1102ac57d57583[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 14 17:47:47 2023 +0600
+
+    right side sponsored card dark and light mode update
+
+[33mcommit 4fa70c9fb9004decbba7d0c6cdcf602aaf4f12d8[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 14 16:29:40 2023 +0600
+
+    add post modal dark and light mode update
+
+[33mcommit 40fcad883e41d95b1ce76f3d1dfa19ef3f32d40a[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 14 16:14:18 2023 +0600
+
+    right side follow and contact card dark and light mode updated
+
+[33mcommit 3b2a8ab7c9aa6364808094fe4d55f189bf388d48[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 14 16:04:11 2023 +0600
+
+    Post card ... modal dark and light mode done
+
+[33mcommit 8b0d45a848009f19bb6f87eb0f9cc0ce74a8515a[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Sat Jan 14 15:14:33 2023 +0600
+
+    update uesrName dynamcally
+
+[33mcommit b1bcc9c60b496986f4fa5d611f81d44d44a555f0[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 14:10:41 2023 +0600
+
+    post deleted added
+
+[33mcommit 539df5f9e0cfbe3a36e3b25c27f9175fea9c80b5[m
+Merge: f71b9a1 bd9e245
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 13:03:56 2023 +0600
+
+    Merge branch 'Abdullah'
+
+[33mcommit f71b9a125ffbb78174511114db33b689ba8c0f89[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 13:03:04 2023 +0600
+
+    problem
+
+[33mcommit bd9e2452135135590fa57dda1c81bf3c5c845b13[m
+Merge: 79d38b2 f0e5cd9
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 12:50:47 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into Abdullah
+
+[33mcommit 3d0bc3b4be6406605eed1064fc15d994dea27bd9[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 12:49:12 2023 +0600
+
+    pull
+
+[33mcommit 79d38b23944fb24e29c337bb7f154b0fc4667872[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Sat Jan 14 12:45:11 2023 +0600
+
+    Updated dark and light mood
+
+[33mcommit f0e5cd9992724d739ae65ae3af788439ff41ebc8[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 12:37:16 2023 +0600
+
+    vercel probolem solved
+
+[33mcommit 354c5e8769cc4f321e3a24bd75fe284ce583524e[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Sat Jan 14 12:34:49 2023 +0600
+
+    post card dynamic
+
+[33mcommit 32ed39a5d39b4c04b70e09cdfac4be7e527416ef[m
+Merge: c53e034 859e235
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 13 21:42:56 2023 +0600
+
+    dark mode added
+
+[33mcommit 859e235d91f0c67448824509d3569f3f9453896e[m
+Merge: f7c6076 45f06e3
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 13 21:17:12 2023 +0600
+
+    Dark mode changes
+
+[33mcommit f7c6076b16450de7e5c1009ba007c31b2a0f0d2d[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 13 20:22:43 2023 +0600
+
+    changes for dark theme
+
+[33mcommit 45f06e3ba0322ab91f6af46845e6076914b26d95[m
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 13 20:17:16 2023 +0600
+
+    vercel added
+
+[33mcommit a62d714636441620965aabb0325a111b11a3bf2e[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 13 19:59:28 2023 +0600
+
+    update toast
+
+[33mcommit 849eb9af1130bf430a2c6b81fdd0a41ccfa02169[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 13 19:55:16 2023 +0600
+
+    update toast
+
+[33mcommit c53e034f0d996ba86c1553b616a9d9514f218eaa[m
+Merge: dd8d10b cdbfbd8
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 13 19:54:47 2023 +0600
+
+    some conflig solved
+
+[33mcommit dd8d10be148d3d44f144bc1c0bcc59834f2a606f[m
+Merge: 31fda05 4e6dd2d
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 13 19:50:43 2023 +0600
+
+    Merge branch 'Abdullah' of https://github.com/hasansikdar/Craft-Connect into Abdullah
+
+[33mcommit cdbfbd8f940954de271812a61668b8ec225908a0[m
+Merge: eff1764 c07e322
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 13 19:46:19 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into ali
+
+[33mcommit c07e322853cfbc9ab3966c841ae6bea3207d4d56[m
+Merge: 3f976c9 4b4c578
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 13 19:42:38 2023 +0600
+
+    Merge branch 'farhan'
+
+[33mcommit eff17646d51a3475e9bbaecca5062e22f52daecb[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Jan 13 19:33:39 2023 +0600
+
+    change some code
+
+[33mcommit 3f976c99138ae5d8d5c619bf6902da180d91a456[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 13 19:26:37 2023 +0600
+
+    finish to upload backend
+
+[33mcommit 4b4c57825ea1458b38a6b55c1fcd352c037c0f62[m
+Author: farhanchy99 <farhanchowdhury1999@gmail.com>
+Date:   Fri Jan 13 19:24:19 2023 +0600
+
+    img change
+
+[33mcommit e783797b30434c747ab6094598e2b51b8f8baac1[m
+Author: maj-jinnah <maj.jinnah@gmail.com>
+Date:   Fri Jan 13 19:14:46 2023 +0600
+
+    photo is added
+
+[33mcommit b4f18b80bf175830445575333b8d024fcd27241f[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 13 19:05:17 2023 +0600
+
+    add imgbb
+
+[33mcommit df7ff1f1a858b368f14e6122bdc5ee5fcbb786ea[m
+Merge: 53c8a72 5d38dca
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 13 19:04:20 2023 +0600
+
+    Merge branch 'main' of https://github.com/hasansikdar/Craft-Connect into maruf
+
+[33mcommit 53c8a72d3952b2a28a7944ee97d93b7231ff768d[m
+Author: maruf45 <armaruf450@gmail.com>
+Date:   Fri Jan 13 19:03:08 2023 +0600
+
+    add imgbb
+
+[33mcommit 4e6dd2de9c5ce6911e2de8bb673deace585b9ce2[m
+Author: Mamun8854 <mamunabdullah8854@gmail.com>
+Date:   Fri Jan 13 17:51:07 2023 +0600
+
+    Updated
+
+[33mcommit 5d38dcaec0d53e2b6869f1c6fcb340e003720dd3[m
+Merge: 34b04c6 37f3669
+Author: hasansikdar <hasansikdar973@gmail.com>
+Date:   Fri Jan 13 17:38:21 2023 +0600
+
+    Abdullah conflicts solved

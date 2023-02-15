@@ -11,7 +11,7 @@ const ProfileImg = ({myProfile}) => {
       <div className="flex justify-center w-full relative">
         <img
           className="w-[130px] h-[130px] rounded-full object-cover absolute translate-y-[-50%] shadow-lg"
-          src={myProfile?.photoURL?.profileImage}
+          src={myProfile?.photoURL}
           alt=""
         />
       </div>

@@ -1,10 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReportProductDeleteModal from './ReportProductDeleteModal';
 
 const ReportedProduct = () => {
 
-    const { data: reportedProducts = [] } = useQuery({
+  const [open, setOpen] = useState(false); 
+  const [reportedId, setReportedId] = useState('');
+
+    const { data: reportedProducts = [], refetch } = useQuery({
       queryKey: ["reportedProducts"],
       queryFn: async () => {
         const res = await fetch("http://localhost:5000/reported-product");
@@ -39,6 +43,7 @@ const ReportedProduct = () => {
                     productName,
                     productImg,
                     productId,
+                    _id
                   } = reportedProduct;
                   return (
                     <>
@@ -88,10 +93,11 @@ const ReportedProduct = () => {
                         <td className="p-3 px-5">
                           <button
                             type="button"
-                            // onClick={() => {
-                            //   setOpen(true);
-                            //   setProductId(allProduct._id);
-                            // }}
+                            onClick={() => {
+                              setOpen(true);
+                              // setProductId(allProduct._id);
+                              setReportedId(_id);
+                            }}
                             className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                           >
                             Delete
@@ -112,6 +118,13 @@ const ReportedProduct = () => {
           setProductId={setProductId}
           setOpen={setOpen}
         /> */}
+        <ReportProductDeleteModal
+        open={open}
+        setOpen={setOpen}
+        reportedId={reportedId}
+        setReportedId={setReportedId}
+        refetch={refetch}
+        />
       </>
     );
 };

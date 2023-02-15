@@ -8,7 +8,6 @@ import SellerPro from "../Pages/SellerPro/SellerPro";
 import FollowPages from "../Pages/FollowPages/FollowPages";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
-import FeatureLayout from "../Layout/FeatureLayout";
 import Watch from "../Pages/Watch/Watch";
 import Groups from "../Pages/Groups/Groups";
 import MarketPlace from "../Pages/MarketPlace/MarketPlace";
@@ -41,6 +40,7 @@ import AllUsers from "../Pages/AdminPanel/AllUsers";
 import ReportedPost from "../Pages/AdminPanel/ReportedPost";
 import ReportedProduct from "../Pages/AdminPanel/ReportedProduct";
 import AdminRoute from "./AdminRoute";
+import AddedCart from "../Pages/Dashboard/AddedCart";
 
 export const Routes = createBrowserRouter([
   {
@@ -85,7 +85,8 @@ export const Routes = createBrowserRouter([
       {
         path: "/feature/marketplace/product/:id",
         element: <DetailsOfProduct></DetailsOfProduct>,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: "/feature/bookmarked",
@@ -126,7 +127,6 @@ export const Routes = createBrowserRouter([
       },
       { path: "/friends/friendList", element: <CustomList></CustomList> },
       { path: "/friends/list", element: <AllFriends></AllFriends> },
-      { path: "/chats", element: <Chatting></Chatting> },
       {
         path: "/postDetails/:id",
         element: <PostDetails></PostDetails>,
@@ -155,8 +155,11 @@ export const Routes = createBrowserRouter([
     ),
     children: [
       // { path: '/dashboard/all-users', element: <UsersTable /> },
+      // { path: "/dashboard/add-product", element: <AddProduct /> },
+      // { path: "/dashboard/your-product", element: <YourProduct /> },
       { path: "/dashboard/add-product", element: <AddProduct /> },
       { path: "/dashboard/your-product", element: <YourProduct /> },
+      { path: "/dashboard/added-cart", element: <AddedCart /> },
     ],
   },
   {
@@ -168,18 +171,26 @@ export const Routes = createBrowserRouter([
     ),
     children: [
       {
-        path:'/admin/all-users',
-        element: <AllUsers></AllUsers>
+        path: "/admin/all-users",
+        element: <AllUsers></AllUsers>,
       },
       {
-        path: '/admin/reported-post',
-        element: <ReportedPost></ReportedPost>
+        path: "/admin/reported-post",
+        element: <ReportedPost></ReportedPost>,
       },
       {
-        path: '/admin/reported-product',
-        element: <ReportedProduct></ReportedProduct>
-      }
+        path: "/admin/reported-product",
+        element: <ReportedProduct></ReportedProduct>,
+      },
     ],
+  },
+  {
+    path: "/chats",
+    element: (
+      <PrivateRouter>
+        <Chatting></Chatting>
+      </PrivateRouter>
+    ),
   },
   {
     path: "*",

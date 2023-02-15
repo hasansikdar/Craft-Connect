@@ -7,14 +7,14 @@ import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 
 const ProfileDetails = () => {
-  const { user } = useContext(Authcontext);
+  const { user, myPro } = useContext(Authcontext);
   return (
     <div className="">
       <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
         <h1 className="ml-4 mt-4 dark:text-white text-black">Your Profile</h1>
         <div className="flex items-center flex-col">
           <img
-            src={user?.photoURL}
+            src={myPro[0]?.photoURL}
             alt="photoURL"
             className="w-16 h-16 object-cover rounded-full mt-4 mb-2"
           />

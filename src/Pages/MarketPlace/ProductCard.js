@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
 
   const isProductAddedToCart = (product) => {
     fetch(
-      `http://localhost:5000/checkCartProduct?productName=${product?.productName}`
+      `http://localhost:5000/checkCartProduct?id=${product?._id}`
     )
       .then((res) => res.json())
       .then((data) => {

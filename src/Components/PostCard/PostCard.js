@@ -82,8 +82,7 @@ const PostCard = ({
       });
   };
 
-  const reportedPost = () =>{
-
+  const reportedPost = () => {
     const reportPost = {
       postAuthor: post?.userName,
       postAuthorEmail: post?.userEmail,
@@ -92,8 +91,8 @@ const PostCard = ({
       postText: post?.postText,
       reporterName: user?.displayName,
       reporterEmail: user?.email,
-      reporterImage:user?.photoURL
-    }
+      reporterImage: user?.photoURL,
+    };
 
     fetch("http://localhost:5000/report-post", {
       method: "POST",
@@ -111,10 +110,33 @@ const PostCard = ({
       .catch((error) => {
         toast.error(error.message);
       });
+  };
 
-  }
-
-  
+  const handelAddBookmarked = () =>{
+    const bookMarkedPost = {
+        bookmarkedUserEmail : user?.email,
+        bookmarkedUserName : user?.displayName,
+        postId : post?._id,
+        postUserEmail : post?.userEmail,
+        postUserName : post?.userName,
+        postUserPhoto : post?.userPhoto,
+        PostPhoto : post?.img,
+        postTime : post?.currentDate,
+        postText : post?.postText,
+    }
+    fetch("http://localhost:5000/user/bookmark", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookMarkedPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Bookmarked Successfully Done!")
+      });
+    }
 
   return (
     <div>
@@ -146,29 +168,24 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <p
-                        className="hover:bg-[#FF3F4A] hover:text-white inline-block"
-                      >
+                      <p className="hover:bg-[#FF3F4A] hover:text-white inline-block">
                         Follow
                         <span className="font-semibold"> {post?.userName}</span>
                       </p>
                     </li>
                     <li>
-                      <p
-                        className="hover:bg-[#FF3F4A] hover:text-white"
-                      >
+                      <p className="hover:bg-[#FF3F4A] hover:text-white">
                         Bookmark
                       </p>
                     </li>
                     <li>
-                      <p
-                        className="hover:bg-[#FF3F4A] hover:text-white"
-                      >
+                      <p className="hover:bg-[#FF3F4A] hover:text-white">
                         Save
                       </p>
                     </li>
                     <li>
-                      <p onClick={reportedPost}
+                      <p
+                        onClick={reportedPost}
                         className="hover:bg-[#FF3F4A] hover:text-white"
                       >
                         Report Post

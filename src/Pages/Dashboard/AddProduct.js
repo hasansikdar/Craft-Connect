@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 import { Authcontext } from '../../Context/UserContext';
 
 const AddProduct = () => {
-    const { user } = useContext(Authcontext)
+    const { user, myPro } = useContext(Authcontext)
     const url = `http://localhost:5000/allproducts`;
     const { data: allProduct = [], refetch } = useQuery({
         queryKey: ["allProduct"],
@@ -19,7 +19,7 @@ const AddProduct = () => {
         const field = e.target;
         const productName = field.productName.value;
         const userName = user?.displayName;
-        const userPhotoURL = user?.photoURL;
+        const userPhotoURL = myPro[0]?.photoURL;
         const productPrice = field.productPrice.value;
         const email = field.email.value;
         const productImg = field.productImg.files[0];

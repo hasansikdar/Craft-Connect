@@ -17,7 +17,7 @@ const PostBox = () => {
   const [postText, setPostText] = useState();
   const [selectedFile, setSelectedFile] = useState();
   const [usersPost, setusersPost] = useState();
-  const { user } = useContext(Authcontext);
+  const { user, myPro } = useContext(Authcontext);
 
   const handlePostText = (e) => {
     setPostText(e.target.value);
@@ -44,7 +44,7 @@ const PostBox = () => {
     const likes = [];
     const userName = user?.displayName;
     const userEmail = user?.email;
-    const userPhoto = user?.photoURL;
+    const userPhoto = myPro[0]?.photoURL;
 
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
@@ -123,13 +123,13 @@ const PostBox = () => {
   return (
     <form
       onSubmit={formSubmit}
-      className="text-white bg-white dark:bg-[#261b40] shadow-lg mx-auto mt-3 rounded-md border border-[#FF3F4A]"
+      className="text-white bg-white dark:bg-[#261b40] shadow-lg mx-auto mt-7 lg:mt-3 rounded-md border border-[#FF3F4A]"
     >
       <div className="outline-1 flex gap-4  p-8">
         <img
           src={`${
-            user?.photoURL
-              ? user?.photoURL
+            myPro[0]?.photoURL
+              ? myPro[0]?.photoURL
               : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
           }`}
           className="h-[38px] w-[38px] object-cover rounded-full"

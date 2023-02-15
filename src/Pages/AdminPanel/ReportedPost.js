@@ -1,10 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReportedPostDeletedModal from './ReportedPostDeletedModal';
 
 const ReportedPost = () => {
 
-    const { data: reportedPosts = [] } = useQuery({
+  const [open, setOpen] = useState(false);
+  const [reportedPostId, setReportedPostId] = useState('');
+
+    const { data: reportedPosts = [], refetch } = useQuery({
       queryKey: ["reportedProducts"],
       queryFn: async () => {
         const res = await fetch("http://localhost:5000/reported-post");
@@ -13,7 +17,7 @@ const ReportedPost = () => {
       },
     });
 
-    console.log(reportedPosts);
+    // console.log(reportedPosts);
 
     return (
       <>
@@ -34,13 +38,15 @@ const ReportedPost = () => {
                 </tr>
                 {reportedPosts.map((reportedProduct, index) => {
                   const {
-                    sellerName,
-                    sellerEmail,
-                    buyerName,
-                    buyerEmail,
-                    productName,
-                    productImg,
-                    productId,
+                    postAuthor,
+                    postAuthorEmail,
+                    postAuthorImg,
+                    postImg,
+                    postText,
+                    reporterName,
+                    reporterEmail,
+                    reporterImage,
+                    _id
                   } = reportedProduct;
                   return (
                     <>
@@ -52,31 +58,31 @@ const ReportedPost = () => {
                           <div>
                             <img
                               className="w-12 h-12 rounded-md"
-                              src={productImg}
+                              src={postImg}
                               alt=""
                             />
                           </div>
                         </td>
                         <td className="p-3 px-5">
-                          <p title={productName} className="">
-                            {productName?.slice(0, 20)}...
+                          <p title={postText} className="">
+                            {postText?.slice(0, 20)}...
                           </p>
                         </td>
                         <td className="p-3 px-5 cursor-pointer">
                           <div>
-                            <p className="text-base">{sellerName}</p>
-                            <p className="text-sm">{sellerEmail}</p>
+                            <p className="text-base">{postAuthor}</p>
+                            <p className="text-sm">{postAuthorEmail}</p>
                           </div>
                         </td>
                         <td className="p-3 px-5 cursor-pointer">
                           <div>
-                            <p className="text-base">{buyerName}</p>
-                            <p className="text-sm">{buyerEmail}</p>
+                            <p className="text-base">{reporterName}</p>
+                            <p className="text-sm">{reporterEmail}</p>
                           </div>
                         </td>
                         <td className="p-3 px-5">
                           <Link
-                            to={`/feature/marketplace/product/${productId}`}
+                            to={`/feature/marketplace/product/${''}`}
                             type="button"
                             // onClick={() => {
                             //   setOpen(true);
@@ -90,10 +96,10 @@ const ReportedPost = () => {
                         <td className="p-3 px-5">
                           <button
                             type="button"
-                            // onClick={() => {
-                            //   setOpen(true);
-                            //   setProductId(allProduct._id);
-                            // }}
+                            onClick={() => {
+                              setOpen(true);
+                              setReportedPostId(_id);
+                            }}
                             className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                           >
                             Delete
@@ -114,6 +120,13 @@ const ReportedPost = () => {
           setProductId={setProductId}
           setOpen={setOpen}
         /> */}
+        <ReportedPostDeletedModal
+        open={open}
+        setOpen={setOpen}
+        reportedPostId={reportedPostId}
+        setReportedPostId={setReportedPostId}
+        refetch={refetch}
+        />
       </>
     );
 };

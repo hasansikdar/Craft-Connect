@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import profileImg from "../../../assets/profile.jpg";
 import craftify from "../../../assets/jinnahPagePic/jinnahPagePic3.jpg";
 import { BsThreeDots } from "react-icons/bs";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import { Authcontext } from "../../../Context/UserContext";
 
 const DynamicPostCard = ({ myPost }) => {
+  const {myPro} = useContext(Authcontext);
   const {
     userName,
     userPhoto,
@@ -75,7 +77,7 @@ const DynamicPostCard = ({ myPost }) => {
                 <div className="flex gap-3 items-center">
                   <img
                     className="w-[50px] h-[50px] object-cover rounded-full"
-                    src={userPhoto}
+                    src={myPro[0]?.photoURL}
                     alt=""
                   />
                   <div>

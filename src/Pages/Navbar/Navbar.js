@@ -17,7 +17,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAdmin from "../AdminPanel/UseAdmin";
 
 const Navbar = () => {
-  const { user, logout } = useContext(Authcontext);
+  const { user, logout, myPro } = useContext(Authcontext);
   const [isAdmin] = UseAdmin(user?.email);
   const [messageModal, setMessageModal] = useState(false);
   const [notification, setNotification] = useState(false);
@@ -84,6 +84,7 @@ const Navbar = () => {
   });
 
   console.log(users);
+
 
   
 
@@ -156,12 +157,7 @@ const Navbar = () => {
             >
               <img
                 className="w-10 h-10 object-cover rounded-full"
-                // src={`${
-                //   user?.photoURL
-                //     ? user?.photoURL
-                //     : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-                // }`}
-                src={user?.photoURL}
+                src={myPro[0]?.photoURL}
                 alt=""
               />
             </button>
@@ -180,8 +176,8 @@ const Navbar = () => {
                   <img
                     className="w-10 h-10 object-cover rounded-full mr-3"
                     src={`${
-                      user?.photoURL
-                        ? user?.photoURL
+                      myPro[0]?.photoURL
+                        ? myPro[0]?.photoURL
                         : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
                     }`}
                     alt=""
