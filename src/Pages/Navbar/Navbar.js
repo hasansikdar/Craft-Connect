@@ -14,9 +14,11 @@ import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import NavSearchField from "./NavSearchField";
 import { useQuery } from "@tanstack/react-query";
+import UseAdmin from "../AdminPanel/UseAdmin";
 
 const Navbar = () => {
   const { user, logout } = useContext(Authcontext);
+  const [isAdmin] = UseAdmin(user?.email);
   const [messageModal, setMessageModal] = useState(false);
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
@@ -101,40 +103,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div>
-          <div>
-            {/* Search field for Mobile Device */}
-            {/* <div
-              onClick={() => setSearch(!search)}
-              className="flex md:hidden justify-center  items-center  ml-3 border border-zinc-600 rounded-full px-3 bg-white"
-            >
-              <i className="">
-                <BiSearchAlt2></BiSearchAlt2>
-              </i>
-              {search && (
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="py-1 text-white  bg-white  w-[100px]"
-                />
-              )}
-            </div> */}
-
-            {/* Search field for Desktop Device */}
-            {/* <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-[#c5b5ed]">
-              <input
-                type="text"
-                placeholder="Search"
-                className="mx-2 md:mx-0 pl-4 pr-44 py-2 text-[#FF3F4A] w-full rounded-md bg-[#c5b5ed]"
-              />
-              <i className="pr-4 text-2xl text-white">
-                <BiSearchAlt2></BiSearchAlt2>
-              </i>
-            </div> */}
-          </div>
-
           <div className="flex  gap-16 mr-5 items-center ">
             <div>
-
               <NavSearchField allusers={allusers}></NavSearchField>
             </div>
 
@@ -259,18 +229,21 @@ const Navbar = () => {
                     <FcNext className="text-2xl mr-2" />
                   </div>
                 </Link>
-                <Link
-                  to="/admin"
-                  className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer"
-                >
-                  <div className="flex items-center">
-                    <FaUserTie className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
-                    <p className="font-bold">Admin Panel</p>
-                  </div>
-                  <div>
-                    <FcNext className="text-2xl mr-2" />
-                  </div>
-                </Link>
+                {isAdmin && (
+                  <Link
+                    to="/admin"
+                    className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer"
+                  >
+                    <div className="flex items-center">
+                      <FaUserTie className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
+                      <p className="font-bold">Admin Panel</p>
+                    </div>
+                    <div>
+                      <FcNext className="text-2xl mr-2" />
+                    </div>
+                  </Link>
+                )}
+
                 <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                   <div className="flex items-center">
                     <FaMoon className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
