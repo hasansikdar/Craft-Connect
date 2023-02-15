@@ -1,4 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 // import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 // import PostUserInfo from "./PostUserInfo/PostUserInfo";
 // import likeicon from "../../assets/icons/like.png";
@@ -20,6 +22,7 @@ import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import { Authcontext } from "../../Context/UserContext";
 
 const PostCard = ({
   refetch,
@@ -79,6 +82,40 @@ const PostCard = ({
       });
   };
 
+  const reportedPost = () =>{
+
+    const reportPost = {
+      postAuthor: post?.userName,
+      postAuthorEmail: post?.userEmail,
+      postAuthorImg: post?.userPhoto,
+      postImg: post?.img,
+      postText: post?.postText,
+      reporterName: user?.displayName,
+      reporterEmail: user?.email,
+      reporterImage:user?.photoURL
+    }
+
+    fetch("http://localhost:5000/report-post", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reportPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Post Reported");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+
+  }
+
+  
+
   return (
     <div>
       {/* Latest Design Post card  */}
@@ -109,29 +146,33 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <a
+                      <p
                         className="hover:bg-[#FF3F4A] hover:text-white inline-block"
-                        href="/"
                       >
                         Follow
                         <span className="font-semibold"> {post?.userName}</span>
-                      </a>
+                      </p>
                     </li>
                     <li>
-                      <a
+                      <p
                         className="hover:bg-[#FF3F4A] hover:text-white"
-                        href="/"
                       >
                         Bookmark
-                      </a>
+                      </p>
                     </li>
                     <li>
-                      <a
+                      <p
                         className="hover:bg-[#FF3F4A] hover:text-white"
-                        href="/"
                       >
                         Save
-                      </a>
+                      </p>
+                    </li>
+                    <li>
+                      <p onClick={reportedPost}
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                      >
+                        Report Post
+                      </p>
                     </li>
                   </ul>
                 </div>
