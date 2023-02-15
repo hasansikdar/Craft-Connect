@@ -1,4 +1,7 @@
 import React from "react";
+import FriendRequestBar from "../FriendRequest/FrieendRequestBar/FriendRequestBar";
+import FriendRequestCard from "../FriendRequest/FrieendRequestBar/FriendRequestCard";
+import FriendSuggestionCard from "../FriendSuggestion/FriendSuggestionCard/FriendSuggestionCard";
 import AddFriendCard from "./AddFriendCard/AddFriendCard";
 import MainPageCard from "./MainPageCard/MainPageCard";
 
@@ -9,26 +12,17 @@ const MainPage = () => {
         <h2 className="text-xl font-bold dark:text-white text-black">
           Friend Requests
         </h2>
-        <button className="text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded">
+        <button className="text-[#FF3F4A] hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded">
           See All
         </button>
       </div>
       <div className="grid grid-cols-3 py-2 mx-auto px-4 gap-5 mt-5">
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
-        <MainPageCard></MainPageCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
+        <FriendRequestCard></FriendRequestCard>
       </div>
       <hr className="mt-10 w-[1100px] text-2xl" />
 
@@ -37,26 +31,18 @@ const MainPage = () => {
           <h2 className="text-xl font-bold dark:text-white text-black">
             People You May Know
           </h2>
-          <button className="text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded">
+          <button className="text-[#FF3F4A] hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded">
             See All
           </button>
         </div>
         <div className="grid grid-cols-3 py-2 mx-auto px-4 gap-5 mt-5">
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
-          <AddFriendCard></AddFriendCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
+          <FriendSuggestionCard></FriendSuggestionCard>
         </div>
       </div>
     </section>

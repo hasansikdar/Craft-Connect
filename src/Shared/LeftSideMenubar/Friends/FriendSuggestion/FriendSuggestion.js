@@ -9,8 +9,8 @@ import SuggestionsProfile from "./SuggestionsProfile/SuggestionsProfile";
 const FriendSuggestion = () => {
   return (
     <section>
-      <Navbar></Navbar>
-      <div className="grid grid-cols-12 mt-[60px] bg-white dark:bg-[#2C2048] text-black dark:text-white max-w-screen-xl">
+      {/* <Navbar></Navbar> */}
+      <div className="grid grid-cols-12 mt-[20px] bg-white dark:bg-[#2C2048] text-black dark:text-white max-w-screen-xl">
         <div className="col-span-3 dark:bg-[#2C2048] h-screen w-full hidden lg:block">
           <FriendSuggestionsLeftSide></FriendSuggestionsLeftSide>
         </div>

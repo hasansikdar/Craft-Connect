@@ -24,7 +24,7 @@ const LeftSideBar = () => {
     { name: "Most Recent", link: "/", icon: BsFileImageFill },
     { name: "Friends", link: "/friends", icon: FiUsers },
     { name: "Pages", link: "/feature/pages", icon: BsFiles },
-    { name: "Marketplace", link: "/", icon: SiHomebridge },
+    { name: "Marketplace", link: "/feature/marketplace", icon: SiHomebridge },
     { name: "Bookmarked", link: "/feature/bookmarked", icon: BsBookmark },
     { name: "Ad Center", link: "/feature/adcenter", icon: RiAdvertisementLine },
     { name: "Ads Manager", link: "/", icon: IoBarChartOutline },

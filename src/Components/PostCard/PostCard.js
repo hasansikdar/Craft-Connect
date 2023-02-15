@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 // import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
 // import PostUserInfo from "./PostUserInfo/PostUserInfo";
 // import likeicon from "../../assets/icons/like.png";
@@ -36,36 +37,6 @@ const PostCard = ({
   const [allLike, setAllLike] = useState([]);
 
   const likeLength = post?.likes;
-  // const { user: currentUser } = useContext(Authcontext);
-  // const reactions = [
-  //   {
-  //     emojilink: "https://media.tenor.com/ebIp1YWRZs8AAAAC/thumbs-up-emoji.gif",
-  //   },
-  //   { emojilink: "https://media.tenor.com/4D53-zz8dAcAAAAM/love-cute.gif" },
-  //   { emojilink: "https://media.tenor.com/o3BgAS-o0q4AAAAM/funny-emoji.gif" },
-  //   { emojilink: "https://media.tenor.com/l5_u4JytFLYAAAAC/wow-emoji.gif" },
-  //   {
-  //     emojilink:
-  //       "https://i.pinimg.com/originals/63/0d/77/630d77d1baeb4b29cd47eee5e5443bbe.gif",
-  //   },
-  //   {
-  //     emojilink:
-  //       "https://media.tenor.com/bZAnaVqOjlQAAAAC/loudly-crying-face-joypixels.gif",
-  //   },
-  // ];
-
-  // console.log(post);
-
-  // const { data: postreactions = [] } = useQuery({
-  //   queryKey: [post?.uniqueId],
-  //   queryFn: async () => {
-  //     const res = await fetch(`https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`);
-  //     const data = res.json();
-  //     refetch()
-  //     return data;
-  //   }
-  // })
-
   useEffect(() => {
     fetch(
       `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
@@ -76,6 +47,7 @@ const PostCard = ({
       });
   }, [post?.uniqueId]);
 
+<<<<<<< HEAD
   // const ownReaction = postReactions.map(
   //   (reactionItem) => reactionItem?.email === user?.email
   // );
@@ -113,9 +85,12 @@ const PostCard = ({
   //     });
   // };
 
+=======
+>>>>>>> 9a39d28dd7f1fbf9f247cf854695f8b50cc0deb7
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
     console.log(hello);
+
     if (!hello[0]) {
       return handleLike();
     } else {
@@ -128,8 +103,7 @@ const PostCard = ({
     const likeInfo = { userId: user, postId: post?._id };
     console.log(likeInfo);
     allLike.push(...likeLength, likeInfo);
-
-    fetch(`https://craft-connect-server-blond.vercel.app/users/${post?._id}`, {
+    fetch(`http://localhost:5000/users/${post?._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -145,6 +119,32 @@ const PostCard = ({
         }
       });
   };
+
+  const handelAddBookmarked = () =>{
+    const bookMarkedPost = {
+        bookmarkedUserEmail : user?.email,
+        bookmarkedUserName : user?.displayName,
+        postId : post?._id,
+        postUserEmail : post?.userEmail,
+        postUserName : post?.userName,
+        postUserPhoto : post?.userPhoto,
+        PostPhoto : post?.img,
+        postTime : post?.currentDate,
+        postText : post?.postText,
+    }
+    fetch("http://localhost:5000/user/bookmark", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookMarkedPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Bookmarked Successfully Done!")
+      });
+  }
 
   return (
     <div>
@@ -176,20 +176,20 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <a
+                      <Link onClick={handelAddBookmarked}
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
                         Bookmark
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
+                      <Link
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
                         Save
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -224,10 +224,13 @@ const PostCard = ({
                       onClick={() => likedUser(user?.uid)}
                       disabled={liked === true}
                       className={
-                        liked ? "text-[34px] text-blue-600" : "text-[34px]"
+                        liked === true
+                          ? "text-[34px] text-blue-600"
+                          : "text-[34px]"
                       }
                     >
                       <BiLike />
+
                     </button>
 
                     <p className="text-3xl">{post?.likes?.length}</p>
