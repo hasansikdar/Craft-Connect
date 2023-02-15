@@ -37,6 +37,9 @@ import AddProduct from "../Pages/Dashboard/AddProduct";
 import YourProduct from "../Pages/Dashboard/YourProduct";
 import AdminPanel from "../Pages/AdminPanel/AdminPanel";
 import DetailsOfProduct from "../Pages/MarketPlace/DetailsOfProduct";
+import AllUsers from "../Pages/AdminPanel/AllUsers";
+import ReportedPost from "../Pages/AdminPanel/ReportedPost";
+import ReportedProduct from "../Pages/AdminPanel/ReportedProduct";
 
 export const Routes = createBrowserRouter([
   {
@@ -162,7 +165,20 @@ export const Routes = createBrowserRouter([
         <AdminPanel></AdminPanel>
       </PrivateRouter>
     ),
-    children: [],
+    children: [
+      {
+        path:'/admin/all-users',
+        element: <AllUsers></AllUsers>
+      },
+      {
+        path: '/admin/reported-post',
+        element: <ReportedPost></ReportedPost>
+      },
+      {
+        path: '/admin/reported-product',
+        element: <ReportedProduct></ReportedProduct>
+      }
+    ],
   },
   {
     path: "*",
