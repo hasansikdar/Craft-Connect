@@ -13,7 +13,7 @@ const Chats = () => {
   const { data: allusers = [] } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allusers");
+      const res = await fetch("http://localhost:5000/users");
       const data = await res.json();
       return data;
     },
@@ -31,10 +31,11 @@ const Chats = () => {
   const sendMessage = (e) =>{
     e.preventDefault();
     const data ={
-      senderName: user.id,
+      senderName: user.displayName,
       recieverId: currentfrnd._id,
+      message : newMessage?newMessage : "🧡"
     }
-    dispatch(messageSend())
+    dispatch(messageSend(data))
     console.log(newMessage)
   }
 
