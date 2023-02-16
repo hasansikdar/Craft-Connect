@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { Authcontext } from '../../../Context/UserContext';
 
 const UpdateProfileImage = ({myProfile, openModal, setOpenModal}) => {
-    console.log(myProfile);
+    // console.log(myProfile);
+    const {myProUpdate} = useContext(Authcontext);
 
     const cancelButtonRef = useRef(null);
 
@@ -25,7 +27,7 @@ const UpdateProfileImage = ({myProfile, openModal, setOpenModal}) => {
       .then(res => res.json())
       .then(data =>{
         const profileImage = data?.data?.display_url;
-        const profileImg = {profileImage}
+        const profileImg = {images:profileImage}
         setOpenModal(false);
 
           fetch(`http://localhost:5000/profileImg/${myProfile?._id}`, {
@@ -38,7 +40,7 @@ const UpdateProfileImage = ({myProfile, openModal, setOpenModal}) => {
             .then((res) => res.json())
             .then((data) => {
               if (data.modifiedCount > 0) {
-                // alert("user updated");
+                myProUpdate();
                 console.log(data);
               }
             });

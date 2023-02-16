@@ -34,6 +34,12 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import UsersTable from "../Pages/Dashboard/UsersTable";
 import AddProduct from "../Pages/Dashboard/AddProduct";
 import YourProduct from "../Pages/Dashboard/YourProduct";
+import AdminPanel from "../Pages/AdminPanel/AdminPanel";
+import DetailsOfProduct from "../Pages/MarketPlace/DetailsOfProduct";
+import AllUsers from "../Pages/AdminPanel/AllUsers";
+import ReportedPost from "../Pages/AdminPanel/ReportedPost";
+import ReportedProduct from "../Pages/AdminPanel/ReportedProduct";
+import AdminRoute from "./AdminRoute";
 import AddedCart from "../Pages/Dashboard/AddedCart";
 
 export const Routes = createBrowserRouter([
@@ -56,7 +62,10 @@ export const Routes = createBrowserRouter([
       { path: "/products/:id", element: <ProductDetails></ProductDetails> },
       { path: "/advertisement/create", element: <AdvertisementLayout /> },
       { path: "/feature/pages", element: <Pages></Pages> },
-      { path: "/feature/pages/discover", element: <DiscoverPage></DiscoverPage> },
+      {
+        path: "/feature/pages/discover",
+        element: <DiscoverPage></DiscoverPage>,
+      },
       {
         path: "/feature/watch",
         element: <Watch></Watch>,
@@ -74,6 +83,12 @@ export const Routes = createBrowserRouter([
         element: <MarketPlace></MarketPlace>,
       },
       {
+        path: "/feature/marketplace/product/:id",
+        element: <DetailsOfProduct></DetailsOfProduct>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
+      },
+      {
         path: "/feature/bookmarked",
         element: <BookMarked></BookMarked>,
       },
@@ -84,7 +99,8 @@ export const Routes = createBrowserRouter([
       {
         path: "/feature/adcenter/:id",
         element: <AdCenterDetail></AdCenterDetail>,
-        loader: ({ params }) => fetch(`http://localhost:5000/advertising-post/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/advertising-post/${params.id}`),
       },
       {
         path: "/feature/adsmanager",
@@ -120,29 +136,62 @@ export const Routes = createBrowserRouter([
           ),
       },
       {
-        path: '/user/:email',
+        path: "/user/:email",
         element: <UserById />,
-        loader: ({ params }) => fetch(`https://craft-connect-server-blond.vercel.app/user/${params?.email}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://craft-connect-server-blond.vercel.app/user/${params?.email}`
+          ),
       },
-      
     ],
   },
   { path: "/login", element: <Login></Login> },
   {
     path: "/dashboard",
-    element:
+    element: (
       <PrivateRouter>
         <Dashboard />
       </PrivateRouter>
-    ,
+    ),
     children: [
-    // { path: '/dashboard/all-users', element: <UsersTable /> },
-      {path: '/dashboard/add-product', element: <AddProduct/>},
-      {path: '/dashboard/your-product', element: <YourProduct/>},
-      {path: '/dashboard/added-cart', element: <AddedCart/>}
-    ]
+      // { path: '/dashboard/all-users', element: <UsersTable /> },
+      // { path: "/dashboard/add-product", element: <AddProduct /> },
+      // { path: "/dashboard/your-product", element: <YourProduct /> },
+      { path: "/dashboard/add-product", element: <AddProduct /> },
+      { path: "/dashboard/your-product", element: <YourProduct /> },
+      { path: "/dashboard/added-cart", element: <AddedCart /> },
+    ],
   },
-  { path: "/chats", element: <PrivateRouter><Chatting></Chatting></PrivateRouter> },
+  {
+    path: "/admin",
+    element: (
+      <AdminRoute>
+        <AdminPanel></AdminPanel>
+      </AdminRoute>
+    ),
+    children: [
+      {
+        path: "/admin/all-users",
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/admin/reported-post",
+        element: <ReportedPost></ReportedPost>,
+      },
+      {
+        path: "/admin/reported-product",
+        element: <ReportedProduct></ReportedProduct>,
+      },
+    ],
+  },
+  {
+    path: "/chats",
+    element: (
+      <PrivateRouter>
+        <Chatting></Chatting>
+      </PrivateRouter>
+    ),
+  },
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,

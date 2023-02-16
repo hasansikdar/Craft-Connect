@@ -10,20 +10,7 @@ import PostView from "./PostCard/PostView";
 import ProfileInfo from "./ProfileInfo";
 
 const ProfileOfUser = () => {
-  const { user } = useContext(Authcontext);
-  // console.log(user);
-
-  const url = `http://localhost:5000/users?email=${user?.email}`;
-  const { data: users = [] } = useQuery({
-    queryKey: ["users", user?.email],
-    queryFn: async () => {
-      const res = await fetch(url);
-      const data = res.json();
-      return data;
-    },
-  });
-
-  //  console.log(users);
+  const { user, myPro } = useContext(Authcontext);
 
   return (
     <>
@@ -31,14 +18,14 @@ const ProfileOfUser = () => {
         <div className="pt-15 ">
 
           {
-            users.map((myProfile) =>{
+            myPro.map((myProfile) =>{
 
           return (
             <div>
               <div className=" md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
                 <CoverImg myProfile={myProfile}/>
                 <CoverImgMobile />
-                <ProfileInfo myProfile={myProfile}/>
+                <ProfileInfo myProfile={myProfile} />
               </div>
               <div className="md:w-[1084px] mx-auto mt-10">
                 <PostView />

@@ -53,7 +53,8 @@ const UserContext = ({ children }) => {
       return data;
     },
   });
-  const urls = `http://localhost:5000/user/${user?.email}`;
+
+  const urls = `http://localhost:5000/users?email=${user?.email}`;
   const { data: myPro = [], refetch:myProUpdate } = useQuery({
     queryKey: ["myPro", user?.email],
     queryFn: async () => {
@@ -73,7 +74,7 @@ const UserContext = ({ children }) => {
     loading,
     signinwithgoogle,
     myPro,
-    myProUpdate
+    myProUpdate,
   };
 
   useEffect(() => {

@@ -12,7 +12,7 @@ const ProfileDetails = () => {
   const { data: allusers = [] } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allusers");
+      const res = await fetch("http://localhost:5000/users");
       const data = await res.json();
       return data;
     },
@@ -23,7 +23,7 @@ const ProfileDetails = () => {
         <h1 className="ml-4 mt-4 dark:text-white text-black">Your Profile</h1>
         <div className="flex items-center flex-col">
           <img
-            src={user?.photoURL}
+            src={myPro[0]?.photoURL}
             alt="photoURL"
             className="w-16 h-16 object-cover rounded-full mt-4 mb-2"
           />
