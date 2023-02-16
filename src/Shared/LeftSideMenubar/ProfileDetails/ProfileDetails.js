@@ -5,9 +5,18 @@ import { FaEdit, FaWifi, FaUserCheck } from "react-icons/fa";
 import { Authcontext } from "../../../Context/UserContext";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
+import { useQuery } from "@tanstack/react-query";
 
 const ProfileDetails = () => {
   const { user, myPro } = useContext(Authcontext);
+  const { data: allusers = [] } = useQuery({
+    queryKey: ["allusers"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/allusers");
+      const data = await res.json();
+      return data;
+    },
+  });
   return (
     <div className="">
       <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
@@ -20,7 +29,7 @@ const ProfileDetails = () => {
           />
           <Link to="/feature/profile">
             <h1 className="dark:text-white text-gray-700 font-bold text-xl hidden lg:block">
-              {user?.displayName}
+              {myPro?.displayName}
             </h1>
           </Link>
           <p className="dark:text-gray-300 text-gray-700">
@@ -46,7 +55,7 @@ const ProfileDetails = () => {
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
             Followed by{" "}
             <span className="flex items-center">
-              <FaWifi className="mr-2"></FaWifi> 487 people{" "}
+              <FaWifi className="mr-2"></FaWifi> {allusers?.length} people{" "}
             </span>
           </Link>
         </div>

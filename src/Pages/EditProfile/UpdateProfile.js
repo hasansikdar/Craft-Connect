@@ -91,7 +91,7 @@ const UpdateProfile = ({ setEdit, users }) => {
                 hover:bg-orange-100">Edit Profile</label>
                                     <input type='file' id="img-btn" name='fileUpload'
                                         onChange={setField}
-                                        className="d-none" />
+                                        className="hidden" />
                                 </div>
                             </div>
 
