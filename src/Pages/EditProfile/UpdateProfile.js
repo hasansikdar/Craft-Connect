@@ -137,7 +137,7 @@ const UpdateProfile = ({ setEdit, users }) => {
                                     name="linkedin"
                                     id="linkedin"
                                     placeholder="Enter your linkedin Url"
-                                    // defaultValue={myPro?.socialMedia[1] ? myPro?.socialMedia[1] : '' }
+                                    // defaultValue={myPro?.socialMedia[1] ? myPro?.socialMedia[1] : 
                                     className="rounded-full my-2.5 w-full py-1.5 pl-3.5  pr-1 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 focus:outline-none focus:border-orange-600 caret-orange-600"
                                 />
                             </div>

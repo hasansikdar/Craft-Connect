@@ -6,6 +6,8 @@ import { db } from "../../../firebase/firebase.Config";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import Frndschat from "../Frndschat/Frndschat";
+import { useDispatch } from "react-redux";
+import { messageSend } from "../../MessangerAction/MessangerAction";
 
 const Chats = () => {
   const { data: allusers = [] } = useQuery({
@@ -17,6 +19,7 @@ const Chats = () => {
     },
   });
 
+  const dispatch = useDispatch();
   const { user } = useContext(Authcontext);
   const [currentfrnd, setCurrentfrnd] = useState("");
   const [newMessage, setNewMessage] = useState("");
@@ -27,6 +30,11 @@ const Chats = () => {
 
   const sendMessage = (e) =>{
     e.preventDefault();
+    const data ={
+      senderName: user.id,
+      recieverId: currentfrnd._id,
+    }
+    dispatch(messageSend())
     console.log(newMessage)
   }
 
