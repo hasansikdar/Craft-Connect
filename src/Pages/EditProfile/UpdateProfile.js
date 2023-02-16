@@ -15,7 +15,7 @@ const UpdateProfile = ({ setEdit, users }) => {
         const updateProfileInfo = { displayName, email, socialMedia: [facebook, linkedin], photoURL: previewImage };
         console.log(updateProfileInfo, displayName, email, facebook, linkedin, previewImage);
         fetch(`http://localhost:5000/update-users/${myPro._id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
