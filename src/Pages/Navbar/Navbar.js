@@ -68,7 +68,6 @@ const Navbar = () => {
       const data = await res.json();
       return data;
     },
-
   });
 
   const url = `https://craft-connect-server-blond.vercel.app/users?email=${user?.email}`;
@@ -82,8 +81,6 @@ const Navbar = () => {
   });
 
   console.log(users);
-
-  
 
   return (
     <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
@@ -352,59 +349,60 @@ const Navbar = () => {
                       user?.photoURL
                         ? user?.photoURL
                         : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-                        }`}
-                      alt=""
-                    />
-                    <div>
-                      <p className="text-xl">{user?.displayName}</p>
-                      <p className="font-bold">
-                        Muhammad Hasan sent you a message.
-                      </p>
-                    </div>
+                    }`}
+                    alt=""
+                  />
+                  <div>
+                    <p className="text-xl">{user?.displayName}</p>
+                    <p className="font-bold">
+                      Muhammad Hasan sent you a message.
+                    </p>
                   </div>
-                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
-                    <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
-                    <div>
-                      <p className="text-xl">Muhammad Hasan</p>
-                      <p className="font-bold">Rahat sent you a message.</p>
-                    </div>
+                </div>
+                <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
+                  <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                  <div>
+                    <p className="text-xl">Muhammad Hasan</p>
+                    <p className="font-bold">Rahat sent you a message.</p>
                   </div>
-                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
-                    <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
-                    <div>
-                      <p className="text-xl">Maruf Khan</p>
-                      <p className="font-bold">
-                        Muhammad Ali sent you a message.
-                      </p>
-                    </div>
+                </div>
+                <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white0 p-2 rounded-md cursor-pointer">
+                  <img className="w-16 rounded-full mr-2 " src={maruf} alt="" />
+                  <div>
+                    <p className="text-xl">Maruf Khan</p>
+                    <p className="font-bold">
+                      Muhammad Ali sent you a message.
+                    </p>
                   </div>
-                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
-                    <img
-                      className="w-16 rounded-full mr-2 "
-                      src={`${user?.photoURL
+                </div>
+                <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+                  <img
+                    className="w-16 rounded-full mr-2 "
+                    src={`${
+                      user?.photoURL
                         ? user?.photoURL
                         : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-                        }`}
-                      alt=""
-                    />
-                    <div>
-                      <p className="text-xl">{user?.displayName}</p>
-                      <p className="font-bold">
-                        Farhan Anjum sent you a message.
-                      </p>
-                    </div>
+                    }`}
+                    alt=""
+                  />
+                  <div>
+                    <p className="text-xl">{user?.displayName}</p>
+                    <p className="font-bold">
+                      Farhan Anjum sent you a message.
+                    </p>
                   </div>
-                  <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
-                    <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
-                    <div>
-                      <p className="text-xl">Muhammad Hasan</p>
-                      <p className="font-bold">
-                        Abdul Al Mamun sent you a Photo.
-                      </p>
-                    </div>
+                </div>
+                <div className="flex items-center hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white p-2 rounded-md cursor-pointer">
+                  <img className="w-16 rounded-full mr-2 " src={hasan} alt="" />
+                  <div>
+                    <p className="text-xl">Muhammad Hasan</p>
+                    <p className="font-bold">
+                      Abdul Al Mamun sent you a Photo.
+                    </p>
                   </div>
                 </div>
               </div>
+            </div>
           )}
           {/*-----------------------------------------Messanger Modal End----------------------------------------------*/}
 
@@ -575,7 +573,7 @@ const Navbar = () => {
                       user?.photoURL
                         ? user?.photoURL
                         : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
-                      }`}
+                    }`}
                     alt=""
                   />
                   <h3 className="text-xl font-bold text-[#FF3F4A] hover:text-white">
@@ -612,7 +610,9 @@ const Navbar = () => {
                 <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                   <div className="flex items-center">
                     <TbLayoutDashboard className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
-                    <Link to='/dashboard' className="font-bold">Users Dashboard</Link>
+                    <Link to="/dashboard" className="font-bold">
+                      Users Dashboard
+                    </Link>
                   </div>
                   <div>
                     <FcNext className="text-2xl mr-2" />

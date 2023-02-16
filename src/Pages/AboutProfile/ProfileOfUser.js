@@ -29,25 +29,20 @@ const ProfileOfUser = () => {
     <>
       <div className="dark:bg-[#2C2048] overflow-y-auto h-screen grid justify-center ">
         <div className="pt-15 ">
-
-          {
-            users.map((myProfile) =>{
-
-          return (
-            <div>
-              <div className=" md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
-                <CoverImg myProfile={myProfile}/>
-                <CoverImgMobile />
-                <ProfileInfo myProfile={myProfile}/>
+          {users.map((myProfile) => {
+            return (
+              <div>
+                <div className=" md:w-[1084px] md:mx-auto md:shadow-md rounded-b-md">
+                  <CoverImg myProfile={myProfile} />
+                  <CoverImgMobile />
+                  <ProfileInfo myProfile={myProfile} />
+                </div>
+                <div className="md:w-[1084px] mx-auto mt-10">
+                  <PostView />
+                </div>
               </div>
-              <div className="md:w-[1084px] mx-auto mt-10">
-                <PostView />
-              </div>
-            </div>
-          );
-            })
-          }
-
+            );
+          })}
         </div>
       </div>
     </>

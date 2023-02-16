@@ -53,10 +53,18 @@ const UserContext = ({ children }) => {
       return data;
     },
   });
-
+  const { data: allUsers = [] } = useQuery({
+    queryKey: ["allusers"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/allusers");
+      const data = await res.json();
+      return data;
+    },
+  });
   const authinfo = {
     user,
     users,
+    allUsers,
     refetch,
     updateUserProfile,
     createaccount,

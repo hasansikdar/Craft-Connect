@@ -4,7 +4,6 @@ import { BsThreeDots } from "react-icons/bs";
 import useClickOutside from "../../Components/helpers/clickOutside";
 import { useContext } from "react";
 import { Authcontext } from "../../Context/UserContext";
-import { useEffect } from "react";
 import UpdateCoverImg from "./UpdateProfileImage/UpdateCoverImg";
 import UpdateProfileImage from "./UpdateProfileImage/UpdateProfileImage";
 
@@ -13,10 +12,20 @@ const ProfileInfo = ({ myProfile }) => {
   const menuRef = useRef(null);
   useClickOutside(menuRef, () => setShowCoverMenu(false));
 
-  // const { user } = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
+  console.log(user);
 
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+
+  const handleFollow = () => {
+    fetch("http://localhost:5000/follow", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
 
   return (
     <>
@@ -25,10 +34,14 @@ const ProfileInfo = ({ myProfile }) => {
           <Link>Timeline</Link>
         </div>
         <div>
-          <Link>About</Link>
+          <Link>
+            <button>Follower</button>
+          </Link>
         </div>
         <div>
-          <Link>Friends</Link>
+          <Link>
+            <button>Following</button>
+          </Link>
         </div>
         <div>
           <Link className="text-3xl hover:text-orange-600 duration-300">

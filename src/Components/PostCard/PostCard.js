@@ -1,22 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
-// import PostUserInfo from "./PostUserInfo/PostUserInfo";
-// import likeicon from "../../assets/icons/like.png";
-// import {
-//   FaCommentAlt,
-//   FaLaughWink,
-//   FaLaugh,
-//   FaAngleDown,
-//   FaShare,
-// } from "react-icons/fa";
-// import { PhotoProvider, PhotoView } from "react-photo-view";
-// import { Link } from "react-router-dom";
-// import { FcLike } from "react-icons/fc";
-// import UserContext, { Authcontext } from "../../Context/UserContext";
-// import Reactions from "../../Shared/Reactions/Reactions";
-// import { useQuery } from "@tanstack/react-query";
-// import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
@@ -80,18 +63,18 @@ const PostCard = ({
       });
   };
 
-  const handelAddBookmarked = () =>{
+  const handelAddBookmarked = () => {
     const bookMarkedPost = {
-        bookmarkedUserEmail : user?.email,
-        bookmarkedUserName : user?.displayName,
-        postId : post?._id,
-        postUserEmail : post?.userEmail,
-        postUserName : post?.userName,
-        postUserPhoto : post?.userPhoto,
-        PostPhoto : post?.img,
-        postTime : post?.currentDate,
-        postText : post?.postText,
-    }
+      bookmarkedUserEmail: user?.email,
+      bookmarkedUserName: user?.displayName,
+      postId: post?._id,
+      postUserEmail: post?.userEmail,
+      postUserName: post?.userName,
+      postUserPhoto: post?.userPhoto,
+      PostPhoto: post?.img,
+      postTime: post?.currentDate,
+      postText: post?.postText,
+    };
     fetch("http://localhost:5000/user/bookmark", {
       method: "POST",
       headers: {
@@ -102,9 +85,9 @@ const PostCard = ({
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success("Bookmarked Successfully Done!")
+        toast.success("Bookmarked Successfully Done!");
       });
-  }
+  };
 
   return (
     <div>
@@ -136,7 +119,8 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <Link onClick={handelAddBookmarked}
+                      <Link
+                        onClick={handelAddBookmarked}
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
@@ -190,7 +174,6 @@ const PostCard = ({
                       }
                     >
                       <BiLike />
-
                     </button>
 
                     <p className="text-3xl">{post?.likes?.length}</p>
@@ -208,7 +191,7 @@ const PostCard = ({
                   {/* Share button and Dropdown  */}
                   <div className="dropdown dropdown-bottom dropdown-end ">
                     <label tabIndex={0} className="text-4xl cursor-pointer ">
-                      <BiShareAlt></BiShareAlt>
+                      {/* <BiShareAlt></BiShareAlt> */}
                     </label>
                     <ul
                       tabIndex={0}

@@ -15,13 +15,14 @@ const NavSearchField = ({ allusers }) => {
     const searchWord = event?.target?.value;
     setWordEntered(searchWord);
     const newFilter = allusers?.filter((value) => {
-      return value?.displayName?.toLowerCase()?.includes(searchWord.toLowerCase());
+      return value?.displayName
+        ?.toLowerCase()
+        ?.includes(searchWord.toLowerCase());
     });
 
-    if(searchWord === ''){
-      setFilterData([])
-    }
-    else{
+    if (searchWord === "") {
+      setFilterData([]);
+    } else {
       setFilterData(newFilter);
     }
   };
@@ -32,19 +33,19 @@ const NavSearchField = ({ allusers }) => {
 
   return (
     <div>
-      <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
+      <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-white ">
         <input
           onChange={handleFilter}
           value={wordEntered}
           type="text"
           placeholder="Search"
-          className="mx-2 md:mx-0 pl-4 pr-44 py-4 text-white w-full rounded-md bg-zinc-700"
+          className="mx-2 md:mx-0 pl-4 pr-44 py-2 text-black w-full rounded-md bg-white"
         />
         <i className="pr-4">
           {filterData.length === 0 ? (
-            <BiSearchAlt2></BiSearchAlt2>
+            <BiSearchAlt2 className="text-black text-xl"></BiSearchAlt2>
           ) : (
-              <RxCross2 onClick={clearInput}></RxCross2>
+            <RxCross2 onClick={clearInput}></RxCross2>
           )}
         </i>
       </div>

@@ -4,13 +4,14 @@ import { HiSpeakerphone } from "react-icons/hi";
 import { FaEdit, FaWifi, FaUserCheck } from "react-icons/fa";
 import { Authcontext } from "../../../Context/UserContext";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
-import { AiFillGithub } from "react-icons/ai";
 
 const ProfileDetails = () => {
-  const { user } = useContext(Authcontext);
+  const { user, allUsers } = useContext(Authcontext);
+
+  console.log(allUsers);
   return (
     <div className="">
-      <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
+      <div className="card-body p-2 flex rounded-lg shadow-xl w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
         <h1 className="ml-4 mt-4 dark:text-white text-black">Your Profile</h1>
         <div className="flex items-center flex-col">
           <img
@@ -44,17 +45,17 @@ const ProfileDetails = () => {
         <div className="divider m-0"></div>
         <div>
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
-            Followed by{" "}
+            Followers
             <span className="flex items-center">
-              <FaWifi className="mr-2"></FaWifi> 487 people{" "}
+              <FaWifi className="mr-2"></FaWifi> {user?.followers} people
             </span>
           </Link>
         </div>
         <div>
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
-            Friendlists{" "}
+            Following
             <span className="flex items-center">
-              <FaUserCheck className="mr-2"></FaUserCheck> 492 friends{" "}
+              <FaUserCheck className="mr-2"></FaUserCheck> 492 friends
             </span>
           </Link>
         </div>
