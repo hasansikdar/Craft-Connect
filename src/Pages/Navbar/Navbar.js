@@ -612,7 +612,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
                   <div className="flex items-center">
                     <TbLayoutDashboard className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
-                    <Link to='/dashboard' className="font-bold">Users Dashboard</Link>
+                    <Link to='/dashboard/add-product' className="font-bold">Users Dashboard</Link>
                   </div>
                   <div>
                     <FcNext className="text-2xl mr-2" />

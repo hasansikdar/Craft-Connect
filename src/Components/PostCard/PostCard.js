@@ -37,15 +37,7 @@ const PostCard = ({
   const [allLike, setAllLike] = useState([]);
 
   const likeLength = post?.likes;
-  useEffect(() => {
-    fetch(
-      `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setReactions(data);
-      });
-  }, [post?.uniqueId]);
+  
 
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
@@ -73,7 +65,7 @@ const PostCard = ({
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data?.modifiedCount > 0) {
+        if (data?.acknowledged) {
           setLiked(true);
           refetch();
         }
@@ -193,7 +185,7 @@ const PostCard = ({
 
                     </button>
 
-                    <p className="text-3xl">{post?.likes?.length}</p>
+                    <p className="text-3xl">{likeLength.length}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <Link to={`/postDetails/${post?._id}`}>

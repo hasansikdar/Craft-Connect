@@ -7,7 +7,7 @@ import {
 import { Dialog, Transition } from '@headlessui/react';
 import { toast } from 'react-hot-toast';
 
-const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails }) => {
+const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails, refetch }) => {
     const stripe = useStripe();
     const [error, setError] = useState('');
     const [process, setProcess] = useState(false);
@@ -81,8 +81,10 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch();
                         setOpenPaymentModal(false)
                         toast.success(`Congrats! your paymentDone your transaction id ${paymentIntent.id}`);
+                        
                     }
                 })
 
