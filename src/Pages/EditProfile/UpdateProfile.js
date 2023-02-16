@@ -10,12 +10,13 @@ const UpdateProfile = ({ setEdit, users }) => {
     const usersUpdatedData = (event) => {
         event.preventDefault();
         const field = event.target;
+        const displayNames = field.name.value;
         const facebook = field.facebook.value;
         const linkedin = field.linkedin.value;
-        const updateProfileInfo = { displayName, email, socialMedia: [facebook, linkedin], photoURL: previewImage };
-        console.log(updateProfileInfo, displayName, email, facebook, linkedin, previewImage);
+        const updateProfileInfo = { displayName: displayNames, email, socialMedia: [facebook, linkedin], photoURL: previewImage };
+        console.log(updateProfileInfo)
         fetch(`http://localhost:5000/update-users/${myPro._id}`, {
-            method: 'PATCH',
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -104,6 +105,7 @@ const UpdateProfile = ({ setEdit, users }) => {
                                     id="name"
                                     placeholder="Enter your name"
                                     className="rounded-full my-2.5 w-full py-1.5 pl-3.5  pr-1 text-black placeholder-gray-500 transition-all duration-200 bg-white border focus:border focus:outline-none focus:border-orange-600 caret-orange-600"
+                                    defaultValue={displayName}
                                 />
                                 <label className="font-bold text-slate-900 pl-3.5 dark:text-gray-100" htmlFor="Name">
                                     Email Address {`(Email is not editable)`}
@@ -125,6 +127,7 @@ const UpdateProfile = ({ setEdit, users }) => {
                                     id="facebook"
                                     placeholder="Enter your FaceBook Url"
                                     className="block rounded-full my-2.5 w-full py-1.5 pl-3.5  pr-1 text-black placeholder-gray-500 transition-all duration-200 bg-white border focus:border focus:outline-none focus:border-orange-600 caret-orange-600"
+                                    // defaultValue={myPro?.socialMedia[0] ? myPro?.socialMedia[0] : '' }
                                 />
                                 <label className="font-bold text-slate-900 pl-3.5 dark:text-gray-100" htmlFor="linkedin">
                                     Linkedin
@@ -134,6 +137,7 @@ const UpdateProfile = ({ setEdit, users }) => {
                                     name="linkedin"
                                     id="linkedin"
                                     placeholder="Enter your linkedin Url"
+                                    // defaultValue={myPro?.socialMedia[1] ? myPro?.socialMedia[1] : '' }
                                     className="rounded-full my-2.5 w-full py-1.5 pl-3.5  pr-1 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 focus:outline-none focus:border-orange-600 caret-orange-600"
                                 />
                             </div>
