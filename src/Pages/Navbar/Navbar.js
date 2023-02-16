@@ -91,7 +91,7 @@ const Navbar = () => {
         <div className="pl-3">
           <Link
             to="/"
-            class="text-2xl text-gray-900 font-semibold flex items-center active"
+            class="text-2xl text-gray-900 font-semibold flex items-center"
             href="/"
           >
             <img src={logo} className="w-14 d-block m-auto" alt="" />

@@ -81,3 +81,13 @@ img {
 .dashNav.active{
   border: 1px solid #FF3F4A;
 }
+
+.active{
+  display: flex;
+  align-items: center;
+  background-color: #FF3F4A;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  flex-direction: row;
+}
