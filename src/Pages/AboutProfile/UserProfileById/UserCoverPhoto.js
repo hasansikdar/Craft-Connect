@@ -3,8 +3,8 @@ import cover from "../../../assets/cover.jpg";
 import UserProfilePic from './UserProfilePic';
 
 
-const UserCoverPhoto = () => {
-
+const UserCoverPhoto = ({userDetails}) => {
+console.log(userDetails)
   
 
     return (
@@ -24,7 +24,7 @@ const UserCoverPhoto = () => {
               borderTopRightRadius: "5px",
             }}
           ></div>
-          <UserProfilePic/>
+          <UserProfilePic userDetails={userDetails}/>
         </div>
       </div>
     );

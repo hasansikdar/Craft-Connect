@@ -12,7 +12,7 @@ const ProfileDetails = () => {
   const { data: allusers = [] } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("http://localhost:5000/allusers");
       const data = await res.json();
       return data;
     },
@@ -29,7 +29,7 @@ const ProfileDetails = () => {
           />
           <Link to="/feature/profile">
             <h1 className="dark:text-white text-gray-700 font-bold text-xl hidden lg:block">
-              {myPro?.displayName}
+              {myPro[0]?.displayName}
             </h1>
           </Link>
           <p className="dark:text-gray-300 text-gray-700">
@@ -68,17 +68,17 @@ const ProfileDetails = () => {
           </Link>
         </div>
         {
-          myPro?.socialMedia ? <>
+          myPro[0]?.socialMedia ? <>
             <div className="divider m-0"></div>
             <div className="px-2">
               <p className="font-bold dark:text-white text-gray-700 ml-2 mb-2">
                 Social Networks:
               </p>
-              <a target={'_blank'} href={myPro?.socialMedia[0]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
+              <a target={'_blank'} href={myPro[0]?.socialMedia[0]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
                 <BsFacebook className="text-white text-xl" />
                 <p className="font-bold text-white">Facebook</p>
               </a>
-              <a target={'_blank'} href={myPro?.socialMedia[1]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
+              <a target={'_blank'} href={myPro[0]?.socialMedia[1]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
                 <BsLinkedin className="text-white  text-xl" />
                 <p className="font-bold text-white">Linkedin</p>
               </a>

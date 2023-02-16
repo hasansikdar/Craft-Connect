@@ -65,7 +65,7 @@ const Navbar = () => {
     queryKey: ["allusers"],
     queryFn: async () => {
       const res = await fetch(
-        "https://craft-connect-server-blond.vercel.app/allusers"
+        "http://localhost:5000/allusers"
       );
       const data = await res.json();
       return data;
@@ -73,7 +73,7 @@ const Navbar = () => {
 
   });
 
-  const url = `https://craft-connect-server-blond.vercel.app/users?email=${user?.email}`;
+  const url = `http://localhost:5000/users?email=${user?.email}`;
   const { data: users = [] } = useQuery({
     queryKey: ["users", user?.email],
     queryFn: async () => {

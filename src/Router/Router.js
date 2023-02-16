@@ -132,7 +132,7 @@ export const Routes = createBrowserRouter([
         element: <PostDetails></PostDetails>,
         loader: ({ params }) =>
           fetch(
-            `https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`
+            `http://localhost:5000/postDetails/${params.id}`
           ),
       },
       {
@@ -140,7 +140,7 @@ export const Routes = createBrowserRouter([
         element: <UserById />,
         loader: ({ params }) =>
           fetch(
-            `https://craft-connect-server-blond.vercel.app/user/${params?.email}`
+            `http://localhost:5000/users/${params?.email}`
           ),
       },
     ],

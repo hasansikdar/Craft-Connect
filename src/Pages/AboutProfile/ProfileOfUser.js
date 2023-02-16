@@ -11,6 +11,7 @@ import ProfileInfo from "./ProfileInfo";
 
 const ProfileOfUser = () => {
   const { user, myPro } = useContext(Authcontext);
+  console.log(myPro)
 
   return (
     <>

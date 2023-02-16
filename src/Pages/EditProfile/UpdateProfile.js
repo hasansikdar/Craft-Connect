@@ -4,7 +4,7 @@ import { Authcontext } from '../../Context/UserContext';
 
 const UpdateProfile = ({ setEdit, users }) => {
     const { myPro, myProUpdate } = useContext(Authcontext)
-    const { email, displayName, photoURL } = myPro;
+    const { email, displayName, photoURL } = myPro[0];
     const [field, setField] = useState([]);
     const [previewImage, setPreviewImage] = useState(null);
     const usersUpdatedData = (event) => {
@@ -15,7 +15,7 @@ const UpdateProfile = ({ setEdit, users }) => {
         const linkedin = field.linkedin.value;
         const updateProfileInfo = { displayName: displayNames, email, socialMedia: [facebook, linkedin], photoURL: previewImage };
         console.log(updateProfileInfo)
-        fetch(`http://localhost:5000/update-users/${myPro._id}`, {
+        fetch(`http://localhost:5000/update-users/${myPro[0]._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

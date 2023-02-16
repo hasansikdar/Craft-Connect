@@ -8,9 +8,10 @@ import UpdateProfile from "./UpdateProfile";
 
 const EditProfile = () => {
   const { myPro } = useContext(Authcontext);
-  const {email,displayName,photoURL} = myPro;
+  const {email,displayName,photoURL} = myPro[0];
   const [edit, setEdit] = useState(true);
   const [loading, setLoading] = useState(false);
+  console.log(myPro[0])
 
 
   // const handleUpdateProfile = () => {
