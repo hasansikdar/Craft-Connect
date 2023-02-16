@@ -7,7 +7,7 @@ import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 
 const ProfileDetails = () => {
-  const { user } = useContext(Authcontext);
+  const { user, myPro } = useContext(Authcontext);
   return (
     <div className="">
       <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
@@ -58,20 +58,29 @@ const ProfileDetails = () => {
             </span>
           </Link>
         </div>
-        <div className="divider m-0"></div>
-        <div className="px-2">
-          <p className="font-bold dark:text-white text-gray-700 ml-2 mb-2">
-            Social Networks:
-          </p>
-          <button className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
-            <BsFacebook className="text-white text-xl" />
-            <p className="font-bold text-white">Facebook</p>
-          </button>
-          <button className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
-            <BsLinkedin className="text-white  text-xl" />
-            <p className="font-bold text-white">Linkedin</p>
-          </button>
-        </div>
+        {
+          myPro?.socialMedia ? <>
+            <div className="divider m-0"></div>
+            <div className="px-2">
+              <p className="font-bold dark:text-white text-gray-700 ml-2 mb-2">
+                Social Networks:
+              </p>
+              <a target={'_blank'} href={myPro?.socialMedia[0]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
+                <BsFacebook className="text-white text-xl" />
+                <p className="font-bold text-white">Facebook</p>
+              </a>
+              <a target={'_blank'} href={myPro?.socialMedia[1]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
+                <BsLinkedin className="text-white  text-xl" />
+                <p className="font-bold text-white">Linkedin</p>
+              </a>
+            </div>
+          </>
+            :
+            <>
+              <p className='mt-2'>You Do not Have any social network</p>
+            </>
+        }
+
       </div>
     </div>
   );

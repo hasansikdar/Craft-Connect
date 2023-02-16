@@ -53,7 +53,15 @@ const UserContext = ({ children }) => {
       return data;
     },
   });
-
+  const urls = `http://localhost:5000/user/${user?.email}`;
+  const { data: myPro = [], refetch:myProUpdate } = useQuery({
+    queryKey: ["myPro", user?.email],
+    queryFn: async () => {
+      const res = await fetch(urls);
+      const data = res.json();
+      return data;
+    },
+  });
   const authinfo = {
     user,
     users,
@@ -64,6 +72,8 @@ const UserContext = ({ children }) => {
     signin,
     loading,
     signinwithgoogle,
+    myPro,
+    myProUpdate
   };
 
   useEffect(() => {
