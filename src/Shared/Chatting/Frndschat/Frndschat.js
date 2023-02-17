@@ -1,153 +1,109 @@
-import React, { useContext } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext, useEffect, useState } from 'react';
 import { Authcontext } from '../../../Context/UserContext';
+import axios from "axios";
 
 const Frndschat = (props) => {
     const { user } = useContext(Authcontext);
-    const {currentfrnd, inputHandle, newMessage, sendMessage} = props
+    //const [messages, setMessages] = useState([]);
+    const {currentfrnd, inputHandle, newMessage, sendMessage, mssges} = props
     console.log(currentfrnd)
 
+    const [currentmssg, setCurrentmssg ] = useState([]);
+
+
+    // const { data: mssges = [], refetch, isLoading } = useQuery({
+    //   queryKey: ["mssges"],
+    //   queryFn: async () => {
+    //     const res = await fetch("http://localhost:5000/allmesseges");
+    //     const data = await res.json();
+    //     return data;
+    //   },
+    // });
+
+    // console.log(mssges)
+
+    // useEffect(()=>{
+    //   const getMessages = async () =>{
+    //     try{
+    //       const res = await axios.get("http://localhost:5000/allmesseges/" +currentfrnd?.id);
+    //       setMessages(res.data)
+    //     }catch(err){
+    //       console.log(err)
+    //     }
+    //   };
+    //   getMessages();
+    // }, [currentfrnd])
+
+    // console.log(messages)
+
+    
+    // const dta = mssges.filter(n=>n.senderId === user.uid && n.recieverId === currentfrnd.id)
+    //  setCurrentmssg(dta)
+    
+    // console.log(currentmssg)
     return (
         <div className="flex flex-col flex-auto h-full p-6">
         <div
           className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-2"
         >
         <div className="flex items-center p-2 bg-[#ff505a] rounded text-white">
-          <img src={currentfrnd.photoURL} alt="" className="w-10 h-10 object-cover rounded-full mr-5"/>
-          <h1>{currentfrnd.displayName}</h1>
+          <img src={user?.photoURL} alt="" className="w-10 h-10 object-cover rounded-full mr-5"/>
+          <h1>{user?.displayName}</h1>
         </div>
           <div className="flex flex-col h-full overflow-x-auto mb-4">
             <div className="flex flex-col h-full">
               <div className="grid grid-cols-12 gap-y-2">
-                <div className="col-start-1 col-end-8 p-3 rounded-lg">
-                  <div className="flex flex-row items-center">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
-                    >
-                      <div>Hey How are you today?</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-start-1 col-end-8 p-3 rounded-lg">
-                  <div className="flex flex-row items-center">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
-                    >
-                      <div>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Vel ipsa commodi illum saepe numquam maxime
-                        asperiores voluptate sit, minima perspiciatis.
+                  {/* chat user 1*/}
+                  {
+                  
+                  mssges.map(m=>
+                    m.senderId === user.uid ? 
+                      <div className="col-start-6 col-end-13 p-3 rounded-lg">
+                      <div className="flex items-center justify-start flex-row-reverse">
+                        <div
+                          className="flex items-center justify-center h-10 w-10 rounded-full border overflow-hidden bg-indigo-500 flex-shrink-0"
+                        >
+                          <img
+                          src={user.photoURL}
+                          alt="photoURL"
+                          className=""
+                          />
+                        </div>
+                        <div
+                          className="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
+                        >
+                          <div>
+                            {m.message}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div className="col-start-6 col-end-13 p-3 rounded-lg">
-                  <div className="flex items-center justify-start flex-row-reverse">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
-                    >
-                      <div>I'm ok what about you?</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-start-6 col-end-13 p-3 rounded-lg">
-                  <div className="flex items-center justify-start flex-row-reverse">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
-                    >
-                      <div>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing. ?
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-start-1 col-end-8 p-3 rounded-lg">
-                  <div className="flex flex-row items-center">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
-                    >
-                      <div>Lorem ipsum dolor sit amet !</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-start-6 col-end-13 p-3 rounded-lg">
-                  <div className="flex items-center justify-start flex-row-reverse">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
-                    >
-                      <div>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing. ?
-                      </div>
-                      <div
-                        className="absolute text-xs bottom-0 right-0 -mb-5 mr-2 text-gray-500"
-                      >
-                        Seen
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-start-1 col-end-8 p-3 rounded-lg">
-                  <div className="flex flex-row items-center">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
-                    >
-                      <div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Perspiciatis, in.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-start-1 col-end-8 p-3 rounded-lg">
-                  <div className="flex flex-row items-center">
-                    <div
-                      className="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0"
-                    >
-                      A
-                    </div>
-                    <div
-                      className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
-                    >
+                    :
+                    <div className="col-start-1 col-end-8 p-3 rounded-lg">
                       <div className="flex flex-row items-center">
-                        <h1>zxdjkhygvczdxhjvczxgjhvcdkgxvcjhxkgvhjxvgczxjhkvg</h1>
+                      <div
+                          className="flex items-center justify-center h-10 w-10 rounded-full border overflow-hidden bg-indigo-500 flex-shrink-0"
+                        >
+                          <img
+                          src={m.recieverImg}
+                          alt="photoURL"
+                          className=""
+                          />
+                        </div>
+                        <div
+                          className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
+                        >
+                          <div>
+                            <h1>{m.recieverName}</h1>
+                          </div>
+                          <div>{m.message}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  
+                  )
+                }
               </div>
             </div>
           </div>
