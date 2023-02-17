@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BsThreeDots } from "react-icons/bs";
 import { Authcontext } from "../../../Context/UserContext";
 import useClickOutside from "../../../Components/helpers/clickOutside";
+import UserProfilePic from "./UserProfilePic";
 
 const UserProfileInfo = ({ userDetails }) => {
   console.log(userDetails);
@@ -15,6 +16,7 @@ const UserProfileInfo = ({ userDetails }) => {
 
   return (
     <div>
+      <UserProfilePic userDetails={userDetails}></UserProfilePic>
       {/* <div className=" md:w-full">
       <div className="flex justify-end pt-2 pr-1">
         <button onClick={() => setShowCoverMenu(!showCoverMenu)}>

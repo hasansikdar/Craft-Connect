@@ -43,7 +43,7 @@ console.log(userDetails)
             ></div>
           </div>
 
-          <UserProfilePic userDetails={userDetails} />
+          {/* <UserProfilePic userDetails={userDetails} /> */}
       </div>
     );
 };
