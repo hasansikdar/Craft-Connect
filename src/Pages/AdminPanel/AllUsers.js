@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllUsers = () => {
 
@@ -27,7 +28,7 @@ const AllUsers = () => {
                   <th className="text-left p-3 px-5">User Image</th>
                   <th className="text-left p-3 px-5">User Name & Email</th>
                   <th className="text-left p-3 px-5">Account Password</th>
-                  <th className="text-left p-3 px-5">Action</th>
+                  <th className="text-left p-3 px-5">View</th>
                 </tr>
                 {allusers.map((allUser, index) => {
                   const {
@@ -53,19 +54,16 @@ const AllUsers = () => {
                         </td>
                         <td className="p-3 px-5 cursor-pointer">
                           <div>
-                            <p className="text-base">
-                              {displayName}
-                            </p>
-                            <p className="text-sm">
-                              {email}
-                            </p>
+                            <p className="text-base">{displayName}</p>
+                            <p className="text-sm">{email}</p>
                           </div>
                         </td>
                         <td className="p-3 px-5">
                           <p className="">{password}</p>
                         </td>
                         <td className="p-3 px-5">
-                          <button
+                          <Link
+                            to={`/user/${email}`}
                             type="button"
                             // onClick={() => {
                             //   setOpen(true);
@@ -73,8 +71,8 @@ const AllUsers = () => {
                             // }}
                             className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                           >
-                            Delete
-                          </button>
+                            View Profile
+                          </Link>
                         </td>
                       </tr>
                     </>
