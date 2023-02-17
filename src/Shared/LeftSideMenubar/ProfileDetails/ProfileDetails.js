@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const ProfileDetails = () => {
   const { user, myPro } = useContext(Authcontext);
-  const { data: allusers = [] } = useQuery({
+  const { data: allusers = [], refetch } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
       const res = await fetch("https://craft-connect-server-blond.vercel.app/allusers");
@@ -57,7 +57,7 @@ const ProfileDetails = () => {
             Followers
             <span className="flex items-center">
               <FaWifi className="mr-2"></FaWifi> {myPro[0]?.followers?.length}{" "}
-              people{" "}
+              people
             </span>
           </Link>
         </div>
@@ -65,8 +65,8 @@ const ProfileDetails = () => {
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
             Following
             <span className="flex items-center">
-              <FaUserCheck className="mr-2"></FaUserCheck>{" "}
-              {myPro[0]?.following?.length} following{" "}
+              <FaUserCheck className="mr-2"></FaUserCheck>
+              {myPro[0]?.following?.length} people
             </span>
           </Link>
         </div>

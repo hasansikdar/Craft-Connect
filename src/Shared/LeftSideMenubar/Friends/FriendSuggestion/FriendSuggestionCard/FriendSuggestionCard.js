@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Authcontext } from "../../../../../Context/UserContext";
 const FriendSuggestionCard = ({ followingUser }) => {
-  const { user } = useContext(Authcontext);
+  const { user, myProUpdate } = useContext(Authcontext);
   const [follow, setFollow] = useState(false);
 
   const handleFollow = (id) => {
@@ -21,6 +21,7 @@ const FriendSuggestionCard = ({ followingUser }) => {
         // console.log(data);
         if (data.modifiedCount > 0) {
           setFollow(true);
+          myProUpdate();
         }
       });
   };
