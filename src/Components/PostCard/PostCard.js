@@ -1,9 +1,11 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import { Authcontext } from "../../Context/UserContext";
 
 const PostCard = ({
   refetch,
@@ -20,15 +22,7 @@ const PostCard = ({
   const [allLike, setAllLike] = useState([]);
 
   const likeLength = post?.likes;
-  useEffect(() => {
-    fetch(
-      `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setReactions(data);
-      });
-  }, [post?.uniqueId]);
+  
 
   const likedUser = (id) => {
     const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
@@ -56,14 +50,45 @@ const PostCard = ({
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data?.modifiedCount > 0) {
+        if (data?.acknowledged) {
           setLiked(true);
           refetch();
         }
       });
   };
 
-  const handelAddBookmarked = () => {
+  const reportedPost = () => {
+    const reportPost = {
+      postAuthor: post?.userName,
+      postId: post?._id,
+      postAuthorEmail: post?.userEmail,
+      postAuthorImg: post?.userPhoto,
+      postImg: post?.img,
+      postText: post?.postText,
+      reporterName: user?.displayName,
+      reporterEmail: user?.email,
+      reporterImage: user?.photoURL,
+    };
+
+    fetch("http://localhost:5000/report-post", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reportPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Post Reported");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
+  const handelAddBookmarked = () =>{
     const bookMarkedPost = {
       bookmarkedUserEmail: user?.email,
       bookmarkedUserName: user?.displayName,
@@ -128,12 +153,22 @@ const PostCard = ({
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        className="hover:bg-[#FF3F4A] hover:text-white"
-                        href="/"
-                      >
+                      <p className="hover:bg-[#FF3F4A] hover:text-white">
+                        Bookmark
+                      </p>
+                    </li>
+                    <li>
+                      <p className="hover:bg-[#FF3F4A] hover:text-white">
                         Save
-                      </Link>
+                      </p>
+                    </li>
+                    <li>
+                      <p
+                        onClick={reportedPost}
+                        className="hover:bg-[#FF3F4A] hover:text-white"
+                      >
+                        Report Post
+                      </p>
                     </li>
                   </ul>
                 </div>
@@ -176,7 +211,7 @@ const PostCard = ({
                       <BiLike />
                     </button>
 
-                    <p className="text-3xl">{post?.likes?.length}</p>
+                    <p className="text-3xl">{likeLength.length}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <Link to={`/postDetails/${post?._id}`}>

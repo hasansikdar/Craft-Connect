@@ -1,10 +1,11 @@
-import React from 'react';
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useContext, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { Authcontext } from "../../../Context/UserContext";
 
 const UpdateCoverImg = ({open, setOpen, myProfile}) => {
   // console.log(myProfile._id);
+  const {myProUpdate} = useContext(Authcontext); 
 
     const cancelButtonRef = useRef(null);
 
@@ -29,7 +30,7 @@ const UpdateCoverImg = ({open, setOpen, myProfile}) => {
         // console.log(data?.data?.display_url);
         setOpen(false);
 
-          fetch(`https://craft-connect-server-blond.vercel.app/users/${myProfile?._id}`, {
+          fetch(`http://localhost:5000/users/${myProfile?._id}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
@@ -39,7 +40,7 @@ const UpdateCoverImg = ({open, setOpen, myProfile}) => {
             .then((res) => res.json())
             .then((data) => {
               if (data.modifiedCount > 0) {
-                // alert("user updated");
+                myProUpdate();
                 console.log(data);
               }
             });

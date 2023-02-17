@@ -19,13 +19,13 @@ const AdvertiseContent = ({
       return data;
     },
   });
-  const { user } = useContext(Authcontext);
+  const { user, myPro } = useContext(Authcontext);
   const storiesForm = (e) => {
     e.preventDefault();
     const userEmail = user?.email;
     const advertiseContent = e.target.text_story.value;
     const advertiseBg = e.target.advertiseBg.files[0];
-    const userPhoto = user?.photoURL;
+    const userPhoto = myPro[0]?.photoURL;
     const userName = user?.displayName;
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;

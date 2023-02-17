@@ -47,24 +47,25 @@ const UserContext = ({ children }) => {
     queryKey: ["users"],
     queryFn: async () => {
       const res = await fetch(
-        "https://craft-connect-server-blond.vercel.app/users"
+        "http://localhost:5000/users"
       );
       const data = await res.json();
       return data;
     },
   });
-  const { data: allUsers = [] } = useQuery({
-    queryKey: ["allusers"],
+
+  const urls = `http://localhost:5000/users?email=${user?.email}`;
+  const { data: myPro = [], refetch:myProUpdate } = useQuery({
+    queryKey: ["myPro", user?.email],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allusers");
-      const data = await res.json();
+      const res = await fetch(urls);
+      const data = res.json();
       return data;
     },
   });
   const authinfo = {
     user,
     users,
-    allUsers,
     refetch,
     updateUserProfile,
     createaccount,
@@ -72,6 +73,8 @@ const UserContext = ({ children }) => {
     signin,
     loading,
     signinwithgoogle,
+    myPro,
+    myProUpdate,
   };
 
   useEffect(() => {

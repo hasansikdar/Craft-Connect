@@ -11,19 +11,17 @@ const UserById = () => {
 
   const userDetails = useLoaderData();
   console.log(userDetails);
-  // console.log(userDetails);
 
     return (
       <div>
         <div className="dark:bg-[#2C2048] h-screen overflow-y-auto mt-[65px] md:mt-[-42px] ">
           <div className="pb-20">
             <div className="md:w-[1084px] md:mx-auto md:shadow-md ">
-              <UserCoverPhoto/>
-              <UserCoverMobile/>
-              <UserProfileInfo userDetails={userDetails}/>
+              <UserCoverPhoto userDetails={userDetails} />
+              <UserProfileInfo userDetails={userDetails} />
             </div>
-            <div className="md:w-[1084px] mx-auto mt-10">
-              <PostView/>
+            <div className="w-full  md:w-[1084px] mx-auto mt-10">
+              <PostView userDetails={userDetails} />
             </div>
           </div>
         </div>

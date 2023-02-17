@@ -81,7 +81,7 @@ const AddedCart = () => {
                 </div>
             </div>
             <DeleteAddedCart open={open} refetch={refetch} addedCartId={addedCartId} setAddedCartId={setAddedCartId} setOpen={setOpen} />
-            <PaymentModal billingDetails={billingDetails} openPaymentModal={openPaymentModal} setOpenPaymentModal={setOpenPaymentModal} />
+            <PaymentModal billingDetails={billingDetails} openPaymentModal={openPaymentModal} setOpenPaymentModal={setOpenPaymentModal} refetch={refetch}/>
         </>
     );
 };

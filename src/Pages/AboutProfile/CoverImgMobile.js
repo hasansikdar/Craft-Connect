@@ -5,7 +5,7 @@ import ProfileImgMobile from "./ProfileImgMobile";
 const CoverImgMobile = () => {
   return (
     <div>
-      <div className=" block md:hidden">
+      <div className=" hidden">
         <div
           style={{
             background: `URL(${cover})`,
