@@ -97,19 +97,19 @@ const Navbar = () => {
             class="text-2xl text-gray-900 font-semibold flex items-center"
             href="/"
           >
-            <img src={logo} className="w-14 d-block m-auto" alt="" />
-            <p class="text-lg text-[#FF3F4A] dark:text-white ml-1.5 lg:ml-2.5">
+            <img src={logo} className="w-32 md:w-14 d-block m-auto" alt="" />
+            <p class="text-lg hidden md:block text-[#FF3F4A] dark:text-white ml-1.5 lg:ml-2.5">
               Craft Connect
             </p>
           </Link>
         </div>
         <div>
-          <div className="flex  gap-16 mr-5 items-center ">
-            <div>
+          <div className="grid grid-cols-3">
+            <div className="">
               <NavSearchField allusers={allusers}></NavSearchField>
             </div>
 
-            <div className="pr-3 flex gap-2 items-center justify-end">
+            <div className="pr-3 flex gap-2 items-center justify-end pl-20">
               <button onClick={handleThemeSwitch} className="text-[20px]">
                 {theme === "light" ? (
                   <IoMdSunny className="text-white"></IoMdSunny>
@@ -126,33 +126,9 @@ const Navbar = () => {
                   <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
                 </Link>
               </button>
-
-              {/* <div className="dropdown dropdown-hover">
-                <label tabIndex={0} className="m-1">
-                  <IoMdNotifications className="text-xl md:text-2xl text-white">
-                    {" "}
-                  </IoMdNotifications>
-                </label>
-                <ul
-                  tabIndex={0}
-                  className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <Link>Item 1</Link>
-                  </li>
-                  <li>
-                    <Link>Item 2</Link>
-                  </li>
-                </ul>
-              </div> */}
-
-              {/* <button
-                onClick={() => setNotification(!notification)}
-                className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
-              ></button> */}
             </div>
-            <button
-              className=" flex items-center gap-2 mr-10"
+            <div
+              className=" flex items-center mx-auto"
               onClick={() => setProfile(!profile)}
             >
               <img
@@ -160,7 +136,7 @@ const Navbar = () => {
                 src={myPro[0]?.photoURL}
                 alt=""
               />
-            </button>
+            </div>
           </div>
         </div>
 
