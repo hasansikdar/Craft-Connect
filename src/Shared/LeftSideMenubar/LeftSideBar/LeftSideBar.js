@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { GiFamilyHouse } from "react-icons/gi";
+import { GiFamilyHouse, GiSpookyHouse } from "react-icons/gi";
 import { IoBarChartOutline } from "react-icons/io5";
 import {
   BsNewspaper,
@@ -18,11 +18,11 @@ import logo from "../../../assets/logo.png";
 
 const LeftSideBar = () => {
   const menus = [
-    { name: "Home", link: "/", icon: AiFillHome },
-    { name: "Most Recent", link: "/", icon: BsFileImageFill },
+    { name: "Home", link: "/", icon: FiHome },
+    { name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/friends", icon: FiUsers },
-    { name: "Pages", link: "/feature/pages", icon: BsFiles },
-    { name: "Marketplace", link: "/feature/marketplace", icon: SiHomebridge },
+    // { name: "Pages", link: "/feature/pages", icon: BsFiles },
+    { name: "Marketplace", link: "/feature/marketplace", icon: GiSpookyHouse },
     { name: "Bookmarked", link: "/feature/bookmarked", icon: BsBookmark },
     { name: "Ad Center", link: "/feature/adcenter", icon: RiAdvertisementLine },
     { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
@@ -59,7 +59,7 @@ const LeftSideBar = () => {
           )}
         </div>
 
-        <div className="mt-10 lg:flex flex-col px-4 gap-4 relative  hidden">
+        <div className="mt-5 lg:flex flex-col px-4 gap-4 relative  hidden">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}

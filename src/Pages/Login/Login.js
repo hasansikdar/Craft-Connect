@@ -42,7 +42,6 @@ const Login = () => {
     googleProviderSignIn(provider)
       .then((result) => {
         const user = result.user
-        // console.log(user)
         saveUserToDB(user.displayName, user.email, user.photoURL)
       })
       .catch((error) => {
@@ -70,7 +69,6 @@ const Login = () => {
     })
       .then(res => res.json())
       .then(data => {
-        // console.log(data)
         navigate("/");
         toast.success('Log in Successful')
       })
