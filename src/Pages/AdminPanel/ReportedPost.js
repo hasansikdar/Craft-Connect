@@ -46,7 +46,8 @@ const ReportedPost = () => {
                     reporterName,
                     reporterEmail,
                     reporterImage,
-                    _id
+                    _id,
+                    postId
                   } = reportedProduct;
                   return (
                     <>
@@ -82,7 +83,7 @@ const ReportedPost = () => {
                         </td>
                         <td className="p-3 px-5">
                           <Link
-                            to={`/feature/marketplace/product/${''}`}
+                            to={`/postDetails/${postId}`}
                             type="button"
                             // onClick={() => {
                             //   setOpen(true);
@@ -90,7 +91,7 @@ const ReportedPost = () => {
                             // }}
                             className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
                           >
-                            View Product
+                            View Post
                           </Link>
                         </td>
                         <td className="p-3 px-5">

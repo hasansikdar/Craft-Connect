@@ -31,7 +31,7 @@ const ReportedProduct = () => {
                   <th className="text-left p-3 px-5">Product Name</th>
                   <th className="text-left p-3 px-5">Seller Name & Email</th>
                   <th className="text-left p-3 px-5">Reporter Name & Email</th>
-                  <th className="text-left p-3 px-5">Product</th>
+                  <th className="text-left p-3 px-5">View</th>
                   <th className="text-left p-3 px-5">Action</th>
                 </tr>
                 {reportedProducts.map((reportedProduct, index) => {

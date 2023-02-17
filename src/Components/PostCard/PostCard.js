@@ -77,6 +77,7 @@ const PostCard = ({
   const reportedPost = () => {
     const reportPost = {
       postAuthor: post?.userName,
+      postId: post?._id,
       postAuthorEmail: post?.userEmail,
       postAuthorImg: post?.userPhoto,
       postImg: post?.img,
