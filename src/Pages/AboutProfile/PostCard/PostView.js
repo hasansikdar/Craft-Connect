@@ -2,13 +2,13 @@ import React from "react";
 import PostCards from "./PostCards";
 import ProfileLeft from "./ProfileLeft";
 
-const PostView = () => {
+const PostView = ({ userDetails }) => {
   return (
     <div className=" ">
-      <div className="grid grid-cols-12 gap-5 justify-center ">
+      <div className="md:grid md:grid-cols-12 gap-5 justify-center ">
         <ProfileLeft />
         <div className="col-start-[5] col-end-[11] justify-center">
-          <PostCards />
+          <PostCards userDetails={userDetails} />
         </div>
       </div>
     </div>

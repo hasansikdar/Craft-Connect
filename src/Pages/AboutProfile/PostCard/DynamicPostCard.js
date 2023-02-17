@@ -22,57 +22,8 @@ const DynamicPostCard = ({ myPost }) => {
 
   return (
     <>
-      {/* <div className="w-[320px]  md:ml-0 md:w-full border p-5 rounded-md shadow-md mb-5">
-        <div className="flex justify-between items-center">
-          <div className="flex gap-3 items-center">
-            <img className="w-[50px] rounded-full" src={userPhoto} alt="" />
-            <div>
-              <p>{userName}</p>
-              <p className="text-sm">{currentDate}</p>
-            </div>
-          </div>
-          <div>
-            <p className="text-4xl cursor-pointer">
-              <BsThreeDots />
-            </p>
-          </div>
-        </div>
-        <div className="pb-7">
-          <p className="my-3">{postText}</p>
-          <img
-            className="w-full object-cover rounded-md mt-[5px]"
-            src={img}
-            alt=""
-          />
-        </div>
-        <div className="border-t">
-          <div className="flex justify-between items-center pt-3 mx-3">
-            <div className="flex gap-8">
-              <div className="flex items-center gap-1">
-                <button className="text-[34px]">
-                  <BiLike />
-                </button>
-                <p>17</p>
-              </div>
-              <div className="flex items-center gap-1">
-                <button className="text-[27px]">
-                  <TfiCommentAlt />
-                </button>
-                <p>07</p>
-              </div>
-            </div>
-            <div>
-              <button className="text-3xl">
-                <BiShareAlt />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div>
-        <div>
           <div className="my-3">
-            <div className="w-full border p-5 rounded-md shadow-md">
+            <div className=" border p-5 rounded-md shadow-md ">
               <div className="flex justify-between items-center text-black dark:text-white">
                 <div className="flex gap-3 items-center">
                   <img
@@ -166,8 +117,6 @@ const DynamicPostCard = ({ myPost }) => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </>
   );
 };
