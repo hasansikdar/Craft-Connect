@@ -21,7 +21,7 @@ const ReportedProduct = () => {
       <>
         <div className="text-gray-200">
           <div className="p-4 flex">
-            <h1 className="text-3xl">Yours Product</h1>
+            <h1 className="text-3xl">Reported Products</h1>
           </div>
           <div className="px-3 py-4 flex justify-center">
             <table className="w-full text-md bg-white shadow-md rounded mb-4 overflow-x-auto">
