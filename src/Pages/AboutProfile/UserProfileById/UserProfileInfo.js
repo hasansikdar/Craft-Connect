@@ -6,7 +6,7 @@ import useClickOutside from "../../../Components/helpers/clickOutside";
 import UserProfilePic from "./UserProfilePic";
 
 const UserProfileInfo = ({ userDetails }) => {
-  console.log(userDetails);
+  // console.log(userDetails);
 
   const [showCoverMenu, setShowCoverMenu] = useState(false);
   const menuRef = useRef(null);
@@ -67,7 +67,6 @@ const UserProfileInfo = ({ userDetails }) => {
           <Link>Videos</Link>
         </div> */}
       </div>
-      
 
       {/* <div className="hidden md:flex justify-evenly  items-center mt-[90px]  pb-2 w-[900px] md:w-[1084px] mx-auto  ">
         <div>

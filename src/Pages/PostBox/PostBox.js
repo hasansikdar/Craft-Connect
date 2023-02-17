@@ -9,7 +9,6 @@ import { useQuery } from "@tanstack/react-query";
 import PreviewPost from "./PreviewPost";
 import { v4 as uuidv4 } from "uuid";
 
-
 const PostBox = () => {
   const [open, setOpen] = useState(false);
   const [preview, setPreview] = useState([]);
@@ -68,7 +67,7 @@ const PostBox = () => {
             img,
             likes,
           };
-          console.log("imgBB", img, data);
+          // console.log("imgBB", img, data);
 
           fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
             method: "POST",

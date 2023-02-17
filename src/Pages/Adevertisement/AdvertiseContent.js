@@ -7,7 +7,7 @@ const AdvertiseContent = ({
   setShowAdvertiseText,
   setShowAdvertiseContent,
   onSelectFile,
-  setPreview
+  setPreview,
 }) => {
   const { data: advertising = [], refetch } = useQuery({
     queryKey: ["advertising"],
@@ -39,37 +39,41 @@ const AdvertiseContent = ({
       .then((data) => {
         const field = e.target;
         const advertisephoto = data?.data?.display_url;
-        const advertiseObj = { userEmail, advertiseContent, userPhoto, userName, advertiseBg: advertisephoto };
-        console.log(advertiseObj)
-        fetch('https://craft-connect-server-blond.vercel.app/advertising-post/', {
-          method: 'POST',
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(advertiseObj),
-        })
+        const advertiseObj = {
+          userEmail,
+          advertiseContent,
+          userPhoto,
+          userName,
+          advertiseBg: advertisephoto,
+        };
+        // console.log(advertiseObj)
+        fetch(
+          "https://craft-connect-server-blond.vercel.app/advertising-post/",
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(advertiseObj),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.acknowledged) {
               field.reset();
               toast.success("Advertise your Post");
-              setPreview('');
+              setPreview("");
               refetch();
-              setShowAdvertiseContent('');
-              console.log(data)
+              setShowAdvertiseContent("");
+              // console.log(data);
             }
           })
           .catch((error) => {
-            console.log(error);
+            // console.log(error);
             toast.error(error.message);
-
           });
-
-
       });
-  }
-
-
+  };
 
   return (
     <>
@@ -84,7 +88,13 @@ const AdvertiseContent = ({
             required
           ></textarea>
           <div className="">
-            <input type="file" name="advertiseBg" id="file" className="hidden" onChange={onSelectFile} />
+            <input
+              type="file"
+              name="advertiseBg"
+              id="file"
+              className="hidden"
+              onChange={onSelectFile}
+            />
             <label
               htmlFor="file"
               className="text-[#FF3F4A] block text-center w-full bg-[#cc323b] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-[#cc323b] rounded-lg border border-[#cc323b] text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white dark:hover:bg-gray-600 [#cc323b]:ring-gray-600 mt-5"

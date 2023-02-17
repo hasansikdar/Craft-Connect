@@ -13,7 +13,7 @@ const ProfileInfo = ({ myProfile }) => {
   useClickOutside(menuRef, () => setShowCoverMenu(false));
 
   const { user } = useContext(Authcontext);
-  console.log(user);
+  // console.log(user);
 
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);

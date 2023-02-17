@@ -22,7 +22,7 @@ const DetailsOfProduct = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.length);
+        // console.log(data.length);
         if (data.length) {
           toast.error("Product already added in cart");
         } else {

@@ -1,9 +1,14 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-const ReportedPostDeletedModal = ({ open, setOpen, reportedPostId, setReportedPostId, refetch }) => {
-
-    console.log(reportedPostId);
+const ReportedPostDeletedModal = ({
+  open,
+  setOpen,
+  reportedPostId,
+  setReportedPostId,
+  refetch,
+}) => {
+  console.log(reportedPostId);
 
   const cancelButtonRef = useRef(null);
 
@@ -12,10 +17,10 @@ const ReportedPostDeletedModal = ({ open, setOpen, reportedPostId, setReportedPo
     fetch(`http://localhost:5000/delete-reported-post/${reportedPostId}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.deletedCount > 0) {
           refetch();
-          console.log(data);
+          // console.log(data);
           setOpen(false);
         }
       });
