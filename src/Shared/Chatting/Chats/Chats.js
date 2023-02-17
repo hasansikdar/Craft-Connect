@@ -33,6 +33,7 @@ const Chats = () => {
   const [newMessage, setNewMessage] = useState("");
   const inputHandle = (e) =>{
     setNewMessage(e.target.value)
+
   }
   console.log(newMessage)
   console.log(user)
@@ -60,6 +61,7 @@ const Chats = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {
+            setNewMessage("");
             toast.success("message Added");
             refetch();
           }
