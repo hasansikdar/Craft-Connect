@@ -54,7 +54,7 @@ const NavSearchField = ({ allusers }) => {
             </div>
             <input
               type="text"
-              className="w-full bg-white pl-2 text-base font-semibold outline-0 rounded-r-md pr-20 md:pr-0"
+              className="w-full bg-white pl-2 text-base font-semibold outline-0 rounded-r-md pr-20 md:pr-0 relative"
               onChange={handleFilter}
               value={wordEntered}
               placeholder=""
@@ -64,12 +64,15 @@ const NavSearchField = ({ allusers }) => {
       </div>
 
       {filterData.length !== 0 && (
-        <div as="div" className="relative z-[999]">
+        <div as="div" className="absolute z-[999] ">
           <div className="fixed inset-0 z-10 ">
             <div className="flex h-[450px] justify-center  text-center overflow-hidden overflow-y-auto  mt-12 sm:p-0">
               <div>
-                <div className="relative transform rounded-md  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <div ref={menuRef} className="bg-white pb-4 sm:p-6 sm:pb-4">
+                <div className="absolute transform rounded-md  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <div
+                    ref={menuRef}
+                    className="bg-white pb-4 sm:p-6 sm:pb-4 rounded-md "
+                  >
                     <div>
                       {filterData.map((allUser) => {
                         return (
