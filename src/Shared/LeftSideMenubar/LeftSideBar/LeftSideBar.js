@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { GiFamilyHouse, GiSpookyHouse } from "react-icons/gi";
+import { GiSpookyHouse } from "react-icons/gi";
 import { IoBarChartOutline } from "react-icons/io5";
 import {
   BsNewspaper,
   BsBookmark,
-  BsFiles,
-  BsFileImageFill,
 } from "react-icons/bs";
 import { RiAdvertisementLine } from "react-icons/ri";
-import { SiHomebridge } from "react-icons/si";
+import { AiOutlineFlag } from "react-icons/ai";
 import { FiHome, FiUsers } from "react-icons/fi";
-import { AiFillHome } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
@@ -21,7 +18,7 @@ const LeftSideBar = () => {
     { name: "Home", link: "/", icon: FiHome },
     { name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/friends", icon: FiUsers },
-    // { name: "Pages", link: "/feature/pages", icon: BsFiles },
+    // { name: "Pages", link: "/feature/pages", icon: AiOutlineFlag },
     { name: "Marketplace", link: "/feature/marketplace", icon: GiSpookyHouse },
     { name: "Bookmarked", link: "/feature/bookmarked", icon: BsBookmark },
     { name: "Ad Center", link: "/feature/adcenter", icon: RiAdvertisementLine },
