@@ -17,7 +17,7 @@ const ProfileDetails = () => {
       return data;
     },
   });
-  console.log(myPro)
+  // console.log(myPro)
   return (
     <div className="">
       <div className="card-body p-2 flex rounded-lg shadow-xl w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
@@ -56,7 +56,8 @@ const ProfileDetails = () => {
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
             Followers
             <span className="flex items-center">
-              <FaWifi className="mr-2"></FaWifi> {myPro[0]?.followers?.length} people{" "}
+              <FaWifi className="mr-2"></FaWifi> {myPro[0]?.followers?.length}{" "}
+              people{" "}
             </span>
           </Link>
         </div>
@@ -64,33 +65,41 @@ const ProfileDetails = () => {
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
             Following
             <span className="flex items-center">
-              <FaUserCheck className="mr-2"></FaUserCheck> {myPro[0]?.following?.length} following{" "}
+              <FaUserCheck className="mr-2"></FaUserCheck>{" "}
+              {myPro[0]?.following?.length} following{" "}
             </span>
           </Link>
         </div>
-        {
-          myPro[0]?.socialMedia ? <>
+        {myPro[0]?.socialMedia ? (
+          <>
             <div className="divider m-0"></div>
             <div className="px-2">
               <p className="font-bold dark:text-white text-gray-700 ml-2 mb-2">
                 Social Networks:
               </p>
-              <a target={'_blank'} href={myPro[0]?.socialMedia[0]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
+              <a
+                target={"_blank"}
+                href={myPro[0]?.socialMedia[0]}
+                className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2"
+              >
                 <BsFacebook className="text-white text-xl" />
                 <p className="font-bold text-white">Facebook</p>
               </a>
-              <a target={'_blank'} href={myPro[0]?.socialMedia[1]} className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2">
+              <a
+                target={"_blank"}
+                href={myPro[0]?.socialMedia[1]}
+                className="flex items-center justify-center py-2 w-full rounded-md gap-2 bg-[#FF3F4A] mb-2 px-2"
+              >
                 <BsLinkedin className="text-white  text-xl" />
                 <p className="font-bold text-white">Linkedin</p>
               </a>
             </div>
           </>
-            :
-            <>
-              <p className='mt-2'>You Do not Have any social network</p>
-            </>
-        }
-
+        ) : (
+          <>
+            <p className="mt-2">You Do not Have any social network</p>
+          </>
+        )}
       </div>
     </div>
   );

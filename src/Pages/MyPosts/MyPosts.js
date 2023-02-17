@@ -16,17 +16,19 @@ const MyPosts = () => {
   } = useQuery({
     queryKey: ["posts"],
     queryFn: async () => {
-      const res = await fetch(`https://craft-connect-server-blond.vercel.app/myposts?email=${user?.email}`);
+      const res = await fetch(
+        `https://craft-connect-server-blond.vercel.app/myposts?email=${user?.email}`
+      );
       const data = res.json();
       return data;
     },
   });
 
   // delete post
-  const handleDeletePost = id => {
-    setLoading(true)
+  const handleDeletePost = (id) => {
+    setLoading(true);
     fetch(`https://craft-connect-server-blond.vercel.app/usersPost/${id}`, {
-      method: 'DELETE'
+      method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
@@ -38,7 +40,7 @@ const MyPosts = () => {
       })
       .catch((error) => {
         toast.error(error.message);
-        console.log(error.message);
+        // console.log(error.message);
       });
   };
 
@@ -52,7 +54,7 @@ const MyPosts = () => {
     };
 
     fetch(`https://craft-connect-server-blond.vercel.app/reactions`, {
-      method: 'POST',
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },

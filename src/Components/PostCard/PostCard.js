@@ -18,39 +18,24 @@ const PostCard = ({
   const [editPost, setEditPost] = useState(false);
   const [love, setLove] = useState(false);
   const [liked, setLiked] = useState(false);
-  // const [likeLength, setLikeLength] = useState(post?.likes);
-  const [allLike, setAllLike] = useState([]);
+  const { myPro } = useContext(Authcontext);
 
   const likeLength = post?.likes;
-  
-
-  const likedUser = (id) => {
-    const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
-    console.log(hello);
-
-    if (!hello[0]) {
-      return handleLike();
-    } else {
-      return setLove(true);
-    }
-  };
-
-  const handleLike = () => {
-    setLove(true);
-    const likeInfo = { userId: user, postId: post?._id };
-    console.log(likeInfo);
-    allLike.push(...likeLength, likeInfo);
-    fetch(`http://localhost:5000/users/${post?._id}`, {
+  const handleLike = (id) => {
+    const postId = post?._id;
+    const likedUser = id;
+    const likedInfo = { likedUser, postId };
+    fetch("http://localhost:5000/like", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(allLike),
+      body: JSON.stringify(likedInfo),
     })
-      .then((res) => res.json())
+      .then((result) => result.json())
       .then((data) => {
-        console.log(data);
-        if (data?.acknowledged) {
+        // console.log(data);
+        if (data.modifiedCount > 0) {
           setLiked(true);
           refetch();
         }
@@ -88,7 +73,7 @@ const PostCard = ({
       });
   };
 
-  const handelAddBookmarked = () =>{
+  const handelAddBookmarked = () => {
     const bookMarkedPost = {
       bookmarkedUserEmail: user?.email,
       bookmarkedUserName: user?.displayName,
@@ -109,7 +94,7 @@ const PostCard = ({
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         toast.success("Bookmarked Successfully Done!");
       });
   };
@@ -199,8 +184,9 @@ const PostCard = ({
               <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
                 <div className="flex gap-8">
                   <div className="flex items-center gap-1">
+                    {/* onClick={() => likedUser(user?.uid)} */}
                     <button
-                      onClick={() => likedUser(user?.uid)}
+                      onClick={() => handleLike(myPro[0]?._id)}
                       disabled={liked === true}
                       className={
                         liked === true

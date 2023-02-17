@@ -11,7 +11,7 @@ import UserPostInProfile from "../UserProfileById/UserPostInProfile";
 
 const PostCards = ({ userDetails }) => {
   // const { user } = useContext(Authcontext);
-  console.log(userDetails);
+  // console.log(userDetails);
 
   const url = `http://localhost:5000/users-post?email=${userDetails?.email}`;
 
@@ -23,16 +23,13 @@ const PostCards = ({ userDetails }) => {
       return data;
     },
   });
-  console.log(userPosts);
+  // console.log(userPosts);
 
   return (
     <>
-      {
-        userPosts.map((post) =><UserPostInProfile
-        key={post._id}
-        post={post}
-        ></UserPostInProfile>)
-      }
+      {userPosts.map((post) => (
+        <UserPostInProfile key={post._id} post={post}></UserPostInProfile>
+      ))}
     </>
   );
 };

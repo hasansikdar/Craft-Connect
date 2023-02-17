@@ -11,7 +11,7 @@ const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
     const userPhoto = user?.photoURL;
     const userName = user?.displayName;
     const storyObj = { userEmail, storiesContent, userPhoto, userName };
-    console.log(storyObj, user);
+    // console.log(storyObj, user);
     fetch("https://craft-connect-server-blond.vercel.app/text/stories", {
       method: "POST",
       headers: {

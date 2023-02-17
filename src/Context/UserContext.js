@@ -24,7 +24,7 @@ const UserContext = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const updateUserProfile = (name, photo) => {
-    console.log(name, photo);
+    // console.log(name, photo);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -46,16 +46,14 @@ const UserContext = ({ children }) => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch(
-        "http://localhost:5000/users"
-      );
+      const res = await fetch("http://localhost:5000/users");
       const data = await res.json();
       return data;
     },
   });
 
   const urls = `http://localhost:5000/users?email=${user?.email}`;
-  const { data: myPro = [], refetch:myProUpdate } = useQuery({
+  const { data: myPro = [], refetch: myProUpdate } = useQuery({
     queryKey: ["myPro", user?.email],
     queryFn: async () => {
       const res = await fetch(urls);

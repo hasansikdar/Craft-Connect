@@ -52,14 +52,14 @@ const RegisterModal = () => {
         // const img = data?.data?.display_url;
         // updateuserdata(fullName, img);
         // setUserProfile(img);
-        console.log(data.data.display_url);
+        // console.log(data.data.display_url);
         createaccount(email, password).then((result) => {
           const user = result.user;
-          console.log(user);
+          // console.log(user);
           updateUserProfile(fullName, data?.data?.display_url)
             // console.log(fullName, data.data.display_url);
             .then((result) => {
-              console.log(result);
+              // console.log(result);
               navigate("/");
 
               const userInfo = {
@@ -70,7 +70,7 @@ const RegisterModal = () => {
                 followers,
                 following,
               };
-              console.log(userInfo);
+              // console.log(userInfo);
 
               fetch("https://craft-connect-server-blond.vercel.app/users", {
                 method: "POST",

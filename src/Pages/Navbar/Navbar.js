@@ -64,9 +64,7 @@ const Navbar = () => {
   const { data: allusers = [] } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
-      const res = await fetch(
-        "http://localhost:5000/allusers"
-      );
+      const res = await fetch("http://localhost:5000/allusers");
       const data = await res.json();
       return data;
     },
@@ -82,10 +80,7 @@ const Navbar = () => {
     },
   });
 
-  console.log(users);
-
-
-  
+  // console.log(users);
 
   return (
     <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
@@ -194,7 +189,9 @@ const Navbar = () => {
                 >
                   <div className="flex items-center">
                     <TbLayoutDashboard className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
-                    <Link to='/dashboard/add-product' className="font-bold">Users Dashboard</Link>
+                    <Link to="/dashboard/add-product" className="font-bold">
+                      Users Dashboard
+                    </Link>
                   </div>
                   <div>
                     <FcNext className="text-2xl mr-2" />
