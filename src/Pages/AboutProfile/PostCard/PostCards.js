@@ -7,28 +7,32 @@ import { TfiCommentAlt } from "react-icons/tfi";
 import { Authcontext } from "../../../Context/UserContext";
 import { useQuery } from "@tanstack/react-query";
 import DynamicPostCard from "./DynamicPostCard";
+import UserPostInProfile from "../UserProfileById/UserPostInProfile";
 
-const PostCards = () => {
-  const { user } = useContext(Authcontext);
-  // console.log(user);
+const PostCards = ({ userDetails }) => {
+  // const { user } = useContext(Authcontext);
+  console.log(userDetails);
 
-  const url = `https://craft-connect-server-blond.vercel.app/myposts?email=${user?.email}`;
+  const url = `http://localhost:5000/users-post?email=${userDetails?.email}`;
 
-  const { data: myPosts = [] } = useQuery({
-    queryKey: ["products", user?.email],
+  const { data: userPosts = [] } = useQuery({
+    queryKey: ["products", userDetails?.email],
     queryFn: async () => {
       const res = await fetch(url);
       const data = res.json();
       return data;
     },
   });
-  // console.log(myPosts);
+  console.log(userPosts);
 
   return (
     <>
-      {myPosts.map((myPost) => (
-        <DynamicPostCard key={myPost._id} myPost={myPost}></DynamicPostCard>
-      ))}
+      {
+        userPosts.map((post) =><UserPostInProfile
+        key={post._id}
+        post={post}
+        ></UserPostInProfile>)
+      }
     </>
   );
 };

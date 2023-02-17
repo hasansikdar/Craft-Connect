@@ -15,13 +15,14 @@ const NavSearchField = ({ allusers }) => {
     const searchWord = event?.target?.value;
     setWordEntered(searchWord);
     const newFilter = allusers?.filter((value) => {
-      return value?.displayName?.toLowerCase()?.includes(searchWord.toLowerCase());
+      return value?.displayName
+        ?.toLowerCase()
+        ?.includes(searchWord.toLowerCase());
     });
 
-    if(searchWord === ''){
-      setFilterData([])
-    }
-    else{
+    if (searchWord === "") {
+      setFilterData([]);
+    } else {
       setFilterData(newFilter);
     }
   };
@@ -32,21 +33,27 @@ const NavSearchField = ({ allusers }) => {
 
   return (
     <div>
-      <div className="hidden md:flex justify-center rounded-md items-center  border-zinc-600  bg-zinc-700 ">
-        <input
-          onChange={handleFilter}
-          value={wordEntered}
-          type="text"
-          placeholder="Search"
-          className="mx-2 md:mx-0 pl-4 pr-44 py-4 text-white w-full rounded-md bg-zinc-700"
-        />
-        <i className="pr-4">
-          {filterData.length === 0 ? (
-            <BiSearchAlt2></BiSearchAlt2>
-          ) : (
-              <RxCross2 onClick={clearInput}></RxCross2>
-          )}
-        </i>
+      <div className="flex items-center justify-center">
+        <div className="w-full rounded-lg p-5 ">
+          <div className="flex">
+            <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-5">
+              <svg
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                className="pointer-events-none absolute w-5 fill-gray-500 transition"
+              >
+                <path d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
+              </svg>
+            </div>
+            <input
+              type="text"
+              className="w-full bg-white pl-2 text-base font-semibold outline-0 rounded-r-md pr-20 md:pr-0"
+              onChange={handleFilter}
+              value={wordEntered}
+              placeholder=""
+            />
+          </div>
+        </div>
       </div>
 
       {filterData.length !== 0 && (

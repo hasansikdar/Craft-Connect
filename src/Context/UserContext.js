@@ -47,13 +47,22 @@ const UserContext = ({ children }) => {
     queryKey: ["users"],
     queryFn: async () => {
       const res = await fetch(
-        "https://craft-connect-server-blond.vercel.app/users"
+        "http://localhost:5000/users"
       );
       const data = await res.json();
       return data;
     },
   });
 
+  const urls = `http://localhost:5000/users?email=${user?.email}`;
+  const { data: myPro = [], refetch:myProUpdate } = useQuery({
+    queryKey: ["myPro", user?.email],
+    queryFn: async () => {
+      const res = await fetch(urls);
+      const data = res.json();
+      return data;
+    },
+  });
   const authinfo = {
     user,
     users,
@@ -63,7 +72,9 @@ const UserContext = ({ children }) => {
     logout,
     signin,
     loading,
-    googleProviderSignIn
+    googleProviderSignIn,
+    myPro,
+    myProUpdate,
   };
 
   useEffect(() => {

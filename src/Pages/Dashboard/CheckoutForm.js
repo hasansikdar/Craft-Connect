@@ -7,7 +7,7 @@ import {
 import { Dialog, Transition } from '@headlessui/react';
 import { toast } from 'react-hot-toast';
 
-const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails }) => {
+const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails, refetch }) => {
     const stripe = useStripe();
     const [error, setError] = useState('');
     const [process, setProcess] = useState(false);
@@ -81,8 +81,10 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch();
                         setOpenPaymentModal(false)
                         toast.success(`Congrats! your paymentDone your transaction id ${paymentIntent.id}`);
+                        
                     }
                 })
 
@@ -141,7 +143,7 @@ const CheckoutForm = ({ openPaymentModal, setOpenPaymentModal, billingDetails })
                                                     }}
                                                 />
                                                 <p className="text-red-500 py-3 text-base">{error}</p>
-                                                <div className="py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                                <div className="jpy-3 sm:flex sm:flex-row-reverse sm:px-6">
                                                     <button
                                                         type="submit"
                                                         className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-900 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"

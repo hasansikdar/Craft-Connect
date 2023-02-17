@@ -6,18 +6,18 @@ import useClickOutside from "../../Components/helpers/clickOutside";
 import { Authcontext } from "../../Context/UserContext";
 
 const ProfileImgMobile = () => {
-  const { user } = useContext(Authcontext);
+  const { user,myPro } = useContext(Authcontext);
   const [showCoverMenu, setShowCoverMenu] = useState(false);
   const menuRef = useRef(null);
   useClickOutside(menuRef, () => setShowCoverMenu(false));
 
   return (
-    <div>
-      <div className="block md:hidden absolute top-[20%] left-[20%]">
+    <div className="hidden">
+      <div className="hidden absolute top-[20%] left-[20%]">
         <div className="">
           <img
             className="w-[70px] h-[70px] rounded-full"
-            src={user?.photoURL}
+            src={myPro[0]?.photoURL}
             alt=""
           />
         </div>

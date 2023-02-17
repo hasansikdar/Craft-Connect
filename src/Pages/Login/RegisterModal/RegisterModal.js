@@ -11,14 +11,15 @@ import { doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const RegisterModal = () => {
-  const {createaccount, updateUserProfile } = useContext(Authcontext);
+  const { createaccount, updateUserProfile } = useContext(Authcontext);
   const [err, setErr] = useState(false);
   const [selectedFile, setSelectedFile] = useState();
-  const [userProfile, setUserProfile] = useState()
+  const [userProfile, setUserProfile] = useState();
   const [preview, setPreview] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
-
+  const followers = [];
+  const following = [];
   const {
     register,
     reset,
@@ -27,11 +28,8 @@ const RegisterModal = () => {
   } = useForm();
   const navigate = useNavigate();
 
-
-
   const handleCreateAccount = async (data, event) => {
-
-     event.preventDefault();
+    event.preventDefault();
 
     setLoading(true);
     const fullName = data?.firstName + " " + data?.lastName;
@@ -40,24 +38,26 @@ const RegisterModal = () => {
     const userImgs = event.target.userImg?.files[0];
     // console.log(fullName);
 
-
-
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
     const formData = new FormData();
     // if (selectedFile) {
-      formData.append("image", userImgs);
-      fetch(url, {
-        method: "POST",
-        body: formData,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data.data.display_url);
-          createaccount(email, password).then((result) => {
-            const user = result.user;
-            console.log(user);
-            updateUserProfile(fullName, data?.data?.display_url)
+    formData.append("image", userImgs);
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // const img = data?.data?.display_url;
+        // updateuserdata(fullName, img);
+        // setUserProfile(img);
+        console.log(data.data.display_url);
+        createaccount(email, password).then((result) => {
+          const user = result.user;
+          console.log(user);
+          updateUserProfile(fullName, data?.data?.display_url)
+            // console.log(fullName, data.data.display_url);
             .then((result) => {
               console.log(result);
               navigate("/");
@@ -67,6 +67,8 @@ const RegisterModal = () => {
                 email,
                 password,
                 photoURL: data?.data?.display_url,
+                followers,
+                following,
               };
               console.log(userInfo);
 
@@ -85,12 +87,13 @@ const RegisterModal = () => {
                   }
                 });
             });
-          });
-        })
-        .catch((error) => {
-          toast.error(error.message);
-          setLoading(false);
         });
+      })
+      .catch((error) => {
+        // console.log(error);
+        toast.error(error.message);
+        setLoading(false);
+      });
   };
 
   return (
@@ -111,9 +114,27 @@ const RegisterModal = () => {
             className="grid grid-cols-1 gap-3 mt-3"
           >
             <div className="flex justify-center flex-col items-center gap-3">
-              <img src={preview ? preview : 'https://uchealth-wp-uploads.s3.amazonaws.com/wp-content/uploads/sites/5/2022/12/01181857/blankprovider-e1669918775597.jpg'} className="w-[115px] h-[115px] rounded-full object-cover" alt="" />
-              <input name="userImg" type="file"  className='hidden' id='uploadPhoto' />
-              <label htmlFor="uploadPhoto" className="mb-3 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded-full">Upload Photo</label>
+              <img
+                src={
+                  preview
+                    ? preview
+                    : "https://uchealth-wp-uploads.s3.amazonaws.com/wp-content/uploads/sites/5/2022/12/01181857/blankprovider-e1669918775597.jpg"
+                }
+                className="w-[115px] h-[115px] rounded-full object-cover"
+                alt=""
+              />
+              <input
+                name="userImg"
+                type="file"
+                className="hidden"
+                id="uploadPhoto"
+              />
+              <label
+                htmlFor="uploadPhoto"
+                className="mb-3 bg-[#FF3F4A] hover:bg-[#cc323b] text-white  py-2 text-base px-4 rounded-full"
+              >
+                Upload Photo
+              </label>
             </div>
             <div className="flex gap-2">
               <div>
@@ -208,8 +229,14 @@ const RegisterModal = () => {
               <option value="female">Female</option>
               <option value="others">Others</option>
             </select>
-            <button disabled={loading}
-              className={`bg-[#00a400] ${loading && 'cursor-not-allowed'} hover:bg-[#057205] mx-auto border-0 px-8 text-xl h-[36px] font-bold text-white rounded my-2 min-w-[194px] text-center w-2/5`}>{loading ? <p>Loading...</p> : "Register"}</button>
+            <button
+              disabled={loading}
+              className={`bg-[#00a400] ${
+                loading && "cursor-not-allowed"
+              } hover:bg-[#057205] mx-auto border-0 px-8 text-xl h-[36px] font-bold text-white rounded my-2 min-w-[194px] text-center w-2/5`}
+            >
+              {loading ? <p>Loading...</p> : "Register"}
+            </button>
             {err && <span>Something went wrong</span>}
           </form>
         </div>
