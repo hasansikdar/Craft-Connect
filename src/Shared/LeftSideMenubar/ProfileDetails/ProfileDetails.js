@@ -12,7 +12,7 @@ const ProfileDetails = () => {
   const { data: allusers = [] } = useQuery({
     queryKey: ["allusers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allusers");
+      const res = await fetch("https://craft-connect-server-blond.vercel.app/allusers");
       const data = await res.json();
       return data;
     },

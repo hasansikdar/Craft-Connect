@@ -30,7 +30,7 @@ const UpdateCoverImg = ({ open, setOpen, myProfile }) => {
         // console.log(data?.data?.display_url);
         setOpen(false);
 
-        fetch(`http://localhost:5000/users/${myProfile?._id}`, {
+        fetch(`https://craft-connect-server-blond.vercel.app/users/${myProfile?._id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",

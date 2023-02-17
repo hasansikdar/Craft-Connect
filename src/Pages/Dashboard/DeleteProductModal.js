@@ -13,7 +13,7 @@ const DeleteProductModal = ({
   //   console.log("cancle", deleteId, "product", productId);
   const handleDelete = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/allProducts/${deleteId}?id=${deleteId}`)
+    fetch(`https://craft-connect-server-blond.vercel.app/allProducts/${deleteId}?id=${deleteId}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)

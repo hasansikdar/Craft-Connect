@@ -46,13 +46,13 @@ const UserContext = ({ children }) => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("https://craft-connect-server-blond.vercel.app/users");
       const data = await res.json();
       return data;
     },
   });
 
-  const urls = `http://localhost:5000/users?email=${user?.email}`;
+  const urls = `https://craft-connect-server-blond.vercel.app/users?email=${user?.email}`;
   const { data: myPro = [], refetch: myProUpdate } = useQuery({
     queryKey: ["myPro", user?.email],
     queryFn: async () => {

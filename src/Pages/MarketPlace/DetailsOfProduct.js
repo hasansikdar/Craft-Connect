@@ -18,7 +18,7 @@ const DetailsOfProduct = () => {
 
   const isProductAddedToCart = (product) => {
     fetch(
-      `http://localhost:5000/checkCartProduct?productName=${product?.productName}`
+      `https://craft-connect-server-blond.vercel.app/checkCartProduct?productName=${product?.productName}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -44,7 +44,7 @@ const DetailsOfProduct = () => {
       productDescription,
     };
 
-    fetch("http://localhost:5000/addtocart", {
+    fetch("https://craft-connect-server-blond.vercel.app/addtocart", {
       method: "POST",
       headers: {
         "content-type": "application/json",

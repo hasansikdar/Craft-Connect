@@ -11,7 +11,7 @@ const ReportedPost = () => {
     const { data: reportedPosts = [], refetch } = useQuery({
       queryKey: ["reportedProducts"],
       queryFn: async () => {
-        const res = await fetch("http://localhost:5000/reported-post");
+        const res = await fetch("https://craft-connect-server-blond.vercel.app/reported-post");
         const data = await res.json();
         return data;
       },

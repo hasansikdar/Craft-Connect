@@ -12,7 +12,7 @@ const DeleteAddedCart = ({
   //   console.log(deleteId);
   const handleDelete = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/cartproducts/${deleteId}`)
+    fetch(`https://craft-connect-server-blond.vercel.app/cartproducts/${deleteId}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

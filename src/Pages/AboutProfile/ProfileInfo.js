@@ -19,7 +19,7 @@ const ProfileInfo = ({ myProfile }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const handleFollow = () => {
-    fetch("http://localhost:5000/follow", {
+    fetch("https://craft-connect-server-blond.vercel.app/follow", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

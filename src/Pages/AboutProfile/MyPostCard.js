@@ -4,7 +4,7 @@ import DynamicPostCard from './PostCard/DynamicPostCard';
 
 const MyPostCard = ({myProfile}) => {
  
-  const url = `http://localhost:5000/myposts?email=${myProfile?.email}`;
+  const url = `https://craft-connect-server-blond.vercel.app/myposts?email=${myProfile?.email}`;
 
   const { data: myPost = [] } = useQuery({
     queryKey: ["products", myProfile?.email],

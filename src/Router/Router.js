@@ -86,7 +86,7 @@ export const Routes = createBrowserRouter([
         path: "/feature/marketplace/product/:id",
         element: <DetailsOfProduct></DetailsOfProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://craft-connect-server-blond.vercel.app/product/${params.id}`),
       },
       {
         path: "/feature/bookmarked",
@@ -100,7 +100,7 @@ export const Routes = createBrowserRouter([
         path: "/feature/adcenter/:id",
         element: <AdCenterDetail></AdCenterDetail>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/advertising-post/${params.id}`),
+          fetch(`https://craft-connect-server-blond.vercel.app/advertising-post/${params.id}`),
       },
       {
         path: "/feature/adsmanager",
@@ -132,7 +132,7 @@ export const Routes = createBrowserRouter([
         element: <PostDetails></PostDetails>,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/postDetails/${params.id}`
+            `https://craft-connect-server-blond.vercel.app/postDetails/${params.id}`
           ),
       },
       {
@@ -140,7 +140,7 @@ export const Routes = createBrowserRouter([
         element: <UserById />,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/users/${params?.email}`
+            `https://craft-connect-server-blond.vercel.app/users/${params?.email}`
           ),
       },
     ],

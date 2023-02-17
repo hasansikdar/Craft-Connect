@@ -9,7 +9,7 @@ const MainPage = () => {
   const [allUser, setAllUser] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:5000/allusers")
+    fetch("https://craft-connect-server-blond.vercel.app/allusers")
       .then((result) => result.json())
       .then((data) => setAllUser(data));
   }, []);

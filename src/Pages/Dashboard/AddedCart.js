@@ -12,7 +12,7 @@ const AddedCart = () => {
     const [billingDetails, setBillingDetails] = useState({ email: '', name: '', price: 1, _id: '' });
     const [openPaymentModal, setOpenPaymentModal] = useState(false);
     const [addedCartId, setAddedCartId] = useState();
-    const url = `http://localhost:5000/cartproduct/${user?.email}`;
+    const url = `https://craft-connect-server-blond.vercel.app/cartproduct/${user?.email}`;
     const { data: addedCart = [], refetch } = useQuery({
         queryKey: ["addedCart"],
         queryFn: async () => {
