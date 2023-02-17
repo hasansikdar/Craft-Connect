@@ -42,12 +42,12 @@ const Chats = () => {
   const sendMessage = (e) =>{
     e.preventDefault();
     const data ={
-      senderId: user.uid,
-      senderName: user.displayName,
-      sendImg: user.photoURL,
-      recieverId: currentfrnd._id,
-      recieverName: currentfrnd.displayName,
-      recieverImg: currentfrnd.photoURL,
+      senderId: user?.uid,
+      senderName: user?.displayName,
+      sendImg: user?.photoURL,
+      recieverId: currentfrnd?._id,
+      recieverName: currentfrnd?.displayName,
+      recieverImg: currentfrnd?.photoURL,
       message : newMessage?newMessage : "🧡"
     }
     console.log(newMessage)
@@ -100,7 +100,7 @@ const Chats = () => {
             />
           </div>
           <Link to="/feature/profile">
-            <h1 className="dark:text-white text-white font-bold text-xl hidden lg:block">
+            <h1 className="dark:text-white text-white font-bold text-xl hidden lg:block text-center">
               {user?.displayName}
             </h1>
           </Link>
@@ -117,11 +117,22 @@ const Chats = () => {
             >
             </div>
             <div className="flex flex-col space-y-1 mt-4 -mx-2 h-80 overflow-y-auto">
-                  <div className="px-2">
-                  <button className= "flex flex-row items-center hover:bg-[#ff505a] hover:text-white rounded-xl p-2 w-full active" onClick={()=>setCurrentfrnd(allusers)}>
-                      <div className="ml-2 text-sm font-semibold">Start Chat</div>
+                {
+                  allusers.map((chatusers) => (
+                  <div key={chatusers._id} className="px-2">
+                  <button className={currentfrnd._id === chatusers._id? "flex flex-row items-center hover:bg-[#ff505a] hover:text-white rounded-xl p-2 w-full active":"flex flex-row items-center hover:bg-[#ff505a] hover:text-white rounded-xl p-2 w-full"} onClick={()=>setCurrentfrnd(chatusers)}>
+                      <div className="h-10 w-10 rounded-full border overflow-hidden">
+                          <img
+                          src={chatusers.photoURL}
+                          alt="photoURL"
+                          className=""
+                          />
+                      </div>
+                      <div className="ml-2 text-sm font-semibold">{chatusers.displayName}</div>
                   </button>
                   </div>
+                  ))
+                }
             </div>
             </div>
         </div>
@@ -134,8 +145,9 @@ const Chats = () => {
           inputHandle = {inputHandle}
           newMessage = {newMessage}
           sendMessage = {sendMessage}
-          mssges={mssges}
-          ></Frndschat>:"Please Select Your Friend to start Chat"
+          ></Frndschat>: <>
+          <h1 className="text-5xl pt-[300px] pl-[50px] text-gray-400">"Please Select Your Friend to start Chat"</h1>
+          </>
         }
       </div>
     </div>
