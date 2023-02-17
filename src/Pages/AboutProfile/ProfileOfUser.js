@@ -6,6 +6,7 @@ import LeftSideMobile from "../LeftSideBar/LeftSideMobile";
 import Navbar from "../Navbar/Navbar";
 import CoverImg from "./CoverImg";
 import CoverImgMobile from "./CoverImgMobile";
+import MyPostView from "./MyPostView";
 import PostView from "./PostCard/PostView";
 import ProfileInfo from "./ProfileInfo";
 
@@ -29,7 +30,7 @@ const ProfileOfUser = () => {
                 <ProfileInfo myProfile={myProfile} />
               </div>
               <div className="w-full md:w-[1084px] mx-auto mt-10">
-                <PostView />
+                <MyPostView myProfile={myProfile}></MyPostView>
               </div>
             </div>
           );

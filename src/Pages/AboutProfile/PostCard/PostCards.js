@@ -11,7 +11,7 @@ import UserPostInProfile from "../UserProfileById/UserPostInProfile";
 
 const PostCards = ({ userDetails }) => {
   // const { user } = useContext(Authcontext);
-  // console.log(userDetails.email);
+  console.log(userDetails);
 
   const url = `http://localhost:5000/users-post?email=${userDetails?.email}`;
 

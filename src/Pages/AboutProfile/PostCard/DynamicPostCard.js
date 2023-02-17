@@ -7,7 +7,8 @@ import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../../../Context/UserContext";
 
-const DynamicPostCard = ({ myPost }) => {
+const DynamicPostCard = ({ post }) => {
+  console.log(post);
   const {myPro} = useContext(Authcontext);
   const {
     userName,
@@ -18,7 +19,7 @@ const DynamicPostCard = ({ myPost }) => {
     userEmail,
     _id,
     likes,
-  } = myPost;
+  } = post;
 
   return (
     <>
