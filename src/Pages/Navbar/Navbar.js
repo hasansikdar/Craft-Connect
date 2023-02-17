@@ -1,15 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TbLayoutDashboard, TbMessageCircle } from "react-icons/tb";
-import { IoMdNotifications } from "react-icons/io";
-import { BiSearchAlt2 } from "react-icons/bi";
-import maruf from "../../assets/maruf.png";
-import hasan from "../../assets/hasan.png";
 import logo from "../../assets/logo.png";
 import { FaExclamation, FaMoon, FaUserTie } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
-import { AiFillSetting } from "react-icons/ai";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import NavSearchField from "./NavSearchField";
@@ -97,7 +92,7 @@ const Navbar = () => {
             href="/"
           >
             <img src={logo} className="w-32 md:w-14 d-block m-auto hidden lg:block" alt="" />
-            <p class="text-lg hidden md:block text-[#FF3F4A] dark:text-white ml-1.5 lg:ml-2.5">
+            <p class="text-lg hidden lg:block text-[#FF3F4A] dark:text-white ml-1.5 lg:ml-2.5">
               Craft Connect
             </p>
           </Link>

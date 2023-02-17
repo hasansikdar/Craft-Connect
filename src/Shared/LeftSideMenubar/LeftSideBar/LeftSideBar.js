@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { GiSpookyHouse } from "react-icons/gi";
-import { IoBarChartOutline } from "react-icons/io5";
+// import { IoBarChartOutline } from "react-icons/io5";
 import {
   BsNewspaper,
   BsBookmark,
 } from "react-icons/bs";
 import { RiAdvertisementLine } from "react-icons/ri";
-import { AiOutlineFlag } from "react-icons/ai";
+// import { AiOutlineFlag } from "react-icons/ai";
 import { FiHome, FiUsers } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
@@ -44,19 +44,19 @@ const LeftSideBar = () => {
           {open ? (
             <RxCross1
               size={26}
-              className="cursor-pointer"
+              className="cursor-pointer mt-2"
               onClick={() => setOpen(!open)}
             />
           ) : (
             <HiMenuAlt3
               size={26}
-              className="cursor-pointer"
+              className="cursor-pointer mt-2"
               onClick={() => setOpen(!open)}
             />
           )}
         </div>
 
-        <div className="mt-20 lg:flex flex-col px-4 gap-4 relative  hidden">
+        <div className="mt-8 lg:flex flex-col px-4 gap-4 relative  hidden">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}
@@ -92,7 +92,7 @@ const LeftSideBar = () => {
 
         {open && (
           <div className="dark:bg-[#563f8e] h-screen bg-[#FAFBFD]">
-            <div className="py-3 flex px-4 justify-end  md:hidden">
+            <div className="py-3 flex px-4 justify-end  lg:hidden">
               {open && (
                 <RxCross1
                   size={26}
@@ -101,7 +101,7 @@ const LeftSideBar = () => {
                 />
               )}
             </div>
-            <div className="mt-2 flex flex-col duration-1000 px-4 gap-4 relative  md:hidden">
+            <div className="mt-2 flex flex-col duration-1000 px-4 gap-4 relative  lg:hidden">
               {menus?.map((menu, i) => (
                 <Link
                   to={menu?.link}
