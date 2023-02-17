@@ -74,7 +74,7 @@ const Login = () => {
       .then(data => {
         console.log(data)
         navigate("/");
-        // toast.success('Log in Successful')
+        toast.success('Log in Successful')
       })
   }
   return (
