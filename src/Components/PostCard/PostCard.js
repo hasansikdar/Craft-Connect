@@ -1,22 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
-// import PostUserInfo from "./PostUserInfo/PostUserInfo";
-// import likeicon from "../../assets/icons/like.png";
-// import {
-//   FaCommentAlt,
-//   FaLaughWink,
-//   FaLaugh,
-//   FaAngleDown,
-//   FaShare,
-// } from "react-icons/fa";
-// import { PhotoProvider, PhotoView } from "react-photo-view";
-// import { Link } from "react-router-dom";
-// import { FcLike } from "react-icons/fc";
-// import UserContext, { Authcontext } from "../../Context/UserContext";
-// import Reactions from "../../Shared/Reactions/Reactions";
-// import { useQuery } from "@tanstack/react-query";
-// import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
@@ -143,14 +126,6 @@ const PostCard = ({
                         Bookmark
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        className="hover:bg-[#FF3F4A] hover:text-white"
-                        href="/"
-                      >
-                        Save
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -170,7 +145,7 @@ const PostCard = ({
               </p>
               <Link to={`/postDetails/${post?._id}`}>
                 <img
-                  className="w-full rounded-md mt-[5px]"
+                  className="w-full rounded-md mt-[5px] h-96 object-cover"
                   src={post?.img}
                   alt=""
                 />

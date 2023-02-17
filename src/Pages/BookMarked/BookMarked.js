@@ -19,10 +19,10 @@ const BookMarked = () => {
   });
 
   return (
-    <div className="h-screen flex flex-col  items-center mt-5 md:mt-5 overflow-y-auto w-full pb-32">
-      <h1 className="sm:text-xl md:text-2xl pt-5 pb-3 font-semibold text-black">All your bookmarked posts are here!</h1>
+    <div className="h-screen flex flex-col items-center mt-5 md:mt-5 overflow-y-auto w-full pb-32">
+      <h1 className="sm:text-xl md:text-2xl pt-5 pb-3 font-semibold text-black dark:text-white">All your bookmarked posts are here!</h1>
       
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {
           posts.map((post) => <BookMarkedCard
           key={post._id}
