@@ -38,10 +38,14 @@ const UserContext = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-  const signinwithgoogle = () => {
-    setLoading(true);
-    return signInWithPopup(auth, googleProvider);
-  };
+  // const signinwithgoogle = () => {
+  //   setLoading(true);
+  //   return signInWithPopup(auth, googleProvider);
+  // };
+  const googleProviderSignIn = (provider) => {
+    setLoading(true)
+    return signInWithPopup(auth, provider);
+}
 
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
@@ -63,7 +67,7 @@ const UserContext = ({ children }) => {
     logout,
     signin,
     loading,
-    signinwithgoogle,
+    googleProviderSignIn
   };
 
   useEffect(() => {

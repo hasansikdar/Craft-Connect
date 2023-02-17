@@ -6,9 +6,13 @@ import { useForm } from "react-hook-form";
 import { Authcontext } from "../../Context/UserContext";
 import { toast } from "react-hot-toast";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { BsGoogle } from "react-icons/bs";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-  const { user, signin } = useContext(Authcontext);
+  const { user, signin, googleProviderSignIn } = useContext(Authcontext);
+  const provider = new GoogleAuthProvider()
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const location = useLocation();
@@ -34,6 +38,45 @@ const Login = () => {
       });
   };
 
+  const handelGoogleSignIn = () => {
+    googleProviderSignIn(provider)
+      .then((result) => {
+        const user = result.user
+        console.log(user)
+        // navigate("/");
+        // toast.success('Log in Successful')
+        saveUserToDB(user.displayName, user.email, user.photoURL)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+
+  //add to db
+  const saveUserToDB = (userName, userEmail, photoURL) => {
+
+    const userInfo = {
+      displayName: userName,
+      email: userEmail,
+      password: null,
+      photoURL: photoURL,
+    };
+    console.log(userInfo);
+
+    fetch('https://craft-connect-server-blond.vercel.app/users', {
+      method: 'POST',
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        navigate("/");
+        // toast.success('Log in Successful')
+      })
+  }
   return (
     <section
       style={{
@@ -89,6 +132,15 @@ const Login = () => {
               <button className="block mt-5 w-full px-4 leading-[48px] text-center font-bold text-[20px] text-white rounded bg-[#FF3F4A]">
                 {loading ? <p>Loading...</p> : "Sign in"}
               </button>
+              <div>
+                <div className="flex justify-center items-center w-full my-3">
+                  <p className="px-3 text-white">OR</p>
+                </div>
+                <div>
+                  <button onClick={handelGoogleSignIn} className="flex justify-center items-center w-full px-4 leading-[48px] text-center font-bold text-[20px] text-white rounded bg-[#FF3F4A]">
+                    <BsGoogle className='text-xl mr-3'></BsGoogle><p>Sign in with Google</p></button>
+                </div>
+              </div>
               <div className="flex justify-center text-xs text-[#FFF]">
                 <a href="/" className="pt-4">
                   Forgot Password?

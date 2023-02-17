@@ -37,12 +37,12 @@ const LeftSideBar = () => {
           open ? "w-72" : "w-[70px]"
         } duration-500 text-black  z-9999 fixed lg:shadow-xl`}
       >
-        <div className="bg-zinc-800 h-[72px] p-0 hidden lg:block">
+        {/* <div className="bg-zinc-800 h-[72px] p-0 hidden lg:block">
           <Link to="/">
             <img src={logo} className="w-14 d-block m-auto" alt="" />
           </Link>
-        </div>
-        <div className="bg-zinc-800 h-[72px] p-0 lg:hidden">
+        </div> */}
+        <div className=" h-[72px] p-0 lg:hidden">
           <img
             src={logo}
             onClick={() => setOpen(!open)}

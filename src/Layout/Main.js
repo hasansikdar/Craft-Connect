@@ -42,11 +42,11 @@ const Main = () => {
       <Navbar></Navbar>
 
       <div className='lg:flex w-full'>
-        <div className='w-[100px]'>
+        <div className='w-[100px] md:mt-[70px]'>
           <LeftSideBar></LeftSideBar>
         </div>
 
-        <div className="w-full mt-[60px] m-auto">
+        <div className="w-full mt-[65px] m-auto">
           <Outlet></Outlet>
         </div>
 
