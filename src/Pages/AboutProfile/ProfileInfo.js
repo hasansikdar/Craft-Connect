@@ -37,7 +37,7 @@ const ProfileInfo = ({ myProfile }) => {
       {showCoverMenu && (
         <div className="absolute top-0 right-0">
           <div
-            className="dark:bg-[#32205a]  p-[10px] w-[50%] md:w-[200px] rounded-[10px] shadow-md z-[999] absolute top-10 right-6"
+            className="dark:bg-[#32205a]  p-[10px] w-[50%] md:w-[200px] rounded-[10px] shadow-md z-[999] absolute top-10 right-6P"
             ref={menuRef}
           >
             <div

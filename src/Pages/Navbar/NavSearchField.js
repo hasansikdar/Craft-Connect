@@ -5,11 +5,15 @@ import SearchModal from "./SearchModal";
 import { Dialog, Transition } from "@headlessui/react";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { clear } from "@testing-library/user-event/dist/clear";
+
 // import {} from "react";
 
 const NavSearchField = ({ allusers }) => {
   const [filterData, setFilterData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
+
+  
 
   const handleFilter = (event) => {
     const searchWord = event?.target?.value;
@@ -30,6 +34,9 @@ const NavSearchField = ({ allusers }) => {
     setFilterData([]);
     setWordEntered("");
   };
+
+  const menuRef = useRef(null);
+  useClickOutside(menuRef, () => clearInput());
 
   return (
     <div>
@@ -55,14 +62,14 @@ const NavSearchField = ({ allusers }) => {
           </div>
         </div>
       </div>
-{/* 
+
       {filterData.length !== 0 && (
         <div as="div" className="relative z-[999]">
           <div className="fixed inset-0 z-10 ">
             <div className="flex h-[450px] justify-center  text-center overflow-hidden overflow-y-auto  mt-12 sm:p-0">
               <div>
                 <div className="relative transform rounded-md  bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <div className="bg-white pb-4 sm:p-6 sm:pb-4">
+                  <div ref={menuRef} className="bg-white pb-4 sm:p-6 sm:pb-4">
                     <div>
                       {filterData.map((allUser) => {
                         return (
@@ -88,8 +95,73 @@ const NavSearchField = ({ allusers }) => {
             </div>
           </div>
         </div>
+      )}
+      {/* {filterData.length !== 0 && (
+        <div
+          id="dropdown"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="multiLevelDropdownButton"
+          >
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <button
+                id="doubleDropdownButton"
+                data-dropdown-toggle="doubleDropdown"
+                data-dropdown-placement="right-start"
+                type="button"
+                class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >
+                Dropdown
+                <svg
+                  aria-hidden="true"
+                  class="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="doubleDropdown"
+                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+              >
+                {filterData.map((allUser) => {
+                  return (
+                    <div>
+                      <Link
+                        to={`/user/${allUser.email}`}
+                        className="flex items-center py-2 hover:bg-gray-300 rounded-md"
+                      >
+                        <img
+                          className="w-[20px]"
+                          src={allUser?.PhotoURL}
+                          alt=""
+                        />
+                        <p>{allUser?.displayName}</p>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            </li>
+          </ul>
+        </div>
       )} */}
-      
     </div>
   );
 };
