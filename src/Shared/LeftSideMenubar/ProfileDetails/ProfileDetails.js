@@ -4,9 +4,18 @@ import { HiSpeakerphone } from "react-icons/hi";
 import { FaEdit, FaWifi, FaUserCheck } from "react-icons/fa";
 import { Authcontext } from "../../../Context/UserContext";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
+import { useQuery } from "@tanstack/react-query";
 
 const ProfileDetails = () => {
-  const { user, allUsers } = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
+  const { data: allUsers = [] } = useQuery({
+    queryKey: ["allusers"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/allusers");
+      const data = await res.json();
+      return data;
+    },
+  });
 
   console.log(allUsers);
   return (
