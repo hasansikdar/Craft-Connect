@@ -16,13 +16,13 @@ import logo from "../../../assets/logo.png";
 const LeftSideBar = () => {
   const menus = [
     { name: "Home", link: "/", icon: FiHome },
-    { name: "Most Recent", link: "/", icon: BsNewspaper },
+    //{ name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/friends", icon: FiUsers },
     // { name: "Pages", link: "/feature/pages", icon: AiOutlineFlag },
     { name: "Marketplace", link: "/feature/marketplace", icon: GiSpookyHouse },
     { name: "Bookmarked", link: "/feature/bookmarked", icon: BsBookmark },
     { name: "Ad Center", link: "/feature/adcenter", icon: RiAdvertisementLine },
-    { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
+    //{ name: "Ads Manager", link: "/", icon: IoBarChartOutline },
   ];
   const [open, setOpen] = useState(false);
   return (
@@ -30,13 +30,13 @@ const LeftSideBar = () => {
       <div
         className={`lg:bg-white dark:lg:bg-[#563f8e] dark:text-white min-h-screen ${
           open ? "w-72" : "w-[70px]"
-        } duration-500 text-black  z-9999 fixed lg:shadow-xl`}
+        } duration-500 text-black  z-[1000] lg:z-[999] fixed lg:shadow-xl`}
       >
-        <div className=" h-[72px] p-0 lg:hidden">
+        <div className=" h-0 lg:h-[72px]  p-0 lg:hidden">
           <img
             src={logo}
             onClick={() => setOpen(!open)}
-            className="w-14 d-block m-auto"
+            className="w-14 d-block m-auto py-[10px]"
             alt=""
           />
         </div>
@@ -56,7 +56,7 @@ const LeftSideBar = () => {
           )}
         </div>
 
-        <div className="mt-5 lg:flex flex-col px-4 gap-4 relative  hidden">
+        <div className="mt-20 lg:flex flex-col px-4 gap-4 relative  hidden">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}

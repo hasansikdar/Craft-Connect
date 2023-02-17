@@ -20,9 +20,9 @@ const Friends = () => {
     <section className="bg-white dark:bg-[#2C2048]">
       <div className=" hidden lg:block overflow-y-auto h-screen">
         <div className="grid grid-cols-12">
-          <div className="col-span-3 hidden lg:block dark:bg-[#261b40]">
+          {/* <div className="col-span-3 hidden lg:block dark:bg-[#261b40]">
             <LeftSide></LeftSide>
-          </div>
+          </div> */}
           <div className="col-span-9">
             <MainPage></MainPage>
           </div>

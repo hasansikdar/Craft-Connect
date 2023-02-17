@@ -91,13 +91,13 @@ const Frndschat = (props) => {
                           className=""
                           />
                         </div>
+                        <div>
+                        <h1 className='ml-5 text-xs text-gray-400'>{m.recieverName}</h1>
                         <div
                           className="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl"
                         >
-                          <div>
-                            <h1>{m.recieverName}</h1>
-                          </div>
-                          <div>{m.message}</div>
+                          {m.message}
+                        </div>
                         </div>
                       </div>
                     </div>

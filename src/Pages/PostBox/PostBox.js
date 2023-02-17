@@ -149,12 +149,6 @@ const PostBox = () => {
           <div onClick={() => setOpen(true)}>
             <img src={camera} className="w-6 h-6" alt="" />
           </div>
-          <div>
-            <img src={tagFriends} className="w-6 h-6" alt="" />
-          </div>
-          <div>
-            <img src={locations} className="w-6 h-6" alt="" />
-          </div>
           <div></div>
         </div>
         <div className="flex">

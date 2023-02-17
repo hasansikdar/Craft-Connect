@@ -9,7 +9,7 @@ const Main = () => {
       <Navbar></Navbar>
 
       <div className='lg:flex w-full'>
-        <div className='w-[100px] md:mt-[70px]'>
+        <div className='w-[100px] mt-[0px] lg:mt-[70px]'>
           <LeftSideBar></LeftSideBar>
         </div>
 

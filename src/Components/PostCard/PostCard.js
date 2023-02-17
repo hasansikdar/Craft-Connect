@@ -165,6 +165,7 @@ const PostCard = ({
               </div>
             </div>
             <div className="pb-7">
+            <Link to={`/postDetails/${post?._id}`}>
               <p className="py-4 text-black dark:text-white">
                 {post?.postText?.length > 100 ? (
                   <>
@@ -177,35 +178,37 @@ const PostCard = ({
                   post?.postText
                 )}
               </p>
-              <Link to={`/postDetails/${post?._id}`}>
+              {post?.img ? (
+
                 <img
-                  className="w-full rounded-md mt-[5px] h-96 object-cover"
-                  src={post?.img}
-                  alt=""
+                className="w-full rounded-md mt-[5px] h-96 object-cover"
+                src={post?.img}
+                alt=""
                 />
+              ): ""}
               </Link>
             </div>
             <div className="border-t border-black dark:border-white">
               <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
-                <div className="flex gap-8">
+                <div className="flex items-center gap-8">
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => likedUser(user?.uid)}
                       disabled={liked === true}
                       className={
                         liked === true
-                          ? "text-[34px] text-blue-600"
-                          : "text-[34px]"
+                          ? "text-[30px] text-blue-600"
+                          : "text-[30px]"
                       }
                     >
                       <BiLike />
                     </button>
 
-                    <p className="text-3xl">{likeLength.length}</p>
+                    <p className="text-2xl">{likeLength.length}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <Link to={`/postDetails/${post?._id}`}>
-                      <button className="text-[27px]">
+                      <button className="text-[27px] mt-3">
                         <TfiCommentAlt />
                       </button>
                     </Link>

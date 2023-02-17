@@ -14,7 +14,8 @@ const MainPage = () => {
       .then((data) => setAllUser(data));
   }, []);
   return (
-    <section className="p-10 mt-10">
+    <section className="">
+      <div className="hidden">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold dark:text-white text-black">
           Friend Requests
@@ -32,6 +33,7 @@ const MainPage = () => {
         <FriendRequestCard></FriendRequestCard>
       </div>
       <hr className="mt-10 w-[1100px] text-2xl" />
+      </div>
 
       <div>
         <div className="flex items-center justify-between mt-10">
