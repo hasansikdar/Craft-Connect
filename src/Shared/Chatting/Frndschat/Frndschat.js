@@ -6,22 +6,22 @@ import axios from "axios";
 const Frndschat = (props) => {
     const { user } = useContext(Authcontext);
     //const [messages, setMessages] = useState([]);
-    const {currentfrnd, inputHandle, newMessage, sendMessage, mssges} = props
+    const {currentfrnd, inputHandle, newMessage, sendMessage} = props
     console.log(currentfrnd)
 
     const [currentmssg, setCurrentmssg ] = useState([]);
 
 
-    // const { data: mssges = [], refetch, isLoading } = useQuery({
-    //   queryKey: ["mssges"],
-    //   queryFn: async () => {
-    //     const res = await fetch("http://localhost:5000/allmesseges");
-    //     const data = await res.json();
-    //     return data;
-    //   },
-    // });
+    const { data: mssges = [], refetch, isLoading } = useQuery({
+      queryKey: ["mssges"],
+      queryFn: async () => {
+        const res = await fetch("http://localhost:5000/allmesseges");
+        const data = await res.json();
+        return data;
+      },
+    });
 
-    // console.log(mssges)
+    console.log(mssges)
 
     // useEffect(()=>{
     //   const getMessages = async () =>{
@@ -48,8 +48,8 @@ const Frndschat = (props) => {
           className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-2"
         >
         <div className="flex items-center p-2 bg-[#ff505a] rounded text-white">
-          <img src={user?.photoURL} alt="" className="w-10 h-10 object-cover rounded-full mr-5"/>
-          <h1>{user?.displayName}</h1>
+          <img src={currentfrnd.photoURL} alt="" className="w-10 h-10 object-cover rounded-full mr-5"/>
+          <h1>{currentfrnd.displayName}</h1>
         </div>
           <div className="flex flex-col h-full overflow-x-auto mb-4">
             <div className="flex flex-col h-full">
@@ -110,7 +110,7 @@ const Frndschat = (props) => {
           <div
             className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
           >
-            <div>
+            {/* <div>
               <button
                 className="flex items-center justify-center text-gray-400 hover:text-gray-600"
               >
@@ -129,7 +129,7 @@ const Frndschat = (props) => {
                   ></path>
                 </svg>
               </button>
-            </div>
+            </div> */}
             <div className="flex-grow ml-4">
               <div className="relative w-full">
                 <input
@@ -138,7 +138,7 @@ const Frndschat = (props) => {
                   onChange={inputHandle}
                   value={newMessage}
                 />
-                <button
+                {/* <button
                   className="absolute flex items-center justify-center h-full w-12 right-0 top-0 text-gray-400 hover:text-gray-600"
                 >
                   <svg
@@ -155,7 +155,7 @@ const Frndschat = (props) => {
                       d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
                   </svg>
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="ml-4">
