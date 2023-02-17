@@ -17,6 +17,7 @@ const ProfileDetails = () => {
       return data;
     },
   });
+  console.log(myPro)
   return (
     <div className="">
       <div className="card-body p-2 flex rounded-lg border-zinc-600 shadow-xl w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
@@ -55,7 +56,7 @@ const ProfileDetails = () => {
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
             Followed by{" "}
             <span className="flex items-center">
-              <FaWifi className="mr-2"></FaWifi> {allusers?.length} people{" "}
+              <FaWifi className="mr-2"></FaWifi> {myPro[0]?.followers?.length} people{" "}
             </span>
           </Link>
         </div>
@@ -63,7 +64,7 @@ const ProfileDetails = () => {
           <Link className="justify-between flex dark:text-white text-gray-700 duration-200 rounded-md px-2 py-2">
             Friendlists{" "}
             <span className="flex items-center">
-              <FaUserCheck className="mr-2"></FaUserCheck> 492 friends{" "}
+              <FaUserCheck className="mr-2"></FaUserCheck> {myPro[0]?.following?.length} following{" "}
             </span>
           </Link>
         </div>
