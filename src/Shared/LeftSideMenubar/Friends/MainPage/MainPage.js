@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FriendRequestBar from "../FriendRequest/FrieendRequestBar/FriendRequestBar";
 import FriendRequestCard from "../FriendRequest/FrieendRequestBar/FriendRequestCard";
 import FriendSuggestionCard from "../FriendSuggestion/FriendSuggestionCard/FriendSuggestionCard";
@@ -6,8 +6,16 @@ import AddFriendCard from "./AddFriendCard/AddFriendCard";
 import MainPageCard from "./MainPageCard/MainPageCard";
 
 const MainPage = () => {
+  const [allUser, setAllUser] = useState();
+
+  useEffect(() => {
+    fetch("http://localhost:5000/allusers")
+      .then((result) => result.json())
+      .then((data) => setAllUser(data));
+  }, []);
   return (
-    <section className="p-10 mt-10">
+    <section className="">
+      <div className="hidden">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold dark:text-white text-black">
           Friend Requests
@@ -25,6 +33,7 @@ const MainPage = () => {
         <FriendRequestCard></FriendRequestCard>
       </div>
       <hr className="mt-10 w-[1100px] text-2xl" />
+      </div>
 
       <div>
         <div className="flex items-center justify-between mt-10">
@@ -36,13 +45,12 @@ const MainPage = () => {
           </button>
         </div>
         <div className="grid grid-cols-3 py-2 mx-auto px-4 gap-5 mt-5">
-          <FriendSuggestionCard></FriendSuggestionCard>
-          <FriendSuggestionCard></FriendSuggestionCard>
-          <FriendSuggestionCard></FriendSuggestionCard>
-          <FriendSuggestionCard></FriendSuggestionCard>
-          <FriendSuggestionCard></FriendSuggestionCard>
-          <FriendSuggestionCard></FriendSuggestionCard>
-          <FriendSuggestionCard></FriendSuggestionCard>
+          {allUser?.map((followingUser) => (
+            <FriendSuggestionCard
+              followingUser={followingUser}
+              key={followingUser?._id}
+            ></FriendSuggestionCard>
+          ))}
         </div>
       </div>
     </section>

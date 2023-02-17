@@ -70,7 +70,6 @@ const Navbar = () => {
       const data = await res.json();
       return data;
     },
-
   });
 
   const url = `http://localhost:5000/users?email=${user?.email}`;
@@ -89,7 +88,7 @@ const Navbar = () => {
   
 
   return (
-    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[1000] h-[72px] ">
+    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[999] lg:z-[1000]  h-[72px] ">
       <div className="flex justify-between items-center backdrop-blur-lg bg-gradient-to-r dark:from-[#3a2e57] from-white to-[#2C2048] dark:to-[#2C2048] ">
         <div className="pl-3">
           <Link
@@ -97,20 +96,20 @@ const Navbar = () => {
             class="text-2xl text-gray-900 font-semibold flex items-center"
             href="/"
           >
-            <img src={logo} className="w-32 md:w-14 d-block m-auto" alt="" />
+            <img src={logo} className="w-32 md:w-14 d-block m-auto hidden lg:block" alt="" />
             <p class="text-lg hidden md:block text-[#FF3F4A] dark:text-white ml-1.5 lg:ml-2.5">
               Craft Connect
             </p>
           </Link>
         </div>
-        <div>
-          <div className="grid grid-cols-3">
+        <div className="pl-[65px] lg:pl-0">
+          <div className="grid grid-cols-2">
             <div className="">
               <NavSearchField allusers={allusers}></NavSearchField>
             </div>
 
-            <div className="pr-3 flex gap-2 items-center justify-end pl-20">
-              <button onClick={handleThemeSwitch} className="text-[20px]">
+            <div className="pr-3 flex gap-2 items-center justify-end pl-10 lg:pl-20 ">
+              <button onClick={handleThemeSwitch} className="text-[20px] lg:text-[25px]">
                 {theme === "light" ? (
                   <IoMdSunny className="text-white"></IoMdSunny>
                 ) : (
@@ -123,10 +122,11 @@ const Navbar = () => {
                 className="md:btn md:btn-ghost md:btn-circle p-1 md:p-0 rounded-full bg-zinc-700 hover:bg-zinc-600"
               >
                 <Link to="/chats">
-                  <TbMessageCircle className="text-xl md:text-2xl text-white"></TbMessageCircle>
+                  <TbMessageCircle className="text-xl md:text-4xl text-white"></TbMessageCircle>
                 </Link>
               </button>
-            </div>
+
+              
             <div
               className=" flex items-center mx-auto"
               onClick={() => setProfile(!profile)}
@@ -137,17 +137,18 @@ const Navbar = () => {
                 alt=""
               />
             </div>
+            </div>
           </div>
         </div>
 
         {/*#########################################Profile Modal Start####################################################*/}
         {profile && (
-          <div className="w-[80%] md:w-[30%]  rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5 ">
+          <div className="w-[80%] md:w-[30%] shadow-2xl rounded-md absolute top-14 right-6 z-[999] dark:bg-[#18093a] bg-gray-100 mt-5 ">
             <div className="px-3 py-3">
               <div className="flex justify-between items-center mb-2 ">
                 <Link
                   to="/feature/profile"
-                  className="flex items-center cursor-pointer hover:bg-[#b4373e] dark:text-white text-black hover:text-white w-full p-2 rounded-md "
+                  className="flex items-center cursor-pointer dark:text-white text-black w-full p-2 rounded-md "
                 >
                   <img
                     className="w-10 h-10 object-cover rounded-full mr-3"
@@ -158,7 +159,7 @@ const Navbar = () => {
                     }`}
                     alt=""
                   />
-                  <h3 className="text-xl font-bold text-[#FF3F4A] hover:text-white">
+                  <h3 className="text-xl font-bold text-[#FF3F4A]">
                     {user?.displayName}
                   </h3>
                 </Link>
@@ -169,29 +170,11 @@ const Navbar = () => {
                   ✕
                 </div>
               </div>
-              <div className=" border-t border-zinc-600"></div>
+              <div className=" border-t border-[#FF3F4A]"></div>
               <div className="py-4">
-                <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
-                  <div className="flex items-center">
-                    <AiFillSetting className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
-                    <p className="font-bold">Setting & Privacy</p>
-                  </div>
-                  <div>
-                    <FcNext className="text-2xl mr-2" />
-                  </div>
-                </div>
-                <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
-                  <div className="flex items-center">
-                    <FcQuestions className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
-                    <p className="font-bold">Help & Support</p>
-                  </div>
-                  <div>
-                    <FcNext className="text-2xl mr-2" />
-                  </div>
-                </div>
                 <Link
                   to="/dashboard"
-                  className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer"
+                  className="flex justify-between items-center py-2 dark:text-white text-black rounded-md cursor-pointer"
                 >
                   <div className="flex items-center">
                     <TbLayoutDashboard className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
@@ -204,7 +187,7 @@ const Navbar = () => {
                 {isAdmin && (
                   <Link
                     to="/admin/all-users"
-                    className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer"
+                    className="flex justify-between items-center py-2 dark:text-white text-black rounded-md cursor-pointer"
                   >
                     <div className="flex items-center">
                       <FaUserTie className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
@@ -215,28 +198,10 @@ const Navbar = () => {
                     </div>
                   </Link>
                 )}
-
-                <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
-                  <div className="flex items-center">
-                    <FaMoon className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2 text-yellow-500" />
-                    <p className="font-bold">Display & Accessibility</p>
-                  </div>
-                  <div>
-                    <FcNext className="text-2xl mr-2" />
-                  </div>
-                </div>
-                <div className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer">
-                  <div className="flex items-center">
-                    <FaExclamation className="text-4xl bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />
-                    <p className="font-bold">Give feedback</p>
-                  </div>
-                  <div>
-                    <FcNext className="text-2xl mr-2" />
-                  </div>
-                </div>
+                
                 <div
                   onClick={handleLogout}
-                  className="flex justify-between items-center py-2 hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white rounded-md cursor-pointer"
+                  className="flex justify-between items-center py-2 dark:text-white text-black rounded-md cursor-pointer"
                 >
                   <div className="flex items-center">
                     <FcExport className="text-4xl text-white bg-gray-300 dark:bg-[#cb444b] p-1 rounded-full mr-2" />

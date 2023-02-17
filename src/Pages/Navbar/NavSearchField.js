@@ -55,7 +55,7 @@ const NavSearchField = ({ allusers }) => {
           </div>
         </div>
       </div>
-
+{/* 
       {filterData.length !== 0 && (
         <div as="div" className="relative z-[999]">
           <div className="fixed inset-0 z-10 ">
@@ -88,7 +88,8 @@ const NavSearchField = ({ allusers }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
+      
     </div>
   );
 };

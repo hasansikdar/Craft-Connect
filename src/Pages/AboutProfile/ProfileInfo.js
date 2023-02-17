@@ -4,7 +4,6 @@ import { BsThreeDots, BsThreeDotsVertical } from "react-icons/bs";
 import useClickOutside from "../../Components/helpers/clickOutside";
 import { useContext } from "react";
 import { Authcontext } from "../../Context/UserContext";
-import { useEffect } from "react";
 import UpdateCoverImg from "./UpdateProfileImage/UpdateCoverImg";
 import UpdateProfileImage from "./UpdateProfileImage/UpdateProfileImage";
 
@@ -13,22 +12,32 @@ const ProfileInfo = ({ myProfile }) => {
   const menuRef = useRef(null);
   useClickOutside(menuRef, () => setShowCoverMenu(false));
 
-  // const { user } = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
+  console.log(user);
 
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
+  const handleFollow = () => {
+    fetch("http://localhost:5000/follow", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
   return (
-    <div className=" md:w-full">
+    <div className="relative md:w-full">
       <div className="flex justify-end pt-2 pr-1">
         <button onClick={() => setShowCoverMenu(!showCoverMenu)}>
           <BsThreeDotsVertical className="text-3xl" />
         </button>
       </div>
       {showCoverMenu && (
-        <div className="">
+        <div className="absolute top-0 right-0">
           <div
-            className="dark:bg-[#32205a] absolute top-0 ml-[10rem] mt-[17rem] md:ml-[53rem] md:mt-[27rem] p-[10px] w-[50%] md:w-[200px] rounded-[10px] shadow-md z-[999]"
+            className="dark:bg-[#32205a]  p-[10px] w-[50%] md:w-[200px] rounded-[10px] shadow-md z-[999] absolute top-10 right-6"
             ref={menuRef}
           >
             <div
@@ -51,7 +60,9 @@ const ProfileInfo = ({ myProfile }) => {
           <Link>Timeline</Link>
         </div>
         <div>
-          <Link>About</Link>
+          <Link>
+            <button>Follower</button>
+          </Link>
         </div>
         <div>
           <Link>Friends</Link>

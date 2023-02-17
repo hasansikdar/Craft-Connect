@@ -23,7 +23,7 @@ const BookMarkedCard = ({ post, refetch }) => {
     }
 
     return (
-        <div className="my-5">
+        <div className="my-5 w-96">
             <div className="w-full border border-[#FF3F4A] p-5 rounded-md shadow-md">
                 <div className="flex justify-between items-center text-black dark:text-white">
                     <div className="flex gap-3 items-center">
@@ -56,14 +56,6 @@ const BookMarkedCard = ({ post, refetch }) => {
                                         Remove Bookmark
                                     </Link>
                                 </li>
-                                {/* <li>
-                                            <Link
-                                                className="hover:bg-[#FF3F4A] hover:text-white"
-                                                href="/"
-                                            >
-                                                Save
-                                            </Link>
-                                    </li> */}
                             </ul>
                         </div>
                     </div>
@@ -84,7 +76,7 @@ const BookMarkedCard = ({ post, refetch }) => {
 
                     {/* <Link to={`/postDetails/${post?._id}`}> */}
                     <img
-                        className="w-full rounded-md mt-[5px]"
+                        className="w-full rounded-md mt-[5px] h-96 object-cover"
                         src={post?.PostPhoto}
                         alt=""
                     />
