@@ -38,10 +38,6 @@ const UserContext = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-  // const signinwithgoogle = () => {
-  //   setLoading(true);
-  //   return signInWithPopup(auth, googleProvider);
-  // };
   const googleProviderSignIn = (provider) => {
     setLoading(true)
     return signInWithPopup(auth, provider);

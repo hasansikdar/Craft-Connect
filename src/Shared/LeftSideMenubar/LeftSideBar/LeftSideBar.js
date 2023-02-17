@@ -1,5 +1,3 @@
-//         <div className="sidebar min-h-screen w-[3.35rem] overflow-hidden border-r hover:w-56 hover:bg-white hover:shadow-lg">
-
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { GiFamilyHouse } from "react-icons/gi";
@@ -37,11 +35,6 @@ const LeftSideBar = () => {
           open ? "w-72" : "w-[70px]"
         } duration-500 text-black  z-9999 fixed lg:shadow-xl`}
       >
-        {/* <div className="bg-zinc-800 h-[72px] p-0 hidden lg:block">
-          <Link to="/">
-            <img src={logo} className="w-14 d-block m-auto" alt="" />
-          </Link>
-        </div> */}
         <div className=" h-[72px] p-0 lg:hidden">
           <img
             src={logo}

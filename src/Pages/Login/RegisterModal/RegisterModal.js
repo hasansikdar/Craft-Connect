@@ -53,15 +53,11 @@ const RegisterModal = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          // const img = data?.data?.display_url;
-          // updateuserdata(fullName, img);
-          // setUserProfile(img);
           console.log(data.data.display_url);
           createaccount(email, password).then((result) => {
             const user = result.user;
             console.log(user);
             updateUserProfile(fullName, data?.data?.display_url)
-            // console.log(fullName, data.data.display_url);
             .then((result) => {
               console.log(result);
               navigate("/");
@@ -92,11 +88,9 @@ const RegisterModal = () => {
           });
         })
         .catch((error) => {
-          // console.log(error);
           toast.error(error.message);
           setLoading(false);
         });
-  
   };
 
   return (
