@@ -44,7 +44,7 @@ const Chats = () => {
     const data ={
       senderId: user?.uid,
       senderName: user?.displayName,
-      sendImg: user?.photoURL,
+      // sendImg: user?.photoURL,
       recieverId: currentfrnd?._id,
       recieverName: currentfrnd?.displayName,
       recieverImg: currentfrnd?.photoURL,
@@ -100,7 +100,7 @@ const Chats = () => {
             />
           </div>
           <Link to="/feature/profile">
-            <h1 className="dark:text-white text-white font-bold text-xl hidden lg:block text-center">
+            <h1 className="dark:text-white text-white font-bold text-xl hidden lg:block">
               {user?.displayName}
             </h1>
           </Link>

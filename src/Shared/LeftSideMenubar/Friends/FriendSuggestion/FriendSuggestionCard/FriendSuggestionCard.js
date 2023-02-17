@@ -18,13 +18,12 @@ const FriendSuggestionCard = ({ followingUser }) => {
     })
       .then((result) => result.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount > 0) {
           setFollow(true);
         }
       });
   };
-
   return (
     <div className="lg:mt-5">
       <div className="">

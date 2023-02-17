@@ -1,20 +1,19 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { toast } from 'react-hot-toast';
-import { Authcontext } from '../../Context/UserContext';
-import useClickOutside from '../../Components/helpers/clickOutside';
-import { Link } from 'react-router-dom';
+import { toast } from "react-hot-toast";
+import { Authcontext } from "../../Context/UserContext";
+import useClickOutside from "../../Components/helpers/clickOutside";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-
   const [reportProduct, setReportProduct] = useState(false);
   const menuRef = useRef(null);
   useClickOutside(menuRef, () => setReportProduct(false));
 
-  const {user} = useContext(Authcontext);
+  const { user } = useContext(Authcontext);
 
-  // const 
-  
+  // const
+
   const {
     userName,
     productName,
@@ -23,100 +22,90 @@ const ProductCard = ({ product }) => {
     productImg,
     email,
     userPhotoURL,
-    _id
+    _id,
   } = product;
   // console.log(product);
 
   // http://localhost:5000/checkCartProduct
 
   const isProductAddedToCart = (product) => {
-    fetch(
-      `http://localhost:5000/checkCartProduct?id=${product?._id}`
-    )
+    fetch(`http://localhost:5000/checkCartProduct?id=${product?._id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.length);
+        // console.log(data.length);
         if (data.length) {
-
           toast.error("Product already added in cart");
+        } else {
+          addProductToCart();
         }
-        else{
-          addProductToCart()
-        }
-
       });
   };
 
-    const addProductToCart = () =>{
+  const addProductToCart = () => {
+    const cartProduct = {
+      sellerName: userName,
+      sellerEmail: email,
+      sellerImage: userPhotoURL,
+      buyerName: user?.displayName,
+      buyerEmail: user?.email,
+      productName,
+      productImg,
+      productPrice,
+      productDescription,
+      productId: _id,
+    };
 
-      const cartProduct = {
-        sellerName: userName,
-        sellerEmail: email,
-        sellerImage: userPhotoURL,
-        buyerName: user?.displayName,
-        buyerEmail: user?.email,
-        productName,
-        productImg,
-        productPrice,
-        productDescription,
-        productId: _id,
-      };
-
-
-      fetch("http://localhost:5000/addtocart", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(cartProduct),
+    fetch("http://localhost:5000/addtocart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cartProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Product added to cart");
+        }
       })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            toast.success("Product added to cart");
-          }
-        })
-        .catch((error) => {
-          toast.error(error.message);
-        });
-    }
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
-    const handleReport = () =>{
+  const handleReport = () => {
+    const reportedProduct = {
+      sellerName: userName,
+      sellerEmail: email,
+      sellerImage: userPhotoURL,
+      buyerName: user?.displayName,
+      buyerEmail: user?.email,
+      productName,
+      productImg,
+      productPrice,
+      productDescription,
+      productId: _id,
+    };
 
-      const reportedProduct = {
-        sellerName: userName,
-        sellerEmail: email,
-        sellerImage: userPhotoURL,
-        buyerName: user?.displayName,
-        buyerEmail: user?.email,
-        productName,
-        productImg,
-        productPrice,
-        productDescription,
-        productId: _id,
-      };
-
-      fetch("http://localhost:5000/reportproduct", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(reportedProduct),
+    fetch("http://localhost:5000/reportproduct", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reportedProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.acknowledged) {
+          toast.success("Product Reported");
+          setReportProduct(false);
+        }
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.acknowledged) {
-            toast.success("Product Reported");
-            setReportProduct(false);
-          }
-        })
-        .catch((error) => {
-          toast.error(error.message);
-        });
-    }
-
-
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <div>

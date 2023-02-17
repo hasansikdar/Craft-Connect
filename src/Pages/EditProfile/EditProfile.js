@@ -8,11 +8,10 @@ import UpdateProfile from "./UpdateProfile";
 
 const EditProfile = () => {
   const { myPro } = useContext(Authcontext);
-  const {email,displayName,photoURL} = myPro[0];
+  const { email, displayName, photoURL } = myPro[0];
   const [edit, setEdit] = useState(true);
   const [loading, setLoading] = useState(false);
-  console.log(myPro[0])
-
+  // console.log(myPro[0])
 
   // const handleUpdateProfile = () => {
   //   setLoading(true);
@@ -142,13 +141,19 @@ const EditProfile = () => {
               </div>
 
               <div className="mt-[75px] md:mt-10">
-                <label className="font-bold  w-full dark:text-gray-100 text-slate-900" htmlFor="Name">
+                <label
+                  className="font-bold  w-full dark:text-gray-100 text-slate-900"
+                  htmlFor="Name"
+                >
                   Full Name
                 </label>
                 <p className="text-lg  w-full dark:text-gray-200  text-black mb-2.5 text-slate-800">
                   {displayName}
                 </p>
-                <label className="font-bold w-full  text-slate-900 dark:text-gray-100" htmlFor="Name">
+                <label
+                  className="font-bold w-full  text-slate-900 dark:text-gray-100"
+                  htmlFor="Name"
+                >
                   Email Address
                 </label>
                 <p className="mt-1 text-base  w-full text-black text-slate-800 mb-2.5 dark:text-gray-200">

@@ -15,7 +15,7 @@ const Friends = () => {
       return data;
     },
   });
-  console.log(users);
+  // console.log(users);
   return (
     <section className="bg-white dark:bg-[#2C2048]">
       <div className=" hidden lg:block overflow-y-auto h-screen">

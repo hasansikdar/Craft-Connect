@@ -3,8 +3,8 @@ import { useContext } from "react";
 import profileImg from "../../assets/profile.jpg";
 import { Authcontext } from "../../Context/UserContext";
 
-const ProfileImg = ({myProfile}) => {
-  console.log(myProfile);
+const ProfileImg = ({ myProfile }) => {
+  // console.log(myProfile);
   // const { user } = useContext(Authcontext);
   return (
     <div className="">
