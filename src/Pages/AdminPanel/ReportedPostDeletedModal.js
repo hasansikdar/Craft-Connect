@@ -14,7 +14,7 @@ const ReportedPostDeletedModal = ({
 
   const handleDelete = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/delete-reported-post/${reportedPostId}`)
+    fetch(`https://craft-connect-server-blond.vercel.app/delete-reported-post/${reportedPostId}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

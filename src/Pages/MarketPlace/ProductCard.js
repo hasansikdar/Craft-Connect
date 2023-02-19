@@ -26,10 +26,10 @@ const ProductCard = ({ product }) => {
   } = product;
   // console.log(product);
 
-  // http://localhost:5000/checkCartProduct
+  // https://craft-connect-server-blond.vercel.app/checkCartProduct
 
   const isProductAddedToCart = (product) => {
-    fetch(`http://localhost:5000/checkCartProduct?id=${product?._id}`)
+    fetch(`https://craft-connect-server-blond.vercel.app/checkCartProduct?id=${product?._id}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data.length);
@@ -55,7 +55,7 @@ const ProductCard = ({ product }) => {
       productId: _id,
     };
 
-    fetch("http://localhost:5000/addtocart", {
+    fetch("https://craft-connect-server-blond.vercel.app/addtocart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -87,7 +87,7 @@ const ProductCard = ({ product }) => {
       productId: _id,
     };
 
-    fetch("http://localhost:5000/reportproduct", {
+    fetch("https://craft-connect-server-blond.vercel.app/reportproduct", {
       method: "POST",
       headers: {
         "content-type": "application/json",

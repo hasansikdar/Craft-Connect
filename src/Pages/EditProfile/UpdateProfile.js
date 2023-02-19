@@ -20,7 +20,7 @@ const UpdateProfile = ({ setEdit, users }) => {
       photoURL: previewImage,
     };
     // console.log(updateProfileInfo);
-    fetch(`http://localhost:5000/update-users/${myPro[0]._id}`, {
+    fetch(`https://craft-connect-server-blond.vercel.app/update-users/${myPro[0]._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

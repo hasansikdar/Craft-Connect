@@ -5,7 +5,7 @@ import { Authcontext } from '../../Context/UserContext';
 
 const AddProduct = () => {
     const { user, myPro } = useContext(Authcontext)
-    const url = `http://localhost:5000/allproducts`;
+    const url = `https://craft-connect-server-blond.vercel.app/allproducts`;
     const { data: allProduct = [], refetch } = useQuery({
         queryKey: ["allProduct"],
         queryFn: async () => {
@@ -37,7 +37,7 @@ const AddProduct = () => {
                 const img = data?.data?.display_url;
                 const productObj = { userName, userPhotoURL, productName, productPrice, email, productImg: img, productDescription };
 
-                fetch("http://localhost:5000/allProduct", {
+                fetch("https://craft-connect-server-blond.vercel.app/allProduct", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json",

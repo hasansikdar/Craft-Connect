@@ -11,7 +11,7 @@ const MarketPlace = () => {
   const { data: products = [] } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/products");
+      const res = await fetch("https://craft-connect-server-blond.vercel.app/products");
       const data = await res.json();
       return data;
     },

@@ -7,7 +7,7 @@ const BookMarkedCard = ({ post, refetch }) => {
   const handelRemoveBookmarked = () => {
     const post_id = post._id;
     // console.log(post_id);
-    fetch(`http://localhost:5000/user/bookmarkedPost/${post_id}`, {
+    fetch(`https://craft-connect-server-blond.vercel.app/user/bookmarkedPost/${post_id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

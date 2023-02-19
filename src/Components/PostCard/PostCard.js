@@ -25,7 +25,7 @@ const PostCard = ({
     const postId = post?._id;
     const likedUser = id;
     const likedInfo = { likedUser, postId };
-    fetch("http://localhost:5000/like", {
+    fetch("https://craft-connect-server-blond.vercel.app/like", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -55,7 +55,7 @@ const PostCard = ({
       reporterImage: user?.photoURL,
     };
 
-    fetch("http://localhost:5000/report-post", {
+    fetch("https://craft-connect-server-blond.vercel.app/report-post", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -85,7 +85,7 @@ const PostCard = ({
       postTime: post?.currentDate,
       postText: post?.postText,
     };
-    fetch("http://localhost:5000/user/bookmark", {
+    fetch("https://craft-connect-server-blond.vercel.app/user/bookmark", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -11,7 +11,7 @@ const ReportedPost = () => {
     const { data: reportedPosts = [], refetch } = useQuery({
       queryKey: ["reportedProducts"],
       queryFn: async () => {
-        const res = await fetch("http://localhost:5000/reported-post");
+        const res = await fetch("https://craft-connect-server-blond.vercel.app/reported-post");
         const data = await res.json();
         return data;
       },
@@ -23,7 +23,7 @@ const ReportedPost = () => {
       <>
         <div className="text-gray-200">
           <div className="p-4 flex">
-            <h1 className="text-3xl">Yours Product</h1>
+            <h1 className="text-3xl">Reported Posts</h1>
           </div>
           <div className="px-3 py-4 flex justify-center">
             <table className="w-full text-md bg-white shadow-md rounded mb-4 overflow-x-auto">

@@ -19,7 +19,7 @@ const ProfileInfo = ({ myProfile }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const handleFollow = () => {
-    fetch("http://localhost:5000/follow", {
+    fetch("https://craft-connect-server-blond.vercel.app/follow", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -28,16 +28,16 @@ const ProfileInfo = ({ myProfile }) => {
   };
 
   return (
-    <div className=" md:w-full">
+    <div className="relative md:w-full">
       <div className="flex justify-end pt-2 pr-1">
         <button onClick={() => setShowCoverMenu(!showCoverMenu)}>
           <BsThreeDotsVertical className="text-3xl" />
         </button>
       </div>
       {showCoverMenu && (
-        <div className="">
+        <div className="absolute top-0 right-0">
           <div
-            className="dark:bg-[#32205a] absolute top-0 ml-[10rem] mt-[17rem] md:ml-[53rem] md:mt-[27rem] p-[10px] w-[50%] md:w-[200px] rounded-[10px] shadow-md z-[999]"
+            className="dark:bg-[#32205a]  p-[10px] w-[50%] md:w-[200px] rounded-[10px] shadow-md z-[999] absolute top-10 right-6P"
             ref={menuRef}
           >
             <div

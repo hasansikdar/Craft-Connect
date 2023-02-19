@@ -4,7 +4,7 @@ const ReportProductDeleteModal = ({open, setOpen, reportedId, setReportedId, ref
 
     const handleDelete = (e) => {
       e.preventDefault();
-      fetch(`http://localhost:5000/delete-reported-product/${reportedId}`)
+      fetch(`https://craft-connect-server-blond.vercel.app/delete-reported-product/${reportedId}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
