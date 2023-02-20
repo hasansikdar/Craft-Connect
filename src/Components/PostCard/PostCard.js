@@ -21,6 +21,8 @@ import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import PostDetails from "../../Pages/PostDetails/PostDetails";
+import PostDetailsModal from "./PostDetailsModal";
 
 const PostCard = ({
   refetch,
@@ -30,6 +32,8 @@ const PostCard = ({
   user,
 }) => {
   const [postReactions, setReactions] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [postId, setPostId] = useState('');
   const [editPost, setEditPost] = useState(false);
   const [love, setLove] = useState(false);
   const [liked, setLiked] = useState(false);
@@ -80,17 +84,17 @@ const PostCard = ({
       });
   };
 
-  const handelAddBookmarked = () =>{
+  const handelAddBookmarked = () => {
     const bookMarkedPost = {
-        bookmarkedUserEmail : user?.email,
-        bookmarkedUserName : user?.displayName,
-        postId : post?._id,
-        postUserEmail : post?.userEmail,
-        postUserName : post?.userName,
-        postUserPhoto : post?.userPhoto,
-        PostPhoto : post?.img,
-        postTime : post?.currentDate,
-        postText : post?.postText,
+      bookmarkedUserEmail: user?.email,
+      bookmarkedUserName: user?.displayName,
+      postId: post?._id,
+      postUserEmail: post?.userEmail,
+      postUserName: post?.userName,
+      postUserPhoto: post?.userPhoto,
+      PostPhoto: post?.img,
+      postTime: post?.currentDate,
+      postText: post?.postText,
     }
     fetch("http://localhost:5000/user/bookmark", {
       method: "POST",
@@ -155,7 +159,7 @@ const PostCard = ({
                 </div>
               </div>
             </div>
-            <div className="pb-7">
+            <div className="pb-7" onClick={() => { setOpen(true); setPostId(post?._id) }}>
               <p className="py-4 text-black dark:text-white">
                 {post?.postText?.length > 100 ? (
                   <>
@@ -168,13 +172,15 @@ const PostCard = ({
                   post?.postText
                 )}
               </p>
-              <Link to={`/postDetails/${post?._id}`}>
-                <img
-                  className="w-full rounded-md mt-[5px]"
-                  src={post?.img}
-                  alt=""
-                />
-              </Link>
+              <div>
+                <Link>
+                  <img
+                    className="w-full rounded-md mt-[5px]"
+                    src={post?.img}
+                    alt=""
+                  />
+                </Link>
+              </div>
             </div>
             <div className="border-t border-black dark:border-white">
               <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
@@ -246,7 +252,10 @@ const PostCard = ({
           </div>
         </div>
       </div>
+      <PostDetailsModal open={open} setOpen={setOpen} postId={postId} />
+
     </div>
+
   );
 };
 

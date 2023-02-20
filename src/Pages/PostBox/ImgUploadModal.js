@@ -11,6 +11,7 @@ const ImgUploadModal = ({ open, setOpen, setSelectedFile, selectedFile, preview,
     setSelectedFile(undefined);
     setCloseUploadPhotoBox(true);
   };
+  
   useEffect(() => {
     if (!selectedFile) {
       setPreview(undefined);

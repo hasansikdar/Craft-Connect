@@ -26,19 +26,19 @@ const Comment = ({
 
   return (
     <div>
-      <div className="comments border rounded my-3">
+      <div className="comments w-max-content border rounded-md border-gray-50/10 mt-5">
         <div>
           <div className="flex p-3">
-            <img className="w-7 mr-4 h-7 rounded-full" src={userPhoto} alt="" />
-            <div>
-              <a className="hover:underline text-blue-500" href="">
+            <img className="w-[32px] mr-4 h-[32px] object-cover rounded-full" src={userPhoto} alt="" />
+            <div className="">
+              <p className="hover:underline text-black dark:text-white text-sm" >
                 {userName}
-              </a>
+              </p>
               {user?.email === userEmail ? (
                 <>
                   {editComment ? (
                     <textarea
-                      className="textarea textarea-bordered mt-2"
+                      className="textarea textarea-bordered mt-2 outline-none focus:border focus:border-gray-50/10 resize-none bg-transparent"
                       onChange={(e) => setUpdateComment(e.target.value)}
                       defaultValue={commentText}
                       type="text"
@@ -51,14 +51,14 @@ const Comment = ({
                       <button
                         onClick={() => handleEditComment(_id)}
                         href="#"
-                        className="mr-2 btn btn-sm"
+                        className="bg-green-200 hover:bg-green-300 transition-colors ease-linear duration-300 rounded-lg inline-block px-2 py-1 mr-2 font-semibold text-green-900 leading-tight"
                       >
                         Save
                       </button>
                       <button
                         onClick={() => setEditComment(false)}
                         href="#"
-                        className="btn btn-sm btn-error"
+                        className="bg-red-200 hover:bg-red-300 transition-colors ease-linear duration-300 rounded-lg inline-block px-2 py-1 font-semibold text-red-900 leading-tight"
                       >
                         Cancel
                       </button>
@@ -68,14 +68,14 @@ const Comment = ({
                       <button
                         onClick={() => setEditComment(true)}
                         href="#"
-                        className="mr-2 btn btn-sm"
+                        className="bg-green-200 hover:bg-green-300 transition-colors ease-linear duration-300 rounded-lg inline-block px-2 py-1 mr-2 font-semibold text-green-900 leading-tight"
                       >
                         Edit
                       </button>
                       <button
                         onClick={() => handleDelteComment(_id)}
                         href="#"
-                        className="btn btn-sm btn-error"
+                        className="bg-red-200 hover:bg-red-300 transition-colors ease-linear duration-300 rounded-lg inline-block px-2 py-1 font-semibold text-red-900 leading-tight"
                       >
                         Delete
                       </button>
@@ -83,7 +83,9 @@ const Comment = ({
                   )}
                 </>
               ) : (
-                <p>{commentText}</p>
+                <p className="hover:underline text-black dark:text-white text-sm" >
+                {userName}
+              </p>
               )}
             </div>
           </div>
