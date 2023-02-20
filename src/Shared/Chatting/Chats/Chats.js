@@ -1,14 +1,11 @@
-import { doc, onSnapshot } from "firebase/firestore";
-import React, { useContext, useEffect, useState } from "react";
+
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { Authcontext } from "../../../Context/UserContext";
-import { ChatContext } from "../../../Context/ChatContext";
-import { db } from "../../../firebase/firebase.Config";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import Frndschat from "../Frndschat/Frndschat";
-import { messageSend } from "../../MessangerAction/MessangerAction";
 import { toast } from "react-hot-toast";
 import logo from "../../../assets/logo.png";
+import Message from "../Message/Message";
 
 const Chats = () => {
   const { data: allusers = [] } = useQuery({
@@ -20,30 +17,24 @@ const Chats = () => {
     },
   });
 
-  const { data: mssges = [], refetch, isLoading } = useQuery({
-    queryKey: ["mssges"],
-    queryFn: async () => {
-      const res = await fetch("https://craft-connect-server-blond.vercel.app/allmesseges");
-      const data = await res.json();
-      return data;
-    },
-  });
-
-  const { user } = useContext(Authcontext);
+  const { myPro, myProUpdate } = useContext(Authcontext);
   const [currentfrnd, setCurrentfrnd] = useState("");
+  const [getMessage, setGetMessage] = useState();
   const [newMessage, setNewMessage] = useState("");
+  const scrollRef = useRef();
+
+
+  
   const inputHandle = (e) =>{
     setNewMessage(e.target.value)
 
   }
-  console.log(newMessage)
-  console.log(user)
 
   const sendMessage = (e) =>{
     e.preventDefault();
     const data ={
-      senderId: user?.uid,
-      senderName: user?.displayName,
+      senderId: myPro[0]?._id,
+      senderName: myPro[0]?.displayName,
       // sendImg: user?.photoURL,
       recieverId: currentfrnd?._id,
       recieverName: currentfrnd?.displayName,
@@ -64,13 +55,43 @@ const Chats = () => {
           if (data.acknowledged) {
             setNewMessage("");
             toast.success("message Added");
-            refetch();
           }
         })
         .catch((error) => {
           toast.error(error.message);
         });
   }
+
+  useEffect(() => {
+    fetch(
+      `https://craft-connect-server-blond.vercel.app/send-messenger/${currentfrnd?._id}/getMessage/${myPro[0]?._id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setGetMessage(data);
+        myProUpdate();
+      });
+  }, [currentfrnd, getMessage]);
+
+  const emojiHnadler = (emoje) => {
+    console.log(newMessage);
+    setNewMessage(`${newMessage}` + emoje);
+  };
+
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' })
+}, [getMessage, newMessage]);
+
+  // //get default frist friend message
+  // useEffect(() => {
+  //   if (friends && friends?.length > 0) {
+  //     setCurrentfrnd(friends[0]);
+  //   }
+  // }, [friends]);
+  // // scrollRef
+  // useEffect(() => {
+  //   scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+  // }, []);
 
   return (
     <div className="h-screen overflow-hidden flex items-center justify-center">
@@ -94,14 +115,14 @@ const Chats = () => {
         >
           <div className="">
             <img
-              src={user?.photoURL}
+              src={myPro[0]?.photoURL}
               alt="photoURL"
               className="w-16 h-16 object-cover rounded-full mt-4 mb-2"
             />
           </div>
           <Link to="/feature/profile">
-            <h1 className="dark:text-white text-white font-bold text-xl hidden lg:block">
-              {user?.displayName}
+            <h1 className="dark:text-white text-white text-center font-bold text-xl hidden lg:block">
+              {myPro[0]?.displayName}
             </h1>
           </Link>
           <div className="text-xs text-gray-500">Lead UI/UX Designer</div>
@@ -140,12 +161,16 @@ const Chats = () => {
       </div>
       <div className="w-full">
         {
-          currentfrnd?<Frndschat 
+          currentfrnd?<Message 
           currentfrnd = {currentfrnd}
           inputHandle = {inputHandle}
+          getMessage={getMessage}
           newMessage = {newMessage}
           sendMessage = {sendMessage}
-          ></Frndschat>: <>
+          emojiHnadler={emojiHnadler}
+          myPro={myPro}
+          scrollRef={scrollRef}
+          ></Message>: <>
           <h1 className="text-5xl pt-[300px] pl-[50px] text-gray-400">"Please Select Your Friend to start Chat"</h1>
           </>
         }
