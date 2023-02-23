@@ -9,7 +9,7 @@ const YourProduct = () => {
     const [productId, setProductId] = useState();
 
     const { user } = useContext(Authcontext);
-    const url = `http://localhost:5000/allproducts?email=${user?.email}`;
+    const url = `https://craft-connect-server-blond.vercel.app/allproducts?email=${user?.email}`;
     const { data: allProduct = [], refetch } = useQuery({
         queryKey: ["allProduct", user?.email],
         queryFn: async () => {

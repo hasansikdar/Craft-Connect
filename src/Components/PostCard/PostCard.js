@@ -1,26 +1,11 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-// import PostAuthorityModal from "./PostUserInfo/PostAuthorityModal/PostAuthorityModal";
-// import PostUserInfo from "./PostUserInfo/PostUserInfo";
-// import likeicon from "../../assets/icons/like.png";
-// import {
-//   FaCommentAlt,
-//   FaLaughWink,
-//   FaLaugh,
-//   FaAngleDown,
-//   FaShare,
-// } from "react-icons/fa";
-// import { PhotoProvider, PhotoView } from "react-photo-view";
-// import { Link } from "react-router-dom";
-// import { FcLike } from "react-icons/fc";
-// import UserContext, { Authcontext } from "../../Context/UserContext";
-// import Reactions from "../../Shared/Reactions/Reactions";
-// import { useQuery } from "@tanstack/react-query";
-// import { TfiCommentAlt } from "react-icons/tfi";
 import { BiLike, BiShareAlt } from "react-icons/bi";
 import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import { Authcontext } from "../../Context/UserContext";
 import PostDetails from "../../Pages/PostDetails/PostDetails";
 import PostDetailsModal from "./PostDetailsModal";
 
@@ -37,50 +22,58 @@ const PostCard = ({
   const [editPost, setEditPost] = useState(false);
   const [love, setLove] = useState(false);
   const [liked, setLiked] = useState(false);
-  // const [likeLength, setLikeLength] = useState(post?.likes);
-  const [allLike, setAllLike] = useState([]);
+  const { myPro } = useContext(Authcontext);
 
   const likeLength = post?.likes;
-  useEffect(() => {
-    fetch(
-      `https://craft-connect-server-blond.vercel.app/postReactions/${post?.uniqueId}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setReactions(data);
-      });
-  }, [post?.uniqueId]);
-
-  const likedUser = (id) => {
-    const hello = likeLength?.map((h) => h?.userId?.uid === user?.uid);
-    console.log(hello);
-
-    if (!hello[0]) {
-      return handleLike();
-    } else {
-      return setLove(true);
-    }
-  };
-
-  const handleLike = () => {
-    setLove(true);
-    const likeInfo = { userId: user, postId: post?._id };
-    console.log(likeInfo);
-    allLike.push(...likeLength, likeInfo);
-    fetch(`http://localhost:5000/users/${post?._id}`, {
+  const handleLike = (id) => {
+    const postId = post?._id;
+    const likedUser = id;
+    const likedInfo = { likedUser, postId };
+    fetch("https://craft-connect-server-blond.vercel.app/like", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(allLike),
+      body: JSON.stringify(likedInfo),
     })
-      .then((res) => res.json())
+      .then((result) => result.json())
       .then((data) => {
-        console.log(data);
-        if (data?.modifiedCount > 0) {
+        // console.log(data);
+        if (data.modifiedCount > 0) {
           setLiked(true);
           refetch();
         }
+      });
+  };
+
+  const reportedPost = () => {
+    const reportPost = {
+      postAuthor: post?.userName,
+      postId: post?._id,
+      postAuthorEmail: post?.userEmail,
+      postAuthorImg: post?.userPhoto,
+      postImg: post?.img,
+      postText: post?.postText,
+      reporterName: user?.displayName,
+      reporterEmail: user?.email,
+      reporterImage: user?.photoURL,
+    };
+
+    fetch("https://craft-connect-server-blond.vercel.app/report-post", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reportPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Post Reported");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message);
       });
   };
 
@@ -95,8 +88,8 @@ const PostCard = ({
       PostPhoto: post?.img,
       postTime: post?.currentDate,
       postText: post?.postText,
-    }
-    fetch("http://localhost:5000/user/bookmark", {
+    };
+    fetch("https://craft-connect-server-blond.vercel.app/user/bookmark", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -105,10 +98,10 @@ const PostCard = ({
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        toast.success("Bookmarked Successfully Done!")
+        // console.log(data);
+        toast.success("Bookmarked Successfully Done!");
       });
-  }
+  };
 
   return (
     <div>
@@ -140,7 +133,8 @@ const PostCard = ({
                     className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                   >
                     <li>
-                      <Link onClick={handelAddBookmarked}
+                      <Link
+                        onClick={handelAddBookmarked}
                         className="hover:bg-[#FF3F4A] hover:text-white"
                         href="/"
                       >
@@ -148,12 +142,12 @@ const PostCard = ({
                       </Link>
                     </li>
                     <li>
-                      <Link
+                      <p
+                        onClick={reportedPost}
                         className="hover:bg-[#FF3F4A] hover:text-white"
-                        href="/"
                       >
-                        Save
-                      </Link>
+                        Report Post
+                      </p>
                     </li>
                   </ul>
                 </div>
@@ -184,26 +178,26 @@ const PostCard = ({
             </div>
             <div className="border-t border-black dark:border-white">
               <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
-                <div className="flex gap-8">
+                <div className="flex items-center gap-8">
                   <div className="flex items-center gap-1">
+                    {/* onClick={() => likedUser(user?.uid)} */}
                     <button
-                      onClick={() => likedUser(user?.uid)}
+                      onClick={() => handleLike(myPro[0]?._id)}
                       disabled={liked === true}
                       className={
                         liked === true
-                          ? "text-[34px] text-blue-600"
-                          : "text-[34px]"
+                          ? "text-[30px] text-blue-600"
+                          : "text-[30px]"
                       }
                     >
                       <BiLike />
-
                     </button>
 
-                    <p className="text-3xl">{post?.likes?.length}</p>
+                    <p className="text-2xl">{likeLength.length}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <Link to={`/postDetails/${post?._id}`}>
-                      <button className="text-[27px]">
+                      <button className="text-[27px] mt-3">
                         <TfiCommentAlt />
                       </button>
                     </Link>
@@ -214,7 +208,7 @@ const PostCard = ({
                   {/* Share button and Dropdown  */}
                   <div className="dropdown dropdown-bottom dropdown-end ">
                     <label tabIndex={0} className="text-4xl cursor-pointer ">
-                      <BiShareAlt></BiShareAlt>
+                      {/* <BiShareAlt></BiShareAlt> */}
                     </label>
                     <ul
                       tabIndex={0}

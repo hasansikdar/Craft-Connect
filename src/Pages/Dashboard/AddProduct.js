@@ -4,8 +4,8 @@ import { toast } from 'react-hot-toast';
 import { Authcontext } from '../../Context/UserContext';
 
 const AddProduct = () => {
-    const { user } = useContext(Authcontext)
-    const url = `http://localhost:5000/allproducts`;
+    const { user, myPro } = useContext(Authcontext)
+    const url = `https://craft-connect-server-blond.vercel.app/allproducts`;
     const { data: allProduct = [], refetch } = useQuery({
         queryKey: ["allProduct"],
         queryFn: async () => {
@@ -19,7 +19,7 @@ const AddProduct = () => {
         const field = e.target;
         const productName = field.productName.value;
         const userName = user?.displayName;
-        const userPhotoURL = user?.photoURL;
+        const userPhotoURL = myPro[0]?.photoURL;
         const productPrice = field.productPrice.value;
         const email = field.email.value;
         const productImg = field.productImg.files[0];
@@ -37,7 +37,7 @@ const AddProduct = () => {
                 const img = data?.data?.display_url;
                 const productObj = { userName, userPhotoURL, productName, productPrice, email, productImg: img, productDescription };
 
-                fetch("http://localhost:5000/allProduct", {
+                fetch("https://craft-connect-server-blond.vercel.app/allProduct", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json",

@@ -1,33 +1,28 @@
-//         <div className="sidebar min-h-screen w-[3.35rem] overflow-hidden border-r hover:w-56 hover:bg-white hover:shadow-lg">
-
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { GiFamilyHouse } from "react-icons/gi";
-import { IoBarChartOutline } from "react-icons/io5";
+import { GiSpookyHouse } from "react-icons/gi";
+// import { IoBarChartOutline } from "react-icons/io5";
 import {
   BsNewspaper,
   BsBookmark,
-  BsFiles,
-  BsFileImageFill,
 } from "react-icons/bs";
 import { RiAdvertisementLine } from "react-icons/ri";
-import { SiHomebridge } from "react-icons/si";
+// import { AiOutlineFlag } from "react-icons/ai";
 import { FiHome, FiUsers } from "react-icons/fi";
-import { AiFillHome } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 
 const LeftSideBar = () => {
   const menus = [
-    { name: "Home", link: "/", icon: AiFillHome },
-    { name: "Most Recent", link: "/", icon: BsFileImageFill },
+    { name: "Home", link: "/", icon: FiHome },
+    //{ name: "Most Recent", link: "/", icon: BsNewspaper },
     { name: "Friends", link: "/friends", icon: FiUsers },
-    { name: "Pages", link: "/feature/pages", icon: BsFiles },
-    { name: "Marketplace", link: "/feature/marketplace", icon: SiHomebridge },
+    // { name: "Pages", link: "/feature/pages", icon: AiOutlineFlag },
+    { name: "Marketplace", link: "/feature/marketplace", icon: GiSpookyHouse },
     { name: "Bookmarked", link: "/feature/bookmarked", icon: BsBookmark },
     { name: "Ad Center", link: "/feature/adcenter", icon: RiAdvertisementLine },
-    { name: "Ads Manager", link: "/", icon: IoBarChartOutline },
+    //{ name: "Ads Manager", link: "/", icon: IoBarChartOutline },
   ];
   const [open, setOpen] = useState(false);
   return (
@@ -35,18 +30,13 @@ const LeftSideBar = () => {
       <div
         className={`lg:bg-white dark:lg:bg-[#563f8e] dark:text-white min-h-screen ${
           open ? "w-72" : "w-[70px]"
-        } duration-500 text-black  z-9999 fixed lg:shadow-xl`}
+        } duration-500 text-black  z-[1000] lg:z-[999] fixed lg:shadow-xl`}
       >
-        <div className="bg-zinc-800 h-[72px] p-0 hidden lg:block">
-          <Link to="/">
-            <img src={logo} className="w-14 d-block m-auto" alt="" />
-          </Link>
-        </div>
-        <div className="bg-zinc-800 h-[72px] p-0 lg:hidden">
+        <div className=" h-0 lg:h-[72px]  p-0 lg:hidden">
           <img
             src={logo}
             onClick={() => setOpen(!open)}
-            className="w-14 d-block m-auto"
+            className="w-14 d-block m-auto py-[10px]"
             alt=""
           />
         </div>
@@ -54,19 +44,19 @@ const LeftSideBar = () => {
           {open ? (
             <RxCross1
               size={26}
-              className="cursor-pointer"
+              className="cursor-pointer mt-2"
               onClick={() => setOpen(!open)}
             />
           ) : (
             <HiMenuAlt3
               size={26}
-              className="cursor-pointer"
+              className="cursor-pointer mt-2"
               onClick={() => setOpen(!open)}
             />
           )}
         </div>
 
-        <div className="mt-10 lg:flex flex-col px-4 gap-4 relative  hidden">
+        <div className="mt-8 lg:flex flex-col px-4 gap-4 relative  hidden">
           {menus?.map((menu, i) => (
             <Link
               to={menu?.link}
@@ -102,7 +92,7 @@ const LeftSideBar = () => {
 
         {open && (
           <div className="dark:bg-[#563f8e] h-screen bg-[#FAFBFD]">
-            <div className="py-3 flex px-4 justify-end  md:hidden">
+            <div className="py-3 flex px-4 justify-end  lg:hidden">
               {open && (
                 <RxCross1
                   size={26}
@@ -111,7 +101,7 @@ const LeftSideBar = () => {
                 />
               )}
             </div>
-            <div className="mt-2 flex flex-col duration-1000 px-4 gap-4 relative  md:hidden">
+            <div className="mt-2 flex flex-col duration-1000 px-4 gap-4 relative  lg:hidden">
               {menus?.map((menu, i) => (
                 <Link
                   to={menu?.link}

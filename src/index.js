@@ -10,20 +10,18 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import { ChatContextProvider } from './Context/ChatContext';
+
+
 const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <UserContext>
-        <ChatContextProvider>
         <App />
-        </ChatContextProvider>
       </UserContext>
       <Toaster></Toaster>
     </QueryClientProvider>
-
   </React.StrictMode>
 );
 

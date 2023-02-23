@@ -9,7 +9,6 @@ import { useQuery } from "@tanstack/react-query";
 import PreviewPost from "./PreviewPost";
 import { v4 as uuidv4 } from "uuid";
 
-
 const PostBox = () => {
   const [open, setOpen] = useState(false);
   const [preview, setPreview] = useState([]);
@@ -17,7 +16,7 @@ const PostBox = () => {
   const [postText, setPostText] = useState();
   const [selectedFile, setSelectedFile] = useState();
   const [usersPost, setusersPost] = useState();
-  const { user } = useContext(Authcontext);
+  const { user, myPro } = useContext(Authcontext);
 
   const handlePostText = (e) => {
     setPostText(e.target.value);
@@ -44,7 +43,7 @@ const PostBox = () => {
     const likes = [];
     const userName = user?.displayName;
     const userEmail = user?.email;
-    const userPhoto = user?.photoURL;
+    const userPhoto = myPro[0]?.photoURL;
 
     const imageKey = "024d2a09e27feff54122f51afddbdfaf";
     const url = `https://api.imgbb.com/1/upload?key=${imageKey}`;
@@ -68,7 +67,7 @@ const PostBox = () => {
             img,
             likes,
           };
-          console.log("imgBB", img, data);
+          // console.log("imgBB", img, data);
 
           fetch("https://craft-connect-server-blond.vercel.app/usersPost", {
             method: "POST",
@@ -128,8 +127,8 @@ const PostBox = () => {
       <div className="outline-1 flex gap-4  p-8">
         <img
           src={`${
-            user?.photoURL
-              ? user?.photoURL
+            myPro[0]?.photoURL
+              ? myPro[0]?.photoURL
               : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"
           }`}
           className="h-[38px] w-[38px] object-cover rounded-full"
@@ -148,12 +147,6 @@ const PostBox = () => {
         <div className="flex gap-3">
           <div onClick={() => setOpen(true)}>
             <img src={camera} className="w-6 h-6" alt="" />
-          </div>
-          <div>
-            <img src={tagFriends} className="w-6 h-6" alt="" />
-          </div>
-          <div>
-            <img src={locations} className="w-6 h-6" alt="" />
           </div>
           <div></div>
         </div>

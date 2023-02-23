@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Navbar from "../../../Pages/Navbar/Navbar";
 import FriendRequestCard from "./FriendRequest/FrieendRequestBar/FriendRequestCard";
 import LeftSide from "./LeftSide/LeftSide";
 import MainPage from "./MainPage/MainPage";
@@ -11,20 +10,19 @@ const Friends = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("https://craft-connect-server-blond.vercel.app/users");
       const data = await res.json();
       return data;
     },
   });
-  console.log(users);
+  // console.log(users);
   return (
     <section className="bg-white dark:bg-[#2C2048]">
-      <div className="">{/* <Navbar></Navbar> */}</div>
       <div className=" hidden lg:block overflow-y-auto h-screen">
         <div className="grid grid-cols-12">
-          <div className="col-span-3 hidden lg:block dark:bg-[#261b40]">
+          {/* <div className="col-span-3 hidden lg:block dark:bg-[#261b40]">
             <LeftSide></LeftSide>
-          </div>
+          </div> */}
           <div className="col-span-9">
             <MainPage></MainPage>
           </div>

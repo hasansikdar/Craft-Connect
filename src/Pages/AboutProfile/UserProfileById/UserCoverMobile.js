@@ -6,7 +6,7 @@ import UserProfileMobile from './UserProfileMobile';
 const UserCoverMobile = () => {
     return (
       <div>
-        <div className=" block md:hidden">
+        <div className="hidden">
           <div
             style={{
               background: `URL(${cover})`,

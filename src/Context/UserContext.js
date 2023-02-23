@@ -24,7 +24,7 @@ const UserContext = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const updateUserProfile = (name, photo) => {
-    console.log(name, photo);
+    // console.log(name, photo);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -38,23 +38,22 @@ const UserContext = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-  const signinwithgoogle = () => {
-    setLoading(true);
-    return signInWithPopup(auth, googleProvider);
-  };
+  const googleProviderSignIn = (provider) => {
+    setLoading(true)
+    return signInWithPopup(auth, provider);
+}
 
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch(
-        "https://craft-connect-server-blond.vercel.app/users"
-      );
+      const res = await fetch("https://craft-connect-server-blond.vercel.app/users");
       const data = await res.json();
       return data;
     },
   });
-  const urls = `http://localhost:5000/user/${user?.email}`;
-  const { data: myPro = [], refetch:myProUpdate } = useQuery({
+
+  const urls = `https://craft-connect-server-blond.vercel.app/users?email=${user?.email}`;
+  const { data: myPro = [], refetch: myProUpdate } = useQuery({
     queryKey: ["myPro", user?.email],
     queryFn: async () => {
       const res = await fetch(urls);
@@ -71,9 +70,9 @@ const UserContext = ({ children }) => {
     logout,
     signin,
     loading,
-    signinwithgoogle,
+    googleProviderSignIn,
     myPro,
-    myProUpdate
+    myProUpdate,
   };
 
   useEffect(() => {
