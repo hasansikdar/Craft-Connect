@@ -80,21 +80,11 @@ const Chats = () => {
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' })
-}, [getMessage, newMessage]);
-
-  // //get default frist friend message
-  // useEffect(() => {
-  //   if (friends && friends?.length > 0) {
-  //     setCurrentfrnd(friends[0]);
-  //   }
-  // }, [friends]);
-  // // scrollRef
-  // useEffect(() => {
-  //   scrollRef.current?.scrollIntoView({ behavior: "smooth" });
-  // }, []);
+}, [ getMessage, newMessage]);
+console.log(getMessage)
 
   return (
-    <div className="h-screen overflow-hidden flex items-center justify-center">
+  <div className="h-screen overflow-hidden flex items-center justify-center">
     <div className="flex h-screen antialiased text-gray-800 w-full">
     <div className="flex flex-row h-full w-full overflow-x-hidden">
       <div className="flex flex-col py-8 pl-6 pr-2 w-64 bg-gray-50 flex-shrink-0 w-[20%]">
@@ -134,8 +124,7 @@ const Chats = () => {
             <span className="font-bold">Active Conversations</span>
             <span
                 className="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full"
-                >{allusers.length}</span
-            >
+                >{allusers.length}</span>
             </div>
             <div className="flex flex-col space-y-1 mt-4 -mx-2 h-80 overflow-y-auto">
                 {
@@ -155,29 +144,32 @@ const Chats = () => {
                   ))
                 }
             </div>
-            </div>
+          </div>
         </div>
         
       </div>
       <div className="w-full">
         {
-          currentfrnd?<Message 
-          currentfrnd = {currentfrnd}
-          inputHandle = {inputHandle}
-          getMessage={getMessage}
-          newMessage = {newMessage}
-          sendMessage = {sendMessage}
-          emojiHnadler={emojiHnadler}
-          myPro={myPro}
-          scrollRef={scrollRef}
-          ></Message>: <>
-          <h1 className="text-5xl pt-[300px] pl-[50px] text-gray-400">"Please Select Your Friend to start Chat"</h1>
+          currentfrnd?<>
+            <Message 
+            currentfrnd = {currentfrnd}
+            inputHandle = {inputHandle}
+            getMessage={getMessage}
+            newMessage = {newMessage}
+            sendMessage = {sendMessage}
+            emojiHnadler={emojiHnadler}
+            myPro={myPro}
+            scrollRef={scrollRef}
+            ></Message>
+          </> : 
+          <>
+            <h1 className="text-5xl pt-[300px] pl-[50px] text-gray-400">"Please Select Your Friend to start Chat"</h1>
           </>
         }
       </div>
     </div>
+    </div>
   </div>
-</div>
   );
 };
 

@@ -9,7 +9,7 @@ const FriendSuggestionCard = ({ followingUser }) => {
     const followingUsers = id;
     const container = { followerUsers, followingUsers };
 
-    fetch("http://localhost:5000/follow", {
+    fetch("https://craft-connect-server-blond.vercel.app/follow", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { format } from "timeago.js";
 
 const Message = ({
   currentfrnd,
@@ -47,7 +46,7 @@ const Message = ({
   ];
   return (
     <div>
-      <div className="flex flex-col h-full w-full bg-white dark:bg-[#261b40] px-4  py-6">
+      <div className="flex flex-col h-full w-full bg-[#261b40] px-4  py-6">
         <div className="flex flex-row items-center py-4 px-6 rounded-2xl shadow bg-[#ff505a] text-white">
           <div className="avatar">
             <div className="w-10 rounded-full">
@@ -66,7 +65,7 @@ const Message = ({
             <div className="grid grid-cols-12 gap-y-2">
               
               {getMessage && getMessage.length > 0
-                ? getMessage?.map((m) =>
+                ? getMessage.map((m) =>
                     m.senderId === myPro[0]?._id ? (
                       <div ref={scrollRef} className="col-start-6 col-end-13 p-3 rounded-lg">
                         <div className="flex items-center justify-start flex-row-reverse">
@@ -98,7 +97,7 @@ const Message = ({
           </div>
         </div>
         <div className="flex flex-row items-center ">
-          <div className="flex flex-row items-center w-full rounded-3xl h-12 px-2 bg-[#f0f2f5] dark:bg-[#563f8e]">
+          <div className="flex flex-row items-center w-full rounded-3xl h-12 px-2 bg-[#563f8e]">
             
             {/* input field */}
             <div className="w-full ml-5">
@@ -106,7 +105,7 @@ const Message = ({
                 onChange={inputHandle}
                 type="text"
                 value={newMessage}
-                className="bg-[#f0f2f5] dark:bg-[#563f8e] text-black dark:text-white w-full focus:outline-none text-sm h-10 flex items-center"
+                className="bg-[#563f8e] text-black dark:text-white w-full focus:outline-none text-sm h-10 flex items-center"
                 placeholder="Type your message...."
               />
             </div>
