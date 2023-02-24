@@ -11,9 +11,10 @@ const Message = ({
   myPro,
   scrollRef,
   emojiHnadler,
+  handleKeyDown
 }) => {
   const { photoURL, displayName } = currentfrnd;
-
+ 
   const emojis = [
     "😨",
     "🤔",
@@ -46,8 +47,8 @@ const Message = ({
   ];
   return (
     <div>
-      <div className="flex flex-col h-full w-full bg-[#261b40] px-4  py-6">
-        <div className="flex flex-row items-center py-4 px-6 rounded-2xl shadow bg-[#ff505a] text-white">
+      <div className="flex flex-col h-screen w-full  bg-[#2A2A2A] px-4  py-6">
+        <div className="flex flex-row items-center py-4 px-6 rounded-2xl shadow bg-[#3F3F3F] text-white">
           <div className="avatar">
             <div className="w-10 rounded-full">
               <img src={photoURL} alt="img" />
@@ -58,62 +59,63 @@ const Message = ({
             <div className="font-semibold text-sm">{displayName}</div>
             <div className="text-xs text-gray-300">Active</div>
           </div>
-          
+
         </div>
         <div className="h-full overflow-hidden py-4">
           <div className="h-[520px] overflow-y-auto">
             <div className="grid grid-cols-12 gap-y-2">
-              
+
               {getMessage && getMessage.length > 0
                 ? getMessage.map((m) =>
-                    m.senderId === myPro[0]?._id ? (
-                      <div ref={scrollRef} className="col-start-6 col-end-13 p-3 rounded-lg">
-                        <div className="flex items-center justify-start flex-row-reverse">
-                          {/* <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#ff505a] flex-shrink-0">
+                  m.senderId === myPro[0]?._id ? (
+                    <div ref={scrollRef} className="col-start-6 col-end-13 p-3 rounded-lg">
+                      <div className="flex items-center justify-start flex-row-reverse">
+                        {/* <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#ff505a] flex-shrink-0">
                             me
                           </div> */}
-                          <div className="relative mr-3 text-sm bg-[#ff505a] py-2 px-4 shadow rounded-xl">
-                            <div className="text-white">{m?.message}</div>
-                          </div>
+                        <div className="relative mr-3 text-sm bg-[#3F3F3F] py-2 px-4 shadow rounded-xl">
+                          <div className="text-white">{m?.message}</div>
                         </div>
                       </div>
-                    ) : (
-                      <div ref={scrollRef} className="col-start-1 col-end-8 p-3 rounded-lg">
-                        <div className="flex flex-row items-center">
-                          <img
-                            src={photoURL}
-                            alt="img"
-                            className="flex items-center justify-center h-10 w-10 rounded-full  flex-shrink-0"
-                          ></img>
-                          <div className="relative ml-3 text-sm text-white bg-[#ff8e95] py-2 px-4 shadow rounded-xl">
-                            <div>{m.message}</div>
-                          </div>
+                    </div>
+                  ) : (
+                    <div ref={scrollRef} className="col-start-1 col-end-8 p-3 rounded-lg">
+                      <div className="flex flex-row items-center">
+                        <img
+                          src={photoURL}
+                          alt="img"
+                          className="flex items-center justify-center h-10 w-10 rounded-full  flex-shrink-0"
+                        ></img>
+                        <div className="relative ml-3 text-sm text-white bg-[#3F3F3F] py-2 px-4 shadow rounded-xl">
+                          <div>{m.message}</div>
                         </div>
                       </div>
-                    )
+                    </div>
                   )
+                )
                 : ""}
             </div>
           </div>
         </div>
         <div className="flex flex-row items-center ">
-          <div className="flex flex-row items-center w-full rounded-3xl h-12 px-2 bg-[#563f8e]">
-            
+          <div className="flex flex-row items-center w-full rounded-3xl h-12 px-2 bg-[#3F3F3F]">
+
             {/* input field */}
-            <div className="w-full ml-5">
+            <div className="w-full ml-5" >
               <input
                 onChange={inputHandle}
                 type="text"
                 value={newMessage}
-                className="bg-[#563f8e] text-black dark:text-white w-full focus:outline-none text-sm h-10 flex items-center"
+                onKeyDown={handleKeyDown}
+                className="bg-[#3F3F3F] text-white w-full focus:outline-none text-sm h-10 flex items-center"
                 placeholder="Type your message...."
               />
             </div>
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center mr-5">
               {/*send img */}
               <label className="cursor-pointer" htmlFor="image-input">
                 <svg
-                  className="w-5 h-5"
+                  className="w-5 h-5 text-white mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -160,7 +162,7 @@ const Message = ({
             <button
               onClick={sendMessage}
               disabled={!sendMessage}
-              className="flex items-center justify-center h-10 w-10 rounded-full bg-[#ff8e95] hover:bg-[#ff505a] text-white "
+              className="flex items-center justify-center h-10 w-10 rounded-full  bg-[#3F3F3F] hover:bg-[#3f3f3fa8] text-white "
             >
               <svg
                 className="w-5 h-5 transform rotate-90 -mr-px"
