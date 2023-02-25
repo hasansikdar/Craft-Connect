@@ -31,7 +31,7 @@ const PostUserInfo = ({ post, handleDeletePost }) => {
           <div className="dropdown dropdown-bottom dropdown-end">
             <label
               tabIndex={0}
-              className="btn  btn-sm bg-gray-100 dark:bg-[#2C2048] text-black dark:text-white hover:text-white"
+              className="btn  btn-sm bg-gray-100 dark:bg-[#2A2A2A] text-black dark:text-white hover:text-white"
             >
               ...
             </label>

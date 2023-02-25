@@ -46,7 +46,7 @@ const Message = ({
   ];
   return (
     <div>
-      <div className="flex flex-col h-full w-full bg-[#261b40] px-4  py-6">
+      <div className="flex flex-col h-full w-full bg-[#3F3F3F] px-4  py-6">
         <div className="flex flex-row items-center py-4 px-6 rounded-2xl shadow bg-[#ff505a] text-white">
           <div className="avatar">
             <div className="w-10 rounded-full">

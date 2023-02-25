@@ -20,7 +20,7 @@ const ProfileDetails = () => {
   // console.log(myPro)
   return (
     <div className=" pt-5">
-      <div className="mx-auto card-body p-2 flex rounded-lg shadow-xl w-full md:w-[300px] text-gray-500 bg-white dark:bg-[#261b40] overflow-scroll home border border-[#FF3F4A]">
+      <div className="mx-auto card-body p-2 flex rounded-lg shadow-xl w-full md:w-[300px] text-gray-500 bg-white dark:bg-[#3F3F3F] overflow-scroll home border border-[#FF3F4A]">
         <h1 className="ml-4 mt-4 dark:text-white text-black">Your Profile</h1>
         <div className="flex items-center flex-col">
           <img

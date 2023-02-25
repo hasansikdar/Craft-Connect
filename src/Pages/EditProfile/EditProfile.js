@@ -118,7 +118,7 @@ const EditProfile = () => {
     // </div>
     <>
       {edit ? (
-        <section className="pt-10  dark:bg-[#2C2048] sm:py-16 lg:py-24">
+        <section className="pt-10  dark:bg-[#2A2A2A] sm:py-16 lg:py-24">
           <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8 shadow-md pb-24 px-5 shadow-[#FF3F4A] rounded-md">
             <div className="flex justify-between items-center px-3 pt-5">
               <p className="text-2xl font-bold">My Profile</p>

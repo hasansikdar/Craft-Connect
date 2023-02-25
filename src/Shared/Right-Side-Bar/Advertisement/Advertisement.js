@@ -18,7 +18,7 @@ const Advertisement = () => {
   });
   return (
     <div className="">
-      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 bg-white dark:bg-[#261b40] m-auto ">
+      <div className=" w-11/12 p-2 rounded-lg border-zinc-600 shadow-xl mb-5 text-gray-500 bg-white dark:bg-[#3F3F3F] m-auto ">
         <Carousel
           showArrows={false}
           showIndicators={false}
@@ -32,7 +32,7 @@ const Advertisement = () => {
             return (
               <React.Fragment key={index}>
                 <div
-                  className="select-none bg-img h-[300px] dark:bg-[#261b40] bg-white rounded-md transition bg-center bg-cover"
+                  className="select-none bg-img h-[300px] dark:bg-[#3F3F3F] bg-white rounded-md transition bg-center bg-cover"
                   style={{
                     background: `linear-gradient(180deg, rgba(38,27,64,0.33657212885154064) 0%, rgba(11,8,19,1) 100%) , url(${advertise.advertiseBg})`,
                     backgroundPosition: "center",

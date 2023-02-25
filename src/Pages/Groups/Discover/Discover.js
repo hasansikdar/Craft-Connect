@@ -11,7 +11,7 @@ const Discover = () => {
         </div>
 
         <div className="">
-          <ul className="menu shadow-lg w-[250px] text-black dark:text-white p-2 rounded-box dark:bg-[#2C2048]">
+          <ul className="menu shadow-lg w-[250px] text-black dark:text-white p-2 rounded-box dark:bg-[#2A2A2A]">
             <p className="font-medium text-lg pl-3 my-1">Gropes</p>
 
             <li className="hover-bordered">

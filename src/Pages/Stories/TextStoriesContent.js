@@ -41,11 +41,11 @@ const TextStoriesContent = ({ setShowTextStories, setTextStoryContent }) => {
             required
           ></textarea>
           <div className="cancel">
-            <button className="disabled:cursor-not-allowed disabled:bg-gray-100 text-gray-500 text-center w-full bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2C2048] dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 mt-5">
+            <button className="disabled:cursor-not-allowed disabled:bg-gray-100 text-gray-500 text-center w-full bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2A2A2A] dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 mt-5">
               Share Your Stories
             </button>
             <button
-              className="mb-5 mt-3 disabled:cursor-not-allowed disabled:bg-gray-100 text-gray-500 text-center w-full bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2C2048] dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+              className="mb-5 mt-3 disabled:cursor-not-allowed disabled:bg-gray-100 text-gray-500 text-center w-full bg-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-[#2A2A2A] dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
               onClick={() => setShowTextStories(false)}
             >
               Discard

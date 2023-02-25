@@ -55,7 +55,7 @@ const CommentBox = ({ uniqueId, refetch }) => {
           src={user?.photoURL}
           alt=""
         />
-        <div className="w-full input input-borderd flex items-center bg-gray-100 dark:bg-[#2C2048] border-white rounded-2xl input-sm">
+        <div className="w-full input input-borderd flex items-center bg-gray-100 dark:bg-[#2A2A2A] border-white rounded-2xl input-sm">
           <input
             name="commentText"
             placeholder="What's on your mind ?"

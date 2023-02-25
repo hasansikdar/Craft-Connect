@@ -16,7 +16,7 @@ const ProfileOfUser = () => {
 
   return (
     <>
-      <div className="dark:bg-[#2C2048] overflow-y-auto h-screen grid justify-center ">
+      <div className="dark:bg-[#2A2A2A] overflow-y-auto h-screen grid justify-center ">
         <div className="pt-15 ">
           {myPro.map((myProfile) => {
             return (

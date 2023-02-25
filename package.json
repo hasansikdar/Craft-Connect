@@ -15,7 +15,7 @@
     "daisyui": "^2.46.1",
     "firebase": "^9.15.0",
     "flowbite": "^1.6.0",
-    "framer-motion": "^8.4.0",
+    "framer-motion": "^8.5.5",
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
     "react-datepicker": "^4.8.0",

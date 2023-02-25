@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TbLayoutDashboard, TbMessageCircle } from "react-icons/tb";
 import logo from "../../assets/logo.png";
+import { motion } from "framer-motion"
 import { FaExclamation, FaMoon, FaUserTie } from "react-icons/fa";
 import { IoMdSunny } from "react-icons/io";
 import { FcNext, FcQuestions, FcExport } from "react-icons/fc";
@@ -78,18 +79,22 @@ const Navbar = () => {
   // console.log(users);
 
   return (
-    <div className="dark:bg-[#2C2048] fixed w-full top-0 z-[999] lg:z-[1000]  h-[72px] ">
-      <div className="flex justify-between items-center backdrop-blur-lg bg-gradient-to-r dark:from-[#3a2e57] from-white to-[#2C2048] dark:to-[#2C2048] ">
+    <div className="dark:bg-[#2A2A2A] fixed w-full top-0 z-[999] lg:z-[1000]  h-[72px] ">
+      <div className="flex justify-between items-center backdrop-blur-lg bg-gradient-to-r dark:backdrop-blur-lg bg-[#3F3F3F]">
         <div className="pl-3">
           <Link
             to="/"
             class="text-2xl text-gray-900 font-semibold flex items-center"
             href="/"
           >
-            <img src={logo} className="w-32 md:w-14 d-block m-auto hidden lg:block" alt="" />
-            <p class="text-lg hidden lg:block text-[#FF3F4A] dark:text-white ml-1.5 lg:ml-2.5">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              <img src={logo} className="w-32 md:w-14 d-block m-auto hidden lg:block" alt="" />
+            </motion.div>
+            <motion.div animate={{ x: 10 }} transition={{ ease: "easeOut", duration: 0.85 }}>
+            <p class="text-lg hidden lg:block text-[#FF3F4A] dark:text-white ml-1.5 lg:-ml-2.5">
               Craft Connect
             </p>
+            </motion.div>
           </Link>
         </div>
         <div className="pl-[65px] lg:pl-0">

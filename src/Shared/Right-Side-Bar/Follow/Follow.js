@@ -18,7 +18,7 @@ const Follow = () => {
     },
   });
   return (
-    <div className="p-2 py-5 rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 dark:text-gray-500 text-black bg-white dark:bg-[#261b40]">
+    <div className="p-2 py-5 rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 dark:text-gray-500 text-black bg-white dark:bg-[#3F3F3F]">
       <h1 className="dark:text-white text-black ml-4 mb-2">Recent Followers</h1>
       <ul className="h-[250px] overflow-y-auto">
         {allusers.slice(0, 8).map(users => {

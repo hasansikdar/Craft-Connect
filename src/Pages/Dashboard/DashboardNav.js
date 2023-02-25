@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const DashboardNav = () => {
     return (
         <>
-            <nav className="bg-[#2C2048]  border-b border-[#FF3F4A] fixed z-30 w-full">
+            <nav className="bg-[#2A2A2A]  border-b border-[#FF3F4A] fixed z-30 w-full">
                 <div className="px-3 py-3 lg:px-5 lg:pl-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center justify-start">
@@ -43,7 +43,7 @@ const DashboardNav = () => {
                                         type="text"
                                         name="email"
                                         id="topbar-search"
-                                        className="border bg-[#261b40] text-gray-100 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-[#261b40] block w-full pl-10 p-2.5"
+                                        className="border bg-[#3F3F3F] text-gray-100 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-[#3F3F3F] block w-full pl-10 p-2.5"
                                         placeholder="Search"
                                     />
                                 </div>
@@ -53,7 +53,7 @@ const DashboardNav = () => {
                             <button
                                 id="toggleSidebarMobileSearch"
                                 type="button"
-                                className="lg:hidden text-white hover:text-gray-100 hover:bg-[#261b40] p-2 rounded-lg"
+                                className="lg:hidden text-white hover:text-gray-100 hover:bg-[#3F3F3F] p-2 rounded-lg"
                             >
                                 <span className="sr-only">Search</span>
                                 <svg
@@ -73,7 +73,7 @@ const DashboardNav = () => {
                                 id="toggleSidebarMobile"
                                 aria-expanded="true"
                                 aria-controls="sidebar"
-                                className="lg:hidden mr-2 text-white hover:text-gray-100 hover:bg-[#261b40] cursor-pointer p-2 rounded"
+                                className="lg:hidden mr-2 text-white hover:text-gray-100 hover:bg-[#3F3F3F] cursor-pointer p-2 rounded"
                             >
                                 <svg
                                     id="toggleSidebarMobileHamburger"

@@ -108,7 +108,7 @@ const PostCard = ({
       {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
-          <div className="w-full border border-[#FF3F4A] p-5 rounded-md shadow-md">
+          <div className="w-full border border-[#FF3F4A]/50 p-5 rounded-md shadow-md bg-[#3F3F3F]">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img

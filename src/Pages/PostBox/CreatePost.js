@@ -164,8 +164,8 @@ const CreatePost = ({ open, setOpen }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-[#261b40] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <div className="bg-white dark:bg-[#261b40] px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-[#3F3F3F] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <div className="bg-white dark:bg-[#3F3F3F] px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h1 className="py-4 text-center text-xl font-bold text-black dark:text-white">
                       Create Post
                     </h1>
@@ -188,7 +188,7 @@ const CreatePost = ({ open, setOpen }) => {
                         d="M6 18L18 6M6 6l12 12"
                       />
                     </svg>
-                    <div className="flex justify-between items-center bg-gray-100 dark:bg-[#261b40] p-2 rounded">
+                    <div className="flex justify-between items-center bg-gray-100 dark:bg-[#3F3F3F] p-2 rounded">
                       <div className="flex items-center gap-3 ">
                         {/* image source is hardcode now */}
                         <img

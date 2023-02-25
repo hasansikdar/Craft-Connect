@@ -89,7 +89,7 @@ const AddProduct = () => {
                     <label for="description_product" className="block mb-2 text-sm font-medium  text-white">Enter Description Your Product</label>
                     <textarea type="text" name='descriptionProduct' id="description_product" className="bg-gray-50 border outline-none min-h-[160px] resize-none overflow-y-auto border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" placeholder="Enter Your Product Description" required />
                 </div>
-                <button type="submit" className="text-white outline-none bg-[#261b40]  focus:ring-4 focus:outline-none focus:ring-[#FF3F4A] font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center focus:ring-[#FF3F4A]">Submit</button>
+                <button type="submit" className="text-white outline-none bg-[#3F3F3F]  focus:ring-4 focus:outline-none focus:ring-[#FF3F4A] font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center focus:ring-[#FF3F4A]">Submit</button>
             </form>
 
         </section>
