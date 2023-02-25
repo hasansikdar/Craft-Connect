@@ -26,10 +26,10 @@ const Chats = () => {
 
 
   const inputHandle = (e) => {
-    if (e.key === 'Enter') {
-      setNewMessage(e.target.value)
-    }
-
+    // if (e.key === 'Enter') {
+    //   setNewMessage(e.target.value)
+    // }
+    setNewMessage(e.target.value)
   }
 
   const sendMessage = (e) => {
@@ -89,7 +89,7 @@ const Chats = () => {
     <div className="h-screen overflow-hidden flex items-center justify-center  ">
       <div className="flex h-screen antialiased text-gray-800 w-full">
         <div className="flex flex-row h-full w-full overflow-x-hidden">
-          <div className="flex flex-col py-8 pl-6 pr-3 w-64     bg-[#2A2A2A] flex-shrink-0 w-[20%] border-r border-[#3F3F3F]/80 ">
+          <div className="flex flex-col py-8 pl-6 pr-3 w-64 bg-[#2A2A2A] flex-shrink-0 w-[20%] border-r border-[#3F3F3F]/80 ">
             <div className="flex flex-row items-center justify-start h-12 w-full">
               <div
                 className="flex items-center justify-start rounded-2xl h-10 w-10"
@@ -121,12 +121,12 @@ const Chats = () => {
               <Link to={`/feature/profile`} className="px-3 py-2 bg-[#1AA37A] shadow-md shadow-[#9dffb333] hover:bg-[#1aa37ac0] transition-all duration-300 rounded-lg mt-3">Your Profile</Link>
             </div>
 
-            <div className="bg-[#3F3F3F] h-full shadow-lg shadow-[#9dffb333] text-white mt-5 p-3 rounded-md">
+            <div className="bg-[#3F3F3F] shadow-lg shadow-[#9dffb333] text-white mt-5 p-3 rounded-md">
               <div className="flex flex-col">
                 <div className="flex flex-row items-center justify-between text-xs ">
                   <span className="font-bold text-lg py-3">Active Conversations</span>
                 </div>
-                <div className="flex flex-col space-y-1 mt-4 -mx-2 h-80 overflow-y-auto">
+                <div className="flex flex-col space-y-1 mt-4 -mx-2 h-56 overflow-y-auto">
                   {
                     allusers.map((chatusers) => (
                       <div key={chatusers._id} className="px-2">

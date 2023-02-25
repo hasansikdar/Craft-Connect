@@ -11,7 +11,7 @@ const Message = ({
   myPro,
   scrollRef,
   emojiHnadler,
-  handleKeyDown
+  // handleKeyDown
 }) => {
   const { photoURL, displayName } = currentfrnd;
  
@@ -47,7 +47,7 @@ const Message = ({
   ];
   return (
     <div>
-      <div className="flex flex-col h-screen w-full  bg-[#2A2A2A] px-4  py-6">
+      <div className="flex flex-col w-full  bg-[#2A2A2A] px-4  py-6">
         <div className="flex flex-row items-center py-4 px-6 rounded-2xl shadow bg-[#3F3F3F] text-white">
           <div className="avatar">
             <div className="w-10 rounded-full">
@@ -106,7 +106,7 @@ const Message = ({
                 onChange={inputHandle}
                 type="text"
                 value={newMessage}
-                onKeyDown={handleKeyDown}
+                // onKeyDown={handleKeyDown}
                 className="bg-[#3F3F3F] text-white w-full focus:outline-none text-sm h-10 flex items-center"
                 placeholder="Type your message...."
               />
