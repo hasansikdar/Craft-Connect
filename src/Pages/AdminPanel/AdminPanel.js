@@ -16,7 +16,7 @@ const AdminPanel = () => {
           <AdminSideBar></AdminSideBar>
           <div
             id="main-content"
-            className="h-full bg-[#2C2048]  relative lg:ml-64"
+            className="h-full bg-[#2A2A2A]  relative lg:ml-64"
           >
             <main className="pt-6 px-4 py-8 h-screen overflow-y-auto">
               <Outlet />

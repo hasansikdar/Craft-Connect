@@ -28,7 +28,7 @@ const LeftSideBar = () => {
   return (
     <section className="flex gap-6 ">
       <div
-        className={`lg:bg-white dark:lg:bg-[#563f8e] dark:text-white min-h-screen ${
+        className={`lg:bg-white dark:lg:bg-[#3F3F3F] dark:text-white min-h-screen ${
           open ? "w-72" : "w-[70px]"
         } duration-500 text-black  z-[1000] lg:z-[999] fixed lg:shadow-xl`}
       >

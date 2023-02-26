@@ -6,6 +6,8 @@ import { BsThreeDots } from "react-icons/bs";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
+import PostDetails from "../../Pages/PostDetails/PostDetails";
+import PostDetailsModal from "./PostDetailsModal";
 
 const PostCard = ({
   refetch,
@@ -15,6 +17,8 @@ const PostCard = ({
   user,
 }) => {
   const [postReactions, setReactions] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [postId, setPostId] = useState('');
   const [editPost, setEditPost] = useState(false);
   const [love, setLove] = useState(false);
   const [liked, setLiked] = useState(false);
@@ -104,7 +108,7 @@ const PostCard = ({
       {/* Latest Design Post card  */}
       <div>
         <div className="my-3">
-          <div className="w-full border border-[#FF3F4A] p-5 rounded-md shadow-md">
+          <div className="w-full border border-[#FF3F4A]/50 p-5 rounded-md shadow-md bg-[#3F3F3F]">
             <div className="flex justify-between items-center text-black dark:text-white">
               <div className="flex gap-3 items-center">
                 <img
@@ -149,8 +153,7 @@ const PostCard = ({
                 </div>
               </div>
             </div>
-            <div className="pb-7">
-            <Link to={`/postDetails/${post?._id}`}>
+            <div className="pb-7" onClick={() => { setOpen(true); setPostId(post?._id) }}>
               <p className="py-4 text-black dark:text-white">
                 {post?.postText?.length > 100 ? (
                   <>
@@ -163,15 +166,15 @@ const PostCard = ({
                   post?.postText
                 )}
               </p>
-              {post?.img ? (
-
-                <img
-                className="w-full rounded-md mt-[5px] h-96 object-cover"
-                src={post?.img}
-                alt=""
-                />
-              ): ""}
-              </Link>
+              <div>
+                <Link>
+                  <img
+                    className="w-full rounded-md mt-[5px]"
+                    src={post?.img}
+                    alt=""
+                  />
+                </Link>
+              </div>
             </div>
             <div className="border-t border-black dark:border-white">
               <div className="flex justify-between items-center pt-3 mx-3 text-black dark:text-white">
@@ -243,7 +246,10 @@ const PostCard = ({
           </div>
         </div>
       </div>
+      <PostDetailsModal open={open} setOpen={setOpen} postId={postId} />
+
     </div>
+
   );
 };
 

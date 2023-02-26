@@ -13,7 +13,7 @@ const UserById = () => {
 
   return (
     <div>
-      <div className="dark:bg-[#2C2048] h-screen overflow-y-auto mt-[65px] md:mt-[-42px] ">
+      <div className="dark:bg-[#2A2A2A] h-screen overflow-y-auto mt-[65px] md:mt-[-42px] ">
         <div className="pb-20">
           <div className="md:w-[1084px] md:mx-auto md:shadow-md ">
             <UserCoverPhoto userDetails={userDetails} />

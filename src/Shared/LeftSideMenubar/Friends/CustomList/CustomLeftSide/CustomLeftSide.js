@@ -21,13 +21,13 @@ const CustomLeftSide = () => {
         </div>
         <div className="mt-10 flex flex-col gap-4">
           <div className=" flex gap-x-3 items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-900">
-            <div className=" text-2xl dark:bg-[#2C2048] bg-gray-200 h-[60px] w-[60px] flex items-center justify-center rounded-full">
+            <div className=" text-2xl dark:bg-[#2A2A2A] bg-gray-200 h-[60px] w-[60px] flex items-center justify-center rounded-full">
               <FaStar className=" dark:text-white"></FaStar>
             </div>
             <h2 className="text-xl font-semibold">Close friends</h2>
           </div>
           <div className=" flex gap-x-3 items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-900">
-            <div className="text-2xl dark:bg-[#2C2048] bg-gray-200 h-[60px] w-[60px] flex items-center justify-center rounded-full">
+            <div className="text-2xl dark:bg-[#2A2A2A] bg-gray-200 h-[60px] w-[60px] flex items-center justify-center rounded-full">
               <FaPlus className="text-blue-600"></FaPlus>
             </div>
             <h2 className="text-xl font-semibold">Create List</h2>

@@ -1,11 +1,10 @@
 import React from 'react';
-import Chat from './Chat/Chat';
-import ChatBar from './ChatBar/ChatBar';
+
 import Chats from './Chats/Chats';
 
 const Chatting = () => {
     return (
-        <div>
+        <div className='dark:bg-[#2A2A2A] bg-gray-50'>
         <Chats></Chats>
         </div>
     );

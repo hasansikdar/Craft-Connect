@@ -60,7 +60,7 @@ const UpdateProfile = ({ setEdit, users }) => {
   }, [field?.target?.files, photoURL]);
   return (
     <>
-      <section className="pt-10 dark:bg-[#2C2048] bg-white sm:py-16 lg:py-24">
+      <section className="pt-10 dark:bg-[#2A2A2A] bg-white sm:py-16 lg:py-24">
         <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8 shadow-md shadow-[#FF3F4A]  pb-24 px-5">
           <div className="flex justify-between items-center px-3 pt-5">
             <p className="text-2xl font-bold">Update Profile</p>

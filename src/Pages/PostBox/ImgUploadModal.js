@@ -11,6 +11,7 @@ const ImgUploadModal = ({ open, setOpen, setSelectedFile, selectedFile, preview,
     setSelectedFile(undefined);
     setCloseUploadPhotoBox(true);
   };
+  
   useEffect(() => {
     if (!selectedFile) {
       setPreview(undefined);
@@ -67,8 +68,8 @@ const ImgUploadModal = ({ open, setOpen, setSelectedFile, selectedFile, preview,
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-[#261b40] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                  <div className="bg-white dark:bg-[#261b40] px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white dark:bg-[#3F3F3F] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                  <div className="bg-white dark:bg-[#3F3F3F] px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <h1 className="py-4 text-left text-sm font-bold text-black dark:text-white">
                       Choose You Photo
                     </h1>
@@ -100,7 +101,7 @@ const ImgUploadModal = ({ open, setOpen, setSelectedFile, selectedFile, preview,
                                   onClick={() => {
                                     setSelectedFile(undefined);
                                   }}
-                                  className="absolute z-[10] right-0 top-[-12px] bg-[#261b40] rounded-full cursor-pointer"
+                                  className="absolute z-[10] right-0 top-[-12px] bg-[#3F3F3F] rounded-full cursor-pointer"
                                 >
                                   ✕
                                 </label>
@@ -174,7 +175,7 @@ const ImgUploadModal = ({ open, setOpen, setSelectedFile, selectedFile, preview,
                           onClick={() => {
                             setOpen(false);
                           }}
-                          className="disabled:cursor-not-allowed text-center w-full bg-[#FF3F4A] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-[#FF3F4A] text-sm font-medium px-5 py-2.5 dark:bg-[#2C2048] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white"
+                          className="disabled:cursor-not-allowed text-center w-full bg-[#FF3F4A] hover:bg-[#cc323b] focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-[#FF3F4A] text-sm font-medium px-5 py-2.5 dark:bg-[#2A2A2A] dark:text-gray-300 dark:border-[#FF3F4A] dark:hover:text-white"
                         >
                           Upload Image
                         </button>

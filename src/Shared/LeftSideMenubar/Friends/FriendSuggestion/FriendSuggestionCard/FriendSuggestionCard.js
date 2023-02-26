@@ -38,11 +38,11 @@ const FriendSuggestionCard = ({ followingUser }) => {
             <h2 className="font-bold text-base">
               {followingUser?.displayName}
             </h2>
-            <small>100 mutual friend</small>
+            {/* <small>100 mutual friend</small> */}
             <div className="flex gap-2">
               {follow ? (
                 <button className="w-[100px] h-[36px] bg-[#FF3F4A] rounded text-white">
-                  Follow Back
+                  Following
                 </button>
               ) : (
                 <button

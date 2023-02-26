@@ -4,10 +4,12 @@ import { toast } from "react-hot-toast";
 import PostCard from "../../Components/PostCard/PostCard";
 import { Authcontext } from "../../Context/UserContext";
 import Loading from "../../Shared/Loading/Loading";
+import PostDetails from "../PostDetails/PostDetails";
 
 const Posts = () => {
   const { user } = useContext(Authcontext);
   const [loading, setLoading] = useState(false);
+  
 
   const {
     data: posts = [],

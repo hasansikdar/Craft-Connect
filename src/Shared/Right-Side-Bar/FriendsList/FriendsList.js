@@ -8,7 +8,7 @@ const FriendsList = () => {
   return (
     <div>
       <div>
-        <ul className=" menu p-2 py-5 flex rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 text-gray-500 bg-white dark:bg-[#261b40]">
+        <ul className=" menu p-2 py-5 flex rounded-lg border-zinc-600 shadow-xl w-11/12 m-auto my-5 text-gray-500 bg-white dark:bg-[#3F3F3F]">
           <h1 className="dark:text-white text-black ml-4 mb-2">Contacts</h1>
           <li className="hover:bg-[#FF3F4A] dark:text-white text-black hover:text-white duration-300 rounded-lg">
             <div className="cursor-pointer" onClick={() => setChat(!chat)}>

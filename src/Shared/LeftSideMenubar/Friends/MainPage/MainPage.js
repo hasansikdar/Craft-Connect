@@ -40,9 +40,9 @@ const MainPage = () => {
           <h2 className="text-xl font-bold dark:text-white text-black">
             People You May Know
           </h2>
-          <button className="text-[#FF3F4A] hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded">
+          {/* <button className="text-[#FF3F4A] hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded">
             See All
-          </button>
+          </button> */}
         </div>
         <div className="grid grid-cols-3 py-2 mx-auto px-4 gap-5 mt-5">
           {allUser?.map((followingUser) => (

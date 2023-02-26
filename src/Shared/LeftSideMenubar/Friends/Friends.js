@@ -17,10 +17,10 @@ const Friends = () => {
   });
   // console.log(users);
   return (
-    <section className="bg-white dark:bg-[#2C2048]">
+    <section className="bg-white dark:bg-[#2A2A2A]">
       <div className=" hidden lg:block overflow-y-auto h-screen">
         <div className="grid grid-cols-12">
-          {/* <div className="col-span-3 hidden lg:block dark:bg-[#261b40]">
+          {/* <div className="col-span-3 hidden lg:block dark:bg-[#3F3F3F]">
             <LeftSide></LeftSide>
           </div> */}
           <div className="col-span-9">
@@ -39,13 +39,13 @@ const Friends = () => {
         <div className="flex gap-5 px-4 my-4 dark:text-white text-black font-semibold">
           <Link
             to="/friends/suggestion"
-            className="bg-gray-200 dark:bg-[#2C2048] px-2 py-1 rounded-full"
+            className="bg-gray-200 dark:bg-[#2A2A2A] px-2 py-1 rounded-full"
           >
             Suggestions
           </Link>
           <Link
             to="/friends/list"
-            className="bg-gray-200 dark:bg-[#2C2048] px-2 py-1 rounded-full"
+            className="bg-gray-200 dark:bg-[#2A2A2A] px-2 py-1 rounded-full"
           >
             Your Friends
           </Link>
