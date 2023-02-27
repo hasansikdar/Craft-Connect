@@ -40,7 +40,7 @@ const DynamicPostCard = ({ post }) => {
               </div>
             </div>
             <div>
-              <div className="dropdown dropdown-bottom dropdown-end ">
+              {/* <div className="dropdown dropdown-bottom dropdown-end ">
                 <label tabIndex={0} className="text-4xl cursor-pointer ">
                   <BsThreeDots></BsThreeDots>
                 </label>
@@ -59,7 +59,7 @@ const DynamicPostCard = ({ post }) => {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* post text and image  */}
@@ -99,11 +99,11 @@ const DynamicPostCard = ({ post }) => {
                   </Link>
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <button className="text-3xl">
                   <BiShareAlt />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

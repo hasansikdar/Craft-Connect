@@ -26,7 +26,7 @@ const ProfileOfUser = () => {
                   {/* <CoverImgMobile /> */}
                   <ProfileInfo myProfile={myProfile} />
                 </div>
-                <div className="w-full md:w-[1084px] mx-auto mt-10">
+                <div className="w-full md:w-[1084px] mx-auto mt-10 pb-32">
                   <MyPostView myProfile={myProfile}></MyPostView>
                 </div>
               </div>

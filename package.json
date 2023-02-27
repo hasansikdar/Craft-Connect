@@ -30,6 +30,8 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-share": "^4.4.1",
+    "react-share-social": "^0.1.55",
     "react-tooltip": "^5.7.0",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",

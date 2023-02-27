@@ -84,7 +84,7 @@ const BookMarkedCard = ({ post, refetch }) => {
 
           {/* <Link to={`/postDetails/${post?._id}`}> */}
           <img
-            className="w-full rounded-md mt-[5px]"
+            className="w-full rounded-md mt-[5px] h-96"
             src={post?.PostPhoto}
             alt=""
           />

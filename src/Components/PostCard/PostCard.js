@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { Authcontext } from "../../Context/UserContext";
 import PostDetails from "../../Pages/PostDetails/PostDetails";
 import PostDetailsModal from "./PostDetailsModal";
+import { ShareSocial } from 'react-share-social'
 
 const PostCard = ({
   refetch,
@@ -15,6 +16,7 @@ const PostCard = ({
   handelReaction,
   handleDeletePost,
   user,
+  sharedPostsRefetch
 }) => {
   const [postReactions, setReactions] = useState([]);
   const [open, setOpen] = useState(false);
@@ -102,6 +104,40 @@ const PostCard = ({
         toast.success("Bookmarked Successfully Done!");
       });
   };
+
+  const handelShare = () => {
+    let currentDate = new Date();
+    const dd = String(currentDate.getDate()).padStart(2, "0");
+    const mm = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const yyyy = currentDate.getFullYear();
+    currentDate = mm + "/" + dd + "/" + yyyy;
+    const sharedPost = {
+      sharedUserEmail: user?.email,
+      sharedUserName: user?.displayName,
+      sharedUserPhoto: user?.photoURL,
+      sharedUserDate: currentDate,
+      postId: post?._id,
+      postUserEmail: post?.userEmail,
+      postUserName: post?.userName,
+      postUserPhoto: post?.userPhoto,
+      PostPhoto: post?.img,
+      postTime: post?.currentDate,
+      postText: post?.postText,
+    }; 
+    fetch("http://localhost:5000/sharedPost", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(sharedPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        toast.success("Shared Successfully Done!");
+        sharedPostsRefetch()
+      });
+  }
 
   return (
     <div>
@@ -206,38 +242,44 @@ const PostCard = ({
                 </div>
                 <div>
                   {/* Share button and Dropdown  */}
-                  <div className="dropdown dropdown-bottom dropdown-end ">
+                  <div className="dropdown dropdown-bottom dropdown-end">
                     <label tabIndex={0} className="text-4xl cursor-pointer ">
-                      {/* <BiShareAlt></BiShareAlt> */}
+                      <BiShareAlt></BiShareAlt>
                     </label>
                     <ul
                       tabIndex={0}
                       className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 dark:bg-[#32205a]"
                     >
-                      <li>
+                      {/* <li>
                         <a
                           className="hover:bg-[#FF3F4A] hover:text-white"
                           href="/"
                         >
                           Share Now (Public)
                         </a>
-                      </li>
+                      </li> */}
                       <li>
-                        <a
+                        <Link
+                          onClick={handelShare}
                           className="hover:bg-[#FF3F4A] hover:text-white"
                           href="/"
                         >
                           Share To Your Feed
-                        </a>
+                        </Link>
                       </li>
-                      <li>
+                      {/* <ShareSocial
+                        title={'sharing happiness'}
+                        url="url_to_share.com"
+                        socialTypes={['facebook', 'twitter']}
+                      /> */}
+                      {/* <li>
                         <a
                           className="hover:bg-[#FF3F4A] hover:text-white"
                           href="/"
                         >
                           Share To Your Story
                         </a>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>
